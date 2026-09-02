@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MileBond — One-Stop China Sourcing Agent From A to Z</title>
+<meta name="description" content="Trusted Yiwu-based China sourcing agent. One-stop solutions for product sourcing, private label, quality control, warehousing and global shipping. Free consultation.">
+<link rel="preconnect" href="https://miaoda.feishu.cn">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap">
+<style>
+/* ============ RESET & BASE ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Manrope',system-ui,-apple-system,sans-serif;
+  color:#1A1A1A;
+  background:#F8F6F1;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,h5{font-family:'Space Grotesk','Manrope',sans-serif;font-weight:700;line-height:1.15;color:#162D54}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+ul{list-style:none}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+
+/* ============ DESIGN TOKENS ============ */
+:root{
+  --navy:#162D54;
+  --navy-light:#243E6B;
+  --orange:#E87722;
+  --orange-light:#F5A623;
+  --cream:#F8F6F1;
+  --white:#FFFFFF;
+  --gray-900:#1A1A1A;
+  --gray-600:#6B7280;
+  --gray-400:#9CA3AF;
+  --gray-200:#E5E7EB;
+  --steel:#3D5A80;
+  --shadow-sm:0 1px 3px rgba(22,45,84,.08);
+  --shadow-md:0 4px 16px rgba(22,45,84,.1);
+  --shadow-lg:0 12px 40px rgba(22,45,84,.14);
+  --radius:10px;
+  --radius-lg:16px;
+  --container:1200px;
+}
+
+/* ============ CONTAINER ============ */
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+
+/* ============ VIEW ROUTING ============ */
+.view{display:none}
+.view.active{display:block}
+
+/* ============ SIGNATURE: CONTAINER CORRUGATED STRIP ============ */
+.corrugated-strip{
+  height:8px;
+  background:repeating-linear-gradient(
+    90deg,
+    var(--orange) 0px,var(--orange) 6px,
+    #C95F12 6px,#C95F12 8px,
+    var(--orange) 8px,var(--orange) 14px,
+    #D4681A 14px,#D4681A 16px
+  );
+}
+
+/* ============ SHIPPING LABEL TAG ============ */
+.ship-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'Space Grotesk',monospace;
+  font-size:11px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--orange);
+  background:rgba(232,119,34,.08);
+  border:1px solid rgba(232,119,34,.25);
+  padding:5px 12px;border-radius:4px;
+}
+.ship-tag::before{
+  content:'';width:6px;height:6px;background:var(--orange);border-radius:50%;
+}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:600;font-size:15px;
+  padding:14px 28px;border-radius:8px;
+  transition:all .25s ease;
+  white-space:nowrap;
+}
+.btn-primary{
+  background:var(--orange);color:#fff;
+  box-shadow:0 4px 14px rgba(232,119,34,.35);
+}
+.btn-primary:hover{background:#D4681A;transform:translateY(-2px);box-shadow:0 6px 20px rgba(232,119,34,.45)}
+.btn-outline{
+  background:transparent;color:var(--navy);
+  border:2px solid var(--navy);
+}
+.btn-outline:hover{background:var(--navy);color:#fff}
+.btn-white{
+  background:#fff;color:var(--navy);
+  box-shadow:var(--shadow-md);
+}
+.btn-white:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn-sm{padding:10px 20px;font-size:13px}
+
+/* ============ NAVBAR ============ */
+.navbar{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--gray-200);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;max-width:var(--container);margin:0 auto;padding:0 24px;
+}
+.logo{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:22px;font-weight:700;color:var(--navy);
+  display:flex;align-items:center;gap:10px;
+  cursor:pointer;
+}
+.logo-mark{
+  width:38px;height:38px;background:var(--navy);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--orange);font-size:18px;font-weight:700;
+  letter-spacing:-.5px;
+}
+.logo-text{letter-spacing:-.3px}
+.logo-text span{color:var(--orange)}
+.nav-menu{display:flex;align-items:center;gap:32px}
+.nav-menu a{
+  font-size:14px;font-weight:500;color:var(--gray-900);
+  transition:color .2s;position:relative;cursor:pointer;
+}
+.nav-menu a:hover{color:var(--orange)}
+.nav-menu a::after{
+  content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;
+  background:var(--orange);transition:width .25s;
+}
+.nav-menu a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;padding:8px}
+.mobile-toggle span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;min-height:640px;
+  display:flex;align-items:center;
+  background:var(--navy);
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://aka.doubaocdn.com/s/tAuCBlFl7s') center/cover no-repeat;
+  opacity:.35;
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(22,45,84,.92) 0%,rgba(22,45,84,.7) 50%,rgba(22,45,84,.4) 100%);
+}
+.hero-content{
+  position:relative;z-index:2;
+  max-width:var(--container);margin:0 auto;padding:80px 24px;
+  width:100%;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(232,119,34,.15);border:1px solid rgba(232,119,34,.4);
+  color:#F5A623;font-size:13px;font-weight:600;
+  padding:8px 16px;border-radius:50px;margin-bottom:24px;
+}
+.hero-badge .dot{width:8px;height:8px;background:var(--orange-light);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{
+  font-size:clamp(36px,5vw,56px);color:#fff;
+  max-width:680px;margin-bottom:20px;
+}
+.hero h1 span{color:var(--orange-light)}
+.hero-sub{
+  font-size:18px;color:rgba(255,255,255,.8);
+  max-width:560px;margin-bottom:36px;line-height:1.7;
+}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px}
+.hero-trust{
+  display:flex;gap:40px;flex-wrap:wrap;
+  padding-top:32px;border-top:1px solid rgba(255,255,255,.15);
+}
+.hero-trust-item{color:rgba(255,255,255,.7)}
+.hero-trust-item strong{
+  display:block;font-family:'Space Grotesk',sans-serif;
+  font-size:28px;font-weight:700;color:#fff;
+}
+.hero-trust-item span{font-size:13px}
+
+/* ============ STATS BAR ============ */
+.stats-bar{
+  background:#fff;padding:48px 0;
+  border-bottom:1px solid var(--gray-200);
+}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:32px;
+  text-align:center;
+}
+.stat-item .stat-num{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:42px;font-weight:700;color:var(--navy);
+  line-height:1;
+}
+.stat-item .stat-num span{color:var(--orange)}
+.stat-item .stat-label{
+  font-size:14px;color:var(--gray-600);margin-top:8px;
+  font-weight:500;text-transform:uppercase;letter-spacing:.05em;
+}
+
+/* ============ FEATURED ON ============ */
+.featured-on{
+  padding:40px 0;background:var(--cream);
+  border-bottom:1px solid var(--gray-200);
+}
+.featured-on p{
+  text-align:center;font-size:12px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.15em;color:var(--gray-400);
+  margin-bottom:24px;
+}
+.featured-logos{
+  display:flex;justify-content:center;align-items:center;
+  gap:48px;flex-wrap:wrap;opacity:.5;
+}
+.featured-logos span{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:18px;font-weight:700;color:var(--gray-600);
+  letter-spacing:.02em;
+}
+
+/* ============ SECTION COMMON ============ */
+.section{padding:96px 0}
+.section-header{text-align:center;max-width:720px;margin:0 auto 56px}
+.section-header .ship-tag{margin-bottom:16px}
+.section-header h2{
+  font-size:clamp(28px,3.5vw,40px);margin-bottom:16px;
+}
+.section-header p{
+  font-size:17px;color:var(--gray-600);line-height:1.7;
+}
+
+/* ============ TRUSTED AGENT ============ */
+.trusted-section{background:#fff}
+.trusted-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
+}
+.trusted-image{
+  position:relative;border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow-lg);
+}
+.trusted-image img{width:100%;height:420px;object-fit:cover}
+.trusted-image .floating-card{
+  position:absolute;bottom:24px;left:24px;right:24px;
+  background:rgba(255,255,255,.95);backdrop-filter:blur(8px);
+  border-radius:12px;padding:20px 24px;
+  display:flex;align-items:center;gap:16px;
+}
+.floating-card .fc-icon{
+  width:48px;height:48px;background:var(--orange);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.floating-card .fc-text strong{
+  display:block;font-family:'Space Grotesk',sans-serif;
+  font-size:16px;color:var(--navy);
+}
+.floating-card .fc-text span{font-size:13px;color:var(--gray-600)}
+.trusted-content h2{font-size:36px;margin-bottom:20px}
+.trusted-content > p{font-size:16px;color:var(--gray-600);margin-bottom:28px;line-height:1.8}
+.trusted-features{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px}
+.trusted-feature{display:flex;gap:12px;align-items:flex-start}
+.trusted-feature .tf-icon{
+  width:36px;height:36px;background:rgba(232,119,34,.1);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  color:var(--orange);
+}
+.trusted-feature strong{display:block;font-size:14px;color:var(--navy);margin-bottom:2px}
+.trusted-feature span{font-size:13px;color:var(--gray-600)}
+
+/* ============ BUSINESS TYPES ============ */
+.business-section{background:var(--cream)}
+.biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.biz-card{
+  background:#fff;border-radius:var(--radius-lg);padding:40px 32px;
+  border:1px solid var(--gray-200);
+  transition:all .3s ease;position:relative;overflow:hidden;
+}
+.biz-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:var(--orange);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s;
+}
+.biz-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent}
+.biz-card:hover::before{transform:scaleX(1)}
+.biz-card .biz-icon{
+  width:56px;height:56px;background:var(--navy);border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--orange-light);margin-bottom:24px;
+}
+.biz-card h3{font-size:22px;margin-bottom:12px}
+.biz-card p{font-size:14px;color:var(--gray-600);line-height:1.7;margin-bottom:20px}
+.biz-card ul{margin-bottom:24px}
+.biz-card li{
+  font-size:14px;color:var(--gray-900);padding:6px 0;
+  display:flex;align-items:center;gap:8px;
+}
+.biz-card li::before{
+  content:'';width:16px;height:16px;flex-shrink:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E87722' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+/* ============ SERVICES GRID ============ */
+.services-section{background:#fff}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.service-card{
+  background:var(--cream);border-radius:var(--radius);padding:32px 28px;
+  border:1px solid transparent;transition:all .3s;
+  display:flex;flex-direction:column;
+}
+.service-card:hover{
+  background:#fff;border-color:var(--gray-200);
+  box-shadow:var(--shadow-md);transform:translateY(-4px);
+}
+.service-card .svc-num{
+  font-family:'Space Grotesk',monospace;
+  font-size:12px;font-weight:700;color:var(--orange);
+  letter-spacing:.1em;margin-bottom:16px;
+}
+.service-card .svc-icon{
+  width:44px;height:44px;background:var(--navy);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;margin-bottom:20px;
+}
+.service-card h3{font-size:18px;margin-bottom:10px}
+.service-card p{font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;margin-bottom:16px}
+.service-card .svc-link{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:13px;font-weight:600;color:var(--orange);
+  display:inline-flex;align-items:center;gap:6px;
+  transition:gap .2s;
+}
+.service-card .svc-link:hover{gap:10px}
+
+/* ============ CTA BANNER ============ */
+.cta-banner{
+  background:var(--navy);padding:72px 0;position:relative;overflow:hidden;
+}
+.cta-banner::before{
+  content:'';position:absolute;top:-50%;right:-10%;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,119,34,.15),transparent 70%);
+}
+.cta-banner .container{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:40px;flex-wrap:wrap;position:relative;z-index:2;
+}
+.cta-banner h2{color:#fff;font-size:32px;max-width:520px}
+.cta-banner p{color:rgba(255,255,255,.7);font-size:16px;margin-top:8px}
+
+/* ============ 4-STEP PROCESS ============ */
+.process-section{background:var(--cream)}
+.process-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  position:relative;
+}
+.process-step{
+  padding:0 24px;position:relative;
+}
+.process-step:not(:last-child)::after{
+  content:'';position:absolute;top:36px;right:-12px;
+  width:24px;height:2px;background:var(--orange);opacity:.4;
+}
+.step-circle{
+  width:72px;height:72px;border-radius:50%;
+  background:#fff;border:2px solid var(--orange);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:24px;font-weight:700;color:var(--orange);
+  margin-bottom:24px;position:relative;z-index:2;
+  box-shadow:0 4px 12px rgba(232,119,34,.15);
+}
+.process-step h3{font-size:18px;margin-bottom:10px}
+.process-step p{font-size:14px;color:var(--gray-600);line-height:1.7;margin-bottom:16px}
+.process-step .btn{margin-top:auto}
+
+/* ============ BUYER TYPES ============ */
+.buyer-section{background:#fff}
+.buyer-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.buyer-card{
+  border-radius:var(--radius-lg);padding:48px 40px;
+  position:relative;overflow:hidden;
+}
+.buyer-card.dark{background:var(--navy);color:#fff}
+.buyer-card.light{background:var(--cream);border:1px solid var(--gray-200)}
+.buyer-card .buyer-icon{
+  width:56px;height:56px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:24px;
+}
+.buyer-card.dark .buyer-icon{background:rgba(232,119,34,.2);color:var(--orange-light)}
+.buyer-card.light .buyer-icon{background:var(--navy);color:var(--orange-light)}
+.buyer-card h3{font-size:24px;margin-bottom:14px}
+.buyer-card.dark h3{color:#fff}
+.buyer-card p{font-size:15px;line-height:1.8;margin-bottom:24px}
+.buyer-card.dark p{color:rgba(255,255,255,.75)}
+.buyer-card.light p{color:var(--gray-600)}
+.buyer-card ul{margin-bottom:28px}
+.buyer-card li{
+  font-size:14px;padding:7px 0;display:flex;align-items:center;gap:10px;
+}
+.buyer-card.dark li{color:rgba(255,255,255,.85)}
+.buyer-card.light li{color:var(--gray-900)}
+.buyer-card li::before{
+  content:'';width:18px;height:18px;flex-shrink:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E87722' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+/* ============ WHY CHOOSE US ============ */
+.why-section{background:var(--cream)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.why-card{
+  background:#fff;border-radius:var(--radius);padding:32px 28px;
+  border-left:4px solid var(--orange);
+  transition:all .3s;
+}
+.why-card:hover{box-shadow:var(--shadow-md);transform:translateX(4px)}
+.why-card .why-icon{
+  width:40px;height:40px;background:rgba(22,45,84,.08);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--navy);margin-bottom:16px;
+}
+.why-card h3{font-size:17px;margin-bottom:8px}
+.why-card p{font-size:14px;color:var(--gray-600);line-height:1.7}
+
+/* ============ TESTIMONIALS ============ */
+.testimonials-section{background:#fff}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.testimonial-card{
+  background:var(--cream);border-radius:var(--radius-lg);padding:36px 32px;
+  position:relative;
+}
+.testimonial-card::before{
+  content:'\201C';position:absolute;top:16px;right:24px;
+  font-family:'Space Grotesk',serif;font-size:72px;
+  color:rgba(232,119,34,.15);line-height:1;
+}
+.testimonial-stars{color:var(--orange-light);margin-bottom:16px;letter-spacing:2px}
+.testimonial-card p{
+  font-size:14px;color:var(--gray-900);line-height:1.8;
+  margin-bottom:24px;position:relative;z-index:1;
+}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.testimonial-avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--navy);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;
+}
+.testimonial-author strong{display:block;font-size:14px;color:var(--navy)}
+.testimonial-author span{font-size:12px;color:var(--gray-600)}
+
+/* ============ CATEGORIES ============ */
+.categories-section{background:var(--navy);color:#fff}
+.categories-section .section-header h2{color:#fff}
+.categories-section .section-header p{color:rgba(255,255,255,.7)}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cat-card{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius);padding:28px 24px;
+  transition:all .3s;text-align:center;
+}
+.cat-card:hover{background:rgba(232,119,34,.15);border-color:var(--orange);transform:translateY(-4px)}
+.cat-card .cat-icon{
+  width:48px;height:48px;margin:0 auto 16px;
+  background:rgba(232,119,34,.2);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--orange-light);
+}
+.cat-card h4{color:#fff;font-size:15px;margin-bottom:6px}
+.cat-card span{font-size:12px;color:rgba(255,255,255,.5)}
+
+/* ============ FAQ ============ */
+.faq-section{background:var(--cream)}
+.faq-list{max-width:820px;margin:0 auto}
+.faq-item{
+  background:#fff;border-radius:var(--radius);margin-bottom:12px;
+  border:1px solid var(--gray-200);overflow:hidden;
+  transition:box-shadow .3s;
+}
+.faq-item:hover{box-shadow:var(--shadow-sm)}
+.faq-question{
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  padding:22px 28px;text-align:left;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:16px;font-weight:600;color:var(--navy);
+  gap:16px;
+}
+.faq-question .faq-icon{
+  width:28px;height:28px;flex-shrink:0;border-radius:50%;
+  background:rgba(232,119,34,.1);color:var(--orange);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .3s,background .3s;
+  font-size:18px;font-weight:400;
+}
+.faq-item.active .faq-icon{transform:rotate(45deg);background:var(--orange);color:#fff}
+.faq-answer{
+  max-height:0;overflow:hidden;transition:max-height .35s ease;
+}
+.faq-answer-inner{
+  padding:0 28px 24px;font-size:14px;color:var(--gray-600);line-height:1.8;
+}
+.faq-answer-inner ul{margin-top:8px}
+.faq-answer-inner li{padding:4px 0 4px 20px;position:relative}
+.faq-answer-inner li::before{
+  content:'';position:absolute;left:0;top:12px;
+  width:6px;height:6px;background:var(--orange);border-radius:50%;
+}
+
+/* ============ EBOOK DOWNLOAD ============ */
+.ebook-section{background:#fff}
+.ebook-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
+}
+.ebook-cover{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);
+  border-radius:var(--radius-lg);padding:48px;
+  color:#fff;position:relative;overflow:hidden;
+  box-shadow:var(--shadow-lg);
+}
+.ebook-cover::before{
+  content:'';position:absolute;top:-30%;right:-20%;
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,119,34,.2),transparent 70%);
+}
+.ebook-cover .ebook-badge{
+  display:inline-block;background:var(--orange);color:#fff;
+  font-size:11px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.1em;padding:6px 14px;border-radius:4px;margin-bottom:20px;
+}
+.ebook-cover h3{color:#fff;font-size:28px;margin-bottom:12px;position:relative}
+.ebook-cover p{color:rgba(255,255,255,.7);font-size:14px;position:relative}
+.ebook-content h2{font-size:32px;margin-bottom:16px}
+.ebook-content > p{font-size:16px;color:var(--gray-600);margin-bottom:24px;line-height:1.8}
+.ebook-list{margin-bottom:32px}
+.ebook-list li{
+  padding:10px 0;display:flex;align-items:center;gap:12px;
+  font-size:15px;color:var(--gray-900);
+  border-bottom:1px solid var(--gray-200);
+}
+.ebook-list li:last-child{border-bottom:none}
+.ebook-list .el-icon{
+  width:28px;height:28px;background:rgba(232,119,34,.1);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  color:var(--orange);
+}
+.ebook-form{display:flex;gap:12px;flex-wrap:wrap}
+.ebook-form input{
+  flex:1;min-width:240px;padding:14px 18px;
+  border:2px solid var(--gray-200);border-radius:8px;
+  font-family:inherit;font-size:14px;
+  transition:border-color .2s;
+}
+.ebook-form input:focus{outline:none;border-color:var(--orange)}
+
+/* ============ KNOWLEDGE GUIDE ============ */
+.knowledge-section{background:var(--cream)}
+.knowledge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.knowledge-card{
+  background:#fff;border-radius:var(--radius);padding:28px 24px;
+  border:1px solid var(--gray-200);transition:all .3s;
+  display:flex;gap:20px;align-items:flex-start;
+}
+.knowledge-card:hover{border-color:var(--orange);box-shadow:var(--shadow-md)}
+.knowledge-card .ch-num{
+  font-family:'Space Grotesk',monospace;
+  font-size:32px;font-weight:700;color:var(--orange);
+  line-height:1;flex-shrink:0;opacity:.6;
+}
+.knowledge-card h4{font-size:16px;margin-bottom:6px}
+.knowledge-card p{font-size:13px;color:var(--gray-600);line-height:1.6}
+.knowledge-card .ch-link{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:12px;font-weight:600;color:var(--orange);margin-top:8px;
+  cursor:pointer;
+}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--navy);color:rgba(255,255,255,.7);padding:72px 0 0}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;
+  padding-bottom:48px;
+}
+.footer-brand .logo{color:#fff;margin-bottom:16px}
+.footer-brand .logo-mark{background:var(--orange);color:#fff}
+.footer-brand p{font-size:14px;line-height:1.8;margin-bottom:20px}
+.footer-social{display:flex;gap:12px}
+.footer-social a{
+  width:36px;height:36px;border-radius:8px;
+  background:rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.7);transition:all .2s;
+}
+.footer-social a:hover{background:var(--orange);color:#fff}
+.footer-col h4{
+  color:#fff;font-size:14px;text-transform:uppercase;
+  letter-spacing:.1em;margin-bottom:20px;
+}
+.footer-col li{margin-bottom:10px}
+.footer-col a{font-size:14px;transition:color .2s;cursor:pointer}
+.footer-col a:hover{color:var(--orange-light)}
+.footer-contact li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:14px;margin-bottom:14px;line-height:1.6;
+}
+.footer-contact .fc-icon{
+  width:20px;height:20px;flex-shrink:0;color:var(--orange-light);margin-top:2px;
+}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);
+  padding:24px 0;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:12px;
+  font-size:13px;
+}
+.footer-bottom a{color:var(--orange-light);cursor:pointer}
+
+/* ================================================================ */
+/* ============ BLOG PAGE STYLES ============ */
+/* ================================================================ */
+.blog-hero{
+  background:var(--navy);padding:80px 0 64px;position:relative;overflow:hidden;
+}
+.blog-hero::before{
+  content:'';position:absolute;top:-40%;right:-5%;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,119,34,.12),transparent 70%);
+}
+.blog-hero .container{position:relative;z-index:2}
+.blog-breadcrumb{
+  font-size:13px;color:rgba(255,255,255,.5);margin-bottom:16px;
+  display:flex;align-items:center;gap:8px;
+}
+.blog-breadcrumb a{color:var(--orange-light);cursor:pointer}
+.blog-breadcrumb a:hover{text-decoration:underline}
+.blog-hero h1{
+  color:#fff;font-size:clamp(32px,4.5vw,48px);margin-bottom:16px;max-width:640px;
+}
+.blog-hero h1 span{color:var(--orange-light)}
+.blog-hero p{
+  color:rgba(255,255,255,.7);font-size:17px;max-width:560px;line-height:1.7;
+}
+
+.blog-filter{
+  background:#fff;border-bottom:1px solid var(--gray-200);
+  padding:20px 0;position:sticky;top:72px;z-index:100;
+}
+.blog-filter-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;
+}
+.blog-cats{display:flex;gap:8px;flex-wrap:wrap}
+.blog-cat{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:13px;font-weight:500;
+  padding:8px 16px;border-radius:50px;
+  border:1px solid var(--gray-200);
+  color:var(--gray-600);cursor:pointer;
+  transition:all .2s;background:transparent;
+}
+.blog-cat:hover{border-color:var(--orange);color:var(--orange)}
+.blog-cat.active{
+  background:var(--navy);color:#fff;border-color:var(--navy);
+}
+.blog-search{position:relative;flex-shrink:0}
+.blog-search input{
+  padding:10px 16px 10px 40px;
+  border:1px solid var(--gray-200);border-radius:8px;
+  font-family:inherit;font-size:14px;width:260px;
+  transition:border-color .2s;
+}
+.blog-search input:focus{outline:none;border-color:var(--orange)}
+.blog-search svg{
+  position:absolute;left:12px;top:50%;transform:translateY(-50%);
+  color:var(--gray-400);
+}
+
+.blog-grid-section{padding:64px 0;background:var(--cream)}
+.blog-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+}
+.blog-card{
+  background:#fff;border-radius:var(--radius-lg);overflow:hidden;
+  border:1px solid var(--gray-200);
+  transition:all .3s;cursor:pointer;
+  display:flex;flex-direction:column;
+}
+.blog-card:hover{
+  transform:translateY(-6px);box-shadow:var(--shadow-lg);
+  border-color:transparent;
+}
+.blog-card-img{
+  height:200px;position:relative;overflow:hidden;
+  background:var(--navy);
+}
+.blog-card-img .blog-img-placeholder{
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.15);
+}
+.blog-card-img .blog-cat-badge{
+  position:absolute;top:16px;left:16px;
+  background:rgba(232,119,34,.95);color:#fff;
+  font-size:11px;font-weight:600;text-transform:uppercase;
+  letter-spacing:.08em;padding:5px 12px;border-radius:4px;
+}
+.blog-card-body{padding:24px 28px 28px;flex:1;display:flex;flex-direction:column}
+.blog-card-meta{
+  display:flex;align-items:center;gap:12px;
+  font-size:12px;color:var(--gray-400);margin-bottom:12px;
+}
+.blog-card-meta .dot{width:3px;height:3px;background:var(--gray-400);border-radius:50%}
+.blog-card h3{
+  font-size:18px;line-height:1.4;margin-bottom:10px;
+  transition:color .2s;
+}
+.blog-card:hover h3{color:var(--orange)}
+.blog-card p{
+  font-size:14px;color:var(--gray-600);line-height:1.7;
+  flex:1;margin-bottom:16px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+.blog-card-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:16px;border-top:1px solid var(--gray-200);
+}
+.blog-card-footer .read-more{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:13px;font-weight:600;color:var(--orange);
+  display:inline-flex;align-items:center;gap:6px;
+  transition:gap .2s;
+}
+.blog-card:hover .read-more{gap:10px}
+.blog-card-footer .read-time{
+  font-size:12px;color:var(--gray-400);
+  display:flex;align-items:center;gap:4px;
+}
+
+.blog-pagination{
+  display:flex;justify-content:center;align-items:center;gap:8px;
+  margin-top:56px;
+}
+.page-btn{
+  width:44px;height:44px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;
+  border:1px solid var(--gray-200);background:#fff;
+  color:var(--gray-600);cursor:pointer;transition:all .2s;
+}
+.page-btn:hover{border-color:var(--orange);color:var(--orange)}
+.page-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.page-btn.nav-btn{padding:0 16px;width:auto;gap:6px}
+
+.blog-newsletter{
+  background:#fff;padding:64px 0;border-top:1px solid var(--gray-200);
+}
+.blog-newsletter-inner{
+  text-align:center;max-width:560px;margin:0 auto;
+}
+.blog-newsletter h2{font-size:28px;margin-bottom:12px}
+.blog-newsletter p{font-size:15px;color:var(--gray-600);margin-bottom:28px}
+.blog-newsletter-form{display:flex;gap:12px;max-width:480px;margin:0 auto}
+.blog-newsletter-form input{
+  flex:1;padding:14px 18px;
+  border:2px solid var(--gray-200);border-radius:8px;
+  font-family:inherit;font-size:14px;
+}
+.blog-newsletter-form input:focus{outline:none;border-color:var(--orange)}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1024px){
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .trusted-grid,.ebook-grid{grid-template-columns:1fr;gap:40px}
+  .biz-grid,.services-grid,.why-grid,.testimonial-grid,.blog-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid{grid-template-columns:repeat(2,1fr);gap:40px}
+  .process-step:not(:last-child)::after{display:none}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .knowledge-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-menu{display:none}
+  .mobile-toggle{display:flex}
+  .nav-cta .btn-outline{display:none}
+  .hero{min-height:560px}
+  .hero-trust{gap:24px}
+  .hero-trust-item strong{font-size:22px}
+  .section{padding:64px 0}
+  .biz-grid,.services-grid,.why-grid,.testimonial-grid,.buyer-grid,.blog-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:1fr 1fr}
+  .knowledge-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .cta-banner .container{flex-direction:column;text-align:center}
+  .ebook-form,.blog-newsletter-form{flex-direction:column}
+  .ebook-form input,.blog-newsletter-form input{width:100%}
+  .blog-search input{width:100%}
+  .blog-search{width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="logo" onclick="navigateTo('home')">
+      <span class="logo-mark">M</span>
+      <span class="logo-text">mile<span>bond</span></span>
+    </a>
+    <div class="nav-menu" id="navMenu">
+      <a onclick="navigateTo('home','services')">Services</a>
+      <a onclick="navigateTo('home','process')">How It Works</a>
+      <a onclick="navigateTo('home','about')">About</a>
+      <a onclick="navigateTo('home','categories')">Categories</a>
+      <a onclick="navigateTo('home','faq')">FAQ</a>
+      <a onclick="navigateTo('blog')">Blog</a>
+    </div>
+    <div class="nav-cta">
+      <a onclick="navigateTo('home','contact')" class="btn btn-outline btn-sm">Contact Us</a>
+      <a onclick="navigateTo('home','quote')" class="btn btn-primary btn-sm">Free Quote</a>
+    </div>
+    <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ================================================================ -->
+<!-- ============ HOME VIEW ============ -->
+<!-- ================================================================ -->
+<div class="view active" id="home-view">
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Top 1% Yiwu Sourcing Agent — 10+ Years Experience
+    </div>
+    <h1>One-Stop China Sourcing Agent: <span>From A to Z</span></h1>
+    <p class="hero-sub">
+      From startups to established brands, we deliver end-to-end sourcing solutions — supplier verification, manufacturing, quality control, warehousing and global shipping. No hidden fees. No surprises.
+    </p>
+    <div class="hero-actions">
+      <a onclick="scrollToSection('quote')" class="btn btn-primary">Start Sourcing Now
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a onclick="scrollToSection('services')" class="btn btn-white">Explore Services</a>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-item"><strong>30k+</strong><span>Products Sourced</span></div>
+      <div class="hero-trust-item"><strong>6,000+</strong><span>Happy Clients</span></div>
+      <div class="hero-trust-item"><strong>150+</strong><span>Million-Dollar Sellers</span></div>
+      <div class="hero-trust-item"><strong>500+</strong><span>Vetted Suppliers</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="corrugated-strip"></div>
+
+<!-- Stats -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item"><div class="stat-num">10<span>+</span></div><div class="stat-label">Years in Yiwu Market</div></div>
+      <div class="stat-item"><div class="stat-num">48<span>h</span></div><div class="stat-label">Avg. Quote Turnaround</div></div>
+      <div class="stat-item"><div class="stat-num">30<span>+</span></div><div class="stat-label">Countries Served</div></div>
+      <div class="stat-item"><div class="stat-num">1<span>Mo</span></div><div class="stat-label">Free Warehouse Storage</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured On -->
+<section class="featured-on">
+  <div class="container">
+    <p>As Featured In</p>
+    <div class="featured-logos">
+      <span>FORBES</span><span>Entrepreneur</span><span>Business Insider</span>
+      <span>Shopify</span><span>Amazon</span><span>Alibaba</span>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section trusted-section" id="about">
+  <div class="container">
+    <div class="trusted-grid">
+      <div class="trusted-image">
+        <img src="https://aka.doubaocdn.com/s/tAuCBlFl7s" alt="Yiwu International Trade Market sourcing">
+        <div class="floating-card">
+          <div class="fc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="fc-text"><strong>100% Quality Guarantee</strong><span>Every order inspected before shipping</span></div>
+        </div>
+      </div>
+      <div class="trusted-content">
+        <span class="ship-tag">Your Trusted Partner</span>
+        <h2 style="margin-top:16px">The Biggest Product Sourcing Company in Yiwu</h2>
+        <p>With a decade of sourcing experience right at the heart of the world's largest wholesale market, we provide comprehensive product sourcing services tailored to your needs. From market guidance to factory audits, we are your eyes and hands on the ground in China.</p>
+        <div class="trusted-features">
+          <div class="trusted-feature"><div class="tf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div><strong>Quality Sourcing</strong><span>Reputable suppliers only</span></div></div>
+          <div class="trusted-feature"><div class="tf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><div><strong>Safe Shipping</strong><span>Door-to-door delivery</span></div></div>
+          <div class="trusted-feature"><div class="tf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><strong>24/7 Support</strong><span>Always here to help</span></div></div>
+          <div class="trusted-feature"><div class="tf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><strong>Competitive Prices</strong><span>Best landed cost</span></div></div>
+        </div>
+        <a onclick="scrollToSection('contact')" class="btn btn-primary">Contact This Sourcing Company</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Business Types -->
+<section class="section business-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="ship-tag">Who We Serve</span>
+      <h2>Ready to Grow Your eCommerce Business?</h2>
+      <p>Tailored sourcing solutions for every stage of your business journey</p>
+    </div>
+    <div class="biz-grid">
+      <div class="biz-card">
+        <div class="biz-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Small Business</h3>
+        <p>We provide one-stop sourcing service to small businesses looking to expand their online store.</p>
+        <ul><li>Product sourcing</li><li>Vendor validation</li><li>Manufacturing inspection</li><li>Order fulfillment management</li></ul>
+        <a onclick="scrollToSection('contact')" class="btn btn-outline btn-sm">Contact Us</a>
+      </div>
+      <div class="biz-card">
+        <div class="biz-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <h3>Medium to Large Business</h3>
+        <p>Comprehensive solutions to boost efficiency with broad product portfolios and clean supply chains.</p>
+        <ul><li>Store, handle &amp; pack</li><li>Door-to-door transport</li><li>Bulk order management</li><li>Dedicated account manager</li></ul>
+        <a onclick="scrollToSection('contact')" class="btn btn-outline btn-sm">Contact Us</a>
+      </div>
+      <div class="biz-card">
+        <div class="biz-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <h3>Product Development</h3>
+        <p>We help thousands of businesses kickstart their ideas with step-by-step guidance to scale fast.</p>
+        <ul><li>Custom product design</li><li>Prototype development</li><li>Private label branding</li><li>Market trend research</li></ul>
+        <a onclick="scrollToSection('contact')" class="btn btn-outline btn-sm">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="section services-section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="ship-tag">Our Services</span>
+      <h2>What Services Do We Provide?</h2>
+      <p>End-to-end sourcing solutions covering every step from product idea to final delivery</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><div class="svc-num">SVC / 01</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3>Product Sourcing</h3><p>Access the most up-to-date products and market trends. Find reputable suppliers with budget-friendly goods to meet your branding needs.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      <div class="service-card"><div class="svc-num">SVC / 02</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div><h3>Private Label</h3><p>One-stop solution for private labels. Drive profitability, differentiation, and customer happiness while reducing manufacturing and shipping costs.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      <div class="service-card"><div class="svc-num">SVC / 03</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><h3>Photography &amp; Design</h3><p>Eye-catching products win hearts. Our proficient design team captures stunning images and creates ingenious designs to boost your sales.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      <div class="service-card"><div class="svc-num">SVC / 04</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h3>Quality Control</h3><p>Broad range of quality control services tailored to your needs. Get best-in-class products at competitive prices and reduce production costs.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      <div class="service-card"><div class="svc-num">SVC / 05</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div><h3>Dropshipping</h3><p>Affordable solutions for all your product and shipping choices. Grow your business with lower shipping fees and achieve success in no time.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      <div class="service-card"><div class="svc-num">SVC / 06</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h3>Amazon FBA Shipping</h3><p>We've helped countless retailers ship goods to Amazon FBA. Our team schedules, follows up and coordinates your items following FBA procedures.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      <div class="service-card"><div class="svc-num">SVC / 07</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><h3>Alibaba Shipping</h3><p>Quick forward freight service for Alibaba orders. Delivers based on your transportation needs — sea or air freight — with no hidden fees.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      <div class="service-card"><div class="svc-num">SVC / 08</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><polyline points="7.5 19.79 7.5 14.6 3 12"/><polyline points="21 12 16.5 14.6 16.5 19.79"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div><h3>FBA Prep</h3><p>Great reputation for fulfilling orders. We receive the order, inspect the product, and ship items to the Amazon warehouse — hassle-free.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      <div class="service-card"><div class="svc-num">SVC / 09</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3>Fulfillment &amp; Warehouse</h3><p>Store, inspect, and deliver your products fast from our China warehouse. You don't have to worry about inventory — we do the job.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" id="quote">
+  <div class="container">
+    <div><h2>Need a Sourcing Agent in China?</h2><p>Turn your ideas into reality with the best China sourcing team</p></div>
+    <a onclick="scrollToSection('contact')" class="btn btn-primary">Get Started Now <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</section>
+
+<!-- 4-Step Process -->
+<section class="section process-section" id="process">
+  <div class="container">
+    <div class="section-header"><span class="ship-tag">Simple Process</span><h2>4 Steps to Start Product Sourcing</h2><p>A transparent, streamlined process from first inquiry to final delivery</p></div>
+    <div class="process-grid">
+      <div class="process-step"><div class="step-circle">01</div><h3>Submit Your Requirements</h3><p>Contact us via email or submit your requirements through our website. Our team responds within 24 hours and assigns a dedicated agent.</p><a onclick="scrollToSection('contact')" class="btn btn-outline btn-sm">Ask For Free Quote</a></div>
+      <div class="process-step"><div class="step-circle">02</div><h3>Get a Quote</h3><p>Your agent sends a detailed quote within 48 hours. Before confirming, we send product samples so you can verify quality and standards.</p><a onclick="scrollToSection('contact')" class="btn btn-outline btn-sm">Ask For Free Quote</a></div>
+      <div class="process-step"><div class="step-circle">03</div><h3>Confirm Order</h3><p>Review the product sample thoroughly. Once approved, we proceed with bulk order manufacturing while ensuring high-quality end products.</p><a onclick="scrollToSection('contact')" class="btn btn-outline btn-sm">Ask For Free Quote</a></div>
+      <div class="process-step"><div class="step-circle">04</div><h3>Management &amp; Fulfillment</h3><p>Store items in our warehouse until shipping. Effective product management and fast shipping with guaranteed safety and tracking.</p><a onclick="scrollToSection('contact')" class="btn btn-outline btn-sm">Ask For Free Quote</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- Buyer Types -->
+<section class="section buyer-section">
+  <div class="container">
+    <div class="section-header"><span class="ship-tag">Flexible Solutions</span><h2>Supply Chain Solutions for All Types of Buyers</h2><p>Whether you're just starting or already have established suppliers, we've got you covered</p></div>
+    <div class="buyer-grid">
+      <div class="buyer-card dark">
+        <div class="buyer-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>If You Do Not Have Suppliers Yet</h3>
+        <p>We can be your top China sourcing company to keep extra expenditure in check. End-to-end product management and shipping — not just sourcing and warehousing.</p>
+        <ul><li>Quality inspection &amp; factory audits</li><li>Price negotiations on your behalf</li><li>Supplier verification &amp; vetting</li><li>Complete peace of mind</li></ul>
+        <a onclick="scrollToSection('contact')" class="btn btn-primary btn-sm">Learn More</a>
+      </div>
+      <div class="buyer-card light">
+        <div class="buyer-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <h3>If You Already Have Suppliers</h3>
+        <p>We can still help. Receive items from your suppliers, apply ISO standards, and package them in a more professional and customized way.</p>
+        <ul><li>Custom packaging &amp; branding</li><li>Quality control &amp; inspection</li><li>Consolidation &amp; fast shipping</li><li>Warehouse storage &amp; management</li></ul>
+        <a onclick="scrollToSection('contact')" class="btn btn-outline btn-sm">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="section why-section">
+  <div class="container">
+    <div class="section-header"><span class="ship-tag">Why Choose Us</span><h2>Your Trusted China Sourcing Partner</h2><p>Six reasons why thousands of businesses choose us as their sourcing agent</p></div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><h3>Sourcing Expert</h3><p>Top-notch China sourcing agent with a decade of experience. Save hassles while our professionals handle everything.</p></div>
+      <div class="why-card"><div class="why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>24/7 Online Support</h3><p>Efficient and friendly customer support replies to inquiries and sends documentation within 24 hours. Complete quotes at zero cost.</p></div>
+      <div class="why-card"><div class="why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>100% Product Quality</h3><p>Strictly guarantee the quality of purchased products to meet customer needs. Grow your brand in weeks or months.</p></div>
+      <div class="why-card"><div class="why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h3>Affordable Shipping</h3><p>Extensive network of shipping companies. Ship goods fast and safely with a wide variety of delivery service choices.</p></div>
+      <div class="why-card"><div class="why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div><h3>Risk-Free Payment</h3><p>Multiple payment choices including PayPal, credit card, Wise, and bank transfer. Eliminate payment risk with secured methods.</p></div>
+      <div class="why-card"><div class="why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>High-Quality Suppliers</h3><p>Source only from the best suppliers with excellent and trendy products. No more wasting time and money on bad suppliers.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section testimonials-section">
+  <div class="container">
+    <div class="section-header"><span class="ship-tag">Client Stories</span><h2>2,000+ Clients Trust MileBond</h2><p>Hear from businesses that have grown with our sourcing services</p></div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>I sourced all kinds of products for my company for about 1 year with MileBond. They have really good sourcing service, their team is polite and trustworthy. I definitely recommend working with them.</p><div class="testimonial-author"><div class="testimonial-avatar">L</div><div><strong>Levi Anderson</strong><span>E-commerce Owner, USA</span></div></div></div>
+      <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>I worked with this sourcing agent for 2-3 years to build my brand. They check each item and handle customs clearance into Amazon warehouse. It saves me a lot of time and helps everything run smoothly.</p><div class="testimonial-author"><div class="testimonial-avatar">B</div><div><strong>Belinda Chen</strong><span>Amazon Seller, UK</span></div></div></div>
+      <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Working with MileBond is really positive — they are honest and reliable. I recommend their services to anyone who has a business that needs to ship products from China or needs item inspection.</p><div class="testimonial-author"><div class="testimonial-avatar">J</div><div><strong>Julie Martin</strong><span>Wholesale Distributor, Canada</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="section categories-section" id="categories">
+  <div class="container">
+    <div class="section-header"><span class="ship-tag">Sourcing Capabilities</span><h2>We've Served 2,000+ Clients Across Categories</h2><p>From Yiwu consumer goods to Shenzhen electronics and Guangzhou apparel — we source it all</p></div>
+    <div class="cat-grid">
+      <div class="cat-card"><div class="cat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><h4>Consumer Goods</h4><span>Yiwu Market</span></div>
+      <div class="cat-card"><div class="cat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h4>Consumer Electronics</h4><span>Shenzhen Hub</span></div>
+      <div class="cat-card"><div class="cat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><h4>Clothing &amp; Apparel</h4><span>Guangzhou Market</span></div>
+      <div class="cat-card"><div class="cat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div><h4>Outdoor &amp; Travel</h4><span>Ningbo Region</span></div>
+      <div class="cat-card"><div class="cat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg></div><h4>Toys &amp; Gifts</h4><span>Yiwu / Shantou</span></div>
+      <div class="cat-card"><div class="cat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h4>Home &amp; Garden</h4><span>Yiwu / Foshan</span></div>
+      <div class="cat-card"><div class="cat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><h4>Beauty &amp; Personal Care</h4><span>Guangzhou / Yiwu</span></div>
+      <div class="cat-card"><div class="cat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><h4>Custom &amp; OEM</h4><span>Nationwide</span></div>
+    </div>
+    <div style="text-align:center;margin-top:48px"><a onclick="scrollToSection('contact')" class="btn btn-primary">Request Free Product Sourcing Quote</a></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+  <div class="container">
+    <div class="section-header"><span class="ship-tag">Common Questions</span><h2>FAQ About China Sourcing Agent</h2><p>Everything you need to know before starting your sourcing journey</p></div>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-question">What can your China sourcing agent do for my business?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">We offer a comprehensive sourcing solution from China, acting as your trusted sourcing partner to:<ul><li>Source products &amp; provide competitive quotes</li><li>Manage orders &amp; production timelines</li><li>Inspect quality to guarantee your standards</li><li>Handle export procedures, customs &amp; documentation</li><li>Offer import guidance &amp; regulatory advice</li><li>Assist during your China visits with translation</li><li>Adapt to your unique business needs with custom solutions</li></ul></div></div></div>
+      <div class="faq-item"><button class="faq-question">What kind of suppliers do you work with? All factories?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">It depends on the products you require. We find the best supplier for your needs:<ul><li><strong>Factories (if MOQ met):</strong> Best pricing for larger orders</li><li><strong>Negotiate with factories:</strong> For smaller orders to meet minimums</li><li><strong>Reliable wholesalers:</strong> For smaller orders when factory MOQ isn't possible</li></ul>We balance price, quality, and order size to find the right supplier for you.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Is there any MOQ when placing orders through you?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">It depends on the product and supplier:<ul><li><strong>Stock availability:</strong> We can accept your quantity if the factory has enough stock</li><li><strong>Factory MOQ:</strong> New production usually requires meeting the factory's minimum order quantity</li><li><strong>Combined orders:</strong> We may add your order to a larger client's production run, allowing smaller quantities</li></ul>We'll work to find a solution for your desired order size.</div></div></div>
+      <div class="faq-item"><button class="faq-question">What kind of shipment do you offer?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">We offer both sea and air shipping to meet your needs:<ul><li><strong>Sea shipping:</strong> Economical for larger volumes (FCL or LCL)</li><li><strong>EXW:</strong> You arrange pickup from our warehouse</li><li><strong>FOB:</strong> Covers all costs to forward and load cargo on board</li><li><strong>CIF:</strong> Covers all costs to the port of your destination</li><li><strong>Air cargo:</strong> Faster for valuable, smaller items</li></ul>Let our sourcing agent help you choose the best option for your business.</div></div></div>
+      <div class="faq-item"><button class="faq-question">If I already buy from China, can you help me export?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes! Even if you source independently, we can help you export:<ul><li>Production monitoring &amp; progress tracking</li><li>Quality checks &amp; pre-shipment inspection</li><li>Loading &amp; export arrangement</li><li>Customs clearance &amp; documentation</li><li>After-sales support &amp; issue resolution</li></ul>Our fees are negotiable. Contact us to discuss your specific needs.</div></div></div>
+      <div class="faq-item"><button class="faq-question">How much do your sourcing services cost?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Our pricing is transparent and tailored to your specific needs. Typically, sourcing service fees range from 3% to 10% of the order value, depending on:<ul><li>Product complexity &amp; category</li><li>Order volume &amp; frequency</li><li>Level of service required (sourcing only vs. end-to-end)</li><li>Whether you need QC, warehousing, or fulfillment</li></ul>We offer a free initial consultation and quote with no hidden fees. Contact us for a customized proposal.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Ebook -->
+<section class="section ebook-section">
+  <div class="container">
+    <div class="ebook-grid">
+      <div class="ebook-cover"><span class="ebook-badge">Free Download</span><h3>The Ultimate Guide to Sourcing from China</h3><p>Everything you need to know to import products from China successfully</p></div>
+      <div class="ebook-content">
+        <span class="ship-tag">Free Resource</span>
+        <h2 style="margin-top:16px">Interested in Sourcing Tips From China?</h2>
+        <p>Download this ultimate guide today and unlock the secrets to successful China sourcing — used by thousands of importers worldwide.</p>
+        <ul class="ebook-list">
+          <li><span class="el-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>How to find reliable Chinese suppliers</li>
+          <li><span class="el-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Tips for choosing potential hot products</li>
+          <li><span class="el-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Getting accurate product quotes</li>
+          <li><span class="el-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Tips for cost-effective shipping</li>
+          <li><span class="el-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>And more China sourcing tips...</li>
+        </ul>
+        <form class="ebook-form" onsubmit="event.preventDefault();alert('Thank you! The guide will be sent to your email.');"><input type="email" placeholder="Enter your email address" required><button type="submit" class="btn btn-primary">Download Free Ebook</button></form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Knowledge Guide -->
+<section class="section knowledge-section">
+  <div class="container">
+    <div class="section-header"><span class="ship-tag">Learn &amp; Grow</span><h2>Learn How to Import Products From China</h2><p>With 10 years of experience, we share knowledge on how to wholesale products from China and how different products are made</p></div>
+    <div class="knowledge-grid">
+      <div class="knowledge-card"><div class="ch-num">01</div><div><h4>Chapter 1: Sourcing</h4><p>How to find the right products and suppliers for your business</p><a class="ch-link" onclick="navigateTo('blog')">Read Details →</a></div></div>
+      <div class="knowledge-card"><div class="ch-num">02</div><div><h4>Chapter 2: Supplier</h4><p>Vetting, verifying and negotiating with Chinese manufacturers</p><a class="ch-link" onclick="navigateTo('blog')">Read Details →</a></div></div>
+      <div class="knowledge-card"><div class="ch-num">03</div><div><h4>Chapter 3: Payment</h4><p>Secure payment methods and protecting your transactions</p><a class="ch-link" onclick="navigateTo('blog')">Read Details →</a></div></div>
+      <div class="knowledge-card"><div class="ch-num">04</div><div><h4>Chapter 4: Inspection</h4><p>Quality control processes and pre-shipment inspections</p><a class="ch-link" onclick="navigateTo('blog')">Read Details →</a></div></div>
+      <div class="knowledge-card"><div class="ch-num">05</div><div><h4>Chapter 5: Shipping</h4><p>Sea freight, air cargo, Incoterms and logistics options</p><a class="ch-link" onclick="navigateTo('blog')">Read Details →</a></div></div>
+      <div class="knowledge-card"><div class="ch-num">06</div><div><h4>Chapter 6: Selling</h4><p>Bringing products to market and scaling your sales</p><a class="ch-link" onclick="navigateTo('blog')">Read Details →</a></div></div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /home-view -->
+
+<!-- ================================================================ -->
+<!-- ============ BLOG VIEW ============ -->
+<!-- ================================================================ -->
+<div class="view" id="blog-view">
+
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-breadcrumb"><a onclick="navigateTo('home')">Home</a><span>/</span><span>Blog</span></div>
+    <h1>Sourcing Insights &amp; <span>Industry Guides</span></h1>
+    <p>Expert tips, practical guides and market trends to help you source smarter from China — straight from our Yiwu team.</p>
+  </div>
+</section>
+
+<div class="blog-filter">
+  <div class="container">
+    <div class="blog-filter-inner">
+      <div class="blog-cats" id="blogCats">
+        <button class="blog-cat active" data-cat="all">All Articles</button>
+        <button class="blog-cat" data-cat="sourcing">Sourcing Tips</button>
+        <button class="blog-cat" data-cat="yiwu">Yiwu Market</button>
+        <button class="blog-cat" data-cat="amazon">Amazon FBA</button>
+        <button class="blog-cat" data-cat="quality">Quality Control</button>
+        <button class="blog-cat" data-cat="shipping">Shipping &amp; Logistics</button>
+        <button class="blog-cat" data-cat="private-label">Private Label</button>
+      </div>
+      <div class="blog-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="blogSearch" placeholder="Search articles..." oninput="filterBlog()">
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="blog-grid-section">
+  <div class="container">
+    <div class="blog-grid" id="blogGrid"></div>
+    <div class="blog-pagination" id="blogPagination"></div>
+  </div>
+</section>
+
+<section class="blog-newsletter">
+  <div class="container">
+    <div class="blog-newsletter-inner">
+      <span class="ship-tag">Stay Updated</span>
+      <h2 style="margin-top:16px">Get Sourcing Tips in Your Inbox</h2>
+      <p>Join 5,000+ importers receiving our weekly insights on China sourcing, market trends and supplier strategies.</p>
+      <form class="blog-newsletter-form" onsubmit="event.preventDefault();alert('Thanks for subscribing!');"><input type="email" placeholder="Enter your email" required><button type="submit" class="btn btn-primary">Subscribe</button></form>
+    </div>
+  </div>
+</section>
+
+</div><!-- /blog-view -->
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" onclick="navigateTo('home')"><span class="logo-mark">M</span><span class="logo-text" style="color:#fff">mile<span style="color:var(--orange-light)">bond</span></span></a>
+        <p>Your trusted one-stop China sourcing agent based in Yiwu. From product sourcing to global shipping, we handle it all — so you can focus on growing your business.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#162D54"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul><li><a onclick="navigateTo('home','services')">Product Sourcing</a></li><li><a onclick="navigateTo('home','services')">Private Label</a></li><li><a onclick="navigateTo('home','services')">Quality Control</a></li><li><a onclick="navigateTo('home','services')">Amazon FBA</a></li><li><a onclick="navigateTo('home','services')">Dropshipping</a></li><li><a onclick="navigateTo('home','services')">Warehousing</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul><li><a onclick="navigateTo('blog')">Sourcing Guide</a></li><li><a onclick="navigateTo('blog')">Blog</a></li><li><a onclick="navigateTo('home','faq')">FAQ</a></li><li><a onclick="navigateTo('blog')">Yiwu Market Guide</a></li><li><a onclick="navigateTo('blog')">Alibaba Guide</a></li><li><a onclick="navigateTo('home')">Free Ebook</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-contact">
+          <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Shengli Road, Yiwu, Zhejiang, China</li>
+          <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>+86 150-5796-0102</li>
+          <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>info@milebond.com</li>
+          <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Mon–Sat: 9:00 AM – 6:00 PM (CST)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 MileBond. All rights reserved.</span>
+      <span><a>Privacy Policy</a> &nbsp;|&nbsp; <a>Terms of Service</a> &nbsp;|&nbsp; <a onclick="navigateTo('home','quote')">Get a Free Quote</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ============ BLOG DATA ============
+const blogPosts = [
+  {id:1,cat:'sourcing',catLabel:'Sourcing Tips',title:'How to Find Reliable Suppliers in China: A 7-Step Verification Process',excerpt:'Learn the exact framework we use to vet 500+ suppliers — from factory audits to trade history checks, so you never get scammed again.',date:'Aug 28, 2026',readTime:'8 min'},
+  {id:2,cat:'yiwu',catLabel:'Yiwu Market',title:'Yiwu International Trade City: The Complete 2026 Buyer\'s Guide',excerpt:'Everything you need to know before visiting Yiwu — district-by-district breakdown, best times to go, negotiation tactics and hidden gems.',date:'Aug 25, 2026',readTime:'12 min'},
+  {id:3,cat:'amazon',catLabel:'Amazon FBA',title:'Amazon FBA Sourcing from China: Cost Breakdown & Profit Margin Guide',excerpt:'A detailed look at the true landed cost of FBA products — including sourcing, QC, shipping, customs and Amazon fees — with real examples.',date:'Aug 22, 2026',readTime:'10 min'},
+  {id:4,cat:'quality',catLabel:'Quality Control',title:'Pre-Shipment Inspection: What Every Importer Must Check',excerpt:'The 12-point QC checklist our inspectors use on every order — and the 5 most common defects that get products rejected at Amazon.',date:'Aug 19, 2026',readTime:'7 min'},
+  {id:5,cat:'shipping',catLabel:'Shipping & Logistics',title:'Sea Freight vs Air Freight: How to Choose for Your China Imports',excerpt:'A data-driven comparison of shipping methods — cost per kg, transit times, risk factors and when each option makes financial sense.',date:'Aug 15, 2026',readTime:'9 min'},
+  {id:6,cat:'private-label',catLabel:'Private Label',title:'Private Labeling in China: From Idea to Shelf in 90 Days',excerpt:'The complete timeline for launching a private label product — product development, tooling, sampling, production and first shipment.',date:'Aug 12, 2026',readTime:'11 min'},
+  {id:7,cat:'sourcing',catLabel:'Sourcing Tips',title:'1688 vs Alibaba: Which Platform Should You Use for Sourcing?',excerpt:'An honest comparison of China\'s two biggest B2B platforms — pricing, supplier quality, MOQ requirements and which fits your business.',date:'Aug 8, 2026',readTime:'6 min'},
+  {id:8,cat:'yiwu',catLabel:'Yiwu Market',title:'Top 10 Most Profitable Product Categories at Yiwu Market in 2026',excerpt:'Based on our 2026 sourcing data — the categories with the highest margins, fastest turnover and lowest competition for new sellers.',date:'Aug 5, 2026',readTime:'8 min'},
+  {id:9,cat:'amazon',catLabel:'Amazon FBA',title:'FBA Prep Services in China: Save 40% on Amazon Fulfillment Fees',excerpt:'How prepping your products at our Yiwu warehouse before shipping can dramatically reduce your Amazon FBA fees and prevent losses.',date:'Aug 1, 2026',readTime:'7 min'},
+  {id:10,cat:'shipping',catLabel:'Shipping & Logistics',title:'Understanding Incoterms 2020: EXW, FOB, CIF, DDP Explained',excerpt:'A plain-English guide to the most common Incoterms — who pays what, who bears risk, and which term protects your margins best.',date:'Jul 28, 2026',readTime:'9 min'},
+  {id:11,cat:'quality',catLabel:'Quality Control',title:'How to Handle Defective Products from Chinese Suppliers',excerpt:'The step-by-step protocol for resolving quality issues — from negotiation tactics to re-inspection and when to walk away from a supplier.',date:'Jul 24, 2026',readTime:'8 min'},
+  {id:12,cat:'private-label',catLabel:'Private Label',title:'Custom Packaging Design: 5 Mistakes That Kill Your Brand Perception',excerpt:'What we learned from inspecting 10,000+ private label shipments — the packaging errors that lead to negative reviews and returns.',date:'Jul 20, 2026',readTime:'6 min'},
+];
+
+const POSTS_PER_PAGE = 6;
+let currentCat = 'all';
+let currentPage = 1;
+let searchQuery = '';
+
+function renderBlog() {
+  const grid = document.getElementById('blogGrid');
+  const pagination = document.getElementById('blogPagination');
+  let filtered = blogPosts.filter(p => {
+    const matchCat = currentCat === 'all' || p.cat === currentCat;
+    const matchSearch = !searchQuery || p.title.toLowerCase().includes(searchQuery.toLowerCase()) || p.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchCat && matchSearch;
+  });
+  const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE);
+  if (currentPage > totalPages) currentPage = 1;
+  const start = (currentPage - 1) * POSTS_PER_PAGE;
+  const pagePosts = filtered.slice(start, start + POSTS_PER_PAGE);
+  if (pagePosts.length === 0) {
+    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px 0;color:var(--gray-400);font-size:16px">No articles found. Try a different search or category.</div>';
+    pagination.innerHTML = '';
+    return;
+  }
+  grid.innerHTML = pagePosts.map(p => `
+    <article class="blog-card" onclick="alert('Article detail page coming soon!')">
+      <div class="blog-card-img">
+        <span class="blog-cat-badge">${p.catLabel}</span>
+        <div class="blog-img-placeholder"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta"><span>${p.date}</span><span class="dot"></span><span>${p.readTime} read</span></div>
+        <h3>${p.title}</h3>
+        <p>${p.excerpt}</p>
+        <div class="blog-card-footer">
+          <span class="read-more">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          <span class="read-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${p.readTime}</span>
+        </div>
+      </div>
+    </article>
+  `).join('');
+  if (totalPages > 1) {
+    let pagHTML = '';
+    pagHTML += `<button class="page-btn nav-btn" ${currentPage===1?'disabled style="opacity:.4;cursor:not-allowed"':''} onclick="goToPage(${currentPage-1})"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg> Prev</button>`;
+    for (let i = 1; i <= totalPages; i++) pagHTML += `<button class="page-btn ${i===currentPage?'active':''}" onclick="goToPage(${i})">${i}</button>`;
+    pagHTML += `<button class="page-btn nav-btn" ${currentPage===totalPages?'disabled style="opacity:.4;cursor:not-allowed"':''} onclick="goToPage(${currentPage+1})">Next <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>`;
+    pagination.innerHTML = pagHTML;
+  } else { pagination.innerHTML = ''; }
+}
+
+function filterBlog() { searchQuery = document.getElementById('blogSearch').value; currentPage = 1; renderBlog(); }
+function goToPage(page) { currentPage = page; renderBlog(); window.scrollTo({top: document.querySelector('.blog-grid-section').offsetTop - 120, behavior:'smooth'}); }
+
+document.getElementById('blogCats').addEventListener('click', (e) => {
+  if (e.target.classList.contains('blog-cat')) {
+    document.querySelectorAll('.blog-cat').forEach(c => c.classList.remove('active'));
+    e.target.classList.add('active');
+    currentCat = e.target.dataset.cat; currentPage = 1; renderBlog();
+  }
+});
+
+// ============ VIEW ROUTING ============
+function navigateTo(view, section) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById(view + '-view').classList.add('active');
+  window.scrollTo({top: 0, behavior: 'instant'});
+  const navMenu = document.getElementById('navMenu');
+  if (navMenu && navMenu.style.display === 'flex') navMenu.style.display = '';
+  if (section) setTimeout(() => scrollToSection(section), 100);
+  history.replaceState(null, '', '#' + view);
+}
+
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) { const top = el.getBoundingClientRect().top + window.pageYOffset - 80; window.scrollTo({top: top, behavior: 'smooth'}); }
+}
+
+function handleInitialView() {
+  const hash = window.location.hash.replace('#','');
+  if (hash === 'blog') navigateTo('blog');
+}
+
+function toggleMobileMenu() {
+  const navMenu = document.getElementById('navMenu');
+  if (navMenu.style.display === 'flex') { navMenu.style.display = ''; }
+  else {
+    navMenu.style.display = 'flex'; navMenu.style.position = 'absolute'; navMenu.style.top = '72px';
+    navMenu.style.left = '0'; navMenu.style.right = '0'; navMenu.style.flexDirection = 'column';
+    navMenu.style.background = '#fff'; navMenu.style.padding = '24px'; navMenu.style.gap = '16px';
+    navMenu.style.boxShadow = '0 8px 24px rgba(0,0,0,.1)';
+  }
+}
+
+// ============ FAQ ACCORDION ============
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const answer = item.querySelector('.faq-answer');
+    const isActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('active'); i.querySelector('.faq-answer').style.maxHeight = null; });
+    if (!isActive) { item.classList.add('active'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+  });
+});
+
+// ============ SCROLL REVEAL ============
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; observer.unobserve(entry.target); }
+  });
+}, observerOptions);
+
+function initScrollReveal() {
+  document.querySelectorAll('.service-card, .biz-card, .why-card, .testimonial-card, .process-step, .cat-card, .knowledge-card').forEach(el => {
+    el.style.opacity = '0'; el.style.transform = 'translateY(24px)'; el.style.transition = 'opacity .6s ease, transform .6s ease'; observer.observe(el);
+  });
+}
+
+// ============ INIT ============
+document.addEventListener('DOMContentLoaded', () => { handleInitialView(); renderBlog(); initScrollReveal(); });
+</script>
+
+</body>
+</html>
