@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="China local warehousing, multi-supplier cargo consolidation, DDP door-to-door shipping solution. Enjoy 1-month free storage for your sourcing orders.">
+  <title>China Warehousing & Shipping Service | Consolidate Multi-Supplier Shipments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+/* ============ RESET & BASE ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Manrope',system-ui,-apple-system,sans-serif;
+  color:#1A1A1A;
+  background:#F8F6F1;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,h5{font-family:'Space Grotesk','Manrope',sans-serif;font-weight:700;line-height:1.15;color:#162D54}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+ul{list-style:none}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+:root{
+  --navy:#162D54;
+  --navy-light:#243E6B;
+  --orange:#E87722;
+  --orange-light:#F5A623;
+  --cream:#F8F6F1;
+  --white:#FFFFFF;
+  --gray-900:#1A1A1A;
+  --gray-600:#6B7280;
+  --gray-400:#9CA3AF;
+  --gray-200:#E5E7EB;
+  --steel:#3D5A80;
+  --shadow-sm:0 1px 3px rgba(22,45,84,.08);
+  --shadow-md:0 4px 16px rgba(22,45,84,.1);
+  --shadow-lg:0 12px 40px rgba(22,45,84,.14);
+  --radius:10px;
+  --radius-lg:16px;
+  --container:1200px;
+}
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+.corrugated-strip{
+  height:8px;
+  background:repeating-linear-gradient(
+    90deg,
+    var(--orange) 0px,var(--orange) 6px,
+    #C95F12 6px,#C95F12 8px,
+    var(--orange) 8px,var(--orange) 14px,
+    #D4681A 14px,#D4681A 16px
+  );
+}
+.ship-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'Space Grotesk',monospace;
+  font-size:11px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--orange);
+  background:rgba(232,119,34,.08);
+  border:1px solid rgba(232,119,34,.25);
+  padding:5px 12px;border-radius:4px;
+}
+.ship-tag::before{
+  content:'';width:6px;height:6px;background:var(--orange);border-radius:50%;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:600;font-size:15px;
+  padding:14px 28px;border-radius:8px;
+  transition:all .25s ease;
+  white-space:nowrap;
+}
+.btn-primary{
+  background:var(--orange);color:#fff;
+  box-shadow:0 4px 14px rgba(232,119,34,.35);
+}
+.btn-primary:hover{background:#D4681A;transform:translateY(-2px);box-shadow:0 6px 20px rgba(232,119,34,.45)}
+.btn-outline{
+  background:transparent;color:var(--navy);
+  border:2px solid var(--navy);
+}
+.btn-outline:hover{background:var(--navy);color:#fff}
+.btn-white{
+  background:#fff;color:var(--navy);
+  box-shadow:var(--shadow-md);
+}
+.btn-white:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn-sm{padding:10px 20px;font-size:13px}
+.navbar{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--gray-200);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;max-width:var(--container);margin:0 auto;padding:0 24px;
+}
+.logo{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:22px;font-weight:700;color:var(--navy);
+  display:flex;align-items:center;gap:10px;
+  cursor:pointer;
+}
+.logo-mark{
+  width:38px;height:38px;background:var(--navy);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--orange);font-size:18px;font-weight:700;
+  letter-spacing:-.5px;
+}
+.logo-text{letter-spacing:-.3px}
+.logo-text span{color:var(--orange)}
+.nav-menu{display:flex;align-items:center;gap:32px}
+.nav-menu a{
+  font-size:14px;font-weight:500;color:var(--gray-900);
+  transition:color .2s;position:relative;cursor:pointer;
+}
+.nav-menu a:hover{color:var(--orange)}
+.nav-menu a::after{
+  content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;
+  background:var(--orange);transition:width .25s;
+}
+.nav-menu a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;padding:8px}
+.mobile-toggle span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+.hero{
+  position:relative;min-height:640px;
+  display:flex;align-items:center;
+  background:var(--navy);
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://aka.doubaocdn.com/s/tAuCBlFl7s') center/cover no-repeat;
+  opacity:.35;
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(22,45,84,.92) 0%,rgba(22,45,84,.7) 50%,rgba(22,45,84,.4) 100%);
+}
+.hero-content{
+  position:relative;z-index:2;
+  max-width:var(--container);margin:0 auto;padding:80px 24px;
+  width:100%;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(232,119,34,.15);border:1px solid rgba(232,119,34,.4);
+  color:#F5A623;font-size:13px;font-weight:600;
+  padding:8px 16px;border-radius:50px;margin-bottom:24px;
+}
+.hero-badge .dot{width:8px;height:8px;background:var(--orange-light);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{
+  font-size:clamp(36px,5vw,56px);color:#fff;
+  max-width:680px;margin-bottom:20px;
+}
+.hero h1 span{color:var(--orange-light)}
+.hero-sub{
+  font-size:18px;color:rgba(255,255,255,.8);
+  max-width:560px;margin-bottom:36px;line-height:1.7;
+}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px}
+.hero-trust{
+  display:flex;gap:40px;flex-wrap:wrap;
+  padding-top:32px;border-top:1px solid rgba(255,255,255,.15);
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);
+  color:#fff;font-size:14px;font-weight:500;
+  padding:10px 16px;border-radius:50px;
+  white-space:nowrap;
+}
+.hero-tag-icon{font-size:16px;flex-shrink:0}
+.section{padding:96px 0}
+.section-header{text-align:center;max-width:720px;margin:0 auto 56px}
+.section-header .ship-tag{margin-bottom:16px}
+.section-header h2{
+  font-size:clamp(28px,3.5vw,40px);margin-bottom:16px;
+}
+.section-header p{
+  font-size:17px;color:var(--gray-600);line-height:1.7;
+}
+.process-section{background:var(--cream)}
+.process-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+  position:relative;
+}
+.process-step{
+  padding:0 24px;position:relative;
+}
+.process-step:not(:last-child)::after{
+  content:'';position:absolute;top:36px;right:-12px;
+  width:24px;height:2px;background:var(--orange);opacity:.4;
+}
+.step-circle{
+  width:72px;height:72px;border-radius:50%;
+  background:#fff;border:2px solid var(--orange);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:24px;font-weight:700;color:var(--orange);
+  margin-bottom:24px;position:relative;z-index:2;
+  box-shadow:0 4px 12px rgba(232,119,34,.15);
+}
+.process-step h3{font-size:18px;margin-bottom:10px}
+.process-step p{font-size:14px;color:var(--gray-600);line-height:1.7;margin-bottom:16px}
+.deliverables-section{background:#fff}
+.deliverables-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:24px;
+}
+.deliverable-card{
+  background:var(--cream);border-radius:var(--radius);padding:32px 28px;
+  border-left:4px solid var(--orange);
+  transition:all .3s;
+}
+.deliverable-card:hover{box-shadow:var(--shadow-md);transform:translateX(4px)}
+.deliverable-card .d-icon{
+  width:40px;height:40px;background:rgba(22,45,84,.08);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--navy);margin-bottom:16px;
+}
+.deliverable-card h3{font-size:17px;margin-bottom:8px}
+.deliverable-card p{font-size:14px;color:var(--gray-600);line-height:1.7}
+.case-section{background:var(--navy);color:#fff}
+.case-section .section-header h2{color:#fff}
+.case-section .section-header p{color:rgba(255,255,255,.7)}
+.case-card{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius-lg);padding:48px 40px;max-width:820px;margin:0 auto;
+}
+.case-card h3{color:var(--orange-light);font-size:24px;margin-bottom:16px}
+.case-card p{color:rgba(255,255,255,.8);font-size:16px;line-height:1.8;margin-bottom:24px}
+.faq-section{background:var(--cream)}
+.faq-list{max-width:820px;margin:0 auto}
+.faq-item{
+  background:#fff;border-radius:var(--radius);margin-bottom:12px;
+  border:1px solid var(--gray-200);overflow:hidden;
+  transition:box-shadow .3s;
+}
+.faq-item:hover{box-shadow:var(--shadow-sm)}
+.faq-question{
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  padding:22px 28px;text-align:left;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:16px;font-weight:600;color:var(--navy);
+  gap:16px;
+}
+.faq-question .faq-icon{
+  width:28px;height:28px;flex-shrink:0;border-radius:50%;
+  background:rgba(232,119,34,.1);color:var(--orange);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .3s,background .3s;
+  font-size:18px;font-weight:400;
+}
+.faq-item.active .faq-icon{transform:rotate(45deg);background:var(--orange);color:#fff}
+.faq-answer{
+  max-height:0;overflow:hidden;transition:max-height .35s ease;
+}
+.faq-answer-inner{
+  padding:0 28px 24px;font-size:14px;color:var(--gray-600);line-height:1.8;
+}
+.cta-banner{
+  background:var(--navy);padding:72px 0;position:relative;overflow:hidden;
+}
+.cta-banner::before{
+  content:'';position:absolute;top:-50%;right:-10%;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,119,34,.15),transparent 70%);
+}
+.cta-banner .container{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:40px;flex-wrap:wrap;position:relative;z-index:2;
+}
+.cta-banner h2{color:#fff;font-size:32px;max-width:520px}
+.cta-banner p{color:rgba(255,255,255,.7);font-size:16px;margin-top:8px}
+.note-box{
+  background:#FFF8F0;border:1px solid rgba(232,119,34,.2);
+  border-radius:var(--radius);padding:24px 28px;
+  text-align:center;max-width:720px;margin:0 auto;
+}
+.note-box p{font-size:15px;color:var(--navy);line-height:1.7}
+.footer{background:var(--navy);color:rgba(255,255,255,.7);padding:72px 0 0}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;
+  padding-bottom:48px;
+}
+.footer-brand .logo{color:#fff;margin-bottom:16px}
+.footer-brand .logo-mark{background:var(--orange);color:#fff}
+.footer-brand p{font-size:14px;line-height:1.8;margin-bottom:20px}
+.footer-social{display:flex;gap:12px}
+.footer-social a{
+  width:36px;height:36px;border-radius:8px;
+  background:rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.7);transition:all .2s;
+}
+.footer-social a:hover{background:var(--orange);color:#fff}
+.footer-col h4{
+  color:#fff;font-size:14px;text-transform:uppercase;
+  letter-spacing:.1em;margin-bottom:20px;
+}
+.footer-col li{margin-bottom:10px}
+.footer-col a{font-size:14px;transition:color .2s;cursor:pointer}
+.footer-col a:hover{color:var(--orange-light)}
+.footer-contact li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:14px;margin-bottom:14px;line-height:1.6;
+}
+.footer-contact .fc-icon{
+  width:20px;height:20px;flex-shrink:0;color:var(--orange-light);margin-top:2px;
+}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);
+  padding:24px 0;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:12px;
+  font-size:13px;
+}
+.footer-bottom a{color:var(--orange-light);cursor:pointer}
+@media(max-width:1024px){
+  .process-grid{grid-template-columns:repeat(2,1fr);gap:40px}
+  .process-step:not(:last-child)::after{display:none}
+  .deliverables-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-menu{display:none}
+  .mobile-toggle{display:flex}
+  .nav-cta .btn-outline{display:none}
+  .hero{min-height:560px}
+  .hero-trust{gap:16px}
+  .hero-tag{font-size:12px;padding:8px 14px;white-space:normal}
+  .section{padding:64px 0}
+  .process-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .cta-banner .container{flex-direction:column;text-align:center}
+}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html">
+      <span class="logo-mark">M</span>
+      <span class="logo-text">mile<span>bond</span></span>
+    </a>
+    <div class="nav-menu" id="navMenu">
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#categories">Categories</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="../index.html">Blog</a>
+    </div>
+    <div class="nav-cta">
+      <a href="../index.html#contact" class="btn btn-outline btn-sm">Contact Us</a>
+      <a href="../index.html#quote" class="btn btn-primary btn-sm">Free Quote</a>
+    </div>
+    <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="corrugated-strip"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span> WAREHOUSING & SHIPPING (supplementary service)
+    </div>
+    <h1>China Warehousing & Shipping — Consolidate Goods From Multiple Suppliers</h1>
+    <p class="hero-sub">
+      When you source from several factories, we receive, store, consolidate and ship all cargo together. Support sea, air, express and DDP door-to-door delivery to Amazon FBA or your local warehouse. This service is included for all our sourcing clients.
+    </p>
+    <div class="hero-actions">
+      <a href="../index.html#quote" class="btn btn-primary">Get Shipping Plan</a>
+      <a href="#process" class="btn btn-white">How Consolidation Works</a>
+    </div>
+    <div class="hero-trust">
+      <span class="hero-tag"><span class="hero-tag-icon">&#128230;</span> 1-Month Free Storage</span>
+      <span class="hero-tag"><span class="hero-tag-icon">&#128274;</span> Multi-supplier Consolidation</span>
+      <span class="hero-tag"><span class="hero-tag-icon">&#127758;</span> DDP Door-to-Door</span>
+      <span class="hero-tag"><span class="hero-tag-icon">&#128230;</span> Amazon FBA Ready</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process-section" id="process">
+  <div class="container">
+    <div class="section-header">
+      <span class="ship-tag">How It Works</span>
+      <h2>How Our Warehousing & Shipping Works</h2>
+      <p>A streamlined 5-step process from warehouse receiving to final delivery — making multi-supplier logistics simple and cost-effective.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-circle">1</div>
+        <h3>Warehouse Receiving</h3>
+        <p>Receive goods from different suppliers into our China warehouse</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">2</div>
+        <h3>Cargo Checking</h3>
+        <p>Count quantity, do simple appearance check when goods arrive at warehouse</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">3</div>
+        <h3>Consolidation &amp; Repack</h3>
+        <p>Merge multiple batches, replace cartons or add FBA labels upon request</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">4</div>
+        <h3>Shipping Solution Selection</h3>
+        <p>Match sea / air / express according to your timeline &amp; budget</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">5</div>
+        <h3>Dispatch &amp; Tracking</h3>
+        <p>Book shipment, provide tracking number until goods arrive destination</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section class="section deliverables-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="ship-tag">What You Get</span>
+      <h2>Included Warehousing &amp; Shipping Benefits</h2>
+      <p>Every sourcing client enjoys these warehousing and shipping advantages at no extra cost.</p>
+    </div>
+    <div class="deliverables-grid">
+      <div class="deliverable-card">
+        <div class="d-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <h3>1-Month Free Warehouse Storage</h3>
+        <p>Enjoy 30 days of complimentary storage for all sourcing client orders. Extended storage available at transparent rates with advance notice.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="d-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+        </div>
+        <h3>Multi-Supplier Cargo Consolidation</h3>
+        <p>Combine shipments from multiple factories into one optimized load. Reduce freight costs and simplify your logistics with a single consolidated shipment.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="d-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <h3>Amazon FBA Label &amp; Prep Service</h3>
+        <p>Full FBA preparation including label sticking, carton compliance, and packaging requirements. Ready-to-ship directly to Amazon warehouses worldwide.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="d-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>DDP Shipping Covering Duty &amp; Tax</h3>
+        <p>Door-to-door delivery with duties and taxes included for major markets including US, EU, Canada, and Australia. No hidden costs, no customs surprises.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPORTANT NOTE -->
+<section class="section" style="padding-top:0;padding-bottom:64px">
+  <div class="container">
+    <div class="note-box">
+      <p><strong>Warehousing &amp; shipping is the final step of our one-stop sourcing service.</strong> <a href="./product-sourcing.html" style="color:var(--orange);font-weight:600;text-decoration:underline">Start your sourcing project</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- CASE HIGHLIGHT -->
+<section class="section case-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="ship-tag" style="color:var(--orange-light);background:rgba(245,166,35,.12);border-color:rgba(245,166,35,.3)">Case Highlight</span>
+      <h2>Real Results From Our Consolidation Service</h2>
+      <p>See how we help clients save on freight and streamline multi-supplier logistics.</p>
+    </div>
+    <div class="case-card">
+      <h3>Consolidate 4-Supplier Cargo for Amazon FBA</h3>
+      <p>One client purchased goods from four different factories. We received all batches in warehouse, consolidated into one container, finished FBA prep and delivered to Amazon warehouse with DDP term. Client saved much freight cost.</p>
+      <a href="#" class="btn btn-outline" style="color:var(--orange-light);border-color:var(--orange-light)">Read Full Case Study</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="ship-tag">FAQ</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>Common questions about our warehousing and shipping services.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">
+          How long can I use free storage?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We provide 1-month free storage for our sourcing clients, extra-time storage cost will be notified in advance.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Can you ship directly to Amazon FBA warehouse?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes, we support FBA label sticking, carton prep and ship to Amazon warehouses globally.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Do you offer DDP shipping?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes, DDP door-to-door service is available for main markets including US, EU, Canada and Australia.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <div>
+      <h2>Simplify Your Logistics Workflow</h2>
+      <p>Warehouse consolidation and one-stop shipping for multi-factory sourcing.</p>
+    </div>
+    <a href="../index.html#quote" class="btn btn-primary" style="font-size:16px;padding:16px 32px">Get My Sourcing Quote</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="../index.html"><span class="logo-mark">M</span><span class="logo-text" style="color:#fff">mile<span style="color:var(--orange-light)">bond</span></span></a>
+        <p>Your trusted one-stop China sourcing agent based in Yiwu. From product sourcing to global shipping, we handle it all — so you can focus on growing your business.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#162D54"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul><li><a href="../index.html#services">Product Sourcing</a></li><li><a href="../index.html#services">Private Label</a></li><li><a href="../index.html#services">Quality Control</a></li><li><a href="../index.html#services">Amazon FBA</a></li><li><a href="../index.html#services">Dropshipping</a></li><li><a href="../index.html#services">Warehousing</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul><li><a href="../index.html">Sourcing Guide</a></li><li><a href="../index.html">Blog</a></li><li><a href="../index.html#faq">FAQ</a></li><li><a href="../index.html">Yiwu Market Guide</a></li><li><a href="../index.html">Alibaba Guide</a></li><li><a href="../index.html">Free Ebook</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-contact">
+          <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Shengli Road, Yiwu, Zhejiang, China</li>
+          <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>+86 150-5796-0102</li>
+          <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>info@milebond.com</li>
+          <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Mon–Sat: 9:00 AM – 6:00 PM (CST)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 MileBond. All rights reserved.</span>
+      <span style="font-size:12px;display:block;margin-top:4px;">Powered by MileBond Supply Chain</span>
+      <span><a>Privacy Policy</a> &nbsp;|&nbsp; <a>Terms of Service</a> &nbsp;|&nbsp; <a href="../index.html#quote">Get a Free Quote</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+  var navMenu = document.getElementById('navMenu');
+  if (navMenu.style.display === 'flex') { navMenu.style.display = ''; }
+  else {
+    navMenu.style.display = 'flex'; navMenu.style.position = 'absolute'; navMenu.style.top = '72px';
+    navMenu.style.left = '0'; navMenu.style.right = '0'; navMenu.style.flexDirection = 'column';
+    navMenu.style.background = '#fff'; navMenu.style.padding = '24px'; navMenu.style.gap = '16px';
+    navMenu.style.boxShadow = '0 8px 24px rgba(0,0,0,.1)';
+  }
+}
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = btn.parentElement;
+    var answer = item.querySelector('.faq-answer');
+    var isActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('active'); i.querySelector('.faq-answer').style.maxHeight = null; });
+    if (!isActive) { item.classList.add('active'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Label & OEM Sourcing China | Low MOQ Custom Manufacturing</title>
+  <meta name="description" content="Private label and OEM sourcing service from China. MOQ starting from $50, sample turnaround 3-7 days. Tooling protection and product compliance verification included.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+/* ============ RESET & BASE ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Manrope',system-ui,-apple-system,sans-serif;
+  color:#1A1A1A;
+  background:#F8F6F1;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,h5{font-family:'Space Grotesk','Manrope',sans-serif;font-weight:700;line-height:1.15;color:#162D54}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+ul{list-style:none}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+
+/* ============ DESIGN TOKENS ============ */
+:root{
+  --navy:#162D54;
+  --navy-light:#243E6B;
+  --orange:#E87722;
+  --orange-light:#F5A623;
+  --cream:#F8F6F1;
+  --white:#FFFFFF;
+  --gray-900:#1A1A1A;
+  --gray-600:#6B7280;
+  --gray-400:#9CA3AF;
+  --gray-200:#E5E7EB;
+  --steel:#3D5A80;
+  --shadow-sm:0 1px 3px rgba(22,45,84,.08);
+  --shadow-md:0 4px 16px rgba(22,45,84,.1);
+  --shadow-lg:0 12px 40px rgba(22,45,84,.14);
+  --radius:10px;
+  --radius-lg:16px;
+  --container:1200px;
+}
+
+/* ============ CONTAINER ============ */
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+
+/* ============ SIGNATURE: CONTAINER CORRUGATED STRIP ============ */
+.corrugated-strip{
+  height:8px;
+  background:repeating-linear-gradient(
+    90deg,
+    var(--orange) 0px,var(--orange) 6px,
+    #C95F12 6px,#C95F12 8px,
+    var(--orange) 8px,var(--orange) 14px,
+    #D4681A 14px,#D4681A 16px
+  );
+}
+
+/* ============ SHIPPING LABEL TAG ============ */
+.ship-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'Space Grotesk',monospace;
+  font-size:11px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--orange);
+  background:rgba(232,119,34,.08);
+  border:1px solid rgba(232,119,34,.25);
+  padding:5px 12px;border-radius:4px;
+}
+.ship-tag::before{
+  content:'';width:6px;height:6px;background:var(--orange);border-radius:50%;
+}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:600;font-size:15px;
+  padding:14px 28px;border-radius:8px;
+  transition:all .25s ease;
+  white-space:nowrap;
+}
+.btn-primary{
+  background:var(--orange);color:#fff;
+  box-shadow:0 4px 14px rgba(232,119,34,.35);
+}
+.btn-primary:hover{background:#D4681A;transform:translateY(-2px);box-shadow:0 6px 20px rgba(232,119,34,.45)}
+.btn-outline{
+  background:transparent;color:var(--navy);
+  border:2px solid var(--navy);
+}
+.btn-outline:hover{background:var(--navy);color:#fff}
+.btn-white{
+  background:#fff;color:var(--navy);
+  box-shadow:var(--shadow-md);
+}
+.btn-white:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn-sm{padding:10px 20px;font-size:13px}
+
+/* ============ NAVBAR ============ */
+.navbar{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--gray-200);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;max-width:var(--container);margin:0 auto;padding:0 24px;
+}
+.logo{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:22px;font-weight:700;color:var(--navy);
+  display:flex;align-items:center;gap:10px;
+  cursor:pointer;
+}
+.logo-mark{
+  width:38px;height:38px;background:var(--navy);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--orange);font-size:18px;font-weight:700;
+  letter-spacing:-.5px;
+}
+.logo-text{letter-spacing:-.3px}
+.logo-text span{color:var(--orange)}
+.nav-menu{display:flex;align-items:center;gap:32px}
+.nav-menu a{
+  font-size:14px;font-weight:500;color:var(--gray-900);
+  transition:color .2s;position:relative;cursor:pointer;
+}
+.nav-menu a:hover{color:var(--orange)}
+.nav-menu a::after{
+  content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;
+  background:var(--orange);transition:width .25s;
+}
+.nav-menu a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;padding:8px}
+.mobile-toggle span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;min-height:640px;
+  display:flex;align-items:center;
+  background:var(--navy);
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://aka.doubaocdn.com/s/tAuCBlFl7s') center/cover no-repeat;
+  opacity:.35;
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(22,45,84,.92) 0%,rgba(22,45,84,.7) 50%,rgba(22,45,84,.4) 100%);
+}
+.hero-content{
+  position:relative;z-index:2;
+  max-width:var(--container);margin:0 auto;padding:80px 24px;
+  width:100%;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(232,119,34,.15);border:1px solid rgba(232,119,34,.4);
+  color:#F5A623;font-size:13px;font-weight:600;
+  padding:8px 16px;border-radius:50px;margin-bottom:24px;
+}
+.hero-badge .dot{width:8px;height:8px;background:var(--orange-light);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{
+  font-size:clamp(36px,5vw,56px);color:#fff;
+  max-width:680px;margin-bottom:20px;
+}
+.hero h1 span{color:var(--orange-light)}
+.hero-sub{
+  font-size:18px;color:rgba(255,255,255,.8);
+  max-width:560px;margin-bottom:36px;line-height:1.7;
+}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px}
+.hero-trust{
+  display:flex;gap:40px;flex-wrap:wrap;
+  padding-top:32px;border-top:1px solid rgba(255,255,255,.15);
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);
+  color:#fff;font-size:14px;font-weight:500;
+  padding:10px 16px;border-radius:50px;
+  white-space:nowrap;
+}
+.hero-tag-icon{font-size:16px;flex-shrink:0}
+
+/* ============ SECTION COMMON ============ */
+.section{padding:96px 0}
+.section-header{text-align:center;max-width:720px;margin:0 auto 56px}
+.section-header .ship-tag{margin-bottom:16px}
+.section-header h2{
+  font-size:clamp(28px,3.5vw,40px);margin-bottom:16px;
+}
+.section-header p{
+  font-size:17px;color:var(--gray-600);line-height:1.7;
+}
+
+/* ============ PROCESS ============ */
+.process-section{background:var(--cream)}
+.process-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+  position:relative;
+}
+.process-step{
+  padding:0 24px;position:relative;
+}
+.process-step:not(:last-child)::after{
+  content:'';position:absolute;top:36px;right:-12px;
+  width:24px;height:2px;background:var(--orange);opacity:.4;
+}
+.step-circle{
+  width:72px;height:72px;border-radius:50%;
+  background:#fff;border:2px solid var(--orange);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:24px;font-weight:700;color:var(--orange);
+  margin-bottom:24px;position:relative;z-index:2;
+  box-shadow:0 4px 12px rgba(232,119,34,.15);
+}
+.process-step h3{font-size:18px;margin-bottom:10px}
+.process-step p{font-size:14px;color:var(--gray-600);line-height:1.7;margin-bottom:16px}
+
+/* ============ DELIVERABLES ============ */
+.deliverables-section{background:#fff}
+.deliverables-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:24px;
+}
+.deliverable-card{
+  background:var(--cream);border-radius:var(--radius);padding:32px 28px;
+  border-left:4px solid var(--orange);
+  transition:all .3s;
+}
+.deliverable-card:hover{box-shadow:var(--shadow-md);transform:translateX(4px)}
+.deliverable-card .d-icon{
+  width:40px;height:40px;background:rgba(22,45,84,.08);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--navy);margin-bottom:16px;
+}
+.deliverable-card h3{font-size:17px;margin-bottom:8px}
+.deliverable-card p{font-size:14px;color:var(--gray-600);line-height:1.7}
+
+/* ============ RELATED SERVICES ============ */
+.related-section{background:var(--cream)}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.related-card{
+  background:#fff;border-radius:var(--radius-lg);padding:32px 28px;
+  border:1px solid var(--gray-200);
+  transition:all .3s;text-align:center;
+}
+.related-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent}
+.related-card .r-icon{
+  width:48px;height:48px;background:var(--navy);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--orange-light);margin:0 auto 16px;
+}
+.related-card h3{font-size:18px;margin-bottom:8px}
+.related-card p{font-size:14px;color:var(--gray-600);margin-bottom:16px;line-height:1.6}
+.related-card .r-link{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:13px;font-weight:600;color:var(--orange);
+  display:inline-flex;align-items:center;gap:6px;
+  transition:gap .2s;
+}
+.related-card .r-link:hover{gap:10px}
+
+/* ============ CASE HIGHLIGHT ============ */
+.case-section{background:var(--navy);color:#fff}
+.case-section .section-header h2{color:#fff}
+.case-section .section-header p{color:rgba(255,255,255,.7)}
+.case-card{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius-lg);padding:48px 40px;max-width:820px;margin:0 auto;
+}
+.case-card h3{color:var(--orange-light);font-size:24px;margin-bottom:16px}
+.case-card p{color:rgba(255,255,255,.8);font-size:16px;line-height:1.8;margin-bottom:24px}
+
+/* ============ FAQ ============ */
+.faq-section{background:var(--cream)}
+.faq-list{max-width:820px;margin:0 auto}
+.faq-item{
+  background:#fff;border-radius:var(--radius);margin-bottom:12px;
+  border:1px solid var(--gray-200);overflow:hidden;
+  transition:box-shadow .3s;
+}
+.faq-item:hover{box-shadow:var(--shadow-sm)}
+.faq-question{
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  padding:22px 28px;text-align:left;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:16px;font-weight:600;color:var(--navy);
+  gap:16px;
+}
+.faq-question .faq-icon{
+  width:28px;height:28px;flex-shrink:0;border-radius:50%;
+  background:rgba(232,119,34,.1);color:var(--orange);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .3s,background .3s;
+  font-size:18px;font-weight:400;
+}
+.faq-item.active .faq-icon{transform:rotate(45deg);background:var(--orange);color:#fff}
+.faq-answer{
+  max-height:0;overflow:hidden;transition:max-height .35s ease;
+}
+.faq-answer-inner{
+  padding:0 28px 24px;font-size:14px;color:var(--gray-600);line-height:1.8;
+}
+
+/* ============ CTA BANNER ============ */
+.cta-banner{
+  background:var(--navy);padding:72px 0;position:relative;overflow:hidden;
+}
+.cta-banner::before{
+  content:'';position:absolute;top:-50%;right:-10%;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,119,34,.15),transparent 70%);
+}
+.cta-banner .container{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:40px;flex-wrap:wrap;position:relative;z-index:2;
+}
+.cta-banner h2{color:#fff;font-size:32px;max-width:520px}
+.cta-banner p{color:rgba(255,255,255,.7);font-size:16px;margin-top:8px}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--navy);color:rgba(255,255,255,.7);padding:72px 0 0}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;
+  padding-bottom:48px;
+}
+.footer-brand .logo{color:#fff;margin-bottom:16px}
+.footer-brand .logo-mark{background:var(--orange);color:#fff}
+.footer-brand p{font-size:14px;line-height:1.8;margin-bottom:20px}
+.footer-social{display:flex;gap:12px}
+.footer-social a{
+  width:36px;height:36px;border-radius:8px;
+  background:rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.7);transition:all .2s;
+}
+.footer-social a:hover{background:var(--orange);color:#fff}
+.footer-col h4{
+  color:#fff;font-size:14px;text-transform:uppercase;
+  letter-spacing:.1em;margin-bottom:20px;
+}
+.footer-col li{margin-bottom:10px}
+.footer-col a{font-size:14px;transition:color .2s;cursor:pointer}
+.footer-col a:hover{color:var(--orange-light)}
+.footer-contact li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:14px;margin-bottom:14px;line-height:1.6;
+}
+.footer-contact .fc-icon{
+  width:20px;height:20px;flex-shrink:0;color:var(--orange-light);margin-top:2px;
+}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);
+  padding:24px 0;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:12px;
+  font-size:13px;
+}
+.footer-bottom a{color:var(--orange-light);cursor:pointer}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1024px){
+  .process-grid{grid-template-columns:repeat(2,1fr);gap:40px}
+  .process-step:not(:last-child)::after{display:none}
+  .deliverables-grid{grid-template-columns:1fr}
+  .related-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-menu{display:none}
+  .mobile-toggle{display:flex}
+  .nav-cta .btn-outline{display:none}
+  .hero{min-height:560px}
+  .hero-trust{gap:16px}
+  .hero-tag{font-size:12px;padding:8px 14px;white-space:normal}
+  .section{padding:64px 0}
+  .process-grid{grid-template-columns:1fr}
+  .related-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .cta-banner .container{flex-direction:column;text-align:center}
+}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html">
+      <span class="logo-mark">M</span>
+      <span class="logo-text">mile<span>bond</span></span>
+    </a>
+    <div class="nav-menu" id="navMenu">
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#categories">Categories</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="../index.html">Blog</a>
+    </div>
+    <div class="nav-cta">
+      <a href="../index.html#contact" class="btn btn-outline btn-sm">Contact Us</a>
+      <a href="../index.html#quote" class="btn btn-primary btn-sm">Free Quote</a>
+    </div>
+    <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="corrugated-strip"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span> PRIVATE LABEL & OEM
+    </div>
+    <h1>Private Label & OEM Sourcing Agent China — <span>Custom Your Brand Products</span></h1>
+    <p class="hero-sub">Launch your branded goods without huge investment. We manage custom tooling, labeling, packaging adjustment, sample iteration and market compliance check. Tooling protection agreement keeps your exclusive design safe.</p>
+    <div class="hero-actions">
+      <a href="../index.html#quote" class="btn btn-primary">Request Custom Quote</a>
+      <a href="#process" class="btn btn-white">View OEM Process</a>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-tag">
+        <span class="hero-tag-icon">&#9989;</span> MOQ from $50
+      </div>
+      <div class="hero-tag">
+        <span class="hero-tag-icon">&#128230;</span> 3-7 Days Sampling
+      </div>
+      <div class="hero-tag">
+        <span class="hero-tag-icon">&#128274;</span> Tooling Protection
+      </div>
+      <div class="hero-tag">
+        <span class="hero-tag-icon">&#128221;</span> Compliance Pre-check
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process-section" id="process">
+  <div class="container">
+    <div class="section-header">
+      <span class="ship-tag">HOW IT WORKS</span>
+      <h2>How Our Private Label & OEM Works</h2>
+      <p>A structured 5-step process to bring your branded products from concept to delivery — every step transparent and controlled.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-circle">01</div>
+        <h3>Requirement Confirmation</h3>
+        <p>Confirm custom logo, packaging, product modification, target market and certification requirements</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">02</div>
+        <h3>Factory Matching &amp; Tooling Evaluation</h3>
+        <p>Screen factories with custom-making capability, evaluate mould &amp; tooling cost</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">03</div>
+        <h3>Sample Iteration</h3>
+        <p>Develop custom samples, revise until you confirm final version</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">04</div>
+        <h3>Engineering Change Control</h3>
+        <p>Standard process for any spec adjustment during mass-production to prevent quality drift</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">05</div>
+        <h3>Mass-production &amp; Compliance Check</h3>
+        <p>Production tracking + pre-shipment compliance document verification. <a href="./quality-control.html" style="color:var(--orange);text-decoration:underline;">See our compliance check process &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section class="section deliverables-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="ship-tag">WHAT YOU GET</span>
+      <h2>Comprehensive Private Label Deliverables</h2>
+      <p>Everything you need to protect your brand and ensure quality across every batch.</p>
+    </div>
+    <div class="deliverables-grid">
+      <div class="deliverable-card">
+        <div class="d-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3>Controlled Engineering Change Management</h3>
+        <p>Standardized process for any spec adjustment during mass-production to prevent quality drift and ensure consistency.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="d-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3>Formal Tooling Protection Agreement</h3>
+        <p>Legally binding agreement with factories to protect your exclusive mould ownership and prevent unauthorized use.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="d-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Pre-check for CE / FCC / ROHS / UKCA</h3>
+        <p>We verify required certification lists before production according to your target sales market, guiding you through compliance.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="d-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Sample-Fee Refund Policy</h3>
+        <p>Qualified bulk orders receive sample-fee refunds, reducing your upfront cost risk when moving to mass production.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE HIGHLIGHT -->
+<section class="section case-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="ship-tag">CASE STUDY</span>
+      <h2>Startup Brand Launched Private-Label Goods With Small MOQ</h2>
+      <p>Real results from real clients. Here's how we helped a small brand go from concept to market.</p>
+    </div>
+    <div class="case-card">
+      <h3>From Zero to First Batch &mdash; A Startup Success Story</h3>
+      <p>A small startup wanted custom branded home goods but could not meet high factory MOQ. We matched flexible OEM factories, completed logo &amp; packaging customization, passed EU compliance check, and launched their first batch successfully.</p>
+      <a href="#" class="btn btn-white">Read Full Case Study</a>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED SERVICES -->
+<section class="section related-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="ship-tag">RELATED SERVICES</span>
+      <h2>Explore Complementary Services</h2>
+      <p>Combine private label with our other sourcing and brand services for a complete supply chain solution.</p>
+    </div>
+    <div class="related-grid">
+      <div class="related-card">
+        <div class="r-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3>Product Sourcing</h3>
+        <p>Find the right products and suppliers from Yiwu market and across China for your business needs.</p>
+        <a href="./product-sourcing.html" class="r-link">Learn More &rarr;</a>
+      </div>
+      <div class="related-card">
+        <div class="r-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Amazon Brand Management</h3>
+        <p>Build and protect your brand on Amazon with our comprehensive brand registry and management services.</p>
+        <a href="./amazon-brand-management.html" class="r-link">Learn More &rarr;</a>
+      </div>
+      <div class="related-card">
+        <div class="r-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <h3>Quality Control</h3>
+        <p>Ensure your private-label products meet international standards with our inspection services.</p>
+        <a href="./quality-control.html" class="r-link">Learn More &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="ship-tag">FAQ</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>Common questions about our private label and OEM sourcing services.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What is your MOQ for private label?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Many projects can start from $50 order value, depending on product category and custom degree. We work with flexible factories that accommodate small-batch private label orders, making it accessible for startups and small brands.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can you protect my mould and tooling?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes. We sign formal tooling agreements with factories to protect your exclusive mould ownership. This legally binding contract ensures your custom tooling cannot be used for other clients or reproduced without your consent.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Do you handle product compliance for EU / US market?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We verify required certification lists before production, guide you to complete necessary compliance documents. Our team checks requirements for CE, FCC, ROHS, UKCA, and other standards based on your target sales market, helping you avoid costly customs issues.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <div>
+      <h2>Launch Your Private-Label Products</h2>
+      <p>Custom OEM &amp; ODM solution for startups and growing brands.</p>
+    </div>
+    <a href="../index.html#quote" class="btn btn-primary">Request Custom Quote</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="../index.html"><span class="logo-mark">M</span><span class="logo-text" style="color:#fff">mile<span style="color:var(--orange-light)">bond</span></span></a>
+        <p>Your trusted one-stop China sourcing agent based in Yiwu. From product sourcing to global shipping, we handle it all — so you can focus on growing your business.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#162D54"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul><li><a href="../index.html#services">Product Sourcing</a></li><li><a href="../index.html#services">Private Label</a></li><li><a href="../index.html#services">Quality Control</a></li><li><a href="../index.html#services">Amazon FBA</a></li><li><a href="../index.html#services">Dropshipping</a></li><li><a href="../index.html#services">Warehousing</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul><li><a href="../index.html">Sourcing Guide</a></li><li><a href="../index.html">Blog</a></li><li><a href="../index.html#faq">FAQ</a></li><li><a href="../index.html">Yiwu Market Guide</a></li><li><a href="../index.html">Alibaba Guide</a></li><li><a href="../index.html">Free Ebook</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-contact">
+          <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Shengli Road, Yiwu, Zhejiang, China</li>
+          <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>+86 150-5796-0102</li>
+          <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>info@milebond.com</li>
+          <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Mon–Sat: 9:00 AM – 6:00 PM (CST)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 MileBond. All rights reserved.</span>
+      <span style="font-size:12px;display:block;margin-top:4px;">Powered by MileBond Supply Chain</span>
+      <span><a>Privacy Policy</a> &nbsp;|&nbsp; <a>Terms of Service</a> &nbsp;|&nbsp; <a href="../index.html#quote">Get a Free Quote</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+  var navMenu = document.getElementById('navMenu');
+  if (navMenu.style.display === 'flex') { navMenu.style.display = ''; }
+  else {
+    navMenu.style.display = 'flex'; navMenu.style.position = 'absolute'; navMenu.style.top = '72px';
+    navMenu.style.left = '0'; navMenu.style.right = '0'; navMenu.style.flexDirection = 'column';
+    navMenu.style.background = '#fff'; navMenu.style.padding = '24px'; navMenu.style.gap = '16px';
+    navMenu.style.boxShadow = '0 8px 24px rgba(0,0,0,.1)';
+  }
+}
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = btn.parentElement;
+    var answer = item.querySelector('.faq-answer');
+    var isActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('active'); i.querySelector('.faq-answer').style.maxHeight = null; });
+    if (!isActive) { item.classList.add('active'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+  });
+});
+</script>
+
+</body>
+</html>
