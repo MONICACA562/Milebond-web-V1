@@ -188,12 +188,14 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   display:flex;gap:40px;flex-wrap:wrap;
   padding-top:32px;border-top:1px solid rgba(255,255,255,.15);
 }
-.hero-trust-item{color:rgba(255,255,255,.7)}
-.hero-trust-item strong{
-  display:block;font-family:'Space Grotesk',sans-serif;
-  font-size:28px;font-weight:700;color:#fff;
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);
+  color:#fff;font-size:14px;font-weight:500;
+  padding:10px 16px;border-radius:50px;
+  white-space:nowrap;
 }
-.hero-trust-item span{font-size:13px}
+.hero-tag-icon{font-size:16px;flex-shrink:0}
 
 /* ============ STATS BAR ============ */
 .stats-bar{
@@ -215,24 +217,13 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   font-weight:500;text-transform:uppercase;letter-spacing:.05em;
 }
 
-/* ============ FEATURED ON ============ */
-.featured-on{
-  padding:40px 0;background:var(--cream);
+/* ============ TRUST BAR ============ */
+.trust-bar{
+  padding:24px 0;background:var(--cream);
   border-bottom:1px solid var(--gray-200);
 }
-.featured-on p{
-  text-align:center;font-size:12px;font-weight:600;
-  text-transform:uppercase;letter-spacing:.15em;color:var(--gray-400);
-  margin-bottom:24px;
-}
-.featured-logos{
-  display:flex;justify-content:center;align-items:center;
-  gap:48px;flex-wrap:wrap;opacity:.5;
-}
-.featured-logos span{
-  font-family:'Space Grotesk',sans-serif;
-  font-size:18px;font-weight:700;color:var(--gray-600);
-  letter-spacing:.02em;
+.trust-bar p{
+  text-align:center;font-size:16px;color:#495057;font-weight:500;
 }
 
 /* ============ SECTION COMMON ============ */
@@ -799,8 +790,8 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   .mobile-toggle{display:flex}
   .nav-cta .btn-outline{display:none}
   .hero{min-height:560px}
-  .hero-trust{gap:24px}
-  .hero-trust-item strong{font-size:22px}
+  .hero-trust{gap:16px}
+.hero-tag{font-size:12px;padding:8px 14px;white-space:normal}
   .section{padding:64px 0}
   .biz-grid,.services-grid,.why-grid,.testimonial-grid,.buyer-grid,.blog-grid{grid-template-columns:1fr}
   .process-grid{grid-template-columns:1fr}
@@ -854,23 +845,23 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   <div class="hero-content">
     <div class="hero-badge">
       <span class="dot"></span>
-      Top 1% Yiwu Sourcing Agent — 10+ Years Experience
+      Yiwu-Based Supply Chain Partner · 10+ Years On the Ground
     </div>
-    <h1>One-Stop China Sourcing Agent: <span>From A to Z</span></h1>
+    <h1>China Sourcing Agent — <span>Cut Costs 30%+, MOQ from 1 Carton or $50</span></h1>
     <p class="hero-sub">
-      From startups to established brands, we deliver end-to-end sourcing solutions — supplier verification, manufacturing, quality control, warehousing and global shipping. No hidden fees. No surprises.
+      Unlike ordinary buying agents, we practice <strong>dynamic supply chain management</strong>: continuously optimizing your suppliers for cost, lead time and quality, foreseeing defects before production starts, and giving you real-time visibility at every milestone. From first-time founders to established brands.
     </p>
     <div class="hero-actions">
-      <a onclick="scrollToSection('quote')" class="btn btn-primary">Start Sourcing Now
+      <a onclick="scrollToSection('quote')" class="btn btn-primary">Get My Free Quote
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
-      <a onclick="scrollToSection('services')" class="btn btn-white">Explore Services</a>
+      <a onclick="scrollToSection('services')" class="btn btn-white">How It Works</a>
     </div>
     <div class="hero-trust">
-      <div class="hero-trust-item"><strong>30k+</strong><span>Products Sourced</span></div>
-      <div class="hero-trust-item"><strong>6,000+</strong><span>Happy Clients</span></div>
-      <div class="hero-trust-item"><strong>150+</strong><span>Million-Dollar Sellers</span></div>
-      <div class="hero-trust-item"><strong>500+</strong><span>Vetted Suppliers</span></div>
+      <div class="hero-tag"><span class="hero-tag-icon">💰</span><span>30%+ Cost Reduction</span></div>
+      <div class="hero-tag"><span class="hero-tag-icon">📦</span><span>MOQ 1 CTN / $50</span></div>
+      <div class="hero-tag"><span class="hero-tag-icon">🔍</span><span>Pre-production Quality Risk Control</span></div>
+      <div class="hero-tag"><span class="hero-tag-icon">📊</span><span>Real-time Order &amp; Quality Visibility</span></div>
     </div>
   </div>
 </section>
@@ -881,22 +872,18 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 <section class="stats-bar">
   <div class="container">
     <div class="stats-grid">
+      <div class="stat-item"><div class="stat-num">54,930<span>+</span></div><div class="stat-label">SKUs Managed</div></div>
+      <div class="stat-item"><div class="stat-num">6,943<span>+</span></div><div class="stat-label">Suppliers Managed</div></div>
+      <div class="stat-item"><div class="stat-num">50<span>+</span></div><div class="stat-label">Amazon Brands Served</div></div>
       <div class="stat-item"><div class="stat-num">10<span>+</span></div><div class="stat-label">Years in Yiwu Market</div></div>
-      <div class="stat-item"><div class="stat-num">48<span>h</span></div><div class="stat-label">Avg. Quote Turnaround</div></div>
-      <div class="stat-item"><div class="stat-num">30<span>+</span></div><div class="stat-label">Countries Served</div></div>
-      <div class="stat-item"><div class="stat-num">1<span>Mo</span></div><div class="stat-label">Free Warehouse Storage</div></div>
     </div>
   </div>
 </section>
 
-<!-- Featured On -->
-<section class="featured-on">
+<!-- Trust Bar -->
+<section class="trust-bar">
   <div class="container">
-    <p>As Featured In</p>
-    <div class="featured-logos">
-      <span>FORBES</span><span>Entrepreneur</span><span>Business Insider</span>
-      <span>Shopify</span><span>Amazon</span><span>Alibaba</span>
-    </div>
+    <p>Trusted by 50+ Amazon brands and small business founders across 30+ countries</p>
   </div>
 </section>
 
@@ -912,16 +899,16 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
         </div>
       </div>
       <div class="trusted-content">
-        <span class="ship-tag">Your Trusted Partner</span>
-        <h2 style="margin-top:16px">The Biggest Product Sourcing Company in Yiwu</h2>
-        <p>With a decade of sourcing experience right at the heart of the world's largest wholesale market, we provide comprehensive product sourcing services tailored to your needs. From market guidance to factory audits, we are your eyes and hands on the ground in China.</p>
+        <span class="ship-tag">YOUR TRUSTED SUPPLY CHAIN PARTNER</span>
+        <h2 style="margin-top:16px">We Don't Just Find Products — We Manage Your Entire China Supply Chain</h2>
+        <p>With 10+ years on the ground in Yiwu, we manage 54,000+ SKUs and 6,900+ suppliers across every major category — serving 50+ Amazon brands from product development to listing fulfillment and repeat-order management. We don't just take orders and disappear: we continuously optimize your supplier base for cost, lead time and quality, and we've rescued half-finished orders from failing factories, rerouted production, and got products back on shelf.</p>
         <div class="trusted-features">
-          <div class="trusted-feature"><div class="tf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div><strong>Quality Sourcing</strong><span>Reputable suppliers only</span></div></div>
-          <div class="trusted-feature"><div class="tf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><div><strong>Safe Shipping</strong><span>Door-to-door delivery</span></div></div>
-          <div class="trusted-feature"><div class="tf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><strong>24/7 Support</strong><span>Always here to help</span></div></div>
-          <div class="trusted-feature"><div class="tf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><strong>Competitive Prices</strong><span>Best landed cost</span></div></div>
+          <div class="trusted-feature"><div class="tf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><strong>Dynamic Cost Optimization</strong><span>Average 30%+ savings vs. market price</span></div></div>
+          <div class="trusted-feature"><div class="tf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div><strong>Low MOQ Flexibility</strong><span>Start from 1 carton or $50</span></div></div>
+          <div class="trusted-feature"><div class="tf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div><strong>Pre-production Quality Control</strong><span>Catch issues before they cost you</span></div></div>
+          <div class="trusted-feature"><div class="tf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div><strong>Full-chain Management</strong><span>From product dev to Amazon fulfillment &amp; reorders</span></div></div>
         </div>
-        <a onclick="scrollToSection('contact')" class="btn btn-primary">Contact This Sourcing Company</a>
+        <a onclick="scrollToSection('contact')" class="btn btn-primary">Talk to a Supply Chain Expert</a>
       </div>
     </div>
   </div>
