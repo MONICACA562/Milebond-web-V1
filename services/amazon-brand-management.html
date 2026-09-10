@@ -380,6 +380,18 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 }
 @media(max-width:768px){
   .nav-menu{display:none}
+      /* Mobile dropdown toggle */
+      .nav-menu .nav-dropdown .dropdown-menu{
+        position:static;top:auto;left:auto;right:auto;transform:none;
+        min-width:auto;width:100%;
+        box-shadow:none;border:none;background:transparent;
+        padding:8px 0;margin-top:8px;border-radius:8px;
+        opacity:1;visibility:visible;
+        display:none;
+      }
+      .nav-menu .nav-dropdown.open .dropdown-menu{display:block}
+      .nav-menu .nav-dropdown > .nav-trigger::after{display:none}
+      .nav-menu .nav-dropdown.open > .nav-trigger .chevron{transform:rotate(180deg)}
   .mobile-toggle{display:flex}
   .nav-cta .btn-outline{display:none}
   .hero{min-height:560px}
@@ -438,7 +450,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
     </a>
     <div class="nav-menu" id="navMenu">
         <div class="nav-dropdown">
-          <a class="nav-trigger" style="font-size:14px;font-weight:600;color:var(--navy);font-family:inherit">Services
+          <a class="nav-trigger" onclick="event.preventDefault();toggleDropdown(this)" style="font-size:14px;font-weight:600;color:var(--navy);font-family:inherit">Services
             <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown-menu">
@@ -452,7 +464,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
           </div>
         </div>
         <div class="nav-dropdown">
-          <a class="nav-trigger" style="font-size:14px;font-weight:600;color:var(--navy);font-family:inherit">Products
+          <a class="nav-trigger" onclick="event.preventDefault();toggleDropdown(this)" style="font-size:14px;font-weight:600;color:var(--navy);font-family:inherit">Products
             <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown-menu">
@@ -771,5 +783,8 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
 });
 </script>
 
-</body>
+
+<script>
+function toggleDropdown(el){var dd=el.closest('.nav-dropdown');if(!dd)return;document.querySelectorAll('.nav-dropdown.open').forEach(function(d){if(d!==dd)d.classList.remove('open')});dd.classList.toggle('open')}
+</script></body>
 </html>

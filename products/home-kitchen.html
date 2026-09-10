@@ -166,6 +166,18 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 }
 @media(768px){
   .nav-menu{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:24px;flex-direction:column;gap:16px;box-shadow:var(--shadow-lg);z-index:999}
+  /* Mobile dropdown toggle */
+  .nav-menu .nav-dropdown .dropdown-menu{
+    position:static;top:auto;left:auto;right:auto;transform:none;
+    min-width:auto;width:100%;
+    box-shadow:none;border:none;background:transparent;
+    padding:8px 0;margin-top:8px;border-radius:8px;
+    opacity:1;visibility:visible;
+    display:none;
+  }
+  .nav-menu .nav-dropdown.open .dropdown-menu{display:block}
+  .nav-menu .nav-dropdown > .nav-trigger::after{display:none}
+  .nav-menu .nav-dropdown.open > .nav-trigger .chevron{transform:rotate(180deg)}
   .mobile-toggle{display:flex}
   .nav-cta{display:none}
   .hero{padding:80px 0 60px}
@@ -225,7 +237,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
     </a>
     <div class="nav-menu" id="navMenu">
       <div class="nav-dropdown">
-          <a class="nav-trigger" style="font-size:14px;font-weight:600;color:var(--navy);font-family:inherit">Services
+          <a class="nav-trigger" onclick="event.preventDefault();toggleDropdown(this)" style="font-size:14px;font-weight:600;color:var(--navy);font-family:inherit">Services
             <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <div class="dropdown-menu">
@@ -239,7 +251,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
           </div>
         </div>
       <div class="nav-dropdown">
-        <a class="nav-trigger" style="font-size:14px;font-weight:600;color:var(--navy);transition:color .2s;cursor:pointer;display:flex;align-items:center;gap:4px" onclick="event.preventDefault()">Products
+        <a class="nav-trigger" onclick="event.preventDefault();toggleDropdown(this)" style="font-size:14px;font-weight:600;color:var(--navy);transition:color .2s;cursor:pointer;display:flex;align-items:center;gap:4px">Products
           <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
         <div class="dropdown-menu">
@@ -565,5 +577,8 @@ function toggleMobileMenu(){
   else{navMenu.style.display='flex';navMenu.style.position='absolute';navMenu.style.top='72px';navMenu.style.left='0';navMenu.style.right='0';navMenu.style.background='#fff';navMenu.style.padding='24px';navMenu.style.gap='16px';navMenu.style.boxShadow='0 8px 24px rgba(0,0,0,.1)';}
 }
 </script>
-</body>
+
+<script>
+function toggleDropdown(el){var dd=el.closest('.nav-dropdown');if(!dd)return;document.querySelectorAll('.nav-dropdown.open').forEach(function(d){if(d!==dd)d.classList.remove('open')});dd.classList.toggle('open')}
+</script></body>
 </html>
