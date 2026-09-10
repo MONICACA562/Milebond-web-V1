@@ -145,6 +145,68 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 .mobile-toggle{display:none;flex-direction:column;gap:5px;padding:8px}
 .mobile-toggle span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
 
+/* ============ NAV DROPDOWN ============ */
+.nav-dropdown{position:relative;cursor:pointer}
+.nav-dropdown > .nav-trigger{
+  display:flex;align-items:center;gap:4px;
+  font-size:14px;font-weight:500;color:var(--gray-900);
+  transition:color .2s;position:relative;
+}
+.nav-dropdown:hover > .nav-trigger{color:var(--orange)}
+.nav-dropdown:hover > .nav-trigger::after{width:100%}
+.nav-dropdown > .nav-trigger::after{
+  content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;
+  background:var(--orange);transition:width .25s;
+}
+.nav-dropdown > .nav-trigger .chevron{
+  width:14px;height:14px;transition:transform .2s;
+}
+.nav-dropdown:hover > .nav-trigger .chevron{transform:rotate(180deg)}
+.dropdown-menu{
+  position:absolute;top:calc(100% + 16px);right:-12px;
+  min-width:320px;background:#fff;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-lg);
+  border:1px solid var(--gray-200);
+  padding:8px;
+  opacity:0;visibility:hidden;transform:translateY(-8px);
+  transition:opacity .2s,transform .2s,visibility .2s;
+  z-index:1100;
+}
+.nav-dropdown:hover .dropdown-menu{
+  opacity:1;visibility:visible;transform:translateY(0);
+}
+.dropdown-menu::before{
+  content:'';position:absolute;top:-8px;right:24px;
+  width:14px;height:14px;background:#fff;
+  border-left:1px solid var(--gray-200);border-top:1px solid var(--gray-200);
+  transform:rotate(45deg);
+}
+.dropdown-item{
+  display:flex;align-items:center;gap:14px;
+  padding:12px 16px;border-radius:8px;
+  transition:background .15s,padding-left .15s;
+}
+.dropdown-item:hover{background:rgba(232,119,34,.06);padding-left:20px}
+.dropdown-item .di-icon{
+  width:36px;height:36px;border-radius:8px;
+  background:rgba(232,119,34,.1);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--orange);flex-shrink:0;
+  transition:background .15s;
+}
+.dropdown-item:hover .di-icon{background:var(--orange);color:#fff}
+.dropdown-item .di-text{flex:1}
+.dropdown-item .di-name{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:14px;font-weight:600;color:var(--navy);
+  margin-bottom:2px;
+}
+.dropdown-item:hover .di-name{color:var(--orange)}
+.dropdown-item .di-desc{
+  font-size:12px;color:var(--gray-400);line-height:1.4;
+}
+
 /* ============ HERO ============ */
 .hero{
   position:relative;min-height:640px;
@@ -320,15 +382,10 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   background:#fff;border-color:var(--gray-200);
   box-shadow:var(--shadow-md);transform:translateY(-4px);
 }
-.service-card .svc-num{
-  font-family:'Space Grotesk',monospace;
-  font-size:12px;font-weight:700;color:var(--orange);
-  letter-spacing:.1em;margin-bottom:16px;
-}
 .service-card .svc-icon{
-  width:44px;height:44px;background:var(--navy);border-radius:10px;
+  width:48px;height:48px;background:rgba(232,119,34,.1);border-radius:10px;
   display:flex;align-items:center;justify-content:center;
-  color:#fff;margin-bottom:20px;
+  color:var(--orange);margin-bottom:20px;
 }
 .service-card h3{font-size:18px;margin-bottom:10px}
 .service-card p{font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;margin-bottom:16px}
@@ -789,6 +846,28 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   .nav-menu{display:none}
   .mobile-toggle{display:flex}
   .nav-cta .btn-outline{display:none}
+  /* Mobile dropdown */
+  .nav-dropdown{width:100%}
+  .nav-dropdown > .nav-trigger{
+    width:100%;justify-content:space-between;cursor:pointer;
+  }
+  .nav-dropdown > .nav-trigger::after{display:none}
+  .nav-dropdown > .nav-trigger .chevron{
+    transition:transform .25s;
+  }
+  .nav-dropdown.open > .nav-trigger .chevron{transform:rotate(180deg)}
+  .dropdown-menu{
+    position:static;top:auto;right:auto;
+    min-width:auto;width:100%;
+    box-shadow:none;border:none;background:var(--cream);
+    padding:8px 0;margin-top:8px;border-radius:8px;
+    opacity:1;visibility:visible;transform:none;
+    display:none;
+  }
+  .nav-dropdown.open .dropdown-menu{display:block}
+  .dropdown-menu::before{display:none}
+  .dropdown-item{padding:10px 12px;margin-bottom:4px}
+  .dropdown-item:last-child{margin-bottom:0}
   .hero{min-height:560px}
   .hero-trust{gap:16px}
 .hero-tag{font-size:12px;padding:8px 14px;white-space:normal}
@@ -816,7 +895,37 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
       <span class="logo-text">mile<span>bond</span></span>
     </a>
     <div class="nav-menu" id="navMenu">
-      <a onclick="navigateTo('home','services')">Services</a>
+      <div class="nav-dropdown" id="navDropdown">
+        <a class="nav-trigger" onclick="event.preventDefault();toggleMobileDropdown()">Services
+          <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="services/product-sourcing.html">
+            <span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+            <span class="di-text"><span class="di-name">Product Sourcing</span><span class="di-desc">Find suppliers in 48h, save 30%+</span></span>
+          </a>
+          <a class="dropdown-item" href="services/private-label-oem.html">
+            <span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></span>
+            <span class="di-text"><span class="di-name">Private Label &amp; OEM</span><span class="di-desc">MOQ from $50, tooling protection</span></span>
+          </a>
+          <a class="dropdown-item" href="services/amazon-brand-management.html">
+            <span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+            <span class="di-text"><span class="di-name">Amazon Brand Management</span><span class="di-desc">50+ Amazon brands served, FBA ready</span></span>
+          </a>
+          <a class="dropdown-item" href="services/supply-chain-optimization.html">
+            <span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+            <span class="di-text"><span class="di-name">Supply Chain Optimization</span><span class="di-desc">Cost, lead-time &amp; quality upgrade</span></span>
+          </a>
+          <a class="dropdown-item" href="services/quality-control.html">
+            <span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            <span class="di-text"><span class="di-name">Quality Control</span><span class="di-desc">AQL 2.5 multi-stage inspection</span></span>
+          </a>
+          <a class="dropdown-item" href="services/warehousing-shipping.html">
+            <span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+            <span class="di-text"><span class="di-name">Warehousing &amp; Shipping</span><span class="di-desc">1-month free storage, DDP shipping</span></span>
+          </a>
+        </div>
+      </div>
       <a onclick="navigateTo('home','process')">How It Works</a>
       <a onclick="navigateTo('home','about')">About</a>
       <a onclick="navigateTo('home','categories')">Categories</a>
@@ -953,19 +1062,16 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   <div class="container">
     <div class="section-header">
       <span class="ship-tag">Our Services</span>
-      <h2>What Services Do We Provide?</h2>
-      <p>End-to-end sourcing solutions covering every step from product idea to final delivery</p>
+      <h2>Our Sourcing Services</h2>
+      <p>From product sourcing to final delivery — one partner for your entire China supply chain.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card"><div class="svc-num">SVC / 01</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3>Product Sourcing</h3><p>Access the most up-to-date products and market trends. Find reputable suppliers with budget-friendly goods to meet your branding needs.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
-      <div class="service-card"><div class="svc-num">SVC / 02</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div><h3>Private Label</h3><p>One-stop solution for private labels. Drive profitability, differentiation, and customer happiness while reducing manufacturing and shipping costs.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
-      <div class="service-card"><div class="svc-num">SVC / 03</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><h3>Photography &amp; Design</h3><p>Eye-catching products win hearts. Our proficient design team captures stunning images and creates ingenious designs to boost your sales.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
-      <div class="service-card"><div class="svc-num">SVC / 04</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h3>Quality Control</h3><p>Broad range of quality control services tailored to your needs. Get best-in-class products at competitive prices and reduce production costs.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
-      <div class="service-card"><div class="svc-num">SVC / 05</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div><h3>Dropshipping</h3><p>Affordable solutions for all your product and shipping choices. Grow your business with lower shipping fees and achieve success in no time.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
-      <div class="service-card"><div class="svc-num">SVC / 06</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h3>Amazon FBA Shipping</h3><p>We've helped countless retailers ship goods to Amazon FBA. Our team schedules, follows up and coordinates your items following FBA procedures.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
-      <div class="service-card"><div class="svc-num">SVC / 07</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><h3>Alibaba Shipping</h3><p>Quick forward freight service for Alibaba orders. Delivers based on your transportation needs — sea or air freight — with no hidden fees.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
-      <div class="service-card"><div class="svc-num">SVC / 08</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><polyline points="7.5 19.79 7.5 14.6 3 12"/><polyline points="21 12 16.5 14.6 16.5 19.79"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div><h3>FBA Prep</h3><p>Great reputation for fulfilling orders. We receive the order, inspect the product, and ship items to the Amazon warehouse — hassle-free.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
-      <div class="service-card"><div class="svc-num">SVC / 09</div><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3>Fulfillment &amp; Warehouse</h3><p>Store, inspect, and deliver your products fast from our China warehouse. You don't have to worry about inventory — we do the job.</p><a class="svc-link">Find More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      <a class="service-card" href="services/product-sourcing.html"><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3>Product Sourcing</h3><p>Find the right supplier in 48 hours. 54,000+ SKUs, 6,900+ vetted suppliers, average 30%+ cost savings.</p><span class="svc-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="service-card" href="services/private-label-oem.html"><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div><h3>Private Label &amp; OEM</h3><p>Custom your brand products with MOQ from $50. 3-7 day sampling, tooling protection, compliance pre-check.</p><span class="svc-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="service-card" href="services/amazon-brand-management.html"><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><h3>Amazon Brand Management</h3><p>Full-chain support for Amazon sellers. 50+ brands served, FBA prep &amp; labeling, compliance verification.</p><span class="svc-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="service-card" href="services/supply-chain-optimization.html"><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><h3>Supply Chain Optimization</h3><p>Upgrade cost, lead-time &amp; quality. Quarterly supplier performance review, dynamic price governance, troubled-order rescue.</p><span class="svc-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="service-card" href="services/quality-control.html"><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Quality Control</h3><p>Multi-stage inspection following AQL 2.5 standard. Pre-production, in-line, final &amp; loading supervision.</p><span class="svc-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a class="service-card" href="services/warehousing-shipping.html"><div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h3>Warehousing &amp; Shipping</h3><p>Consolidate multi-supplier shipments. 1-month free storage, Amazon FBA prep, DDP door-to-door delivery.</p><span class="svc-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
     </div>
   </div>
 </section>
@@ -1312,6 +1418,12 @@ function toggleMobileMenu() {
     navMenu.style.background = '#fff'; navMenu.style.padding = '24px'; navMenu.style.gap = '16px';
     navMenu.style.boxShadow = '0 8px 24px rgba(0,0,0,.1)';
   }
+}
+
+function toggleMobileDropdown() {
+  var dd = document.getElementById('navDropdown');
+  if (dd.classList.contains('open')) { dd.classList.remove('open'); }
+  else { dd.classList.add('open'); }
 }
 
 // ============ FAQ ACCORDION ============
