@@ -883,6 +883,29 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   .blog-search input{width:100%}
   .blog-search{width:100%}
 }
+/* Search Modal */
+.search-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.45);z-index:2000;align-items:flex-start;justify-content:center;padding-top:100px}
+.search-modal.open{display:flex}
+.search-box{background:#fff;border-radius:16px;width:100%;max-width:520px;box-shadow:0 20px 60px rgba(0,0,0,.2);overflow:hidden}
+.search-input-wrap{display:flex;align-items:center;padding:20px;border-bottom:1px solid var(--gray-200);gap:12px}
+.search-input-wrap svg{width:20px;height:20px;color:var(--gray-400);flex-shrink:0}
+.search-input-wrap input{flex:1;border:none;outline:none;font-size:16px;font-family:'Manrope',sans-serif;background:transparent}
+.search-results{max-height:400px;overflow-y:auto;padding:8px}
+.search-result{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:8px;cursor:pointer;transition:background .15s}
+.search-result:hover{background:var(--cream)}
+.search-result-icon{width:32px;height:32px;background:rgba(232,119,34,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--orange);flex-shrink:0}
+.search-result-text h4{font-size:14px;color:var(--navy);font-family:'Manrope',sans-serif;font-weight:600;margin-bottom:2px}
+.search-result-text p{font-size:12px;color:var(--gray-600)}
+.search-empty{padding:32px;text-align:center;color:var(--gray-400);font-size:14px}
+/* Nav mini dropdowns */
+.nav-mini .dropdown-menu{min-width:140px}
+.nav-mini-trigger{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--navy);cursor:pointer;padding:6px 10px;border-radius:6px;transition:background .15s}
+.nav-mini-trigger:hover{background:rgba(0,0,0,.04)}
+.nav-icon-btn{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--navy);transition:all .2s}
+.nav-icon-btn:hover{color:var(--orange);background:rgba(232,119,34,.08)}
+/* Language toast */
+.lang-toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:14px 28px;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,.2);z-index:3000;font-size:14px;opacity:0;transition:opacity .3s;pointer-events:none}
+.lang-toast.show{opacity:1}
 </style>
 </head>
 <body>
@@ -930,6 +953,29 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
           </a>
         </div>
       </div>
+      <div class="nav-dropdown">
+        <a class="nav-trigger" onclick="event.preventDefault()">Products
+          <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="products/home-kitchen.html">
+            <span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
+            <span class="di-text"><span class="di-name">Home &amp; Kitchen</span><span class="di-desc">Storage, kitchen gadgets, bakeware</span></span>
+          </a>
+          <a class="dropdown-item" href="products/pet-supplies.html">
+            <span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5c.67 0 1.35.09 2 .26"/><path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.5C4 18.582 7.582 21 12 21s8-2.418 8-7.56c0-1.061-.162-2.2-.493-3.253"/></svg></span>
+            <span class="di-text"><span class="di-name">Pet Supplies</span><span class="di-desc">Dog toys, cat accessories, grooming</span></span>
+          </a>
+          <a class="dropdown-item" href="products/beauty-tools.html">
+            <span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="5" ry="8"/><path d="M12 2v2"/><path d="M12 20v2"/></svg></span>
+            <span class="di-text"><span class="di-name">Beauty Tools</span><span class="di-desc">Skincare devices, facial tools, hair tools</span></span>
+          </a>
+          <a class="dropdown-item" href="products/arts-crafts.html">
+            <span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/></svg></span>
+            <span class="di-text"><span class="di-name">Arts &amp; Crafts</span><span class="di-desc">DIY kits, painting, jewelry making</span></span>
+          </a>
+        </div>
+      </div>
       <a onclick="navigateTo('home','process')">How It Works</a>
       <a onclick="navigateTo('home','about')">About</a>
       <a onclick="navigateTo('home','categories')">Categories</a>
@@ -937,6 +983,37 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
       <a onclick="navigateTo('blog')">Blog</a>
     </div>
     <div class="nav-cta">
+      <button class="nav-icon-btn" onclick="openSearch()" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <div class="nav-dropdown nav-mini">
+        <button class="nav-trigger nav-mini-trigger" onclick="event.preventDefault()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span id="currencyLabel">USD</span>
+          <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dropdown-menu" style="min-width:160px;left:auto;right:0;transform:translateX(0)">
+          <a class="dropdown-item" onclick="setCurrency('USD','$');return false;"><span class="di-text"><span class="di-name">USD ($)</span></span></a>
+          <a class="dropdown-item" onclick="setCurrency('EUR','€');return false;"><span class="di-text"><span class="di-name">EUR (€)</span></span></a>
+          <a class="dropdown-item" onclick="setCurrency('GBP','£');return false;"><span class="di-text"><span class="di-name">GBP (£)</span></span></a>
+          <a class="dropdown-item" onclick="setCurrency('AUD','A$');return false;"><span class="di-text"><span class="di-name">AUD (A$)</span></span></a>
+          <a class="dropdown-item" onclick="setCurrency('CAD','C$');return false;"><span class="di-text"><span class="di-name">CAD (C$)</span></span></a>
+        </div>
+      </div>
+      <div class="nav-dropdown nav-mini">
+        <button class="nav-trigger nav-mini-trigger" onclick="event.preventDefault()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span id="langLabel">English</span>
+          <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dropdown-menu" style="min-width:160px;left:auto;right:0;transform:translateX(0)">
+          <a class="dropdown-item" onclick="setLanguage('English');return false;"><span class="di-text"><span class="di-name">English</span></span></a>
+          <a class="dropdown-item" onclick="setLanguage('Deutsch');return false;"><span class="di-text"><span class="di-name">Deutsch</span></span></a>
+          <a class="dropdown-item" onclick="setLanguage('Français');return false;"><span class="di-text"><span class="di-name">Français</span></span></a>
+          <a class="dropdown-item" onclick="setLanguage('Español');return false;"><span class="di-text"><span class="di-name">Español</span></span></a>
+          <a class="dropdown-item" onclick="setLanguage('Italiano');return false;"><span class="di-text"><span class="di-name">Italiano</span></span></a>
+        </div>
+      </div>
       <a onclick="navigateTo('home','contact')" class="btn btn-outline btn-sm">Contact Us</a>
       <a onclick="navigateTo('home','quote')" class="btn btn-primary btn-sm">Free Quote</a>
     </div>
@@ -945,6 +1022,17 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
     </button>
   </div>
 </nav>
+<div class="search-modal" id="searchModal" onclick="closeSearch(event)">
+  <div class="search-box" onclick="event.stopPropagation()">
+    <div class="search-input-wrap">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Search products, services..." oninput="doSearch(this.value)">
+      <button onclick="closeSearch()" style="font-size:20px;color:var(--gray-400)">×</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+<div class="lang-toast" id="langToast"></div>
 
 <!-- ================================================================ -->
 <!-- ============ HOME VIEW ============ -->
@@ -1317,6 +1405,11 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 </footer>
 
 <script>
+var searchIndex=[{url:'./',title:'MileBond Home',desc:'China sourcing agent homepage',tags:'sourcing china yiwu agent home'},{url:'./services/product-sourcing.html',title:'Product Sourcing',desc:'Find suppliers in 48h, save 30%+',tags:'product sourcing supplier china yiwu'},{url:'./services/private-label-oem.html',title:'Private Label & OEM',desc:'MOQ from $50, tooling protection',tags:'private label oem custom brand'},{url:'./services/amazon-brand-management.html',title:'Amazon Brand Management',desc:'50+ Amazon brands served, FBA ready',tags:'amazon FBA listing brand management'},{url:'./services/supply-chain-optimization.html',title:'Supply Chain Optimization',desc:'Cost, lead-time & quality upgrade',tags:'supply chain cost optimization supplier'},{url:'./services/factory-audit.html',title:'Factory Audit',desc:'27-point on-site supplier verification',tags:'factory audit verification QC inspection'},{url:'./services/quality-control.html',title:'Quality Control',desc:'AQL 2.5 multi-stage inspection',tags:'quality control inspection AQL QC'},{url:'./services/warehousing-shipping.html',title:'Warehousing & Shipping',desc:'1-month free storage, DDP shipping',tags:'warehousing storage shipping logistics DDP'},{url:'./products/home-kitchen.html',title:'Home & Kitchen',desc:'10,000+ SKUs, 30%+ cost savings',tags:'home kitchen storage kitchen gadgets'},{url:'./products/pet-supplies.html',title:'Pet Supplies',desc:'5,000+ SKUs, fastest-growing category',tags:'pet supplies dog cat toys accessories'},{url:'./products/beauty-tools.html',title:'Beauty Tools',desc:'3,000+ SKUs, 40%+ average margin',tags:'beauty tools skincare jade roller LED mask'},{url:'./products/arts-crafts.html',title:'Arts & Crafts',desc:'4,000+ SKUs, kids product safety',tags:'arts crafts DIY painting jewelry diamond'}];
+var searchOpen=false;function openSearch(){document.getElementById('searchModal').classList.add('open');document.getElementById('searchInput').focus();document.getElementById('searchResults').innerHTML='<div class="search-empty">Start typing to search...</div>';searchOpen=true}function closeSearch(e){if(e&&e.target!==document.getElementById('searchModal')){document.getElementById('searchModal').classList.remove('open');searchOpen=false}}function doSearch(q){var r=document.getElementById('searchResults');if(!q.trim()){r.innerHTML='<div class="search-empty">Start typing to search...</div>';return}q=q.toLowerCase();var m=searchIndex.filter(function(p){return(p.title+p.desc+p.tags).toLowerCase().indexOf(q)!==-1});if(!m.length){r.innerHTML='<div class="search-empty">No results found</div>';return}r.innerHTML=m.map(function(p){return'<a class="search-result" href="'+p.url+'"><span class="search-result-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span><span class="search-result-text"><h4>'+p.title+'</h4><p>'+p.desc+'</p></span></a>'}).join('')}
+var fx={USD:1,EUR:.92,GBP:.79,AUD:1.52,CAD:1.36};function setCurrency(code,sym){localStorage.setItem('mb_currency',code);document.getElementById('currencyLabel').textContent=code;document.querySelectorAll('[data-price]').forEach(function(el){var v=parseFloat(el.getAttribute('data-price'));if(!isNaN(v)){el.textContent=sym+(v*fx[code]).toFixed(2)}})};(function(){var c=localStorage.getItem('mb_currency')||'USD';document.getElementById('currencyLabel').textContent=c;document.querySelectorAll('[data-price]').forEach(function(el){var v=parseFloat(el.getAttribute('data-price'));if(!isNaN(v)){var sym={USD:'$',EUR:'€',GBP:'£',AUD:'A$',CAD:'C$'}[c];el.textContent=sym+(v*fx[c]).toFixed(2)}})})();
+function setLanguage(l){localStorage.setItem('mb_lang',l);document.getElementById('langLabel').textContent=l;if(l!=='English'){var t=document.getElementById('langToast');t.textContent=l+' version coming soon. Contact us for support in your language.';t.classList.add('show');setTimeout(function(){t.classList.remove('show')},3000)}};(function(){var l=localStorage.getItem('mb_lang')||'English';document.getElementById('langLabel').textContent=l})();
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&searchOpen){closeSearch()}});
 // ============ BLOG DATA ============
 const blogPosts = [
   {id:1,cat:'sourcing',catLabel:'Sourcing Tips',title:'How to Find Reliable Suppliers in China: A 7-Step Verification Process',excerpt:'Learn the exact framework we use to vet 500+ suppliers — from factory audits to trade history checks, so you never get scammed again.',date:'Aug 28, 2026',readTime:'8 min'},
