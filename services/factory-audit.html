@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Sourcing Agent in China | 54,000+ SKUs, 48h Quote</title>
-  <meta name="description" content="Professional China product sourcing agent with 54,000+ SKUs and 6,900+ vetted suppliers. Get quotes in 48 hours, save up to 30% on cost. Every supplier passes our 27-point on-site factory audit.">
+  <title>Factory Audit Service in China | 27-Point On-Site Supplier Verification</title>
+  <meta name="description" content="Professional China factory audit service. 27-point on-site verification covering production capacity, quality system, compliance & social responsibility. Filter out traders pretending to be factories.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -142,6 +142,34 @@
     .mobile-toggle{display:none;flex-direction:column;gap:5px;padding:8px}
     .mobile-toggle span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
 
+    /* ============ NAV DROPDOWN ============ */
+    .nav-dropdown{position:relative}
+    .nav-trigger{display:inline-flex;align-items:center;gap:6px}
+    .chevron{transition:transform .25s}
+    .nav-dropdown:hover .chevron{transform:rotate(180deg)}
+    .dropdown-menu{
+      position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);
+      background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);
+      border:1px solid var(--gray-200);padding:12px;min-width:320px;
+      opacity:0;visibility:hidden;transition:all .25s ease;
+      z-index:100;margin-top:8px;
+    }
+    .nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+    .dropdown-item{
+      display:flex;align-items:flex-start;gap:12px;padding:12px;border-radius:8px;
+      transition:background .2s;
+    }
+    .dropdown-item:hover{background:var(--cream)}
+    .di-icon{
+      width:36px;height:36px;background:rgba(22,45,84,.08);border-radius:8px;
+      display:flex;align-items:center;justify-content:center;
+      color:var(--navy);flex-shrink:0;
+    }
+    .di-text{display:flex;flex-direction:column;gap:2px}
+    .di-name{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:var(--navy)}
+    .di-desc{font-size:12px;color:var(--gray-600)}
+    .nav-menu .nav-trigger[style*="--orange"]::after{width:100%}
+
     /* ============ HERO ============ */
     .hero{
       position:relative;min-height:640px;
@@ -205,8 +233,15 @@
       font-size:17px;color:var(--gray-600);line-height:1.7;
     }
 
+    /* ============ BUSINESS INTRO SECTION ============ */
+    .intro-section{background:var(--cream)}
+    .intro-grid{display:grid;grid-template-columns:1fr;gap:24px;max-width:820px;margin:0 auto}
+    .intro-block h3{font-size:20px;margin-bottom:12px}
+    .intro-block p{font-size:15px;color:var(--gray-600);line-height:1.8}
+    .intro-block a{color:var(--orange);font-weight:600;text-decoration:underline}
+
     /* ============ PROCESS ============ */
-    .process-section{background:var(--cream)}
+    .process-section{background:#fff}
     .process-grid{
       display:grid;grid-template-columns:repeat(5,1fr);gap:0;
       position:relative;
@@ -231,12 +266,12 @@
     .process-step p{font-size:14px;color:var(--gray-600);line-height:1.7;margin-bottom:16px}
 
     /* ============ DELIVERABLES ============ */
-    .deliverables-section{background:#fff}
+    .deliverables-section{background:var(--cream)}
     .deliverables-grid{
       display:grid;grid-template-columns:repeat(2,1fr);gap:24px;
     }
     .deliverable-card{
-      background:var(--cream);border-radius:var(--radius);padding:32px 28px;
+      background:#fff;border-radius:var(--radius);padding:32px 28px;
       border-left:4px solid var(--orange);
       transition:all .3s;
     }
@@ -249,29 +284,29 @@
     .deliverable-card h3{font-size:17px;margin-bottom:8px}
     .deliverable-card p{font-size:14px;color:var(--gray-600);line-height:1.7}
 
-    /* ============ RELATED SERVICES ============ */
-    .related-section{background:var(--cream)}
-    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-    .related-card{
-      background:#fff;border-radius:var(--radius-lg);padding:32px 28px;
-      border:1px solid var(--gray-200);
-      transition:all .3s;text-align:center;
-    }
-    .related-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent}
-    .related-card .r-icon{
-      width:48px;height:48px;background:var(--navy);border-radius:10px;
-      display:flex;align-items:center;justify-content:center;
-      color:var(--orange-light);margin:0 auto 16px;
-    }
-    .related-card h3{font-size:18px;margin-bottom:8px}
-    .related-card p{font-size:14px;color:var(--gray-600);margin-bottom:16px;line-height:1.6}
-    .related-card .r-link{
-      font-family:'Space Grotesk',sans-serif;
-      font-size:13px;font-weight:600;color:var(--orange);
-      display:inline-flex;align-items:center;gap:6px;
-      transition:gap .2s;
-    }
-    .related-card .r-link:hover{gap:10px}
+    /* ============ CHECKLIST SECTION ============ */
+    .checklist-section{background:#fff}
+    .checklist-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .checklist-card{background:var(--cream);border-radius:var(--radius);padding:28px 24px;border-left:4px solid var(--orange)}
+    .checklist-card h4{font-size:16px;margin-bottom:14px}
+    .checklist-card ul{list-style:none}
+    .checklist-card li{font-size:13px;color:var(--gray-600);padding:4px 0 4px 18px;position:relative}
+    .checklist-card li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;background:var(--orange);border-radius:50%}
+    .checklist-tip{text-align:center;margin-top:32px;font-size:14px;color:var(--gray-600)}
+    .checklist-tip a{color:var(--orange);font-weight:600;text-decoration:underline}
+
+    /* ============ GRADING SECTION ============ */
+    .grade-section{background:var(--cream)}
+    .grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .grade-card{background:#fff;border-radius:var(--radius-lg);padding:28px 24px;border:1px solid var(--gray-200);transition:all .3s}
+    .grade-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px)}
+    .grade-badge{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;text-align:center;margin-bottom:8px}
+    .grade-a{color:#16A34A}
+    .grade-b{color:#E87722}
+    .grade-c{color:#D97706}
+    .grade-d{color:#DC2626}
+    .grade-title{font-size:14px;font-weight:700;color:var(--navy);text-align:center;margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em}
+    .grade-desc{font-size:13px;color:var(--gray-600);line-height:1.6}
 
     /* ============ CASE HIGHLIGHT ============ */
     .case-section{background:var(--navy);color:#fff}
@@ -288,10 +323,10 @@
     .case-stat .cs-label{font-size:13px;color:rgba(255,255,255,.6);margin-top:4px}
 
     /* ============ FAQ ============ */
-    .faq-section{background:var(--cream)}
+    .faq-section{background:#fff}
     .faq-list{max-width:820px;margin:0 auto}
     .faq-item{
-      background:#fff;border-radius:var(--radius);margin-bottom:12px;
+      background:var(--cream);border-radius:var(--radius);margin-bottom:12px;
       border:1px solid var(--gray-200);overflow:hidden;
       transition:box-shadow .3s;
     }
@@ -333,6 +368,8 @@
     }
     .cta-banner h2{color:#fff;font-size:32px;max-width:520px}
     .cta-banner p{color:rgba(255,255,255,.7);font-size:16px;margin-top:8px}
+    .cta-banner .cta-side{text-align:center}
+    .cta-banner .cta-helper{color:rgba(255,255,255,.6);font-size:13px;margin-top:14px}
 
     /* ============ FOOTER ============ */
     .footer{background:var(--navy);color:rgba(255,255,255,.7);padding:72px 0 0}
@@ -373,72 +410,13 @@
     }
     .footer-bottom a{color:var(--orange-light);cursor:pointer}
 
-    /* ============ NOTE BOX ============ */
-    .note-box{
-      background:#FFF8F0;border:1px solid rgba(232,119,34,.2);
-      border-radius:var(--radius);padding:24px 28px;
-      text-align:center;max-width:720px;margin:0 auto;
-    }
-    .note-box p{font-size:15px;color:var(--navy);line-height:1.7}
-
     /* ============ RESPONSIVE ============ */
-    /* ============ SOURCING MODES ============ */
-    .modes-section{background:var(--cream)}
-    .modes-grid{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
-    }
-    .mode-card{
-      background:#fff;border-radius:var(--radius-lg);padding:36px 32px;
-      border:1px solid var(--gray-200);transition:all .3s;
-    }
-    .mode-card:hover{
-      box-shadow:var(--shadow-lg);transform:translateY(-4px);
-      border-color:transparent;
-    }
-    .mode-card .mode-icon{
-      width:56px;height:56px;border-radius:50%;
-      background:rgba(232,119,34,.1);
-      display:flex;align-items:center;justify-content:center;
-      color:var(--orange);margin-bottom:20px;
-    }
-    .mode-card h3{font-size:22px;margin-bottom:10px}
-    .mode-card .mode-label{
-      font-family:'Space Grotesk',sans-serif;
-      font-size:11px;font-weight:700;color:var(--orange);
-      text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;
-    }
-    .mode-card .mode-desc{
-      font-size:14px;color:var(--gray-600);margin-bottom:20px;
-      line-height:1.7;font-style:italic;
-    }
-    .mode-card .mode-what-label{
-      font-family:'Space Grotesk',sans-serif;
-      font-size:11px;font-weight:700;color:var(--orange);
-      text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;
-    }
-    .mode-card ul{margin-bottom:24px}
-    .mode-card li{
-      font-size:14px;color:var(--gray-900);padding:5px 0 5px 22px;
-      position:relative;line-height:1.6;
-    }
-    .mode-card li::before{
-      content:'';position:absolute;left:0;top:12px;
-      width:8px;height:8px;background:var(--orange);border-radius:50%;
-    }
-    .mode-card .mode-link{
-      font-family:'Space Grotesk',sans-serif;
-      font-size:14px;font-weight:600;color:var(--orange);
-      display:inline-flex;align-items:center;gap:6px;
-      transition:gap .2s;cursor:pointer;
-    }
-    .mode-card .mode-link:hover{gap:10px;text-decoration:underline}
-
     @media(max-width:1024px){
       .process-grid{grid-template-columns:repeat(2,1fr);gap:40px}
       .process-step:not(:last-child)::after{display:none}
       .deliverables-grid{grid-template-columns:1fr}
-      .related-grid{grid-template-columns:repeat(2,1fr)}
-      .modes-grid{grid-template-columns:repeat(2,1fr)}
+      .checklist-grid{grid-template-columns:1fr}
+      .grade-grid{grid-template-columns:repeat(2,1fr)}
       .footer-grid{grid-template-columns:1fr 1fr}
     }
     @media(max-width:768px){
@@ -450,8 +428,7 @@
       .hero-tag{font-size:12px;padding:8px 14px;white-space:normal}
       .section{padding:64px 0}
       .process-grid{grid-template-columns:1fr}
-      .related-grid{grid-template-columns:1fr}
-      .modes-grid{grid-template-columns:1fr}
+      .grade-grid{grid-template-columns:1fr}
       .footer-grid{grid-template-columns:1fr}
       .cta-banner .container{flex-direction:column;text-align:center}
       .case-stats{flex-direction:column;gap:20px}
@@ -471,7 +448,37 @@
         <span class="logo-text">mile<span>bond</span></span>
       </a>
       <div class="nav-menu" id="navMenu">
-        <a href="../index.html#services">Services</a>
+        <div class="nav-dropdown" id="navDropdown">
+          <a class="nav-trigger" style="color:var(--orange)">Services
+            <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="./product-sourcing.html">
+              <span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+              <span class="di-text"><span class="di-name">Product Sourcing</span><span class="di-desc">Find suppliers in 48h, save 30%+</span></span>
+            </a>
+            <a class="dropdown-item" href="./private-label-oem.html">
+              <span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></span>
+              <span class="di-text"><span class="di-name">Private Label &amp; OEM</span><span class="di-desc">MOQ from $50, tooling protection</span></span>
+            </a>
+            <a class="dropdown-item" href="./amazon-brand-management.html">
+              <span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+              <span class="di-text"><span class="di-name">Amazon Brand Management</span><span class="di-desc">50+ Amazon brands served, FBA ready</span></span>
+            </a>
+            <a class="dropdown-item" href="./supply-chain-optimization.html">
+              <span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+              <span class="di-text"><span class="di-name">Supply Chain Optimization</span><span class="di-desc">Cost, lead-time &amp; quality upgrade</span></span>
+            </a>
+            <a class="dropdown-item" href="./quality-control.html">
+              <span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+              <span class="di-text"><span class="di-name">Quality Control</span><span class="di-desc">AQL 2.5 multi-stage inspection</span></span>
+            </a>
+            <a class="dropdown-item" href="./warehousing-shipping.html">
+              <span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+              <span class="di-text"><span class="di-name">Warehousing &amp; Shipping</span><span class="di-desc">1-month free storage, DDP shipping</span></span>
+            </a>
+          </div>
+        </div>
         <a href="../index.html#process">How It Works</a>
         <a href="../index.html#about">About</a>
         <a href="../index.html#categories">Categories</a>
@@ -494,124 +501,91 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-badge">
-        <span class="dot"></span> PRODUCT SOURCING
+        <span class="dot"></span> FACTORY AUDIT
       </div>
-      <h1>China Product Sourcing Agent — Find the Right Supplier in <span>48 Hours</span></h1>
+      <h1>China Factory Audit Service — <span>27-Point On-Site Supplier Verification</span></h1>
       <p class="hero-sub">
-        We manage 54,000+ SKUs and 6,900+ suppliers across every major category. From market guidance to factory audits, we find you the best quality at the lowest possible cost — with full transparency and no hidden fees. All new suppliers go through our rigorous verification workflow.
+        Don't trust what you see online. We visit factories in person, verify their real production capacity, quality system and compliance — so you never waste money on a trader pretending to be a manufacturer. Every sourcing project includes factory audit as standard.
       </p>
       <div class="hero-actions">
-        <a href="../index.html#quote" class="btn btn-primary">Get My Free Quote</a>
-        <a href="#process" class="btn btn-white">View Our Process</a>
+        <a href="../index.html#quote" class="btn btn-primary">Request Factory Audit</a>
+        <a href="#checklist" class="btn btn-white">See Audit Checklist</a>
       </div>
       <div class="hero-trust">
         <span class="hero-tag">
-          <span class="hero-tag-icon">📦</span> 54,000+ SKUs Managed
+          <span class="hero-tag-icon">🔍</span> 27-Point Audit Checklist
         </span>
         <span class="hero-tag">
-          <span class="hero-tag-icon">🏭</span> 6,900+ Vetted Suppliers
+          <span class="hero-tag-icon">🏭</span> On-Site Verification
         </span>
         <span class="hero-tag">
-          <span class="hero-tag-icon">⏱️</span> 48h Quote Turnaround
+          <span class="hero-tag-icon">📊</span> Factory Grading System
         </span>
         <span class="hero-tag">
-          <span class="hero-tag-icon">💰</span> 30%+ Average Savings
+          <span class="hero-tag-icon">🛡️</span> Trader Detection
         </span>
       </div>
     </div>
   </section>
 
-  <!-- THREE SOURCING MODES -->
-  <section class="section modes-section" id="modes">
+  <!-- WHY FACTORY AUDIT MATTERS -->
+  <section class="section intro-section" id="intro">
     <div class="container">
       <div class="section-header">
-        <span class="ship-tag">How We Work</span>
-        <h2>Three Ways We Can Work Together</h2>
-        <p>Whether you have a clear product spec, just a reference image, or an existing supplier base — we have a sourcing model that fits.</p>
+        <span class="ship-tag">Why It Matters</span>
+        <h2>Why Factory Audit Is Non-Negotiable</h2>
+        <p>Most overseas buyers discover too late that their "factory" isn't a factory at all.</p>
       </div>
-      <div class="modes-grid">
-        <div class="mode-card">
-          <div class="mode-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></div>
-          <h3>Concept to Product</h3>
-          <div class="mode-label">Best for:</div>
-          <p class="mode-desc">You have a product idea or market opportunity but need help figuring out what to source and how to launch it.</p>
-          <div class="mode-what-label">What we do:</div>
-          <ul>
-            <li>Market research &amp; product opportunity validation</li>
-            <li>Product specification &amp; design guidance</li>
-            <li>Supplier matching &amp; sample development</li>
-            <li>Compliance pre-check for your target market</li>
-            <li>Full support from first sample to mass production</li>
-          </ul>
-          <a class="mode-link" href="#quote">Start with your idea →</a>
+      <div class="intro-grid">
+        <div class="intro-block">
+          <p>Many "factories" you find online are actually trading companies. They mark up prices 20-50%, have no quality control, and disappear when problems arise.</p>
         </div>
-        <div class="mode-card">
-          <div class="mode-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
-          <h3>Image to Quote</h3>
-          <div class="mode-label">Best for:</div>
-          <p class="mode-desc">You have a product image, link, or sample and want to find the same or similar product at the best price.</p>
-          <div class="mode-what-label">What we do:</div>
-          <ul>
-            <li>Reverse image search &amp; supplier matching across 6,900+ suppliers</li>
-            <li>3+ side-by-side quotes within 48 hours</li>
-            <li>Sample verification &amp; quality comparison</li>
-            <li>Factory audit for short-listed suppliers</li>
-            <li>Price negotiation &amp; order placement</li>
-          </ul>
-          <a class="mode-link" href="#quote">Send me your image →</a>
+        <div class="intro-block">
+          <p>Even real factories often exaggerate their capacity, certifications and experience. A factory audit is the only way to verify the truth before you place an order.</p>
         </div>
-        <div class="mode-card">
-          <div class="mode-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-          <h3>Supplier Pool Optimization</h3>
-          <div class="mode-label">Best for:</div>
-          <p class="mode-desc">You already have suppliers but want to verify them, reduce cost, or improve quality and lead-time.</p>
-          <div class="mode-what-label">What we do:</div>
-          <ul>
-            <li>On-site factory audit &amp; qualification verification</li>
-            <li>Supplier performance scoring (cost / quality / lead-time / responsiveness)</li>
-            <li>Cost structure analysis &amp; renegotiation</li>
-            <li>Alternative supplier development for risk mitigation</li>
-            <li>Quarterly performance review &amp; continuous optimization</li>
-          </ul>
-          <a class="mode-link" href="./supply-chain-optimization.html">Optimize my suppliers →</a>
+        <div class="intro-block">
+          <p>Our auditors visit the factory in person, check every critical area, and deliver a photo-rich report within 48 hours. We've audited 6,900+ suppliers and know exactly what to look for.</p>
+        </div>
+        <div class="intro-block">
+          <p>Factory audit is part of our quality control system. <a href="./quality-control.html">See our multi-stage inspection process →</a></p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS / PROCESS -->
+  <!-- 5-STEP PROCESS -->
   <section class="section process-section" id="process">
     <div class="container">
       <div class="section-header">
         <span class="ship-tag">How It Works</span>
-        <h2>How Our Product Sourcing Works</h2>
-        <p>A proven 5-step process to connect you with the right factory at the right price.</p>
+        <h2>Our 5-Step Factory Audit Process</h2>
+        <p>A systematic, documented approach that leaves no stone unturned.</p>
       </div>
       <div class="process-grid">
         <div class="process-step">
           <div class="step-circle">1</div>
-          <h3>Send Your Requirements</h3>
-          <p>Submit product specs, target price, MOQ and target market compliance requirements</p>
+          <h3>Document Review</h3>
+          <p>Collect and verify business license, production permits, export qualifications, certifications (ISO/BSCI/etc.)</p>
         </div>
         <div class="process-step">
           <div class="step-circle">2</div>
-          <h3>Supplier Matching &amp; Quote (48h)</h3>
-          <p>Match 3+ qualified suppliers from our database, deliver side-by-side quotation comparison</p>
+          <h3>Pre-audit Preparation</h3>
+          <p>Confirm audit scope, prepare 27-point checklist, schedule on-site visit with factory</p>
         </div>
         <div class="process-step">
           <div class="step-circle">3</div>
-          <h3>Sample Verification</h3>
-          <p>Arrange sampling, verify product specs, packaging and basic compliance markers</p>
+          <h3>On-Site Audit</h3>
+          <p>Visit factory in person, inspect production lines, warehouse, QC lab, office; interview management and workers; take photos</p>
         </div>
         <div class="process-step">
           <div class="step-circle">4</div>
-          <h3>Factory Audit</h3>
-          <p>Every short-listed supplier completes our 27-point on-site factory audit. <a href="./quality-control.html" style="color:var(--orange);font-weight:600;text-decoration:underline;">Learn how we audit factories →</a></p>
+          <h3>Report &amp; Grading</h3>
+          <p>Deliver photo-rich audit report within 48 hours, assign A/B/C/D grade based on 27-point scoring</p>
         </div>
         <div class="process-step">
           <div class="step-circle">5</div>
-          <h3>Order Placement &amp; Management</h3>
-          <p>Place orders, track production progress, trigger quality inspection before shipment</p>
+          <h3>Follow-up &amp; Recommendation</h3>
+          <p>Provide improvement suggestions for B/C grade factories, recommend alternative suppliers for D grade</p>
         </div>
       </div>
     </div>
@@ -622,74 +596,159 @@
     <div class="container">
       <div class="section-header">
         <span class="ship-tag">Deliverables</span>
-        <h2>What You Get</h2>
-        <p>Every sourcing engagement includes these four core deliverables.</p>
+        <h2>What You Get From a Factory Audit</h2>
+        <p>Seven concrete outputs that de-risk your supplier relationship.</p>
       </div>
       <div class="deliverables-grid">
         <div class="deliverable-card">
           <div class="d-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           </div>
-          <h3>48h Quote Turnaround</h3>
-          <p>3+ supplier comparison sheet</p>
-        </div>
-        <div class="deliverable-card">
-          <div class="d-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          </div>
-          <h3>On-site 27-Point Factory Audit</h3>
-          <p>Filter out traders pretending to be real factories</p>
+          <h3>27-Point Photo-Rich Report</h3>
+          <p>Detailed findings with timestamped photos, delivered within 48 hours</p>
         </div>
         <div class="deliverable-card">
           <div class="d-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3>Pre-production Risk Check</h3>
-          <p>Early compliance screening for CE/FCC/RoHS requirements</p>
+          <h3>A/B/C/D Factory Grading</h3>
+          <p>Clear pass/fail criteria so you know exactly where the factory stands</p>
         </div>
         <div class="deliverable-card">
           <div class="d-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </div>
-          <h3>30%+ Average Cost Savings</h3>
-          <p>Direct factory access and continuous price negotiation</p>
+          <h3>Trader Detection</h3>
+          <p>Verify if the supplier is a real manufacturer or a trading company in disguise</p>
+        </div>
+        <div class="deliverable-card">
+          <div class="d-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h3>Production Capacity Verification</h3>
+          <p>Actual audited output, not the inflated numbers claimed on websites</p>
+        </div>
+        <div class="deliverable-card">
+          <div class="d-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h3>Quality System Assessment</h3>
+          <p>Incoming QC, in-process QC, and final QC — every stage evaluated</p>
+        </div>
+        <div class="deliverable-card">
+          <div class="d-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/></svg>
+          </div>
+          <h3>Compliance &amp; Social Responsibility</h3>
+          <p>Environmental permits, fire safety, labor conditions, child labor checks</p>
+        </div>
+        <div class="deliverable-card">
+          <div class="d-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Improvement &amp; Alternatives</h3>
+          <p>Specific fix recommendations, plus vetted backup suppliers from our 6,900+ database</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- RELATED SERVICES -->
-  <section class="section related-section">
+  <!-- 27-POINT CHECKLIST -->
+  <section class="section checklist-section" id="checklist">
     <div class="container">
       <div class="section-header">
-        <span class="ship-tag">Related Services</span>
-        <h2>Explore More Sourcing Solutions</h2>
-        <p>Complementary services to help you scale your supply chain.</p>
+        <span class="ship-tag">The Checklist</span>
+        <h2>Our 27-Point Audit Checklist</h2>
+        <p>Five categories, 27 verification points — no factory passes our audit without being measured against every single one.</p>
       </div>
-      <div class="related-grid">
-        <div class="related-card">
-          <div class="r-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          </div>
-          <h3>Private Label &amp; OEM Customization</h3>
-          <p>Custom packaging, branding, and product design tailored to your market.</p>
-          <a href="./private-label-oem.html" class="r-link">Learn More →</a>
+      <div class="checklist-grid">
+        <div class="checklist-card">
+          <h4>① Basic Qualification (5 points)</h4>
+          <ul>
+            <li>Business license verification</li>
+            <li>Production permit check</li>
+            <li>Export qualification</li>
+            <li>Registered capital</li>
+            <li>Years in operation</li>
+          </ul>
         </div>
-        <div class="related-card">
-          <div class="r-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-          </div>
-          <h3>Amazon Brand Sourcing</h3>
-          <p>FBA-compliant packaging, barcodes, and prep services for Amazon sellers.</p>
-          <a href="./amazon-brand-management.html" class="r-link">Learn More →</a>
+        <div class="checklist-card">
+          <h4>② Production Capacity (6 points)</h4>
+          <ul>
+            <li>Factory area &amp; ownership</li>
+            <li>Number of production lines</li>
+            <li>Equipment list &amp; condition</li>
+            <li>Actual monthly output</li>
+            <li>Raw material storage</li>
+            <li>Finished goods warehouse</li>
+          </ul>
         </div>
-        <div class="related-card">
-          <div class="r-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <h3>Supply Chain Optimization</h3>
-          <p>End-to-end logistics, warehousing, and cost optimization strategies.</p>
-          <a href="./supply-chain-optimization.html" class="r-link">Learn More →</a>
+        <div class="checklist-card">
+          <h4>③ Quality System (7 points)</h4>
+          <ul>
+            <li>ISO certification check</li>
+            <li>Incoming material inspection</li>
+            <li>In-process QC procedures</li>
+            <li>Final inspection (AQL standard)</li>
+            <li>Defect handling &amp; corrective action</li>
+            <li>Traceability system</li>
+            <li>QC lab equipment &amp; personnel</li>
+          </ul>
+        </div>
+        <div class="checklist-card">
+          <h4>④ Compliance &amp; Social Responsibility (5 points)</h4>
+          <ul>
+            <li>Environmental permit</li>
+            <li>Fire safety inspection</li>
+            <li>Labor contract &amp; conditions</li>
+            <li>Working hours &amp; overtime</li>
+            <li>Child labor check</li>
+          </ul>
+        </div>
+        <div class="checklist-card" style="grid-column:1/-1;max-width:480px;margin:0 auto">
+          <h4>⑤ Financial &amp; Risk (4 points)</h4>
+          <ul>
+            <li>Ownership structure verification</li>
+            <li>Litigation records check</li>
+            <li>Customer concentration risk</li>
+            <li>Payment risk assessment</li>
+          </ul>
+        </div>
+      </div>
+      <div class="checklist-tip">
+        Factory audit is included in every sourcing project → <a href="./product-sourcing.html">Learn about Product Sourcing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACTORY GRADING SYSTEM -->
+  <section class="section grade-section" id="grading">
+    <div class="container">
+      <div class="section-header">
+        <span class="ship-tag">Grading System</span>
+        <h2>Factory Grading System</h2>
+        <p>Every audited supplier receives a clear A/B/C/D grade based on their 27-point score.</p>
+      </div>
+      <div class="grade-grid">
+        <div class="grade-card">
+          <div class="grade-badge grade-a">A</div>
+          <div class="grade-title">Excellent</div>
+          <div class="grade-desc">Fully qualified, recommended for direct partnership. Passes all 27 points with no major issues. Priority supplier for long-term collaboration.</div>
+        </div>
+        <div class="grade-card">
+          <div class="grade-badge grade-b">B</div>
+          <div class="grade-title">Good</div>
+          <div class="grade-desc">Qualified with minor issues. Recommended with improvement plan. Address minor issues within 30 days to maintain qualification.</div>
+        </div>
+        <div class="grade-card">
+          <div class="grade-badge grade-c">C</div>
+          <div class="grade-title">Conditional</div>
+          <div class="grade-desc">Has notable issues in capacity, quality or compliance. Only for low-risk, small-volume orders with strict supervision and clear milestones.</div>
+        </div>
+        <div class="grade-card">
+          <div class="grade-badge grade-d">D</div>
+          <div class="grade-title">Not Recommended</div>
+          <div class="grade-desc">Major issues or trader misrepresentation. Do not place orders. We will recommend alternative suppliers from our vetted database.</div>
         </div>
       </div>
     </div>
@@ -699,25 +758,25 @@
   <section class="section case-section">
     <div class="container">
       <div class="section-header">
-        <span class="ship-tag" style="color:var(--orange-light);border-color:rgba(245,166,35,.4);background:rgba(245,166,35,.1)">Case Study</span>
-        <h2>How We Helped an Amazon Brand Cut Sourcing Cost by 35%</h2>
-        <p>Real results from a real client partnership.</p>
+        <span class="ship-tag" style="color:var(--orange-light);border-color:rgba(245,166,35,.4);background:rgba(245,166,35,.1)">Audit Case</span>
+        <h2>Exposed a Trading Company Pretending to Be a Factory</h2>
+        <p>This is exactly why we audit every supplier in person.</p>
       </div>
       <div class="case-card">
-        <h3>From $50k to $200k Monthly Revenue</h3>
-        <p>An Amazon seller previously purchased via trading companies with high cost and unstable quality. We connected them directly with qualified Yiwu factories, renegotiated unit price and optimized packaging. Final sourcing cost dropped 35% while stable quality control system was built. Monthly revenue grew from $50k to $200k.</p>
+        <h3>An Alibaba "Factory" That Wasn't a Factory</h3>
+        <p>A client found a "factory" on Alibaba with impressive certifications and suspiciously low prices. Our on-site audit revealed it was a trading company operating out of a small office — the "factory photos" on their website were from a completely different facility. We immediately helped the client find a real manufacturer with 30% lower cost and consistent quality.</p>
         <div class="case-stats">
           <div class="case-stat">
-            <div class="cs-num">35%</div>
-            <div class="cs-label">Cost Reduction</div>
+            <div class="cs-num">$12,000</div>
+            <div class="cs-label">Saved on First Order</div>
           </div>
           <div class="case-stat">
-            <div class="cs-num">$50k → $200k</div>
-            <div class="cs-label">Monthly Revenue Growth</div>
+            <div class="cs-num">30%</div>
+            <div class="cs-label">Lower Unit Cost</div>
           </div>
           <div class="case-stat">
-            <div class="cs-num">0%</div>
-            <div class="cs-label">Quality Defect Rate</div>
+            <div class="cs-num">D→A</div>
+            <div class="cs-label">Grade Upgrade (Trader → Real Factory)</div>
           </div>
         </div>
         <a href="#" class="btn btn-primary">Read Full Case Study</a>
@@ -731,39 +790,50 @@
       <div class="section-header">
         <span class="ship-tag">FAQ</span>
         <h2>Frequently Asked Questions</h2>
-        <p>Everything you need to know about our product sourcing service.</p>
+        <p>Everything you need to know about our factory audit service.</p>
       </div>
       <div class="faq-list">
         <div class="faq-item">
           <button class="faq-question">
-            How long does the sourcing process take?
+            How long does a factory audit take?
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Most product sourcing takes 2-5 business days for supplier matching and quotes. Sample development takes 3-7 days, and mass production depends on product complexity, typically 15-30 days.
+              Document review takes 1-2 business days. On-site audit takes 1 day at the factory. Full photo-rich report is delivered within 48 hours after the on-site visit.
             </div>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question">
-            What is your service fee?
+            How much does a factory audit cost?
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              We offer transparent pricing with no hidden fees. Our sourcing fee is typically 5-10% of order value, depending on order size and complexity. We also offer fixed-fee options for ongoing partnerships. Contact us for a customized quote.
+              Factory audit is included as standard in every sourcing project we manage. If you only need a standalone factory audit for an existing supplier, contact us for a fixed-fee quote based on factory location.
             </div>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question">
-            Do you support small orders?
+            Can you audit a factory I already work with?
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Yes! We specialize in low-MOQ sourcing. You can start from just $50 or 1 carton. We connect you with suppliers who accept small orders, making it easy for startups and small businesses to test products.
+              Yes. We can audit any factory in China — including ones you already work with. Many clients use our audit service to verify existing suppliers and identify improvement opportunities.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What if the factory fails the audit?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              If a factory gets Grade D, we do not recommend placing orders. We will help you find alternative qualified suppliers from our database of 6,900+ vetted suppliers. For Grade C factories, we only recommend them for low-risk small orders with strict supervision.
             </div>
           </div>
         </div>
@@ -775,10 +845,13 @@
   <section class="cta-banner">
     <div class="container">
       <div>
-        <h2>Ready to Source the Right Product at the Right Price?</h2>
-        <p>Get your free quote in 48 hours. No hidden fees. No obligation.</p>
+        <h2>Verify Your Supplier Before You Pay</h2>
+        <p>Don't risk your money on an unverified supplier. Get a professional on-site factory audit within 48 hours.</p>
       </div>
-      <a href="../index.html#quote" class="btn btn-primary">Get My Free Quote</a>
+      <div class="cta-side">
+        <a href="../index.html#quote" class="btn btn-primary">Get My Sourcing Quote</a>
+        <div class="cta-helper">Factory audit is included in every sourcing project — no extra charge.</div>
+      </div>
     </div>
   </section>
 
@@ -798,7 +871,14 @@
         </div>
         <div class="footer-col">
           <h4>Services</h4>
-          <ul><li><a href="../index.html#services">Product Sourcing</a></li><li><a href="../index.html#services">Private Label</a></li><li><a href="../index.html#services">Quality Control</a></li><li><a href="../index.html#services">Amazon FBA</a></li><li><a href="../index.html#services">Dropshipping</a></li><li><a href="../index.html#services">Warehousing</a></li></ul>
+          <ul>
+            <li><a href="./product-sourcing.html">Product Sourcing</a></li>
+            <li><a href="./private-label-oem.html">Private Label</a></li>
+            <li><a href="./factory-audit.html">Factory Audit</a></li>
+            <li><a href="./quality-control.html">Quality Control</a></li>
+            <li><a href="./amazon-brand-management.html">Amazon FBA</a></li>
+            <li><a href="./warehousing-shipping.html">Warehousing</a></li>
+          </ul>
         </div>
         <div class="footer-col">
           <h4>Resources</h4>
