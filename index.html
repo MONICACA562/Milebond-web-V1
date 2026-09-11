@@ -326,6 +326,8 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 .floating-card .fc-text span{font-size:13px;color:var(--gray-600)}
 .trusted-content h2{font-size:36px;margin-bottom:20px}
 .trusted-content > p{font-size:16px;color:var(--gray-600);margin-bottom:28px;line-height:1.8}
+.trusted-content p a{color:var(--orange);text-decoration:underline;text-underline-offset:3px;transition:color .2s}
+.trusted-content p a:hover{color:#c25f10}
 .trusted-features{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px}
 .trusted-feature{display:flex;gap:12px;align-items:flex-start}
 .trusted-feature .tf-icon{
@@ -640,10 +642,22 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   cursor:pointer;
 }
 
+/* ============ RELATED LINKS ============ */
+.related-links{background:#fff;padding:72px 0}
+.rl-header{text-align:center;margin-bottom:48px}
+.rl-header h2{font-size:clamp(28px,4vw,40px);color:var(--navy);margin:12px 0 8px}
+.rl-header p{color:#666;max-width:520px;margin:0 auto}
+.rl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.rl-col h3{font-size:16px;color:var(--navy);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--orange)}
+.rl-col li{margin-bottom:12px}
+.rl-col a{font-size:14px;color:#444;transition:color .2s;display:block;padding:6px 0;border-bottom:1px solid #f0f0f0}
+.rl-col a:hover{color:var(--orange);border-color:var(--orange)}
+@media(max-width:768px){.rl-grid{grid-template-columns:1fr;gap:32px}}
+
 /* ============ FOOTER ============ */
 .footer{background:var(--navy);color:rgba(255,255,255,.7);padding:72px 0 0}
 .footer-grid{
-  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;
   padding-bottom:48px;
 }
 .footer-brand .logo{color:#fff;margin-bottom:16px}
@@ -1141,7 +1155,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
       <div class="trusted-content">
         <span class="ship-tag">YOUR TRUSTED SUPPLY CHAIN PARTNER</span>
         <h2 style="margin-top:16px">We Don't Just Find Products — We Manage Your Entire China Supply Chain</h2>
-        <p>With 10+ years on the ground in Yiwu, we manage 54,000+ SKUs and 6,900+ suppliers across every major category — serving 50+ Amazon brands from product development to listing fulfillment and repeat-order management. We don't just take orders and disappear: we continuously optimize your supplier base for cost, lead time and quality, and we've rescued half-finished orders from failing factories, rerouted production, and got products back on shelf.</p>
+        <p>With 10+ years on the ground in Yiwu, we manage 54,000+ SKUs and 6,900+ suppliers across every major category — serving 50+ Amazon brands from <a href="services/product-sourcing.html">product development</a> to <a href="services/amazon-brand-management.html">listing fulfillment</a> and repeat-order management. We don't just take orders and disappear: we continuously optimize your supplier base for cost, lead time and quality through our proven <a onclick="navigateTo('home','process')">4-step process</a>, and we've rescued half-finished orders from failing factories, rerouted production, and got products back on shelf. Learn more about <a onclick="navigateTo('home','about')">who we are</a> or explore our <a href="services/">full service offering</a>.</p>
         <div class="trusted-features">
           <div class="trusted-feature"><div class="tf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><strong>Dynamic Cost Optimization</strong><span>Average 30%+ savings vs. market price</span></div></div>
           <div class="trusted-feature"><div class="tf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div><strong>Low MOQ Flexibility</strong><span>Start from 1 carton or $50</span></div></div>
@@ -1404,6 +1418,48 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 </div><!-- /blog-view -->
 
 <!-- ============ FOOTER ============ -->
+</div>
+
+<!-- ============ RELATED LINKS ============ -->
+<section class="related-links">
+  <div class="container">
+    <div class="rl-header"><span class="ship-tag">Explore More</span><h2>Discover Our Full Sourcing Capabilities</h2><p>From supplier discovery to doorstep delivery — everything you need to source confidently from China.</p></div>
+    <div class="rl-grid">
+      <div class="rl-col">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="services/product-sourcing.html">Product Sourcing — Find suppliers in 48h</a></li>
+          <li><a href="services/private-label-oem.html">Private Label &amp; OEM — MOQ from $50</a></li>
+          <li><a href="services/amazon-brand-management.html">Amazon Brand Management — FBA ready</a></li>
+          <li><a href="services/supply-chain-optimization.html">Supply Chain Optimization — Save 30%+</a></li>
+          <li><a href="services/factory-audit.html">Factory Audit — 27-point verification</a></li>
+          <li><a href="services/quality-control.html">Quality Control — AQL 2.5 inspection</a></li>
+          <li><a href="services/warehousing-shipping.html">Warehousing &amp; Shipping — DDP door-to-door</a></li>
+        </ul>
+      </div>
+      <div class="rl-col">
+        <h3>Product Categories</h3>
+        <ul>
+          <li><a href="products/home-kitchen.html">Home &amp; Kitchen — 10,000+ SKUs</a></li>
+          <li><a href="products/pet-supplies.html">Pet Supplies — Dog toys, cat accessories</a></li>
+          <li><a href="products/beauty-tools.html">Beauty Tools — Jade rollers, LED masks</a></li>
+          <li><a href="products/arts-crafts.html">Arts &amp; Crafts — DIY kits, jewelry making</a></li>
+        </ul>
+      </div>
+      <div class="rl-col">
+        <h3>Learn More</h3>
+        <ul>
+          <li><a onclick="navigateTo('home','about')">About MileBond — 10+ years in Yiwu</a></li>
+          <li><a onclick="navigateTo('home','process')">How It Works — Our 4-step process</a></li>
+          <li><a onclick="navigateTo('home','faq')">FAQ — Common sourcing questions</a></li>
+          <li><a onclick="navigateTo('blog')">Blog — Sourcing guides &amp; insights</a></li>
+          <li><a onclick="openQuoteModal()">Get a Free Quote — Reply in 24h</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="footer" id="contact">
   <div class="container">
     <div class="footer-grid">
@@ -1419,11 +1475,34 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
       </div>
       <div class="footer-col">
         <h4>Services</h4>
-        <ul><li><a onclick="navigateTo('home','services')">Product Sourcing</a></li><li><a onclick="navigateTo('home','services')">Private Label</a></li><li><a onclick="navigateTo('home','services')">Quality Control</a></li><li><a onclick="navigateTo('home','services')">Factory Audit</a></li><li><a onclick="navigateTo('home','services')">Amazon FBA</a></li><li><a onclick="navigateTo('home','services')">Warehousing</a></li></ul>
+        <ul>
+          <li><a href="services/product-sourcing.html">Product Sourcing</a></li>
+          <li><a href="services/private-label-oem.html">Private Label &amp; OEM</a></li>
+          <li><a href="services/amazon-brand-management.html">Amazon Brand Management</a></li>
+          <li><a href="services/supply-chain-optimization.html">Supply Chain Optimization</a></li>
+          <li><a href="services/factory-audit.html">Factory Audit</a></li>
+          <li><a href="services/quality-control.html">Quality Control</a></li>
+          <li><a href="services/warehousing-shipping.html">Warehousing &amp; Shipping</a></li>
+        </ul>
       </div>
       <div class="footer-col">
-        <h4>Resources</h4>
-        <ul><li><a onclick="navigateTo('blog')">Sourcing Guide</a></li><li><a onclick="navigateTo('blog')">Blog</a></li><li><a onclick="navigateTo('home','faq')">FAQ</a></li><li><a onclick="navigateTo('blog')">Yiwu Market Guide</a></li><li><a onclick="navigateTo('blog')">Alibaba Guide</a></li><li><a onclick="navigateTo('home')">Free Ebook</a></li></ul>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products/home-kitchen.html">Home &amp; Kitchen</a></li>
+          <li><a href="products/pet-supplies.html">Pet Supplies</a></li>
+          <li><a href="products/beauty-tools.html">Beauty Tools</a></li>
+          <li><a href="products/arts-crafts.html">Arts &amp; Crafts</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a onclick="navigateTo('home','about')">About Us</a></li>
+          <li><a onclick="navigateTo('home','process')">How It Works</a></li>
+          <li><a onclick="navigateTo('home','faq')">FAQ</a></li>
+          <li><a onclick="navigateTo('blog')">Blog</a></li>
+          <li><a onclick="openQuoteModal()">Contact Us</a></li>
+        </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>

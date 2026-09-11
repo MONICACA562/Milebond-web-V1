@@ -331,10 +331,21 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 .cta-banner h2{color:#fff;font-size:32px;max-width:520px}
 .cta-banner p{color:rgba(255,255,255,.7);font-size:16px;margin-top:8px}
 
+
+/* ============ RELATED LINKS ============ */
+.related-links{background:#fff;padding:72px 0}
+.rl-header{text-align:center;margin-bottom:48px}
+.rl-header h2{font-size:clamp(28px,4vw,40px);color:var(--navy);margin:12px 0 8px}
+.rl-header p{color:#666;max-width:520px;margin:0 auto}
+.rl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.rl-col h3{font-size:16px;color:var(--navy);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--orange)}
+.rl-col li{margin-bottom:12px}
+.rl-col a{font-size:14px;color:#444;transition:color .2s;display:block;padding:6px 0;border-bottom:1px solid #f0f0f0}
+.rl-col a:hover{color:var(--orange);border-color:var(--orange)}
+@media(max-width:768px){.rl-grid{grid-template-columns:1fr;gap:32px}}
 /* ============ FOOTER ============ */
 .footer{background:var(--navy);color:rgba(255,255,255,.7);padding:72px 0 0}
-.footer-grid{
-  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;
   padding-bottom:48px;
 }
 .footer-brand .logo{color:#fff;margin-bottom:16px}
@@ -748,6 +759,44 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 </section>
 
 <!-- ============ FOOTER ============ -->
+<!-- ============ RELATED LINKS ============ -->
+<section class="related-links">
+  <div class="container">
+    <div class="rl-header"><span class="ship-tag">Explore More</span><h2>Complete Your Sourcing Journey</h2><p>Combine our services to build a reliable supply chain from China 鈥?end to end.</p></div>
+    <div class="rl-grid">
+      <div class="rl-col">
+        <h3>Related Services</h3>
+        <ul>
+          <li><a href="./product-sourcing.html">Product Sourcing 鈥?Find suppliers in 48h</a></li>
+          <li><a href="./private-label-oem.html">Private Label &amp; OEM 鈥?MOQ from $50</a></li>
+          <li><a href="./quality-control.html">Quality Control 鈥?AQL 2.5 inspection</a></li>
+          <li><a href="./warehousing-shipping.html">Warehousing &amp; Shipping 鈥?DDP door-to-door</a></li>
+          <li><a href="./factory-audit.html">Factory Audit 鈥?27-point verification</a></li>
+        </ul>
+      </div>
+      <div class="rl-col">
+        <h3>Product Categories</h3>
+        <ul>
+          <li><a href="../products/home-kitchen.html">Home &amp; Kitchen 鈥?10,000+ SKUs</a></li>
+          <li><a href="../products/pet-supplies.html">Pet Supplies 鈥?Dog toys, cat accessories</a></li>
+          <li><a href="../products/beauty-tools.html">Beauty Tools 鈥?Jade rollers, LED masks</a></li>
+          <li><a href="../products/arts-crafts.html">Arts &amp; Crafts 鈥?DIY kits, jewelry making</a></li>
+        </ul>
+      </div>
+      <div class="rl-col">
+        <h3>Helpful Resources</h3>
+        <ul>
+          <li><a href="../index.html#process">How It Works 鈥?Our 4-step process</a></li>
+          <li><a href="../index.html#about">About MileBond 鈥?10+ years in Yiwu</a></li>
+          <li><a href="../index.html#faq">FAQ 鈥?Common sourcing questions</a></li>
+          <li><a href="../index.html#blog">Blog 鈥?Sourcing guides &amp; insights</a></li>
+          <li><a onclick="openQuoteModal()">Get a Free Quote 鈥?Reply in 24h</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -761,15 +810,39 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
           <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
         </div>
       </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul><li><a href="../index.html#services">Product Sourcing</a></li><li><a href="../index.html#services">Private Label</a></li><li><a href="../index.html#services">Quality Control</a></li><li><a href="./factory-audit.html">Factory Audit</a></li><li><a href="../index.html#services">Amazon FBA</a></li><li><a href="../index.html#services">Warehousing</a></li></ul>
-      </div>
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <ul><li><a href="../index.html">Sourcing Guide</a></li><li><a href="../index.html">Blog</a></li><li><a href="../index.html#faq">FAQ</a></li><li><a href="../index.html">Yiwu Market Guide</a></li><li><a href="../index.html">Alibaba Guide</a></li><li><a href="../index.html">Free Ebook</a></li></ul>
-      </div>
-      <div class="footer-col">
+      
+<div class="footer-col">
+  <h4>Services</h4>
+  <ul>
+    <li><a href="./product-sourcing.html">Product Sourcing</a></li>
+    <li><a href="./private-label-oem.html">Private Label &amp; OEM</a></li>
+    <li><a href="./amazon-brand-management.html">Amazon Brand Management</a></li>
+    <li><a href="./supply-chain-optimization.html">Supply Chain Optimization</a></li>
+    <li><a href="./factory-audit.html">Factory Audit</a></li>
+    <li><a href="./quality-control.html">Quality Control</a></li>
+    <li><a href="./warehousing-shipping.html">Warehousing &amp; Shipping</a></li>
+  </ul>
+</div>
+<div class="footer-col">
+  <h4>Products</h4>
+  <ul>
+    <li><a href="../products/home-kitchen.html">Home &amp; Kitchen</a></li>
+    <li><a href="../products/pet-supplies.html">Pet Supplies</a></li>
+    <li><a href="../products/beauty-tools.html">Beauty Tools</a></li>
+    <li><a href="../products/arts-crafts.html">Arts &amp; Crafts</a></li>
+  </ul>
+</div>
+<div class="footer-col">
+  <h4>Company</h4>
+  <ul>
+    <li><a href="../index.html#about">About Us</a></li>
+    <li><a href="../index.html#process">How It Works</a></li>
+    <li><a href="../index.html#faq">FAQ</a></li>
+    <li><a href="../index.html#blog">Blog</a></li>
+    <li><a href="../index.html#contact">Contact Us</a></li>
+  </ul>
+</div>
+<div class="footer-col">
         <h4>Contact</h4>
         <ul class="footer-contact">
           <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Shengli Road, Yiwu, Zhejiang, China</li>
