@@ -1465,8 +1465,6 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
       <button class="qm-close" onclick="closeQuoteModal()" aria-label="Close">×</button>
     </div>
     <form class="qm-body" id="quoteForm" onsubmit="submitQuote(event)">
-      <input type="hidden" name="product_sku" id="qSku">
-      <input type="hidden" name="product_name" id="qProduct">
       <input type="hidden" name="source_page" id="qSource">
       <div class="qm-field qm-full">
         <label class="qm-label">Your Name<span class="qm-req">*</span></label>
@@ -1520,8 +1518,6 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 
 <script>
 function openQuoteModal(sku, productName) {
-  document.getElementById('qSku').value = sku || '';
-  document.getElementById('qProduct').value = productName || '';
   document.getElementById('qSkuView').value = sku || '';
   document.getElementById('qProductView').value = productName || '';
   document.getElementById('qSource').value = location.href;
@@ -1535,36 +1531,42 @@ function submitQuote(e) {
   e.preventDefault();
   var f = e.target;
   var data = new FormData(f);
-  var name = data.get('name') || '';
-  var email = data.get('email') || '';
-  var contact = data.get('contact') || '';
-  var sku = data.get('sku') || data.get('product_sku') || '';
-  var product = data.get('product') || data.get('product_name') || '';
-  var qty = data.get('qty') || '';
-  var price = data.get('price') || '';
+  var name = (data.get('name') || '').trim();
+  var email = (data.get('email') || '').trim();
+  var contact = (data.get('contact') || '').trim();
+  var sku = (data.get('sku') || '').trim();
+  var product = (data.get('product') || '').trim();
+  var qty = (data.get('qty') || '').trim();
+  var price = (data.get('price') || '').trim();
   var currency = data.get('currency') || 'USD';
-  var message = data.get('message') || '';
+  var message = (data.get('message') || '').trim();
   var source = data.get('source_page') || '';
-  // Basic validation
-  if (!name.trim() || !email.trim() || !message.trim()) { alert('Please fill in all required fields.'); return; }
-  var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRe.test(email)) { alert('Please enter a valid email address.'); return; }
+  if (!name || !email || !message) { alert('Please fill in all required fields.'); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
   var subject = 'Inquiry: ' + (sku || product || 'New Inquiry');
-  var body = 'Name: ' + name + '\n' +
-             'Email: ' + email + '\n' +
-             'WhatsApp/WeChat: ' + (contact || 'N/A') + '\n' +
-             'Product SKU: ' + (sku || 'N/A') + '\n' +
-             'Product Name: ' + (product || 'N/A') + '\n' +
-             'Quantity: ' + (qty || 'N/A') + '\n' +
-             'Target Price: ' + (price ? price + ' ' + currency : 'N/A') + '\n' +
-             'Source Page: ' + source + '\n\n' +
-             '---\n' + message;
+  var body = 'Name: ' + name + '\r\n' +
+             'Email: ' + email + '\r\n' +
+             'WhatsApp/WeChat: ' + (contact || 'N/A') + '\r\n' +
+             'Product SKU: ' + (sku || 'N/A') + '\r\n' +
+             'Product Name: ' + (product || 'N/A') + '\r\n' +
+             'Quantity: ' + (qty || 'N/A') + '\r\n' +
+             'Target Price: ' + (price ? price + ' ' + currency : 'N/A') + '\r\n' +
+             'Source Page: ' + source + '\r\n\r\n' +
+             '---\r\n' + message;
   var mailto = 'mailto:info@milebond.com?subject=' + encodeURIComponent(subject) +
                '&body=' + encodeURIComponent(body);
-  window.location.href = mailto;
+  // Show feedback FIRST (blocks until dismissed, guaranteed to execute)
+  alert('Thank you! Your email client should open now.\r\n\r\nIf nothing happens, please email us directly at info@milebond.com');
+  // Then trigger mailto via temp <a>.click() — more reliable than location.href
+  var a = document.createElement('a');
+  a.href = mailto;
+  a.style.display = 'none';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  // Clean up modal and form
   closeQuoteModal();
   f.reset();
-  setTimeout(function(){ alert('Thank you! Your email client will open.'); }, 400);
 }
 // Wire up all open-quote-modal buttons
 document.addEventListener('click', function(e) {
