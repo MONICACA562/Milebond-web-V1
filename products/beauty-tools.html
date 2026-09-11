@@ -125,6 +125,49 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}ul{list-st
 .nav-icon-btn:hover{color:var(--orange);background:rgba(232,119,34,.08)}
 .lang-toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:14px 28px;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,.2);z-index:3000;font-size:14px;opacity:0;transition:opacity .3s;pointer-events:none}
 .lang-toast.show{opacity:1}
+/* ============ QUOTE MODAL ============ */
+.qm-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:2500;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .2s}
+.qm-overlay.open{display:flex;opacity:1}
+.qm-box{background:#fff;border-radius:10px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.2);position:relative;transform:translateY(20px);transition:transform .25s}
+.qm-overlay.open .qm-box{transform:translateY(0)}
+.qm-header{padding:24px 28px 0;display:flex;justify-content:space-between;align-items:flex-start}
+.qm-title{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:#162D54;margin:0}
+.qm-subtitle{font-size:13px;color:#6b7280;margin-top:4px}
+.qm-close{background:none;border:none;font-size:28px;color:#9ca3af;cursor:pointer;padding:0;line-height:1;transition:color .15s}
+.qm-close:hover{color:#162D54}
+.qm-body{padding:20px 28px 28px}
+.qm-row{display:flex;gap:14px;margin-bottom:14px}
+.qm-row > .qm-field{flex:1}
+.qm-field{margin-bottom:0}
+.qm-field.qm-full{margin-bottom:14px}
+.qm-label{display:block;font-size:13px;font-weight:500;color:#162D54;margin-bottom:6px}
+.qm-label .qm-req{color:#E87722;margin-left:2px}
+.qm-input,.qm-textarea,.qm-select{width:100%;padding:11px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-family:'Manrope',sans-serif;color:#162D54;background:#fff;transition:border-color .15s,box-shadow .15s;box-sizing:border-box}
+.qm-input:focus,.qm-textarea:focus,.qm-select:focus{outline:none;border-color:#E87722;box-shadow:0 0 0 3px rgba(232,119,34,.1)}
+.qm-textarea{min-height:90px;resize:vertical}
+.qm-price-row{display:flex;gap:8px}
+.qm-price-row .qm-input{flex:1}
+.qm-price-row .qm-select{width:90px;flex-shrink:0}
+.qm-submit{width:100%;padding:13px;background:#E87722;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;font-family:'Manrope',sans-serif;cursor:pointer;transition:background .2s}
+.qm-submit:hover{background:#d66a1b}
+.qm-hint{font-size:11px;color:#9ca3af;text-align:center;margin-top:10px}
+/* Floating contact buttons */
+.fc-btns{position:fixed;bottom:24px;right:24px;display:flex;flex-direction:column;gap:12px;z-index:950}
+.fc-btn{width:52px;height:52px;border-radius:50%;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform .2s,box-shadow .2s;cursor:pointer;border:none}
+.fc-btn:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(0,0,0,.2)}
+.fc-btn svg{width:24px;height:24px}
+.fc-whatsapp svg{color:#25D366}
+.fc-email svg{color:#E87722}
+/* Hot-card quote button */
+.hot-card{position:relative}
+.hot-card .hc-quote{display:inline-block;margin-top:12px;padding:7px 16px;border:1.5px solid var(--orange);color:var(--orange);border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;background:none;transition:all .15s;font-family:inherit}
+.hot-card .hc-quote:hover{background:var(--orange);color:#fff}
+@media(max-width:480px){
+  .fc-btns{bottom:16px;right:16px;gap:10px}
+  .fc-btn{width:44px;height:44px}
+  .fc-btn svg{width:20px;height:20px}
+  .qm-row{flex-direction:column;gap:0}
+}
   </style>
 </head>
 <body>
@@ -174,7 +217,7 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}ul{list-st
           <div class="dropdown-menu"><a class="dropdown-item" onclick="setLanguage('English');return false;"><span class="di-text"><span class="di-name">English</span></span></a><a class="dropdown-item" onclick="setLanguage('Deutsch');return false;"><span class="di-text"><span class="di-name">Deutsch</span></span></a><a class="dropdown-item" onclick="setLanguage('Français');return false;"><span class="di-text"><span class="di-name">Français</span></span></a><a class="dropdown-item" onclick="setLanguage('Español');return false;"><span class="di-text"><span class="di-name">Español</span></span></a><a class="dropdown-item" onclick="setLanguage('Italiano');return false;"><span class="di-text"><span class="di-name">Italiano</span></span></a></div>
         </div>
         <a href="../index.html#contact" class="btn btn-outline btn-sm">Contact Us</a>
-        <a href="../index.html#quote" class="btn btn-primary btn-sm">Free Quote</a>
+        <a onclick="openQuoteModal()" class="btn btn-primary btn-sm open-quote-modal">Free Quote</a>
       </div>
     <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
   </div>
@@ -236,10 +279,14 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}ul{list-st
   <div class="container">
     <div class="section-header"><span class="ship-tag">Hot Products</span><h2>Top Selling Beauty Tools</h2><p>High-demand beauty devices sourced from verified Yiwu factories</p></div>
     <div class="hot-grid">
-      <div class="hot-card"><div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="12" rx="5" ry="8"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M6.34 17.66l-1.41 1.41"/><path d="M19.07 4.93l-1.41 1.41"/></svg></div><h3>Facial Tools</h3><p>Jade rollers, gua sha tools, ice rollers, facial massagers.</p><div class="hot-price">$5 – $20 avg.</div></div>
-      <div class="hot-card"><div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg></div><h3>Skincare Devices</h3><p>LED masks, microcurrent toners, facial steamers, RF devices.</p><div class="hot-price">$15 – $60 avg.</div></div>
-      <div class="hot-card"><div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3>Cleansing &amp; Exfoliation</h3><p>Facial brushes, exfoliating tools, blackhead removers, scalp brushes.</p><div class="hot-price">$8 – $35 avg.</div></div>
-      <div class="hot-card"><div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div><h3>Hair Tools</h3><p>Scalp massagers, hair brushes, heatless curlers, hair wraps.</p><div class="hot-price">$5 – $25 avg.</div></div>
+      <div class="hot-card"><div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="12" rx="5" ry="8"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M6.34 17.66l-1.41 1.41"/><path d="M19.07 4.93l-1.41 1.41"/></svg></div><h3>Facial Tools</h3><p>Jade rollers, gua sha tools, ice rollers, facial massagers.</p><div class="hot-price">$5 – $20 avg.</div>
+      <button class="hc-quote open-quote-modal" data-sku="BT-001" data-product-name="Facial Tools">Get Quote</button></div>
+      <div class="hot-card"><div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg></div><h3>Skincare Devices</h3><p>LED masks, microcurrent toners, facial steamers, RF devices.</p><div class="hot-price">$15 – $60 avg.</div>
+      <button class="hc-quote open-quote-modal" data-sku="BT-002" data-product-name="Skincare Devices">Get Quote</button></div>
+      <div class="hot-card"><div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3>Cleansing &amp; Exfoliation</h3><p>Facial brushes, exfoliating tools, blackhead removers, scalp brushes.</p><div class="hot-price">$8 – $35 avg.</div>
+      <button class="hc-quote open-quote-modal" data-sku="BT-003" data-product-name="Cleansing &amp; Exfoliation">Get Quote</button></div>
+      <div class="hot-card"><div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div><h3>Hair Tools</h3><p>Scalp massagers, hair brushes, heatless curlers, hair wraps.</p><div class="hot-price">$5 – $25 avg.</div>
+      <button class="hc-quote open-quote-modal" data-sku="BT-004" data-product-name="Hair Tools">Get Quote</button></div>
     </div>
   </div>
 </section>
@@ -300,11 +347,131 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}ul{list-st
       <div class="footer-brand"><a class="logo" href="../index.html"><span class="logo-mark">M</span><span class="logo-text">mile<span>bond</span></span></a><p>Yiwu-based supply chain partner helping Amazon sellers source quality products from China. 10+ years on the ground, 6,900+ verified suppliers.</p></div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="../services/product-sourcing.html">Product Sourcing</a></li><li><a href="../services/private-label-oem.html">Private Label</a></li><li><a href="../services/quality-control.html">Quality Control</a></li><li><a href="../services/factory-audit.html">Factory Audit</a></li><li><a href="../services/warehousing-shipping.html">Warehousing</a></li></ul></div>
       <div class="footer-col"><h4>Products</h4><ul><li><a href="./home-kitchen.html">Home &amp; Kitchen</a></li><li><a href="./pet-supplies.html">Pet Supplies</a></li><li><a href="./beauty-tools.html">Beauty Tools</a></li><li><a href="./arts-crafts.html">Arts &amp; Crafts</a></li></ul></div>
-      <div class="footer-col"><h4>Company</h4><ul><li><a href="../index.html#about">About Us</a></li><li><a href="../index.html#process">How It Works</a></li><li><a href="../index.html#faq">FAQ</a></li><li><a href="../index.html#contact">Contact</a></li><li><a href="../index.html#quote">Free Quote</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="../index.html#about">About Us</a></li><li><a href="../index.html#process">How It Works</a></li><li><a href="../index.html#faq">FAQ</a></li><li>Phone: <a href="https://wa.me/8615057960102" target="_blank">+86 150 5796 0102</a></li><li>Email: <a href="mailto:info@milebond.com">info@milebond.com</a></li><li style="font-size:12px;color:rgba(255,255,255,.5)">Mon–Sat 9:00–18:00 (GMT+8)</li></ul><a onclick="openQuoteModal()" class="btn btn-primary btn-sm open-quote-modal" style="margin-top:14px;display:inline-block">Get a Free Quote</a></div>
     </div>
-    <div class="footer-bottom">© 2026 MileBond. Powered by MileBond Supply Chain.<a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="../index.html#quote">Get a Free Quote</a></div>
+    <div class="footer-bottom">© 2026 MileBond. Powered by MileBond Supply Chain.<a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a onclick="openQuoteModal()" class="open-quote-modal">Get a Free Quote</a></div>
   </div>
 </footer>
+<!-- ============ FLOATING CONTACT BUTTONS ============ -->
+<div class="fc-btns">
+  <a class="fc-btn fc-whatsapp" href="https://wa.me/8615057960102" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.9 11.9 0 0 0 12.04 0C5.46 0 .12 5.34.12 11.92c0 2.1.55 4.14 1.6 5.95L0 24l6.28-1.64c1.74.96 3.7 1.46 5.76 1.46 6.58 0 11.92-5.34 11.92-11.92 0-3.18-1.24-6.17-3.44-8.42zM12.04 21.8c-1.75 0-3.46-.47-4.94-1.35l-.35-.21-3.72.97 1-3.63-.23-.37a9.88 9.88 0 0 1-1.52-5.26c0-5.45 4.43-9.88 9.88-9.88s9.88 4.43 9.88 9.88c0 5.45-4.43 9.85-9.88 9.85zm5.42-7.38c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.18-.3-.02-.46.13-.61.13-.13.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.68-1.64-.93-2.25-.25-.6-.5-.52-.68-.53h-.58c-.2 0-.53.07-.8.38-.28.3-1.06 1.04-1.06 2.53 0 1.49 1.09 2.93 1.24 3.13.15.2 2.14 3.27 5.2 4.59.73.32 1.3.51 1.74.66.73.23 1.39.2 1.91.12.58-.08 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.07-.13-.28-.2-.58-.35z"/></svg>
+  </a>
+  <button class="fc-btn fc-email open-quote-modal" onclick="openQuoteModal()" aria-label="Email">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  </button>
+</div>
+
+<!-- ============ QUOTE MODAL ============ -->
+<div class="qm-overlay" id="quoteModal" onclick="closeQuoteModal(event)">
+  <div class="qm-box" onclick="event.stopPropagation()">
+    <div class="qm-header">
+      <div>
+        <h3 class="qm-title">Request a Quote</h3>
+        <div class="qm-subtitle">Fill in the form and we'll reply within 48 hours</div>
+      </div>
+      <button class="qm-close" onclick="closeQuoteModal()" aria-label="Close">×</button>
+    </div>
+    <form class="qm-body" id="quoteForm" onsubmit="submitQuote(event)">
+      <input type="hidden" name="product_sku" id="qSku">
+      <input type="hidden" name="product_name" id="qProduct">
+      <input type="hidden" name="source_page" id="qSource">
+      <div class="qm-field qm-full">
+        <label class="qm-label">Your Name<span class="qm-req">*</span></label>
+        <input type="text" name="name" class="qm-input" required placeholder="John Doe">
+      </div>
+      <div class="qm-field qm-full">
+        <label class="qm-label">Email<span class="qm-req">*</span></label>
+        <input type="email" name="email" class="qm-input" required placeholder="you@company.com">
+      </div>
+      <div class="qm-field qm-full">
+        <label class="qm-label">WhatsApp / WeChat</label>
+        <input type="text" name="contact" class="qm-input" placeholder="+86 ... or WeChat ID">
+      </div>
+      <div class="qm-row">
+        <div class="qm-field">
+          <label class="qm-label">Product SKU</label>
+          <input type="text" name="sku" id="qSkuView" class="qm-input" placeholder="BT-001 (if known)">
+        </div>
+        <div class="qm-field">
+          <label class="qm-label">Product Name</label>
+          <input type="text" name="product" id="qProductView" class="qm-input" placeholder="Product name">
+        </div>
+      </div>
+      <div class="qm-row">
+        <div class="qm-field">
+          <label class="qm-label">Quantity</label>
+          <input type="text" name="qty" class="qm-input" placeholder="e.g. 500 pcs / 10 cartons">
+        </div>
+        <div class="qm-field">
+          <label class="qm-label">Target Price</label>
+          <div class="qm-price-row">
+            <input type="text" name="price" class="qm-input" placeholder="0.00">
+            <select name="currency" class="qm-select">
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="GBP">GBP</option>
+              <option value="CNY">CNY</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="qm-field qm-full">
+        <label class="qm-label">Message<span class="qm-req">*</span></label>
+        <textarea name="message" class="qm-textarea" required placeholder="Tell us about your project: specs, quality requirements, timeline..."></textarea>
+      </div>
+      <button type="submit" class="qm-submit">Send Inquiry →</button>
+      <div class="qm-hint">Your email client will open to send the inquiry</div>
+    </form>
+  </div>
+</div>
+
+<script>
+function openQuoteModal(sku, productName) {
+  document.getElementById('qSku').value = sku || '';
+  document.getElementById('qProduct').value = productName || '';
+  document.getElementById('qSkuView').value = sku || '';
+  document.getElementById('qProductView').value = productName || '';
+  document.getElementById('qSource').value = location.href;
+  document.getElementById('quoteModal').classList.add('open');
+}
+function closeQuoteModal(e) {
+  if (e && e.target !== document.getElementById('quoteModal')) return;
+  document.getElementById('quoteModal').classList.remove('open');
+}
+function submitQuote(e) {
+  e.preventDefault();
+  var f = e.target;
+  var data = new FormData(f);
+  var name = data.get('name') || '';
+  var email = data.get('email') || '';
+  var contact = data.get('contact') || '';
+  var sku = data.get('sku') || data.get('product_sku') || '';
+  var product = data.get('product') || data.get('product_name') || '';
+  var qty = data.get('qty') || '';
+  var price = data.get('price') || '';
+  var currency = data.get('currency') || 'USD';
+  var message = data.get('message') || '';
+  var source = data.get('source_page') || '';
+  if (!name.trim() || !email.trim() || !message.trim()) { alert('Please fill in all required fields.'); return; }
+  var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRe.test(email)) { alert('Please enter a valid email address.'); return; }
+  var subject = 'Inquiry: ' + (sku || product || 'New Inquiry');
+  var body = 'Name: ' + name + '\n' + 'Email: ' + email + '\n' + 'WhatsApp/WeChat: ' + (contact || 'N/A') + '\n' + 'Product SKU: ' + (sku || 'N/A') + '\n' + 'Product Name: ' + (product || 'N/A') + '\n' + 'Quantity: ' + (qty || 'N/A') + '\n' + 'Target Price: ' + (price ? price + ' ' + currency : 'N/A') + '\n' + 'Source Page: ' + source + '\n\n' + '---\n' + message;
+  window.location.href = 'mailto:info@milebond.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  closeQuoteModal();
+  f.reset();
+  setTimeout(function(){ alert('Thank you! Your email client will open.'); }, 400);
+}
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest('.open-quote-modal');
+  if (btn) { e.preventDefault(); openQuoteModal(btn.getAttribute('data-sku') || '', btn.getAttribute('data-product-name') || ''); }
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') { var qm = document.getElementById('quoteModal'); if (qm && qm.classList.contains('open')) closeQuoteModal(); }
+});
+</script>
+
 <script>
 var searchIndex=[{url:'../index.html',title:'MileBond Home',desc:'China sourcing agent homepage',tags:'sourcing china yiwu agent home'},{url:'../services/product-sourcing.html',title:'Product Sourcing',desc:'Find suppliers in 48h, save 30%+',tags:'product sourcing supplier china yiwu'},{url:'../services/private-label-oem.html',title:'Private Label & OEM',desc:'MOQ from $50, tooling protection',tags:'private label oem custom brand'},{url:'../services/amazon-brand-management.html',title:'Amazon Brand Management',desc:'50+ Amazon brands served, FBA ready',tags:'amazon FBA listing brand management'},{url:'../services/supply-chain-optimization.html',title:'Supply Chain Optimization',desc:'Cost, lead-time & quality upgrade',tags:'supply chain cost optimization supplier'},{url:'../services/factory-audit.html',title:'Factory Audit',desc:'27-point on-site supplier verification',tags:'factory audit verification QC inspection'},{url:'../services/quality-control.html',title:'Quality Control',desc:'AQL 2.5 multi-stage inspection',tags:'quality control inspection AQL QC'},{url:'../services/warehousing-shipping.html',title:'Warehousing & Shipping',desc:'1-month free storage, DDP shipping',tags:'warehousing storage shipping logistics DDP'},{url:'./home-kitchen.html',title:'Home & Kitchen',desc:'10,000+ SKUs, 30%+ cost savings',tags:'home kitchen storage kitchen gadgets'},{url:'./pet-supplies.html',title:'Pet Supplies',desc:'5,000+ SKUs, fastest-growing category',tags:'pet supplies dog cat toys accessories'},{url:'./beauty-tools.html',title:'Beauty Tools',desc:'3,000+ SKUs, 40%+ average margin',tags:'beauty tools skincare jade roller LED mask'},{url:'./arts-crafts.html',title:'Arts & Crafts',desc:'4,000+ SKUs, kids product safety',tags:'arts crafts DIY painting jewelry diamond'}];
 var searchOpen=false;function openSearch(){document.getElementById('searchModal').classList.add('open');document.getElementById('searchInput').focus();document.getElementById('searchResults').innerHTML='<div class="search-empty">Start typing to search...</div>';searchOpen=true}function closeSearch(e){if(!e||e.target===document.getElementById('searchModal')){document.getElementById('searchModal').classList.remove('open');searchOpen=false}}function doSearch(q){var r=document.getElementById('searchResults');if(!q.trim()){r.innerHTML='<div class="search-empty">Start typing to search...</div>';return}q=q.toLowerCase();var m=searchIndex.filter(function(p){return(p.title+p.desc+p.tags).toLowerCase().indexOf(q)!==-1});if(!m.length){r.innerHTML='<div class="search-empty">No results found</div>';return}r.innerHTML=m.map(function(p){return'<a class="search-result" href="'+p.url+'"><span class="search-result-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span><span class="search-result-text"><h4>'+p.title+'</h4><p>'+p.desc+'</p></span></a>'}).join('')}
