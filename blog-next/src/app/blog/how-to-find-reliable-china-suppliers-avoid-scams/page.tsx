@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title:
     "How to Find Reliable China Suppliers & Avoid Scams (2026 Data-Driven Guide)",
   description:
     "2026 AI-era China supplier scam prevention guide. Verify factories via GSXT & customs database, spot AI deepfake fraud, check red flags, and use safe payment terms for importing.",
-  canonical:
-    "https://milebond.com/blog/how-to-find-reliable-china-suppliers-avoid-scams",
+  alternates: {
+    canonical:
+      "https://www.milebond.com/blog/how-to-find-reliable-china-suppliers-avoid-scams",
+  },
   openGraph: {
     type: "article",
     title:
       "How to Find Reliable China Suppliers & Avoid Scams (2026 Data-Driven Guide)",
     description:
       "2026 AI-era China supplier scam prevention guide. Verify factories via GSXT & customs database, spot AI deepfake fraud, check red flags, and use safe payment terms for importing.",
-    url: "https://milebond.com/blog/how-to-find-reliable-china-suppliers-avoid-scams",
+    url: "https://www.milebond.com/blog/how-to-find-reliable-china-suppliers-avoid-scams",
     siteName: "MileBond — China Sourcing Agent",
     images: [
       {
@@ -61,19 +62,19 @@ const articleLd = {
   author: {
     "@type": "Organization",
     name: "Milebond",
-    url: "https://milebond.com",
+    url: "https://www.milebond.com",
   },
   publisher: {
     "@type": "Organization",
     name: "Milebond",
     logo: {
       "@type": "ImageObject",
-      url: "https://milebond.com/logo.png",
+      url: "https://www.milebond.com/logo.png",
     },
   },
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": "https://milebond.com/blog/how-to-find-reliable-china-suppliers-avoid-scams",
+    "@id": "https://www.milebond.com/blog/how-to-find-reliable-china-suppliers-avoid-scams",
   },
 };
 
@@ -206,13 +207,11 @@ function CTAInline({ text, href = "/contact" }: { text: string; href?: string })
 export default function BlogPage() {
   return (
     <>
-      <Script
-        id="ld-article"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
       />
-      <Script
-        id="ld-faq"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
