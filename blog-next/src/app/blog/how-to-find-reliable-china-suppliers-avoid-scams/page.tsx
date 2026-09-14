@@ -51,22 +51,23 @@ export const metadata: Metadata = {
 // ==================== JSON-LD ====================
 const articleLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   headline:
     "How to Find Reliable China Suppliers & Avoid Scams (2026 Data-Driven Guide)",
   description:
     "2026 AI-era China supplier scam prevention guide. Verify factories via GSXT & customs database, spot AI deepfake fraud, check red flags, and use safe payment terms for importing.",
-  image: "/images/blog/china-supplier-vetting-2026.jpg",
+  image:
+    "https://www.milebond.com/images/blog/china-supplier-vetting-2026.jpg",
   datePublished: "2026-09-14",
   dateModified: "2026-09-14",
   author: {
     "@type": "Organization",
-    name: "Milebond",
+    name: "MileBond",
     url: "https://www.milebond.com",
   },
   publisher: {
     "@type": "Organization",
-    name: "Milebond",
+    name: "MileBond",
     logo: {
       "@type": "ImageObject",
       url: "https://www.milebond.com/logo.png",
@@ -76,6 +77,30 @@ const articleLd = {
     "@type": "WebPage",
     "@id": "https://www.milebond.com/blog/how-to-find-reliable-china-suppliers-avoid-scams",
   },
+};
+
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.milebond.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Blog",
+      item: "https://www.milebond.com/blog/",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "How to Find Reliable China Suppliers & Avoid Scams",
+    },
+  ],
 };
 
 const faqLd = {
@@ -210,6 +235,10 @@ export default function BlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <script
         type="application/ld+json"
