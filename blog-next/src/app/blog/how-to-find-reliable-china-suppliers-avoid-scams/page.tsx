@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.milebond.com"),
   title:
     "How to Find Reliable China Suppliers & Avoid Scams (2026 Data-Driven Guide)",
   description:
@@ -219,11 +220,11 @@ function BlogTable({
   );
 }
 
-function CTAInline({ text, href = "/contact" }: { text: string; href?: string }) {
+function CTAInline({ text, href = "https://www.milebond.com/#quote" }: { text: string; href?: string }) {
   return (
     <div className="blog-cta-inline">
       <p className="text-lg font-semibold">{text}</p>
-      <Link href={href}>Contact Milebond for a Free Quote — Reply in 24h</Link>
+      <a href={href}>Contact Milebond for a Free Quote — Reply in 24h</a>
     </div>
   );
 }
@@ -250,13 +251,13 @@ export default function BlogPage() {
         <header className="bg-navy text-white py-16 md:py-20">
           <div className="max-w-[720px] mx-auto px-4">
             <nav className="text-sm text-white/70 mb-6">
-              <Link href="/" className="hover:text-orange">
+              <a href="https://www.milebond.com/" className="hover:text-orange">
                 MileBond
-              </Link>
+              </a>
               <span className="mx-2">/</span>
-              <Link href="/blog" className="hover:text-orange">
+              <a href="https://www.milebond.com/blog/" className="hover:text-orange">
                 Blog
-              </Link>
+              </a>
               <span className="mx-2">/</span>
               <span className="text-white/90">Supplier Vetting</span>
             </nav>
@@ -705,7 +706,6 @@ export default function BlogPage() {
 
           <CTAInline
             text="Need professional China supplier vetting, industrial cluster matching, and full-order risk control?"
-            href="/contact"
           />
 
           {/* ===== SOURCES ===== */}
@@ -731,22 +731,22 @@ export default function BlogPage() {
             <div className="grid md:grid-cols-3 gap-5">
               {[
                 {
-                  title: "China Supplier Verification Checklist",
-                  desc: "Free download — 25-point checklist covering GSXT, customs records, AI-forgery detection, and safe payment terms.",
-                  href: "/resources/supplier-verification-checklist",
+                  title: "Factory Audit",
+                  desc: "27-point on-site supplier verification — GSXT registry cross-check, customs records, and physical factory inspection.",
+                  href: "https://www.milebond.com/services/factory-audit.html",
                 },
                 {
-                  title: "How to Read a Chinese Business License",
-                  desc: "Field-by-field walkthrough of the 18-digit unified social credit code and what each section means for importers.",
-                  href: "/blog/read-chinese-business-license",
+                  title: "Quality Control",
+                  desc: "AQL 2.5 multi-stage inspection — pre-shipment random sampling, defect grading, and rework guidance.",
+                  href: "https://www.milebond.com/services/quality-control.html",
                 },
                 {
-                  title: "Trade Assurance vs. T/T",
-                  desc: "Which payment method actually protects your money — and what contract terms to insist on from day one.",
-                  href: "/blog/trade-assurance-vs-tt",
+                  title: "Supply Chain Optimization",
+                  desc: "Cost, lead-time and payment term restructuring — negotiate better MOQ, pricing and safe T/T or L/C terms.",
+                  href: "https://www.milebond.com/services/supply-chain-optimization.html",
                 },
               ].map((item) => (
-                <Link
+                <a
                   key={item.href}
                   href={item.href}
                   className="bg-white rounded-lg p-5 shadow-sm hover:shadow-md hover:border-orange transition-all border border-gray-200 group"
@@ -760,7 +760,7 @@ export default function BlogPage() {
                   <span className="text-orange text-sm font-medium mt-3 inline-block">
                     Read article →
                   </span>
-                </Link>
+                </a>
               ))}
             </div>
           </div>
