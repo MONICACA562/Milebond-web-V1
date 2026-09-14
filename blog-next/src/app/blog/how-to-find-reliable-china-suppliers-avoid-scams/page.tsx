@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+// Single source of truth for all image URLs — used by metadata + JSON-LD
+const OG_IMAGE_URL =
+  "https://www.milebond.com/images/blog/china-supplier-vetting-2026.jpg";
+const ARTICLE_URL =
+  "https://www.milebond.com/blog/how-to-find-reliable-china-suppliers-avoid-scams";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.milebond.com"),
   title:
@@ -8,8 +14,7 @@ export const metadata: Metadata = {
   description:
     "2026 AI-era China supplier scam prevention guide. Verify factories via GSXT & customs database, spot AI deepfake fraud, check red flags, and use safe payment terms for importing.",
   alternates: {
-    canonical:
-      "https://www.milebond.com/blog/how-to-find-reliable-china-suppliers-avoid-scams",
+    canonical: ARTICLE_URL,
   },
   openGraph: {
     type: "article",
@@ -17,11 +22,11 @@ export const metadata: Metadata = {
       "How to Find Reliable China Suppliers & Avoid Scams (2026 Data-Driven Guide)",
     description:
       "2026 AI-era China supplier scam prevention guide. Verify factories via GSXT & customs database, spot AI deepfake fraud, check red flags, and use safe payment terms for importing.",
-    url: "https://www.milebond.com/blog/how-to-find-reliable-china-suppliers-avoid-scams",
+    url: ARTICLE_URL,
     siteName: "MileBond — China Sourcing Agent",
     images: [
       {
-        url: "/images/blog/china-supplier-vetting-2026.jpg",
+        url: OG_IMAGE_URL,
         width: 1200,
         height: 630,
         alt: "China Supplier Vetting 2026 — AI Scam Prevention Guide",
@@ -35,7 +40,7 @@ export const metadata: Metadata = {
       "How to Find Reliable China Suppliers & Avoid Scams (2026 Data-Driven Guide)",
     description:
       "2026 AI-era China supplier scam prevention. GSXT verification, AI deepfake detection, red flags, safe payment terms.",
-    images: ["/images/blog/china-supplier-vetting-2026.jpg"],
+    images: [OG_IMAGE_URL],
   },
   robots: {
     index: true,
@@ -57,8 +62,7 @@ const articleLd = {
     "How to Find Reliable China Suppliers & Avoid Scams (2026 Data-Driven Guide)",
   description:
     "2026 AI-era China supplier scam prevention guide. Verify factories via GSXT & customs database, spot AI deepfake fraud, check red flags, and use safe payment terms for importing.",
-  image:
-    "https://www.milebond.com/images/blog/china-supplier-vetting-2026.jpg",
+  image: OG_IMAGE_URL,
   datePublished: "2026-09-14",
   dateModified: "2026-09-14",
   author: {
@@ -76,7 +80,7 @@ const articleLd = {
   },
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": "https://www.milebond.com/blog/how-to-find-reliable-china-suppliers-avoid-scams",
+    "@id": ARTICLE_URL,
   },
 };
 
