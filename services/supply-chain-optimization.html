@@ -887,7 +887,10 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
       <button class="qm-close" onclick="closeQuoteModal()" aria-label="Close">脳</button>
     </div>
     <form class="qm-body" id="quoteForm" onsubmit="submitQuote(event)">
-      <input type="hidden" name="source_page" id="qSource">
+            <input type="hidden" name="access_key" value="e2b6db8d-48d6-4faa-ad15-6b2b0a15402c">
+      <input type="hidden" name="_subject" value="New Inquiry from MileBond Website">
+      <input type="hidden" name="from_name" value="MileBond Website">
+      <input type="hidden" name="access_key" value="e2b6db8d-48d6-4faa-ad15-6b2b0a15402c"><input type="hidden" name="_subject" value="New Inquiry from MileBond Website"><input type="hidden" name="from_name" value="MileBond Website"><input type="hidden" name="source_page" id="qSource">
       <div class="qm-field qm-full"><label class="qm-label">Your Name<span class="qm-req">*</span></label><input type="text" name="name" class="qm-input" required placeholder="John Doe"></div>
       <div class="qm-field qm-full"><label class="qm-label">Email<span class="qm-req">*</span></label><input type="email" name="email" class="qm-input" required placeholder="you@company.com"></div>
       <div class="qm-field qm-full"><label class="qm-label">WhatsApp / WeChat</label><input type="text" name="contact" class="qm-input" placeholder="+86 ... or WeChat ID"></div>
@@ -895,7 +898,6 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
       <div class="qm-row"><div class="qm-field"><label class="qm-label">Quantity</label><input type="text" name="qty" class="qm-input" placeholder="e.g. 500 pcs / 10 cartons"></div><div class="qm-field"><label class="qm-label">Target Price</label><div class="qm-price-row"><input type="text" name="price" class="qm-input" placeholder="0.00"><select name="currency" class="qm-select"><option value="USD">USD</option><option value="EUR">EUR</option><option value="GBP">GBP</option><option value="CNY">CNY</option></select></div></div></div>
       <div class="qm-field qm-full"><label class="qm-label">Message<span class="qm-req">*</span></label><textarea name="message" class="qm-textarea" required placeholder="Tell us about your project: specs, quality requirements, timeline..."></textarea></div>
       <button type="submit" class="qm-submit">Send Inquiry 鈫?/button>
-      <div class="qm-hint">Your email client will open to send the inquiry</div>
     </form>
   </div>
 </div>
@@ -903,7 +905,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 <script>
 function openQuoteModal(sku,productName){document.getElementById('qSkuView').value=sku||'';document.getElementById('qProductView').value=productName||'';document.getElementById('qSource').value=location.href;document.getElementById('quoteModal').classList.add('open')}
 function closeQuoteModal(e){if(e&&e.target!==document.getElementById('quoteModal'))return;document.getElementById('quoteModal').classList.remove('open')}
-function submitQuote(e){e.preventDefault();var f=e.target,d=new FormData(f),n=(d.get('name')||'').trim(),em=(d.get('email')||'').trim(),c=(d.get('contact')||'').trim(),sk=(d.get('sku')||'').trim(),p=(d.get('product')||'').trim(),q=(d.get('qty')||'').trim(),pr=(d.get('price')||'').trim(),cr=d.get('currency')||'USD',mg=(d.get('message')||'').trim(),sr=d.get('source_page')||'';if(!n||!em||!mg){alert('Please fill in all required fields.');return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){alert('Please enter a valid email address.');return}var sub='Inquiry: '+(sk||p||'New Inquiry');var body='Name: '+n+'\r\nEmail: '+em+'\r\nWhatsApp/WeChat: '+(c||'N/A')+'\r\nProduct SKU: '+(sk||'N/A')+'\r\nProduct Name: '+(p||'N/A')+'\r\nQuantity: '+(q||'N/A')+'\r\nTarget Price: '+(pr?pr+' '+cr:'N/A')+'\r\nSource Page: '+sr+'\r\n\r\n---\r\n'+mg;var mt='mailto:info@milebond.com?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(body);alert('Thank you! Your email client should open now.\r\n\r\nIf nothing happens, please email us directly at info@milebond.com');var a=document.createElement('a');a.href=mt;a.style.display='none';document.body.appendChild(a);a.click();document.body.removeChild(a);closeQuoteModal();f.reset()}
+function submitQuote(e){e.preventDefault();var f=e.target,b=f.querySelector('.qm-submit'),d=new FormData(f),n=(d.get('name')||'').trim(),em=(d.get('email')||'').trim(),mg=(d.get('message')||'').trim();if(!n||!em||!mg){alert('Please fill in all required fields.');return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){alert('Please enter a valid email address.');return}b.disabled=true;b.textContent='Sending...';fetch('https://api.web3forms.com/submit',{method:'POST',body:d,headers:{'Accept':'application/json'}}).then(function(r){return r.json()}).then(function(x){if(x.success){alert('Thank you! We received your inquiry and will contact you within 24 hours.');f.reset();closeQuoteModal()}else{alert('Oops! Something went wrong. Try again or email info@milebond.com');b.disabled=false;b.textContent='Send Inquiry →'}}).catch(function(){alert('Network error. Check connection or email info@milebond.com');b.disabled=false;b.textContent='Send Inquiry →'})}
 document.addEventListener('click',function(e){var b=e.target.closest('.open-quote-modal');if(b){e.preventDefault();openQuoteModal(b.getAttribute('data-sku')||'',b.getAttribute('data-product-name')||'')}});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){var qm=document.getElementById('quoteModal');if(qm&&qm.classList.contains('open'))closeQuoteModal()}});
 </script>
