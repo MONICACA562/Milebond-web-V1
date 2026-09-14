@@ -735,6 +735,11 @@ export default function BlogPage() {
             <div className="grid md:grid-cols-3 gap-5">
               {[
                 {
+                  title: "Private Label Sourcing & Supply Chain Optimization",
+                  desc: "6-stage end-to-end QC, real cases: 31% cost reduction + 201→304 upgrade + Amazon 4.5→4.8. MOQ from 1 carton.",
+                  href: "https://www.milebond.com/blog/private-label-sourcing-supply-chain-optimization",
+                },
+                {
                   title: "Factory Audit",
                   desc: "27-point on-site supplier verification — GSXT registry cross-check, customs records, and physical factory inspection.",
                   href: "https://www.milebond.com/services/factory-audit.html",
@@ -743,11 +748,6 @@ export default function BlogPage() {
                   title: "Quality Control",
                   desc: "AQL 2.5 multi-stage inspection — pre-shipment random sampling, defect grading, and rework guidance.",
                   href: "https://www.milebond.com/services/quality-control.html",
-                },
-                {
-                  title: "Supply Chain Optimization",
-                  desc: "Cost, lead-time and payment term restructuring — negotiate better MOQ, pricing and safe T/T or L/C terms.",
-                  href: "https://www.milebond.com/services/supply-chain-optimization.html",
                 },
               ].map((item) => (
                 <a
