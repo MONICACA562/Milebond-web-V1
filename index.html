@@ -971,6 +971,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
       <span class="logo-text">mile<span>bond</span></span>
     </a>
     <div class="nav-menu" id="navMenu">
+        <a onclick="navigateTo('home')">Home</a>
       <div class="nav-dropdown" id="navDropdown">
         <a class="nav-trigger" onclick="event.preventDefault();toggleDropdown(this)">Services
           <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1030,10 +1031,10 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
         </div>
       </div>
       <a onclick="navigateTo('home','process')">How It Works</a>
+      <a href="/blog/">Blog</a>
       <a onclick="navigateTo('home','about')">About</a>
-      <a onclick="navigateTo('home','categories')">Categories</a>
       <a onclick="navigateTo('home','faq')">FAQ</a>
-      <a onclick="navigateTo('blog')">Blog</a>
+      <a onclick="navigateTo('home','contact')">Contact</a>
     </div>
     <div class="nav-cta">
       <button class="nav-icon-btn" onclick="openSearch()" aria-label="Search">
@@ -1067,8 +1068,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
           <a class="dropdown-item" onclick="setLanguage('Italiano');return false;"><span class="di-text"><span class="di-name">Italiano</span></span></a>
         </div>
       </div>
-      <a onclick="navigateTo('home','contact')" class="btn btn-outline btn-sm">Contact Us</a>
-      <a onclick="openQuoteModal()" class="btn btn-primary btn-sm open-quote-modal">Free Quote</a>
+      <a onclick="openQuoteModal()" class="btn btn-primary btn-sm open-quote-modal">Get a Quote</a>
     </div>
     <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
       <span></span><span></span><span></span>
@@ -1352,12 +1352,12 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   <div class="container">
     <div class="section-header"><span class="ship-tag">Learn &amp; Grow</span><h2>Learn How to Import Products From China</h2><p>With 10 years of experience, we share knowledge on how to wholesale products from China and how different products are made</p></div>
     <div class="knowledge-grid">
-      <div class="knowledge-card"><div class="ch-num">01</div><div><h4>Chapter 1: Sourcing</h4><p>How to find the right products and suppliers for your business</p><a class="ch-link" onclick="navigateTo('blog')">Read Details →</a></div></div>
-      <div class="knowledge-card"><div class="ch-num">02</div><div><h4>Chapter 2: Supplier</h4><p>Vetting, verifying and negotiating with Chinese manufacturers</p><a class="ch-link" onclick="navigateTo('blog')">Read Details →</a></div></div>
-      <div class="knowledge-card"><div class="ch-num">03</div><div><h4>Chapter 3: Payment</h4><p>Secure payment methods and protecting your transactions</p><a class="ch-link" onclick="navigateTo('blog')">Read Details →</a></div></div>
-      <div class="knowledge-card"><div class="ch-num">04</div><div><h4>Chapter 4: Inspection</h4><p>Quality control processes and pre-shipment inspections</p><a class="ch-link" onclick="navigateTo('blog')">Read Details →</a></div></div>
-      <div class="knowledge-card"><div class="ch-num">05</div><div><h4>Chapter 5: Shipping</h4><p>Sea freight, air cargo, Incoterms and logistics options</p><a class="ch-link" onclick="navigateTo('blog')">Read Details →</a></div></div>
-      <div class="knowledge-card"><div class="ch-num">06</div><div><h4>Chapter 6: Selling</h4><p>Bringing products to market and scaling your sales</p><a class="ch-link" onclick="navigateTo('blog')">Read Details →</a></div></div>
+      <div class="knowledge-card"><div class="ch-num">01</div><div><h4>Chapter 1: Sourcing</h4><p>How to find the right products and suppliers for your business</p><a class="ch-link" href="/blog/">Read Details →</a></div></div>
+      <div class="knowledge-card"><div class="ch-num">02</div><div><h4>Chapter 2: Supplier</h4><p>Vetting, verifying and negotiating with Chinese manufacturers</p><a class="ch-link" href="/blog/">Read Details →</a></div></div>
+      <div class="knowledge-card"><div class="ch-num">03</div><div><h4>Chapter 3: Payment</h4><p>Secure payment methods and protecting your transactions</p><a class="ch-link" href="/blog/">Read Details →</a></div></div>
+      <div class="knowledge-card"><div class="ch-num">04</div><div><h4>Chapter 4: Inspection</h4><p>Quality control processes and pre-shipment inspections</p><a class="ch-link" href="/blog/">Read Details →</a></div></div>
+      <div class="knowledge-card"><div class="ch-num">05</div><div><h4>Chapter 5: Shipping</h4><p>Sea freight, air cargo, Incoterms and logistics options</p><a class="ch-link" href="/blog/">Read Details →</a></div></div>
+      <div class="knowledge-card"><div class="ch-num">06</div><div><h4>Chapter 6: Selling</h4><p>Bringing products to market and scaling your sales</p><a class="ch-link" href="/blog/">Read Details →</a></div></div>
     </div>
   </div>
 </section>
@@ -1449,7 +1449,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
           <li><a onclick="navigateTo('home','about')">About MileBond — 10+ years in Yiwu</a></li>
           <li><a onclick="navigateTo('home','process')">How It Works — Our 4-step process</a></li>
           <li><a onclick="navigateTo('home','faq')">FAQ — Common sourcing questions</a></li>
-          <li><a onclick="navigateTo('blog')">Blog — Sourcing guides &amp; insights</a></li>
+          <li><a href="/blog/">Blog — Sourcing guides &amp; insights</a></li>
           <li><a onclick="openQuoteModal()">Get a Free Quote — Reply in 24h</a></li>
         </ul>
       </div>
@@ -1497,7 +1497,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
           <li><a onclick="navigateTo('home','about')">About Us</a></li>
           <li><a onclick="navigateTo('home','process')">How It Works</a></li>
           <li><a onclick="navigateTo('home','faq')">FAQ</a></li>
-          <li><a onclick="navigateTo('blog')">Blog</a></li>
+          <li><a href="/blog/">Blog</a></li>
           <li><a onclick="openQuoteModal()">Contact Us</a></li>
         </ul>
       </div>
