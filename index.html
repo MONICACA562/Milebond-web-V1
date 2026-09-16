@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -668,24 +668,25 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 .faq-cat-head{
   display:flex;align-items:center;justify-content:space-between;
   padding:10px 12px;cursor:pointer;border-radius:8px;
-  font-family:'Manrope',sans-serif;font-weight:600;font-size:14px;color:var(--navy);
-  transition:all .2s;background:transparent;border:none;width:100%;text-align:left
+  font-family:'Manrope',sans-serif;font-weight:600;font-size:14px;color:var(--orange);
+  transition:all .2s;background:rgba(232,119,34,.04);border:none;width:100%;text-align:left
 }
-.faq-cat-head:hover{background:rgba(232,119,34,.08);color:var(--orange)}
+.faq-cat-head:hover{background:rgba(232,119,34,.12);color:#D4681A}
+.faq-cat.open .faq-cat-head{background:rgba(232,119,34,.1);color:#D4681A}
 .faq-cat-head .cat-emoji{font-size:16px;margin-right:8px}
 .faq-cat-head .cat-chevron{
-  width:16px;height:16px;transition:transform .2s;color:var(--gray-400);flex-shrink:0
+  width:16px;height:16px;transition:transform .2s;color:var(--orange);flex-shrink:0
 }
 .faq-cat.open .faq-cat-head .cat-chevron{transform:rotate(90deg)}
 .faq-cat-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
 .faq-cat.open .faq-cat-body{max-height:500px}
 .faq-sub{
-  display:block;padding:7px 12px 7px 36px;font-size:13px;color:var(--gray-600);
+  display:block;padding:7px 12px 7px 36px;font-size:13px;color:var(--orange);
   border-radius:6px;margin:1px 0;cursor:pointer;transition:all .2s;
   text-decoration:none;border:none;background:none;width:100%;text-align:left
 }
-.faq-sub:hover{background:rgba(232,119,34,.08);color:var(--orange);padding-left:40px}
-.faq-sub.active{background:rgba(232,119,34,.1);color:var(--orange);font-weight:600}
+.faq-sub:hover{background:rgba(232,119,34,.12);color:#D4681A;padding-left:40px}
+.faq-sub.active{background:rgba(232,119,34,.15);color:#D4681A;font-weight:700}
 
 /* RIGHT CONTENT */
 .faq-content{min-width:0}
