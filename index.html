@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -635,41 +635,139 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 .cat-card h4{color:#fff;font-size:15px;margin-bottom:6px}
 .cat-card span{font-size:12px;color:rgba(255,255,255,.5)}
 
-/* ============ FAQ ============ */
-.faq-section{background:var(--cream)}
-.faq-list{max-width:820px;margin:0 auto}
+/* ============ FAQ (NEW — category tree + right content) ============ */
+/* Hero for FAQ */
+.faq-hero{background:linear-gradient(135deg,#162D54 0%,#243E6B 100%);padding:72px 0 56px;color:#fff;text-align:center;position:relative;overflow:hidden}
+.faq-hero::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:rgba(232,119,34,.1);border-radius:50%;filter:blur(80px)}
+.faq-hero .container{position:relative;z-index:2}
+.faq-hero h1{font-size:44px;color:#fff;margin-bottom:12px}
+.faq-hero p.faq-sub{font-size:17px;opacity:.9;max-width:600px;margin:0 auto 28px}
+.faq-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.faq-stat{text-align:center}
+.faq-stat-num{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:#E87722}
+.faq-stat-label{font-size:12px;opacity:.8;letter-spacing:.04em;text-transform:uppercase}
+
+/* Main layout */
+.faq-layout{padding:56px 0 80px;background:var(--cream)}
+.faq-grid{display:grid;grid-template-columns:280px 1fr;gap:40px;align-items:start}
+
+/* LEFT SIDEBAR — logic tree */
+.faq-sidebar{
+  background:#fff;border-radius:12px;border:1px solid var(--gray-200);
+  box-shadow:var(--shadow-sm);padding:20px;position:sticky;top:96px;
+  max-height:calc(100vh - 120px);overflow-y:auto
+}
+.faq-sidebar-title{
+  font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--orange);
+  margin-bottom:16px;display:flex;align-items:center;gap:8px
+}
+.faq-sidebar-title::before{content:'';width:24px;height:2px;background:var(--orange)}
+.faq-tree{display:flex;flex-direction:column;gap:2px}
+.faq-cat{border-radius:8px;overflow:hidden}
+.faq-cat-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 12px;cursor:pointer;border-radius:8px;
+  font-family:'Manrope',sans-serif;font-weight:600;font-size:14px;color:var(--navy);
+  transition:all .2s;background:transparent;border:none;width:100%;text-align:left
+}
+.faq-cat-head:hover{background:rgba(232,119,34,.08);color:var(--orange)}
+.faq-cat-head .cat-emoji{font-size:16px;margin-right:8px}
+.faq-cat-head .cat-chevron{
+  width:16px;height:16px;transition:transform .2s;color:var(--gray-400);flex-shrink:0
+}
+.faq-cat.open .faq-cat-head .cat-chevron{transform:rotate(90deg)}
+.faq-cat-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-cat.open .faq-cat-body{max-height:500px}
+.faq-sub{
+  display:block;padding:7px 12px 7px 36px;font-size:13px;color:var(--gray-600);
+  border-radius:6px;margin:1px 0;cursor:pointer;transition:all .2s;
+  text-decoration:none;border:none;background:none;width:100%;text-align:left
+}
+.faq-sub:hover{background:rgba(232,119,34,.08);color:var(--orange);padding-left:40px}
+.faq-sub.active{background:rgba(232,119,34,.1);color:var(--orange);font-weight:600}
+
+/* RIGHT CONTENT */
+.faq-content{min-width:0}
+.faq-content-section{margin-bottom:56px;scroll-margin-top:96px}
+.faq-content-section:last-child{margin-bottom:0}
+.faq-breadcrumb{
+  font-size:12px;color:var(--gray-400);margin-bottom:12px;letter-spacing:.03em
+}
+.faq-breadcrumb a{color:var(--gray-400);transition:color .2s}
+.faq-breadcrumb a:hover{color:var(--orange)}
+.faq-breadcrumb .sep{margin:0 6px}
+.faq-content-section h2{
+  font-size:24px;margin-bottom:4px
+}
+.faq-content-section .section-sub{
+  font-size:14px;color:var(--gray-600);margin-bottom:20px
+}
+
+/* FAQ list / accordion (kept & refined from old) */
+.faq-list{display:flex;flex-direction:column;gap:12px}
 .faq-item{
-  background:#fff;border-radius:var(--radius);margin-bottom:12px;
-  border:1px solid var(--gray-200);overflow:hidden;
-  transition:box-shadow .3s;
+  background:#fff;border-radius:12px;border:1px solid var(--gray-200);
+  overflow:hidden;transition:box-shadow .3s
 }
 .faq-item:hover{box-shadow:var(--shadow-sm)}
+.faq-item.active{border-color:var(--orange)}
 .faq-question{
   width:100%;display:flex;align-items:center;justify-content:space-between;
-  padding:22px 28px;text-align:left;
+  padding:18px 24px;text-align:left;
   font-family:'Space Grotesk',sans-serif;
-  font-size:16px;font-weight:600;color:var(--navy);
-  gap:16px;
+  font-size:15px;font-weight:600;color:var(--navy);
+  gap:16px;background:none;border:none;cursor:pointer
 }
 .faq-question .faq-icon{
   width:28px;height:28px;flex-shrink:0;border-radius:50%;
   background:rgba(232,119,34,.1);color:var(--orange);
   display:flex;align-items:center;justify-content:center;
   transition:transform .3s,background .3s;
-  font-size:18px;font-weight:400;
+  font-size:18px;font-weight:400;line-height:1
 }
 .faq-item.active .faq-icon{transform:rotate(45deg);background:var(--orange);color:#fff}
 .faq-answer{
-  max-height:0;overflow:hidden;transition:max-height .35s ease;
+  max-height:0;overflow:hidden;transition:max-height .35s ease
 }
 .faq-answer-inner{
-  padding:0 28px 24px;font-size:14px;color:var(--gray-600);line-height:1.8;
+  padding:0 24px 20px;font-size:14px;color:var(--gray-600);line-height:1.8
 }
 .faq-answer-inner ul{margin-top:8px}
 .faq-answer-inner li{padding:4px 0 4px 20px;position:relative}
 .faq-answer-inner li::before{
   content:'';position:absolute;left:0;top:12px;
-  width:6px;height:6px;background:var(--orange);border-radius:50%;
+  width:6px;height:6px;background:var(--orange);border-radius:50%
+}
+
+/* Placeholder section */
+.faq-placeholder{
+  background:#fff;border-radius:12px;border:1px dashed var(--gray-200);
+  padding:24px;text-align:center;color:var(--gray-400);font-size:13px
+}
+
+/* CTA */
+.faq-cta{
+  background:linear-gradient(135deg,#162D54 0%,#243E6B 100%);
+  border-radius:12px;padding:40px;text-align:center;color:#fff;margin-top:40px
+}
+.faq-cta h3{font-size:22px;color:#fff;margin-bottom:8px}
+.faq-cta p{font-size:14px;opacity:.9;margin-bottom:20px}
+
+/* Responsive */
+@media(max-width:960px){
+  .faq-grid{grid-template-columns:1fr}
+  .faq-sidebar{position:static;max-height:none;order:-1}
+  .faq-hero h1{font-size:32px}
+  .faq-stats{gap:24px}
+}
+@media(max-width:640px){
+  .faq-hero{padding:48px 0 40px}
+  .faq-hero h1{font-size:26px}
+  .faq-layout{padding:40px 0 56px}
+  .faq-question{padding:16px 18px;font-size:14px}
+  .faq-answer-inner{padding:0 18px 18px}
+  .faq-content-section h2{font-size:20px}
 }
 
 /* ============ EBOOK DOWNLOAD ============ */
@@ -1490,20 +1588,244 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="section faq-section" id="faq">
+<!-- FAQ HERO -->
+<section class="faq-hero">
   <div class="container">
-    <div class="section-header"><span class="ship-tag">Common Questions</span><h2>FAQ About China Sourcing Agent</h2><p>Everything you need to know before starting your sourcing journey</p></div>
-    <div class="faq-list">
-      <div class="faq-item"><button class="faq-question">What can your China sourcing agent do for my business?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">We offer a comprehensive sourcing solution from China, acting as your trusted sourcing partner to:<ul><li>Source products &amp; provide competitive quotes</li><li>Manage orders &amp; production timelines</li><li>Inspect quality to guarantee your standards</li><li>Handle export procedures, customs &amp; documentation</li><li>Offer import guidance &amp; regulatory advice</li><li>Assist during your China visits with translation</li><li>Adapt to your unique business needs with custom solutions</li></ul></div></div></div>
-      <div class="faq-item"><button class="faq-question">What kind of suppliers do you work with? All factories?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">It depends on the products you require. We find the best supplier for your needs:<ul><li><strong>Factories (if MOQ met):</strong> Best pricing for larger orders</li><li><strong>Negotiate with factories:</strong> For smaller orders to meet minimums</li><li><strong>Reliable wholesalers:</strong> For smaller orders when factory MOQ isn't possible</li></ul>We balance price, quality, and order size to find the right supplier for you.</div></div></div>
-      <div class="faq-item"><button class="faq-question">Is there any MOQ when placing orders through you?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">It depends on the product and supplier:<ul><li><strong>Stock availability:</strong> We can accept your quantity if the factory has enough stock</li><li><strong>Factory MOQ:</strong> New production usually requires meeting the factory's minimum order quantity</li><li><strong>Combined orders:</strong> We may add your order to a larger client's production run, allowing smaller quantities</li></ul>We'll work to find a solution for your desired order size.</div></div></div>
-      <div class="faq-item"><button class="faq-question">What kind of shipment do you offer?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">We offer both sea and air shipping to meet your needs:<ul><li><strong>Sea shipping:</strong> Economical for larger volumes (FCL or LCL)</li><li><strong>EXW:</strong> You arrange pickup from our warehouse</li><li><strong>FOB:</strong> Covers all costs to forward and load cargo on board</li><li><strong>CIF:</strong> Covers all costs to the port of your destination</li><li><strong>Air cargo:</strong> Faster for valuable, smaller items</li></ul>Let our sourcing agent help you choose the best option for your business.</div></div></div>
-      <div class="faq-item"><button class="faq-question">If I already buy from China, can you help me export?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes! Even if you source independently, we can help you export:<ul><li>Production monitoring &amp; progress tracking</li><li>Quality checks &amp; pre-shipment inspection</li><li>Loading &amp; export arrangement</li><li>Customs clearance &amp; documentation</li><li>After-sales support &amp; issue resolution</li></ul>Our fees are negotiable. Contact us to discuss your specific needs.</div></div></div>
-      <div class="faq-item"><button class="faq-question">How much do your sourcing services cost?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Our pricing is transparent and tailored to your specific needs. Typically, sourcing service fees range from 3% to 10% of the order value, depending on:<ul><li>Product complexity &amp; category</li><li>Order volume &amp; frequency</li><li>Level of service required (sourcing only vs. end-to-end)</li><li>Whether you need QC, warehousing, or fulfillment</li></ul>We offer a free initial consultation and quote with no hidden fees. Contact us for a customized proposal.</div></div></div>
+    <h1>Frequently Asked Questions About China Sourcing</h1>
+    <p class="faq-sub">Answers to common questions from Amazon sellers and small business owners — based on 10+ years of real sourcing experience.</p>
+    <div class="faq-stats">
+      <div class="faq-stat"><div class="faq-stat-num">160+</div><div class="faq-stat-label">Questions Answered</div></div>
+      <div class="faq-stat"><div class="faq-stat-num">8</div><div class="faq-stat-label">Categories</div></div>
+      <div class="faq-stat"><div class="faq-stat-num">10+</div><div class="faq-stat-label">Years Experience</div></div>
     </div>
   </div>
 </section>
+
+<!-- FAQ BODY: left tree + right content -->
+<section class="faq-layout" id="faq">
+  <div class="container">
+    <div class="faq-grid">
+
+      <!-- LEFT SIDEBAR: category tree -->
+      <aside class="faq-sidebar">
+        <div class="faq-sidebar-title">Browse by Topic</div>
+        <div class="faq-tree">
+          <!-- 1. Product Sourcing -->
+          <div class="faq-cat open">
+            <button class="faq-cat-head"><span><span class="cat-emoji">🔍</span>Product Sourcing</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="faq-cat-body">
+              <button class="faq-sub" data-href="#sourcing-howto">How to Source Products from China</button>
+              <button class="faq-sub" data-href="#sourcing-vetting">Finding &amp; Vetting Suppliers</button>
+            </div>
+          </div>
+          <!-- 2. Amazon FBA -->
+          <div class="faq-cat">
+            <button class="faq-cat-head"><span><span class="cat-emoji">📦</span>Amazon FBA Sourcing</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="faq-cat-body">
+              <button class="faq-sub" data-href="#fba-prep">FBA Sourcing &amp; Prep</button>
+              <button class="faq-sub" data-href="#fba-packaging">FBA Packaging Optimization</button>
+            </div>
+          </div>
+          <!-- 3. Private Label -->
+          <div class="faq-cat">
+            <button class="faq-cat-head"><span><span class="cat-emoji">🏷️</span>Private Label &amp; OEM</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="faq-cat-body">
+              <button class="faq-sub" data-href="#private-label">Private Label Sourcing</button>
+              <button class="faq-sub" data-href="#product-dev">Product Development</button>
+            </div>
+          </div>
+          <!-- 4. Quality & Compliance -->
+          <div class="faq-cat">
+            <button class="faq-cat-head"><span><span class="cat-emoji">✅</span>Quality &amp; Compliance</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="faq-cat-body">
+              <button class="faq-sub" data-href="#quality-inspection">Quality Control &amp; Inspection</button>
+              <button class="faq-sub" data-href="#compliance">Product Compliance &amp; Certification</button>
+            </div>
+          </div>
+          <!-- 5. Pricing & MOQ -->
+          <div class="faq-cat">
+            <button class="faq-cat-head"><span><span class="cat-emoji">💰</span>Pricing &amp; MOQ</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="faq-cat-body">
+              <button class="faq-sub" data-href="#moq">MOQ &amp; Small Order Sourcing</button>
+              <button class="faq-sub" data-href="#agent-fees">Sourcing Agent Fees &amp; Commission</button>
+            </div>
+          </div>
+          <!-- 6. Logistics -->
+          <div class="faq-cat">
+            <button class="faq-cat-head"><span><span class="cat-emoji">🚚</span>Logistics &amp; Shipping</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="faq-cat-body">
+              <button class="faq-sub" data-href="#shipping-options">Shipping Options &amp; Costs</button>
+              <button class="faq-sub" data-href="#ddp-customs">DDP &amp; Customs Clearance</button>
+            </div>
+          </div>
+          <!-- 7. Cost Saving -->
+          <div class="faq-cat">
+            <button class="faq-cat-head"><span><span class="cat-emoji">📉</span>Cost Saving</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="faq-cat-body">
+              <button class="faq-sub" data-href="#reduce-cost">Reduce Sourcing Cost</button>
+              <button class="faq-sub" data-href="#payment-terms">Payment Terms &amp; Cash Flow</button>
+            </div>
+          </div>
+          <!-- 8. Avoiding Pitfalls -->
+          <div class="faq-cat">
+            <button class="faq-cat-head"><span><span class="cat-emoji">⚠️</span>Avoiding Pitfalls</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="faq-cat-body">
+              <button class="faq-sub" data-href="#avoid-scams">Avoiding Sourcing Scams</button>
+              <button class="faq-sub" data-href="#common-mistakes">Common Mistakes to Avoid</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT CONTENT -->
+      <main class="faq-content">
+
+        <!-- ===== Category 1: Product Sourcing ===== -->
+        <!-- 1a. How to Source Products from China -->
+        <section class="faq-content-section" id="sourcing-howto">
+          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>🔍 Product Sourcing</span><span class="sep">/</span><span>How to Source Products from China</span></div>
+          <h2>How to Source Products from China</h2>
+          <p class="section-sub">Step-by-step guide to finding, vetting and importing products from China.</p>
+          <div class="faq-list">
+            <div class="faq-item active"><button class="faq-question">What can your China sourcing agent do for my business?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">We offer a comprehensive sourcing solution from China, acting as your trusted sourcing partner to:<ul><li>Source products &amp; provide competitive quotes</li><li>Manage orders &amp; production timelines</li><li>Inspect quality to guarantee your standards</li><li>Handle export procedures, customs &amp; documentation</li><li>Offer import guidance &amp; regulatory advice</li><li>Assist during your China visits with translation</li><li>Adapt to your unique business needs with custom solutions</li></ul></div></div></div>
+          </div>
+        </section>
+
+        <!-- 1b. Finding & Vetting Suppliers -->
+        <section class="faq-content-section" id="sourcing-vetting">
+          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>🔍 Product Sourcing</span><span class="sep">/</span><span>Finding &amp; Vetting Suppliers</span></div>
+          <h2>Finding &amp; Vetting Suppliers</h2>
+          <p class="section-sub">How we ensure every supplier we work with is legitimate, capable and reliable.</p>
+          <div class="faq-list">
+            <div class="faq-item"><button class="faq-question">What kind of suppliers do you work with? All factories?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">It depends on the products you require. We find the best supplier for your needs:<ul><li><strong>Factories (if MOQ met):</strong> Best pricing for larger orders</li><li><strong>Negotiate with factories:</strong> For smaller orders to meet minimums</li><li><strong>Reliable wholesalers:</strong> For smaller orders when factory MOQ isn't possible</li></ul>We balance price, quality, and order size to find the right supplier for you.</div></div></div>
+          </div>
+        </section>
+
+        <!-- ===== Category 2: Amazon FBA ===== -->
+        <section class="faq-content-section" id="fba-prep">
+          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>📦 Amazon FBA Sourcing</span><span class="sep">/</span><span>FBA Sourcing &amp; Prep</span></div>
+          <h2>FBA Sourcing &amp; Prep</h2>
+          <p class="section-sub">Sourcing, labeling, and preparation services tailored for Amazon FBA sellers.</p>
+          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
+        </section>
+
+        <section class="faq-content-section" id="fba-packaging">
+          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>📦 Amazon FBA Sourcing</span><span class="sep">/</span><span>FBA Packaging Optimization</span></div>
+          <h2>FBA Packaging Optimization</h2>
+          <p class="section-sub">How to reduce dimensional weight, avoid fees, and protect products in transit to Amazon warehouses.</p>
+          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
+        </section>
+
+        <!-- ===== Category 3: Private Label & OEM ===== -->
+        <section class="faq-content-section" id="private-label">
+          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>🏷️ Private Label &amp; OEM</span><span class="sep">/</span><span>Private Label Sourcing</span></div>
+          <h2>Private Label Sourcing</h2>
+          <p class="section-sub">How to build your own brand with custom products sourced from China.</p>
+          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
+        </section>
+
+        <section class="faq-content-section" id="product-dev">
+          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>🏷️ Private Label &amp; OEM</span><span class="sep">/</span><span>Product Development</span></div>
+          <h2>Product Development</h2>
+          <p class="section-sub">From prototype to production — turning your idea into a sellable product.</p>
+          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
+        </section>
+
+        <!-- ===== Category 4: Quality & Compliance ===== -->
+        <section class="faq-content-section" id="quality-inspection">
+          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>✅ Quality &amp; Compliance</span><span class="sep">/</span><span>Quality Control &amp; Inspection</span></div>
+          <h2>Quality Control &amp; Inspection</h2>
+          <p class="section-sub">Our 6-stage quality control process and how we protect your brand from defective products.</p>
+          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
+        </section>
+
+        <section class="faq-content-section" id="compliance">
+          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>✅ Quality &amp; Compliance</span><span class="sep">/</span><span>Product Compliance &amp; Certification</span></div>
+          <h2>Product Compliance &amp; Certification</h2>
+          <p class="section-sub">CE, RoHS, REACH, UKCA, ASTM — which certifications you need and how we handle them.</p>
+          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
+        </section>
+
+        <!-- ===== Category 5: Pricing & MOQ ===== -->
+        <section class="faq-content-section" id="moq">
+          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>💰 Pricing &amp; MOQ</span><span class="sep">/</span><span>MOQ &amp; Small Order Sourcing</span></div>
+          <h2>MOQ &amp; Small Order Sourcing</h2>
+          <p class="section-sub">How we help startups and small businesses source with minimum order quantities from 1 carton.</p>
+          <div class="faq-list">
+            <div class="faq-item"><button class="faq-question">Is there any MOQ when placing orders through you?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">It depends on the product and supplier:<ul><li><strong>Stock availability:</strong> We can accept your quantity if the factory has enough stock</li><li><strong>Factory MOQ:</strong> New production usually requires meeting the factory's minimum order quantity</li><li><strong>Combined orders:</strong> We may add your order to a larger client's production run, allowing smaller quantities</li></ul>We'll work to find a solution for your desired order size.</div></div></div>
+          </div>
+        </section>
+
+        <section class="faq-content-section" id="agent-fees">
+          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>💰 Pricing &amp; MOQ</span><span class="sep">/</span><span>Sourcing Agent Fees &amp; Commission</span></div>
+          <h2>Sourcing Agent Fees &amp; Commission</h2>
+          <p class="section-sub">Transparent pricing — no hidden fees, no surprise charges.</p>
+          <div class="faq-list">
+            <div class="faq-item"><button class="faq-question">How much do your sourcing services cost?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Our pricing is transparent and tailored to your specific needs. Typically, sourcing service fees range from 3% to 10% of the order value, depending on:<ul><li>Product complexity &amp; category</li><li>Order volume &amp; frequency</li><li>Level of service required (sourcing only vs. end-to-end)</li><li>Whether you need QC, warehousing, or fulfillment</li></ul>We offer a free initial consultation and quote with no hidden fees. Contact us for a customized proposal.</div></div></div>
+          </div>
+        </section>
+
+        <!-- ===== Category 6: Logistics & Shipping ===== -->
+        <section class="faq-content-section" id="shipping-options">
+          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>🚚 Logistics &amp; Shipping</span><span class="sep">/</span><span>Shipping Options &amp; Costs</span></div>
+          <h2>Shipping Options &amp; Costs</h2>
+          <p class="section-sub">Sea, air, EXW, FOB, CIF — all your shipping questions answered.</p>
+          <div class="faq-list">
+            <div class="faq-item"><button class="faq-question">What kind of shipment do you offer?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">We offer both sea and air shipping to meet your needs:<ul><li><strong>Sea shipping:</strong> Economical for larger volumes (FCL or LCL)</li><li><strong>EXW:</strong> You arrange pickup from our warehouse</li><li><strong>FOB:</strong> Covers all costs to forward and load cargo on board</li><li><strong>CIF:</strong> Covers all costs to the port of your destination</li><li><strong>Air cargo:</strong> Faster for valuable, smaller items</li></ul>Let our sourcing agent help you choose the best option for your business.</div></div></div>
+          </div>
+        </section>
+
+        <section class="faq-content-section" id="ddp-customs">
+          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>🚚 Logistics &amp; Shipping</span><span class="sep">/</span><span>DDP &amp; Customs Clearance</span></div>
+          <h2>DDP &amp; Customs Clearance</h2>
+          <p class="section-sub">Door-to-door delivery from China factory to your warehouse — we handle all the paperwork.</p>
+          <div class="faq-list">
+            <div class="faq-item"><button class="faq-question">If I already buy from China, can you help me export?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes! Even if you source independently, we can help you export:<ul><li>Production monitoring &amp; progress tracking</li><li>Quality checks &amp; pre-shipment inspection</li><li>Loading &amp; export arrangement</li><li>Customs clearance &amp; documentation</li><li>After-sales support &amp; issue resolution</li></ul>Our fees are negotiable. Contact us to discuss your specific needs.</div></div></div>
+          </div>
+        </section>
+
+        <!-- ===== Category 7: Cost Saving ===== -->
+        <section class="faq-content-section" id="reduce-cost">
+          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>📉 Cost Saving</span><span class="sep">/</span><span>Reduce Sourcing Cost</span></div>
+          <h2>Reduce Sourcing Cost</h2>
+          <p class="section-sub">Proven strategies to cut sourcing costs by 15-30% and improve your margins.</p>
+          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
+        </section>
+
+        <section class="faq-content-section" id="payment-terms">
+          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>📉 Cost Saving</span><span class="sep">/</span><span>Payment Terms &amp; Cash Flow</span></div>
+          <h2>Payment Terms &amp; Cash Flow</h2>
+          <p class="section-sub">Negotiating 30-120 day payment terms and protecting your cash flow with suppliers.</p>
+          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
+        </section>
+
+        <!-- ===== Category 8: Avoiding Pitfalls ===== -->
+        <section class="faq-content-section" id="avoid-scams">
+          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>⚠️ Avoiding Pitfalls</span><span class="sep">/</span><span>Avoiding Sourcing Scams</span></div>
+          <h2>Avoiding Sourcing Scams</h2>
+          <p class="section-sub">The most common supplier scams and how our 3-layer verification system protects you.</p>
+          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
+        </section>
+
+        <section class="faq-content-section" id="common-mistakes">
+          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>⚠️ Avoiding Pitfalls</span><span class="sep">/</span><span>Common Mistakes to Avoid</span></div>
+          <h2>Common Mistakes to Avoid</h2>
+          <p class="section-sub">The 10 most common mistakes new importers make — and how to skip them entirely.</p>
+          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
+        </section>
+
+        <!-- CTA -->
+        <div class="faq-cta">
+          <h3>Still Have Questions?</h3>
+          <p>Our team replies to every inquiry within 24 hours.</p>
+          <a href="/free-quote.html" class="btn btn-primary btn-sm">Ask Our Experts →</a>
+        </div>
+
+      </main>
+    </div>
+  </div>
+</section>
+
 
 <!-- Ebook -->
 <section class="section ebook-section">
@@ -1953,16 +2275,63 @@ function toggleDropdown(el) {
   dd.classList.toggle('open');
 }
 
-// ============ FAQ ACCORDION ============
-document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.parentElement;
-    const answer = item.querySelector('.faq-answer');
-    const isActive = item.classList.contains('active');
-    document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('active'); i.querySelector('.faq-answer').style.maxHeight = null; });
-    if (!isActive) { item.classList.add('active'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+// ============ FAQ CATEGORY TREE + ACCORDION (NEW) ============
+(function(){
+  // Category tree toggle
+  document.querySelectorAll('.faq-cat-head').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.parentElement.classList.toggle('open');
+    });
   });
-});
+
+  // Sub-category click: scroll to section + highlight + open parent cat
+  document.querySelectorAll('.faq-sub').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').replace('#','');
+      const target = document.getElementById(targetId);
+      if(!target) return;
+
+      // Remove all active
+      document.querySelectorAll('.faq-sub').forEach(s => s.classList.remove('active'));
+      link.classList.add('active');
+
+      // Open parent cat
+      const parentCat = link.closest('.faq-cat');
+      if(parentCat) parentCat.classList.add('open');
+
+      // Close others
+      document.querySelectorAll('.faq-cat').forEach(c => {
+        if(c !== parentCat) c.classList.remove('open');
+      });
+
+      // Scroll
+      target.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+
+  // Accordion (revised — only within visible .faq-list)
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const answer = item.querySelector('.faq-answer');
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('active'); const a = i.querySelector('.faq-answer'); if(a) a.style.maxHeight = null; });
+      if(!isActive){ item.classList.add('active'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+    });
+  });
+
+  // Open cat containing current hash on load
+  if(location.hash){
+    const link = document.querySelector('.faq-sub[href="' + location.hash + '"]');
+    if(link){
+      const parentCat = link.closest('.faq-cat');
+      if(parentCat) parentCat.classList.add('open');
+      link.classList.add('active');
+    }
+  }
+})();
+
 
 // ============ SCROLL REVEAL ============
 const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
