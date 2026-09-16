@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -512,6 +512,9 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
     .mega-tag.p1{background:#FFEDD5;color:#C2410C}
     .mega-tag.p2{background:#DCFCE7;color:#15803D}
     .mega-tag.p3{background:#DBEAFE;color:#1D4ED8}
+    .mega-tag.core{background:#E87722;color:#fff}
+    .mega-tag.new{background:#10B981;color:#fff}
+    .products-menu-wrap .dropdown-menu{width:700px;min-width:700px}
 
     /* Mega menu hover animation */
     .nav-dropdown.mega-menu-wrap{position:relative}
@@ -655,17 +658,77 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
             </div>
           </div>
         </div>
-        <div class="nav-dropdown">
-          <a class="nav-trigger" onclick="event.preventDefault();toggleDropdown(this)" style="font-size:14px;font-weight:600;color:var(--navy);font-family:inherit">Products
-            <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="../products/home-kitchen.html"><span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span><span class="di-text"><span class="di-name">Home &amp; Kitchen</span><span class="di-desc">Storage, kitchen gadgets, bakeware</span></span></a>
-            <a class="dropdown-item" href="../products/pet-supplies.html"><span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="4" cy="8" r="2"/><circle cx="7" cy="14" r="2"/><path d="M12 18c-2 0-4-2-4-4 0-2 2-4 4-4s4 2 4 4c0 2-2 4-4 4z"/></svg></span><span class="di-text"><span class="di-name">Pet Supplies</span><span class="di-desc">Dog toys, cat accessories, grooming</span></span></a>
-            <a class="dropdown-item" href="../products/beauty-tools.html"><span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="5" ry="8"/><path d="M12 2v2"/><path d="M12 20v2"/></svg></span><span class="di-text"><span class="di-name">Beauty Tools</span><span class="di-desc">Skincare devices, facial tools</span></span></a>
-            <a class="dropdown-item" href="../products/arts-crafts.html"><span class="di-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/></svg></span><span class="di-text"><span class="di-name">Arts &amp; Crafts</span><span class="di-desc">DIY kits, painting, jewelry making</span></span></a>
+              <div class="nav-dropdown mega-menu-wrap products-menu-wrap">
+        <a class="nav-trigger" onclick="event.preventDefault();toggleDropdown(this)">Products
+          <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown-menu">
+          <div class="mega-menu-grid">
+            <div class="mega-menu-col">
+              <div class="mega-menu-col-title">Core Categories</div>
+              <a class="mega-item" href="products/home-kitchen.html">
+                <div class="mega-icon">🏠</div>
+                <div class="mega-text">
+                  <div class="mega-name">Home &amp; Kitchen<span class="mega-tag core">Core</span></div>
+                  <div class="mega-desc">Storage, kitchen tools, bakeware, cleaning</div>
+                </div>
+              </a>
+              <a class="mega-item" href="products/pet-supplies.html">
+                <div class="mega-icon">🐾</div>
+                <div class="mega-text">
+                  <div class="mega-name">Pet Supplies<span class="mega-tag core">Core</span></div>
+                  <div class="mega-desc">Dog, cat, small pet toys, accessories, grooming</div>
+                </div>
+              </a>
+              <a class="mega-item" href="products/beauty-tools.html">
+                <div class="mega-icon">💄</div>
+                <div class="mega-text">
+                  <div class="mega-name">Beauty Tools<span class="mega-tag core">Core</span></div>
+                  <div class="mega-desc">Skincare devices, makeup tools, hair tools (non-cosmetics)</div>
+                </div>
+              </a>
+              <a class="mega-item" href="products/arts-crafts.html">
+                <div class="mega-icon">🎨</div>
+                <div class="mega-text">
+                  <div class="mega-name">Arts &amp; Crafts<span class="mega-tag core">Core</span></div>
+                  <div class="mega-desc">DIY supplies, stationery, party &amp; holiday crafts</div>
+                </div>
+              </a>
+            </div>
+            <div class="mega-menu-col">
+              <div class="mega-menu-col-title">More Categories</div>
+              <a class="mega-item" href="products/outdoor-sports.html">
+                <div class="mega-icon">🏕</div>
+                <div class="mega-text">
+                  <div class="mega-name">Outdoor &amp; Sports<span class="mega-tag new">New</span></div>
+                  <div class="mega-desc">Camping, hiking, fitness, outdoor gear</div>
+                </div>
+              </a>
+              <a class="mega-item" href="products/office-stationery.html">
+                <div class="mega-icon">📎</div>
+                <div class="mega-text">
+                  <div class="mega-name">Office &amp; Stationery</div>
+                  <div class="mega-desc">Desk organizers, stationery, office supplies</div>
+                </div>
+              </a>
+              <a class="mega-item" href="products/toys-games.html">
+                <div class="mega-icon">🧸</div>
+                <div class="mega-text">
+                  <div class="mega-name">Toys &amp; Games</div>
+                  <div class="mega-desc">Educational toys, puzzles, games, kids products</div>
+                </div>
+              </a>
+              <a class="mega-item" href="products/all-products.html" style="border-top:2px dashed #E5E7EB;padding-top:16px">
+                <div class="mega-icon" style="background:transparent;color:#162D54;font-size:14px">鈫?/div>
+                <div class="mega-text">
+                  <div class="mega-name" style="color:#E87722">View All Products</div>
+                  <div class="mega-desc">Browse all product categories</div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
+      </div>
         <a href="../index.html#about">About</a>
         <a href="../blog/">Blog</a>
         <a href="../index.html#faq">FAQ</a>
