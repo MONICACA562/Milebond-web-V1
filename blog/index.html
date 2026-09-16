@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MileBond Blog — China Sourcing Insights & Industry Guides</title>
 <meta name="description" content="Expert China sourcing guides, supplier verification tactics, payment protection strategies, and data-driven importer risk analysis from MileBond's Yiwu-based team.">
-<link rel="canonical" href="https://www.milebond.com/blog/">
+<link rel="canonical" href="https://www.milebond.com/blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MileBond Blog — China Sourcing Insights & Industry Guides">
 <meta property="og:description" content="Expert China sourcing guides, supplier verification tactics, payment protection strategies, and data-driven importer risk analysis.">
-<meta property="og:url" content="https://www.milebond.com/blog/">
+<meta property="og:url" content="https://www.milebond.com/blog">
 <meta property="og:site_name" content="MileBond — China Sourcing Agent">
 <meta name="robots" content="index, follow">
 <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -23,114 +23,65 @@
 <meta name="twitter:description" content="Expert China sourcing guides, supplier verification tactics, payment protection strategies, and data-driven importer risk analysis from MileBond's Yiwu-based team.">
 <meta name="twitter:image" content="https://www.milebond.com/images/blog/china-supplier-vetting-2026.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#162D54;--orange:#E87722;--navy-deep:#1A2B4A;--gray-666:#666666;--gray-888:#888888}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f9fb;color:#2c3e50}
-a{color:var(--orange);text-decoration:none}
-a:hover{text-decoration:none}
+:root { --navy:#162D54; --orange:#E87722; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8f9fb; color: #2c3e50; }
+a { color: var(--orange); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-/* ===== STICKY NAV ===== */
-.sticky-nav{position:sticky;top:0;z-index:1000;background:var(--navy);padding:0 24px;box-shadow:0 2px 12px rgba(22,45,84,.15)}
-.sticky-nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
-.nav-brand{font-family:'Space Grotesk';font-weight:700;font-size:18px;color:#fff;display:flex;align-items:center;gap:10px}
-.nav-brand .brand-logo{width:32px;height:32px;background:var(--orange);border-radius:6px;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
-.nav-links{display:flex;align-items:center;gap:28px}
-.nav-links a{color:rgba(255,255,255,.85);font-size:14px;font-weight:600;transition:color .2s}
-.nav-links a:hover{color:var(--orange)}
-.nav-links .nav-blog-active{color:var(--orange);font-weight:700}
-.nav-cta{background:var(--orange);color:#fff;padding:8px 20px;border-radius:8px;font-weight:700;font-size:13px;transition:background .2s}
-.nav-cta:hover{background:#d66a15;color:#fff}
-.nav-mobile-toggle{display:none;background:none;border:none;color:#fff;cursor:pointer;padding:6px}
-.nav-mobile-toggle svg{width:24px;height:24px}
+/* Hero */
+.hero { background: linear-gradient(135deg, #162D54 0%, #2a4a7c 100%); color: #fff; padding: 80px 24px 60px; text-align: center; }
+.hero .breadcrumb { font-size: 14px; opacity: 0.75; margin-bottom: 20px; }
+.hero h1 { font-size: 2.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 16px; max-width: 800px; margin-left: auto; margin-right: auto; }
+.hero h1 span { color: var(--orange); display: block; font-size: 1.6rem; font-weight: 600; margin-top: 8px; }
+.hero p { font-size: 1.05rem; opacity: 0.85; max-width: 600px; margin: 0 auto; line-height: 1.7; }
 
-/* ===== HERO ===== */
-.blog-hero{background:linear-gradient(135deg,#162D54 0%,#2a4a7c 100%);color:#fff;padding:72px 24px 56px;text-align:center}
-.blog-hero .breadcrumb{font-size:14px;opacity:.75;margin-bottom:16px}
-.blog-hero h1{font-family:'Space Grotesk';font-size:2.5rem;font-weight:700;line-height:1.2;margin-bottom:16px;max-width:800px;margin-left:auto;margin-right:auto}
-.blog-hero h1 span{color:var(--orange);display:block;font-size:1.5rem;font-weight:600;margin-top:8px}
-.blog-hero p{font-size:1.05rem;opacity:.85;max-width:620px;margin:0 auto;line-height:1.7}
+/* Container */
+.container { max-width: 880px; margin: 0 auto; padding: 48px 24px; }
 
-/* ===== MAIN CONTAINER ===== */
-.main-wrap{max-width:1400px;margin:0 auto;padding:48px 40px}
+/* Post list */
+.post-list { display: flex; flex-direction: column; gap: 24px; }
+.post-card { background: #fff; border-radius: 12px; padding: 28px 32px; box-shadow: 0 2px 12px rgba(22,45,84,0.06); border: 1px solid #eef0f4; transition: transform .2s, box-shadow .2s, border-color .2s; }
+.post-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(22,45,84,0.1); border-color: var(--orange); }
+.post-card .meta { font-size: 13px; color: #888; margin-bottom: 12px; }
+.post-card h2 { font-size: 1.35rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.35; }
+.post-card h2 a { color: var(--navy); }
+.post-card h2 a:hover { color: var(--orange); text-decoration: none; }
+.post-card p { color: #5a6a7a; font-size: 0.98rem; line-height: 1.65; margin-bottom: 14px; }
+.post-card .read-more { font-size: 14px; font-weight: 600; color: var(--orange); }
 
-/* ===== POST GRID (3-column) ===== */
-.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+/* Empty state */
+.empty { text-align: center; padding: 60px 20px; color: #888; }
 
-/* ===== POST CARD ===== */
-.post-card{background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.08);overflow:hidden;transition:transform .3s,box-shadow .3s;border:1px solid #eef0f4;display:flex;flex-direction:column}
-.post-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.12)}
+/* Back to home */
+.back-home { text-align: center; margin-top: 40px; }
+.back-home a { display: inline-block; padding: 12px 28px; background: var(--navy); color: #fff; border-radius: 8px; font-weight: 600; }
+.back-home a:hover { background: #0f1d38; text-decoration: none; }
 
-/* Cover placeholder */
-.card-cover{height:200px;background:#f5f5f5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;position:relative;overflow:hidden}
-.card-cover svg{width:64px;height:64px;color:#bbb}
-.card-cover-placeholder{font-size:12px;color:#bbb}
-/* Real cover image */
-.card-cover img{width:100%;height:100%;object-fit:cover;display:block}
+/* Footer */
+.site-footer { background: var(--navy); color: #fff; padding: 40px 24px; text-align: center; font-size: 14px; }
+.site-footer a { color: #f59e5b; }
 
-/* Card content */
-.card-content{padding:20px;flex:1;display:flex;flex-direction:column}
-
-/* Category + date + time meta bar */
-.card-meta{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gray-666);margin-bottom:10px;flex-wrap:wrap}
-.card-category{background:var(--orange);color:#fff;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;line-height:1.4}
-.card-meta .sep{color:#d0d0d0}
-
-/* Title */
-.card-title{font-size:18px;font-weight:700;color:var(--navy-deep);line-height:1.3;margin-bottom:10px}
-.card-title a{color:var(--navy-deep)}
-.card-title a:hover{color:var(--orange)}
-
-/* Excerpt — 3 lines max */
-.card-excerpt{font-size:14px;color:#5a6a7a;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:14px}
-
-/* Read more */
-.card-read-more{font-size:13px;font-weight:700;color:var(--orange);display:inline-flex;align-items:center;gap:6px;margin-top:auto}
-.card-read-more:hover{gap:10px}
-
-/* ===== EMPTY STATE + BACK HOME ===== */
-.empty{text-align:center;padding:48px 20px;color:#888}
-.back-home{text-align:center;margin-top:40px}
-.back-home a{display:inline-block;padding:12px 28px;background:var(--navy);color:#fff;border-radius:8px;font-weight:600}
-.back-home a:hover{background:#0f1d38}
-
-/* ===== FOOTER ===== */
-.site-footer{background:var(--navy);color:#fff;padding:40px 24px;text-align:center;font-size:14px}
-.site-footer a{color:#f59e5b}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:1024px){
-  .post-grid{grid-template-columns:repeat(2,1fr)}
+/* Responsive */
+@media (max-width: 640px) {
+  .hero { padding: 60px 20px 48px; }
+  .hero h1 { font-size: 1.9rem; }
+  .hero h1 span { font-size: 1.2rem; }
+  .container { padding: 32px 16px; }
+  .post-card { padding: 22px 20px; }
 }
-@media(max-width:768px){
-  .main-wrap{padding:32px 20px}
-  .blog-hero{padding:56px 20px 44px}
-  .blog-hero h1{font-size:1.9rem}
-  .blog-hero h1 span{font-size:1.2rem}
-  .nav-links{display:none}
-  .nav-mobile-toggle{display:block}
-}
-@media(max-width:640px){
-  .post-grid{grid-template-columns:1fr}
-  .card-cover{height:180px}
-}
-
-/* Mobile nav drawer (basic) */
-.nav-links.open{display:flex;position:absolute;top:64px;left:0;right:0;background:var(--navy);flex-direction:column;padding:16px 24px;gap:16px;box-shadow:0 8px 24px rgba(0,0,0,.2);border-top:1px solid rgba(255,255,255,.1)}
 </style>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "MileBond Blog — China Sourcing Insights & Industry Guides",
   "description": "Expert China sourcing guides, supplier verification tactics, payment protection strategies, and data-driven importer risk analysis.",
-  "url": "https://www.milebond.com/blog/",
+  "url": "https://www.milebond.com/blog",
   "isPartOf": {
     "@type": "WebSite",
     "name": "MileBond — China Sourcing Agent",
-    "url": "https://www.milebond.com/"
+    "url": "https://www.milebond.com"
   }
 }</script>
 <script type="application/ld+json">{
@@ -138,142 +89,58 @@ a:hover{text-decoration:none}
   "@type": "BreadcrumbList",
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.milebond.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.milebond.com/blog/"}
+    {"@type": "ListItem", "position": 2, "name": "Blog"}
   ]
 }</script>
 </head>
 <body>
 
-<!-- ============ STICKY NAV ============ -->
-<nav class="sticky-nav">
-  <div class="sticky-nav-inner">
-    <a href="../" class="nav-brand">
-      <span class="brand-logo">M</span>
-      MileBond
-    </a>
-    <div class="nav-links" id="navLinks">
-      <a href="../">Home</a>
-      <a href="../services/product-sourcing.html">Services</a>
-      <a href="../products/home-kitchen.html">Products</a>
-      <a href="../#about">About</a>
-      <a href="./" class="nav-blog-active">Blog</a>
-      <a href="../#faq">FAQ</a>
-      <a href="../free-quote.html" class="nav-cta">Get a Quote</a>
-    </div>
-    <button class="nav-mobile-toggle" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-  </div>
-</nav>
-
-<!-- ============ HERO ============ -->
-<header class="blog-hero">
-  <div class="breadcrumb">
+<header class="hero">
+  <nav class="breadcrumb">
     <a href="../" style="color:#fff;">MileBond</a> &nbsp;/&nbsp; Blog
-  </div>
+  </nav>
   <h1>China Sourcing Insights &amp; Industry Guides
     <span>Data-Driven, On-the-Ground Research</span>
   </h1>
   <p>Practical sourcing guides from our Yiwu-based team — verified supplier tactics, scam prevention, payment protection, and real importer data.</p>
 </header>
 
-<!-- ============ POST GRID ============ -->
-<main class="main-wrap">
-  <div class="post-grid">
+<main class="container">
+  <div class="post-list">
 
-    <!-- Card 1: Amazon Negative Review Analysis (Product Improvement) -->
     <article class="post-card">
-      <div class="card-cover">
-        <img src="../assets/blog-covers/negative-review-analysis.jpg" alt="Amazon Negative Review Analysis — 6-step process to improve product ratings">
-      </div>
-      <div class="card-content">
-        <div class="card-meta">
-          <span class="card-category">Product Improvement</span>
-          <span class="sep">·</span>
-          <span>Sep 16, 2026</span>
-          <span class="sep">·</span>
-          <span>12 min read</span>
-        </div>
-        <h3 class="card-title"><a href="amazon-negative-review-analysis/">How to Analyze Amazon Negative Reviews to Improve Your Product (Step-by-Step)</a></h3>
-        <p class="card-excerpt">Real indoor swing case study: turn 1-star reviews into product improvements. 6-step process, 8-category taxonomy, supplier negotiation scripts, and emergency diagnosis.</p>
-        <a href="amazon-negative-review-analysis/" class="card-read-more">Read Full Guide &rarr;</a>
-      </div>
+      <div class="meta">Sep 16, 2026 &nbsp;·&nbsp; 12 min read &nbsp;·&nbsp; Product Improvement</div>
+      <h2><a href="amazon-negative-review-analysis/">How to Analyze Amazon Negative Reviews to Improve Your Product (Step-by-Step)</a></h2>
+      <p>Complete 6-step process to turn 1-star reviews into product improvements. Includes free Excel template, 8-category taxonomy, real indoor swing case study (4.1→4.6), supplier negotiation scripts, and emergency diagnosis.</p>
+      <a href="amazon-negative-review-analysis/" class="read-more">Read Full Guide &rarr;</a>
     </article>
 
-    <!-- Card 2: How to Source for Amazon FBA (Amazon FBA) -->
     <article class="post-card">
-      <div class="card-cover">
-        <img src="../assets/blog-covers/source-from-china-for-fba.jpg" alt="How to Source Products from China for Amazon FBA — Step-by-Step Guide">
-      </div>
-      <div class="card-content">
-        <div class="card-meta">
-          <span class="card-category">Amazon FBA</span>
-          <span class="sep">·</span>
-          <span>Sep 14, 2026</span>
-          <span class="sep">·</span>
-          <span>10 min read</span>
-        </div>
-        <h3 class="card-title"><a href="how-to-source-products-from-china-for-amazon-fba/">How to Source Products from China for Amazon FBA (Step-by-Step 2026)</a></h3>
-        <p class="card-excerpt">Complete step-by-step guide to sourcing products from China for Amazon FBA sellers. Supplier verification, patent check, negative review analysis, and compliance.</p>
-        <a href="how-to-source-products-from-china-for-amazon-fba/" class="card-read-more">Read Full Guide &rarr;</a>
-      </div>
+      <div class="meta">Sep 14, 2026 &nbsp;·&nbsp; 10 min read &nbsp;·&nbsp; Amazon FBA</div>
+      <h2><a href="how-to-source-products-from-china-for-amazon-fba/">How to Source Products from China for Amazon FBA (Step-by-Step 2026)</a></h2>
+      <p>Complete step-by-step guide to sourcing products from China for Amazon FBA sellers, including supplier verification, patent check, negative review analysis, and compliance.</p>
+      <a href="how-to-source-products-from-china-for-amazon-fba/" class="read-more">Read Full Guide &rarr;</a>
     </article>
 
-    <!-- Card 3: Amazon Seller Supply Chain Case Study (Supply Chain) -->
     <article class="post-card">
-      <div class="card-cover">
-        <img src="../assets/blog-covers/supply-chain-cost-reduction.jpg" alt="Amazon Seller Supply Chain Cost Reduction — 15% Cost, 4.7 Reviews, 30-Day Lead Time Case Study">
-      </div>
-      <div class="card-content">
-        <div class="card-meta">
-          <span class="card-category">Supply Chain</span>
-          <span class="sep">·</span>
-          <span>Sep 15, 2026</span>
-          <span class="sep">·</span>
-          <span>12 min read</span>
-        </div>
-        <h3 class="card-title"><a href="amazon-seller-supply-chain-cost-reduction/">How We Helped Amazon Sellers Reduce Sourcing Cost 15%, Improve Reviews to 4.7, Shorten Lead Time to 30 Days, and Extend Payment Terms to 120D</a></h3>
-        <p class="card-excerpt">Real Amazon seller case study: 15% cost reduction, 4.7 review rating, 30-day lead time, and 120D payment terms. Proven supply chain optimization strategies for FBA sellers.</p>
-        <a href="amazon-seller-supply-chain-cost-reduction/" class="card-read-more">Read Full Case Study &rarr;</a>
-      </div>
+      <div class="meta">Sep 15, 2026 &nbsp;·&nbsp; 12 min read &nbsp;·&nbsp; Case Study</div>
+      <h2><a href="./amazon-seller-supply-chain-cost-reduction">How We Helped Amazon Sellers Reduce Sourcing Cost 15%, Improve Reviews to 4.7, Shorten Lead Time to 30 Days, and Extend Payment Terms to 120D</a></h2>
+      <p>Real Amazon seller case study: 15% cost reduction, 4.7 review rating, 30-day lead time, and 120D payment terms. Proven supply chain optimization strategies for FBA sellers.</p>
+      <a class="read-more" href="./amazon-seller-supply-chain-cost-reduction">Read Full Case Study &rarr;</a>
     </article>
 
-    <!-- Card 4: How to Find Reliable China Suppliers (Sourcing) -->
     <article class="post-card">
-      <div class="card-cover">
-        <img src="../assets/blog-covers/find-reliable-suppliers.jpg" alt="How to Find Reliable China Suppliers and Avoid Scams — 2026 Data-Driven Guide">
-      </div>
-      <div class="card-content">
-        <div class="card-meta">
-          <span class="card-category">Sourcing</span>
-          <span class="sep">·</span>
-          <span>Sep 10, 2026</span>
-          <span class="sep">·</span>
-          <span>8 min read</span>
-        </div>
-        <h3 class="card-title"><a href="how-to-find-reliable-china-suppliers-avoid-scams/">How to Find Reliable China Suppliers &amp; Avoid Scams (2026 Data-Driven Guide)</a></h3>
-        <p class="card-excerpt">Data-driven guide to find reliable China suppliers, avoid scams, and verify factory credentials. Three-layer verification system, 10 scam red flags, payment red lines.</p>
-        <a href="how-to-find-reliable-china-suppliers-avoid-scams/" class="card-read-more">Read Full Guide &rarr;</a>
-      </div>
+      <div class="meta">Last updated: September 14, 2026 &nbsp;·&nbsp; 14 min read</div>
+      <h2><a href="./how-to-find-reliable-china-suppliers-avoid-scams">How to Find Reliable China Suppliers &amp; Avoid Scams (2026 Data-Driven Guide)</a></h2>
+      <p>AI has made China supplier scams harder to spot than ever. Learn the three-layer verification system our sourcing team uses on every factory, the 10 quantified scam red flags, and payment red lines 90% of importers miss in 2026.</p>
+      <a class="read-more" href="./how-to-find-reliable-china-suppliers-avoid-scams">Read article →</a>
     </article>
 
-    <!-- Card 5: Private Label Sourcing (Private Label) -->
     <article class="post-card">
-      <div class="card-cover">
-        <img src="../assets/blog-covers/private-label-sourcing.jpg" alt="Private Label Sourcing and Supply Chain Optimization — End-to-End Quality Control Guide">
-      </div>
-      <div class="card-content">
-        <div class="card-meta">
-          <span class="card-category">Private Label</span>
-          <span class="sep">·</span>
-          <span>Sep 12, 2026</span>
-          <span class="sep">·</span>
-          <span>10 min read</span>
-        </div>
-        <h3 class="card-title"><a href="private-label-sourcing-supply-chain-optimization/">Private Label Sourcing &amp; Supply Chain Optimization: End-to-End Quality Control Guide</a></h3>
-        <p class="card-excerpt">Complete guide to private label sourcing and supply chain optimization for Amazon brands. 6-stage QC process, real cases, 31% cost reduction, MOQ from 1 carton.</p>
-        <a href="private-label-sourcing-supply-chain-optimization/" class="card-read-more">Read Full Guide &rarr;</a>
-      </div>
+      <div class="meta">Last updated: September 14, 2026 &nbsp;·&nbsp; ~16 min read</div>
+      <h2><a href="./private-label-sourcing-supply-chain-optimization">Private Label Sourcing &amp; Supply Chain Optimization: End-to-End Quality Control Guide</a></h2>
+      <p>From first-time small-batch private label launch to existing supplier optimization — 6-stage transparent quality control. Real cases: 31% cost reduction + 201→304 upgrade + Amazon rating 4.5→4.8. MOQ from 1 carton.</p>
+      <a class="read-more" href="./private-label-sourcing-supply-chain-optimization">Read article →</a>
     </article>
 
   </div>
@@ -281,12 +148,12 @@ a:hover{text-decoration:none}
   <p class="empty">More sourcing guides coming soon — new articles every month.</p>
 
   <div class="back-home">
-    <a href="../">← Back to MileBond Home</a>
+    <a href="../← Back to MileBond Home">← Back to MileBond Home</a>
   </div>
 </main>
 
 <footer class="site-footer">
-  <p>© 2026 MileBond — China Sourcing Agent. <a href="../contact-us.html">Contact us</a> for a free sourcing quote.</p>
+  <p>© 2026 MileBond — China Sourcing Agent. <a href="../contact-us">Contact us</a> for a free sourcing quote.</p>
 </footer>
 
 </body>
