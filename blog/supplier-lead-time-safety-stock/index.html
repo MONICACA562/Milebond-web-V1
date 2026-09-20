@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Calculate Safety Stock When Your Chinese Supplier's Lead Time Is All Over the Place</title>
+<meta name="description" content="Your supplier says 30 days, ships at 45. You stock out, then overstock. Here's how to calculate safety stock for variable lead times — and how to lock the lead time down so you need less of it.">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://www.milebond.com/blog/supplier-lead-time-safety-stock/">
+<meta property="og:title" content="How to Calculate Safety Stock When Your Chinese Supplier's Lead Time Is All Over the Place">
+<meta property="og:description" content="Your supplier says 30 days, ships at 45. You stock out, then overstock. Here's how to calculate safety stock for variable lead times — and how to lock the lead time down so you need less of it.">
+<meta property="og:url" content="https://www.milebond.com/blog/supplier-lead-time-safety-stock/">
+<meta property="og:site_name" content="MileBond — China Sourcing Agent">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.milebond.com/logo.png">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-09-20">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How to Calculate Safety Stock When Your Chinese Supplier's Lead Time Is All Over the Place">
+<meta name="twitter:description" content="Your supplier says 30 days, ships at 45. You stock out, then overstock. Here's how to calculate safety stock for variable lead times — and how to lock the lead time down so you need less of it.">
+<meta name="twitter:image" content="https://www.milebond.com/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Calculate Safety Stock When Your Chinese Supplier's Lead Time Is All Over the Place",
+  "description": "Your supplier says 30 days, ships at 45. You stock out, then overstock. Here's how to calculate safety stock for variable lead times — and how to lock the lead time down so you need less of it.",
+  "image": "https://www.milebond.com/logo.png",
+  "datePublished": "2026-09-20",
+  "dateModified": "2026-09-20",
+  "author": {"@type": "Organization", "name": "MileBond Team"},
+  "publisher": {"@type": "Organization", "name": "MileBond", "logo": {"@type": "ImageObject", "url": "https://www.milebond.com/logo.png"}},
+  "mainEntityOfPage": "https://www.milebond.com/blog/supplier-lead-time-safety-stock/"
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.milebond.com/"},
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://www.milebond.com/blog/"},
+    {"@type":"ListItem","position":3,"name":"Lead Time & Safety Stock"}
+  ]
+}</script>
+<style>
+:root{--navy:#162D54;--navy-light:#2a4a7c;--orange:#E87722;--orange-light:#F5A623;--white:#fff;--bg-light:#f8f9fb;--green:#10B981;--red:#EF4444;--gray-600:#6B7280;--gray-200:#E5E7EB}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',system-ui,sans-serif;background:#fff;color:#2c3e50;line-height:1.75;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Space Grotesk','Manrope',sans-serif;font-weight:700;color:var(--navy);line-height:1.3}
+a{color:var(--orange);text-decoration:underline;font-weight:600}
+a:hover{color:#c85a0a;text-decoration:none}
+.container{max-width:860px;margin:0 auto;padding:0 24px}
+.breadcrumb-nav{background:#f8f9fb;border-bottom:1px solid #eef0f4;padding:14px 24px;font-size:14px;color:#6B7280}
+.breadcrumb-nav .bc-inner{max-width:860px;margin:0 auto}
+.breadcrumb-nav a{color:var(--navy);text-decoration:none;font-weight:500}
+.breadcrumb-nav a:hover{color:var(--orange)}
+.breadcrumb-nav span{margin:0 8px;color:#9CA3AF}
+.blog-hero{background:linear-gradient(135deg,#162D54 0%,#2a4a7c 100%);color:#fff;padding:64px 24px 56px;text-align:center}
+.blog-hero .hero-tag{display:inline-block;background:rgba(232,119,34,.2);color:#F5A623;padding:5px 14px;border-radius:4px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px;border:1px solid rgba(232,119,34,.4)}
+.blog-hero h1{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;line-height:1.2;margin-bottom:16px;max-width:860px;margin-left:auto;margin-right:auto;color:#fff}
+.blog-hero .subtitle{font-size:1.05rem;opacity:.85;max-width:680px;margin:0 auto 28px}
+.blog-hero .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.blog-hero .btn-primary{background:var(--orange);color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-size:15px;box-shadow:0 4px 14px rgba(232,119,34,.35)}
+.blog-hero .btn-primary:hover{background:#D4681A;transform:translateY(-2px);text-decoration:none}
+.blog-hero .hero-meta{font-size:13px;opacity:.75;display:flex;align-items:center;justify-content:center;gap:8px}
+.blog-article{max-width:760px;margin:0 auto;padding:48px 24px 64px;font-family:'Manrope',sans-serif;color:#2c3e50;line-height:1.75;background:#fff}
+.blog-article h2{font-family:'Space Grotesk',sans-serif;font-size:1.65rem;font-weight:700;color:var(--navy);margin:48px 0 20px;line-height:1.3;border-bottom:3px solid var(--orange);padding-bottom:10px;display:inline-block}
+.blog-article h3{font-size:1.2rem;font-weight:700;color:var(--navy);margin:28px 0 14px}
+.blog-article p{font-size:1rem;margin-bottom:18px}
+.blog-article ul,.blog-article ol{padding-left:24px;margin-bottom:18px}
+.blog-article li{margin-bottom:8px}
+.blog-article strong{color:var(--navy)}
+.blog-article table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+.blog-article th{background:#162D54;color:#fff;padding:10px 14px;text-align:left;font-weight:600}
+.blog-article td{padding:10px 14px;border-bottom:1px solid #eef0f4}
+.blog-article code{background:#f1f3f5;padding:4px 8px;border-radius:4px;font-family:Menlo,Consolas,monospace;font-size:13px;color:#162D54}
+.blog-article pre{background:#f1f3f5;padding:16px;border-radius:8px;overflow-x:auto;margin:16px 0}
+.blog-article pre code{background:none;padding:0;color:#162D54}
+.blog-article blockquote{border-left:4px solid var(--orange);padding:8px 20px;margin:16px 0;font-style:italic;color:#4a5568;background:#fff9f2;border-radius:0 8px 8px 0}
+.before-you-go{background:#f8f9fb;border:1px solid #eef0f4;border-radius:12px;padding:24px 28px;margin:32px 0}
+.before-you-go h3{color:var(--navy);margin-bottom:16px}
+.before-you-go ul{list-style:none;padding:0}
+.before-you-go li{padding:10px 0;border-bottom:1px solid #eef0f4;font-size:14px}
+.before-you-go li:last-child{border-bottom:none}
+.before-you-go a{font-weight:700}
+.cta-final{background:linear-gradient(135deg,#162D54 0%,#2a4a7c 100%);color:#fff;padding:64px 24px;text-align:center;margin-top:48px;border-radius:16px}
+.cta-final h2{color:#fff;font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:12px;border:none;padding:0;display:block}
+.cta-final p{opacity:.85;font-size:1rem;max-width:560px;margin:0 auto 24px}
+.cta-final .btn-primary{margin-bottom:24px}
+.trust-row{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:6px;font-size:13px;opacity:.85}
+.trust-item svg{color:#F5A623;flex-shrink:0}
+.site-footer{background:var(--navy);color:#fff;padding:32px 24px;text-align:center;font-size:13px;margin-top:60px}
+.site-footer a{color:#F5A623}
+@media(max-width:640px){
+  .blog-hero{padding:48px 20px 40px}
+  .blog-hero h1{font-size:1.6rem}
+  .blog-article{padding:32px 16px 48px}
+  .blog-article h2{font-size:1.4rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="breadcrumb-nav">
+  <div class="bc-inner">
+    <a href="../">MileBond</a>
+    <span>/</span>
+    <a href="../blog/">Blog</a>
+    <span>/</span>
+    Lead Time & Safety Stock
+  </div>
+</nav>
+
+<header class="blog-hero">
+  <span class="hero-tag">Inventory Optimization</span>
+  <h1>How to Calculate Safety Stock When Lead Time Is All Over the Place</h1>
+  <p class="subtitle">Supplier says 30 days, ships at 45. You stock out, then overstock. Here's how to calculate safety stock for variable lead times — and lock the lead time down.</p>
+  <div class="hero-ctas">
+    <a href="../free-quote.html" class="btn-primary">Get Free Consultation</a>
+  </div>
+  <div class="hero-meta">
+    <span>11 min read · Updated Sep 2026</span>
+  </div>
+</header>
+
+<article class="blog-article">
+
+  <p>You place a reorder. Your supplier says "30 days." You set your Amazon restock date for 30 days.</p>
+  <p>Day 30 comes. You message: "Where's my shipment?" Reply: "Almost done, shipping next week." Day 37: "Raw material was delayed, shipping in 5 days." Day 45: the bill of lading arrives. Your product has been out of stock on Amazon for 15 days. Your Best Seller Rank dropped from #200 to #1,800. Your PPC campaigns stopped because there's no inventory to send traffic to.</p>
+  <p>You learned your lesson. Next time, you place the reorder 15 days earlier — at day 15 instead of day 30. This time, the supplier ships in 28 days. The goods arrive 17 days before you need them. You now have 45 days of inventory sitting in FBA instead of 30. Your storage fees go up. Your cash is tied up in extra inventory you didn't need.</p>
+  <p>You're stuck in a loop: <strong>stock out, then overstock, then stock out, then overstock.</strong> Every cycle costs you money — either in lost sales and ranking drops, or in excess inventory and storage fees.</p>
+  <p>The root cause isn't your inventory planning. It's that your supplier's lead time is <strong>unreliable</strong> — it varies by 15-20 days order to order — and you're calculating safety stock as if the lead time is fixed.</p>
+  <p>This article fixes both problems: how to calculate safety stock correctly when lead times vary, and — more importantly — how to reduce the variation so you need less safety stock in the first place.</p>
+
+  <h2>Why Your Current Safety Stock Formula Is Wrong</h2>
+  <p>Most inventory guides give you this formula:</p>
+<pre><code>Safety Stock = (Max Daily Sales × Max Lead Time) - (Average Daily Sales × Average Lead Time)</code></pre>
+  <p>This formula works when you have <strong>stable, predictable lead times</strong> — like ordering from a domestic supplier who always ships in 3-5 business days.</p>
+  <p>It fails completely with Chinese suppliers, because:</p>
+  <ol>
+    <li><strong>"Max lead time" is not a real number.</strong> Your supplier's "max" lead time is whatever goes wrong this order — raw material delay, quality rework, Chinese New Year, port congestion. Last year's max was 45 days. This year's could be 60. Using last year's max as your safety stock calculation means you're always preparing for the last disaster, not the next one.</li>
+    <li><strong>The formula assumes lead time variation is random.</strong> It's not. Chinese supplier lead time variation is often <strong>systemic</strong> — the supplier overbooks capacity, prioritizes larger customers, or doesn't start production until the deposit clears. These are predictable patterns, not random events.</li>
+    <li><strong>The formula doesn't account for supplier reliability.</strong> A supplier who delivers in 28-32 days (±2 days) needs very different safety stock than one who delivers in 20-50 days (±15 days). The formula treats both the same if they have the same average.</li>
+  </ol>
+  <p>You need a formula that accounts for <strong>variability</strong>, not just averages.</p>
+
+  <h2>The Correct Safety Stock Formula for Variable Lead Times</h2>
+  <p>Here's the formula that actually works for Chinese suppliers:</p>
+<pre><code>Safety Stock = Z × √[(Average Lead Time × Demand Variance²) + (Average Daily Demand² × Lead Time Variance²)]</code></pre>
+  <p>Where:</p>
+  <ul>
+    <li><strong>Z</strong> = service level factor (1.65 for 95% service level, 2.05 for 98%, 2.33 for 99%)</li>
+    <li><strong>Average Lead Time</strong> = in days (e.g., 35)</li>
+    <li><strong>Average Daily Demand</strong> = units per day (e.g., 50)</li>
+    <li><strong>Demand Variance</strong> = standard deviation of daily demand (e.g., 15)</li>
+    <li><strong>Lead Time Variance</strong> = standard deviation of lead time in days (e.g., 10)</li>
+  </ul>
+  <p>This looks complicated, but the key insight is simple: <strong>your safety stock should be driven by the thing that varies more — demand or lead time.</strong></p>
+  <p>For most FBA sellers sourcing from China:</p>
+  <ul>
+    <li><strong>Demand variance</strong> is moderate (your daily sales fluctuate, but you can forecast within ±20%)</li>
+    <li><strong>Lead time variance</strong> is huge (your supplier says 30 days but delivers anywhere from 20 to 50)</li>
+  </ul>
+  <p>This means <strong>lead time variance is the dominant driver of your safety stock requirement</strong>. Reduce lead time variance, and you can dramatically reduce safety stock — without increasing your stock-out risk.</p>
+
+  <h2>Real Case: Lead Time 45 Days → 20 Days, Safety Stock Cut by 60%</h2>
+  <p><strong>The client:</strong> an FBA seller doing household goods, one main SKU at 1,500 units/month (50 units/day).</p>
+  <p><strong>The original supplier:</strong></p>
+  <ul>
+    <li>Quoted lead time: 30 days</li>
+    <li>Actual lead time over 6 orders: 28, 42, 35, 48, 31, 45 days</li>
+    <li>Average: 38 days</li>
+    <li>Standard deviation: <strong>7.5 days</strong></li>
+    <li>Payment: 30/70 upfront</li>
+    <li>Quality: consistent, ~2% defect rate</li>
+  </ul>
+  <p><strong>The problem:</strong> with 7.5 days of lead time standard deviation and 50 units/day demand, the client's safety stock calculation (at 95% service level) came out to approximately <strong>1,200 units</strong> — that's 24 days of extra inventory sitting in FBA, costing $3,600 in product cost plus ongoing storage fees.</p>
+  <p><strong>What we did:</strong></p>
+  <ol>
+    <li>Walked the Yiwu market and found 5 alternative suppliers for the same product.</li>
+    <li>Asked each one for their <strong>actual</strong> lead time over the last 10 orders (not their quoted lead time). Three couldn't answer (they don't track it). Two provided data.</li>
+    <li>One supplier (Supplier B) had actual lead times of: 19, 21, 20, 22, 18, 20, 21, 19, 20, 21 days — average 20 days, standard deviation <strong>1.1 days</strong>.</li>
+    <li>Verified Supplier B's quality: requested samples, compared to original product, placed a 300-unit test order with third-party inspection. Quality matched (2% defect rate, same as original).</li>
+    <li>Transitioned the client to Supplier B.</li>
+  </ol>
+  <p><strong>The result:</strong></p>
+  <ul>
+    <li>Lead time: 38 days average → <strong>20 days average</strong></li>
+    <li>Lead time variance: 7.5 days → <strong>1.1 days</strong> (94% reduction in variability)</li>
+    <li>Safety stock requirement (at 95% service level): 1,200 units → <strong>approximately 450 units</strong> (63% reduction)</li>
+    <li>Cash freed from reduced safety stock: 750 units × $3.00 = <strong>$2,250</strong></li>
+    <li>Plus: shorter lead time means faster reorder cycles, which means less cash tied up in in-transit inventory (18 fewer days × 50 units/day × $3.00 = <strong>$2,700</strong> additional cash freed)</li>
+    <li><strong>Total cash freed: ~$4,950</strong></li>
+  </ul>
+  <p>And quality didn't drop. The third-party inspection pass rate stayed at 98%+ — because we verified quality before switching, not after.</p>
+  <p>This is the part that surprises people: <strong>a shorter, more reliable lead time doesn't just mean you get your goods faster. It means you need less safety stock, which means less cash tied up in inventory, which means more cash for growing your business.</strong></p>
+
+  <h2>The 4-Step Method to Reduce Lead Time Variance (and Safety Stock)</h2>
+
+  <h3>Step 1: Measure Your Current Lead Time Variance</h3>
+  <p>You can't improve what you don't measure. Pull your last 6-10 orders and record:</p>
+  <ul>
+    <li>The date you confirmed the PO (and paid the deposit)</li>
+    <li>The date the supplier said the goods would be ready</li>
+    <li>The date the goods were actually ready (passed inspection)</li>
+    <li>The date of the bill of lading (shipment departed)</li>
+  </ul>
+  <p>Calculate:</p>
+  <ul>
+    <li><strong>Average lead time</strong> = (actual ready date - PO date) averaged across all orders</li>
+    <li><strong>Lead time standard deviation</strong> = use the STDEV function in Excel/Google Sheets on the actual lead times</li>
+  </ul>
+  <p>If your standard deviation is more than <strong>5 days</strong>, you have a lead time variability problem. If it's more than <strong>10 days</strong>, it's severe — and your safety stock is probably 2-3x higher than it needs to be.</p>
+  <p><strong>Also track:</strong> how often does the supplier give you advance warning of a delay? If they tell you on day 25 that the order won't be ready until day 45 (when they knew on day 10), that's a communication problem as much as a production problem.</p>
+
+  <h3>Step 2: Lock the Lead Time in the PO With Consequences</h3>
+  <p>Most buyers write "lead time: 30 days" in the PO and think that's enough. It isn't — because there's no consequence for missing it.</p>
+  <p>Add this clause to every PO:</p>
+  <blockquote>"Lead time: 30 days from PO confirmation and deposit receipt. For each calendar day of delay beyond the agreed lead time, the supplier shall pay a penalty of 0.5% of the total order value, capped at 10% of the total order value. The buyer may deduct this penalty from the balance payment. If delay exceeds 20 days, the buyer may cancel the order and receive a full refund of the deposit."</blockquote>
+  <p>This does three things:</p>
+  <ol>
+    <li><strong>It makes the lead time real.</strong> The supplier now has a financial incentive to hit the date — not just a vague expectation.</li>
+    <li><strong>It gives you leverage.</strong> If the supplier is consistently late, you can deduct penalties from the balance payment. Most suppliers would rather ship on time than give you a discount.</li>
+    <li><strong>It filters out unreliable suppliers.</strong> If a supplier refuses to sign a PO with this clause, that's information — they know they can't hit their own quoted lead time, and they don't want to be held accountable. Walk away.</li>
+  </ol>
+  <p><strong>Important:</strong> 0.5%/day capped at 10% is the industry standard. Don't try to negotiate 1%/day or uncapped penalties — the supplier will refuse, and you'll signal you're difficult to work with. 0.5%/day is enough to create incentive without being unreasonable.</p>
+
+  <h3>Step 3: Implement Production Milestone Tracking</h3>
+  <p>The #1 reason suppliers miss lead times is that they don't start production on time. They accept your order, then put it in a queue behind larger customers' orders. By the time they start your production, you're already 10 days behind.</p>
+  <p>Fix this by requiring <strong>production milestone updates</strong>:</p>
+  <table>
+    <thead><tr><th>Milestone</th><th>Deadline</th><th>Verification</th></tr></thead>
+    <tbody>
+      <tr><td>Raw material purchased</td><td>Day 5</td><td>Photo of material with supplier's stamp</td></tr>
+      <tr><td>Production started</td><td>Day 10</td><td>Photo of production line with your product</td></tr>
+      <tr><td>50% complete</td><td>Day 18</td><td>Photo of half-finished goods + count</td></tr>
+      <tr><td>100% complete + QC</td><td>Day 27</td><td>Pre-shipment inspection report</td></tr>
+      <tr><td>Ready for shipment</td><td>Day 30</td><td>Packed cartons photo + booking confirmation</td></tr>
+    </tbody>
+  </table>
+  <p>If a milestone is missed, you know about it <strong>within days</strong>, not on the day the order was supposed to ship. This gives you time to:</p>
+  <ul>
+    <li>Pressure the supplier to prioritize your order</li>
+    <li>Find an alternative supplier if the delay is severe</li>
+    <li>Adjust your Amazon restock plan before you stock out</li>
+  </ul>
+  <p><strong>How to enforce this:</strong> write the milestone schedule into the PO. Tell the supplier: "We require photo updates at each milestone. If we don't receive the update within 24 hours of the deadline, we'll follow up. If two consecutive milestones are missed, we'll need to discuss whether the lead date is still achievable."</p>
+  <p>A local agent can do this for you — they can call the supplier, visit the factory, and verify milestones in person. You can't do this effectively from another country via email.</p>
+
+  <h3>Step 4: Qualify Suppliers on Actual Lead Time, Not Quoted Lead Time</h3>
+  <p>When you're evaluating new suppliers, don't ask "what's your lead time?" — every supplier says "25-30 days." Ask:</p>
+  <blockquote>"Can you show me the actual production and shipment dates for your last 10 orders of this product? I want to see your on-time delivery rate."</blockquote>
+  <p>A supplier who tracks their own lead time data and can show you a 90%+ on-time delivery rate is a supplier who takes lead time seriously. A supplier who says "we always ship on time" but can't show you data is a supplier who doesn't track it — and probably doesn't hit it.</p>
+  <p>In Yiwu, we consistently find that <strong>20-30% of suppliers</strong> have actual lead time standard deviations under 3 days (very reliable), while the rest range from 5-15 days. You can't tell which is which from an Alibaba listing or a factory visit. You need data — and someone on the ground who can collect it.</p>
+
+  <h2>The Cash Flow Impact of Reliable Lead Times</h2>
+  <p>Let's do the math on why lead time reliability matters more than lead time length.</p>
+  <p><strong>Scenario A (unreliable supplier):</strong></p>
+  <ul>
+    <li>Average lead time: 38 days</li>
+    <li>Lead time standard deviation: 7.5 days</li>
+    <li>Daily demand: 50 units</li>
+    <li>Demand standard deviation: 10 units</li>
+    <li>Safety stock (95% service level): ~1,200 units = $3,600</li>
+    <li>In-transit inventory (38 days × 50 units): 1,900 units = $5,700</li>
+    <li><strong>Total non-selling inventory: $9,300</strong></li>
+  </ul>
+  <p><strong>Scenario B (reliable supplier):</strong></p>
+  <ul>
+    <li>Average lead time: 20 days</li>
+    <li>Lead time standard deviation: 1.1 days</li>
+    <li>Daily demand: 50 units</li>
+    <li>Demand standard deviation: 10 units</li>
+    <li>Safety stock (95% service level): ~450 units = $1,350</li>
+    <li>In-transit inventory (20 days × 50 units): 1,000 units = $3,000</li>
+    <li><strong>Total non-selling inventory: $4,350</strong></li>
+  </ul>
+  <p><strong>Difference: $4,950 cash freed</strong> — money that was sitting in safety stock and in-transit inventory, now available to fund new products, run ads, or cover operating expenses.</p>
+  <p>And this is for <strong>one SKU</strong>. If you have 5 SKUs, that's ~$25,000 in freed capital. For a small seller with $50,000 in working capital, that's a <strong>50% increase in available cash</strong>.</p>
+  <p>This is the hidden cost of unreliable lead times: you don't just lose sales when you stock out. You also tie up excess cash in safety stock "just in case" — and that cash is doing nothing for your business.</p>
+
+  <h2>The Bottom Line</h2>
+  <p>Unreliable lead times are a silent cash flow killer. Every day of lead time standard deviation forces you to carry more safety stock, which ties up more cash, which limits how fast you can grow.</p>
+  <p>The solution isn't to carry more inventory (that's the symptom) or to nag your supplier (that doesn't work). The solution is to: measure your current variability, lock lead times in the PO with financial consequences, track production milestones so you catch delays early, and qualify suppliers on actual lead time data — not quoted promises.</p>
+  <p>For most everyday consumer goods, a reliable supplier with a 20-day lead time is available in the Yiwu market. You just need to know how to find them — and how to verify their data.</p>
+  <p><strong>Send us your last 6 orders' actual lead times (PO date to ship date) and your daily sales velocity. Within 48 hours we'll calculate: (1) your current lead time variance, (2) how much safety stock you're carrying because of it, (3) how much cash you could free by switching to a reliable Yiwu supplier. Free, no obligation.</strong></p>
+  <p>We're paid a transparent service fee by you. We don't take kickbacks from suppliers, and we don't mark up unit prices. When we recommend a supplier based on lead time reliability, it's because their data checks out — not because they're paying us to recommend them.</p>
+
+  <div class="before-you-go">
+    <h3>Related Reading</h3>
+    <ul>
+      <li><a href="../reduce-moq-chinese-supplier/">How to Reduce MOQ Without Paying More Per Unit</a></li>
+      <li><a href="../net-payment-terms-chinese-supplier/">How to Get Net 30/60 from Chinese Suppliers</a></li>
+      <li><a href="../fba-packaging-optimization-sourcing/">Smaller Packaging = Lower FBA Fees + More Units Per Container</a></li>
+    </ul>
+  </div>
+
+  <div class="cta-final">
+    <h2>Tired of Stocking Out (and Overstocking)?</h2>
+    <p>Send us your last 6 orders' lead times and daily sales. We'll tell you within 48 hours how much cash you could free with a more reliable supplier.</p>
+    <a href="../free-quote.html" class="btn-primary">Get Free Consultation</a>
+    <div class="trust-row">
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Reply within 48h
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Yiwu-based team
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        Data-driven
+      </div>
+    </div>
+  </div>
+
+</article>
+
+<footer class="site-footer">
+  <p>&copy; 2026 MileBond — China Sourcing Agent. <a href="../contact-us.html">Contact us</a> for a free sourcing quote.</p>
+</footer>
+
+</body>
+</html>
