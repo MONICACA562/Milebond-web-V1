@@ -1,6 +1,41 @@
 # robots.txt for `https://www.milebond.com/`
 # Last updated: 2026-09-20
-# Allow all crawlers including AI search engines (GEO-friendly)
+# GEO-friendly: allow all AI search engines and crawlers
+
+# —— AI search engines (explicit Allow for GEO auditability) ——
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# —— All remaining crawlers ——
 User-agent: *
 Allow: /
+
+# Sitemap location
 Sitemap: `https://www.milebond.com/sitemap.xml`
