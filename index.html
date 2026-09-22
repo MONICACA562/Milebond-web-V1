@@ -2319,64 +2319,6 @@ function toggleDropdown(el) {
   dd.classList.toggle('open');
 }
 
-// ============ FAQ CATEGORY TREE + ACCORDION (NEW) ============
-(function(){
-  // Category tree toggle
-  document.querySelectorAll('.faq-cat-head').forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.parentElement.classList.toggle('open');
-    });
-  });
-
-  // Sub-category click: scroll to section + highlight + open parent cat
-  document.querySelectorAll('.faq-sub').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href').replace('#','');
-      const target = document.getElementById(targetId);
-      if(!target) return;
-
-      // Remove all active
-      document.querySelectorAll('.faq-sub').forEach(s => s.classList.remove('active'));
-      link.classList.add('active');
-
-      // Open parent cat
-      const parentCat = link.closest('.faq-cat');
-      if(parentCat) parentCat.classList.add('open');
-
-      // Close others
-      document.querySelectorAll('.faq-cat').forEach(c => {
-        if(c !== parentCat) c.classList.remove('open');
-      });
-
-      // Scroll
-      target.scrollIntoView({behavior:'smooth',block:'start'});
-    });
-  });
-
-  // Accordion (revised — only within visible .faq-list)
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.parentElement;
-      const answer = item.querySelector('.faq-answer');
-      const isActive = item.classList.contains('active');
-      document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('active'); const a = i.querySelector('.faq-answer'); if(a) a.style.maxHeight = null; });
-      if(!isActive){ item.classList.add('active'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
-    });
-  });
-
-  // Open cat containing current hash on load
-  if(location.hash){
-    const link = document.querySelector('.faq-sub[href="' + location.hash + '"]');
-    if(link){
-      const parentCat = link.closest('.faq-cat');
-      if(parentCat) parentCat.classList.add('open');
-      link.classList.add('active');
-    }
-  }
-})();
-
-
 // ============ SCROLL REVEAL ============
 const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
 const observer = new IntersectionObserver((entries) => {
