@@ -1602,230 +1602,273 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   </div>
 </section>
 
-<!-- FAQ BODY: left tree + right content -->
-<section class="faq-layout" id="faq">
-  <div class="container">
-    <div class="faq-grid">
-
-      <!-- LEFT SIDEBAR: category tree -->
-      <aside class="faq-sidebar">
-        <div class="faq-sidebar-title">Browse by Topic</div>
-        <div class="faq-tree">
-          <!-- 1. Product Sourcing -->
-          <div class="faq-cat open">
-            <button class="faq-cat-head"><span><span class="cat-emoji">🔍</span>Product Sourcing</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <div class="faq-cat-body">
-              <button class="faq-sub" data-href="#sourcing-howto">How to Source Products from China</button>
-              <button class="faq-sub" data-href="#sourcing-vetting">Finding &amp; Vetting Suppliers</button>
-            </div>
-          </div>
-          <!-- 2. Amazon FBA -->
-          <div class="faq-cat">
-            <button class="faq-cat-head"><span><span class="cat-emoji">📦</span>Amazon FBA Sourcing</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <div class="faq-cat-body">
-              <button class="faq-sub" data-href="#fba-prep">FBA Sourcing &amp; Prep</button>
-              <button class="faq-sub" data-href="#fba-packaging">FBA Packaging Optimization</button>
-            </div>
-          </div>
-          <!-- 3. Private Label -->
-          <div class="faq-cat">
-            <button class="faq-cat-head"><span><span class="cat-emoji">🏷️</span>Private Label &amp; OEM</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <div class="faq-cat-body">
-              <button class="faq-sub" data-href="#private-label">Private Label Sourcing</button>
-              <button class="faq-sub" data-href="#product-dev">Product Development</button>
-            </div>
-          </div>
-          <!-- 4. Quality & Compliance -->
-          <div class="faq-cat">
-            <button class="faq-cat-head"><span><span class="cat-emoji">✅</span>Quality &amp; Compliance</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <div class="faq-cat-body">
-              <button class="faq-sub" data-href="#quality-inspection">Quality Control &amp; Inspection</button>
-              <button class="faq-sub" data-href="#compliance">Product Compliance &amp; Certification</button>
-            </div>
-          </div>
-          <!-- 5. Pricing & MOQ -->
-          <div class="faq-cat">
-            <button class="faq-cat-head"><span><span class="cat-emoji">💰</span>Pricing &amp; MOQ</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <div class="faq-cat-body">
-              <button class="faq-sub" data-href="#moq">MOQ &amp; Small Order Sourcing</button>
-              <button class="faq-sub" data-href="#agent-fees">Sourcing Agent Fees &amp; Commission</button>
-            </div>
-          </div>
-          <!-- 6. Logistics -->
-          <div class="faq-cat">
-            <button class="faq-cat-head"><span><span class="cat-emoji">🚚</span>Logistics &amp; Shipping</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <div class="faq-cat-body">
-              <button class="faq-sub" data-href="#shipping-options">Shipping Options &amp; Costs</button>
-              <button class="faq-sub" data-href="#ddp-customs">DDP &amp; Customs Clearance</button>
-            </div>
-          </div>
-          <!-- 7. Cost Saving -->
-          <div class="faq-cat">
-            <button class="faq-cat-head"><span><span class="cat-emoji">📉</span>Cost Saving</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <div class="faq-cat-body">
-              <button class="faq-sub" data-href="#reduce-cost">Reduce Sourcing Cost</button>
-              <button class="faq-sub" data-href="#payment-terms">Payment Terms &amp; Cash Flow</button>
-            </div>
-          </div>
-          <!-- 8. Avoiding Pitfalls -->
-          <div class="faq-cat">
-            <button class="faq-cat-head"><span><span class="cat-emoji">⚠️</span>Avoiding Pitfalls</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <div class="faq-cat-body">
-              <button class="faq-sub" data-href="#avoid-scams">Avoiding Sourcing Scams</button>
-              <button class="faq-sub" data-href="#common-mistakes">Common Mistakes to Avoid</button>
-            </div>
-          </div>
+<section class="faq-layout" id="faq" style="padding-top:120px;"> <div class="container"> <div class="faq-grid">
+  <!-- LEFT SIDEBAR -->
+  <aside class="faq-sidebar">
+    <div class="faq-sidebar-title">Browse by Topic</div>
+    <div class="faq-tree">
+      <div class="faq-cat open">
+        <button class="faq-cat-head"><span><span class="cat-emoji">🚀</span>Getting Started</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="faq-cat-body">
+          <button class="faq-sub" data-target="cat-start">How it works</button>
+          <button class="faq-sub" data-target="cat-start">First steps</button>
+          <button class="faq-sub" data-target="cat-start">Alibaba</button>
+          <button class="faq-sub" data-target="cat-start">Visit China</button>
         </div>
-      </aside>
-
-      <!-- RIGHT CONTENT -->
-      <main class="faq-content">
-
-        <!-- ===== Category 1: Product Sourcing ===== -->
-        <!-- 1a. How to Source Products from China -->
-        <section class="faq-content-section" id="sourcing-howto">
-          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>🔍 Product Sourcing</span><span class="sep">/</span><span>How to Source Products from China</span></div>
-          <h2>How to Source Products from China</h2>
-          <p class="section-sub">Step-by-step guide to finding, vetting and importing products from China.</p>
-          <div class="faq-list">
-            <div class="faq-item active"><button class="faq-question">What can your China sourcing agent do for my business?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">We offer a comprehensive sourcing solution from China, acting as your trusted sourcing partner to:<ul><li>Source products &amp; provide competitive quotes</li><li>Manage orders &amp; production timelines</li><li>Inspect quality to guarantee your standards</li><li>Handle export procedures, customs &amp; documentation</li><li>Offer import guidance &amp; regulatory advice</li><li>Assist during your China visits with translation</li><li>Adapt to your unique business needs with custom solutions</li></ul></div></div></div>
-          </div>
-        </section>
-
-        <!-- 1b. Finding & Vetting Suppliers -->
-        <section class="faq-content-section" id="sourcing-vetting">
-          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>🔍 Product Sourcing</span><span class="sep">/</span><span>Finding &amp; Vetting Suppliers</span></div>
-          <h2>Finding &amp; Vetting Suppliers</h2>
-          <p class="section-sub">How we ensure every supplier we work with is legitimate, capable and reliable.</p>
-          <div class="faq-list">
-            <div class="faq-item"><button class="faq-question">What kind of suppliers do you work with? All factories?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">It depends on the products you require. We find the best supplier for your needs:<ul><li><strong>Factories (if MOQ met):</strong> Best pricing for larger orders</li><li><strong>Negotiate with factories:</strong> For smaller orders to meet minimums</li><li><strong>Reliable wholesalers:</strong> For smaller orders when factory MOQ isn't possible</li></ul>We balance price, quality, and order size to find the right supplier for you.</div></div></div>
-          </div>
-        </section>
-
-        <!-- ===== Category 2: Amazon FBA ===== -->
-        <section class="faq-content-section" id="fba-prep">
-          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>📦 Amazon FBA Sourcing</span><span class="sep">/</span><span>FBA Sourcing &amp; Prep</span></div>
-          <h2>FBA Sourcing &amp; Prep</h2>
-          <p class="section-sub">Sourcing, labeling, and preparation services tailored for Amazon FBA sellers.</p>
-          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
-        </section>
-
-        <section class="faq-content-section" id="fba-packaging">
-          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>📦 Amazon FBA Sourcing</span><span class="sep">/</span><span>FBA Packaging Optimization</span></div>
-          <h2>FBA Packaging Optimization</h2>
-          <p class="section-sub">How to reduce dimensional weight, avoid fees, and protect products in transit to Amazon warehouses.</p>
-          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
-        </section>
-
-        <!-- ===== Category 3: Private Label & OEM ===== -->
-        <section class="faq-content-section" id="private-label">
-          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>🏷️ Private Label &amp; OEM</span><span class="sep">/</span><span>Private Label Sourcing</span></div>
-          <h2>Private Label Sourcing</h2>
-          <p class="section-sub">How to build your own brand with custom products sourced from China.</p>
-          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
-        </section>
-
-        <section class="faq-content-section" id="product-dev">
-          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>🏷️ Private Label &amp; OEM</span><span class="sep">/</span><span>Product Development</span></div>
-          <h2>Product Development</h2>
-          <p class="section-sub">From prototype to production — turning your idea into a sellable product.</p>
-          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
-        </section>
-
-        <!-- ===== Category 4: Quality & Compliance ===== -->
-        <section class="faq-content-section" id="quality-inspection">
-          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>✅ Quality &amp; Compliance</span><span class="sep">/</span><span>Quality Control &amp; Inspection</span></div>
-          <h2>Quality Control &amp; Inspection</h2>
-          <p class="section-sub">Our 6-stage quality control process and how we protect your brand from defective products.</p>
-          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
-        </section>
-
-        <section class="faq-content-section" id="compliance">
-          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>✅ Quality &amp; Compliance</span><span class="sep">/</span><span>Product Compliance &amp; Certification</span></div>
-          <h2>Product Compliance &amp; Certification</h2>
-          <p class="section-sub">CE, RoHS, REACH, UKCA, ASTM — which certifications you need and how we handle them.</p>
-          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
-        </section>
-
-        <!-- ===== Category 5: Pricing & MOQ ===== -->
-        <section class="faq-content-section" id="moq">
-          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>💰 Pricing &amp; MOQ</span><span class="sep">/</span><span>MOQ &amp; Small Order Sourcing</span></div>
-          <h2>MOQ &amp; Small Order Sourcing</h2>
-          <p class="section-sub">How we help startups and small businesses source with minimum order quantities from 1 carton.</p>
-          <div class="faq-list">
-            <div class="faq-item"><button class="faq-question">Is there any MOQ when placing orders through you?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">It depends on the product and supplier:<ul><li><strong>Stock availability:</strong> We can accept your quantity if the factory has enough stock</li><li><strong>Factory MOQ:</strong> New production usually requires meeting the factory's minimum order quantity</li><li><strong>Combined orders:</strong> We may add your order to a larger client's production run, allowing smaller quantities</li></ul>We'll work to find a solution for your desired order size.</div></div></div>
-          </div>
-        </section>
-
-        <section class="faq-content-section" id="agent-fees">
-          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>💰 Pricing &amp; MOQ</span><span class="sep">/</span><span>Sourcing Agent Fees &amp; Commission</span></div>
-          <h2>Sourcing Agent Fees &amp; Commission</h2>
-          <p class="section-sub">Transparent pricing — no hidden fees, no surprise charges.</p>
-          <div class="faq-list">
-            <div class="faq-item"><button class="faq-question">How much do your sourcing services cost?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Our pricing is transparent and tailored to your specific needs. Typically, sourcing service fees range from 3% to 10% of the order value, depending on:<ul><li>Product complexity &amp; category</li><li>Order volume &amp; frequency</li><li>Level of service required (sourcing only vs. end-to-end)</li><li>Whether you need QC, warehousing, or fulfillment</li></ul>We offer a free initial consultation and quote with no hidden fees. Contact us for a customized proposal.</div></div></div>
-          </div>
-        </section>
-
-        <!-- ===== Category 6: Logistics & Shipping ===== -->
-        <section class="faq-content-section" id="shipping-options">
-          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>🚚 Logistics &amp; Shipping</span><span class="sep">/</span><span>Shipping Options &amp; Costs</span></div>
-          <h2>Shipping Options &amp; Costs</h2>
-          <p class="section-sub">Sea, air, EXW, FOB, CIF — all your shipping questions answered.</p>
-          <div class="faq-list">
-            <div class="faq-item"><button class="faq-question">What kind of shipment do you offer?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">We offer both sea and air shipping to meet your needs:<ul><li><strong>Sea shipping:</strong> Economical for larger volumes (FCL or LCL)</li><li><strong>EXW:</strong> You arrange pickup from our warehouse</li><li><strong>FOB:</strong> Covers all costs to forward and load cargo on board</li><li><strong>CIF:</strong> Covers all costs to the port of your destination</li><li><strong>Air cargo:</strong> Faster for valuable, smaller items</li></ul>Let our sourcing agent help you choose the best option for your business.</div></div></div>
-          </div>
-        </section>
-
-        <section class="faq-content-section" id="ddp-customs">
-          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>🚚 Logistics &amp; Shipping</span><span class="sep">/</span><span>DDP &amp; Customs Clearance</span></div>
-          <h2>DDP &amp; Customs Clearance</h2>
-          <p class="section-sub">Door-to-door delivery from China factory to your warehouse — we handle all the paperwork.</p>
-          <div class="faq-list">
-            <div class="faq-item"><button class="faq-question">If I already buy from China, can you help me export?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes! Even if you source independently, we can help you export:<ul><li>Production monitoring &amp; progress tracking</li><li>Quality checks &amp; pre-shipment inspection</li><li>Loading &amp; export arrangement</li><li>Customs clearance &amp; documentation</li><li>After-sales support &amp; issue resolution</li></ul>Our fees are negotiable. Contact us to discuss your specific needs.</div></div></div>
-          </div>
-        </section>
-
-        <!-- ===== Category 7: Cost Saving ===== -->
-        <section class="faq-content-section" id="reduce-cost">
-          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>📉 Cost Saving</span><span class="sep">/</span><span>Reduce Sourcing Cost</span></div>
-          <h2>Reduce Sourcing Cost</h2>
-          <p class="section-sub">Proven strategies to cut sourcing costs by 15-30% and improve your margins.</p>
-          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
-        </section>
-
-        <section class="faq-content-section" id="payment-terms">
-          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>📉 Cost Saving</span><span class="sep">/</span><span>Payment Terms &amp; Cash Flow</span></div>
-          <h2>Payment Terms &amp; Cash Flow</h2>
-          <p class="section-sub">Negotiating 30-120 day payment terms and protecting your cash flow with suppliers.</p>
-          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
-        </section>
-
-        <!-- ===== Category 8: Avoiding Pitfalls ===== -->
-        <section class="faq-content-section" id="avoid-scams">
-          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>⚠️ Avoiding Pitfalls</span><span class="sep">/</span><span>Avoiding Sourcing Scams</span></div>
-          <h2>Avoiding Sourcing Scams</h2>
-          <p class="section-sub">The most common supplier scams and how our 3-layer verification system protects you.</p>
-          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
-        </section>
-
-        <section class="faq-content-section" id="common-mistakes">
-          <div class="faq-breadcrumb"><a href="#">Home</a><span class="sep">/</span><a href="#faq">FAQ</a><span class="sep">/</span><span>⚠️ Avoiding Pitfalls</span><span class="sep">/</span><span>Common Mistakes to Avoid</span></div>
-          <h2>Common Mistakes to Avoid</h2>
-          <p class="section-sub">The 10 most common mistakes new importers make — and how to skip them entirely.</p>
-          <div class="faq-placeholder">Coming soon — we're adding more questions to this section. Check back soon or contact us directly for answers.</div>
-        </section>
-
-        <!-- CTA -->
-        <div class="faq-cta">
-          <h3>Still Have Questions?</h3>
-          <p>Our team replies to every inquiry within 24 hours.</p>
-          <a href="/free-quote.html" class="btn btn-primary btn-sm">Ask Our Experts →</a>
+      </div>
+      <div class="faq-cat">
+        <button class="faq-cat-head"><span><span class="cat-emoji">💰</span>Pricing & Fees</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="faq-cat-body">
+          <button class="faq-sub" data-target="cat-fees">Service fee</button>
+          <button class="faq-sub" data-target="cat-fees">Supplier invoice</button>
+          <button class="faq-sub" data-target="cat-fees">What's included</button>
+          <button class="faq-sub" data-target="cat-fees">How we're different</button>
         </div>
-
-      </main>
+      </div>
+      <div class="faq-cat">
+        <button class="faq-cat-head"><span><span class="cat-emoji">📦</span>MOQ & Customization</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="faq-cat-body">
+          <button class="faq-sub" data-target="cat-moq">MOQ reduction</button>
+          <button class="faq-sub" data-target="cat-moq">Custom logo</button>
+          <button class="faq-sub" data-target="cat-moq">Track record</button>
+        </div>
+      </div>
+      <div class="faq-cat">
+        <button class="faq-cat-head"><span><span class="cat-emoji">🏷️</span>Amazon FBA</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="faq-cat-body">
+          <button class="faq-sub" data-target="cat-fba">FBA prep</button>
+          <button class="faq-sub" data-target="cat-fba">Packaging optimization</button>
+          <button class="faq-sub" data-target="cat-fba">Compliance</button>
+          <button class="faq-sub" data-target="cat-fba">ASIN sourcing</button>
+        </div>
+      </div>
+      <div class="faq-cat">
+        <button class="faq-cat-head"><span><span class="cat-emoji">📮</span>Dropshipping</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="faq-cat-body">
+          <button class="faq-sub" data-target="cat-drop">Dropshipping</button>
+          <button class="faq-sub" data-target="cat-drop">Trial order</button>
+          <button class="faq-sub" data-target="cat-drop">Samples</button>
+        </div>
+      </div>
+      <div class="faq-cat">
+        <button class="faq-cat-head"><span><span class="cat-emoji">✅</span>Quality & Compliance</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="faq-cat-body">
+          <button class="faq-sub" data-target="cat-quality">304 vs 201</button>
+          <button class="faq-sub" data-target="cat-quality">Inspection</button>
+          <button class="faq-sub" data-target="cat-quality">Factory vs trader</button>
+          <button class="faq-sub" data-target="cat-quality">Certifications</button>
+        </div>
+      </div>
+      <div class="faq-cat">
+        <button class="faq-cat-head"><span><span class="cat-emoji">💳</span>Payment & Cash Flow</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="faq-cat-body">
+          <button class="faq-sub" data-target="cat-pay">Payment terms</button>
+          <button class="faq-sub" data-target="cat-pay">Deposit protection</button>
+          <button class="faq-sub" data-target="cat-pay">Payment methods</button>
+        </div>
+      </div>
+      <div class="faq-cat">
+        <button class="faq-cat-head"><span><span class="cat-emoji">⚠️</span>Avoiding Pitfalls</span><svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="faq-cat-body">
+          <button class="faq-sub" data-target="cat-pitfall">Yiwu scams</button>
+          <button class="faq-sub" data-target="cat-pitfall">Agent kickbacks</button>
+          <button class="faq-sub" data-target="cat-pitfall">Canton Fair vs Yiwu</button>
+          <button class="faq-sub" data-target="cat-pitfall">Delays</button>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </aside>
+
+  <!-- RIGHT CONTENT -->
+  <main class="faq-content">
+
+    <!-- 1. Getting Started -->
+    <div class="faq-cat-section" id="cat-start">
+      <h2 style="font-size:28px;margin-bottom:6px;color:#162D54;">Getting Started</h2>
+      <p style="color:#6B7280;margin-bottom:20px;">New to working with a sourcing agent? Here's what to expect.</p>
+
+      <div class="faq-item">
+        <button class="faq-q">How does Milebond work? <span>+</span></button>
+        <div class="faq-a"><p>We don't just match you with the first supplier we find. We start from our own pool of <strong>several thousand pre-vetted suppliers across China</strong>, then cross-check against Alibaba listings and the Yiwu market for multi-way comparison. For online sellers, we actively encourage you to bring your own ideas — product tweaks, custom features, packaging concepts. We validate whether they're feasible, who can produce them, and at what cost. You're not buying off-the-shelf; you're building something with us.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What are the first steps? <span>+</span></button>
+        <div class="faq-a"><p>1) Send product details (image, ASIN, target price, MOQ). 2) Free analysis with 3 supplier comparisons and price benchmarks. 3) Approve a supplier. 4) We arrange samples. 5) After sample approval, bulk order and QC to shipment.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">I already source from Alibaba. Do I still need an agent? <span>+</span></button>
+        <div class="faq-a"><p>Alibaba is a starting point, not a final destination. 70%+ of "factories" on Alibaba are trading companies. We verify actual factory status via the raw material cost test, negotiate MOQ reductions (often 50-70%), and optimize packaging for FBA. If you're already profitable, our savings typically cover our fee.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do I need to visit China? <span>+</span></button>
+        <div class="faq-a"><p>Depends on your stage. If you're a startup focused on marketing and sales, stay where you are — sourcing, QC, and shipping are fully handled by us locally. If you're an established seller looking for new product ideas, visiting Yiwu Market is highly recommended: walking through different materials, fabrics, and finishes sparks product combinations you'd never find on Alibaba. We'll guide you through the market.</p></div>
+      </div>
+    </div>
+
+    <!-- 2. Pricing & Fees -->
+    <div class="faq-cat-section" id="cat-fees">
+      <h2 style="font-size:28px;margin-bottom:6px;color:#162D54;">Pricing & Fees</h2>
+      <p style="color:#6B7280;margin-bottom:20px;">Transparent pricing — no hidden fees, no supplier kickbacks.</p>
+
+      <div class="faq-item">
+        <button class="faq-q">How much do you charge? <span>+</span></button>
+        <div class="faq-a"><p>Transparent service fee based on order value, typically 5-8% depending on size and complexity. No registration fee, no monthly retainer, no minimum contract. You see the supplier invoice directly — we never mark up product price.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I see the supplier's original quote and invoice? <span>+</span></button>
+        <div class="faq-a"><p>Yes. You receive the supplier's original quotation and proforma invoice directly. We never mark up product prices or add hidden line items. Our fee is transparently stated as a separate line. You can cross-check our supplier quote against what you found on Alibaba yourself. Most agents won't show you the factory invoice — we do, because we have nothing to hide.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What's included in your fee? <span>+</span></button>
+        <div class="faq-a"><p>Supplier sourcing & comparison (10-20 quotes), price negotiation, sample coordination, factory verification, production follow-up, inspection coordination, consolidation, quality issue resolution, shipping docs. Lab testing and AQL inspection billed separately at cost.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How is your fee different from other agents? <span>+</span></button>
+        <div class="faq-a"><p>1) No kickbacks (most agents do, inflating price 10-20%). 2) We focus on cash flow — reducing MOQ, extending payment terms, optimizing packaging — not just cheapest unit price. A $0.10 cheaper unit with 3x MOQ locks up more of your cash.</p></div>
+      </div>
+    </div>
+
+    <!-- 3. MOQ & Customization -->
+    <div class="faq-cat-section" id="cat-moq">
+      <h2 style="font-size:28px;margin-bottom:6px;color:#162D54;">MOQ & Customization</h2>
+      <p style="color:#6B7280;margin-bottom:20px;">Improving supplier cash flow and reducing your inventory backlog — aligned with market reality.</p>
+
+      <div class="faq-item">
+        <button class="faq-q">How do you reduce MOQ from 1000 to 300? <span>+</span></button>
+        <div class="faq-a"><p>1) Multi-supplier comparison — in Yiwu, 20+ suppliers may make the same product. We find the one willing to do 300. 2) Material pooling — based on your annual forecast, suppliers pre-stock raw material. Real client: MOQ 1000→300, price also dropped 51% because material was mislabeled (201 sold as 304).</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can you do custom logo, color, or packaging? <span>+</span></button>
+        <div class="faq-a"><p>Custom logo (laser, printed, engraved) from MOQ 300. Custom packaging depends on complexity — simple box at MOQ 500, full custom at MOQ 1000. We also optimize packaging dimensions to reduce FBA storage and dimensional weight fees.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">You mentioned MOQ reduction — what's your track record? <span>+</span></button>
+        <div class="faq-a"><p>Based on our clients' actual order volumes, we've successfully reduced MOQ by up to 90% (e.g., from 1000 units down to 300). The method depends on your product: multi-supplier comparison for stock items, material pooling for custom items, and annual volume commitment for suppliers. If a supplier genuinely can't go lower, we'll tell you directly rather than overpromising.</p></div>
+      </div>
+    </div>
+
+    <!-- 4. Amazon FBA -->
+    <div class="faq-cat-section" id="cat-fba">
+      <h2 style="font-size:28px;margin-bottom:6px;color:#162D54;">Amazon FBA Sourcing</h2>
+      <p style="color:#6B7280;margin-bottom:20px;">Founded by serving Amazon US sellers — we know packaging, product development, cost reduction, and compliance.</p>
+
+      <div class="faq-item">
+        <button class="faq-q">Do you handle FBA prep and labeling? <span>+</span></button>
+        <div class="faq-a"><p>Yes. FNSKU labels, suffocation labels, poly-bag or box per Amazon requirements, DDP shipping to FBA warehouses. We generate shipment labels and packing lists. You just send the Amazon shipment plan.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can you optimize packaging to reduce FBA fees? <span>+</span></button>
+        <div class="faq-a"><p>Yes — one of our most impactful optimizations. We calculate dimensional weight and redesign packaging with Yiwu suppliers to reduce volume 20-40% while protecting the product. Client example: saved $0.80/unit in FBA storage and dimensional shipping.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What if my product fails Amazon compliance? <span>+</span></button>
+        <div class="faq-a"><p>We verify certification before production, not after Amazon rejects your listing. If a supplier claims compliance but the bulk order fails testing, we negotiate a refund with the supplier and immediately switch to a qualified alternative so you don't run out of stock. We also recommend printing a batch ID on every unit's label for traceability — if a single batch has issues, you isolate it without recalling your entire inventory.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can you source from an ASIN I see on Amazon? <span>+</span></button>
+        <div class="faq-a"><p>Sending an ASIN is a great starting point, but we don't recommend copying a listing 1:1 — you'll have no competitive advantage and may risk IP issues. Instead, we analyze the product's common negative reviews (quality issues, design flaws, packaging complaints) and work with suppliers to improve those specific points. The goal is a differentiated version: same core function, better materials, better design, or better packaging — so you stand out rather than competing on price alone.</p></div>
+      </div>
+    </div>
+
+    <!-- 5. Dropshipping -->
+    <div class="faq-cat-section" id="cat-drop">
+      <h2 style="font-size:28px;margin-bottom:6px;color:#162D54;">Dropshipping & Small Orders</h2>
+      <p style="color:#6B7280;margin-bottom:20px;">For sellers testing a product or shipping individual orders.</p>
+
+      <div class="faq-item">
+        <button class="faq-q">Do you support dropshipping? <span>+</span></button>
+        <div class="faq-a"><p>Yes — we support both small-batch production (100-300 pieces) and individual dropshipping orders. For dropshipping, we ship via ePacket, YunExpress, or China Post (7-20 days). For FBA sellers, we recommend consolidating 200-500 pieces and shipping by sea/air to FBA warehouses — lower per-unit cost and faster delivery.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What's the minimum for a trial order? <span>+</span></button>
+        <div class="faq-a"><p>Stock items (no custom logo): as low as 100 pieces. Custom logo or packaging: typically 300 pieces. We understand you want to test before committing — we won't push you to overorder.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can you send samples before bulk order? <span>+</span></button>
+        <div class="faq-a"><p>Yes. We arrange samples from 2-3 competing suppliers for side-by-side comparison. Sample cost is whatever the supplier charges — we never mark up sample fees or shipping. If you proceed with bulk order, sample cost is often deducted. Never approve bulk production based on photos alone.</p></div>
+      </div>
+    </div>
+
+    <!-- 6. Quality & Compliance -->
+    <div class="faq-cat-section" id="cat-quality">
+      <h2 style="font-size:28px;margin-bottom:6px;color:#162D54;">Quality & Compliance</h2>
+      <p style="color:#6B7280;margin-bottom:20px;">Material verification, factory audits, and inspection.</p>
+
+      <div class="faq-item">
+        <button class="faq-q">How do you verify 304 vs 201 stainless steel? <span>+</span></button>
+        <div class="faq-a"><p>60-70% of "304" in Yiwu is actually 201. Three methods: 1) Test solution on scraped surface — 304 stays, 201 turns red. 2) XRF spectrometer for exact Cr/Ni composition. 3) Salt spray test (48h) for rust resistance. We test on production samples, not just approval samples. <a href="/products/home-kitchen/stainless-steel-utensils/" style="color:#E87722;">Read our full 304 verification guide →</a></p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you do pre-shipment inspection? <span>+</span></button>
+        <div class="faq-a"><p>Yes. Third-party AQL 2.5 inspection before balance payment. Critical defects (rust, food safety) = 0 tolerance. You receive an inspection report with photos before we release payment. If supplier is in Yiwu, local inspection starts as low as $100 per order.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do you tell a real factory from a trading company? <span>+</span></button>
+        <div class="faq-a"><p>Raw material cost test: for stainless steel, raw material should be 55-70% of total cost. We ask for the material purchase invoice — a real factory shows it with their name; a trading company can't. Also verify: business license scope, on-site equipment, and whether they produce only one material type.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What certifications can you help with? <span>+</span></button>
+        <div class="faq-a"><p>FDA, LFGB, EU 1935/2004, California Prop 65, CE, RoHS, REACH, UKCA. We identify the right certification for your product and target market before production, and connect you with our partnered authoritative testing labs in Yiwu. Testing fees depend on product and certification required. We don't sell fake certificates.</p></div>
+      </div>
+    </div>
+
+    <!-- 7. Payment & Cash Flow -->
+    <div class="faq-cat-section" id="cat-pay">
+      <h2 style="font-size:28px;margin-bottom:6px;color:#162D54;">Payment & Cash Flow</h2>
+      <p style="color:#6B7280;margin-bottom:20px;">Protecting your deposit and improving cash flow.</p>
+
+      <div class="faq-item">
+        <button class="faq-q">What payment terms do suppliers offer? <span>+</span></button>
+        <div class="faq-a"><p>Standard: 30% deposit, 70% before shipment. After 2-3 successful orders, we can negotiate Net 15-45 — you pay after goods arrive. Real client: payment changed from 30/70 to Net 30, improving cash flow cycle by 45 days.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How is my deposit protected? <span>+</span></button>
+        <div class="faq-a"><p>You pay deposit directly to the supplier's verified company account (we verify business license). We never ask you to pay us the deposit then forward it. After inspection passes, you pay balance directly. If there's a quality dispute, we mediate — but funds never pass through our operating account.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What payment methods do you accept? <span>+</span></button>
+        <div class="faq-a"><p>Supplier payments: T/T bank transfer. Our service fee: T/T, PayPal, Wise. We can also arrange Alibaba Trade Assurance for the supplier order (adds ~2-3% cost).</p></div>
+      </div>
+    </div>
+
+    <!-- 8. Avoiding Pitfalls -->
+    <div class="faq-cat-section" id="cat-pitfall">
+      <h2 style="font-size:28px;margin-bottom:6px;color:#162D54;">Avoiding Pitfalls</h2>
+      <p style="color:#6B7280;margin-bottom:20px;">What we see every week in Yiwu market.</p>
+
+      <div class="faq-item">
+        <button class="faq-q">Most common Yiwu market scam? <span>+</span></button>
+        <div class="faq-a"><p>Material fraud — 201 sold as 304. Supplier sends genuine 304 sample for approval, then uses 201 for mass production. You discover it when customers complain about rust after 3 months. We test on production samples, not just approval samples. <a href="/blog/yiwu-market-scams-to-avoid/" style="color:#E87722;">Read our 6 Yiwu scams guide →</a></p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do I know if my agent takes kickbacks? <span>+</span></button>
+        <div class="faq-a"><p>Warning signs: 1) Always recommends same 1-2 suppliers, refuses alternatives. 2) Prices 10-20% above market. 3) Fee is "free" or suspiciously low. 4) You've never seen a supplier invoice directly. <a href="/blog/sourcing-agent-kickback-guide/" style="color:#E87722;">Read our kickback detection guide →</a></p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Canton Fair vs Yiwu Market? <span>+</span></button>
+        <div class="faq-a"><p>Canton Fair: established suppliers, strong English, high MOQ (500-1000+), 30/70 payment. Yiwu: 75,000+ suppliers in one building, lower MOQ (300), flexible packaging, but limited English. Most Canton Fair suppliers actually source from Yiwu. <a href="/blog/canton-fair-vs-yiwu-suppliers/" style="color:#E87722;">Read our full comparison →</a></p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What if my order is delayed or has quality issues? <span>+</span></button>
+        <div class="faq-a"><p>We include delivery timeline and penalty clauses in the purchase contract. For quality issues, we inspect before shipment — if first-time pass rate drops, we halt shipment and require rework before paying balance. You never pay for defective goods. If supplier can't fix it, we find an alternative.</p></div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="background:linear-gradient(135deg,#162D54,#243E6B);color:#fff;border-radius:16px;padding:36px;text-align:center;margin-top:40px;">
+      <h2 style="color:#fff;font-size:26px;margin-bottom:10px;">Still have questions?</h2>
+      <p style="color:rgba(255,255,255,.85);font-size:15px;margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto;">Send us your product spec, ASIN, or current supplier quote. Reply within 24 hours with a free sourcing analysis — no obligation, no kickbacks, transparent fees.</p>
+      <a href="/contact/" style="display:inline-block;background:#E87722;color:#fff;padding:14px 32px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;">Get Free Sourcing Analysis →</a>
+    </div>
+
+  </main>
+</div>
+
+</div> </section>
+<!-- FAQ interaction script --> <script> (function(){ // Accordion: click question to toggle answer document.querySelectorAll('.faq-item').forEach(function(item){ var q = item.querySelector('.faq-q'); var a = item.querySelector('.faq-a'); if(!q||!a) return; q.addEventListener('click', function(){ var isOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); var span = i.querySelector('.faq-q span'); if(span) span.textContent = '+'; i.querySelector('.faq-a').style.display = 'none'; }); if(!isOpen){ item.classList.add('open'); var span = q.querySelector('span'); if(span) span.textContent = '−'; a.style.display = 'block'; } }); });
+// Left sidebar: click → scroll to section document.querySelectorAll('.faq-sub').forEach(function(btn){ btn.addEventListener('click', function(){ var target = btn.getAttribute('data-target'); if(!target) return; var section = document.getElementById(target); if(section){ section.scrollIntoView({behavior:'smooth', block:'start'}); document.querySelectorAll('.faq-sub').forEach(function(b){ b.style.fontWeight=''; b.style.color=''; }); btn.style.fontWeight = '700'; btn.style.color = '#E87722'; } }); });
+// Category header expand/collapse document.querySelectorAll('.faq-cat-head').forEach(function(head){ head.addEventListener('click', function(){ head.parentElement.classList.toggle('open'); }); });
+// Open first item by default var firstItem = document.querySelector('.faq-item'); if(firstItem){ firstItem.classList.add('open'); var q = firstItem.querySelector('.faq-q span'); var a = firstItem.querySelector('.faq-a'); if(q) q.textContent = '−'; if(a) a.style.display = 'block'; } })(); </script>
 
 
 <!-- Ebook -->
