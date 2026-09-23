@@ -755,6 +755,21 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 .faq-cta h3{font-size:22px;color:#fff;margin-bottom:8px}
 .faq-cta p{font-size:14px;opacity:.9;margin-bottom:20px}
 
+/* === FAQ class 别名修复 === */
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px 24px;text-align:left;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:var(--navy);gap:16px;background:none;border:none;cursor:pointer}
+.faq-q span{width:28px;height:28px;flex-shrink:0;border-radius:50%;background:rgba(232,119,34,.1);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:400;line-height:1;transition:transform .3s,background .3s}
+.faq-item.open .faq-q span{transform:rotate(45deg);background:var(--orange);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item.open .faq-a{max-height:500px}
+.faq-a p{padding:0 24px 20px;font-size:14px;color:var(--gray-600);line-height:1.8}
+.faq-a p strong{color:var(--navy)}
+.faq-cat-section{margin-bottom:56px;scroll-margin-top:96px}
+.faq-item{background:#fff;border-radius:12px;border:1px solid var(--gray-200);overflow:hidden;transition:box-shadow .3s;margin-bottom:10px}
+.faq-item:hover{box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.faq-item.open{border-color:var(--orange)}
+.faq-cat-section h2{font-size:24px;margin-bottom:4px}
+.faq-cat-section > p{font-size:14px;color:var(--gray-600);margin-bottom:20px}
+
 /* Responsive */
 @media(max-width:960px){
   .faq-grid{grid-template-columns:1fr}
@@ -1865,10 +1880,56 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 </div>
 
 </div> </section>
-<!-- FAQ interaction script --> <script> (function(){ // Accordion: click question to toggle answer document.querySelectorAll('.faq-item').forEach(function(item){ var q = item.querySelector('.faq-q'); var a = item.querySelector('.faq-a'); if(!q||!a) return; q.addEventListener('click', function(){ var isOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); var span = i.querySelector('.faq-q span'); if(span) span.textContent = '+'; i.querySelector('.faq-a').style.display = 'none'; }); if(!isOpen){ item.classList.add('open'); var span = q.querySelector('span'); if(span) span.textContent = '−'; a.style.display = 'block'; } }); });
-// Left sidebar: click → scroll to section document.querySelectorAll('.faq-sub').forEach(function(btn){ btn.addEventListener('click', function(){ var target = btn.getAttribute('data-target'); if(!target) return; var section = document.getElementById(target); if(section){ section.scrollIntoView({behavior:'smooth', block:'start'}); document.querySelectorAll('.faq-sub').forEach(function(b){ b.style.fontWeight=''; b.style.color=''; }); btn.style.fontWeight = '700'; btn.style.color = '#E87722'; } }); });
-// Category header expand/collapse document.querySelectorAll('.faq-cat-head').forEach(function(head){ head.addEventListener('click', function(){ head.parentElement.classList.toggle('open'); }); });
-// Open first item by default var firstItem = document.querySelector('.faq-item'); if(firstItem){ firstItem.classList.add('open'); var q = firstItem.querySelector('.faq-q span'); var a = firstItem.querySelector('.faq-a'); if(q) q.textContent = '−'; if(a) a.style.display = 'block'; } })(); </script>
+<!-- FAQ interaction script -->
+<script>
+(function(){
+  // Accordion
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    if(!q||!a) return;
+    q.addEventListener('click', function(e){
+      e.preventDefault();
+      var wasOpen = item.classList.contains('open');
+      // close all
+      document.querySelectorAll('.faq-item.open').forEach(function(i){
+        i.classList.remove('open');
+      });
+      if(!wasOpen){ item.classList.add('open'); }
+    });
+  });
+
+  // Sidebar click → scroll
+  document.querySelectorAll('.faq-sub').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var target = btn.getAttribute('data-target');
+      if(!target) return;
+      var section = document.getElementById(target);
+      if(section){
+        var y = section.getBoundingClientRect().top + window.pageYOffset - 100;
+        window.scrollTo({top:y, behavior:'smooth'});
+        document.querySelectorAll('.faq-sub').forEach(function(b){
+          b.classList.remove('active');
+        });
+        btn.classList.add('active');
+      }
+    });
+  });
+
+  // Category header expand/collapse
+  document.querySelectorAll('.faq-cat-head').forEach(function(head){
+    head.addEventListener('click', function(e){
+      e.preventDefault();
+      head.parentElement.classList.toggle('open');
+    });
+  });
+
+  // Open first item
+  var firstItem = document.querySelector('.faq-item');
+  if(firstItem){ firstItem.classList.add('open'); }
+})();
+</script>
 
 
 <!-- Ebook -->
