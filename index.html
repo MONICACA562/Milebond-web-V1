@@ -61,6 +61,73 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
   box-shadow: 0 2px 12px rgba(15,42,74,.08);
 }
 
+/* ============ SERVICES MEGA MENU ============ */
+.services-mega { position: relative; }
+.services-mega > .mega-trigger {
+  display: inline-flex; align-items: center; gap: 4px;
+  cursor: pointer;
+}
+.services-mega > .mega-trigger .mega-chevron {
+  width: 12px; height: 12px; transition: transform .2s;
+}
+.services-mega:hover > .mega-trigger .mega-chevron { transform: rotate(180deg); color: #F59E0B; }
+.services-mega .mega-panel {
+  position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%) translateY(-6px);
+  width: 720px; max-width: 92vw;
+  background: #fff; border: 1px solid #EEF1F6; border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(15,42,74,.14);
+  padding: 10px; opacity: 0; visibility: hidden;
+  transition: opacity .18s, transform .18s, visibility .18s;
+  z-index: 60;
+}
+.services-mega:hover .mega-panel,
+.services-mega.open .mega-panel {
+  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+}
+.mega-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.mega-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 12px; border-radius: 10px;
+  text-decoration: none; transition: background .15s;
+}
+.mega-item:hover { background: #F7F8FA; }
+.mega-item:hover .mega-icon-bg { background: #F59E0B; color: #fff; }
+.mega-icon-bg {
+  width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0;
+  background: #0F2A4A; color: #F59E0B;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700; font-family: 'Inter', sans-serif;
+  transition: all .15s;
+}
+.mega-item .mega-title { font-size: 13px; font-weight: 600; color: #0F2A4A; }
+.mega-item:hover .mega-title { color: #F59E0B; }
+.mega-item .mega-desc { font-size: 11px; color: #64748B; margin-top: 1px; line-height: 1.4; }
+
+/* Mobile Services accordion */
+.mobile-services {
+  border-radius: 8px; overflow: hidden;
+}
+.mobile-services > .ms-head {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 3px;
+  font-size: 15px; font-weight: 500; color: #334155;
+  cursor: pointer; background: none; border: none; font-family: inherit; text-align: left;
+}
+.mobile-services > .ms-head .ms-chevron {
+  width: 14px; height: 14px; transition: transform .2s;
+}
+.mobile-services.open > .ms-head .ms-chevron { transform: rotate(180deg); color: #F59E0B; }
+.mobile-services > .ms-body {
+  max-height: 0; overflow: hidden; transition: max-height .25s ease;
+  padding-left: 4px;
+}
+.mobile-services.open > .ms-body { max-height: 600px; }
+.mobile-services > .ms-body a {
+  display: block; padding: 8px 12px; border-radius: 6px;
+  font-size: 14px; color: #475569;
+}
+.mobile-services > .ms-body a:hover { background: #F7F8FA; color: #F59E0B; }
+
 /* Hero vertical flow connector lines */
 .flow-node::before,
 .flow-node::after {
@@ -109,46 +176,52 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
 
 <!-- ============ NAVBAR ============ -->
 <header id="navbar" class="sticky top-0 z-50 bg-white border-b border-brandgray-100 transition-all duration-300">
-  <nav class="max-w-7xl mx-auto px-4 lg:px-8 h-16 md:h-18 flex items-center justify-between gap-4">
+  <nav class="max-w-7xl mx-auto px-4 lg:px-6 h-16 md:h-18 flex items-center justify-between gap-3">
 
-    <!-- wordmark (left) -->
-    <a href="#" class="flex items-center gap-2 shrink-0">
+    <!-- wordmark -->
+    <a href="/" class="flex items-center gap-2 shrink-0">
       <span class="w-8 h-8 rounded-md bg-navy flex items-center justify-center text-amber font-bold text-sm">M</span>
       <span class="text-navy font-extrabold text-xl tracking-tight">Milebond</span>
     </a>
 
-    <!-- desktop center links -->
-    <ul class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium text-brandgray-600">
-      <li><a href="#" class="text-navy hover:text-amber transition-colors">Home</a></li>
-      <li><a href="#services" class="hover:text-amber transition-colors">Services</a></li>
-      <li><a href="#products" class="hover:text-amber transition-colors">Products</a></li>
-      <li><a href="#who-we-serve" class="hover:text-amber transition-colors">Who We Serve</a></li>
-      <li><a href="#about" class="hover:text-amber transition-colors">About</a></li>
-      <li><a href="#blog" class="hover:text-amber transition-colors">Blog</a></li>
-      <li><a href="#faq" class="hover:text-amber transition-colors">FAQ</a></li>
+    <!-- desktop nav (md+) -->
+    <ul class="hidden md:flex items-center gap-1 xl:gap-2 text-sm font-medium text-brandgray-600">
+      <li><a href="/" class="px-3 py-2 text-navy font-semibold hover:text-amber transition-colors">Home</a></li>
+
+      <!-- Services with hover mega menu -->
+      <li class="services-mega">
+        <button type="button" class="mega-trigger px-3 py-2 hover:text-amber transition-colors text-brandgray-600 font-medium">
+          Services
+          <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mega-panel" role="menu">
+          <div class="mega-grid">
+            <a href="/services/product-sourcing" class="mega-item" role="menuitem"><span class="mega-icon-bg">PS</span><div><div class="mega-title">Product Sourcing</div><div class="mega-desc">Find the right suppliers at the right price</div></div></a>
+            <a href="/services/private-label-oem" class="mega-item" role="menuitem"><span class="mega-icon-bg">PL</span><div><div class="mega-title">Private Label &amp; OEM</div><div class="mega-desc">Build your own brand, low MOQ</div></div></a>
+            <a href="/services/amazon-brand-management" class="mega-item" role="menuitem"><span class="mega-icon-bg">AB</span><div><div class="mega-title">Amazon Brand Management</div><div class="mega-desc">A+ content, brand store, registry</div></div></a>
+            <a href="/services/product-development" class="mega-item" role="menuitem"><span class="mega-icon-bg">PD</span><div><div class="mega-title">Product Development</div><div class="mega-desc">From idea to sampling &amp; tooling</div></div></a>
+            <a href="/services/product-compliance" class="mega-item" role="menuitem"><span class="mega-icon-bg">CP</span><div><div class="mega-title">Product Compliance</div><div class="mega-desc">CPC, CE, FDA, patent checks</div></div></a>
+            <a href="/services/supply-chain-optimization" class="mega-item" role="menuitem"><span class="mega-icon-bg">SC</span><div><div class="mega-title">Supply Chain Optimization</div><div class="mega-desc">Cut lead time, reduce dead stock</div></div></a>
+            <a href="/services/factory-audit" class="mega-item" role="menuitem"><span class="mega-icon-bg">FA</span><div><div class="mega-title">Factory Audit</div><div class="mega-desc">Pre-order factory verification</div></div></a>
+            <a href="/services/quality-control" class="mega-item" role="menuitem"><span class="mega-icon-bg">QC</span><div><div class="mega-title">Quality Control</div><div class="mega-desc">Piece-by-piece &amp; AQL inspection</div></div></a>
+            <a href="/services/warehousing-shipping" class="mega-item" role="menuitem"><span class="mega-icon-bg">WS</span><div><div class="mega-title">Warehousing &amp; Shipping</div><div class="mega-desc">FBA prep, consolidation, DDP</div></div></a>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="/categories" class="px-3 py-2 hover:text-amber transition-colors">Products</a></li>
+      <li><a href="#who-we-serve" class="px-3 py-2 hover:text-amber transition-colors">Who We Serve</a></li>
+      <li><a href="/how-it-works" class="px-3 py-2 hover:text-amber transition-colors">How It Works</a></li>
+      <li><a href="/about" class="px-3 py-2 hover:text-amber transition-colors">About</a></li>
+      <li><a href="/blog" class="px-3 py-2 hover:text-amber transition-colors">Blog</a></li>
+      <li><a href="/faq" class="px-3 py-2 hover:text-amber transition-colors">FAQ</a></li>
     </ul>
 
-    <!-- desktop right cluster: currency · language · CTA -->
-    <div class="hidden md:flex items-center gap-2 shrink-0">
-      <div class="hidden md:inline-flex items-center">
-        <button type="button" aria-label="Select currency"
-                class="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-brandgray-600 hover:text-navy rounded-md hover:bg-brandgray-50 transition-colors">
-          <span class="text-base leading-none">💵</span>
-          USD
-          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-      </div>
-      <div class="hidden md:inline-flex items-center">
-        <button type="button" aria-label="Select language"
-                class="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-brandgray-600 hover:text-navy rounded-md hover:bg-brandgray-50 transition-colors">
-          <span class="text-base leading-none">🌐</span>
-          English
-          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-      </div>
+    <!-- desktop CTA -->
+    <div class="hidden md:block ml-1 shrink-0">
       <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote"
          target="_blank" rel="noopener noreferrer"
-         class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-amber hover:bg-amber-600 text-white font-semibold text-sm shadow-card transition-colors ml-1">
+         class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-amber hover:bg-amber-600 text-white font-semibold text-sm shadow-card transition-colors">
         Get a Quote
       </a>
     </div>
@@ -165,28 +238,37 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
   <!-- mobile drawer -->
   <div id="mobileMenu" class="mobile-menu md:hidden border-t border-brandgray-100 bg-white">
     <ul class="px-5 py-4 flex flex-col gap-1 text-brandgray-700">
-      <li><a href="#" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-semibold text-navy">Home</a></li>
-      <li><a href="#services" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">Services</a></li>
-      <li><a href="#products" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">Products</a></li>
-      <li><a href="#who-we-serve" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">Who We Serve</a></li>
-      <li><a href="#about" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">About</a></li>
-      <li><a href="#blog" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">Blog</a></li>
-      <li><a href="#faq" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">FAQ</a></li>
+      <li><a href="/" class="block px-3 py-3 rounded-lg bg-brandgray-50 text-navy font-semibold">Home</a></li>
 
-      <li class="pt-3 mt-2 border-t border-brandgray-100 flex items-center justify-between">
-        <button type="button" aria-label="Select currency"
-                class="inline-flex items-center gap-1.5 px-3 py-2.5 text-sm font-semibold text-brandgray-600 rounded-md bg-brandgray-50">
-          <span>💵</span> USD
-          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      <!-- Services accordion -->
+      <li class="mobile-services" id="mobileServices">
+        <button type="button" class="ms-head px-3" aria-expanded="false" aria-controls="mobileServicesBody">
+          Services
+          <svg xmlns="http://www.w3.org/2000/svg" class="ms-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <button type="button" aria-label="Select language"
-                class="inline-flex items-center gap-1.5 px-3 py-2.5 text-sm font-semibold text-brandgray-600 rounded-md bg-brandgray-50">
-          <span>🌐</span> English
-          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+        <div class="ms-body" id="mobileServicesBody">
+          <ul class="py-1 space-y-0.5">
+            <li><a href="/services/product-sourcing">Product Sourcing</a></li>
+            <li><a href="/services/private-label-oem">Private Label &amp; OEM</a></li>
+            <li><a href="/services/amazon-brand-management">Amazon Brand Management</a></li>
+            <li><a href="/services/product-development">Product Development</a></li>
+            <li><a href="/services/product-compliance">Product Compliance</a></li>
+            <li><a href="/services/supply-chain-optimization">Supply Chain Optimization</a></li>
+            <li><a href="/services/factory-audit">Factory Audit</a></li>
+            <li><a href="/services/quality-control">Quality Control</a></li>
+            <li><a href="/services/warehousing-shipping">Warehousing &amp; Shipping</a></li>
+          </ul>
+        </div>
       </li>
 
-      <li class="pt-3">
+      <li><a href="/categories" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">Products</a></li>
+      <li><a href="#who-we-serve" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">Who We Serve</a></li>
+      <li><a href="/how-it-works" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">How It Works</a></li>
+      <li><a href="/about" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">About</a></li>
+      <li><a href="/blog" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">Blog</a></li>
+      <li><a href="/faq" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">FAQ</a></li>
+
+      <li class="pt-3 mt-2 border-t border-brandgray-100">
         <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote"
            target="_blank" rel="noopener noreferrer"
            class="block w-full text-center px-5 py-3 rounded-full bg-amber text-white font-semibold">
@@ -532,64 +614,73 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
 <!-- ============ FOOTER ============ -->
 <footer id="about" class="bg-navy pt-16 pb-6 text-white">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="grid md:grid-cols-[2fr_1fr_1fr_1fr] gap-10 md:gap-10 pb-10 border-b border-white/10">
-      <!-- brand -->
+    <div class="grid md:grid-cols-[1.5fr_1fr_1fr_1.2fr] gap-10 pb-10 border-b border-white/10">
+
+      <!-- Column 1 — Milebond -->
       <div>
-        <a href="#" class="flex items-center gap-2 mb-4">
+        <a href="/" class="flex items-center gap-2 mb-4">
           <span class="w-8 h-8 rounded-md bg-amber flex items-center justify-center text-navy font-bold text-sm">M</span>
           <span class="text-white font-extrabold text-xl tracking-tight">Milebond</span>
         </a>
-        <p class="text-white/70 text-sm leading-relaxed max-w-sm">
+        <p class="text-white/70 text-sm leading-relaxed max-w-sm mb-5">
           Yiwu-based sourcing partner for Amazon brands, private labels, and offline wholesalers.
         </p>
-      </div>
-
-      <!-- services -->
-      <div id="services-col">
-        <p class="text-white font-semibold text-sm mb-4">Services</p>
         <ul class="space-y-2 text-sm text-white/60">
-          <li><a href="#services" class="hover:text-amber transition-colors">Product Sourcing</a></li>
-          <li><a href="#services" class="hover:text-amber transition-colors">Price Negotiation</a></li>
-          <li><a href="#services" class="hover:text-amber transition-colors">Quality Control</a></li>
-          <li><a href="#services" class="hover:text-amber transition-colors">Compliance &amp; Audit</a></li>
-          <li><a href="#services" class="hover:text-amber transition-colors">FBA Prep &amp; Shipping</a></li>
-        </ul>
-      </div>
-
-      <!-- company -->
-      <div>
-        <p class="text-white font-semibold text-sm mb-4">Company</p>
-        <ul class="space-y-2 text-sm text-white/60" id="blog">
-          <li><a href="#about" class="hover:text-amber transition-colors">About</a></li>
-          <li><a href="#blog" class="hover:text-amber transition-colors">Blog</a></li>
-          <li><a href="#faq" class="hover:text-amber transition-colors">FAQ</a></li>
-          <li><a href="#" class="hover:text-amber transition-colors">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- contact -->
-      <div>
-        <p class="text-white font-semibold text-sm mb-4">Contact</p>
-        <ul class="space-y-2 text-sm text-white/60" id="faq">
           <li class="flex items-start gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             <a href="mailto:info@milebond.com" class="hover:text-amber transition-colors">info@milebond.com</a>
           </li>
           <li class="flex items-start gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Yiwu, Zhejiang · China
-          </li>
-          <li class="flex items-start gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
-            <a href="https://wa.me/8615057960102" target="_blank" rel="noopener noreferrer" class="hover:text-amber transition-colors">WhatsApp us</a>
+            <a href="https://wa.me/8615057960102" target="_blank" rel="noopener noreferrer" class="hover:text-amber transition-colors">Chat on WhatsApp</a>
           </li>
+        </ul>
+      </div>
+
+      <!-- Column 2 — Services -->
+      <div>
+        <p class="text-white font-semibold text-sm mb-4">Services</p>
+        <ul class="space-y-2 text-sm text-white/60">
+          <li><a href="/services/product-sourcing" class="hover:text-amber transition-colors">Product Sourcing</a></li>
+          <li><a href="/services/private-label-oem" class="hover:text-amber transition-colors">Private Label &amp; OEM</a></li>
+          <li><a href="/services/amazon-brand-management" class="hover:text-amber transition-colors">Amazon Brand Management</a></li>
+          <li><a href="/services/product-development" class="hover:text-amber transition-colors">Product Development</a></li>
+          <li><a href="/services/product-compliance" class="hover:text-amber transition-colors">Product Compliance</a></li>
+          <li><a href="/services/supply-chain-optimization" class="hover:text-amber transition-colors">Supply Chain Optimization</a></li>
+          <li><a href="/services/factory-audit" class="hover:text-amber transition-colors">Factory Audit</a></li>
+          <li><a href="/services/quality-control" class="hover:text-amber transition-colors">Quality Control</a></li>
+          <li><a href="/services/warehousing-shipping" class="hover:text-amber transition-colors">Warehousing &amp; Shipping</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 — Company -->
+      <div>
+        <p class="text-white font-semibold text-sm mb-4">Company</p>
+        <ul class="space-y-2 text-sm text-white/60">
+          <li><a href="/how-it-works" class="hover:text-amber transition-colors">How It Works</a></li>
+          <li><a href="/about" class="hover:text-amber transition-colors">About Us</a></li>
+          <li><a href="/contact-us" class="hover:text-amber transition-colors">Contact Us</a></li>
+          <li><a href="/free-quote" class="hover:text-amber transition-colors">Free Quote</a></li>
+          <li><a href="/faq" class="hover:text-amber transition-colors">FAQ</a></li>
+          <li><a href="/blog" class="hover:text-amber transition-colors">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4 — Popular Blog Topics -->
+      <div>
+        <p class="text-white font-semibold text-sm mb-4">Popular Blog Topics</p>
+        <ul class="space-y-2.5 text-sm text-white/60">
+          <li><a href="/blog/how-to-find-reliable-china-suppliers-avoid-scams/" class="hover:text-amber transition-colors leading-snug">How to Find Reliable China Suppliers (Avoid Scams)</a></li>
+          <li><a href="/blog/did-my-agent-actually-negotiate-price/" class="hover:text-amber transition-colors leading-snug">Did My Agent Actually Negotiate Price?</a></li>
+          <li><a href="/blog/how-to-buy-from-1688-without-agent/" class="hover:text-amber transition-colors leading-snug">How to Buy from 1688 Without an Agent</a></li>
+          <li><a href="/blog/diy-vs-agent-vs-sourcing-service-cost-comparison/" class="hover:text-amber transition-colors leading-snug">DIY vs Agent vs Sourcing Service Cost Comparison</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-white/50">
+    <!-- bottom bar -->
+    <div class="pt-6 text-xs text-white/50">
       <p>© 2026 Milebond. All rights reserved.</p>
-      <p>Yiwu-based sourcing partner for Amazon brands, private labels, and offline wholesalers.</p>
     </div>
   </div>
 </footer>
@@ -605,7 +696,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
   window.addEventListener('scroll', updateNav, { passive: true });
   updateNav();
 
-  // 2) Mobile hamburger — aria-expanded sync + close on anchor click
+  // 2) Mobile hamburger — aria-expanded sync + close on link click
   const toggle  = document.getElementById('mobileToggle');
   const menu    = document.getElementById('mobileMenu');
   const iconO   = document.getElementById('iconOpen');
@@ -622,11 +713,39 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
     toggle.setAttribute('aria-expanded', 'false');
     iconO.classList.remove('hidden');
     iconC.classList.add('hidden');
+    // also close Services accordion
+    document.querySelectorAll('.mobile-services.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.ms-head').setAttribute('aria-expanded', 'false');
+    });
   }
   toggle.addEventListener('click', () => {
     menu.classList.contains('open') ? closeMenu() : openMenu();
   });
+
+  // 2b) Mobile Services accordion toggle
+  document.querySelectorAll('.mobile-services').forEach(acc => {
+    const head = acc.querySelector('.ms-head');
+    head.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = acc.classList.toggle('open');
+      head.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
+
+  // Close mobile menu (and accordion) when any nav/service link clicked
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  // 2c) Desktop mega menu: open on hover (already CSS), also support click/tap on touch
+  document.querySelectorAll('.services-mega > .mega-trigger').forEach(btn => {
+    const parent = btn.closest('.services-mega');
+    btn.addEventListener('click', (e) => {
+      if (window.matchMedia('(hover: none)').matches) {
+        e.preventDefault();
+        parent.classList.toggle('open');
+      }
+    });
+  });
 
   // 3) Smooth scroll polyfill fallback (html { scroll-behavior:smooth } handles modern browsers)
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
