@@ -209,7 +209,21 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
         </div>
       </li>
 
-      <li><a href="/categories" class="px-3 py-2 hover:text-amber transition-colors">Products</a></li>
+      <!-- Products with hover mega menu -->
+      <li class="services-mega">
+        <button type="button" class="mega-trigger px-3 py-2 hover:text-amber transition-colors text-brandgray-600 font-medium" aria-haspopup="true" aria-expanded="false">
+          Products
+          <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mega-panel" role="menu" style="width:560px;">
+          <div class="mega-grid">
+            <a href="/products/home-kitchen/" class="mega-item" role="menuitem"><span class="mega-icon-bg">HK</span><div><div class="mega-title">Home &amp; Kitchen</div><div class="mega-desc">Utensils, glassware, cutlery, storage</div></div></a>
+            <a href="/products/pet-supplies" class="mega-item" role="menuitem"><span class="mega-icon-bg">PT</span><div><div class="mega-title">Pet Supplies</div><div class="mega-desc">Toys, grooming, feeding, carriers</div></div></a>
+            <a href="/products/beauty-tools" class="mega-item" role="menuitem"><span class="mega-icon-bg">BT</span><div><div class="mega-title">Beauty Tools</div><div class="mega-desc">Skincare devices, nail, hair tools</div></div></a>
+            <a href="/products/arts-crafts" class="mega-item" role="menuitem"><span class="mega-icon-bg">AC</span><div><div class="mega-title">Arts &amp; Crafts</div><div class="mega-desc">DIY, hobbies, gift supplies</div></div></a>
+          </div>
+        </div>
+      </li>
       <li><a href="#who-we-serve" class="px-3 py-2 hover:text-amber transition-colors">Who We Serve</a></li>
       <li><a href="/how-it-works" class="px-3 py-2 hover:text-amber transition-colors">How It Works</a></li>
       <li><a href="/about" class="px-3 py-2 hover:text-amber transition-colors">About</a></li>
@@ -261,7 +275,21 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
         </div>
       </li>
 
-      <li><a href="/categories" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">Products</a></li>
+      <!-- Products accordion -->
+      <li class="mobile-services" id="mobileProducts">
+        <button type="button" class="ms-head px-3" aria-expanded="false" aria-controls="mobileProductsBody">
+          Products
+          <svg xmlns="http://www.w3.org/2000/svg" class="ms-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ms-body" id="mobileProductsBody">
+          <ul class="py-1 space-y-0.5">
+            <li><a href="/products/home-kitchen/">Home &amp; Kitchen</a></li>
+            <li><a href="/products/pet-supplies">Pet Supplies</a></li>
+            <li><a href="/products/beauty-tools">Beauty Tools</a></li>
+            <li><a href="/products/arts-crafts">Arts &amp; Crafts</a></li>
+          </ul>
+        </div>
+      </li>
       <li><a href="#who-we-serve" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">Who We Serve</a></li>
       <li><a href="/how-it-works" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">How It Works</a></li>
       <li><a href="/about" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">About</a></li>
@@ -666,14 +694,14 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
         </ul>
       </div>
 
-      <!-- Column 4 — Popular Blog Topics -->
+      <!-- Column 4 — Popular Reading -->
       <div>
-        <p class="text-white font-semibold text-sm mb-4">Popular Blog Topics</p>
+        <p class="text-white font-semibold text-sm mb-4">Popular Reading</p>
         <ul class="space-y-2.5 text-sm text-white/60">
           <li><a href="/blog/how-to-find-reliable-china-suppliers-avoid-scams/" class="hover:text-amber transition-colors leading-snug">How to Find Reliable China Suppliers (Avoid Scams)</a></li>
           <li><a href="/blog/did-my-agent-actually-negotiate-price/" class="hover:text-amber transition-colors leading-snug">Did My Agent Actually Negotiate Price?</a></li>
           <li><a href="/blog/how-to-buy-from-1688-without-agent/" class="hover:text-amber transition-colors leading-snug">How to Buy from 1688 Without an Agent</a></li>
-          <li><a href="/blog/diy-vs-agent-vs-sourcing-service-cost-comparison/" class="hover:text-amber transition-colors leading-snug">DIY vs Agent vs Sourcing Service Cost Comparison</a></li>
+          <li><a href="/blog/diy-vs-agent-vs-sourcing-service-cost-comparison/" class="hover:text-amber transition-colors leading-snug">DIY vs Agent vs Sourcing Service Cost</a></li>
         </ul>
       </div>
     </div>
