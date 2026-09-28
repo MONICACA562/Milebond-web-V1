@@ -109,27 +109,46 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
 
 <!-- ============ NAVBAR ============ -->
 <header id="navbar" class="sticky top-0 z-50 bg-white border-b border-brandgray-100 transition-all duration-300">
-  <nav class="max-w-7xl mx-auto px-5 lg:px-8 h-16 md:h-18 flex items-center justify-between">
-    <!-- wordmark -->
-    <a href="#" class="flex items-center gap-2 group">
+  <nav class="max-w-7xl mx-auto px-4 lg:px-8 h-16 md:h-18 flex items-center justify-between gap-4">
+
+    <!-- wordmark (left) -->
+    <a href="#" class="flex items-center gap-2 shrink-0">
       <span class="w-8 h-8 rounded-md bg-navy flex items-center justify-center text-amber font-bold text-sm">M</span>
       <span class="text-navy font-extrabold text-xl tracking-tight">Milebond</span>
     </a>
 
-    <!-- desktop links -->
-    <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-brandgray-600">
+    <!-- desktop center links -->
+    <ul class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium text-brandgray-600">
+      <li><a href="#" class="text-navy hover:text-amber transition-colors">Home</a></li>
       <li><a href="#services" class="hover:text-amber transition-colors">Services</a></li>
+      <li><a href="#products" class="hover:text-amber transition-colors">Products</a></li>
       <li><a href="#who-we-serve" class="hover:text-amber transition-colors">Who We Serve</a></li>
       <li><a href="#about" class="hover:text-amber transition-colors">About</a></li>
       <li><a href="#blog" class="hover:text-amber transition-colors">Blog</a></li>
       <li><a href="#faq" class="hover:text-amber transition-colors">FAQ</a></li>
     </ul>
 
-    <!-- desktop CTA -->
-    <div class="hidden md:block">
+    <!-- desktop right cluster: currency · language · CTA -->
+    <div class="hidden md:flex items-center gap-2 shrink-0">
+      <div class="hidden md:inline-flex items-center">
+        <button type="button" aria-label="Select currency"
+                class="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-brandgray-600 hover:text-navy rounded-md hover:bg-brandgray-50 transition-colors">
+          <span class="text-base leading-none">💵</span>
+          USD
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+      </div>
+      <div class="hidden md:inline-flex items-center">
+        <button type="button" aria-label="Select language"
+                class="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-brandgray-600 hover:text-navy rounded-md hover:bg-brandgray-50 transition-colors">
+          <span class="text-base leading-none">🌐</span>
+          English
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+      </div>
       <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote"
          target="_blank" rel="noopener noreferrer"
-         class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-amber hover:bg-amber-600 text-white font-semibold text-sm shadow-card transition-colors">
+         class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-amber hover:bg-amber-600 text-white font-semibold text-sm shadow-card transition-colors ml-1">
         Get a Quote
       </a>
     </div>
@@ -146,11 +165,27 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
   <!-- mobile drawer -->
   <div id="mobileMenu" class="mobile-menu md:hidden border-t border-brandgray-100 bg-white">
     <ul class="px-5 py-4 flex flex-col gap-1 text-brandgray-700">
+      <li><a href="#" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-semibold text-navy">Home</a></li>
       <li><a href="#services" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">Services</a></li>
+      <li><a href="#products" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">Products</a></li>
       <li><a href="#who-we-serve" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">Who We Serve</a></li>
       <li><a href="#about" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">About</a></li>
       <li><a href="#blog" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">Blog</a></li>
       <li><a href="#faq" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">FAQ</a></li>
+
+      <li class="pt-3 mt-2 border-t border-brandgray-100 flex items-center justify-between">
+        <button type="button" aria-label="Select currency"
+                class="inline-flex items-center gap-1.5 px-3 py-2.5 text-sm font-semibold text-brandgray-600 rounded-md bg-brandgray-50">
+          <span>💵</span> USD
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <button type="button" aria-label="Select language"
+                class="inline-flex items-center gap-1.5 px-3 py-2.5 text-sm font-semibold text-brandgray-600 rounded-md bg-brandgray-50">
+          <span>🌐</span> English
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+      </li>
+
       <li class="pt-3">
         <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote"
            target="_blank" rel="noopener noreferrer"
