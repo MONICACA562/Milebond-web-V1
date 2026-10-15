@@ -281,6 +281,162 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 .mobile-menu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
 .mobile-menu.open { max-height: 520px; }
 
+/* ============ CONTACT / QUOTE BAND ============ */
+.cb-h2 { font-size: 30px; font-weight: 800; color: #0F2A4A; line-height: 1.2; }
+.cb-h2-sub { margin-top: 8px; font-size: 14px; color: #64748B; }
+
+.cb-shell {
+  display: grid;
+  grid-template-columns: .38fr .62fr;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 30px 70px rgba(15,42,74,.16);
+}
+.cb-left {
+  position: relative;
+  padding: 48px 42px;
+  color: #fff;
+  text-align: center;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(245,158,11,.10), transparent 45%),
+    radial-gradient(circle at 100% 100%, rgba(37,211,102,.08), transparent 45%),
+    linear-gradient(135deg, #0A1D33 0%, #0F2A4A 50%, #123055 100%);
+}
+.cb-avatar {
+  width: 108px; height: 108px;
+  border-radius: 999px;
+  object-fit: cover;
+  object-position: top;
+  border: 3px solid #fff;
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  display: block;
+  margin: 0 auto;
+}
+.cb-tag {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #25D366;
+  color: #06301a;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+.cb-title { margin-top: 16px; font-size: 26px; font-weight: 800; color: #fff; line-height: 1.2; }
+.cb-lead { margin-top: 12px; font-size: 14px; line-height: 1.7; color: #B8C7DB; }
+.cb-intro {
+  margin-top: 20px;
+  text-align: left;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 14px;
+  padding: 18px 20px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #E9EFF7;
+}
+.cb-intro b { color: #F59E0B; }
+.cb-slogan {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(245,158,11,.4);
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.4;
+  color: #F59E0B;
+}
+.cb-addr {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: #B8C7DB;
+}
+.cb-addr svg { flex-shrink: 0; }
+
+.cb-right { background: #fff; padding: 44px 46px 40px; }
+.cb-form-title { font-size: 24px; font-weight: 800; color: #0F2A4A; line-height: 1.2; }
+.cb-form-sub { margin-top: 6px; font-size: 13px; color: #64748B; }
+.cb-form {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 18px;
+}
+.cb-field { display: flex; flex-direction: column; min-width: 0; }
+.cb-full { grid-column: 1 / -1; }
+.cb-label { font-size: 12.5px; font-weight: 700; color: #0F2A4A; margin-bottom: 6px; }
+.cb-label em { color: #DC2626; font-style: normal; margin-left: 2px; }
+.cb-input, .cb-select, .cb-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 16px;
+  color: #0F2A4A;
+  background: #FBFCFE;
+  border: 1px solid #D9E2EC;
+  border-radius: 10px;
+  height: 44px;
+  padding: 0 12px;
+  transition: border-color .18s, box-shadow .18s;
+}
+.cb-textarea { height: 96px; padding: 10px 12px; line-height: 1.5; resize: vertical; }
+.cb-input:focus, .cb-select:focus, .cb-textarea:focus {
+  outline: none;
+  border-color: #F59E0B;
+  box-shadow: 0 0 0 3px rgba(245,158,11,.18);
+}
+.cb-input::placeholder, .cb-textarea::placeholder { color: #94A3B8; font-size: 14px; }
+.cb-consent {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.cb-consent input { width: 15px; height: 15px; margin-top: 2px; accent-color: #F59E0B; flex-shrink: 0; }
+.cb-consent a { color: #0F2A4A; text-decoration: underline; }
+.cb-submit {
+  grid-column: 1 / -1;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  color: #3a2500;
+  background: #F59E0B;
+  border-radius: 12px;
+  padding: 15px 20px;
+  transition: transform .18s, box-shadow .18s, background-color .18s;
+}
+.cb-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(245,158,11,.32); background: #e08e08; }
+.cb-submit:disabled { opacity: .7; cursor: default; transform: none; }
+.cb-note {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 12px;
+  color: #64748B;
+}
+.cb-note .dot { width: 9px; height: 9px; border-radius: 999px; background: #25D366; flex-shrink: 0; }
+
+@media (max-width: 900px) {
+  .cb-shell { grid-template-columns: 1fr; }
+  .cb-left { padding: 36px 28px; }
+  .cb-right { padding: 30px 24px; }
+  .cb-form { grid-template-columns: 1fr; }
+}
+
 /* Lighthouse-friendly: ensure focus rings exist */
 a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offset: 2px; border-radius: 4px; }
 </style>
@@ -871,6 +1027,114 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
   </div>
 </section>
 
+<!-- ============ CONTACT / QUOTE ============ -->
+<section class="bg-white py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-10 md:mb-14">
+      <h2 class="cb-h2">Talk to the team that's done it</h2>
+      <p class="cb-h2-sub">One inquiry — a clear plan back within 24 hours.</p>
+    </div>
+
+    <div class="cb-shell">
+      <!-- LEFT: profile -->
+      <div class="cb-left">
+        <img class="cb-avatar" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/MRgib7wafo0ldRxM7DGcgzMSnaf" alt="Monica Zhu, Founder &amp; CEO of Milebond" loading="lazy" decoding="async">
+        <div><span class="cb-tag">10+ Years Experience</span></div>
+        <h3 class="cb-title">Get In Touch<br>With Us</h3>
+        <p class="cb-lead">Ready to start your sourcing journey? Fill out the form or contact us directly using the information below.</p>
+        <div class="cb-intro">Hi I'm <b>Monica Zhu</b> — Founder &amp; CEO of Milebond. With 10+ years of Amazon brand-building experience, I run sourcing the way I wished someone had run it for me: transparent fees, zero kickbacks, and every saving we negotiate passed straight to you.</div>
+        <p class="cb-slogan">My margin is my fee — your savings are yours.</p>
+        <p class="cb-addr">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Yiwu City, Zhejiang Province, China
+        </p>
+      </div>
+
+      <!-- RIGHT: quote form -->
+      <div class="cb-right">
+        <h3 class="cb-form-title">Request a Free Quote</h3>
+        <p class="cb-form-sub">Tell us what you're sourcing — we reply with a plan and 2–3 quotes.</p>
+        <form class="cb-form" id="cbForm">
+          <input type="hidden" name="access_key" value="e2b6db8d-48d6-4faa-ad15-6b2b0a15402c">
+          <input type="hidden" name="_subject" value="New Inquiry from MileBond Website">
+          <input type="hidden" name="from_name" value="MileBond Website">
+          <input type="hidden" name="source_page" id="cbSource">
+
+          <div class="cb-field">
+            <label class="cb-label" for="cbName">Your Name<em>*</em></label>
+            <input class="cb-input" type="text" id="cbName" name="name" placeholder="Full name" required>
+          </div>
+          <div class="cb-field">
+            <label class="cb-label" for="cbEmail">Email Address</label>
+            <input class="cb-input" type="email" id="cbEmail" name="email" placeholder="you@company.com">
+          </div>
+
+          <div class="cb-field cb-full">
+            <label class="cb-label" for="cbPhone">Phone Number</label>
+            <input class="cb-input" type="tel" id="cbPhone" name="phone" placeholder="+1 234 567 8900">
+          </div>
+
+          <div class="cb-field cb-full">
+            <label class="cb-label" for="cbCategory">Select Product Category<em>*</em></label>
+            <select class="cb-select" id="cbCategory" name="category" required>
+              <option value="">Select a category…</option>
+              <option>Home &amp; Kitchen</option>
+              <option>Pet Supplies</option>
+              <option>Beauty Tools</option>
+              <option>Arts &amp; Crafts</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="cb-field cb-full">
+            <label class="cb-label" for="cbProduct">Product Name / SKU</label>
+            <input class="cb-input" type="text" id="cbProduct" name="product" placeholder="e.g. Storage Box 500ml">
+          </div>
+
+          <div class="cb-field">
+            <label class="cb-label" for="cbQty">Quantity Needed (optional)</label>
+            <input class="cb-input" type="text" id="cbQty" name="quantity" placeholder="e.g. 2,000 pcs">
+          </div>
+          <div class="cb-field">
+            <label class="cb-label" for="cbMoq">MOQ Preference</label>
+            <select class="cb-select" id="cbMoq" name="moq">
+              <option value="">Select…</option>
+              <option>1 Carton</option>
+              <option>$100 Minimum</option>
+              <option>Custom</option>
+            </select>
+          </div>
+
+          <div class="cb-field cb-full">
+            <label class="cb-label" for="cbService">Service Type Needed<em>*</em></label>
+            <select class="cb-select" id="cbService" name="service" required>
+              <option value="">Select a service…</option>
+              <option>Product Sourcing</option>
+              <option>Private Label &amp; OEM</option>
+              <option>Quality Control &amp; Compliance</option>
+              <option>Amazon Brand Support</option>
+              <option>Wholesale Bulk</option>
+            </select>
+          </div>
+
+          <div class="cb-field cb-full">
+            <label class="cb-label" for="cbMsg">Please describe your requirements in detail</label>
+            <textarea class="cb-textarea" id="cbMsg" name="message" placeholder="Product specs, target price, compliance needs (CE / FDA / CPC…), timeline…"></textarea>
+          </div>
+
+          <label class="cb-consent">
+            <input type="checkbox" name="consent" value="Agreed">
+            <span>I agree to be contacted about my inquiry. See our <a href="/privacy-policy">Terms &amp; Privacy Policy</a>.</span>
+          </label>
+
+          <button type="submit" class="cb-submit">Request Free Quote →</button>
+          <p class="cb-note"><span class="dot"></span>Prefer to chat? WhatsApp us — average reply within 6 hours (China time).</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FINAL CTA ============ -->
 <section class="bg-white py-16 md:py-24">
   <div class="max-w-3xl mx-auto px-5 lg:px-8 text-center">
@@ -1074,6 +1338,54 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
     }, { passive: true });
 
     render(0);
+  })();
+
+  // 5) Homepage contact/quote form — Web3Forms submit (same backend as /free-quote)
+  (function () {
+    const form = document.getElementById('cbForm');
+    if (!form) return;
+    const btn = form.querySelector('.cb-submit');
+    const label = btn.textContent;
+    const src = document.getElementById('cbSource');
+    if (src) src.value = location.href;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const d = new FormData(form);
+      const name = (d.get('name') || '').trim();
+      const email = (d.get('email') || '').trim();
+      const category = (d.get('category') || '').trim();
+      const service = (d.get('service') || '').trim();
+      if (!name) { alert('Please enter your name.'); return; }
+      if (!category) { alert('Please select a product category.'); return; }
+      if (!service) { alert('Please select the service type you need.'); return; }
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
+
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: d,
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(r => r.json())
+        .then(x => {
+          if (x.success) {
+            alert("Thank you! We've received your inquiry and will contact you within 24 hours.");
+            form.reset();
+            if (src) src.value = location.href;
+          } else {
+            alert('Oops! Something went wrong. Try again or email info@milebond.com');
+          }
+        })
+        .catch(() => {
+          alert('Network error. Check your connection or email info@milebond.com');
+        })
+        .then(() => {
+          btn.disabled = false;
+          btn.textContent = label;
+        });
+    });
   })();
 </script>
 </body>
