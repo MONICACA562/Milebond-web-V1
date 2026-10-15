@@ -128,28 +128,154 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 }
 .mobile-services > .ms-body a:hover { background: #F7F8FA; color: #F59E0B; }
 
-/* Hero vertical flow connector lines */
-.flow-node::before,
-.flow-node::after {
+/* ============ HERO CAROUSEL ============ */
+.hero-carousel {
+  position: relative;
+  background: linear-gradient(135deg, #0A1D33 0%, #0F2A4A 50%, #123055 100%);
+  overflow: hidden;
+}
+.hero-carousel::before {
   content: '';
-  position: absolute;
-  left: 17px; /* align to center of 34px icon */
-  width: 2px;
-  background-color: #CBD5E1;
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
 }
-.flow-node::before {
-  top: -22px;
-  height: 22px;
+.hero-track { position: relative; }
+.hero-slide {
+  display: none;
+  position: relative;
+  z-index: 1;
 }
-.flow-node::after {
-  top: 44px;
-  height: calc(100% - 66px);
-}
-.flow-node:first-child::before { display: none; }
-.flow-node:last-child::after  { display: none; }
+.hero-slide.active { display: block; animation: heroFade .6s ease; }
+@keyframes heroFade { from { opacity: 0; } to { opacity: 1; } }
 
-/* Terminal caps so the connector doesn't stick out */
-.flow-node:first-child::after { top: 22px; }
+.hero-eyebrow {
+  color: #F59E0B;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.hero-title {
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(30px, 4.2vw, 50px);
+  line-height: 1.12;
+  letter-spacing: -.02em;
+  margin-top: 18px;
+}
+.hero-title .hl { color: #F59E0B; }
+.hero-sub {
+  color: #B8C7DB;
+  font-size: 15px;
+  line-height: 1.65;
+  margin-top: 18px;
+  max-width: 560px;
+}
+.hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.hero-chip {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.28);
+  white-space: nowrap;
+}
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.hero-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 13px 22px;
+  border-radius: 12px;
+  font-size: 14px; font-weight: 700;
+  text-decoration: none;
+  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+.hero-btn:hover { transform: translateY(-2px); }
+.hero-btn-wa { background: #25D366; color: #fff; }
+.hero-btn-wa:hover { background: #1fbf5c; box-shadow: 0 10px 24px rgba(37,211,102,.35); }
+.hero-btn-quote { background: #F59E0B; color: #fff; }
+.hero-btn-quote:hover { background: #e08e08; box-shadow: 0 10px 24px rgba(245,158,11,.35); }
+.hero-btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.4); }
+.hero-btn-ghost:hover { background: rgba(255,255,255,.08); }
+
+.hero-img-card {
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 24px 60px rgba(0,0,0,.4);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: rgba(255,255,255,.05);
+}
+.hero-img-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Controls: dots + page counter */
+.hero-controls {
+  position: relative;
+  z-index: 2;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.hero-dots { display: flex; gap: 8px; }
+.hero-dot {
+  width: 9px; height: 9px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255,255,255,.28);
+  cursor: pointer;
+  padding: 0;
+  transition: width .25s ease, background-color .25s ease;
+}
+.hero-dot.active { width: 26px; background: #F59E0B; }
+.hero-counter {
+  color: rgba(255,255,255,.65);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  font-variant-numeric: tabular-nums;
+}
+.hero-counter .cur { color: #fff; }
+
+/* Bottom stats row */
+.hero-stats {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+.hero-stat .num {
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(24px, 2.6vw, 34px);
+  letter-spacing: -.01em;
+}
+.hero-stat .num .u { color: #F59E0B; }
+.hero-stat .lbl {
+  color: #B8C7DB;
+  font-size: 12.5px;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+
+/* Desktop two-column layout */
+.hero-slide-grid {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 44px;
+  align-items: center;
+}
+/* Mobile: single column, image on top */
+@media (max-width: 900px) {
+  .hero-slide-grid { grid-template-columns: 1fr; gap: 28px; }
+  .hero-slide-grid .hero-img-wrap { order: -1; }
+  .hero-img-card { aspect-ratio: 16 / 9; }
+  .hero-title { font-size: clamp(26px, 6vw, 36px); }
+}
 
 /* Hide scrollbar on mobile nav drawer (if ever needed) */
 .mobile-menu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
@@ -307,101 +433,160 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
-<section class="bg-white py-14 md:py-24">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-      <!-- left column -->
-      <div>
-        <span class="inline-flex items-center px-3 py-1.5 rounded-full text-[11px] font-semibold tracking-wider uppercase bg-brandgray-50 text-brandgray-500 border border-brandgray-100">
-          Yiwu-based · Since 2015
-        </span>
-        <h1 class="mt-5 text-navy font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight">
-          Spend 20% of your time on sourcing.
-          <span class="block text-amber">80%</span>
-          on growing sales.
-        </h1>
-        <p class="mt-6 text-brandgray-600 text-base md:text-lg leading-relaxed max-w-xl">
-          Since 2015, we've built Amazon brands end-to-end. We run your supply chain — compliant sourcing, consistent QC, fast reorders — so you focus on listings, ads, and customers.
-        </p>
+<!-- ============ HERO CAROUSEL ============ -->
+<section class="hero-carousel" id="heroCarousel">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-14 md:pt-20 pb-10 md:pb-12">
+    <div class="hero-track">
 
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote"
-             target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center px-6 py-3.5 rounded-full bg-amber hover:bg-amber-600 text-white font-semibold shadow-card transition-colors">
-            Get My Sourcing Plan
-          </a>
-          <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote"
-             target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-brandgray-50 text-navy font-semibold border border-brandgray-300 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
-            WhatsApp Us
-          </a>
+      <!-- Slide 1: Yiwu Market -->
+      <div class="hero-slide active" data-slide="0">
+        <div class="hero-slide-grid">
+          <div>
+            <p class="hero-eyebrow">Since 2015 · 50+ Brands · 30+ Countries · 24H Reply</p>
+            <h1 class="hero-title">Yiwu Market.<br><span class="hl">MOQ from 1 Carton.</span></h1>
+            <p class="hero-sub">We're based inside the world's largest wholesale market. Every supplier we recommend has been visited, compared and tested by our team — quality and delivery stability confirmed by us first, not by a catalog. Start with one carton, then scale.</p>
+            <div class="hero-chips">
+              <span class="hero-chip">1-Carton MOQ</span>
+              <span class="hero-chip">Field-Visited Suppliers</span>
+              <span class="hero-chip">Quality &amp; Delivery Verified</span>
+            </div>
+            <div class="hero-ctas">
+              <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-wa">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
+                Chat on WhatsApp
+              </a>
+              <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-quote">Get Free Quote</a>
+              <a href="/services/product-sourcing" class="hero-btn hero-btn-ghost">Explore Services →</a>
+            </div>
+          </div>
+          <div class="hero-img-wrap">
+            <div class="hero-img-card">
+              <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/PUeubwVdqoSS8WxAP5ncC8YXnmf" alt="Yiwu wholesale market sourcing" loading="eager" decoding="async">
+            </div>
+          </div>
         </div>
-
-        <p class="mt-10 text-sm text-brandgray-500">
-          <span>50+ Amazon brands</span>
-          <span class="mx-2 text-brandgray-300">·</span>
-          <span>30+ countries</span>
-          <span class="mx-2 text-brandgray-300">·</span>
-          <span>Reply within 24h</span>
-        </p>
       </div>
 
-      <!-- right column: vertical flow card -->
-      <div class="md:pl-6">
-        <div class="bg-white rounded-2xl shadow-card border border-brandgray-100 p-7 md:p-8">
-          <p class="text-xs font-semibold tracking-wider uppercase text-brandgray-500 mb-6">How we run your supply chain</p>
-          <ol class="space-y-6">
-            <!-- 1 -->
-            <li class="flow-node relative pl-12">
-              <div class="absolute left-0 top-0 w-[34px] h-[34px] rounded-lg bg-brandgray-50 text-navy flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              </div>
-              <p class="text-sm font-semibold text-navy">Product Sourcing</p>
-              <p class="text-xs text-brandgray-500 mt-0.5">2–3 verified quotes in 48 hours</p>
-            </li>
-            <!-- 2 -->
-            <li class="flow-node relative pl-12">
-              <div class="absolute left-0 top-0 w-[34px] h-[34px] rounded-lg bg-brandgray-50 text-navy flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
-              </div>
-              <p class="text-sm font-semibold text-navy">Price Negotiation</p>
-              <p class="text-xs text-brandgray-500 mt-0.5">No hidden markup, transparent side-by-side</p>
-            </li>
-            <!-- 3 — highlighted amber -->
-            <li class="flow-node relative pl-12">
-              <div class="absolute left-0 top-0 w-[34px] h-[34px] rounded-lg bg-amber text-white flex items-center justify-center shadow-card">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <p class="text-sm font-bold text-amber">Quality Control</p>
-              <p class="text-xs text-brandgray-600 mt-0.5 font-medium">Piece-by-piece inspection, not just AQL sampling</p>
-            </li>
-            <!-- 4 -->
-            <li class="flow-node relative pl-12">
-              <div class="absolute left-0 top-0 w-[34px] h-[34px] rounded-lg bg-brandgray-50 text-navy flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <p class="text-sm font-semibold text-navy">Compliance Check</p>
-              <p class="text-xs text-brandgray-500 mt-0.5">CPC, CE, FCC before you pay tooling</p>
-            </li>
-            <!-- 5 -->
-            <li class="flow-node relative pl-12">
-              <div class="absolute left-0 top-0 w-[34px] h-[34px] rounded-lg bg-brandgray-50 text-navy flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 0 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 16 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              </div>
-              <p class="text-sm font-semibold text-navy">Warehousing &amp; FBA Prep</p>
-              <p class="text-xs text-brandgray-500 mt-0.5">Consolidation, repack, and direct FBA shipping</p>
-            </li>
-            <!-- 6 -->
-            <li class="flow-node relative pl-12">
-              <div class="absolute left-0 top-0 w-[34px] h-[34px] rounded-lg bg-brandgray-50 text-navy flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-              </div>
-              <p class="text-sm font-semibold text-navy">Reorder Optimization</p>
-              <p class="text-xs text-brandgray-500 mt-0.5">AQL 2.5 on every replenishment, 7–15 day lead time</p>
-            </li>
-          </ol>
+      <!-- Slide 2: 10+ Years -->
+      <div class="hero-slide" data-slide="1">
+        <div class="hero-slide-grid">
+          <div>
+            <p class="hero-eyebrow">Since 2015 · 50+ Brands · 30+ Countries · 24H Reply</p>
+            <h1 class="hero-title">10+ Years Building Amazon Brands<br><span class="hl">— With You.</span></h1>
+            <p class="hero-sub">Since 2015 we've incubated Amazon brands end-to-end: sourcing, compliance, QC, reorders. You get a team that has done it — not a middleman learning on your order.</p>
+            <div class="hero-chips">
+              <span class="hero-chip">Since 2015</span>
+              <span class="hero-chip">50+ Brands</span>
+              <span class="hero-chip">End-to-End Support</span>
+            </div>
+            <div class="hero-ctas">
+              <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-wa">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
+                Chat on WhatsApp
+              </a>
+              <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-quote">Get Free Quote</a>
+              <a href="/services/product-sourcing" class="hero-btn hero-btn-ghost">Explore Services →</a>
+            </div>
+          </div>
+          <div class="hero-img-wrap">
+            <div class="hero-img-card">
+              <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/D4Kib6jMPoXOQqxBRNecmlwMnfc" alt="Amazon brand incubation team" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: QC & Compliance -->
+      <div class="hero-slide" data-slide="2">
+        <div class="hero-slide-grid">
+          <div>
+            <p class="hero-eyebrow">Since 2015 · 50+ Brands · 30+ Countries · 24H Reply</p>
+            <h1 class="hero-title">QC &amp; Compliance<br><span class="hl">Before You Get Burned.</span></h1>
+            <p class="hero-sub">Compliance traps cost 10× more after tooling. CPC, CE, FCC, material specs — we verify first and flag risks early, so your first batch clears customs and Amazon receiving.</p>
+            <div class="hero-chips">
+              <span class="hero-chip">Compliance Pre-Check</span>
+              <span class="hero-chip">Piece-by-Piece QC</span>
+              <span class="hero-chip">Before Tooling</span>
+            </div>
+            <div class="hero-ctas">
+              <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-wa">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
+                Chat on WhatsApp
+              </a>
+              <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-quote">Get Free Quote</a>
+              <a href="/services/product-sourcing" class="hero-btn hero-btn-ghost">Explore Services →</a>
+            </div>
+          </div>
+          <div class="hero-img-wrap">
+            <div class="hero-img-card">
+              <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/FvrrbaKP4oRdDzxYp4Pc68jUnRc" alt="Quality control and compliance inspection" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4: 1,000+ Suppliers -->
+      <div class="hero-slide" data-slide="3">
+        <div class="hero-slide-grid">
+          <div>
+            <p class="hero-eyebrow">Since 2015 · 50+ Brands · 30+ Countries · 24H Reply</p>
+            <h1 class="hero-title">1,000+ Strategic Suppliers<br><span class="hl">Working Your Cost Down.</span></h1>
+            <p class="hero-sub">Active cost-down and better payment terms come from leverage. 1,000+ vetted supplier relationships we negotiate on your behalf — order after order, your margins improve.</p>
+            <div class="hero-chips">
+              <span class="hero-chip">1,000+ Vetted Suppliers</span>
+              <span class="hero-chip">Active Cost-Down</span>
+              <span class="hero-chip">Better Payment Terms</span>
+            </div>
+            <div class="hero-ctas">
+              <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-wa">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
+                Chat on WhatsApp
+              </a>
+              <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-quote">Get Free Quote</a>
+              <a href="/services/product-sourcing" class="hero-btn hero-btn-ghost">Explore Services →</a>
+            </div>
+          </div>
+          <div class="hero-img-wrap">
+            <div class="hero-img-card">
+              <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/WA61bBAfyogTHixeOieclXx2nes" alt="Strategic supplier network cost negotiation" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls: dots + counter -->
+    <div class="hero-controls mt-10 md:mt-12">
+      <div class="hero-dots" role="tablist" aria-label="Hero slides">
+        <button type="button" class="hero-dot active" data-goto="0" aria-label="Go to slide 1"></button>
+        <button type="button" class="hero-dot" data-goto="1" aria-label="Go to slide 2"></button>
+        <button type="button" class="hero-dot" data-goto="2" aria-label="Go to slide 3"></button>
+        <button type="button" class="hero-dot" data-goto="3" aria-label="Go to slide 4"></button>
+      </div>
+      <p class="hero-counter"><span class="cur" id="heroCur">01</span> / 04</p>
+    </div>
+  </div>
+
+  <!-- Bottom stats row -->
+  <div class="hero-stats">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 py-8 md:py-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8">
+        <div class="hero-stat">
+          <p class="num">50<span class="u">+</span></p>
+          <p class="lbl">Amazon brands scaled from idea to repeat orders</p>
+        </div>
+        <div class="hero-stat">
+          <p class="num">6,900<span class="u">+</span></p>
+          <p class="lbl">Vetted suppliers in our network</p>
+        </div>
+        <div class="hero-stat">
+          <p class="num">54,930<span class="u">+</span></p>
+          <p class="lbl">SKUs sourced and managed</p>
+        </div>
+        <div class="hero-stat">
+          <p class="num">2015</p>
+          <p class="lbl">Building Amazon brands since day one</p>
         </div>
       </div>
     </div>
@@ -851,6 +1036,46 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
       }
     });
   });
+
+  // 4) Hero carousel — 5s autoplay, pause on hover/touch, dots + counter
+  (function () {
+    const carousel = document.getElementById('heroCarousel');
+    if (!carousel) return;
+    const slides = Array.from(carousel.querySelectorAll('.hero-slide'));
+    const dots   = Array.from(carousel.querySelectorAll('.hero-dot'));
+    const curEl  = document.getElementById('heroCur');
+    const total  = slides.length;
+    let index = 0;
+    let timer = null;
+
+    function render(i) {
+      index = (i + total) % total;
+      slides.forEach((s, k) => s.classList.toggle('active', k === index));
+      dots.forEach((d, k) => d.classList.toggle('active', k === index));
+      if (curEl) curEl.textContent = String(index + 1).padStart(2, '0');
+    }
+    function start() {
+      stop();
+      timer = setInterval(() => render(index + 1), 5000);
+    }
+    function stop() {
+      if (timer) { clearInterval(timer); timer = null; }
+    }
+
+    dots.forEach(d => d.addEventListener('click', () => {
+      render(parseInt(d.getAttribute('data-goto'), 10));
+      start(); // restart the 5s window after manual jump
+    }));
+
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+    carousel.addEventListener('touchstart', stop, { passive: true });
+    carousel.addEventListener('touchend', start, { passive: true });
+    carousel.addEventListener('touchcancel', start, { passive: true });
+
+    render(0);
+    start();
+  })();
 </script>
 </body>
 </html>
