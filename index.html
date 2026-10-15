@@ -1046,7 +1046,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
     const curEl  = document.getElementById('heroCur');
     const total  = slides.length;
     let index = 0;
-    let timer = null;
+    let touchPauseUntil = 0;
 
     function render(i) {
       index = (i + total) % total;
@@ -1054,27 +1054,26 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
       dots.forEach((d, k) => d.classList.toggle('active', k === index));
       if (curEl) curEl.textContent = String(index + 1).padStart(2, '0');
     }
-    function start() {
-      stop();
-      timer = setInterval(() => render(index + 1), 5000);
-    }
-    function stop() {
-      if (timer) { clearInterval(timer); timer = null; }
-    }
+
+    // Self-healing tick: never permanently stopped; skips a turn while
+    // the hero is hovered, recently touched, or the tab is hidden.
+    setInterval(() => {
+      if (document.hidden) return;
+      if (carousel.matches(':hover')) return;
+      if (Date.now() < touchPauseUntil) return;
+      render(index + 1);
+    }, 5000);
 
     dots.forEach(d => d.addEventListener('click', () => {
       render(parseInt(d.getAttribute('data-goto'), 10));
-      start(); // restart the 5s window after manual jump
+      touchPauseUntil = Date.now() + 5000; // give the reader a full window after manual jump
     }));
 
-    carousel.addEventListener('mouseenter', stop);
-    carousel.addEventListener('mouseleave', start);
-    carousel.addEventListener('touchstart', stop, { passive: true });
-    carousel.addEventListener('touchend', start, { passive: true });
-    carousel.addEventListener('touchcancel', start, { passive: true });
+    carousel.addEventListener('touchstart', () => {
+      touchPauseUntil = Date.now() + 8000; // pause while interacting on touch devices
+    }, { passive: true });
 
     render(0);
-    start();
   })();
 </script>
 </body>
