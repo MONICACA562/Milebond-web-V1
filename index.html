@@ -441,16 +441,23 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offset: 2px; border-radius: 4px; }
 
 /* ============ HERO ARROW CONTROLS ============ */
-.nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border-radius:50%;border:none;background:#F59E0B;color:#0A1D33;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .15s ease, box-shadow .15s ease;}
+/* Arrows sit INSIDE .hero-track (position:relative), so top:50% = the centre of
+   the carousel area itself — not the centre of the whole hero section, which
+   also wraps the bottom stats strip.
+   Width is capped to the gutter between the page edge and the content column
+   (px-8 = 32px at >=1024px) so the arrows never overlap the copy or the image. */
+.nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:32px;height:32px;border-radius:50%;border:none;background:#F59E0B;color:#0A1D33;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .15s ease, box-shadow .15s ease;font-size:20px;font-weight:600;line-height:1;padding-bottom:2px;}
 .nav-btn:hover{transform:translateY(-50%) scale(1.08);box-shadow:0 10px 24px rgba(0,0,0,.4);}
-.nav-btn.prev{left:24px;}
-.nav-btn.next{right:24px;}
-.nav-btn{font-size:26px;font-weight:600;line-height:1;padding-bottom:3px;}
-/* Mobile sizing — declared after the base rules so source order lets it override (equal specificity) */
-@media (max-width:900px){
-  .nav-btn{width:36px;height:36px;}
-  .nav-btn.prev{left:10px;}
-  .nav-btn.next{right:10px;}
+.nav-btn.prev{left:-32px;}
+.nav-btn.next{right:-32px;}
+/* Below 1024px the container gutter is only 20px (px-5) and the copy spans the
+   full column width, so a vertically-centred side arrow would cover text.
+   The arrows drop into the empty band between the slides and the dots row
+   (still pinned to the page edges) so nothing is ever occluded. */
+@media (max-width:1023px){
+  .nav-btn{top:calc(100% + 22px);width:36px;height:36px;font-size:22px;}
+  .nav-btn.prev{left:-20px;}
+  .nav-btn.next{right:-20px;}
 }
 </style>
 </head>
@@ -723,10 +730,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
         </div>
       </div>
 
+      <button class="nav-btn prev" aria-label="Previous slide">‹</button>
+      <button class="nav-btn next" aria-label="Next slide">›</button>
     </div>
-
-    <button class="nav-btn prev" aria-label="Previous slide">‹</button>
-    <button class="nav-btn next" aria-label="Next slide">›</button>
 
     <!-- Controls: dots + counter -->
     <div class="hero-controls mt-10 md:mt-12">
