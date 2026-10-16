@@ -459,6 +459,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
   .nav-btn.prev{left:-20px;}
   .nav-btn.next{right:-20px;}
 }
+
+/* Why Milebond six-card grid — desktop 3 columns is the inline default;
+   tablet collapses to 2, phone to 1. Inline style needs !important to win. */
+@media (max-width:1024px){ .wm-grid{grid-template-columns:repeat(2,1fr) !important;} }
+@media (max-width:640px){ .wm-grid{grid-template-columns:1fr !important;} }
+.wm-cta{flex-wrap:wrap;row-gap:12px;}
 </style>
 </head>
 <body class="bg-white text-brandgray-700">
@@ -769,6 +775,70 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
   </div>
 </section>
 
+<!-- ===== Why Milebond · Our Core Advantages（替换 We run the boring part） ===== -->
+<section class="why-milebond" style="padding:64px 6% 60px;background:#FFFFFF;">
+  <div style="text-align:center;margin-bottom:38px;">
+    <div style="font-size:11px;font-weight:800;letter-spacing:.16em;color:#C97F06;text-transform:uppercase;">Why Milebond</div>
+    <h2 style="font-size:32px;font-weight:800;color:#0F2A4A;letter-spacing:-.02em;margin-top:8px;">Our Core <span style="color:#F59E0B;">Advantages</span></h2>
+    <p style="font-size:14px;color:#64748B;margin-top:10px;">Low-MOQ sourcing, verified factories and transparent pricing — one team that sells what it sources</p>
+  </div>
+  <div class="wm-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1200px;margin:0 auto;">
+    <!-- 1 Low MOQ -->
+    <div style="background:#F7F8FA;border:1px solid #E3E9F2;border-radius:16px;padding:20px 18px 16px;position:relative;">
+      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#FFF7E6;border:1px solid #F5C76B;border-radius:999px;padding:4px 10px;">1 Carton · from $100</span>
+      <div style="width:36px;height:36px;border-radius:10px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#F59E0B;font-weight:800;">01</div>
+      <h3 style="font-size:16px;font-weight:800;color:#0A1D33;line-height:1.3;">Low MOQ Sourcing</h3>
+      <p style="font-size:13px;color:#475569;line-height:1.6;margin-top:8px;">Start with a single carton — <b style="color:#0F2A4A;">custom logo, your own parts and spec</b>. No 500-piece minimum, no dead stock gamble. Built for startups and new Amazon sellers.</p>
+      <a href="/services/product-sourcing" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#0F2A4A;text-decoration:none;margin-top:14px;">Learn more →</a>
+    </div>
+    <!-- 2 Amazon FBA -->
+    <div style="background:#F7F8FA;border:1px solid #E3E9F2;border-radius:16px;padding:20px 18px 16px;position:relative;">
+      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#FFF7E6;border:1px solid #F5C76B;border-radius:999px;padding:4px 10px;">10+ Years · 50+ Brands</span>
+      <div style="width:36px;height:36px;border-radius:10px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#F59E0B;font-weight:800;">02</div>
+      <h3 style="font-size:16px;font-weight:800;color:#0A1D33;line-height:1.3;">Amazon FBA &amp; Private Label</h3>
+      <p style="font-size:13px;color:#475569;line-height:1.6;margin-top:8px;">10+ years as an Amazon brand operator: we source with <b style="color:#0F2A4A;">listings, compliance, returns and cash flow</b> in mind — FBA-ready, private-label products that actually sell.</p>
+      <a href="/services/amazon-brand-management" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#0F2A4A;text-decoration:none;margin-top:14px;">Learn more →</a>
+    </div>
+    <!-- 3 Verified Suppliers -->
+    <div style="background:#F7F8FA;border:1px solid #E3E9F2;border-radius:16px;padding:20px 18px 16px;position:relative;">
+      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#FFF7E6;border:1px solid #F5C76B;border-radius:999px;padding:4px 10px;">1,000+ Field-Vetted</span>
+      <div style="width:36px;height:36px;border-radius:10px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#F59E0B;font-weight:800;">03</div>
+      <h3 style="font-size:16px;font-weight:800;color:#0A1D33;line-height:1.3;">Verified China Suppliers</h3>
+      <p style="font-size:13px;color:#475569;line-height:1.6;margin-top:8px;">Every factory is <b style="color:#0F2A4A;">visited, compared and confirmed in Yiwu</b> — quality and delivery checked by us, not by a catalog.</p>
+      <a href="/services/factory-audit" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#0F2A4A;text-decoration:none;margin-top:14px;">Learn more →</a>
+    </div>
+    <!-- 4 QC & AQL -->
+    <div style="background:#F7F8FA;border:1px solid #E3E9F2;border-radius:16px;padding:20px 18px 16px;position:relative;">
+      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#FFF7E6;border:1px solid #F5C76B;border-radius:999px;padding:4px 10px;">AQL 2.5 · Video Proof</span>
+      <div style="width:36px;height:36px;border-radius:10px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#F59E0B;font-weight:800;">04</div>
+      <h3 style="font-size:16px;font-weight:800;color:#0A1D33;line-height:1.3;">Quality Inspection &amp; AQL 2.5</h3>
+      <p style="font-size:13px;color:#475569;line-height:1.6;margin-top:8px;">Pre-shipment inspection on every order — <b style="color:#0F2A4A;">AQL 2.5 with functional test videos</b>. No surprise QC failures at the port.</p>
+      <a href="/services/quality-control" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#0F2A4A;text-decoration:none;margin-top:14px;">Learn more →</a>
+    </div>
+    <!-- 5 Transparent Pricing -->
+    <div style="background:#F7F8FA;border:1px solid #E3E9F2;border-radius:16px;padding:20px 18px 16px;position:relative;">
+      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#FFF7E6;border:1px solid #F5C76B;border-radius:999px;padding:4px 10px;">Part · Pack · Labor · Freight</span>
+      <div style="width:36px;height:36px;border-radius:10px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#F59E0B;font-weight:800;">05</div>
+      <h3 style="font-size:16px;font-weight:800;color:#0A1D33;line-height:1.3;">Transparent Pricing</h3>
+      <p style="font-size:13px;color:#475569;line-height:1.6;margin-top:8px;">Full cost breakdown on every quote — <b style="color:#0F2A4A;">part, packaging, labor, freight</b> — verifiable against real invoices. We earn <b style="color:#0F2A4A;">our service fee only</b>: no hidden fees, no padding, no kickbacks.</p>
+      <a href="/free-quote" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#0F2A4A;text-decoration:none;margin-top:14px;">Learn more →</a>
+    </div>
+    <!-- 6 Cost Reduction -->
+    <div style="background:#F7F8FA;border:1px solid #E3E9F2;border-radius:16px;padding:20px 18px 16px;position:relative;">
+      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#FFF7E6;border:1px solid #F5C76B;border-radius:999px;padding:4px 10px;">≈10% Lower Landed Cost</span>
+      <div style="width:36px;height:36px;border-radius:10px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#F59E0B;font-weight:800;">06</div>
+      <h3 style="font-size:16px;font-weight:800;color:#0A1D33;line-height:1.3;">Cost Reduction on Reorders</h3>
+      <p style="font-size:13px;color:#475569;line-height:1.6;margin-top:8px;">Every reorder gets renegotiated — <b style="color:#0F2A4A;">materials, payment terms, packaging</b> — <b style="color:#0F2A4A;">≈10% lower landed cost per reorder</b>, while quality holds.</p>
+      <a href="/services/supply-chain-optimization" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#0F2A4A;text-decoration:none;margin-top:14px;">Learn more →</a>
+    </div>
+  </div>
+  <div class="wm-cta" style="display:flex;align-items:center;justify-content:center;gap:24px;margin-top:34px;">
+    <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener" style="background:#F59E0B;color:#3a2500;font-size:15px;font-weight:800;padding:13px 34px;border-radius:12px;text-decoration:none;">Get Free Quote</a>
+    <a href="/services/product-sourcing" style="font-size:14px;font-weight:700;color:#0F2A4A;text-decoration:none;">All services →</a>
+  </div>
+</section>
+<!-- ===== /Why Milebond ===== -->
+
 <!-- ============ WHO WE SERVE ============ -->
 <section id="who-we-serve" class="bg-brandgray-50 py-16 md:py-24">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
@@ -880,92 +950,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 20/80 COMPARISON ============ -->
-<section id="services" class="bg-white py-16 md:py-24">
-  <div class="max-w-6xl mx-auto px-5 lg:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16">
-      <h2 class="text-navy font-extrabold text-3xl md:text-4xl tracking-tight">We run the boring part. You run the growth part.</h2>
-      <p class="mt-4 text-brandgray-600 text-base md:text-lg">Most sourcing agents leave you busywork. We remove it.</p>
-    </div>
-
-    <div class="grid md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-0 items-stretch md:items-center">
-      <!-- left gray card -->
-      <div class="rounded-2xl bg-brandgray-100 p-7 md:p-9 border border-brandgray-100">
-        <p class="text-xs font-bold tracking-wider uppercase text-brandgray-500">You used to spend time on</p>
-        <ul class="mt-5 space-y-4">
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 w-5 h-5 rounded-full bg-white flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            </span>
-            <span class="text-sm md:text-base text-brandgray-700">Calling 10 factories, haggling alone</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 w-5 h-5 rounded-full bg-white flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            </span>
-            <span class="text-sm md:text-base text-brandgray-700">Worrying if batch 3 drifts in quality</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 w-5 h-5 rounded-full bg-white flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            </span>
-            <span class="text-sm md:text-base text-brandgray-700">Discovering a certification issue too late</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 w-5 h-5 rounded-full bg-white flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            </span>
-            <span class="text-sm md:text-base text-brandgray-700">Ordering a container just to save 5% — then sitting on dead stock</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- amber arrow (hidden on mobile) -->
-      <div class="hidden md:flex items-center justify-center px-3">
-        <div class="w-14 h-14 rounded-full bg-amber text-white flex items-center justify-center shadow-lift">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </div>
-      </div>
-      <div class="md:hidden flex items-center justify-center py-2">
-        <div class="w-10 h-10 rounded-full bg-amber text-white flex items-center justify-center shadow-card rotate-90">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </div>
-      </div>
-
-      <!-- right navy card -->
-      <div class="rounded-2xl bg-navy p-7 md:p-9 border border-navy">
-        <p class="text-xs font-bold tracking-wider uppercase text-amber">With Milebond</p>
-        <ul class="mt-5 space-y-4">
-          <li class="flex items-start gap-3 text-white">
-            <span class="mt-0.5 w-5 h-5 rounded-full bg-amber flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </span>
-            <span class="text-sm md:text-base">2–3 verified quotes in 48 hours</span>
-          </li>
-          <li class="flex items-start gap-3 text-white">
-            <span class="mt-0.5 w-5 h-5 rounded-full bg-amber flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </span>
-            <span class="text-sm md:text-base">AQL 2.5 inspection on every reorder</span>
-          </li>
-          <li class="flex items-start gap-3 text-white">
-            <span class="mt-0.5 w-5 h-5 rounded-full bg-amber flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </span>
-            <span class="text-sm md:text-base">Compliance &amp; patent check before you pay tooling</span>
-          </li>
-          <li class="flex items-start gap-3 text-white">
-            <span class="mt-0.5 w-5 h-5 rounded-full bg-amber flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </span>
-            <span class="text-sm md:text-base">1-carton minimum, 7–15 day replenishment</span>
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
 </section>
