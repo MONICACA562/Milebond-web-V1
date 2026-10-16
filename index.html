@@ -439,6 +439,19 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 
 /* Lighthouse-friendly: ensure focus rings exist */
 a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offset: 2px; border-radius: 4px; }
+
+/* ============ HERO ARROW CONTROLS ============ */
+.nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border-radius:50%;border:none;background:#F59E0B;color:#0A1D33;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .15s ease, box-shadow .15s ease;}
+.nav-btn:hover{transform:translateY(-50%) scale(1.08);box-shadow:0 10px 24px rgba(0,0,0,.4);}
+.nav-btn.prev{left:24px;}
+.nav-btn.next{right:24px;}
+.nav-btn{font-size:26px;font-weight:600;line-height:1;padding-bottom:3px;}
+/* Mobile sizing — declared after the base rules so source order lets it override (equal specificity) */
+@media (max-width:900px){
+  .nav-btn{width:36px;height:36px;}
+  .nav-btn.prev{left:10px;}
+  .nav-btn.next{right:10px;}
+}
 </style>
 </head>
 <body class="bg-white text-brandgray-700">
@@ -711,6 +724,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
       </div>
 
     </div>
+
+    <button class="nav-btn prev" aria-label="Previous slide">‹</button>
+    <button class="nav-btn next" aria-label="Next slide">›</button>
 
     <!-- Controls: dots + counter -->
     <div class="hero-controls mt-10 md:mt-12">
@@ -1386,6 +1402,36 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
           btn.textContent = label;
         });
     });
+  })();
+
+  // 6) Hero arrow controls — drive the existing carousel through its dot buttons
+  (function () {
+    var prev = document.querySelector('.nav-btn.prev');
+    var next = document.querySelector('.nav-btn.next');
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slide'));
+    var dots = Array.prototype.slice.call(document.querySelectorAll('.hero-dot'));
+    if (!prev || !next || !slides.length) return;
+
+    function curIndex() {
+      for (var i = 0; i < slides.length; i++) {
+        if (slides[i].classList.contains('active')) return i;
+      }
+      return 0;
+    }
+    function step(d) {
+      var n = slides.length;
+      var target = (curIndex() + d + n) % n;
+      if (dots[target]) {
+        // reuse the existing dot handler → keeps slides, dots, page counter and autoplay in sync
+        dots[target].click();
+      } else {
+        slides.forEach(function (s, k) { s.classList.toggle('active', k === target); });
+        var count = document.getElementById('heroCur');
+        if (count) count.textContent = '0' + (target + 1);
+      }
+    }
+    prev.addEventListener('click', function () { step(-1); });
+    next.addEventListener('click', function () { step(1); });
   })();
 </script>
 </body>
