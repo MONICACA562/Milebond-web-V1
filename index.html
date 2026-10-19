@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://miaoda.feishu.cn/fonts/css2?family=Fraunces:opsz,wght@9..144,400..900&display=swap" rel="stylesheet">
 
 <!-- Tailwind CDN first, then config assignment → guaranteed custom colors register -->
 <script src="https://cdn.tailwindcss.com"></script>
@@ -25,25 +26,25 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        navy: '#0F2A4A',
-        amber: '#F59E0B',
-        whatsapp: '#25D366',
+        navy: '#0a2a2b',
+        amber: { DEFAULT: '#a06a30', 500: '#c08648', 600: '#7a5024' },
+        whatsapp: '#008138',
         brandgray: {
-          50: '#F7F8FA',
-          100: '#EEF1F6',
-          300: '#CBD5E1',
-          500: '#64748B',
-          600: '#475569',
-          700: '#334155',
+          50: '#f3f1ea',
+          100: '#e6e3d8',
+          300: '#cdc8b8',
+          500: '#6a7282',
+          600: '#5a5950',
+          700: '#364153',
         }
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
       boxShadow: {
-        'soft': '0 2px 8px rgba(15,42,74,.06)',
-        'card': '0 4px 20px rgba(15,42,74,.08)',
-        'lift': '0 8px 30px rgba(15,42,74,.14)',
+        'soft': '0 2px 8px rgba(10,42,43,.06)',
+        'card': '0 4px 20px rgba(10,42,43,.08)',
+        'lift': '0 8px 30px rgba(10,42,43,.14)',
       }
     }
   }
@@ -465,6 +466,86 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
 @media (max-width:1024px){ .wm-grid{grid-template-columns:repeat(2,1fr) !important;} }
 @media (max-width:640px){ .wm-grid{grid-template-columns:1fr !important;} }
 .wm-cta{flex-wrap:wrap;row-gap:12px;}
+</style>
+
+<!-- Theme override: qualitysourcingfromchina.com tokens (fonts / colors / backgrounds only) -->
+<style>
+h1,h2,h3,h4,h5,h6{font-family:'Fraunces','Inter',Georgia,serif;letter-spacing:-.01em}
+body{background:#fafaf7!important}   /* 盖过 body 的 bg-white 工具类 */
+.navbar-scrolled{background-color:rgba(250,250,247,.92)!important;box-shadow:0 2px 12px rgba(10,42,43,.06)}
+/* mega 菜单 */
+.services-mega:hover>.mega-trigger .mega-chevron{color:#008138}
+.services-mega .mega-panel{background:#fafaf7;border-color:#e6e3d8;box-shadow:0 12px 40px rgba(10,42,43,.12)}
+.mega-item:hover{background:#f3f1ea}
+.mega-item:hover .mega-icon-bg{background:#008138;color:#fff}
+.mega-icon-bg{background:#0a2a2b;color:#e8c998}
+.mega-item .mega-title{color:#0a2a2b;font-size:14px}
+.mega-item:hover .mega-title{color:#008138}
+.mega-item .mega-desc{color:#6a7282;font-size:12px}
+.mobile-services>.ms-head{color:#364153}
+.mobile-services.open>.ms-head .ms-chevron{color:#008138}
+.mobile-services>.ms-body a{color:#5a5950}
+.mobile-services>.ms-body a:hover{background:#f3f1ea;color:#008138}
+/* hero：深蓝渐变 → 暖米 */
+.hero-carousel{background:linear-gradient(135deg,#f3f1ea 0%,#fafaf7 55%,#fbf5ec 100%)}
+.hero-carousel::before{background-image:linear-gradient(rgba(10,42,43,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(10,42,43,.045) 1px,transparent 1px)}
+.hero-eyebrow{color:#a06a30;font-size:13px}
+.hero-title{color:#0a2a2b;font-size:clamp(32px,4.5vw,54px)}
+.hero-title .hl{color:#c08648}
+.hero-sub{color:#6a7282;font-size:16px}
+.hero-chip{color:#364153;border-color:#cdc8b8;font-size:13px}
+.hero-btn{font-size:15px}
+.hero-btn-wa{background:#0f3d3e}
+.hero-btn-wa:hover{background:#0a2a2b;box-shadow:0 10px 24px rgba(10,42,43,.28)}
+.hero-btn-quote{background:#008138}
+.hero-btn-quote:hover{background:#0f3d3e;box-shadow:0 10px 24px rgba(0,129,56,.30)}
+.hero-btn-ghost{color:#0a2a2b;border-color:#cdc8b8}
+.hero-btn-ghost:hover{background:#f3f1ea}
+.hero-img-card{border-color:#e6e3d8;box-shadow:0 24px 60px rgba(10,42,43,.16);background:#f3f1ea}
+.hero-dot{background:#cdc8b8}
+.hero-dot.active{background:#008138}
+.hero-counter{color:#6a7282}
+.hero-counter .cur{color:#0a2a2b}
+.hero-stats{border-top-color:#e6e3d8}
+.hero-stat .num{color:#0a2a2b;font-size:clamp(26px,2.8vw,38px)}
+.hero-stat .num .u{color:#c08648}
+.hero-stat .lbl{color:#6a7282;font-size:13px}
+.nav-btn{background:#008138;color:#fff}
+.nav-btn:hover{background:#0f3d3e}
+/* 主 CTA 与徽章 */
+a.rounded-full.bg-amber{background-color:#008138!important}
+a.rounded-full.bg-amber:hover{background-color:#0f3d3e!important}
+.bg-amber.text-white{background-color:#f4e6cc!important;color:#7a5024!important}
+.bg-navy .text-amber{color:#e8c998!important}
+footer a:hover{color:#e8c998!important}
+/* 联系/报价区 */
+.cb-h2{color:#0a2a2b;font-size:32px}
+.cb-h2-sub{color:#6a7282;font-size:15px}
+.cb-shell{background:#fafaf7;box-shadow:0 30px 70px rgba(10,42,43,.12)}
+.cb-left{background:radial-gradient(circle at 0% 0%, rgba(192,134,72,.18), transparent 45%),radial-gradient(circle at 100% 100%, rgba(0,129,56,.14), transparent 45%),linear-gradient(135deg,#0a2a2b 0%,#173d3e 55%,#0f3d3e 100%)}
+.cb-tag{background:#008138;color:#fff;font-size:13px}
+.cb-title{font-size:28px}
+.cb-lead{color:rgba(250,250,247,.82);font-size:15px}
+.cb-intro{background:rgba(250,250,247,.08);border-color:rgba(250,250,247,.18);color:rgba(250,250,247,.88)}
+.cb-intro b{color:#e8c998}
+.cb-slogan{border-top-color:rgba(232,201,152,.45);font-size:19px;color:#e8c998}
+.cb-addr{color:rgba(250,250,247,.75)}
+.cb-right{background:#fafaf7}
+.cb-form-title{color:#0a2a2b;font-size:26px}
+.cb-form-sub{color:#6a7282;font-size:14px}
+.cb-label{color:#0a2a2b;font-size:13px}
+.cb-label em{color:#bf000f}
+.cb-input,.cb-select,.cb-textarea{color:#0a2a2b;background:#fafaf7;border-color:#d1d5dc}
+.cb-input:focus,.cb-select:focus,.cb-textarea:focus{border-color:#008138;box-shadow:0 0 0 3px rgba(0,129,56,.14)}
+.cb-input::placeholder,.cb-textarea::placeholder{color:#99a1af}
+.cb-consent{color:#5a5950}
+.cb-consent input{accent-color:#008138}
+.cb-consent a{color:#0a2a2b}
+.cb-submit{color:#fff;background:#008138}
+.cb-submit:hover{background:#0f3d3e;box-shadow:0 12px 28px rgba(0,129,56,.30)}
+.cb-note{color:#6a7282;font-size:13px}
+.cb-note .dot{background:#008138}
+a:focus-visible,button:focus-visible{outline-color:#008138}
 </style>
 </head>
 <body class="bg-white text-brandgray-700">
