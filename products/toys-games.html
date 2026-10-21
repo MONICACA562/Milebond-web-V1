@@ -387,7 +387,31 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   .fc-btn svg{width:20px;height:20px}
   .qm-row{flex-direction:column;gap:0}
 }
-  </style>
+  
+/* ============ Catalog hero / toolbar / breadcrumb ============ */
+.catalog-toolbar{background:#fff;padding:16px 0}
+.ct-inner{max-width:var(--container);margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:12px}
+.ct-search{position:relative;flex:1;min-width:0}
+.ct-search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:#9ca3af;pointer-events:none}
+.ct-search input{width:100%;padding:11px 14px 11px 42px;border:1px solid #e5e7eb;border-radius:8px;font-family:inherit;font-size:14px;color:#0a2a2b;background:#fff;outline:none;transition:border-color .18s,box-shadow .18s}
+.ct-search input::placeholder{color:#9ca3af}
+.ct-search input:focus{border-color:#a06a30;box-shadow:0 0 0 3px rgba(160,106,48,.12)}
+.ct-sort{position:relative;flex-shrink:0}
+.ct-sort select{appearance:none;-webkit-appearance:none;padding:11px 38px 11px 14px;border:1px solid #e5e7eb;border-radius:8px;font-family:inherit;font-size:14px;color:#0a2a2b;background:#fff;outline:none;cursor:pointer;transition:border-color .18s,box-shadow .18s}
+.ct-sort select:focus{border-color:#a06a30;box-shadow:0 0 0 3px rgba(160,106,48,.12)}
+.ct-sort svg{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:#6b7280;pointer-events:none}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.cat-breadcrumb{background:#fff;border-bottom:1px solid #ecebe5}
+.cb-inner{max-width:var(--container);margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:8px;font-size:13px}
+.cb-inner a{color:#0a2a2b;font-weight:600}
+.cb-inner a:hover{color:#a06a30}
+.cb-sep{color:#c3c2ba}
+.cb-current{color:#6b7280}
+@media(max-width:640px){
+  .ct-inner{flex-direction:column;align-items:stretch;padding:0 16px}
+  .ct-sort select{width:100%}
+}</style>
+<script src="/assets/catalog-hero.js" defer></script>
 </head>
 <body>
 
@@ -499,7 +523,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
               <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3.5 20.5 9"/><path d="M13.6 6.2 17.8 10.4"/><path d="M12.8 7.6 5.2 15.2a5 5 0 0 0 3.6 3.6l7.6-7.6"/></svg></span>
               <span class="pm-text"><span class="pm-name">Arts &amp; Crafts</span><span class="pm-desc">DIY, hobbies, gift supplies</span></span>
             </a>
-            <a class="pm-item" href="/all-products">
+            <a class="pm-item" href="/products/clothing-shoes-jewelry">
               <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 3.5 4 5.5 2.5 9.5l3 1.5V21h13v-10l3-1.5-1.5-4-4.5-2a4 4 0 0 1-7.5 0z"/></svg></span>
               <span class="pm-text"><span class="pm-name">Clothing, Shoes &amp; Jewelry</span><span class="pm-desc">Apparel, footwear, watches, accessories</span></span>
             </a>
@@ -507,19 +531,19 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
               <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6v2.4a2.4 2.4 0 0 0 4.8 0V4H20v6h-2.4a2.4 2.4 0 0 0 0 4.8H20V20h-5.2v-2.4a2.4 2.4 0 0 0-4.8 0V20H4v-5.2h2.4a2.4 2.4 0 0 0 0-4.8H4z"/></svg></span>
               <span class="pm-text"><span class="pm-name">Toys &amp; Games</span><span class="pm-desc">STEM, outdoor play, puzzles, RC</span></span>
             </a>
-            <a class="pm-item" href="/products/outdoor-sports">
+            <a class="pm-item" href="/products/sports-outdoors">
               <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 8v8"/><path d="M3.5 10v4"/><path d="M17.5 8v8"/><path d="M20.5 10v4"/><path d="M6.5 12h11"/></svg></span>
               <span class="pm-text"><span class="pm-name">Sports &amp; Outdoors</span><span class="pm-desc">Fitness, camping, cycling, water sports</span></span>
             </a>
-            <a class="pm-item" href="/all-products">
+            <a class="pm-item" href="/products/electronics">
               <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></span>
               <span class="pm-text"><span class="pm-name">Electronics</span><span class="pm-desc">Audio, smart home, wearables, cameras</span></span>
             </a>
-            <a class="pm-item" href="/all-products">
+            <a class="pm-item" href="/products/health-household">
               <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-9.7A4.2 4.2 0 0 1 12 7.9a4.2 4.2 0 0 1 7.5 2.9c0 5.1-7.5 9.7-7.5 9.7z"/></svg></span>
               <span class="pm-text"><span class="pm-name">Health &amp; Household</span><span class="pm-desc">Wellness, vitamins, cleaning essentials</span></span>
             </a>
-            <a class="pm-item" href="/all-products">
+            <a class="pm-item" href="/products/others">
               <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg></span>
               <span class="pm-text"><span class="pm-name">Others</span><span class="pm-desc">Everything else — tell us what you need</span></span>
             </a>
@@ -553,25 +577,43 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 </div>
 <div class="lang-toast" id="langToast"></div>
 
-<section class="hero">
-  <div class="container">
-    <div class="hero-inner">
-      <span class="ship-tag">HOME &amp; KITCHEN</span>
-      <h1>Toys &amp; Games Products Sourcing from China</h1>
-      <p>From space-saving storage organizers to innovative kitchen gadgets — we source 10,000+ home and kitchen SKUs from verified Yiwu factories. Average 30%+ cost savings, AQL 2.5 quality inspection, and full EU compliance support.</p>
-      <div class="hero-tags">
-        <span class="hero-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="20 6 9 17 4 12"/></svg>10,000+ SKUs</span>
-        <span class="hero-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="20 6 9 17 4 12"/></svg>30%+ Cost Savings</span>
-        <span class="hero-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="20 6 9 17 4 12"/></svg>AQL 2.5 QC</span>
-        <span class="hero-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="20 6 9 17 4 12"/></svg>EU Compliance</span>
-      </div>
-      <div class="hero-btns">
-        <a href="../index.html#quote" class="btn btn-primary">Get Quote</a>
-        <a href="#hot" class="btn btn-outline">View Hot Products</a>
-      </div>
+<!-- ============ Reusable catalog hero (shared component) ============ -->
+<catalog-hero
+  title="Milebond Sourcing &mdash; Complete China Wholesale Catalog"
+  subtitle="Not another image-to-supplier agent &mdash; we close the loop from your first quote to your next reorder: 10+ years of Amazon selection know-how, weekly new-product pushes, and risks flagged before they cost you. Every SKU below is a real order we've shipped."
+  label="CHINA WHOLESALE PRODUCT CATALOG"
+  search-target="catalog-search"></catalog-hero>
+
+<!-- ============ Product search and sorting ============ -->
+<section class="catalog-toolbar" aria-label="Product search and sorting">
+  <div class="ct-inner">
+    <div class="ct-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+      <label class="sr-only" for="catalog-search">Search products</label>
+      <input id="catalog-search" type="search" placeholder="Search products by name, SKU, description..." autocomplete="off">
+    </div>
+    <div class="ct-sort">
+      <label class="sr-only" for="catalog-sort">Sort products</label>
+      <select id="catalog-sort">
+        <option value="newest">Newest First</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="moq-asc">MOQ: Low to High</option>
+      </select>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
   </div>
 </section>
+
+<!-- ============ Breadcrumb ============ -->
+<nav class="cat-breadcrumb" aria-label="Breadcrumb">
+  <div class="cb-inner">
+    <a href="/all-products">&larr; All Products</a>
+    <span class="cb-sep">/</span>
+    <span class="cb-current">Toys &amp; Games</span>
+  </div>
+</nav>
+
 
 <section class="section">
   <div class="container">
