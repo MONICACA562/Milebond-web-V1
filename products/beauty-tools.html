@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -38,7 +38,7 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}ul{list-st
 .btn-outline{background:transparent;color:var(--navy);border:2px solid var(--navy)}
 .btn-outline:hover{background:var(--navy);color:#fff}.btn-sm{padding:10px 20px;font-size:13px}
 .navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-200)}
-.nav-inner{max-width:var(--container);margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between}
+.nav-inner{max-width:var(--container);margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces',sans-serif;font-weight:700;font-size:20px;color:var(--navy)}
 .logo-mark{width:36px;height:36px;background:var(--orange);color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700}
 .logo-text span{color:var(--orange)}
@@ -205,6 +205,15 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}ul{list-st
     .mega-tag.core{background:#a06a30;color:#fff}
     .mega-tag.new{background:#008138;color:#fff}
     .products-menu-wrap .dropdown-menu{width:700px;min-width:700px}
+    .pm-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px}
+    .pm-item{display:flex;align-items:center;gap:12px;padding:8px;border-radius:10px;text-decoration:none;transition:background .15s}
+    .pm-item:hover{background:#f3f1ea}
+    .pm-icon{width:40px;height:40px;border-radius:10px;background:#1F5C4D;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .pm-icon svg{width:20px;height:20px;display:block}
+    .pm-text{display:flex;flex-direction:column;min-width:0}
+    .pm-name{font-size:14px;font-weight:700;color:#0a2a2b;line-height:1.3}
+    .pm-item:hover .pm-name{color:#1F5C4D}
+    .pm-desc{font-size:12px;color:#6a7282;line-height:1.35;margin-top:2px}
 
     /* Mega menu hover animation */
     .nav-dropdown.mega-menu-wrap{position:relative}
@@ -376,38 +385,47 @@ footer a:hover{color:#e8c998!important}.btn-primary{background:#008138!important
           <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
         <div class="dropdown-menu">
-          <div class="mega-menu-grid">
-            <div class="mega-menu-col">
-              <div class="mega-menu-col-title">Core Categories</div>
-              <a class="mega-item" href="/products/home-kitchen/">
-                <div class="mega-icon">🏠</div>
-                <div class="mega-text">
-                  <div class="mega-name">Home &amp; Kitchen<span class="mega-tag core">Core</span></div>
-                  <div class="mega-desc">Storage, kitchen tools, bakeware, cleaning</div>
-                </div>
-              </a>
-              <a class="mega-item" href="/products/pet-supplies">
-                <div class="mega-icon">🐾</div>
-                <div class="mega-text">
-                  <div class="mega-name">Pet Supplies<span class="mega-tag core">Core</span></div>
-                  <div class="mega-desc">Dog, cat, small pet toys, accessories, grooming</div>
-                </div>
-              </a>
-              <a class="mega-item" href="/products/beauty-tools">
-                <div class="mega-icon">💄</div>
-                <div class="mega-text">
-                  <div class="mega-name">Beauty Tools<span class="mega-tag core">Core</span></div>
-                  <div class="mega-desc">Skincare devices, makeup tools, hair tools (non-cosmetics)</div>
-                </div>
-              </a>
-              <a class="mega-item" href="/products/arts-crafts">
-                <div class="mega-icon">🎨</div>
-                <div class="mega-text">
-                  <div class="mega-name">Arts &amp; Crafts<span class="mega-tag core">Core</span></div>
-                  <div class="mega-desc">DIY supplies, stationery, party &amp; holiday crafts</div>
-                </div>
-              </a>
-            </div>
+          <div class="pm-grid">
+            <a class="pm-item" href="/products/home-kitchen/">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/><path d="M9.5 21v-6h5v6"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Home &amp; Kitchen</span><span class="pm-desc">Utensils, glassware, cutlery, storage</span></span>
+            </a>
+            <a class="pm-item" href="/products/pet-supplies">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="6.2" cy="10.2" r="2.1"/><circle cx="10" cy="6.2" r="2.1"/><circle cx="14.6" cy="6.2" r="2.1"/><circle cx="18.2" cy="10.2" r="2.1"/><path d="M12.2 11.4c3.2 0 5.8 2.2 5.8 4.9 0 1.9-1.5 3.3-3.4 3.3-1.2 0-1.7-.5-2.4-.5s-1.2.5-2.4.5c-1.9 0-3.4-1.4-3.4-3.3 0-2.7 2.6-4.9 5.8-4.9z"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Pet Supplies</span><span class="pm-desc">Toys, grooming, feeding, carriers</span></span>
+            </a>
+            <a class="pm-item" href="/products/beauty-tools">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 19.5 9 15"/><path d="M8 14.2 6.8 13a2.2 2.2 0 0 1 0-3.1l5.6-5.6a2.2 2.2 0 0 1 3.1 0l1.2 1.2a2.2 2.2 0 0 1 0 3.1l-5.6 5.6a2.2 2.2 0 0 1-3.1 0z"/><path d="m12 6.5 5.5 5.5"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Beauty Tools</span><span class="pm-desc">Skincare devices, nail, hair tools</span></span>
+            </a>
+            <a class="pm-item" href="/products/arts-crafts">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3.5 20.5 9"/><path d="M13.6 6.2 17.8 10.4"/><path d="M12.8 7.6 5.2 15.2a5 5 0 0 0 3.6 3.6l7.6-7.6"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Arts &amp; Crafts</span><span class="pm-desc">DIY, hobbies, gift supplies</span></span>
+            </a>
+            <a class="pm-item" href="/all-products">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 3.5 4 5.5 2.5 9.5l3 1.5V21h13v-10l3-1.5-1.5-4-4.5-2a4 4 0 0 1-7.5 0z"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Clothing, Shoes &amp; Jewelry</span><span class="pm-desc">Apparel, footwear, watches, accessories</span></span>
+            </a>
+            <a class="pm-item" href="/products/toys-games">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6v2.4a2.4 2.4 0 0 0 4.8 0V4H20v6h-2.4a2.4 2.4 0 0 0 0 4.8H20V20h-5.2v-2.4a2.4 2.4 0 0 0-4.8 0V20H4v-5.2h2.4a2.4 2.4 0 0 0 0-4.8H4z"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Toys &amp; Games</span><span class="pm-desc">STEM, outdoor play, puzzles, RC</span></span>
+            </a>
+            <a class="pm-item" href="/products/outdoor-sports">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 8v8"/><path d="M3.5 10v4"/><path d="M17.5 8v8"/><path d="M20.5 10v4"/><path d="M6.5 12h11"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Sports &amp; Outdoors</span><span class="pm-desc">Fitness, camping, cycling, water sports</span></span>
+            </a>
+            <a class="pm-item" href="/all-products">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Electronics</span><span class="pm-desc">Audio, smart home, wearables, cameras</span></span>
+            </a>
+            <a class="pm-item" href="/all-products">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-9.7A4.2 4.2 0 0 1 12 7.9a4.2 4.2 0 0 1 7.5 2.9c0 5.1-7.5 9.7-7.5 9.7z"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Health &amp; Household</span><span class="pm-desc">Wellness, vitamins, cleaning essentials</span></span>
+            </a>
+            <a class="pm-item" href="/all-products">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Others</span><span class="pm-desc">Everything else — tell us what you need</span></span>
+            </a>
           </div>
         </div>
       </div>
@@ -418,15 +436,6 @@ footer a:hover{color:#e8c998!important}.btn-primary{background:#008138!important
         <a href="/faq">FAQ</a>
       </div>
       <div class="nav-cta">
-        <button class="nav-icon-btn" onclick="openSearch()" aria-label="Search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
-        <div class="nav-dropdown nav-mini">
-          <button class="nav-trigger nav-mini-trigger" onclick="event.preventDefault()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span id="currencyLabel">USD</span><svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <div class="dropdown-menu"><a class="dropdown-item" onclick="setCurrency('USD','$');return false;"><span class="di-text"><span class="di-name">USD ($)</span></span></a><a class="dropdown-item" onclick="setCurrency('EUR','€');return false;"><span class="di-text"><span class="di-name">EUR (€)</span></span></a><a class="dropdown-item" onclick="setCurrency('GBP','£');return false;"><span class="di-text"><span class="di-name">GBP (£)</span></span></a><a class="dropdown-item" onclick="setCurrency('AUD','A$');return false;"><span class="di-text"><span class="di-name">AUD (A$)</span></span></a><a class="dropdown-item" onclick="setCurrency('CAD','C$');return false;"><span class="di-text"><span class="di-name">CAD (C$)</span></span></a></div>
-        </div>
-        <div class="nav-dropdown nav-mini">
-          <button class="nav-trigger nav-mini-trigger" onclick="event.preventDefault()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span id="langLabel">English</span><svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <div class="dropdown-menu"><a class="dropdown-item" onclick="setLanguage('English');return false;"><span class="di-text"><span class="di-name">English</span></span></a><a class="dropdown-item" onclick="setLanguage('Deutsch');return false;"><span class="di-text"><span class="di-name">Deutsch</span></span></a><a class="dropdown-item" onclick="setLanguage('Français');return false;"><span class="di-text"><span class="di-name">Français</span></span></a><a class="dropdown-item" onclick="setLanguage('Español');return false;"><span class="di-text"><span class="di-name">Español</span></span></a><a class="dropdown-item" onclick="setLanguage('Italiano');return false;"><span class="di-text"><span class="di-name">Italiano</span></span></a></div>
-        </div>
         <a onclick="openQuoteModal()" class="btn btn-primary btn-sm open-quote-modal">Get a Quote</a>
       </div>
     <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
