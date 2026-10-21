@@ -277,6 +277,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.milebond.com/products/clothing-shoes-jewelry</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.milebond.com/products/sports-outdoors</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.milebond.com/products/electronics</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.milebond.com/products/health-household</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.milebond.com/products/others</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.milebond.com/blog/canton-fair-to-yiwu-guide/</loc>
     <lastmod>2026-09-18</lastmod>
     <changefreq>monthly</changefreq>
