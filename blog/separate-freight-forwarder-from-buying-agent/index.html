@@ -278,8 +278,14 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 <style id="nav-mobile-css">
 /* Mobile drawer: collapsed by default, scrolls when taller than the viewport */
 .mobile-menu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
-.mobile-menu.open { max-height: calc(100vh - 64px); overflow-y: auto; }
+.mobile-menu.open { max-height: calc(100vh - 64px); overflow-y: auto; padding-bottom: calc(4.5rem + env(safe-area-inset-bottom)); }
 @media (min-width: 768px) { .mobile-menu { display: none !important; } }
+/* Accordions collapse reliably regardless of page-level CSS */
+#mobileMenu .mobile-services > .ms-body { max-height: 0 !important; overflow: hidden; }
+#mobileMenu .mobile-services.open > .ms-body { max-height: none !important; }
+/* Primary CTA keeps white text on the green pill */
+#navbar a.nav-cta { background-color: #008138 !important; color: #ffffff !important; }
+#navbar a.nav-cta:hover { background-color: #0f3d3e !important; }
 /* Sticky header offset when jumping to the quote form */
 #quote { scroll-margin-top: 88px; }
 </style></head>
@@ -408,7 +414,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     <!-- desktop CTA -->
     <div class="hidden md:block ml-1 shrink-0">
       <a href="/#quote"
-         class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-amber hover:bg-amber-600 text-white font-semibold text-sm shadow-card transition-colors">
+         class="nav-cta inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-amber hover:bg-amber-600 text-white font-semibold text-sm shadow-card transition-colors">
         Get a Quote
       </a>
     </div>
@@ -505,7 +511,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
       <li class="pt-3 mt-2 border-t border-brandgray-100">
         <a href="/#quote"
-           class="block w-full text-center px-5 py-3 rounded-full bg-amber text-white font-semibold">
+           class="nav-cta block w-full text-center px-5 py-3 rounded-full bg-amber text-white font-semibold">
           Get a Quote
         </a>
       </li>
@@ -740,15 +746,43 @@ const navbar = document.getElementById('navbar');
   // Close mobile menu (and accordion) when any nav/service link clicked
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
-  // 2c) Desktop mega menu: open on hover (already CSS), also support click/tap on touch
-  document.querySelectorAll('.services-mega > .mega-trigger').forEach(btn => {
-    const parent = btn.closest('.services-mega');
-    btn.addEventListener('click', (e) => {
-      if (window.matchMedia('(hover: none)').matches) {
-        e.preventDefault();
-        parent.classList.toggle('open');
+  // 2c) Desktop mega menus: hover (CSS) + click + keyboard + Escape + outside click
+  const megaItems = Array.prototype.slice.call(document.querySelectorAll('.services-mega'));
+  function closeMega(except) {
+    megaItems.forEach(function (li) {
+      if (li === except) return;
+      li.classList.remove('open');
+      var b = li.querySelector('.mega-trigger');
+      if (b) b.setAttribute('aria-expanded', 'false');
+    });
+  }
+  megaItems.forEach(function (li) {
+    var btn = li.querySelector('.mega-trigger');
+    if (!btn) return;
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var willOpen = !li.classList.contains('open');
+      closeMega(li);
+      li.classList.toggle('open', willOpen);
+      btn.setAttribute('aria-expanded', String(willOpen));
+    });
+    btn.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        li.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.focus();
       }
     });
+    li.addEventListener('mouseenter', function () { btn.setAttribute('aria-expanded', 'true'); });
+    li.addEventListener('mouseleave', function () {
+      if (!li.classList.contains('open')) btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMega(null);
+  });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest || !e.target.closest('.services-mega')) closeMega(null);
   });
 
   // 3) Smooth scroll polyfill fallback (html { scroll-behavior:smooth } handles modern browsers)
