@@ -570,6 +570,11 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 .psc-filter{padding:7px 16px;border:1px solid #E5E7EB;border-radius:20px;background:#fff;color:#2a4a7c;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .12s,color .12s}
 .psc-filter.active{background:#162D54;border-color:#162D54;color:#fff}
 .psc-filter:hover{border-color:#2a4a7c}
+.psc-searchbar{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 0}
+.psc-search-input{flex:1;min-width:240px;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:11px 14px;color:#9CA3AF}
+.psc-search-input input{border:none;outline:none;flex:1;font-size:14px;font-family:inherit;color:#1f2937;background:transparent;min-width:0}
+.psc-search-input input::placeholder{color:#9CA3AF}
+.psc-sort{padding:11px 14px;border:1px solid #E5E7EB;border-radius:10px;background:#fff;color:#1f2937;font-size:14px;font-family:inherit;cursor:pointer}
 .psc-catalog{display:grid;grid-template-columns:1fr;gap:18px}
 @media (min-width:600px){.psc-catalog{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:1000px){.psc-catalog{grid-template-columns:repeat(3,1fr)}}
@@ -605,9 +610,9 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       "name": "Pet Supplies Wholesale 鈥?Featured: Dog Snuffle Mats",
       "numberOfItems": "3",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Vivifying Snuffle Mat (Blue Green Orange)", "url": "https://www.milebond.com/products/pet-supplies/vivifying-snuffle-mat-blue-green-orange/" },
-        { "@type": "ListItem", "position": 2, "name": "Vivifying Snuffle Mat (Yellow Purple)", "url": "https://www.milebond.com/products/pet-supplies/vivifying-snuffle-mat-yellow-purple/" },
-        { "@type": "ListItem", "position": 3, "name": "Vivifying Snuffle Mat (Pink Yellow)", "url": "https://www.milebond.com/products/pet-supplies/vivifying-snuffle-mat-pink-yellow/" }
+        { "@type": "ListItem", "position": 1, "name": "Vivifying Snuffle Mat for Dogs \u2014 Interactive Feeding Game", "url": "https://www.milebond.com/products/pet-supplies/vivifying-snuffle-mat-blue-green-orange/" },
+        { "@type": "ListItem", "position": 2, "name": "Vivifying Snuffle Mat for Dogs \u2014 Slow Eating & Mental Stimulation", "url": "https://www.milebond.com/products/pet-supplies/vivifying-snuffle-mat-yellow-purple/" },
+        { "@type": "ListItem", "position": 3, "name": "Vivifying Snuffle Mat for Dogs \u2014 Foraging & Stress Relief", "url": "https://www.milebond.com/products/pet-supplies/vivifying-snuffle-mat-pink-yellow/" }
       ]
     }
   ]
@@ -814,6 +819,19 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     <p class="psc-lede">Wholesale pet supplies for Amazon sellers, brand founders and wholesalers &mdash; interactive feeding mats, slow feeders, toys and everyday essentials. Wholesale price, MOQ and material listed per product; click a card for the full spec sheet. New categories added weekly.</p>
   </div>
 
+  <div class="psc-searchbar">
+    <label class="psc-search-input">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="pscSearch" placeholder="Search products by name, SKU, description..." aria-label="Search products">
+    </label>
+    <select id="pscSort" class="psc-sort" aria-label="Sort products">
+      <option value="newest">Newest First</option>
+      <option value="price-asc">Price Low&rarr;High</option>
+      <option value="price-desc">Price High&rarr;Low</option>
+      <option value="moq-asc">MOQ Low&rarr;High</option>
+    </select>
+  </div>
+
   <div class="psc-filters" id="pscFilters">
     <button type="button" class="psc-filter active" data-cat="all">All</button>
     <button type="button" class="psc-filter" data-cat="slow-feeding">Slow Feeding</button>
@@ -822,12 +840,12 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
   <div class="psc-catalog" id="pscCatalog">
 
-    <div class="psc-card" data-cat="slow-feeding">
-      <a class="psc-overlay" href="/products/pet-supplies/vivifying-snuffle-mat-blue-green-orange/" aria-label="Vivifying Snuffle Mat for Dogs &mdash; Interactive Feeding Game (Blue Green Orange)"></a>
-      <span class="psc-card-img"><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20e-commerce%20product%20photo%20of%20a%20round%20dog%20snuffle%20mat%20with%20bright%20blue%2C%20green%20and%20orange%20polar%20fleece%20strips%20woven%20onto%20a%20dark%20grey%20non-slip%20fabric%20base%2C%20interactive%20slow%20feeding%20puzzle%20mat%20for%20dogs%2C%20studio%20lighting%2C%20clean%20light%20grey%20seamless%20background%2C%20high%20detail%2C%20no%20text%2C%20no%20watermark&amp;image_size=landscape_4_3" alt="Vivifying Snuffle Mat for Dogs (Blue Green Orange) &mdash; washable interactive feeding mat" loading="lazy"></span>
+    <div class="psc-card" data-price="1.50" data-moq="200" data-cat="slow-feeding">
+      <a class="psc-overlay" href="/products/pet-supplies/vivifying-snuffle-mat-blue-green-orange/" aria-label="Vivifying Snuffle Mat for Dogs &mdash; Interactive Feeding Game"></a>
+      <span class="psc-card-img"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/SfFFbuy1YoLRNLxFT3NcgUR6nWh" alt="Vivifying Snuffle Mat for Dogs &mdash; washable interactive feeding mat" loading="lazy"></span>
       <div class="psc-card-info">
         <div class="psc-card-meta"><span class="psc-sku">MBD-0001</span><span>MOQ: 200</span></div>
-        <div class="psc-card-name">Vivifying Snuffle Mat for Dogs &mdash; Interactive Feeding Game (Blue Green Orange)</div>
+        <div class="psc-card-name">Vivifying Snuffle Mat for Dogs &mdash; Interactive Feeding Game</div>
         <div class="psc-card-material">Material: Polyester Fleece</div>
       </div>
       <div class="psc-card-buy">
@@ -836,12 +854,12 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       </div>
     </div>
 
-    <div class="psc-card" data-cat="enrichment">
-      <a class="psc-overlay" href="/products/pet-supplies/vivifying-snuffle-mat-yellow-purple/" aria-label="Vivifying Snuffle Mat for Dogs &mdash; Slow Eating &amp; Mental Stimulation (Yellow Purple)"></a>
-      <span class="psc-card-img"><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20e-commerce%20product%20photo%20of%20a%20round%20dog%20snuffle%20mat%20with%20bright%20yellow%20and%20purple%20polar%20fleece%20strips%20woven%20onto%20a%20dark%20grey%20non-slip%20fabric%20base%2C%20interactive%20slow%20feeding%20puzzle%20mat%20for%20dogs%2C%20studio%20lighting%2C%20clean%20light%20grey%20seamless%20background%2C%20high%20detail%2C%20no%20text%2C%20no%20watermark&amp;image_size=landscape_4_3" alt="Vivifying Snuffle Mat for Dogs (Yellow Purple) &mdash; washable interactive feeding mat" loading="lazy"></span>
+    <div class="psc-card" data-price="1.50" data-moq="200" data-cat="enrichment">
+      <a class="psc-overlay" href="/products/pet-supplies/vivifying-snuffle-mat-yellow-purple/" aria-label="Vivifying Snuffle Mat for Dogs &mdash; Slow Eating &amp; Mental Stimulation"></a>
+      <span class="psc-card-img"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/ZFREbuj4Pox8l6xGu9Pc3p3OnEp" alt="Vivifying Snuffle Mat for Dogs &mdash; washable interactive feeding mat" loading="lazy"></span>
       <div class="psc-card-info">
         <div class="psc-card-meta"><span class="psc-sku">MBD-0002</span><span>MOQ: 200</span></div>
-        <div class="psc-card-name">Vivifying Snuffle Mat for Dogs &mdash; Slow Eating &amp; Mental Stimulation (Yellow Purple)</div>
+        <div class="psc-card-name">Vivifying Snuffle Mat for Dogs &mdash; Slow Eating &amp; Mental Stimulation</div>
         <div class="psc-card-material">Material: Polyester Fleece</div>
       </div>
       <div class="psc-card-buy">
@@ -850,12 +868,12 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       </div>
     </div>
 
-    <div class="psc-card" data-cat="enrichment">
-      <a class="psc-overlay" href="/products/pet-supplies/vivifying-snuffle-mat-pink-yellow/" aria-label="Vivifying Snuffle Mat for Dogs &mdash; Foraging &amp; Stress Relief (Pink Yellow)"></a>
-      <span class="psc-card-img"><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20e-commerce%20product%20photo%20of%20a%20round%20dog%20snuffle%20mat%20with%20soft%20pink%20and%20warm%20yellow%20polar%20fleece%20strips%20woven%20onto%20a%20dark%20grey%20non-slip%20fabric%20base%2C%20interactive%20slow%20feeding%20puzzle%20mat%20for%20dogs%2C%20studio%20lighting%2C%20clean%20light%20grey%20seamless%20background%2C%20high%20detail%2C%20no%20text%2C%20no%20watermark&amp;image_size=landscape_4_3" alt="Vivifying Snuffle Mat for Dogs (Pink Yellow) &mdash; washable interactive feeding mat" loading="lazy"></span>
+    <div class="psc-card" data-price="1.50" data-moq="200" data-cat="enrichment">
+      <a class="psc-overlay" href="/products/pet-supplies/vivifying-snuffle-mat-pink-yellow/" aria-label="Vivifying Snuffle Mat for Dogs &mdash; Foraging &amp; Stress Relief"></a>
+      <span class="psc-card-img"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/NsRqbpyYWoIME8xqWPBcJMavne0" alt="Vivifying Snuffle Mat for Dogs &mdash; washable interactive feeding mat" loading="lazy"></span>
       <div class="psc-card-info">
         <div class="psc-card-meta"><span class="psc-sku">MBD-0003</span><span>MOQ: 200</span></div>
-        <div class="psc-card-name">Vivifying Snuffle Mat for Dogs &mdash; Foraging &amp; Stress Relief (Pink Yellow)</div>
+        <div class="psc-card-name">Vivifying Snuffle Mat for Dogs &mdash; Foraging &amp; Stress Relief</div>
         <div class="psc-card-material">Material: Polyester Fleece</div>
       </div>
       <div class="psc-card-buy">
@@ -871,17 +889,38 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 (function(){
   "use strict";
   var filters = document.getElementById('pscFilters');
-  if (!filters) return;
-  var cards = document.querySelectorAll('#pscCatalog .psc-card');
+  var grid = document.getElementById('pscCatalog');
+  var search = document.getElementById('pscSearch');
+  var sort = document.getElementById('pscSort');
+  if (!filters || !grid) return;
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#pscCatalog .psc-card'));
+  var activeCat = 'all';
+  function applyFilters(){
+    var q = search ? search.value.trim().toLowerCase() : '';
+    Array.prototype.forEach.call(cards, function(c){
+      var okCat = (activeCat === 'all' || c.getAttribute('data-cat') === activeCat);
+      var okQ = (!q || c.textContent.toLowerCase().indexOf(q) !== -1);
+      c.style.display = (okCat && okQ) ? '' : 'none';
+    });
+  }
   filters.addEventListener('click', function(e){
     var btn = e.target.closest('.psc-filter');
     if (!btn) return;
-    var cat = btn.getAttribute('data-cat');
+    activeCat = btn.getAttribute('data-cat');
     Array.prototype.forEach.call(filters.querySelectorAll('.psc-filter'), function(b){ b.classList.remove('active'); });
     btn.classList.add('active');
-    Array.prototype.forEach.call(cards, function(c){
-      c.style.display = (cat === 'all' || c.getAttribute('data-cat') === cat) ? '' : 'none';
+    applyFilters();
+  });
+  if (search) search.addEventListener('input', applyFilters);
+  if (sort) sort.addEventListener('change', function(){
+    var v = sort.value;
+    var sorted = cards.slice().sort(function(a,b){
+      if (v === 'price-asc') return parseFloat(a.getAttribute('data-price')) - parseFloat(b.getAttribute('data-price'));
+      if (v === 'price-desc') return parseFloat(b.getAttribute('data-price')) - parseFloat(a.getAttribute('data-price'));
+      if (v === 'moq-asc') return parseInt(a.getAttribute('data-moq'),10) - parseInt(b.getAttribute('data-moq'),10);
+      return cards.indexOf(a) - cards.indexOf(b);
     });
+    sorted.forEach(function(c){ grid.appendChild(c); });
   });
 })();
 </script>
