@@ -384,30 +384,29 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
     <!-- desktop nav (md+) -->
     <ul class="hidden md:flex items-center gap-1 xl:gap-2 text-sm font-medium text-brandgray-600">
-      <li><a href="/" class="px-3 py-2 text-navy font-semibold hover:text-amber transition-colors">Home</a></li>
 
-      <!-- Services with hover mega menu -->
+      <!-- Services mega menu -->
       <li class="services-mega">
-        <button type="button" class="mega-trigger px-3 py-2 hover:text-amber transition-colors text-brandgray-600 font-medium">
+        <button type="button" class="mega-trigger px-3 py-2 hover:text-amber transition-colors text-brandgray-600 font-medium" aria-haspopup="true" aria-expanded="false">
           Services
           <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="mega-panel" role="menu">
           <div class="mega-grid">
             <a href="/services/product-sourcing" class="mega-item" role="menuitem"><span class="mega-icon-bg">PS</span><div><div class="mega-title">Product Sourcing</div><div class="mega-desc">Find the right suppliers at the right price</div></div></a>
+            <a href="/services/quality-control" class="mega-item" role="menuitem"><span class="mega-icon-bg">QC</span><div><div class="mega-title">Quality Control &amp; Inspection</div><div class="mega-desc">Piece-by-piece &amp; AQL inspection</div></div></a>
+            <a href="/services/factory-audit" class="mega-item" role="menuitem"><span class="mega-icon-bg">FA</span><div><div class="mega-title">Factory Audit</div><div class="mega-desc">Pre-order factory verification</div></div></a>
             <a href="/services/private-label-oem" class="mega-item" role="menuitem"><span class="mega-icon-bg">PL</span><div><div class="mega-title">Private Label &amp; OEM</div><div class="mega-desc">Build your own brand, low MOQ</div></div></a>
-            <a href="/services/amazon-brand-management" class="mega-item" role="menuitem"><span class="mega-icon-bg">AB</span><div><div class="mega-title">Amazon Brand Management</div><div class="mega-desc">A+ content, brand store, registry</div></div></a>
             <a href="/services/product-development" class="mega-item" role="menuitem"><span class="mega-icon-bg">PD</span><div><div class="mega-title">Product Development</div><div class="mega-desc">From idea to sampling &amp; tooling</div></div></a>
+            <a href="/services/warehousing-shipping" class="mega-item" role="menuitem"><span class="mega-icon-bg">WS</span><div><div class="mega-title">Warehousing &amp; Shipping</div><div class="mega-desc">FBA prep, consolidation, DDP</div></div></a>
+            <a href="/services/amazon-brand-management" class="mega-item" role="menuitem"><span class="mega-icon-bg">AB</span><div><div class="mega-title">Amazon Brand Management</div><div class="mega-desc">A+ content, brand store, registry</div></div></a>
             <a href="/services/product-compliance" class="mega-item" role="menuitem"><span class="mega-icon-bg">CP</span><div><div class="mega-title">Product Compliance</div><div class="mega-desc">CPC, CE, FDA, patent checks</div></div></a>
             <a href="/services/supply-chain-optimization" class="mega-item" role="menuitem"><span class="mega-icon-bg">SC</span><div><div class="mega-title">Supply Chain Optimization</div><div class="mega-desc">Cut lead time, reduce dead stock</div></div></a>
-            <a href="/services/factory-audit" class="mega-item" role="menuitem"><span class="mega-icon-bg">FA</span><div><div class="mega-title">Factory Audit</div><div class="mega-desc">Pre-order factory verification</div></div></a>
-            <a href="/services/quality-control" class="mega-item" role="menuitem"><span class="mega-icon-bg">QC</span><div><div class="mega-title">Quality Control</div><div class="mega-desc">Piece-by-piece &amp; AQL inspection</div></div></a>
-            <a href="/services/warehousing-shipping" class="mega-item" role="menuitem"><span class="mega-icon-bg">WS</span><div><div class="mega-title">Warehousing &amp; Shipping</div><div class="mega-desc">FBA prep, consolidation, DDP</div></div></a>
           </div>
         </div>
       </li>
 
-      <!-- Products with hover mega menu -->
+      <!-- Products mega menu (unchanged) -->
       <li class="services-mega products-mega">
         <button type="button" class="mega-trigger px-3 py-2 hover:text-amber transition-colors text-brandgray-600 font-medium" aria-haspopup="true" aria-expanded="false">
           Products
@@ -415,54 +414,66 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         </button>
         <div class="mega-panel products-panel" role="menu">
           <div class="pm-grid">
-            <a href="/products/home-kitchen/" class="pm-item" role="menuitem">
-              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/><path d="M9.5 21v-6h5v6"/></svg></span>
+            <a href="/products/home-kitchen" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/><path d="M9.5 21v-6h5v6"/></svg></span>
               <span class="pm-text"><span class="pm-name">Home &amp; Kitchen</span><span class="pm-desc">Utensils, glassware, cutlery, storage</span></span>
             </a>
             <a href="/products/pet-supplies" class="pm-item" role="menuitem">
-              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="6.2" cy="10.2" r="2.1"/><circle cx="10" cy="6.2" r="2.1"/><circle cx="14.6" cy="6.2" r="2.1"/><circle cx="18.2" cy="10.2" r="2.1"/><path d="M12.2 11.4c3.2 0 5.8 2.2 5.8 4.9 0 1.9-1.5 3.3-3.4 3.3-1.2 0-1.7-.5-2.4-.5s-1.2.5-2.4.5c-1.9 0-3.4-1.4-3.4-3.3 0-2.7 2.6-4.9 5.8-4.9z"/></svg></span>
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6.2" cy="10.2" r="2.1"/><circle cx="10" cy="6.2" r="2.1"/><circle cx="14.6" cy="6.2" r="2.1"/><circle cx="18.2" cy="10.2" r="2.1"/><path d="M12.2 11.4c3.2 0 5.8 2.2 5.8 4.9 0 1.9-1.5 3.3-3.4 3.3-1.2 0-1.7-.5-2.4-.5s-1.2.5-2.4.5c-1.9 0-3.4-1.4-3.4-3.3 0-2.7 2.6-4.9 5.8-4.9z"/></svg></span>
               <span class="pm-text"><span class="pm-name">Pet Supplies</span><span class="pm-desc">Toys, grooming, feeding, carriers</span></span>
             </a>
             <a href="/products/beauty-tools" class="pm-item" role="menuitem">
-              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 19.5 9 15"/><path d="M8 14.2 6.8 13a2.2 2.2 0 0 1 0-3.1l5.6-5.6a2.2 2.2 0 0 1 3.1 0l1.2 1.2a2.2 2.2 0 0 1 0 3.1l-5.6 5.6a2.2 2.2 0 0 1-3.1 0z"/><path d="m12 6.5 5.5 5.5"/></svg></span>
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5 9 15"/><path d="M8 14.2 6.8 13a2.2 2.2 0 0 1 0-3.1l5.6-5.6a2.2 2.2 0 0 1 3.1 0l1.2 1.2a2.2 2.2 0 0 1 0 3.1l-5.6 5.6a2.2 2.2 0 0 1-3.1 0z"/><path d="m12 6.5 5.5 5.5"/></svg></span>
               <span class="pm-text"><span class="pm-name">Beauty Tools</span><span class="pm-desc">Skincare devices, nail, hair tools</span></span>
             </a>
             <a href="/products/arts-crafts" class="pm-item" role="menuitem">
-              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3.5 20.5 9"/><path d="M13.6 6.2 17.8 10.4"/><path d="M12.8 7.6 5.2 15.2a5 5 0 0 0 3.6 3.6l7.6-7.6"/></svg></span>
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3.5 20.5 9"/><path d="M13.6 6.2 17.8 10.4"/><path d="M12.8 7.6 5.2 15.2a5 5 0 0 0 3.6 3.6l7.6-7.6"/></svg></span>
               <span class="pm-text"><span class="pm-name">Arts &amp; Crafts</span><span class="pm-desc">DIY, hobbies, gift supplies</span></span>
             </a>
             <a href="/products/clothing-shoes-jewelry" class="pm-item" role="menuitem">
-              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 3.5 4 5.5 2.5 9.5l3 1.5V21h13v-10l3-1.5-1.5-4-4.5-2a4 4 0 0 1-7.5 0z"/></svg></span>
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 3.5 4 5.5 2.5 9.5l3 1.5V21h13v-10l3-1.5-1.5-4-4.5-2a4 4 0 0 1-7.5 0z"/></svg></span>
               <span class="pm-text"><span class="pm-name">Clothing, Shoes &amp; Jewelry</span><span class="pm-desc">Apparel, footwear, watches, accessories</span></span>
             </a>
             <a href="/products/toys-games" class="pm-item" role="menuitem">
-              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6v2.4a2.4 2.4 0 0 0 4.8 0V4H20v6h-2.4a2.4 2.4 0 0 0 0 4.8H20V20h-5.2v-2.4a2.4 2.4 0 0 0-4.8 0V20H4v-5.2h2.4a2.4 2.4 0 0 0 0-4.8H4z"/></svg></span>
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6v2.4a2.4 2.4 0 0 0 4.8 0V4H20v6h-2.4a2.4 2.4 0 0 0 0 4.8H20V20h-5.2v-2.4a2.4 2.4 0 0 0-4.8 0V20H4v-5.2h2.4a2.4 2.4 0 0 0 0-4.8H4z"/></svg></span>
               <span class="pm-text"><span class="pm-name">Toys &amp; Games</span><span class="pm-desc">STEM, outdoor play, puzzles, RC</span></span>
             </a>
             <a href="/products/sports-outdoors" class="pm-item" role="menuitem">
-              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 8v8"/><path d="M3.5 10v4"/><path d="M17.5 8v8"/><path d="M20.5 10v4"/><path d="M6.5 12h11"/></svg></span>
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 8v8"/><path d="M3.5 10v4"/><path d="M17.5 8v8"/><path d="M20.5 10v4"/><path d="M6.5 12h11"/></svg></span>
               <span class="pm-text"><span class="pm-name">Sports &amp; Outdoors</span><span class="pm-desc">Fitness, camping, cycling, water sports</span></span>
             </a>
             <a href="/products/electronics" class="pm-item" role="menuitem">
-              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></span>
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></span>
               <span class="pm-text"><span class="pm-name">Electronics</span><span class="pm-desc">Audio, smart home, wearables, cameras</span></span>
             </a>
             <a href="/products/health-household" class="pm-item" role="menuitem">
-              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-9.7A4.2 4.2 0 0 1 12 7.9a4.2 4.2 0 0 1 7.5 2.9c0 5.1-7.5 9.7-7.5 9.7z"/></svg></span>
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-9.7A4.2 4.2 0 0 1 12 7.9a4.2 4.2 0 0 1 7.5 2.9c0 5.1-7.5 9.7-7.5 9.7z"/></svg></span>
               <span class="pm-text"><span class="pm-name">Health &amp; Household</span><span class="pm-desc">Wellness, vitamins, cleaning essentials</span></span>
             </a>
             <a href="/products/others" class="pm-item" role="menuitem">
-              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg></span>
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg></span>
               <span class="pm-text"><span class="pm-name">Others</span><span class="pm-desc">Everything else — tell us what you need</span></span>
             </a>
           </div>
         </div>
       </li>
-      <li><a href="#who-we-serve" class="px-3 py-2 hover:text-amber transition-colors">Who We Serve</a></li>
-      <li><a href="/how-it-works" class="px-3 py-2 hover:text-amber transition-colors">How It Works</a></li>
-      <li><a href="/about" class="px-3 py-2 hover:text-amber transition-colors">About</a></li>
+
       <li><a href="/blog" class="px-3 py-2 hover:text-amber transition-colors">Blog</a></li>
-      <li><a href="/faq" class="px-3 py-2 hover:text-amber transition-colors">FAQ</a></li>
+
+      <!-- About dropdown (simple vertical list) -->
+      <li class="services-mega">
+        <button type="button" class="mega-trigger px-3 py-2 hover:text-amber transition-colors text-brandgray-600 font-medium" aria-haspopup="true" aria-expanded="false">
+          About
+          <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mega-panel" role="menu" style="width:224px;padding:8px">
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <a href="/about" class="mega-item" role="menuitem" style="padding:9px 12px;border-radius:10px"><div><div class="mega-title">About Milebond</div><div class="mega-desc">Who we are, what we stand for</div></div></a>
+            <a href="/how-it-works" class="mega-item" role="menuitem" style="padding:9px 12px;border-radius:10px"><div><div class="mega-title">How It Works</div><div class="mega-desc">Our 4-step sourcing process</div></div></a>
+            <a href="/faq" class="mega-item" role="menuitem" style="padding:9px 12px;border-radius:10px"><div><div class="mega-title">FAQ</div><div class="mega-desc">MOQ, fees, lead time, QC details</div></div></a>
+          </div>
+        </div>
+      </li>
     </ul>
 
     <!-- desktop CTA -->
@@ -486,7 +497,6 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   <!-- mobile drawer -->
   <div id="mobileMenu" class="mobile-menu md:hidden border-t border-brandgray-100 bg-white">
     <ul class="px-5 py-4 flex flex-col gap-1 text-brandgray-700">
-      <li><a href="/" class="block px-3 py-3 rounded-lg bg-brandgray-50 text-navy font-semibold">Home</a></li>
 
       <!-- Services accordion -->
       <li class="mobile-services" id="mobileServices">
@@ -497,14 +507,14 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         <div class="ms-body" id="mobileServicesBody">
           <ul class="py-1 space-y-0.5">
             <li><a href="/services/product-sourcing">Product Sourcing</a></li>
+            <li><a href="/services/quality-control">Quality Control &amp; Inspection</a></li>
+            <li><a href="/services/factory-audit">Factory Audit</a></li>
             <li><a href="/services/private-label-oem">Private Label &amp; OEM</a></li>
-            <li><a href="/services/amazon-brand-management">Amazon Brand Management</a></li>
             <li><a href="/services/product-development">Product Development</a></li>
+            <li><a href="/services/warehousing-shipping">Warehousing &amp; Shipping</a></li>
+            <li><a href="/services/amazon-brand-management">Amazon Brand Management</a></li>
             <li><a href="/services/product-compliance">Product Compliance</a></li>
             <li><a href="/services/supply-chain-optimization">Supply Chain Optimization</a></li>
-            <li><a href="/services/factory-audit">Factory Audit</a></li>
-            <li><a href="/services/quality-control">Quality Control</a></li>
-            <li><a href="/services/warehousing-shipping">Warehousing &amp; Shipping</a></li>
           </ul>
         </div>
       </li>
@@ -523,19 +533,30 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
             <li><a href="/products/arts-crafts">Arts &amp; Crafts</a></li>
             <li><a href="/products/clothing-shoes-jewelry">Clothing, Shoes &amp; Jewelry</a></li>
             <li><a href="/products/toys-games">Toys &amp; Games</a></li>
-            <li><a href="/products/office-stationery">Office &amp; Stationery</a></li>
-            <li><a href="/products/outdoor-sports">Outdoor &amp; Sports</a></li>
             <li><a href="/products/electronics">Electronics</a></li>
             <li><a href="/products/health-household">Health &amp; Household</a></li>
+            <li><a href="/products/sports-outdoors">Sports &amp; Outdoors</a></li>
             <li><a href="/products/others">Others</a></li>
           </ul>
         </div>
       </li>
-      <li><a href="#who-we-serve" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">Who We Serve</a></li>
-      <li><a href="/how-it-works" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">How It Works</a></li>
-      <li><a href="/about" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">About</a></li>
+
+      <!-- About accordion -->
+      <li class="mobile-services" id="mobileAbout">
+        <button type="button" class="ms-head px-3" aria-expanded="false" aria-controls="mobileAboutBody">
+          About
+          <svg xmlns="http://www.w3.org/2000/svg" class="ms-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ms-body" id="mobileAboutBody">
+          <ul class="py-1 space-y-0.5">
+            <li><a href="/about">About Milebond</a></li>
+            <li><a href="/how-it-works">How It Works</a></li>
+            <li><a href="/faq">FAQ</a></li>
+          </ul>
+        </div>
+      </li>
+
       <li><a href="/blog" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">Blog</a></li>
-      <li><a href="/faq" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">FAQ</a></li>
 
       <li class="pt-3 mt-2 border-t border-brandgray-100">
         <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote"
@@ -941,7 +962,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 </article>
 
 <footer class="site-footer">
-  <p>&copy; 2026 MileBond — China Sourcing Agent. <a href="../contact-us">Contact us</a> for a free sourcing quote.</p>
+  <p>&copy; 2026 MileBond — China Sourcing Agent. <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer">Contact us</a> for a free sourcing quote.</p>
 </footer>
 
 <script>
