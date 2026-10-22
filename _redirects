@@ -1,0 +1,7 @@
+# Permanent redirects for the merged Supplier Verification + Factory Audit service page.
+/services/supplier-verification /services/supplier-verification-factory-audit 301
+/services/supplier-verification/ /services/supplier-verification-factory-audit 301
+/services/supplier-verification.html /services/supplier-verification-factory-audit 301
+/services/factory-audit /services/supplier-verification-factory-audit 301
+/services/factory-audit/ /services/supplier-verification-factory-audit 301
+/services/factory-audit.html /services/supplier-verification-factory-audit 301
