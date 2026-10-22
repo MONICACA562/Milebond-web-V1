@@ -198,6 +198,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 @media(max-width:640px){.hot-grid{grid-template-columns:1fr}}
 </style>
 <script src="/assets/catalog-hero.js" defer></script>
+<script src="/assets/catalog-collection.js" defer></script>
 </head>
 <body>
 
@@ -396,14 +397,18 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         <label class="sr-only" for="catalog-sort">Sort products</label>
         <select id="catalog-sort">
           <option value="newest">Newest First</option>
-          <option value="price-asc">Price: Low to High</option>
-          <option value="price-desc">Price: High to Low</option>
-          <option value="moq-asc">MOQ: Low to High</option>
+          <option value="price-asc">Price Low→High</option>
+          <option value="price-desc">Price High→Low</option>
+          <option value="moq-asc">MOQ Low→High</option>
         </select>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
     </div>
   </section>
+<script type="application/json" id="catalog-data">{"tags":["Fitness Equipment","Camping \u0026 Hiking","Cycling","Water Sports"],"products":[{"sku":"SO-0101","tag":"Fitness Equipment","name":"Resistance Bands Set (5-pc)","moq":"500 sets","moqN":500,"price":"$2.00 – $5.50","priceN":2},{"sku":"SO-0102","tag":"Fitness Equipment","name":"TPE Yoga Mat 6mm Non-Slip","moq":"300 pcs","moqN":300,"price":"$3.50 – $9.00","priceN":3.5},{"sku":"SO-0103","tag":"Fitness Equipment","name":"Smart Jump Rope with Counter","moq":"500 pcs","moqN":500,"price":"$2.20 – $6.00","priceN":2.2},{"sku":"SO-0201","tag":"Camping \u0026 Hiking","name":"2-Person Waterproof Camping Tent","moq":"200 pcs","moqN":200,"price":"$9.00 – $24.00","priceN":9},{"sku":"SO-0202","tag":"Camping \u0026 Hiking","name":"Rechargeable LED Camping Lantern","moq":"300 pcs","moqN":300,"price":"$2.80 – $7.50","priceN":2.8},{"sku":"SO-0203","tag":"Camping \u0026 Hiking","name":"Outdoor Hiking Backpack 40L","moq":"300 pcs","moqN":300,"price":"$6.00 – $16.00","priceN":6},{"sku":"SO-0301","tag":"Cycling","name":"Universal Bike Phone Mount 360","moq":"500 pcs","moqN":500,"price":"$0.80 – $2.20","priceN":0.8},{"sku":"SO-0302","tag":"Cycling","name":"Bicycle Repair Tool Kit (37-pc)","moq":"300 sets","moqN":300,"price":"$3.00 – $8.00","priceN":3},{"sku":"SO-0303","tag":"Cycling","name":"USB Rechargeable Bike Light Set","moq":"500 sets","moqN":500,"price":"$1.50 – $4.00","priceN":1.5},{"sku":"SO-0401","tag":"Water Sports","name":"Inflatable Stand-Up Paddle Board Kit","moq":"100 sets","moqN":100,"price":"$42.00 – $88.00","priceN":42},{"sku":"SO-0402","tag":"Water Sports","name":"Waterproof Dry Bag 5L","moq":"500 pcs","moqN":500,"price":"$1.20 – $3.50","priceN":1.2},{"sku":"SO-0403","tag":"Water Sports","name":"Anti-Fog Swimming Goggles","moq":"500 pcs","moqN":500,"price":"$1.00 – $2.80","priceN":1}]}</script>
+<!-- Sub-category filter row (shared component /assets/catalog-collection.js) -->
+<catalog-tagbar data-source="#catalog-data"></catalog-tagbar>
+
   <!-- ============ Breadcrumb ============ -->
   <nav class="cat-breadcrumb" aria-label="Breadcrumb">
     <div class="cb-inner">
@@ -412,6 +417,9 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <span class="cb-current">Sports &amp; Outdoors</span>
     </div>
   </nav>
+<!-- Product collection (shared component /assets/catalog-collection.js) -->
+<catalog-grid data-source="#catalog-data"></catalog-grid>
+
 
   <!-- ============ Category intro ============ -->
   <section class="cat-intro">
@@ -423,54 +431,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   </section>
 
   <!-- ============ Product cards ============ -->
-  <section class="cat-products">
-    <div class="cp-inner">
-      <div class="hot-grid">
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 8v8"/><path d="M3.5 10v4"/><path d="M17.5 8v8"/><path d="M20.5 10v4"/><path d="M6.5 12h11"/></svg></div>
-          <h3>Fitness Equipment</h3>
-          <p>Resistance bands, dumbbells, yoga mats and jump ropes.</p>
-          <div class="hot-price">$2 &ndash; $25 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Fitness%20Equipment" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20 12 4l9 16z"/><path d="M12 20v-6"/></svg></div>
-          <h3>Camping &amp; Hiking</h3>
-          <p>Tents, sleeping bags, lanterns, cookware and trekking poles.</p>
-          <div class="hot-price">$5 &ndash; $45 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Camping%20%26%20Hiking" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M9 17h6"/><path d="M12 17 9 10h5l3 7"/></svg></div>
-          <h3>Cycling</h3>
-          <p>Helmets, lights, locks, pumps, jerseys and bike bags.</p>
-          <div class="hot-price">$3 &ndash; $30 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Cycling" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg></div>
-          <h3>Water Sports</h3>
-          <p>Snorkel sets, fins, dry bags, inflatables and rash guards.</p>
-          <div class="hot-price">$4 &ndash; $40 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Water%20Sports" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4v16"/></svg></div>
-          <h3>Team Sports</h3>
-          <p>Balls, training cones, nets, gloves and protective gear.</p>
-          <div class="hot-price">$1.50 &ndash; $18 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Team%20Sports" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3 5 5v16h14V5l-4-2"/><path d="M9 3v18M15 3v18"/></svg></div>
-          <h3>Outdoor Apparel</h3>
-          <p>Shell jackets, base layers, hiking socks and rain ponchos.</p>
-          <div class="hot-price">$4 &ndash; $22 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Outdoor%20Apparel" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 </main>
 
 

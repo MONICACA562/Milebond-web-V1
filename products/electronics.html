@@ -198,6 +198,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 @media(max-width:640px){.hot-grid{grid-template-columns:1fr}}
 </style>
 <script src="/assets/catalog-hero.js" defer></script>
+<script src="/assets/catalog-collection.js" defer></script>
 </head>
 <body>
 
@@ -396,14 +397,18 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         <label class="sr-only" for="catalog-sort">Sort products</label>
         <select id="catalog-sort">
           <option value="newest">Newest First</option>
-          <option value="price-asc">Price: Low to High</option>
-          <option value="price-desc">Price: High to Low</option>
-          <option value="moq-asc">MOQ: Low to High</option>
+          <option value="price-asc">Price Low→High</option>
+          <option value="price-desc">Price High→Low</option>
+          <option value="moq-asc">MOQ Low→High</option>
         </select>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
     </div>
   </section>
+<script type="application/json" id="catalog-data">{"tags":["Audio","Smart Home","Wearables","Charging \u0026 Power"],"products":[{"sku":"EL-0101","tag":"Audio","name":"TWS Wireless Earbuds BT5.3","moq":"200 pcs","moqN":200,"price":"$3.50 – $9.00","priceN":3.5},{"sku":"EL-0102","tag":"Audio","name":"Portable Bluetooth Speaker IPX6","moq":"200 pcs","moqN":200,"price":"$4.50 – $12.00","priceN":4.5},{"sku":"EL-0103","tag":"Audio","name":"Over-Ear Headphones with Mic","moq":"200 pcs","moqN":200,"price":"$5.00 – $14.00","priceN":5},{"sku":"EL-0201","tag":"Smart Home","name":"Smart Wi-Fi Light Bulb (Alexa/Google)","moq":"500 pcs","moqN":500,"price":"$1.80 – $4.50","priceN":1.8},{"sku":"EL-0202","tag":"Smart Home","name":"Mini Smart Plug 16A with Timer","moq":"500 pcs","moqN":500,"price":"$2.00 – $5.00","priceN":2},{"sku":"EL-0203","tag":"Smart Home","name":"Indoor Security Camera 1080P","moq":"200 pcs","moqN":200,"price":"$6.50 – $16.00","priceN":6.5},{"sku":"EL-0301","tag":"Wearables","name":"Smart Watch Fitness Tracker","moq":"200 pcs","moqN":200,"price":"$5.50 – $15.00","priceN":5.5},{"sku":"EL-0302","tag":"Wearables","name":"Kids Smart Watch with SIM Slot","moq":"200 pcs","moqN":200,"price":"$8.00 – $20.00","priceN":8},{"sku":"EL-0303","tag":"Wearables","name":"Bluetooth Body Fat Smart Scale","moq":"200 pcs","moqN":200,"price":"$4.50 – $12.00","priceN":4.5},{"sku":"EL-0401","tag":"Charging \u0026 Power","name":"65W GaN Fast Wall Charger","moq":"300 pcs","moqN":300,"price":"$3.50 – $9.00","priceN":3.5},{"sku":"EL-0402","tag":"Charging \u0026 Power","name":"Magnetic Wireless Power Bank 10000mAh","moq":"200 pcs","moqN":200,"price":"$6.00 – $15.00","priceN":6},{"sku":"EL-0403","tag":"Charging \u0026 Power","name":"3-in-1 Charging Cable (nylon braided)","moq":"1,000 pcs","moqN":1000,"price":"$0.60 – $1.80","priceN":0.6}]}</script>
+<!-- Sub-category filter row (shared component /assets/catalog-collection.js) -->
+<catalog-tagbar data-source="#catalog-data"></catalog-tagbar>
+
   <!-- ============ Breadcrumb ============ -->
   <nav class="cat-breadcrumb" aria-label="Breadcrumb">
     <div class="cb-inner">
@@ -412,6 +417,9 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <span class="cb-current">Electronics</span>
     </div>
   </nav>
+<!-- Product collection (shared component /assets/catalog-collection.js) -->
+<catalog-grid data-source="#catalog-data"></catalog-grid>
+
 
   <!-- ============ Category intro ============ -->
   <section class="cat-intro">
@@ -423,54 +431,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   </section>
 
   <!-- ============ Product cards ============ -->
-  <section class="cat-products">
-    <div class="cp-inner">
-      <div class="hot-grid">
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="2.5" y="14" width="4" height="6" rx="1.6"/><rect x="17.5" y="14" width="4" height="6" rx="1.6"/></svg></div>
-          <h3>Audio</h3>
-          <p>TWS earbuds, Bluetooth speakers, headphones and adapters.</p>
-          <div class="hot-price">$3 &ndash; $28 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Audio" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/><path d="M9.5 21v-6h5v6"/></svg></div>
-          <h3>Smart Home</h3>
-          <p>Smart plugs, sensors, LED strips, hubs and security cameras.</p>
-          <div class="hot-price">$4 &ndash; $35 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Smart%20Home" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="6.5" width="10" height="11" rx="2.5"/><path d="M9.5 6.5V3h5v3.5M9.5 17.5V21h5v-3.5"/></svg></div>
-          <h3>Wearables</h3>
-          <p>Smartwatches, fitness bands, straps and charging docks.</p>
-          <div class="hot-price">$8 &ndash; $45 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Wearables" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="8" width="16" height="9" rx="2"/><path d="M21 11v3"/><path d="M5.5 11v3"/></svg></div>
-          <h3>Charging &amp; Power</h3>
-          <p>Power banks, GaN chargers, cables and wireless pads.</p>
-          <div class="hot-price">$2 &ndash; $22 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Charging%20%26%20Power" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></div>
-          <h3>Phone &amp; PC Accessories</h3>
-          <p>Cases, stands, keyboards, mice, USB-C hubs and sleeves.</p>
-          <div class="hot-price">$0.80 &ndash; $18 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Phone%20%26%20PC%20Accessories" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg></div>
-          <h3>Cameras &amp; Drones</h3>
-          <p>Action cameras, gimbals, mini drones and tripods.</p>
-          <div class="hot-price">$12 &ndash; $60 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Cameras%20%26%20Drones" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 </main>
 
 

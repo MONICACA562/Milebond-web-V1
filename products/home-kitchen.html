@@ -384,7 +384,27 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   .fc-btn svg{width:20px;height:20px}
   .qm-row{flex-direction:column;gap:0}
 }
-  </style>
+  
+/* ============ Catalog toolbar + breadcrumb (shared) ============ */
+.catalog-toolbar{background:#fff;padding:16px 0}
+.ct-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:12px}
+.ct-search{position:relative;flex:1;min-width:0}
+.ct-search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:#9ca3af;pointer-events:none}
+.ct-search input{width:100%;padding:11px 14px 11px 42px;border:1px solid #e5e7eb;border-radius:8px;font-family:'Inter',system-ui,sans-serif;font-size:14px;color:#0f1e3d;background:#fff;outline:none;transition:border-color .18s,box-shadow .18s}
+.ct-search input::placeholder{color:#9ca3af}
+.ct-search input:focus{border-color:#a06a30;box-shadow:0 0 0 3px rgba(160,106,48,.12)}
+.ct-sort{position:relative;flex-shrink:0}
+.ct-sort select{appearance:none;-webkit-appearance:none;padding:11px 38px 11px 14px;border:1px solid #e5e7eb;border-radius:8px;font-family:'Inter',system-ui,sans-serif;font-size:14px;color:#0f1e3d;background:#fff;outline:none;cursor:pointer;transition:border-color .18s,box-shadow .18s}
+.ct-sort select:focus{border-color:#a06a30;box-shadow:0 0 0 3px rgba(160,106,48,.12)}
+.ct-sort svg{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:#6b7280;pointer-events:none}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.cat-breadcrumb{background:#fff;border-bottom:1px solid #ecebe5}
+.cb-inner{max-width:1200px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:8px;font-size:13px}
+.cb-inner a{color:#0a2a2b;font-weight:600}
+.cb-inner a:hover{color:#a06a30}
+.cb-sep{color:#c3c2ba}
+.cb-current{color:#6b7280}
+@media(max-width:640px){.ct-inner{flex-direction:column;align-items:stretch;padding:0 16px}.ct-sort select{width:100%}}</style>
 <style>
 /* QSFC theme override (fonts/colors/backgrounds only) */
 body{background:#fafaf7!important}
@@ -396,6 +416,7 @@ footer a:hover{color:#e8c998!important}.btn-primary{background:#008138!important
 <link href="https://miaoda.feishu.cn/fonts/css2?family=Fraunces:opsz,wght@9..144,400..900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a2a2b'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23c08648' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <script src="/assets/catalog-hero.js" defer></script>
+<script src="/assets/catalog-collection.js" defer></script>
 </head>
 <body>
 
@@ -566,6 +587,41 @@ footer a:hover{color:#e8c998!important}.btn-primary{background:#008138!important
   subtitle="Not another image-to-supplier agent &mdash; we close the loop from your first quote to your next reorder: 10+ years of Amazon selection know-how, weekly new-product pushes, and risks flagged before they cost you. Every SKU below is a real order we've shipped."
   label="CHINA WHOLESALE PRODUCT CATALOG"
   search-target="catalog-search"></catalog-hero>
+<!-- ============ Product search and sorting ============ -->
+<section class="catalog-toolbar" aria-label="Product search and sorting">
+  <div class="ct-inner">
+    <div class="ct-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+      <label class="sr-only" for="catalog-search">Search products</label>
+      <input id="catalog-search" type="search" placeholder="Search products by name, SKU, description..." autocomplete="off">
+    </div>
+    <div class="ct-sort">
+      <label class="sr-only" for="catalog-sort">Sort products</label>
+      <select id="catalog-sort">
+        <option value="newest">Newest First</option>
+        <option value="price-asc">Price Low→High</option>
+        <option value="price-desc">Price High→Low</option>
+        <option value="moq-asc">MOQ Low→High</option>
+      </select>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </div>
+</section>
+<script type="application/json" id="catalog-data">{"tags":["Storage \u0026 Organization","Kitchen Gadgets","Bakeware \u0026 Cookware","Cleaning Supplies"],"products":[{"sku":"HK-0101","tag":"Storage \u0026 Organization","name":"Collapsible Storage Bins with Lids","moq":"500 pcs","moqN":500,"price":"$1.20 – $3.80","priceN":1.2},{"sku":"HK-0102","tag":"Storage \u0026 Organization","name":"Airtight Food Storage Container Set (10-pc)","moq":"300 sets","moqN":300,"price":"$2.40 – $6.50","priceN":2.4},{"sku":"HK-0103","tag":"Storage \u0026 Organization","name":"Adjustable Drawer Organizer Trays","moq":"500 pcs","moqN":500,"price":"$0.65 – $2.20","priceN":0.65},{"sku":"HK-0201","tag":"Kitchen Gadgets","name":"Multi-Function Vegetable Chopper Pro","moq":"500 pcs","moqN":500,"price":"$1.80 – $4.50","priceN":1.8},{"sku":"HK-0202","tag":"Kitchen Gadgets","name":"Silicone Cooking Utensil Set (10-pc)","moq":"300 sets","moqN":300,"price":"$3.20 – $8.00","priceN":3.2},{"sku":"HK-0203","tag":"Kitchen Gadgets","name":"Stainless Steel Rotating Spice Rack","moq":"300 pcs","moqN":300,"price":"$4.00 – $12.00","priceN":4},{"sku":"HK-0301","tag":"Bakeware \u0026 Cookware","name":"Non-Stick Granite Coating Frying Pan","moq":"500 pcs","moqN":500,"price":"$3.50 – $9.80","priceN":3.5},{"sku":"HK-0302","tag":"Bakeware \u0026 Cookware","name":"Silicone Baking Mat Set (3-pc)","moq":"500 sets","moqN":500,"price":"$1.10 – $3.60","priceN":1.1},{"sku":"HK-0303","tag":"Bakeware \u0026 Cookware","name":"Cake Decorating Supplies Kit (106-pc)","moq":"300 sets","moqN":300,"price":"$2.80 – $7.50","priceN":2.8},{"sku":"HK-0401","tag":"Cleaning Supplies","name":"Microfiber Cleaning Cloth 12-Pack","moq":"1,000 packs","moqN":1000,"price":"$0.45 – $1.60","priceN":0.45},{"sku":"HK-0402","tag":"Cleaning Supplies","name":"Spray Mop with Refillable Bottle","moq":"500 pcs","moqN":500,"price":"$2.20 – $5.80","priceN":2.2},{"sku":"HK-0403","tag":"Cleaning Supplies","name":"Under-Sink Two-Tier Organizer Rack","moq":"500 pcs","moqN":500,"price":"$1.50 – $4.20","priceN":1.5}]}</script>
+<!-- Sub-category filter row (shared component /assets/catalog-collection.js) -->
+<catalog-tagbar data-source="#catalog-data"></catalog-tagbar>
+
+<!-- ============ Breadcrumb ============ -->
+<nav class="cat-breadcrumb" aria-label="Breadcrumb">
+  <div class="cb-inner">
+    <a href="/all-products">&larr; All Products</a>
+    <span class="cb-sep">/</span>
+    <span class="cb-current">Home &amp; Kitchen</span>
+  </div>
+</nav>
+<!-- Product collection (shared component /assets/catalog-collection.js) -->
+<catalog-grid data-source="#catalog-data"></catalog-grid>
+
 
 <section class="section">
   <div class="container">
@@ -600,52 +656,7 @@ footer a:hover{color:#e8c998!important}.btn-primary{background:#008138!important
   </div>
 </section>
 
-<section class="section hot-section" id="hot">
-  <div class="container">
-    <div class="section-header">
-      <span class="ship-tag">Hot Products</span>
-      <h2>Top Selling Products in This Category</h2>
-      <p>Based on our 6,900+ supplier database and Amazon Europe sales data</p>
-    </div>
-    <div class="hot-grid">
-      <div class="hot-card" style="border:2px solid var(--orange);">
-        <div class="hot-icon">🍳</div>
-        <h3>Stainless Steel Utensils</h3>
-        <p>Utensils, racks, cookware. 304 vs 201 verification guide, MOQ from 300, real client case studies.</p>
-        <div class="hot-price">$0.10 – $3.00 FOB</div>
-        <a href="/products/home-kitchen/stainless-steel-utensils/" style="display:inline-block;margin-top:10px;padding:8px 18px;background:var(--orange);color:#fff;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">View Detailed Guide →</a>
-      </div>
-      <div class="hot-card">
-        <div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
-        <h3>Storage &amp; Organization</h3>
-        <p>Drawer dividers, closet organizers, food storage containers, shelf risers.</p>
-        <div class="hot-price">$8 – $25 avg.</div>
-        <button type="button" class="hc-quote open-quote-modal" data-sku="HK-001" data-product-name="Storage &amp; Organization">Get Quote</button>
-      </div>
-      <div class="hot-card">
-        <div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-        <h3>Kitchen Gadgets</h3>
-        <p>Vegetable choppers, silicone utensils, spice racks, measuring tools.</p>
-        <div class="hot-price">$5 – $20 avg.</div>
-        <button type="button" class="hc-quote open-quote-modal" data-sku="HK-002" data-product-name="Kitchen Gadgets">Get Quote</button>
-      </div>
-      <div class="hot-card">
-        <div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
-        <h3>Bakeware &amp; Cookware</h3>
-        <p>Non-stick pans, baking sheets, silicone molds, cake decorating.</p>
-        <div class="hot-price">$10 – $35 avg.</div>
-        <button type="button" class="hc-quote open-quote-modal" data-sku="HK-003" data-product-name="Bakeware &amp; Cookware">Get Quote</button>
-      </div>
-      <div class="hot-card">
-        <div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 22h20"/><path d="M2 18h20"/><path d="M6 14V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v7"/><path d="M6 14h12"/></svg></div>
-        <h3>Cleaning Supplies</h3>
-        <p>Microfiber cloths, scrub brushes, spray bottles, mop accessories.</p>
-        <div class="hot-price">$3 – $15 avg.</div>
-        <button type="button" class="hc-quote open-quote-modal" data-sku="HK-004" data-product-name="Cleaning Supplies">Get Quote</button>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <section class="section" style="background:var(--cream)">
   <div class="container">

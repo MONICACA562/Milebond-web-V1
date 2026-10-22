@@ -198,6 +198,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 @media(max-width:640px){.hot-grid{grid-template-columns:1fr}}
 </style>
 <script src="/assets/catalog-hero.js" defer></script>
+<script src="/assets/catalog-collection.js" defer></script>
 </head>
 <body>
 
@@ -396,14 +397,18 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         <label class="sr-only" for="catalog-sort">Sort products</label>
         <select id="catalog-sort">
           <option value="newest">Newest First</option>
-          <option value="price-asc">Price: Low to High</option>
-          <option value="price-desc">Price: High to Low</option>
-          <option value="moq-asc">MOQ: Low to High</option>
+          <option value="price-asc">Price Low→High</option>
+          <option value="price-desc">Price High→Low</option>
+          <option value="moq-asc">MOQ Low→High</option>
         </select>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
     </div>
   </section>
+<script type="application/json" id="catalog-data">{"tags":["Apparel \u0026 Basics","Footwear","Watches \u0026 Jewelry","Bags \u0026 Accessories"],"products":[{"sku":"CSJ-0101","tag":"Apparel \u0026 Basics","name":"Heavyweight Cotton Basic T-Shirts","moq":"500 pcs","moqN":500,"price":"$1.80 – $4.50","priceN":1.8},{"sku":"CSJ-0102","tag":"Apparel \u0026 Basics","name":"Fleece Hooded Sweatshirt","moq":"300 pcs","moqN":300,"price":"$4.00 – $10.00","priceN":4},{"sku":"CSJ-0103","tag":"Apparel \u0026 Basics","name":"Seamless High-Waist Yoga Leggings","moq":"300 pcs","moqN":300,"price":"$3.20 – $8.00","priceN":3.2},{"sku":"CSJ-0201","tag":"Footwear","name":"Casual Canvas Sneakers (unisex)","moq":"300 pairs","moqN":300,"price":"$4.50 – $12.00","priceN":4.5},{"sku":"CSJ-0202","tag":"Footwear","name":"Orthopedic Slippers with Arch Support","moq":"500 pairs","moqN":500,"price":"$2.80 – $7.00","priceN":2.8},{"sku":"CSJ-0203","tag":"Footwear","name":"Kids Light-Up Sports Shoes","moq":"300 pairs","moqN":300,"price":"$5.00 – $13.00","priceN":5},{"sku":"CSJ-0301","tag":"Watches \u0026 Jewelry","name":"Minimalist Alloy Quartz Watch","moq":"200 pcs","moqN":200,"price":"$5.00 – $14.00","priceN":5},{"sku":"CSJ-0302","tag":"Watches \u0026 Jewelry","name":"Stainless Steel Jewelry Set","moq":"300 sets","moqN":300,"price":"$2.50 – $7.00","priceN":2.5},{"sku":"CSJ-0303","tag":"Watches \u0026 Jewelry","name":"Semi-Precious Stone Bead Bracelet","moq":"500 pcs","moqN":500,"price":"$1.20 – $3.80","priceN":1.2},{"sku":"CSJ-0401","tag":"Bags \u0026 Accessories","name":"Canvas Tote Bag with Zipper","moq":"500 pcs","moqN":500,"price":"$1.60 – $4.50","priceN":1.6},{"sku":"CSJ-0402","tag":"Bags \u0026 Accessories","name":"PU Leather Crossbody Shoulder Bag","moq":"300 pcs","moqN":300,"price":"$4.00 – $11.00","priceN":4},{"sku":"CSJ-0403","tag":"Bags \u0026 Accessories","name":"Travel Packing Cubes (7-pc set)","moq":"500 sets","moqN":500,"price":"$2.80 – $7.50","priceN":2.8}]}</script>
+<!-- Sub-category filter row (shared component /assets/catalog-collection.js) -->
+<catalog-tagbar data-source="#catalog-data"></catalog-tagbar>
+
   <!-- ============ Breadcrumb ============ -->
   <nav class="cat-breadcrumb" aria-label="Breadcrumb">
     <div class="cb-inner">
@@ -412,6 +417,9 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <span class="cb-current">Clothing, Shoes &amp; Jewelry</span>
     </div>
   </nav>
+<!-- Product collection (shared component /assets/catalog-collection.js) -->
+<catalog-grid data-source="#catalog-data"></catalog-grid>
+
 
   <!-- ============ Category intro ============ -->
   <section class="cat-intro">
@@ -423,54 +431,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   </section>
 
   <!-- ============ Product cards ============ -->
-  <section class="cat-products">
-    <div class="cp-inner">
-      <div class="hot-grid">
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 3.5 4 5.5 2.5 9.5l3 1.5V21h13v-10l3-1.5-1.5-4-4.5-2a4 4 0 0 1-7.5 0z"/></svg></div>
-          <h3>Apparel &amp; Basics</h3>
-          <p>T-shirts, hoodies, socks, activewear and loungewear basics.</p>
-          <div class="hot-price">$2.50 &ndash; $12 FOB</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Apparel%20%26%20Basics" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16h20"/><path d="M4 16v-4l3-3h5l2 3h3a4 4 0 0 1 4 4H4z"/></svg></div>
-          <h3>Footwear</h3>
-          <p>Sneakers, sandals, slippers, casual boots and kids' shoes.</p>
-          <div class="hot-price">$6 &ndash; $28 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Footwear" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="6"/><path d="M12 9.5V12l1.8 1.2"/><path d="M9.5 3.5h5M9.5 20.5h5"/></svg></div>
-          <h3>Watches &amp; Jewelry</h3>
-          <p>Stainless watches, bracelets, earrings, necklaces and rings.</p>
-          <div class="hot-price">$1.20 &ndash; $15 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Watches%20%26%20Jewelry" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></div>
-          <h3>Bags &amp; Accessories</h3>
-          <p>Totes, backpacks, belts, hats, scarves and sunglasses.</p>
-          <div class="hot-price">$3 &ndash; $18 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Bags%20%26%20Accessories" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 4h11v16h-11z"/><path d="M9.5 4v4h5V4"/><path d="M9.5 12h5"/></svg></div>
-          <h3>Underwear &amp; Sleepwear</h3>
-          <p>Seamless sets, pajamas, thermal layers and loungewear.</p>
-          <div class="hot-price">$2 &ndash; $9 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Underwear%20%26%20Sleepwear" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11h18"/><circle cx="7" cy="14.5" r="2.6"/><circle cx="17" cy="14.5" r="2.6"/></svg></div>
-          <h3>Seasonal Accessories</h3>
-          <p>Gloves, beanies, hair accessories and holiday gift sets.</p>
-          <div class="hot-price">$0.80 &ndash; $6 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Seasonal%20Accessories" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 </main>
 
 

@@ -198,6 +198,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 @media(max-width:640px){.hot-grid{grid-template-columns:1fr}}
 </style>
 <script src="/assets/catalog-hero.js" defer></script>
+<script src="/assets/catalog-collection.js" defer></script>
 </head>
 <body>
 
@@ -396,14 +397,18 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         <label class="sr-only" for="catalog-sort">Sort products</label>
         <select id="catalog-sort">
           <option value="newest">Newest First</option>
-          <option value="price-asc">Price: Low to High</option>
-          <option value="price-desc">Price: High to Low</option>
-          <option value="moq-asc">MOQ: Low to High</option>
+          <option value="price-asc">Price Low→High</option>
+          <option value="price-desc">Price High→Low</option>
+          <option value="moq-asc">MOQ Low→High</option>
         </select>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
     </div>
   </section>
+<script type="application/json" id="catalog-data">{"tags":["Wellness Devices","Personal Care","Cleaning Essentials","Household Supplies"],"products":[{"sku":"HH-0101","tag":"Wellness Devices","name":"Digital Blood Pressure Monitor","moq":"200 pcs","moqN":200,"price":"$6.00 – $15.00","priceN":6},{"sku":"HH-0102","tag":"Wellness Devices","name":"Fingertip Pulse Oximeter","moq":"500 pcs","moqN":500,"price":"$1.80 – $4.50","priceN":1.8},{"sku":"HH-0103","tag":"Wellness Devices","name":"Mini Massage Gun with 4 Heads","moq":"200 pcs","moqN":200,"price":"$6.50 – $17.00","priceN":6.5},{"sku":"HH-0201","tag":"Personal Care","name":"Sonic Electric Toothbrush with Heads","moq":"300 sets","moqN":300,"price":"$3.00 – $8.00","priceN":3},{"sku":"HH-0202","tag":"Personal Care","name":"Stainless Steel Nail Care Kit","moq":"500 sets","moqN":500,"price":"$1.20 – $3.20","priceN":1.2},{"sku":"HH-0203","tag":"Personal Care","name":"IPL Hair Removal Handset","moq":"200 pcs","moqN":200,"price":"$18.00 – $40.00","priceN":18},{"sku":"HH-0301","tag":"Cleaning Essentials","name":"Spin Mop \u0026 Bucket System","moq":"200 sets","moqN":200,"price":"$5.50 – $14.00","priceN":5.5},{"sku":"HH-0302","tag":"Cleaning Essentials","name":"Electric Lint Remover Fabric Shaver","moq":"500 pcs","moqN":500,"price":"$1.50 – $4.00","priceN":1.5},{"sku":"HH-0303","tag":"Cleaning Essentials","name":"Microfiber Mop Pad Refills (6-pack)","moq":"500 packs","moqN":500,"price":"$1.00 – $2.80","priceN":1},{"sku":"HH-0401","tag":"Household Supplies","name":"Vacuum Storage Bags (8-pack)","moq":"500 packs","moqN":500,"price":"$2.00 – $5.50","priceN":2},{"sku":"HH-0402","tag":"Household Supplies","name":"LED Under-Cabinet Light Strip","moq":"500 pcs","moqN":500,"price":"$1.80 – $4.80","priceN":1.8},{"sku":"HH-0403","tag":"Household Supplies","name":"Drawer Spice Organizer Rack","moq":"500 pcs","moqN":500,"price":"$1.50 – $4.00","priceN":1.5}]}</script>
+<!-- Sub-category filter row (shared component /assets/catalog-collection.js) -->
+<catalog-tagbar data-source="#catalog-data"></catalog-tagbar>
+
   <!-- ============ Breadcrumb ============ -->
   <nav class="cat-breadcrumb" aria-label="Breadcrumb">
     <div class="cb-inner">
@@ -412,6 +417,9 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <span class="cb-current">Health &amp; Household</span>
     </div>
   </nav>
+<!-- Product collection (shared component /assets/catalog-collection.js) -->
+<catalog-grid data-source="#catalog-data"></catalog-grid>
+
 
   <!-- ============ Category intro ============ -->
   <section class="cat-intro">
@@ -423,54 +431,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   </section>
 
   <!-- ============ Product cards ============ -->
-  <section class="cat-products">
-    <div class="cp-inner">
-      <div class="hot-grid">
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-9.7A4.2 4.2 0 0 1 12 7.9a4.2 4.2 0 0 1 7.5 2.9c0 5.1-7.5 9.7-7.5 9.7z"/></svg></div>
-          <h3>Wellness Devices</h3>
-          <p>Massage guns, thermometers, pulse oximeters and nebulizers.</p>
-          <div class="hot-price">$4 &ndash; $35 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Wellness%20Devices" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="6" rx="3"/><path d="M12 9v6"/></svg></div>
-          <h3>Vitamins &amp; Supplements</h3>
-          <p>Private-label gummies, capsules, powders and effervescents.</p>
-          <div class="hot-price">$2 &ndash; $15 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Vitamins%20%26%20Supplements" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/></svg></div>
-          <h3>Personal Care</h3>
-          <p>Electric toothbrushes, trimmers, body scales and hair dryers.</p>
-          <div class="hot-price">$3 &ndash; $28 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Personal%20Care" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="9" width="10" height="12" rx="2"/><path d="M9.5 9V6h5v3"/><path d="M18 5h3M18 8h2"/></svg></div>
-          <h3>Cleaning Essentials</h3>
-          <p>Mops, sprayers, brushes, microfiber cloths and caddies.</p>
-          <div class="hot-price">$1.50 &ndash; $12 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Cleaning%20Essentials" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="14" r="4"/></svg></div>
-          <h3>Household Supplies</h3>
-          <p>Laundry care, air fresheners, pest control and storage.</p>
-          <div class="hot-price">$1 &ndash; $14 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Household%20Supplies" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M12 10v6M9 13h6"/></svg></div>
-          <h3>First Aid &amp; Safety</h3>
-          <p>Kits, bandages, braces, cold packs and sanitizers.</p>
-          <div class="hot-price">$2 &ndash; $16 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20First%20Aid%20%26%20Safety" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 </main>
 
 

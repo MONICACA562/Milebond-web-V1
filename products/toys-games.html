@@ -412,6 +412,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   .ct-sort select{width:100%}
 }</style>
 <script src="/assets/catalog-hero.js" defer></script>
+<script src="/assets/catalog-collection.js" defer></script>
 </head>
 <body>
 
@@ -596,14 +597,18 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
       <label class="sr-only" for="catalog-sort">Sort products</label>
       <select id="catalog-sort">
         <option value="newest">Newest First</option>
-        <option value="price-asc">Price: Low to High</option>
-        <option value="price-desc">Price: High to Low</option>
-        <option value="moq-asc">MOQ: Low to High</option>
+        <option value="price-asc">Price Low→High</option>
+        <option value="price-desc">Price High→Low</option>
+        <option value="moq-asc">MOQ Low→High</option>
       </select>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
   </div>
 </section>
+<script type="application/json" id="catalog-data">{"tags":["Educational Toys","Building \u0026 STEM","Plush \u0026 Dolls","Board \u0026 Card Games"],"products":[{"sku":"TY-0101","tag":"Educational Toys","name":"Wooden Montessori Puzzle Set","moq":"300 sets","moqN":300,"price":"$2.00 – $5.50","priceN":2},{"sku":"TY-0102","tag":"Educational Toys","name":"Magnetic Alphabet Letters (26-pc)","moq":"500 sets","moqN":500,"price":"$1.50 – $4.00","priceN":1.5},{"sku":"TY-0103","tag":"Educational Toys","name":"Kids LCD Writing Drawing Tablet","moq":"300 pcs","moqN":300,"price":"$2.80 – $7.00","priceN":2.8},{"sku":"TY-0201","tag":"Building \u0026 STEM","name":"DIY Solar Robot Kit (6-in-1)","moq":"200 boxes","moqN":200,"price":"$4.00 – $10.00","priceN":4},{"sku":"TY-0202","tag":"Building \u0026 STEM","name":"Magnetic Building Blocks (100-pc)","moq":"200 sets","moqN":200,"price":"$7.00 – $18.00","priceN":7},{"sku":"TY-0203","tag":"Building \u0026 STEM","name":"Kids Science Experiment Lab Kit","moq":"200 boxes","moqN":200,"price":"$6.00 – $15.00","priceN":6},{"sku":"TY-0301","tag":"Plush \u0026 Dolls","name":"Super Soft Plush Teddy Bear 30cm","moq":"300 pcs","moqN":300,"price":"$2.20 – $6.00","priceN":2.2},{"sku":"TY-0302","tag":"Plush \u0026 Dolls","name":"Fashion Doll Playset with Accessories","moq":"200 sets","moqN":200,"price":"$4.50 – $12.00","priceN":4.5},{"sku":"TY-0303","tag":"Plush \u0026 Dolls","name":"Weighted Sensory Plush Toy","moq":"200 pcs","moqN":200,"price":"$5.00 – $13.00","priceN":5},{"sku":"TY-0401","tag":"Board \u0026 Card Games","name":"Family Board Game (2-4 players)","moq":"300 boxes","moqN":300,"price":"$3.50 – $9.00","priceN":3.5},{"sku":"TY-0402","tag":"Board \u0026 Card Games","name":"Custom Print Card Game Deck","moq":"500 decks","moqN":500,"price":"$1.00 – $3.00","priceN":1},{"sku":"TY-0403","tag":"Board \u0026 Card Games","name":"Wooden Chess \u0026 Checkers Set","moq":"300 sets","moqN":300,"price":"$3.00 – $8.00","priceN":3}]}</script>
+<!-- Sub-category filter row (shared component /assets/catalog-collection.js) -->
+<catalog-tagbar data-source="#catalog-data"></catalog-tagbar>
+
 
 <!-- ============ Breadcrumb ============ -->
 <nav class="cat-breadcrumb" aria-label="Breadcrumb">
@@ -613,6 +618,9 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
     <span class="cb-current">Toys &amp; Games</span>
   </div>
 </nav>
+<!-- Product collection (shared component /assets/catalog-collection.js) -->
+<catalog-grid data-source="#catalog-data"></catalog-grid>
+
 
 
 <section class="section">
@@ -648,45 +656,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   </div>
 </section>
 
-<section class="section hot-section" id="hot">
-  <div class="container">
-    <div class="section-header">
-      <span class="ship-tag">Hot Products</span>
-      <h2>Top Selling Products in This Category</h2>
-      <p>Based on our 6,900+ supplier database and Amazon Europe sales data</p>
-    </div>
-    <div class="hot-grid">
-      <div class="hot-card">
-        <div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
-        <h3>Storage &amp; Organization</h3>
-        <p>Drawer dividers, closet organizers, food storage containers, shelf risers.</p>
-        <div class="hot-price">$8 – $25 avg.</div>
-        <button type="button" class="hc-quote open-quote-modal" data-sku="HK-001" data-product-name="Storage &amp; Organization">Get Quote</button>
-      </div>
-      <div class="hot-card">
-        <div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-        <h3>Kitchen Gadgets</h3>
-        <p>Vegetable choppers, silicone utensils, spice racks, measuring tools.</p>
-        <div class="hot-price">$5 – $20 avg.</div>
-        <button type="button" class="hc-quote open-quote-modal" data-sku="HK-002" data-product-name="Kitchen Gadgets">Get Quote</button>
-      </div>
-      <div class="hot-card">
-        <div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
-        <h3>Bakeware &amp; Cookware</h3>
-        <p>Non-stick pans, baking sheets, silicone molds, cake decorating.</p>
-        <div class="hot-price">$10 – $35 avg.</div>
-        <button type="button" class="hc-quote open-quote-modal" data-sku="HK-003" data-product-name="Bakeware &amp; Cookware">Get Quote</button>
-      </div>
-      <div class="hot-card">
-        <div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 22h20"/><path d="M2 18h20"/><path d="M6 14V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v7"/><path d="M6 14h12"/></svg></div>
-        <h3>Cleaning Supplies</h3>
-        <p>Microfiber cloths, scrub brushes, spray bottles, mop accessories.</p>
-        <div class="hot-price">$3 – $15 avg.</div>
-        <button type="button" class="hc-quote open-quote-modal" data-sku="HK-004" data-product-name="Cleaning Supplies">Get Quote</button>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <section class="section" style="background:var(--cream)">
   <div class="container">

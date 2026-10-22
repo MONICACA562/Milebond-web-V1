@@ -331,6 +331,7 @@ footer a:hover{color:#e8c998!important}.btn-primary{background:#008138!important
 <link href="https://miaoda.feishu.cn/fonts/css2?family=Fraunces:opsz,wght@9..144,400..900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a2a2b'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23c08648' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <script src="/assets/catalog-hero.js" defer></script>
+<script src="/assets/catalog-collection.js" defer></script>
 </head>
 <body>
 <nav class="navbar">
@@ -499,14 +500,18 @@ footer a:hover{color:#e8c998!important}.btn-primary{background:#008138!important
       <label class="sr-only" for="catalog-sort">Sort products</label>
       <select id="catalog-sort">
         <option value="newest">Newest First</option>
-        <option value="price-asc">Price: Low to High</option>
-        <option value="price-desc">Price: High to Low</option>
-        <option value="moq-asc">MOQ: Low to High</option>
+        <option value="price-asc">Price Low→High</option>
+        <option value="price-desc">Price High→Low</option>
+        <option value="moq-asc">MOQ Low→High</option>
       </select>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
   </div>
 </section>
+<script type="application/json" id="catalog-data">{"tags":["Art Supplies","DIY Craft Kits","Jewelry Making","Kids Crafts"],"products":[{"sku":"AC-0101","tag":"Art Supplies","name":"Acrylic Paint Set (24 colors)","moq":"500 sets","moqN":500,"price":"$2.20 – $6.00","priceN":2.2},{"sku":"AC-0102","tag":"Art Supplies","name":"Sketching Pencil \u0026 Charcoal Set (29-pc)","moq":"500 sets","moqN":500,"price":"$1.80 – $4.80","priceN":1.8},{"sku":"AC-0103","tag":"Art Supplies","name":"Watercolor Pad \u0026 Brush Pen Kit","moq":"300 sets","moqN":300,"price":"$2.50 – $6.50","priceN":2.5},{"sku":"AC-0201","tag":"DIY Craft Kits","name":"5D Diamond Painting Kit (30x40cm)","moq":"300 pcs","moqN":300,"price":"$2.80 – $7.00","priceN":2.8},{"sku":"AC-0202","tag":"DIY Craft Kits","name":"Soy Candle Making Starter Kit","moq":"200 sets","moqN":200,"price":"$6.00 – $15.00","priceN":6},{"sku":"AC-0203","tag":"DIY Craft Kits","name":"Resin Jewelry Casting Kit","moq":"200 sets","moqN":200,"price":"$7.50 – $18.00","priceN":7.5},{"sku":"AC-0301","tag":"Jewelry Making","name":"Jewelry Beading Starter Kit","moq":"300 sets","moqN":300,"price":"$3.00 – $8.00","priceN":3},{"sku":"AC-0302","tag":"Jewelry Making","name":"Jewelry Pliers Set (3-pc)","moq":"500 sets","moqN":500,"price":"$1.60 – $4.20","priceN":1.6},{"sku":"AC-0303","tag":"Jewelry Making","name":"Earring Findings Assortment (600-pc)","moq":"500 boxes","moqN":500,"price":"$2.00 – $5.50","priceN":2},{"sku":"AC-0401","tag":"Kids Crafts","name":"Kids Playdough Set with Molds","moq":"500 sets","moqN":500,"price":"$1.80 – $4.60","priceN":1.8},{"sku":"AC-0402","tag":"Kids Crafts","name":"Sticker Book \u0026 Foam Craft Kit","moq":"500 sets","moqN":500,"price":"$1.20 – $3.40","priceN":1.2},{"sku":"AC-0403","tag":"Kids Crafts","name":"Origami Paper Craft Kit (200 sheets)","moq":"500 boxes","moqN":500,"price":"$1.00 – $2.80","priceN":1}]}</script>
+<!-- Sub-category filter row (shared component /assets/catalog-collection.js) -->
+<catalog-tagbar data-source="#catalog-data"></catalog-tagbar>
+
 
 <!-- ============ Breadcrumb ============ -->
 <nav class="cat-breadcrumb" aria-label="Breadcrumb">
@@ -516,6 +521,9 @@ footer a:hover{color:#e8c998!important}.btn-primary{background:#008138!important
     <span class="cb-current">Arts &amp; Crafts</span>
   </div>
 </nav>
+<!-- Product collection (shared component /assets/catalog-collection.js) -->
+<catalog-grid data-source="#catalog-data"></catalog-grid>
+
 
 
 <section class="section">
@@ -548,21 +556,7 @@ footer a:hover{color:#e8c998!important}.btn-primary{background:#008138!important
   </div>
 </section>
 
-<section class="section hot-section" id="hot">
-  <div class="container">
-    <div class="section-header"><span class="ship-tag">Hot Products</span><h2>Top Selling Arts &amp; Crafts</h2><p>Trending craft supplies sourced from 250+ verified factories</p></div>
-    <div class="hot-grid">
-      <div class="hot-card"><div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div><h3>Painting &amp; Drawing</h3><p>Acrylic paints, brush sets, canvases, sketchbooks, watercolors.</p><div class="hot-price">$5 – $25 avg.</div>
-      <button type="button" class="hc-quote open-quote-modal" data-sku="AC-001" data-product-name="Painting &amp; Drawing">Get Quote</button></div>
-      <div class="hot-card"><div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M9 3v18"/><path d="M15 3v18"/><path d="M3 9h18"/><path d="M3 15h18"/></svg></div><h3>DIY Craft Kits</h3><p>Diamond painting, cross-stitch, resin kits, candle making, embroidery.</p><div class="hot-price">$8 – $35 avg.</div>
-      <button type="button" class="hc-quote open-quote-modal" data-sku="AC-002" data-product-name="DIY Craft Kits">Get Quote</button></div>
-      <div class="hot-card"><div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div><h3>Jewelry Making</h3><p>Beads, wire, pliers, findings, charms, earring hooks.</p><div class="hot-price">$3 – $20 avg.</div>
-      <button type="button" class="hc-quote open-quote-modal" data-sku="AC-003" data-product-name="Jewelry Making">Get Quote</button></div>
-      <div class="hot-card"><div class="hot-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div><h3>Kids Crafts</h3><p>Playdough, sticker books, foam crafts, origami sets, sand art.</p><div class="hot-price">$4 – $18 avg.</div>
-      <button type="button" class="hc-quote open-quote-modal" data-sku="AC-004" data-product-name="Kids Crafts">Get Quote</button></div>
-    </div>
-  </div>
-</section>
+
 
 <section class="section" style="background:var(--cream)">
   <div class="container">

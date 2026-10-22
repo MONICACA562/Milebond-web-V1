@@ -198,6 +198,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 @media(max-width:640px){.hot-grid{grid-template-columns:1fr}}
 </style>
 <script src="/assets/catalog-hero.js" defer></script>
+<script src="/assets/catalog-collection.js" defer></script>
 </head>
 <body>
 
@@ -396,14 +397,18 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         <label class="sr-only" for="catalog-sort">Sort products</label>
         <select id="catalog-sort">
           <option value="newest">Newest First</option>
-          <option value="price-asc">Price: Low to High</option>
-          <option value="price-desc">Price: High to Low</option>
-          <option value="moq-asc">MOQ: Low to High</option>
+          <option value="price-asc">Price Low→High</option>
+          <option value="price-desc">Price High→Low</option>
+          <option value="moq-asc">MOQ Low→High</option>
         </select>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
     </div>
   </section>
+<script type="application/json" id="catalog-data">{"tags":["Industrial \u0026 Tools","Auto \u0026 Motorcycle","Office \u0026 Stationery","Baby \u0026 Kids"],"products":[{"sku":"OT-0101","tag":"Industrial \u0026 Tools","name":"108-pc Household Tool Kit with Case","moq":"100 sets","moqN":100,"price":"$8.00 – $20.00","priceN":8},{"sku":"OT-0102","tag":"Industrial \u0026 Tools","name":"Cordless Electric Screwdriver 3.6V","moq":"200 pcs","moqN":200,"price":"$5.50 – $14.00","priceN":5.5},{"sku":"OT-0103","tag":"Industrial \u0026 Tools","name":"Cross Line Laser Level","moq":"200 pcs","moqN":200,"price":"$4.50 – $12.00","priceN":4.5},{"sku":"OT-0201","tag":"Auto \u0026 Motorcycle","name":"Car Vacuum Cleaner 120W Wet/Dry","moq":"200 pcs","moqN":200,"price":"$5.00 – $13.00","priceN":5},{"sku":"OT-0202","tag":"Auto \u0026 Motorcycle","name":"Car Jump Starter 1000A Peak","moq":"100 pcs","moqN":100,"price":"$15.00 – $35.00","priceN":15},{"sku":"OT-0203","tag":"Auto \u0026 Motorcycle","name":"Aluminum Motorcycle Phone Mount","moq":"500 pcs","moqN":500,"price":"$1.20 – $3.20","priceN":1.2},{"sku":"OT-0301","tag":"Office \u0026 Stationery","name":"A5 Leather Notebook \u0026 Pen Set","moq":"500 sets","moqN":500,"price":"$1.80 – $5.00","priceN":1.8},{"sku":"OT-0302","tag":"Office \u0026 Stationery","name":"Quick-Dry Gel Pen Set (12-pc)","moq":"1,000 boxes","moqN":1000,"price":"$0.80 – $2.20","priceN":0.8},{"sku":"OT-0303","tag":"Office \u0026 Stationery","name":"Multi-Functional Desk Organizer","moq":"300 pcs","moqN":300,"price":"$2.50 – $6.50","priceN":2.5},{"sku":"OT-0401","tag":"Baby \u0026 Kids","name":"Baby Silicone Feeding Set (BPA-free)","moq":"300 sets","moqN":300,"price":"$2.80 – $7.00","priceN":2.8},{"sku":"OT-0402","tag":"Baby \u0026 Kids","name":"Diaper Bag Backpack with Changing Pad","moq":"300 pcs","moqN":300,"price":"$6.00 – $16.00","priceN":6},{"sku":"OT-0403","tag":"Baby \u0026 Kids","name":"Wooden Building Blocks (100-pc)","moq":"200 sets","moqN":200,"price":"$5.00 – $13.00","priceN":5}]}</script>
+<!-- Sub-category filter row (shared component /assets/catalog-collection.js) -->
+<catalog-tagbar data-source="#catalog-data"></catalog-tagbar>
+
   <!-- ============ Breadcrumb ============ -->
   <nav class="cat-breadcrumb" aria-label="Breadcrumb">
     <div class="cb-inner">
@@ -412,6 +417,9 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <span class="cb-current">Others</span>
     </div>
   </nav>
+<!-- Product collection (shared component /assets/catalog-collection.js) -->
+<catalog-grid data-source="#catalog-data"></catalog-grid>
+
 
   <!-- ============ Category intro ============ -->
   <section class="cat-intro">
@@ -423,54 +431,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   </section>
 
   <!-- ============ Product cards ============ -->
-  <section class="cat-products">
-    <div class="cp-inner">
-      <div class="hot-grid">
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg></div>
-          <h3>Custom Product Sourcing</h3>
-          <p>Send your spec sheet or reference sample &mdash; quoted in 48h.</p>
-          <div class="hot-price">Quoted per project</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Custom%20Product%20Sourcing" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3a5 5 0 0 0-4.6 7L4 16.4V20h3.6l6.4-6.4A5 5 0 1 0 15 3z"/></svg></div>
-          <h3>Industrial &amp; Tools</h3>
-          <p>Hand tools, hardware, fasteners, measuring and safety gear.</p>
-          <div class="hot-price">$1 &ndash; $25 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Industrial%20%26%20Tools" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 16v-3l2-5h14l2 5v3"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/><path d="M3 13h18"/></svg></div>
-          <h3>Auto &amp; Motorcycle</h3>
-          <p>Car care, phone mounts, LED lighting, covers and accessories.</p>
-          <div class="hot-price">$2 &ndash; $30 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Auto%20%26%20Motorcycle" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3.5 20.5 9"/><path d="M13.6 6.2 17.8 10.4"/><path d="M12.8 7.6 5.2 15.2a5 5 0 0 0 3.6 3.6l7.6-7.6"/></svg></div>
-          <h3>Office &amp; Stationery</h3>
-          <p>Notebooks, pens, desk organizers and filing supplies.</p>
-          <div class="hot-price">$0.50 &ndash; $9 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Office%20%26%20Stationery" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7.5" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></div>
-          <h3>Baby &amp; Kids</h3>
-          <p>Feeding sets, safety locks, stroller accessories and toys.</p>
-          <div class="hot-price">$2 &ndash; $20 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Baby%20%26%20Kids" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-        <div class="hot-card">
-          <div class="hot-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5 12 4l9 4.5v7L12 20 3 15.5z"/><path d="M3 8.5 12 13l9-4.5M12 13v7"/></svg></div>
-          <h3>Packaging &amp; Display</h3>
-          <p>Mailer boxes, pouches, shelf displays and branded inserts.</p>
-          <div class="hot-price">$0.20 &ndash; $5 avg.</div>
-          <a class="hc-quote" href="https://wa.me/8615057960102?text=Hi%2C%20I'd%20like%20a%20quote%20for%20Packaging%20%26%20Display" target="_blank" rel="noopener noreferrer">Get Quote</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 </main>
 
 
