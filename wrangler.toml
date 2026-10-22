@@ -4,3 +4,6 @@ compatibility_date = "2024-09-02"
 
 [assets]
 directory = "./"
+# Serve assets through the Worker so legacy URL redirects (301) run before
+# the static file is returned.
+run_worker_first = true
