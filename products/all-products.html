@@ -347,7 +347,23 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 #mobileMenu .ms-chevron { width: 14px; height: 14px; flex-shrink: 0; }
 /* Sticky header offset when jumping to the quote form */
 #quote { scroll-margin-top: 88px; }
-</style></head>
+</style><style id="footer-nav-refresh">
+/* Footer navigation refresh (scoped to the site footer only) */
+.footer .footer-grid{grid-template-columns:1.55fr 1fr 1fr 1.35fr 1fr 1.3fr;gap:28px}
+.footer .footer-brand .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;text-decoration:none}
+.footer .footer-brand .footer-logo-mark{width:32px;height:32px;border-radius:6px;background:#162D54;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;line-height:1;flex:0 0 auto}
+.footer .footer-brand .footer-logo-text{font-family:'Fraunces','Inter',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em;color:#fff;line-height:1.1}
+.footer .footer-col .footer-blog-link{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7)}
+.footer .footer-col .footer-blog-link:hover{color:var(--orange)}
+@media (max-width:1200px){.footer .footer-grid{grid-template-columns:1.4fr 1fr 1fr 1.25fr 1fr 1.2fr;gap:22px}}
+@media (max-width:1024px){.footer .footer-grid{grid-template-columns:repeat(3,1fr);gap:28px}}
+@media (max-width:640px){.footer .footer-grid{grid-template-columns:1fr;gap:26px}}
+.footer .footer-contact{list-style:none;margin:0;padding:0}
+.footer .footer-contact li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,.7);margin-bottom:10px;line-height:1.5}
+.footer .footer-contact .fc-icon{display:inline-flex;flex-shrink:0;margin-top:2px;color:var(--orange)}
+.footer .footer-contact a{color:rgba(255,255,255,.7)}</style>
+  <link rel="icon" type="image/png" href="/assets/milebond-favicon.png">
+</head>
 <body>
 
 <!-- NAVBAR -->
@@ -358,8 +374,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
     <!-- wordmark -->
     <a href="/" class="flex items-center gap-2 shrink-0">
-      <span class="w-8 h-8 rounded-md bg-navy flex items-center justify-center text-amber font-bold text-sm">M</span>
-      <span class="text-navy font-extrabold text-xl tracking-tight">Milebond</span>
+      <img src="/assets/milebond-logo.png" alt="Milebond" width="96" height="32" class="h-8 w-auto object-contain" loading="eager" decoding="async">
     </a>
 
     <!-- desktop nav (md+) -->
@@ -672,33 +687,69 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
-      <div>
-        <a href="../" class="logo" style="color:#fff">
-          <div class="logo-mark">M</div>
-          <div class="logo-text">Mile<span>Bond</span></div>
-        </a>
-        <p style="margin-top:16px;font-size:14px;line-height:1.7">Your trusted China sourcing partner. 10+ years helping Amazon &amp; Shopify sellers source quality products at competitive prices.</p>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <a href="../services/product-sourcing.html">Product Sourcing</a>
-        <a href="../services/private-label-oem.html">Private Label OEM</a>
-        <a href="../services/quality-control.html">Quality Control</a>
-        <a href="../services/supply-chain-optimization.html">Supply Chain</a>
-      </div>
-      <div>
-        <h4>Products</h4>
-        <a href="/products/home-kitchen/stainless-steel-utensils/">Home &amp; Kitchen</a>
-        <a href="pet-supplies.html">Pet Supplies</a>
-        <a href="beauty-tools.html">Beauty Tools</a>
-        <a href="all-products.html">View All</a>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <a href="../blog/">Blog</a>
-        <a href="../#about">About Us</a>
-        <a href="../#contact">Contact</a>
-      </div>
+    <div class="footer-brand">
+      <a class="footer-logo" href="/">
+        <img src="/assets/milebond-logo-white.png" alt="Milebond" width="96" height="32" style="height:32px;width:auto;display:block" loading="lazy" decoding="async">
+      </a>
+      <p>Your trusted China sourcing partner. 10+ years helping Amazon &amp; Shopify sellers source quality products at competitive prices.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/services/product-sourcing">Product Sourcing</a></li>
+        <li><a href="/services/supplier-verification-factory-audit">Supplier Verification &amp; Factory Audit</a></li>
+        <li><a href="/services/quality-control">Quality Control &amp; Inspection</a></li>
+        <li><a href="/services/amazon-brand-management">Amazon Brand Management</a></li>
+        <li><a href="/services/private-label-oem">Private Label &amp; OEM</a></li>
+        <li><a href="/services/product-development">Product Development</a></li>
+        <li><a href="/services/warehousing-shipping">Warehousing &amp; Shipping</a></li>
+        <li><a href="/services/sourcing-fees-pricing">Sourcing Fees &amp; Pricing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="/solutions/for-amazon-ecommerce-sellers">For Amazon &amp; E-commerce Sellers</a></li>
+        <li><a href="/solutions/for-small-businesses-startups">For Small Businesses &amp; Startups</a></li>
+        <li><a href="/solutions/for-wholesalers-importers">For Wholesalers &amp; Importers</a></li>
+        <li><a href="/solutions/for-brand-owners">For Brand Owners</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="/products/home-kitchen">Home &amp; Kitchen</a></li>
+        <li><a href="/products/pet-supplies">Pet Supplies</a></li>
+        <li><a href="/products/beauty-tools">Beauty Tools</a></li>
+        <li><a href="/products/arts-crafts">Arts &amp; Crafts</a></li>
+        <li><a href="/products/clothing-shoes-jewelry">Clothing, Shoes &amp; Jewelry</a></li>
+        <li><a href="/products/toys-games">Toys &amp; Games</a></li>
+        <li><a href="/products/sports-outdoors">Sports &amp; Outdoors</a></li>
+        <li><a href="/products/electronics">Electronics</a></li>
+        <li><a href="/products/health-household">Health &amp; Household</a></li>
+        <li><a href="/products/others">Others</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="/about">About Milebond</a></li>
+        <li><a href="/how-it-works">How It Works</a></li>
+        <li><a href="/case-studies">Case Studies</a></li>
+        <li><a href="/faq">FAQ</a></li>
+      </ul>
+      <a class="footer-blog-link" href="/blog">Blog</a>
+    </div>
+<div class="footer-col">
+  <h4>Contact</h4>
+  <ul class="footer-contact">
+    <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Shengli Road, Yiwu, Zhejiang, China</li>
+    <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><a href="https://wa.me/8615057960102" target="_blank">+86 150 5796 0102</a></li>
+    <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><a href="mailto:info@milebond.com">info@milebond.com</a></li>
+    <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Mon鈥揝at: 9:00 AM 鈥?6:00 PM (CST)</li>
+  </ul>
+  
+</div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 MileBond. All rights reserved.</span>

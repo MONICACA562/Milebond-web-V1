@@ -575,7 +575,20 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 #mobileMenu .ms-chevron { width: 14px; height: 14px; flex-shrink: 0; }
 /* Sticky header offset when jumping to the quote form */
 #quote { scroll-margin-top: 88px; }
-</style></head>
+</style><style id="footer-nav-refresh">
+/* Footer navigation refresh (scoped to the site footer only) */
+.footer .footer-grid{grid-template-columns:1.55fr 1fr 1fr 1.35fr 1fr 1.3fr;gap:28px}
+.footer .footer-brand .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;text-decoration:none}
+.footer .footer-brand .footer-logo-mark{width:32px;height:32px;border-radius:6px;background:#162D54;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;line-height:1;flex:0 0 auto}
+.footer .footer-brand .footer-logo-text{font-family:'Fraunces','Inter',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em;color:#fff;line-height:1.1}
+.footer .footer-col .footer-blog-link{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7)}
+.footer .footer-col .footer-blog-link:hover{color:var(--orange)}
+@media (max-width:1200px){.footer .footer-grid{grid-template-columns:1.4fr 1fr 1fr 1.25fr 1fr 1.2fr;gap:22px}}
+@media (max-width:1024px){.footer .footer-grid{grid-template-columns:repeat(3,1fr);gap:28px}}
+@media (max-width:640px){.footer .footer-grid{grid-template-columns:1fr;gap:26px}}
+</style>
+  <link rel="icon" type="image/png" href="/assets/milebond-favicon.png">
+</head>
 <body>
 
 
@@ -585,8 +598,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
     <!-- wordmark -->
     <a href="/" class="flex items-center gap-2 shrink-0">
-      <span class="w-8 h-8 rounded-md bg-navy flex items-center justify-center text-amber font-bold text-sm">M</span>
-      <span class="text-navy font-extrabold text-xl tracking-tight">Milebond</span>
+      <img src="/assets/milebond-logo.png" alt="Milebond" width="96" height="32" class="h-8 w-auto object-contain" loading="eager" decoding="async">
     </a>
 
     <!-- desktop nav (md+) -->
@@ -1069,48 +1081,59 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="logo" href="../index.html"><span class="logo-mark">M</span><span class="logo-text">mile<span>bond</span></span></a>
-        <p>Yiwu-based supply chain partner helping Amazon sellers source quality products from China. 10+ years on the ground, 6,900+ verified suppliers.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-          <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
-        </div>
-      </div>
-      
-<div class="footer-col">
-  <h4>Services</h4>
-  <ul>
-    <li><a href="../services/product-sourcing.html">Product Sourcing</a></li>
-    <li><a href="../services/private-label-oem.html">Private Label &amp; OEM</a></li>
-    <li><a href="../services/product-development.html">Product Development</a></li>
-    <li><a href="../services/supply-chain-optimization.html">Supply Chain Optimization</a></li>
-    <li><a href="../services/quality-control.html">Quality Control</a></li>
-    <li><a href="../services/supplier-verification-factory-audit.html">Factory Audit</a></li>
-    <li><a href="../services/product-compliance.html">Product Compliance</a></li>
-    <li><a href="../services/warehousing-shipping.html">Warehousing &amp; Shipping</a></li>
-    <li><a href="../services/amazon-brand-management.html">Amazon Brand Management</a></li>
-  </ul>
-</div>
-<div class="footer-col">
-  <h4>Products</h4>
-  <ul>
-    <li><a href="/products/home-kitchen/stainless-steel-utensils/">Home &amp; Kitchen</a></li>
-    <li><a href="./pet-supplies.html">Pet Supplies</a></li>
-    <li><a href="./beauty-tools.html">Beauty Tools</a></li>
-    <li><a href="./arts-crafts.html">Arts &amp; Crafts</a></li>
-  </ul>
-</div>
-<div class="footer-col">
-  <h4>Company</h4>
-  <ul>
-    <li><a href="../index.html#about">About Us</a></li>
-    <li><a href="../index.html#process">How It Works</a></li>
-    <li><a href="../index.html#faq">FAQ</a></li>
-    <li><a href="../blog/">Blog</a></li>
-    <li><a href="../index.html#contact">Contact Us</a></li>
-  </ul>
-</div>
+    <div class="footer-brand">
+      <a class="footer-logo" href="/">
+        <img src="/assets/milebond-logo-white.png" alt="Milebond" width="96" height="32" style="height:32px;width:auto;display:block" loading="lazy" decoding="async">
+      </a>
+      <p>Yiwu-based supply chain partner helping Amazon sellers source quality products from China. 10+ years on the ground, 6,900+ verified suppliers.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/services/product-sourcing">Product Sourcing</a></li>
+        <li><a href="/services/supplier-verification-factory-audit">Supplier Verification &amp; Factory Audit</a></li>
+        <li><a href="/services/quality-control">Quality Control &amp; Inspection</a></li>
+        <li><a href="/services/amazon-brand-management">Amazon Brand Management</a></li>
+        <li><a href="/services/private-label-oem">Private Label &amp; OEM</a></li>
+        <li><a href="/services/product-development">Product Development</a></li>
+        <li><a href="/services/warehousing-shipping">Warehousing &amp; Shipping</a></li>
+        <li><a href="/services/sourcing-fees-pricing">Sourcing Fees &amp; Pricing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="/solutions/for-amazon-ecommerce-sellers">For Amazon &amp; E-commerce Sellers</a></li>
+        <li><a href="/solutions/for-small-businesses-startups">For Small Businesses &amp; Startups</a></li>
+        <li><a href="/solutions/for-wholesalers-importers">For Wholesalers &amp; Importers</a></li>
+        <li><a href="/solutions/for-brand-owners">For Brand Owners</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="/products/home-kitchen">Home &amp; Kitchen</a></li>
+        <li><a href="/products/pet-supplies">Pet Supplies</a></li>
+        <li><a href="/products/beauty-tools">Beauty Tools</a></li>
+        <li><a href="/products/arts-crafts">Arts &amp; Crafts</a></li>
+        <li><a href="/products/clothing-shoes-jewelry">Clothing, Shoes &amp; Jewelry</a></li>
+        <li><a href="/products/toys-games">Toys &amp; Games</a></li>
+        <li><a href="/products/sports-outdoors">Sports &amp; Outdoors</a></li>
+        <li><a href="/products/electronics">Electronics</a></li>
+        <li><a href="/products/health-household">Health &amp; Household</a></li>
+        <li><a href="/products/others">Others</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="/about">About Milebond</a></li>
+        <li><a href="/how-it-works">How It Works</a></li>
+        <li><a href="/case-studies">Case Studies</a></li>
+        <li><a href="/faq">FAQ</a></li>
+      </ul>
+      <a class="footer-blog-link" href="/blog">Blog</a>
+    </div>
 <div class="footer-col">
   <h4>Contact</h4>
   <ul class="footer-contact">
@@ -1121,7 +1144,6 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   </ul>
   <a onclick="openQuoteModal()" class="btn btn-primary btn-sm open-quote-modal" style="margin-top:14px;display:inline-block">Get a Free Quote</a>
 </div>
-
     </div>
     <div class="footer-bottom">
       © 2026 MileBond. Powered by MileBond Supply Chain.
