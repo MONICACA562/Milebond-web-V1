@@ -244,9 +244,9 @@ a:hover{color:#c85a0a;text-decoration:none}
   font-size: 10px; font-weight: 700; font-family: 'Inter', sans-serif;
   transition: all .15s;
 }
-.mega-item .mega-title { font-size: 13px; font-weight: 600; color: #0F2A4A; }
+.mega-item .mega-title { font-size: 15px; font-weight: 600; color: #0F2A4A; }
 .mega-item:hover .mega-title { color: #F59E0B; }
-.mega-item .mega-desc { font-size: 11px; color: #64748B; margin-top: 1px; line-height: 1.4; }
+.mega-item .mega-desc { font-size: 13px; color: #64748B; margin-top: 1px; line-height: 1.4; }
 
 /* Mobile Services accordion */
 .mobile-services {
@@ -255,7 +255,7 @@ a:hover{color:#c85a0a;text-decoration:none}
 .mobile-services > .ms-head {
   width: 100%; display: flex; align-items: center; justify-content: space-between;
   padding: 10px 3px;
-  font-size: 15px; font-weight: 500; color: #334155;
+  font-size: 16px; font-weight: 600; color: #334155;
   cursor: pointer; background: none; border: none; font-family: inherit; text-align: left;
 }
 .mobile-services > .ms-head .ms-chevron {
@@ -285,9 +285,9 @@ body{background:#fafaf7!important}   /* 盖过 body 的 bg-white 工具类 */
 .mega-item:hover{background:#f3f1ea}
 .mega-item:hover .mega-icon-bg{background:#008138;color:#fff}
 .mega-icon-bg{background:#0a2a2b;color:#e8c998}
-.mega-item .mega-title{color:#0a2a2b;font-size:14px}
+.mega-item .mega-title{color:#0a2a2b;font-size:16px}
 .mega-item:hover .mega-title{color:#008138}
-.mega-item .mega-desc{color:#6a7282;font-size:12px}
+.mega-item .mega-desc{color:#6a7282;font-size:13px}
 .mobile-services>.ms-head{color:#364153}
 .mobile-services.open>.ms-head .ms-chevron{color:#008138}
 .mobile-services>.ms-body a{color:#5a5950}
@@ -395,15 +395,15 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
     <!-- wordmark -->
     <a href="/" class="flex items-center gap-2 shrink-0">
-      <img src="/assets/milebond-logo.png" alt="Milebond" width="96" height="32" class="h-8 w-auto object-contain" loading="eager" decoding="async">
+      <img src="/assets/milebond-logo.png" alt="Milebond" width="108" height="36" class="h-9 w-auto object-contain" loading="eager" decoding="async">
     </a>
 
     <!-- desktop nav (md+) -->
-    <ul class="hidden md:flex items-center gap-1 xl:gap-2 text-sm font-medium text-brandgray-600">
+    <ul class="hidden md:flex items-center gap-0.5 xl:gap-2 text-[15px] xl:text-base font-semibold text-brandgray-600">
 
       <!-- Services mega menu -->
       <li class="services-mega">
-        <button type="button" class="mega-trigger px-3 py-2 hover:text-amber transition-colors text-brandgray-600 font-medium" aria-haspopup="true" aria-expanded="false" aria-controls="navServicesPanel">
+        <button type="button" class="mega-trigger px-2 py-2 xl:px-3 hover:text-amber transition-colors text-brandgray-600 font-semibold" aria-haspopup="true" aria-expanded="false" aria-controls="navServicesPanel">
           Services
           <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
@@ -424,7 +424,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
       <!-- Solutions mega menu -->
       <li class="services-mega">
-        <button type="button" class="mega-trigger px-3 py-2 hover:text-amber transition-colors text-brandgray-600 font-medium" aria-haspopup="true" aria-expanded="false" aria-controls="navSolutionsPanel">
+        <button type="button" class="mega-trigger px-2 py-2 xl:px-3 hover:text-amber transition-colors text-brandgray-600 font-semibold" aria-haspopup="true" aria-expanded="false" aria-controls="navSolutionsPanel">
           Solutions
           <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
@@ -440,7 +440,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
       <!-- Products mega menu -->
       <li class="services-mega products-mega">
-        <button type="button" class="mega-trigger px-3 py-2 hover:text-amber transition-colors text-brandgray-600 font-medium" aria-haspopup="true" aria-expanded="false" aria-controls="navProductsPanel">
+        <button type="button" class="mega-trigger px-2 py-2 xl:px-3 hover:text-amber transition-colors text-brandgray-600 font-semibold" aria-haspopup="true" aria-expanded="false" aria-controls="navProductsPanel">
           Products
           <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
@@ -490,11 +490,11 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         </div>
       </li>
 
-      <li><a href="/blog" class="px-3 py-2 hover:text-amber transition-colors">Blog</a></li>
+      <li><a href="/blog" class="px-2 py-2 xl:px-3 hover:text-amber transition-colors">Blog</a></li>
 
       <!-- About dropdown -->
       <li class="services-mega">
-        <button type="button" class="mega-trigger px-3 py-2 hover:text-amber transition-colors text-brandgray-600 font-medium" aria-haspopup="true" aria-expanded="false" aria-controls="navAboutPanel">
+        <button type="button" class="mega-trigger px-2 py-2 xl:px-3 hover:text-amber transition-colors text-brandgray-600 font-semibold" aria-haspopup="true" aria-expanded="false" aria-controls="navAboutPanel">
           About
           <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
@@ -503,10 +503,10 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
             <a href="/about" class="mega-item" role="menuitem"><div><div class="mega-title">About Milebond</div><div class="mega-desc">Who we are, what we stand for</div></div></a>
             <a href="/how-it-works" class="mega-item" role="menuitem"><div><div class="mega-title">How It Works</div><div class="mega-desc">Our 4-step sourcing process</div></div></a>
             <a href="/case-studies" class="mega-item" role="menuitem"><div><div class="mega-title">Case Studies</div><div class="mega-desc">Documented sourcing cases</div></div></a>
-            <a href="/faq" class="mega-item" role="menuitem"><div><div class="mega-title">FAQ</div><div class="mega-desc">MOQ, fees, lead time, QC details</div></div></a>
           </div>
         </div>
       </li>
+      <li><a href="/faq" class="px-2 py-2 xl:px-3 hover:text-amber transition-colors">FAQ</a></li>
     </ul>
 
     <!-- desktop CTA -->
@@ -589,7 +589,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         </div>
       </li>
 
-      <li><a href="/blog" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-medium">Blog</a></li>
+      <li><a href="/blog" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-semibold">Blog</a></li>
 
       <!-- About accordion -->
       <li class="mobile-services" id="mobileAbout">
@@ -602,10 +602,11 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
             <li><a href="/about">About Milebond</a></li>
             <li><a href="/how-it-works">How It Works</a></li>
             <li><a href="/case-studies">Case Studies</a></li>
-            <li><a href="/faq">FAQ</a></li>
           </ul>
         </div>
       </li>
+
+      <li><a href="/faq" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-semibold">FAQ</a></li>
 
       <li class="pt-3 mt-2 border-t border-brandgray-100">
         <a href="/#quote"
