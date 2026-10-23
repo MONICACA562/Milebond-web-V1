@@ -5,3 +5,8 @@
 /services/factory-audit /services/supplier-verification-factory-audit 301
 /services/factory-audit/ /services/supplier-verification-factory-audit 301
 /services/factory-audit.html /services/supplier-verification-factory-audit 301
+
+# Legacy Amazon FBA prep page retired in favour of Amazon Brand Management.
+/services/amazon-fba-prep-labeling /services/amazon-brand-management 301
+/services/amazon-fba-prep-labeling/ /services/amazon-brand-management 301
+/services/amazon-fba-prep-labeling.html /services/amazon-brand-management 301
