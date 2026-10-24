@@ -135,8 +135,6 @@
   *{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
   body{font-family:'Manrope','Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#fff;color:var(--ink);line-height:1.6;}
   .wrap{max-width:1140px;margin:0 auto;padding:0 20px;}
-  .topbar{background:var(--navy);color:#fff;font-size:13px;padding:8px 0;}.topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;}.topbar a{color:#fff;text-decoration:none;}.topbar a:hover{color:var(--gold);}
-  nav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;}nav .wrap{display:flex;align-items:center;gap:24px;padding:14px 20px;flex-wrap:wrap;}.logo{font-weight:800;font-size:20px;color:var(--navy);letter-spacing:.5px;text-decoration:none;}.logo span{color:var(--orange);}.nav-links{display:flex;gap:18px;margin-left:auto;flex-wrap:wrap;}.nav-links a{color:var(--navy2);text-decoration:none;font-size:14px;font-weight:600;}.nav-links a:hover{color:var(--orange);}.nav-cta{background:var(--orange);color:#fff;text-decoration:none;font-size:14px;font-weight:700;padding:8px 16px;border-radius:6px;}
   .breadcrumb{font-size:13px;color:var(--gray);padding:14px 0 6px;}.breadcrumb a{color:var(--navy2);text-decoration:none;}.breadcrumb a:hover{text-decoration:underline;}
   .quickbar{background:var(--navy);color:#fff;border-radius:10px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:14px 20px;margin:14px 0 8px;}.quickbar .qb-price .label{font-size:12px;color:#9fb0cd;}.quickbar .qb-price .val{font-size:24px;font-weight:800;}.quickbar .qb-qty{display:flex;align-items:center;gap:8px;}.quickbar .qb-qty input{width:76px;padding:9px 10px;border:1px solid #2a4a7c;border-radius:6px;font-size:16px;font-family:inherit;background:#fff;color:var(--navy);}.quickbar .qb-total{font-size:14px;color:#c8d4ea;}.quickbar .qb-total b{color:#fff;font-size:16px;}.quickbar .qb-cta{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap;}
   .btn{display:inline-block;text-decoration:none;font-weight:700;font-size:14px;padding:10px 18px;border-radius:7px;}.btn-orange{background:var(--orange);color:#fff;}.btn-orange:hover{background:#d4651a;}.btn-ghost{background:transparent;color:#fff;border:1px solid #5a78a8;}.btn-ghost:hover{background:#2a4a7c;border-color:#2a4a7c;}
@@ -156,29 +154,391 @@
   .check-list{list-style:none;margin-top:12px;}.check-list li{position:relative;padding-left:24px;font-size:13.5px;color:#374151;margin-bottom:8px;}.check-list li::before{content:"";position:absolute;left:2px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--green);}
   details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:10px;overflow:hidden;}summary{cursor:pointer;padding:13px 18px;font-weight:700;font-size:14.5px;color:var(--navy);list-style:none;position:relative;}summary::-webkit-details-marker{display:none;}summary::after{content:"+";position:absolute;right:18px;top:11px;font-size:19px;color:var(--orange);font-weight:800;}details[open] summary::after{content:"\2212";}details p{padding:2px 18px 15px;font-size:13.5px;color:#374151;}
   .cta-band{background:var(--navy);border-radius:14px;color:#fff;text-align:center;padding:36px 24px;margin:6px 0 28px;}.cta-band h3{font-size:23px;margin-bottom:8px;}.cta-band p{color:#c8d4ea;margin-bottom:16px;font-size:14.5px;}.cta-band .btn-orange{font-size:15px;padding:13px 28px;}.cta-band .small{font-size:12.5px;color:#9fb0cd;margin-top:10px;}
-  footer{background:var(--navy);color:#c8d4ea;padding:26px 0;font-size:13px;text-align:center;}footer a{color:var(--gold);text-decoration:none;}
   .product-img .thumbs{display:grid;gap:6px;padding:8px;background:#fff;}.product-img .thumbs img{width:100%;height:70px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent;display:block;}.product-img .thumbs img.t.on{border-color:var(--orange);}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://miaoda.feishu.cn/fonts/css2?family=Fraunces:opsz,wght@9..144,400..900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/assets/milebond-favicon.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        navy: '#0a2a2b',
+        amber: { DEFAULT: '#a06a30', 500: '#c08648', 600: '#7a5024' },
+        whatsapp: '#008138',
+        brandgray: {
+          50: '#f3f1ea',
+          100: '#e6e3d8',
+          300: '#cdc8b8',
+          500: '#6a7282',
+          600: '#5a5950',
+          700: '#364153',
+        }
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+      },
+      boxShadow: {
+        'soft': '0 2px 8px rgba(10,42,43,.06)',
+        'card': '0 4px 20px rgba(10,42,43,.08)',
+        'lift': '0 8px 30px rgba(10,42,43,.14)',
+      }
+    }
+  }
+}
+</script>
+<style id="site-header-footer">
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+/* Single scroll-state class — avoids stacking height utilities on breakpoints */
+.navbar-scrolled {
+  background-color: rgba(255,255,255,.92) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(15,42,74,.08);
+}
+/* ============ SERVICES MEGA MENU ============ */
+.services-mega { position: relative; }
+.services-mega > .mega-trigger {
+  display: inline-flex; align-items: center; gap: 4px;
+  cursor: pointer;
+}
+.services-mega > .mega-trigger .mega-chevron {
+  width: 12px; height: 12px; transition: transform .2s;
+}
+.services-mega:hover > .mega-trigger .mega-chevron { transform: rotate(180deg); color: #F59E0B; }
+.services-mega .mega-panel {
+  position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%) translateY(-6px);
+  width: 720px; max-width: 92vw;
+  background: #fff; border: 1px solid #EEF1F6; border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(15,42,74,.14);
+  padding: 10px; opacity: 0; visibility: hidden;
+  transition: opacity .18s, transform .18s, visibility .18s;
+  z-index: 60;
+}
+.services-mega:hover .mega-panel,
+.services-mega.open .mega-panel {
+  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+}
+.mega-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.mega-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 12px; border-radius: 10px;
+  text-decoration: none; transition: background .15s;
+}
+.mega-item:hover { background: #F7F8FA; }
+.mega-item:hover .mega-icon-bg { background: #F59E0B; color: #fff; }
+.mega-icon-bg {
+  width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0;
+  background: #0F2A4A; color: #F59E0B;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700; font-family: 'Inter', sans-serif;
+  transition: all .15s;
+}
+.mega-item .mega-title { font-size: 15px; font-weight: 600; color: #0F2A4A; }
+.mega-item:hover .mega-title { color: #F59E0B; }
+.mega-item .mega-desc { font-size: 13px; color: #64748B; margin-top: 1px; line-height: 1.4; }
+/* Mobile Services accordion */
+.mobile-services {
+  border-radius: 8px; overflow: hidden;
+}
+.mobile-services > .ms-head {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 3px;
+  font-size: 16px; font-weight: 600; color: #334155;
+  cursor: pointer; background: none; border: none; font-family: inherit; text-align: left;
+}
+.mobile-services > .ms-head .ms-chevron {
+  width: 14px; height: 14px; transition: transform .2s;
+}
+.mobile-services.open > .ms-head .ms-chevron { transform: rotate(180deg); color: #F59E0B; }
+.mobile-services > .ms-body {
+  max-height: 0; overflow: hidden; transition: max-height .25s ease;
+  padding-left: 4px;
+}
+.mobile-services.open > .ms-body { max-height: 600px; }
+.mobile-services > .ms-body a {
+  display: block; padding: 8px 12px; border-radius: 6px;
+  font-size: 14px; color: #475569;
+}
+.mobile-services > .ms-body a:hover { background: #F7F8FA; color: #F59E0B; }
+/* Hide scrollbar on mobile nav drawer (if ever needed) */
+.mobile-menu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+.mobile-menu.open { max-height: 520px; }
+body{background:#fafaf7!important}
+/* 盖过 body 的 bg-white 工具类 */
+.navbar-scrolled{background-color:rgba(250,250,247,.92)!important;box-shadow:0 2px 12px rgba(10,42,43,.06)}
+/* mega 菜单 */
+.services-mega:hover>.mega-trigger .mega-chevron{color:#008138}
+.services-mega .mega-panel{background:#fafaf7;border-color:#e6e3d8;box-shadow:0 12px 40px rgba(10,42,43,.12)}
+.mega-item:hover{background:#f3f1ea}
+.mega-item:hover .mega-icon-bg{background:#008138;color:#fff}
+.mega-icon-bg{background:#0a2a2b;color:#e8c998}
+.mega-item .mega-title{color:#0a2a2b;font-size:16px}
+.mega-item:hover .mega-title{color:#008138}
+.mega-item .mega-desc{color:#6a7282;font-size:13px}
+.mobile-services>.ms-head{color:#364153}
+.mobile-services.open>.ms-head .ms-chevron{color:#008138}
+.mobile-services>.ms-body a{color:#5a5950}
+.mobile-services>.ms-body a:hover{background:#f3f1ea;color:#008138}
+/* 导航栏衬线化（仅字体，不改字号/间距） */
+nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-services a,.mobile-services button{font-family:'Fraunces','Inter',Georgia,serif}
+/* Products 下拉菜单（仅作用于 .products-panel，2 列 × 5 行） */
+.products-mega .mega-panel.products-panel{width:640px;padding:20px;background:#fff;border:1px solid #EEF1F6;border-radius:16px;box-shadow:0 12px 40px rgba(10,42,43,.10)}
+.pm-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px}
+.pm-item{display:flex;align-items:center;gap:12px;padding:8px;border-radius:10px;text-decoration:none;transition:background .15s}
+.pm-item:hover{background:#f3f1ea}
+.pm-icon{width:40px;height:40px;border-radius:10px;background:#1F5C4D;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pm-icon svg{width:20px;height:20px;display:block}
+.pm-text{display:flex;flex-direction:column;min-width:0}
+.pm-name{font-size:14px;font-weight:700;color:#0a2a2b;line-height:1.3}
+.pm-item:hover .pm-name{color:#1F5C4D}
+.pm-desc{font-size:12px;color:#6a7282;line-height:1.35;margin-top:2px}
+/* Mobile drawer: collapsed by default, scrolls when taller than the viewport */
+.mobile-menu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+.mobile-menu.open { max-height: calc(100vh - 64px); overflow-y: auto; padding-bottom: calc(4.5rem + env(safe-area-inset-bottom)); }
+/* Accordions collapse reliably regardless of page-level CSS */
+#mobileMenu .mobile-services > .ms-body { max-height: 0 !important; overflow: hidden; }
+#mobileMenu .mobile-services.open > .ms-body { max-height: none !important; }
+/* Primary CTA keeps white text on the green pill */
+#navbar a.nav-cta { background-color: #008138 !important; color: #ffffff !important; }
+#navbar a.nav-cta:hover { background-color: #0f3d3e !important; }
+/* Chevron sizing — some page templates omit width/height */
+#navbar .mega-chevron { width: 12px; height: 12px; flex-shrink: 0; }
+#mobileMenu .ms-chevron { width: 14px; height: 14px; flex-shrink: 0; }
 </style>
 </head>
 <body>
-<div class="topbar">
-  <div class="wrap">
-    <span>10+ years Amazon selection know-how &middot; Weekly new-product pushes &middot; 100% QC on first order</span>
-    <a href="https://www.milebond.com/contact-us">Contact Us</a>
-  </div>
-</div>
-<nav>
-  <div class="wrap">
-    <a class="logo" href="https://www.milebond.com/">Mile<span>bond</span></a>
-    <div class="nav-links">
-      <a href="https://www.milebond.com/all-products">Products</a>
-      <a href="https://www.milebond.com/services/product-sourcing">Services</a>
-      <a href="https://www.milebond.com/blog">Blog</a>
-      <a href="https://www.milebond.com/about">About</a>
+<header id="navbar" class="sticky top-0 z-50 bg-white border-b border-brandgray-100 transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-4 lg:px-6 h-16 md:h-18 flex items-center justify-between gap-3">
+
+    <!-- wordmark -->
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="/assets/milebond-logo.png" alt="Milebond" width="108" height="36" class="h-9 w-auto object-contain" loading="eager" decoding="async">
+    </a>
+
+    <!-- desktop nav (md+) -->
+    <ul class="hidden md:flex items-center gap-0.5 xl:gap-2 text-[15px] xl:text-base font-semibold text-brandgray-600">
+
+      <!-- Services mega menu -->
+      <li class="services-mega">
+        <button type="button" class="mega-trigger px-2 py-2 xl:px-3 hover:text-amber transition-colors text-brandgray-600 font-semibold" aria-haspopup="true" aria-expanded="false" aria-controls="navServicesPanel">
+          Services
+          <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mega-panel" id="navServicesPanel" role="menu">
+          <div class="mega-grid">
+            <a href="/services/product-sourcing" class="mega-item" role="menuitem"><span class="mega-icon-bg">PS</span><div><div class="mega-title">Product Sourcing</div><div class="mega-desc">Find the right suppliers at the right price</div></div></a>
+            <a href="/services/supplier-verification-factory-audit" class="mega-item" role="menuitem"><span class="mega-icon-bg">SV</span><div><div class="mega-title">Supplier Verification &amp; Factory Audit</div><div class="mega-desc">Desk checks plus 27-point on-site audit</div></div></a>
+            <a href="/services/quality-control" class="mega-item" role="menuitem"><span class="mega-icon-bg">QC</span><div><div class="mega-title">Quality Control &amp; Inspection</div><div class="mega-desc">Piece-by-piece &amp; AQL inspection</div></div></a>
+            
+            <a href="/services/amazon-brand-management" class="mega-item" role="menuitem"><span class="mega-icon-bg">AB</span><div><div class="mega-title">Amazon Brand Management</div><div class="mega-desc">End-to-end for Amazon sellers, from idea to FBA warehouse</div></div></a>
+            <a href="/services/private-label-oem" class="mega-item" role="menuitem"><span class="mega-icon-bg">PL</span><div><div class="mega-title">Private Label &amp; OEM</div><div class="mega-desc">Build your own brand, low MOQ</div></div></a>
+            <a href="/services/product-development" class="mega-item" role="menuitem"><span class="mega-icon-bg">PD</span><div><div class="mega-title">Product Development</div><div class="mega-desc">From idea to sampling &amp; tooling</div></div></a>
+            <a href="/services/warehousing-shipping" class="mega-item" role="menuitem"><span class="mega-icon-bg">WS</span><div><div class="mega-title">Warehousing &amp; Shipping</div><div class="mega-desc">Consolidation and DDP delivery</div></div></a>
+            <a href="/services/sourcing-fees-pricing" class="mega-item" role="menuitem"><span class="mega-icon-bg">$</span><div><div class="mega-title">Sourcing Fees &amp; Pricing</div><div class="mega-desc">Flat 3–8% fee, zero kickbacks</div></div></a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Solutions mega menu -->
+      <li class="services-mega">
+        <button type="button" class="mega-trigger px-2 py-2 xl:px-3 hover:text-amber transition-colors text-brandgray-600 font-semibold" aria-haspopup="true" aria-expanded="false" aria-controls="navSolutionsPanel">
+          Solutions
+          <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mega-panel" id="navSolutionsPanel" role="menu" style="width:420px;">
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <a href="/solutions/for-amazon-ecommerce-sellers" class="mega-item" role="menuitem"><span class="mega-icon-bg">AZ</span><div><div class="mega-title">For Amazon &amp; E-commerce Sellers</div><div class="mega-desc">FBA-ready sourcing, prep and QC</div></div></a>
+            <a href="/solutions/for-small-businesses-startups" class="mega-item" role="menuitem"><span class="mega-icon-bg">SB</span><div><div class="mega-title">For Small Businesses &amp; Startups</div><div class="mega-desc">Low MOQ, test the market first</div></div></a>
+            <a href="/solutions/for-wholesalers-importers" class="mega-item" role="menuitem"><span class="mega-icon-bg">WH</span><div><div class="mega-title">For Wholesalers &amp; Importers</div><div class="mega-desc">Audited factories, itemized quotes</div></div></a>
+            <a href="/solutions/for-brand-owners" class="mega-item" role="menuitem"><span class="mega-icon-bg">BO</span><div><div class="mega-title">For Brand Owners</div><div class="mega-desc">Your mold, design and tooling stay yours</div></div></a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Products mega menu -->
+      <li class="services-mega products-mega">
+        <button type="button" class="mega-trigger px-2 py-2 xl:px-3 hover:text-amber transition-colors text-brandgray-600 font-semibold" aria-haspopup="true" aria-expanded="false" aria-controls="navProductsPanel">
+          Products
+          <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mega-panel products-panel" id="navProductsPanel" role="menu">
+          <div class="pm-grid">
+            <a href="/products/home-kitchen" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/><path d="M9.5 21v-6h5v6"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Home &amp; Kitchen</span><span class="pm-desc">Utensils, glassware, cutlery, storage</span></span>
+            </a>
+            <a href="/products/pet-supplies" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6.2" cy="10.2" r="2.1"/><circle cx="10" cy="6.2" r="2.1"/><circle cx="14.6" cy="6.2" r="2.1"/><circle cx="18.2" cy="10.2" r="2.1"/><path d="M12.2 11.4c3.2 0 5.8 2.2 5.8 4.9 0 1.9-1.5 3.3-3.4 3.3-1.2 0-1.7-.5-2.4-.5s-1.2.5-2.4.5c-1.9 0-3.4-1.4-3.4-3.3 0-2.7 2.6-4.9 5.8-4.9z"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Pet Supplies</span><span class="pm-desc">Toys, grooming, feeding, carriers</span></span>
+            </a>
+            <a href="/products/beauty-tools" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5 9 15"/><path d="M8 14.2 6.8 13a2.2 2.2 0 0 1 0-3.1l5.6-5.6a2.2 2.2 0 0 1 3.1 0l1.2 1.2a2.2 2.2 0 0 1 0 3.1l-5.6 5.6a2.2 2.2 0 0 1-3.1 0z"/><path d="m12 6.5 5.5 5.5"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Beauty Tools</span><span class="pm-desc">Skincare devices, nail, hair tools</span></span>
+            </a>
+            <a href="/products/arts-crafts" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3.5 20.5 9"/><path d="M13.6 6.2 17.8 10.4"/><path d="M12.8 7.6 5.2 15.2a5 5 0 0 0 3.6 3.6l7.6-7.6"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Arts &amp; Crafts</span><span class="pm-desc">DIY, hobbies, gift supplies</span></span>
+            </a>
+            <a href="/products/clothing-shoes-jewelry" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 3.5 4 5.5 2.5 9.5l3 1.5V21h13v-10l3-1.5-1.5-4-4.5-2a4 4 0 0 1-7.5 0z"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Clothing, Shoes &amp; Jewelry</span><span class="pm-desc">Apparel, footwear, watches, accessories</span></span>
+            </a>
+            <a href="/products/toys-games" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6v2.4a2.4 2.4 0 0 0 4.8 0V4H20v6h-2.4a2.4 2.4 0 0 0 0 4.8H20V20h-5.2v-2.4a2.4 2.4 0 0 0-4.8 0V20H4v-5.2h2.4a2.4 2.4 0 0 0 0-4.8H4z"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Toys &amp; Games</span><span class="pm-desc">STEM, outdoor play, puzzles, RC</span></span>
+            </a>
+            <a href="/products/sports-outdoors" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 8v8"/><path d="M3.5 10v4"/><path d="M17.5 8v8"/><path d="M20.5 10v4"/><path d="M6.5 12h11"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Sports &amp; Outdoors</span><span class="pm-desc">Fitness, camping, cycling, water sports</span></span>
+            </a>
+            <a href="/products/electronics" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Electronics</span><span class="pm-desc">Audio, smart home, wearables, cameras</span></span>
+            </a>
+            <a href="/products/health-household" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-9.7A4.2 4.2 0 0 1 12 7.9a4.2 4.2 0 0 1 7.5 2.9c0 5.1-7.5 9.7-7.5 9.7z"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Health &amp; Household</span><span class="pm-desc">Wellness, vitamins, cleaning essentials</span></span>
+            </a>
+            <a href="/products/others" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Others</span><span class="pm-desc">Everything else — tell us what you need</span></span>
+            </a>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="/blog" class="px-2 py-2 xl:px-3 hover:text-amber transition-colors">Blog</a></li>
+
+      <!-- About dropdown -->
+      <li class="services-mega">
+        <button type="button" class="mega-trigger px-2 py-2 xl:px-3 hover:text-amber transition-colors text-brandgray-600 font-semibold" aria-haspopup="true" aria-expanded="false" aria-controls="navAboutPanel">
+          About
+          <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mega-panel" id="navAboutPanel" role="menu" style="width:250px;padding:8px;">
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <a href="/about" class="mega-item" role="menuitem"><div><div class="mega-title">About Milebond</div><div class="mega-desc">Who we are, what we stand for</div></div></a>
+            <a href="/how-it-works" class="mega-item" role="menuitem"><div><div class="mega-title">How It Works</div><div class="mega-desc">Our 4-step sourcing process</div></div></a>
+            <a href="/case-studies" class="mega-item" role="menuitem"><div><div class="mega-title">Case Studies</div><div class="mega-desc">Documented sourcing cases</div></div></a>
+          </div>
+        </div>
+      </li>
+      <li><a href="/faq" class="px-2 py-2 xl:px-3 hover:text-amber transition-colors">FAQ</a></li>
+    </ul>
+
+    <!-- desktop CTA -->
+    <div class="hidden md:block ml-1 shrink-0">
+      <a href="/#quote"
+         class="nav-cta inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-amber hover:bg-amber-600 text-white font-semibold text-sm shadow-card transition-colors">
+        Get a Quote
+      </a>
     </div>
-    <a class="nav-cta" href="https://www.milebond.com/free-quote">Get a Free Quote</a>
+
+    <!-- mobile hamburger -->
+    <button id="mobileToggle" type="button"
+            class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-navy hover:bg-brandgray-100"
+            aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+      <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </nav>
+
+  <!-- mobile drawer -->
+  <div id="mobileMenu" class="mobile-menu md:hidden border-t border-brandgray-100 bg-white">
+    <ul class="px-5 py-4 flex flex-col gap-1 text-brandgray-700">
+
+      <!-- Services accordion -->
+      <li class="mobile-services" id="mobileServices">
+        <button type="button" class="ms-head px-3" aria-expanded="false" aria-controls="mobileServicesBody">
+          Services
+          <svg xmlns="http://www.w3.org/2000/svg" class="ms-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ms-body" id="mobileServicesBody">
+          <ul class="py-1 space-y-0.5">
+            <li><a href="/services/product-sourcing">Product Sourcing</a></li>
+            <li><a href="/services/supplier-verification-factory-audit">Supplier Verification &amp; Factory Audit</a></li>
+            <li><a href="/services/quality-control">Quality Control &amp; Inspection</a></li>
+            
+            <li><a href="/services/amazon-brand-management">Amazon Brand Management</a></li>
+            <li><a href="/services/private-label-oem">Private Label &amp; OEM</a></li>
+            <li><a href="/services/product-development">Product Development</a></li>
+            <li><a href="/services/warehousing-shipping">Warehousing &amp; Shipping</a></li>
+            <li><a href="/services/sourcing-fees-pricing">Sourcing Fees &amp; Pricing</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- Solutions accordion -->
+      <li class="mobile-services" id="mobileSolutions">
+        <button type="button" class="ms-head px-3" aria-expanded="false" aria-controls="mobileSolutionsBody">
+          Solutions
+          <svg xmlns="http://www.w3.org/2000/svg" class="ms-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ms-body" id="mobileSolutionsBody">
+          <ul class="py-1 space-y-0.5">
+            <li><a href="/solutions/for-amazon-ecommerce-sellers">For Amazon &amp; E-commerce Sellers</a></li>
+            <li><a href="/solutions/for-small-businesses-startups">For Small Businesses &amp; Startups</a></li>
+            <li><a href="/solutions/for-wholesalers-importers">For Wholesalers &amp; Importers</a></li>
+            <li><a href="/solutions/for-brand-owners">For Brand Owners</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- Products accordion -->
+      <li class="mobile-services" id="mobileProducts">
+        <button type="button" class="ms-head px-3" aria-expanded="false" aria-controls="mobileProductsBody">
+          Products
+          <svg xmlns="http://www.w3.org/2000/svg" class="ms-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ms-body" id="mobileProductsBody">
+          <ul class="py-1 space-y-0.5">
+            <li><a href="/products/home-kitchen">Home &amp; Kitchen</a></li>
+            <li><a href="/products/pet-supplies">Pet Supplies</a></li>
+            <li><a href="/products/beauty-tools">Beauty Tools</a></li>
+            <li><a href="/products/arts-crafts">Arts &amp; Crafts</a></li>
+            <li><a href="/products/clothing-shoes-jewelry">Clothing, Shoes &amp; Jewelry</a></li>
+            <li><a href="/products/toys-games">Toys &amp; Games</a></li>
+            <li><a href="/products/electronics">Electronics</a></li>
+            <li><a href="/products/health-household">Health &amp; Household</a></li>
+            <li><a href="/products/sports-outdoors">Sports &amp; Outdoors</a></li>
+            <li><a href="/products/others">Others</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li><a href="/blog" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-semibold">Blog</a></li>
+
+      <!-- About accordion -->
+      <li class="mobile-services" id="mobileAbout">
+        <button type="button" class="ms-head px-3" aria-expanded="false" aria-controls="mobileAboutBody">
+          About
+          <svg xmlns="http://www.w3.org/2000/svg" class="ms-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ms-body" id="mobileAboutBody">
+          <ul class="py-1 space-y-0.5">
+            <li><a href="/about">About Milebond</a></li>
+            <li><a href="/how-it-works">How It Works</a></li>
+            <li><a href="/case-studies">Case Studies</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li><a href="/faq" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-semibold">FAQ</a></li>
+
+      <li class="pt-3 mt-2 border-t border-brandgray-100">
+        <a href="/#quote"
+           class="nav-cta block w-full text-center px-5 py-3 rounded-full bg-amber text-white font-semibold">
+          Get a Quote
+        </a>
+      </li>
+    </ul>
   </div>
-</nav>
+</header>
 <div class="wrap">
   <div class="breadcrumb">
     <a href="https://www.milebond.com/">Home</a> / <a href="https://www.milebond.com/products/beauty-tools">Beauty &amp; Tools</a> / <span>Jade Gua Sha Stone</span>
@@ -300,11 +660,6 @@
     <div class="small">No obligation · Response within 48 hours</div>
   </div>
 </div>
-<footer>
-  <div class="wrap">
-    &copy; 2026 Milebond &middot; <a href="https://www.milebond.com/contact-us">Contact</a> &middot; <a href="https://www.milebond.com/faq">FAQ</a>
-  </div>
-</footer>
 <script>
 (function(){
   "use strict";
@@ -314,6 +669,297 @@
   function update(){var q=parseInt(qtyEl.value,10);if(isNaN(q)||q<1){q=1;qtyEl.value=1;}totalEl.textContent=fmt(q*UNIT);}
   qtyEl.addEventListener('input',update);update();
 })();
+</script>
+<footer id="about" class="bg-navy pt-16 pb-6 text-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid md:grid-cols-[1.5fr_1fr_1fr_1.2fr] gap-10 pb-10 border-b border-white/10">
+
+      <!-- Column 1 — Milebond -->
+      <div>
+        <a href="/" class="inline-flex items-center mb-4">
+          <img src="/assets/milebond-logo-white.png" alt="Milebond" width="96" height="32" class="h-8 w-auto object-contain" loading="lazy" decoding="async">
+        </a>
+        <p class="text-white/70 text-sm leading-relaxed max-w-sm mb-5">
+          Yiwu-based sourcing partner for Amazon brands, private labels, and offline wholesalers.
+        </p>
+        <ul class="space-y-2 text-sm text-white/60">
+          <li class="flex items-start gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:info@milebond.com" class="hover:text-amber transition-colors">info@milebond.com</a>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
+            <a href="https://wa.me/8615057960102" target="_blank" rel="noopener noreferrer" class="hover:text-amber transition-colors">Chat on WhatsApp</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 2 — Services -->
+      <div>
+        <p class="text-white font-semibold text-sm mb-4">Services</p>
+        <ul class="space-y-2 text-sm text-white/60">
+          <li><a href="/services/product-sourcing" class="hover:text-amber transition-colors">Product Sourcing</a></li>
+          <li><a href="/services/private-label-oem" class="hover:text-amber transition-colors">Private Label &amp; OEM</a></li>
+          <li><a href="/services/amazon-brand-management" class="hover:text-amber transition-colors">Amazon Brand Management</a></li>
+          <li><a href="/services/product-development" class="hover:text-amber transition-colors">Product Development</a></li>
+          <li><a href="/services/product-compliance" class="hover:text-amber transition-colors">Product Compliance</a></li>
+          <li><a href="/services/supply-chain-optimization" class="hover:text-amber transition-colors">Supply Chain Optimization</a></li>
+          <li><a href="/services/supplier-verification-factory-audit" class="hover:text-amber transition-colors">Factory Audit</a></li>
+          <li><a href="/services/quality-control" class="hover:text-amber transition-colors">Quality Control</a></li>
+          <li><a href="/services/warehousing-shipping" class="hover:text-amber transition-colors">Warehousing &amp; Shipping</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 — Company -->
+      <div>
+        <p class="text-white font-semibold text-sm mb-4">Company</p>
+        <ul class="space-y-2 text-sm text-white/60">
+          <li><a href="/how-it-works" class="hover:text-amber transition-colors">How It Works</a></li>
+          <li><a href="/about" class="hover:text-amber transition-colors">About Us</a></li>
+          <li><a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" class="hover:text-amber transition-colors">Contact Us</a></li>
+          <li><a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" class="hover:text-amber transition-colors">Free Quote</a></li>
+          <li><a href="/faq" class="hover:text-amber transition-colors">FAQ</a></li>
+          <li><a href="/blog" class="hover:text-amber transition-colors">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4 — Popular Reading -->
+      <div>
+        <p class="text-white font-semibold text-sm mb-4">Popular Reading</p>
+        <ul class="space-y-2.5 text-sm text-white/60">
+          <li><a href="/blog/how-to-find-reliable-china-suppliers-avoid-scams/" class="hover:text-amber transition-colors leading-snug">How to Find Reliable China Suppliers (Avoid Scams)</a></li>
+          <li><a href="/blog/did-my-agent-actually-negotiate-price/" class="hover:text-amber transition-colors leading-snug">Did My Agent Actually Negotiate Price?</a></li>
+          <li><a href="/blog/how-to-buy-from-1688-without-agent/" class="hover:text-amber transition-colors leading-snug">How to Buy from 1688 Without an Agent</a></li>
+          <li><a href="/blog/diy-vs-agent-vs-sourcing-service-cost-comparison/" class="hover:text-amber transition-colors leading-snug">DIY vs Agent vs Sourcing Service Cost</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- bottom bar -->
+    <div class="pt-6 text-xs text-white/50">
+      <p>© 2026 Milebond. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script>
+  // 1) Navbar scroll state — single CSS class, works with responsive height
+  const navbar = document.getElementById('navbar');
+  function updateNav() {
+    if (window.scrollY > 8) navbar.classList.add('navbar-scrolled');
+    else navbar.classList.remove('navbar-scrolled');
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+
+  // 2) Mobile hamburger — aria-expanded sync + close on link click
+  const toggle  = document.getElementById('mobileToggle');
+  const menu    = document.getElementById('mobileMenu');
+  const iconO   = document.getElementById('iconOpen');
+  const iconC   = document.getElementById('iconClose');
+
+  function openMenu() {
+    menu.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    iconO.classList.add('hidden');
+    iconC.classList.remove('hidden');
+  }
+  function closeMenu() {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    iconO.classList.remove('hidden');
+    iconC.classList.add('hidden');
+    // also close Services accordion
+    document.querySelectorAll('.mobile-services.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.ms-head').setAttribute('aria-expanded', 'false');
+    });
+  }
+  toggle.addEventListener('click', () => {
+    menu.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  // 2b) Mobile Services accordion toggle
+  document.querySelectorAll('.mobile-services').forEach(acc => {
+    const head = acc.querySelector('.ms-head');
+    head.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = acc.classList.toggle('open');
+      head.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
+
+  // Close mobile menu (and accordion) when any nav/service link clicked
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  // 2c) Desktop mega menus: hover (CSS) + click + keyboard + Escape + outside click
+  const megaItems = Array.prototype.slice.call(document.querySelectorAll('.services-mega'));
+  function closeMega(except) {
+    megaItems.forEach(function (li) {
+      if (li === except) return;
+      li.classList.remove('open');
+      var b = li.querySelector('.mega-trigger');
+      if (b) b.setAttribute('aria-expanded', 'false');
+    });
+  }
+  megaItems.forEach(function (li) {
+    var btn = li.querySelector('.mega-trigger');
+    if (!btn) return;
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var willOpen = !li.classList.contains('open');
+      closeMega(li);
+      li.classList.toggle('open', willOpen);
+      btn.setAttribute('aria-expanded', String(willOpen));
+    });
+    btn.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        li.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.focus();
+      }
+    });
+    li.addEventListener('mouseenter', function () { btn.setAttribute('aria-expanded', 'true'); });
+    li.addEventListener('mouseleave', function () {
+      if (!li.classList.contains('open')) btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMega(null);
+  });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest || !e.target.closest('.services-mega')) closeMega(null);
+  });
+
+  // 3) Smooth scroll polyfill fallback (html { scroll-behavior:smooth } handles modern browsers)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const id = this.getAttribute('href');
+      if (id.length > 1) {
+        const el = document.querySelector(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+
+  // 4) Hero carousel — 5s autoplay, pause on hover/touch, dots + counter
+  (function () {
+    const carousel = document.getElementById('heroCarousel');
+    if (!carousel) return;
+    const slides = Array.from(carousel.querySelectorAll('.hero-slide'));
+    const dots   = Array.from(carousel.querySelectorAll('.hero-dot'));
+    const curEl  = document.getElementById('heroCur');
+    const total  = slides.length;
+    let index = 0;
+    let touchPauseUntil = 0;
+
+    function render(i) {
+      index = (i + total) % total;
+      slides.forEach((s, k) => s.classList.toggle('active', k === index));
+      dots.forEach((d, k) => d.classList.toggle('active', k === index));
+      if (curEl) curEl.textContent = String(index + 1).padStart(2, '0');
+    }
+
+    // Self-healing tick: never permanently stopped; skips a turn while
+    // the hero is hovered, recently touched, or the tab is hidden.
+    setInterval(() => {
+      if (document.hidden) return;
+      if (carousel.matches(':hover')) return;
+      if (Date.now() < touchPauseUntil) return;
+      render(index + 1);
+    }, 5000);
+
+    dots.forEach(d => d.addEventListener('click', () => {
+      render(parseInt(d.getAttribute('data-goto'), 10));
+      touchPauseUntil = Date.now() + 5000; // give the reader a full window after manual jump
+    }));
+
+    carousel.addEventListener('touchstart', () => {
+      touchPauseUntil = Date.now() + 8000; // pause while interacting on touch devices
+    }, { passive: true });
+
+    render(0);
+  })();
+
+  // 5) Homepage contact/quote form — Web3Forms submit (same backend as /free-quote)
+  (function () {
+    const form = document.getElementById('cbForm');
+    if (!form) return;
+    const btn = form.querySelector('.cb-submit');
+    const label = btn.textContent;
+    const src = document.getElementById('cbSource');
+    if (src) src.value = location.href;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const d = new FormData(form);
+      const name = (d.get('name') || '').trim();
+      const email = (d.get('email') || '').trim();
+      const category = (d.get('category') || '').trim();
+      const service = (d.get('service') || '').trim();
+      if (!name) { alert('Please enter your name.'); return; }
+      if (!category) { alert('Please select a product category.'); return; }
+      if (!service) { alert('Please select the service type you need.'); return; }
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
+
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: d,
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(r => r.json())
+        .then(x => {
+          if (x.success) {
+            alert("Thank you! We've received your inquiry and will contact you within 24 hours.");
+            form.reset();
+            if (src) src.value = location.href;
+          } else {
+            alert('Oops! Something went wrong. Try again or email info@milebond.com');
+          }
+        })
+        .catch(() => {
+          alert('Network error. Check your connection or email info@milebond.com');
+        })
+        .then(() => {
+          btn.disabled = false;
+          btn.textContent = label;
+        });
+    });
+  })();
+
+  // 6) Hero arrow controls — drive the existing carousel through its dot buttons
+  (function () {
+    var prev = document.querySelector('.nav-btn.prev');
+    var next = document.querySelector('.nav-btn.next');
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slide'));
+    var dots = Array.prototype.slice.call(document.querySelectorAll('.hero-dot'));
+    if (!prev || !next || !slides.length) return;
+
+    function curIndex() {
+      for (var i = 0; i < slides.length; i++) {
+        if (slides[i].classList.contains('active')) return i;
+      }
+      return 0;
+    }
+    function step(d) {
+      var n = slides.length;
+      var target = (curIndex() + d + n) % n;
+      if (dots[target]) {
+        // reuse the existing dot handler → keeps slides, dots, page counter and autoplay in sync
+        dots[target].click();
+      } else {
+        slides.forEach(function (s, k) { s.classList.toggle('active', k === target); });
+        var count = document.getElementById('heroCur');
+        if (count) count.textContent = '0' + (target + 1);
+      }
+    }
+    prev.addEventListener('click', function () { step(-1); });
+    next.addEventListener('click', function () { step(1); });
+  })();
 </script>
 </body>
 </html>
