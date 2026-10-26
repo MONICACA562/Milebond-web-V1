@@ -462,6 +462,7 @@ a:hover{color:#c85a0a;text-decoration:none}
   panels.forEach(function (li) {
     var btn = li.querySelector('.mbn-trigger');
     btn.addEventListener('click', function (e) {
+      if (btn.tagName === 'A') return;
       e.preventDefault();
       var willOpen = !li.classList.contains('open');
       closeAll(li);

@@ -391,10 +391,10 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
       <!-- Products mega menu -->
       <li class="services-mega products-mega">
-        <button type="button" class="mega-trigger px-2 py-2 xl:px-3 hover:text-amber transition-colors text-brandgray-600 font-semibold" aria-haspopup="true" aria-expanded="false" aria-controls="navProductsPanel">
+        <a href="/all-products" class="mega-trigger px-2 py-2 xl:px-3 hover:text-amber transition-colors text-brandgray-600 font-semibold" aria-haspopup="true" aria-expanded="false" aria-controls="navProductsPanel">
           Products
           <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+        </a>
         <div class="mega-panel products-panel" id="navProductsPanel" role="menu">
           <div class="pm-grid">
             <a href="/products/home-kitchen" class="pm-item" role="menuitem">
@@ -526,6 +526,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         </button>
         <div class="ms-body" id="mobileProductsBody">
           <ul class="py-1 space-y-0.5">
+            <li><a href="/all-products" class="pm-item" role="menuitem"><span class="pm-icon">🗂️</span><span><span class="pm-desc" style="font-weight:800;">All Products</span><br><span class="pm-desc">Browse all 10 categories with sourcing guides</span></span></a></li>
             <li><a href="/products/home-kitchen">Home &amp; Kitchen</a></li>
             <li><a href="/products/pet-supplies">Pet Supplies</a></li>
             <li><a href="/products/beauty-tools">Beauty Tools</a></li>
@@ -934,6 +935,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     var btn = li.querySelector('.mega-trigger');
     if (!btn) return;
     btn.addEventListener('click', function (e) {
+      if (btn.tagName === 'A') return;
       e.preventDefault();
       var willOpen = !li.classList.contains('open');
       closeMega(li);
