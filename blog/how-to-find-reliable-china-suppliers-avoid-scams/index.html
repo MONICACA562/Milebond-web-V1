@@ -192,7 +192,24 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 #mobileMenu .ms-chevron { width: 14px; height: 14px; flex-shrink: 0; }
 /* Sticky header offset when jumping to the quote form */
 #quote { scroll-margin-top: 88px; }
-</style></head><body class="min-h-full flex flex-col">
+</style><style id="nav-brand-tokens">
+/* Nav-only design tokens — mirrors homepage tailwind.config so #navbar renders identically */
+#navbar{color:#364153}
+#navbar .text-brandgray-600{color:#5a5950}
+#navbar .text-brandgray-700{color:#364153}
+#navbar .text-brandgray-500{color:#6a7282}
+#navbar .border-brandgray-100{border-color:#e6e3d8}
+#navbar .bg-brandgray-100{background-color:#e6e3d8}
+#navbar .bg-brandgray-50{background-color:#f3f1ea}
+#navbar .shadow-card{box-shadow:0 4px 20px rgba(10,42,43,.08)}
+#navbar a.nav-cta{background-color:#008138;color:#fff}
+#navbar a.nav-cta:hover{background-color:#0f3d3e}
+#navbar .hover\:text-amber:hover{color:#a06a30}
+#navbar .hover\:bg-brandgray-100:hover{background-color:#e6e3d8}
+#navbar .hover\:bg-brandgray-50:hover{background-color:#f3f1ea}
+#navbar .hover\:bg-amber-600:hover{background-color:#7a5024}
+</style>
+</head><body class="min-h-full flex flex-col">
 <!-- ============ NAVBAR ============ -->
 <header id="navbar" class="sticky top-0 z-50 bg-white border-b border-brandgray-100 transition-all duration-300">
   <nav class="max-w-7xl mx-auto px-4 lg:px-6 h-16 md:h-18 flex items-center justify-between gap-3">
