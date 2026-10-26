@@ -950,6 +950,126 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 @media (max-width:1024px){.footer .footer-grid{grid-template-columns:repeat(3,1fr);gap:28px}}
 @media (max-width:640px){.footer .footer-grid{grid-template-columns:1fr;gap:26px}}
 </style>
+<style id="sv-page-blocks">
+/* ============ SUPPLIER VERIFICATION PAGE — NEW CONTENT BLOCKS ============ */
+/* --- Free verification hook (hero) --- */
+.sv-hook{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;max-width:720px;background:#e9f5ec;border:1px solid rgba(0,129,56,.28);border-radius:12px;padding:16px 20px;margin:0 0 28px;box-shadow:0 12px 30px rgba(0,0,0,.22)}
+.sv-hook-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+.sv-hook-text strong{font-family:'Fraunces','Inter',sans-serif;font-size:15px;color:#0a2a2b;line-height:1.4}
+.sv-hook-text span{font-size:13.5px;color:#3c5a48;line-height:1.5}
+.sv-hook .btn{flex-shrink:0}
+
+/* --- Step comparison (Supplier Verification vs Factory Audit) --- */
+.vs-section{background:var(--cream)}
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1040px;margin:0 auto}
+.vs-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--gray-200);border-left:4px solid var(--orange);border-radius:var(--radius-lg);padding:32px 30px;transition:box-shadow .3s,transform .3s}
+.vs-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.vs-head{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin-bottom:10px}
+.vs-step{font-family:'Fraunces','Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);background:rgba(160,106,48,.08);border:1px solid rgba(160,106,48,.25);padding:4px 8px;border-radius:4px;white-space:nowrap}
+.vs-title{font-size:22px}
+.vs-label{font-family:'Fraunces','Inter',sans-serif;font-size:13px;font-weight:600;color:var(--orange);margin-bottom:18px;line-height:1.5}
+.vs-list{flex:1;margin:0;padding:0;list-style:none}
+.vs-list li{position:relative;padding:5px 0 5px 22px;font-size:14px;color:var(--gray-900);line-height:1.6}
+.vs-list li::before{content:'';position:absolute;left:0;top:12px;width:8px;height:8px;border-radius:50%;background:var(--orange)}
+.vs-foot{margin-top:22px;padding-top:16px;border-top:1px solid var(--gray-200);font-size:14px;color:var(--gray-600);line-height:1.6}
+
+/* --- Three layers desk check --- */
+.lv-section{background:#fff}
+.lv-wrap{max-width:1000px;margin:0 auto}
+.lv-layer{background:var(--cream);border:1px solid var(--gray-200);border-left:4px solid var(--orange);border-radius:var(--radius);padding:26px 28px 22px;margin-bottom:18px}
+.lv-layer:last-of-type{margin-bottom:0}
+.lv-title{font-size:17px;margin-bottom:12px;line-height:1.4}
+.lv-title span{display:block;margin-top:4px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:500;color:var(--gray-600);letter-spacing:0}
+.lv-list{margin:0;padding:0;list-style:none}
+.lv-list li{position:relative;padding:4px 0 4px 18px;font-size:13.5px;color:var(--gray-600);line-height:1.65}
+.lv-list li::before{content:'';position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.mb-edge{margin-top:22px;background:#e9f5ec;border:1px solid rgba(0,129,56,.28);border-left:4px solid #008138;border-radius:var(--radius);padding:22px 26px;font-size:14.5px;color:var(--navy);line-height:1.75}
+.mb-edge strong{color:#0a6b36}
+
+/* --- 27-point sub-block (inside "What you actually get") --- */
+.pt-sub{margin-top:64px;padding-top:56px;border-top:1px solid var(--gray-200)}
+.pt-head{max-width:760px;margin:0 auto 32px;text-align:center}
+.pt-head h3{font-size:clamp(24px,3vw,32px);margin:14px 0 10px}
+.pt-head p{font-size:15.5px;color:var(--gray-600);line-height:1.7}
+.pt-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1000px;margin:0 auto}
+.pt-card{background:#fff;border:1px solid var(--gray-200);border-left:4px solid var(--orange);border-radius:var(--radius);padding:22px 24px}
+.pt-card h4{font-family:'Fraunces','Inter',sans-serif;font-size:15px;color:var(--navy);margin-bottom:10px}
+.pt-card ul{margin:0;padding:0;list-style:none}
+.pt-card li{position:relative;padding:3px 0 3px 18px;font-size:13px;color:var(--gray-600);line-height:1.6}
+.pt-card li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:#008138}
+
+/* --- Factory audit report S1–S6 --- */
+.rp-section{background:#fff}
+.rp-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1040px;margin:0 auto}
+.rp-card{background:var(--cream);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:24px 26px 20px}
+.rp-tag{display:inline-flex;align-items:center;font-family:'Fraunces','Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0a6b36;background:rgba(0,129,56,.1);border:1px solid rgba(0,129,56,.25);padding:4px 8px;border-radius:4px;margin-bottom:12px}
+.rp-card h3{font-size:16.5px;margin-bottom:12px}
+.rp-card ul{margin:0;padding:0;list-style:none}
+.rp-card li{position:relative;padding:4px 0 4px 18px;font-size:13.5px;color:var(--gray-600);line-height:1.6}
+.rp-card li::before{content:'';position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:#008138}
+.dl-hook{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;max-width:1040px;margin:32px auto 0;background:#e9f5ec;border:1px solid rgba(0,129,56,.28);border-radius:var(--radius-lg);padding:24px 28px}
+.dl-hook p{font-size:14.5px;color:var(--navy);line-height:1.65;max-width:620px}
+.dl-hook .btn{flex-shrink:0}
+
+/* --- 8-dimension scoring --- */
+.sc-section{background:#fff}
+.sc-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:32px;max-width:1060px;margin:0 auto;align-items:start}
+.sc-dims{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.sc-dim{background:var(--cream);border:1px solid var(--gray-200);border-radius:var(--radius);padding:20px}
+.sc-idx{font-family:'Fraunces','Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--orange)}
+.sc-dim h4{font-size:14.5px;margin:6px 0 8px}
+.sc-dim p{font-size:13px;color:var(--gray-600);line-height:1.6}
+.sc-side{position:sticky;top:96px;background:var(--navy);border-radius:var(--radius-lg);padding:28px 26px;color:#fff}
+.sc-side h3{color:#fff;font-size:18px;margin-bottom:6px}
+.sc-side .sc-lead{color:rgba(255,255,255,.65);font-size:12.5px;line-height:1.6;margin-bottom:14px}
+.sc-grade{display:flex;gap:14px;padding:14px 0;border-top:1px solid rgba(255,255,255,.12)}
+.sc-grade:first-of-type{border-top:none;padding-top:4px}
+.sc-letter{font-family:'Fraunces','Inter',sans-serif;font-size:22px;font-weight:700;line-height:1.2;flex:0 0 26px}
+.sc-grade h4{color:#fff;font-size:13.5px;margin-bottom:2px}
+.sc-grade p{color:rgba(255,255,255,.72);font-size:12.5px;line-height:1.55}
+.g-a{color:#4ade80}.g-b{color:#e8c998}.g-c{color:#fbbf24}.g-d{color:#f87171}
+
+/* --- Real audit findings --- */
+.fd-section{background:#fff}
+.fd-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1060px;margin:0 auto}
+.fd-card{background:var(--cream);border:1px solid var(--gray-200);border-left:4px solid var(--orange);border-radius:var(--radius);padding:24px 26px}
+.fd-mark{font-family:'Fraunces','Inter',sans-serif;font-size:30px;font-weight:700;color:rgba(160,106,48,.35);line-height:1;margin-bottom:10px}
+.fd-card p{font-size:14px;color:var(--gray-900);line-height:1.7}
+
+/* --- Definitions --- */
+.df-section{background:var(--cream)}
+.df-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1040px;margin:0 auto}
+.df-card{background:#fff;border:1px solid var(--gray-200);border-left:4px solid var(--orange);border-radius:var(--radius);padding:30px 28px}
+.df-card h3{font-size:19px;margin-bottom:12px}
+.df-card p{font-size:14.5px;color:var(--gray-600);line-height:1.8}
+
+/* --- Who needs which check --- */
+.wn-section{background:#fff}
+.wn-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1000px;margin:0 auto}
+.wn-card{background:var(--cream);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:30px 28px}
+.wn-card h3{font-size:19px;margin-bottom:16px}
+.wn-card ul{margin:0;padding:0;list-style:none}
+.wn-card li{position:relative;padding:6px 0 6px 20px;font-size:14px;color:var(--gray-900);line-height:1.6}
+.wn-card li::before{content:'';position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--orange)}
+
+/* --- Responsive --- */
+@media(max-width:1024px){
+  .sc-grid{grid-template-columns:1fr}
+  .sc-side{position:static}
+}
+@media(max-width:900px){
+  .vs-grid,.rp-grid,.fd-grid,.df-grid,.wn-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .sc-dims,.pt-grid{grid-template-columns:1fr}
+  .sv-hook{flex-direction:column;align-items:flex-start}
+  .sv-hook .btn{width:100%;justify-content:center}
+  .dl-hook{flex-direction:column;align-items:flex-start}
+  .dl-hook .btn{width:100%;justify-content:center}
+  .pt-sub{margin-top:44px;padding-top:40px}
+}
+#inquiry{scroll-margin-top:88px}
+</style>
 </head>
 <body>
 
@@ -1197,10 +1317,17 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-badge"><span class="dot"></span> SUPPLIER VERIFICATION &amp; FACTORY AUDIT</div>
-      <h1>Supplier verification — <span>desk checks plus 27-point on-site audit</span>.</h1>
+      <h1>Two checks, one goal: <span>never let a bad supplier touch your order.</span></h1>
       <p class="hero-sub">
-        We don't trust Alibaba badges. We verify factories ourselves: desk research first, then a 27-point on-site audit — business license, production capacity, quality systems, export records and more.
+        Supplier Verification is a fast desk check that filters out shell companies and fake factories before you quote. Factory Audit is the deeper, on-site inspection — a 27-point verification of the factory itself, scored and documented in a written audit report. Start with verification; upgrade to an audit when the order matters.
       </p>
+      <div class="sv-hook">
+        <div class="sv-hook-text">
+          <strong>Free supplier verification — report within 24 hours.</strong>
+          <span>Send us your supplier and get a Pass / Not Pass desk check back tomorrow.</span>
+        </div>
+        <a href="#inquiry" class="btn btn-primary btn-sm">Verify My Supplier Free</a>
+      </div>
       <div class="hero-actions">
         <a href="../index.html#quote" class="btn btn-primary">Get a Free Quote</a>
         <a href="#process" class="btn btn-white">See the 6-Step Process</a>
@@ -1221,6 +1348,147 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         <p><strong>Supplier verification</strong> is the process of confirming that a Chinese factory is who it claims to be — legally registered, capable of producing at your volume, and not a trading company posing as a factory. Alibaba "verified supplier" badges are paid, not audited. We do our own verification.</p>
         <p style="margin-top:14px">Our process has two stages: desk checks (business license, banking records, export history, online reputation) and a 27-point on-site audit where we visit the factory, walk the production floor, and verify capacity, quality systems and export experience in person.</p>
         <p style="margin-top:14px">We've placed orders with 6,900+ suppliers since 2015. That means we know which factories are reliable — and which to avoid.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DEFINITIONS ================= -->
+  <section class="section df-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="ship-tag">Definitions</span>
+        <h2>Supplier verification and factory audit: what each one is and what it does</h2>
+      </div>
+      <div class="df-grid">
+        <div class="df-card">
+          <h3>What is Supplier Verification?</h3>
+          <p>Supplier Verification is a remote desk check that confirms a supplier is legally registered, is who it claims to be, and is a genuine factory rather than a trading company posing as one. It checks the business license, unified social credit code, legal representative, registered capital, business scope, registration status, penalties and tax records, then cross-checks judicial and operational risk on independent platforms. It does not visit the factory. It is fast (usually 1-3 days), low-cost, and produces a Pass / Not Pass verdict plus a supplier profile you can act on.</p>
+        </div>
+        <div class="df-card">
+          <h3>What is a Factory Audit?</h3>
+          <p>A Factory Audit is an on-site inspection of the physical factory. A Milebond auditor visits the site and verifies 27 specific points across six groups: legal entity, production capacity and people, quality system, on-site observation (lines, QC, warehouse, sample room), outsourcing and subcontractors, and commercial terms. Each factory is then scored on eight dimensions — Legal Qualification, Equipment &amp; Technology, QC Management, Labor Skills &amp; Export Experience, Production &amp; Delivery Capacity, Document Management, Customer Service &amp; Cooperation, New Product Development — with an A/B/C/D rating and a written report with photos. It is the professional check used before large orders, molds, private label or FBA first orders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHO NEEDS WHICH CHECK ================= -->
+  <section class="section wn-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="ship-tag">Who Needs Which Check</span>
+        <h2>Who needs Supplier Verification — and who needs a Factory Audit</h2>
+      </div>
+      <div class="wn-grid">
+        <div class="wn-card">
+          <h3>Choose Supplier Verification if you…</h3>
+          <ul>
+            <li>Are comparing multiple suppliers before your first quote</li>
+            <li>Buy small first orders or single products</li>
+            <li>Have a shortlist but haven't committed</li>
+            <li>Need to quickly filter out shell companies and fake factories</li>
+            <li>Want a free, fast sanity check before spending more.</li>
+          </ul>
+        </div>
+        <div class="wn-card">
+          <h3>Choose a Factory Audit if you…</h3>
+          <ul>
+            <li>Are placing a large or repeat order</li>
+            <li>Are starting a private label or custom mold (tooling)</li>
+            <li>Preparing an Amazon FBA first order</li>
+            <li>Need documented proof for your investors, insurer or team</li>
+            <li>Want to hold the factory accountable with a written 27-point report.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SUPPLIER VERIFICATION VS FACTORY AUDIT ================= -->
+  <section class="section vs-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="ship-tag">Two stages</span>
+        <h2>Supplier Verification vs Factory Audit</h2>
+        <p>Start with a desk check; upgrade to an on-site audit when the order matters.</p>
+      </div>
+      <div class="vs-grid">
+        <div class="vs-card">
+          <div class="vs-head">
+            <span class="vs-step">Step 1</span>
+            <h3 class="vs-title">Supplier Verification</h3>
+          </div>
+          <div class="vs-label">Fast desk check · 1–3 days</div>
+          <ul class="vs-list">
+            <li>License, entity &amp; credit check — done remotely</li>
+            <li>Trader vs factory identity</li>
+            <li>Scale, export experience &amp; payment ability</li>
+            <li>Three layers: official records → third-party → Milebond judgment</li>
+            <li>Output: supplier profile + Pass / Not Pass</li>
+          </ul>
+          <div class="vs-foot">The first filter: cheap, fast, done before you ever quote.</div>
+        </div>
+        <div class="vs-card">
+          <div class="vs-head">
+            <span class="vs-step">Step 2</span>
+            <h3 class="vs-title">Factory Audit</h3>
+          </div>
+          <div class="vs-label">On-site · 27-point · the professional check</div>
+          <ul class="vs-list">
+            <li>We physically visit the factory and check every area</li>
+            <li>27-point inspection: equipment, QC system, storage, outsourcing</li>
+            <li>8-dimension A/B/C/D scorecard with written report</li>
+            <li>Photo log of every area observed</li>
+            <li>Output: formal audit report (the same template we use internally)</li>
+          </ul>
+          <div class="vs-foot">Deeper and more professional — used before large orders, molds or FBA first orders.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THREE LAYERS OF DESK CHECKS ================= -->
+  <section class="section lv-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="ship-tag">Supplier Verification · Desk Check</span>
+        <h2>Three layers of checks — before we ever make the call.</h2>
+        <p>Anyone can copy a website. It takes 10+ years and thousands of suppliers to read a business license the way we do. Here is what gets verified before a factory even enters your shortlist.</p>
+      </div>
+      <div class="lv-wrap">
+        <div class="lv-layer">
+          <h3 class="lv-title">Layer 1 — Official Records <span>(free, authoritative, first pass)</span></h3>
+          <ul class="lv-list">
+            <li>Business license &amp; unified social credit code</li>
+            <li>Company name &amp; legal representative</li>
+            <li>Registered capital &amp; subscribed capital</li>
+            <li>Establishment date &amp; operating term</li>
+            <li>Business scope &amp; registration status</li>
+            <li>Shareholders &amp; key personnel</li>
+            <li>Administrative penalties, business-exception list &amp; serious-dishonesty list</li>
+            <li>Industry classification</li>
+            <li>Dual-disclosure licensing &amp; penalties, tax blacklist, tax credit rating, court-ordered joint disciplinary action</li>
+          </ul>
+        </div>
+        <div class="lv-layer">
+          <h3 class="lv-title">Layer 2 — Third-Party Cross-Check <span>(independent screening)</span></h3>
+          <ul class="lv-list">
+            <li>Business registration &amp; shareholder records re-verified on independent platforms</li>
+            <li>Judicial risk — litigation &amp; enforcement</li>
+            <li>Operational risk signals</li>
+            <li>Intellectual property &amp; qualifications</li>
+            <li>Bidding / tender history</li>
+          </ul>
+        </div>
+        <div class="lv-layer">
+          <h3 class="lv-title">Layer 3 — Milebond Experience Judgment <span>(what databases can't tell you)</span></h3>
+          <ul class="lv-list">
+            <li>Business-scope analysis: specialist manufacturer, or a broad reseller listing?</li>
+            <li>Location analysis: real production site, or a mailing address with no production capability?</li>
+            <li>Geography-driven cost analysis: labor cost, raw-material access, logistics proximity, or machinery &amp; tooling?</li>
+          </ul>
+        </div>
+        <div class="mb-edge"><strong>The Milebond edge:</strong> 10+ years and thousands of suppliers taught us to read what a license doesn't say — whether the address is a factory or a mailbox, whether the scope says maker or reseller, and which cost advantage the location actually buys.</div>
       </div>
     </div>
   </section>
@@ -1341,6 +1609,229 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
           <p>For factories we manage long-term.</p>
         </div>
       </div>
+
+      <!-- ---------- 27-POINT AUDIT CHECKLIST ---------- -->
+      <div class="pt-sub">
+        <div class="pt-head">
+          <span class="ship-tag">27-Point On-Site Audit</span>
+          <h3>What the 27-point audit actually checks</h3>
+          <p>Every on-site audit is walked against the same checkpoint list — six groups, from paperwork to the warehouse floor.</p>
+        </div>
+        <div class="pt-grid">
+          <div class="pt-card">
+            <h4>Legal &amp; Entity</h4>
+            <ul>
+              <li>Business license</li>
+              <li>Legal person consistency</li>
+              <li>Parent / sister companies</li>
+              <li>Registered capital</li>
+            </ul>
+          </div>
+          <div class="pt-card">
+            <h4>Capacity &amp; People</h4>
+            <ul>
+              <li>Production lines</li>
+              <li>Headcount by role</li>
+              <li>Peak-season capacity</li>
+              <li>Backup power</li>
+            </ul>
+          </div>
+          <div class="pt-card">
+            <h4>Quality System</h4>
+            <ul>
+              <li>Independent QC department</li>
+              <li>ISO / product certificates</li>
+              <li>Quality manual</li>
+              <li>FIFO</li>
+              <li>Traceability</li>
+              <li>Calibration</li>
+              <li>Nonconformity handling</li>
+            </ul>
+          </div>
+          <div class="pt-card">
+            <h4>On-Site Observation</h4>
+            <ul>
+              <li>Raw material</li>
+              <li>Furnace / molding line</li>
+              <li>Online QC</li>
+              <li>Packaging</li>
+              <li>Sample room</li>
+              <li>Warehouse (indoor vs outdoor storage)</li>
+            </ul>
+          </div>
+          <div class="pt-card">
+            <h4>Outsourcing &amp; Subcontractors</h4>
+            <ul>
+              <li>Key processes farmed out</li>
+              <li>Who they are</li>
+              <li>Whether they are audited</li>
+            </ul>
+          </div>
+          <div class="pt-card">
+            <h4>Commercial Terms</h4>
+            <ul>
+              <li>Payment terms</li>
+              <li>VAT invoice</li>
+              <li>Lead time</li>
+              <li>On-time delivery rate</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FACTORY AUDIT REPORT ================= -->
+  <section class="section rp-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="ship-tag">Factory Audit · The Report</span>
+        <h2>What's inside your Factory Audit report</h2>
+        <p>You don't get a one-line summary. You get the same structured report we use internally — a written record you can keep, share and hold the factory accountable to.</p>
+      </div>
+      <div class="rp-grid">
+        <div class="rp-card">
+          <span class="rp-tag">S1</span>
+          <h3>Vendor Profile &amp; Legal Entity</h3>
+          <ul>
+            <li>Business license, legal person consistency</li>
+            <li>Registered capital, year established</li>
+            <li>Owners, parent &amp; sister companies</li>
+            <li>Payment terms, VAT invoice ability</li>
+            <li>Bank, contact &amp; delivery terms</li>
+          </ul>
+        </div>
+        <div class="rp-card">
+          <span class="rp-tag">S2</span>
+          <h3>Quality Control Management</h3>
+          <ul>
+            <li>Is QC independent?</li>
+            <li>ISO &amp; product certificates (checked, not claimed)</li>
+            <li>Quality manual approved by top management</li>
+            <li>FIFO, traceability &amp; equipment calibration</li>
+            <li>Nonconformity handling procedure</li>
+          </ul>
+        </div>
+        <div class="rp-card">
+          <span class="rp-tag">S3</span>
+          <h3>Delivery Capacity</h3>
+          <ul>
+            <li>Lead time — first order vs repeat order</li>
+            <li>On-time delivery rate</li>
+            <li>Outsourcing &amp; subcontractors — who, where, audited?</li>
+            <li>Occupied capacity &amp; production area</li>
+            <li>Backup power coverage</li>
+          </ul>
+        </div>
+        <div class="rp-card">
+          <span class="rp-tag">S4</span>
+          <h3>New Product Development</h3>
+          <ul>
+            <li>Design / engineering team</li>
+            <li>Own core technology &amp; patents</li>
+            <li>Design review process (ECR/ECN)</li>
+            <li>Tooling capability — new molds or repair only?</li>
+          </ul>
+        </div>
+        <div class="rp-card">
+          <span class="rp-tag">S5</span>
+          <h3>Customer Service</h3>
+          <ul>
+            <li>Sales structure &amp; response ownership</li>
+            <li>Complaint cases in the past 12 months</li>
+            <li>Complaint reasons &amp; how they are handled</li>
+          </ul>
+        </div>
+        <div class="rp-card">
+          <span class="rp-tag">S6</span>
+          <h3>Scorecard &amp; Photo Log</h3>
+          <ul>
+            <li>8-dimension A/B/C/D rating</li>
+            <li>Overall written conclusion with clear recommendation</li>
+            <li>Photo log of every area — gate, lines, QC, warehouse, samples</li>
+            <li>Required document checklist (what they could / could not provide)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dl-hook">
+        <p>Get the factory audit report file free — see exactly how we score a factory, with the same template we use on every audit.</p>
+        <a href="#inquiry" class="btn btn-primary">Download Sample Audit Report</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW WE SCORE IT ================= -->
+  <section class="section sc-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="ship-tag">How We Score It</span>
+        <h2>8 dimensions · A/B/C/D rating — the standard we actually use</h2>
+        <p>Every audited factory gets scored on eight dimensions, exactly as in our internal audit report template. A = excellent · B = good · C = poor · D = terrible.</p>
+      </div>
+      <div class="sc-grid">
+        <div class="sc-dims">
+          <div class="sc-dim">
+            <span class="sc-idx">01</span>
+            <h4>Legal Qualification</h4>
+            <p>Business license, consistency of the production entity and legal person.</p>
+          </div>
+          <div class="sc-dim">
+            <span class="sc-idx">02</span>
+            <h4>Equipment &amp; Technology</h4>
+            <p>Equipment to make your product, material &amp; process knowledge, sample-making facilities.</p>
+          </div>
+          <div class="sc-dim">
+            <span class="sc-idx">03</span>
+            <h4>Quality Control Management</h4>
+            <p>Independent QC organization, approved sample &amp; spec at production site, defect records &amp; improvement.</p>
+          </div>
+          <div class="sc-dim">
+            <span class="sc-idx">04</span>
+            <h4>Labor Skills &amp; Export Experience</h4>
+            <p>Experience making similar products and shipping to USA/Europe, samples proving the skill.</p>
+          </div>
+          <div class="sc-dim">
+            <span class="sc-idx">05</span>
+            <h4>Production &amp; Delivery Capacity</h4>
+            <p>Ample production lines, storage space, efficiently organized to move goods.</p>
+          </div>
+          <div class="sc-dim">
+            <span class="sc-idx">06</span>
+            <h4>Document Management</h4>
+            <p>Documented, controlled and updated specs, POs and records.</p>
+          </div>
+          <div class="sc-dim">
+            <span class="sc-idx">07</span>
+            <h4>Customer Service &amp; Cooperation</h4>
+            <p>Willingness to negotiate, grow with your business, arrange samples and visits.</p>
+          </div>
+          <div class="sc-dim">
+            <span class="sc-idx">08</span>
+            <h4>New Product Development</h4>
+            <p>Own core technology, patents, design review, tooling capability.</p>
+          </div>
+        </div>
+        <aside class="sc-side">
+          <h3>A/B/C/D rating</h3>
+          <p class="sc-lead">A = excellent · B = good · C = poor · D = terrible. The same scale we apply in every internal audit.</p>
+          <div class="sc-grade">
+            <span class="sc-letter g-a">A</span>
+            <div><h4>Excellent</h4><p>Highly recommended, independent systems, audited records, low risk.</p></div>
+          </div>
+          <div class="sc-grade">
+            <span class="sc-letter g-b">B</span>
+            <div><h4>Good</h4><p>Recommended, solid capability with minor gaps we can manage.</p></div>
+          </div>
+          <div class="sc-grade">
+            <span class="sc-letter g-c">C</span>
+            <div><h4>Poor</h4><p>Not recommended, fixable issues, we require corrective action first.</p></div>
+          </div>
+          <div class="sc-grade">
+            <span class="sc-letter g-d">D</span>
+            <div><h4>Terrible</h4><p>Absolutely not recommended, walk away, we tell you straight.</p></div>
+          </div>
+        </aside>
+      </div>
     </div>
   </section>
 
@@ -1365,6 +1856,43 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
             <tr><th>Language</th><td>We translate and interpret</td><td>English badge</td><td>You navigate Chinese</td></tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= REAL AUDIT FINDINGS ================= -->
+  <section class="section fd-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="ship-tag">From the Audit Files</span>
+        <h2>Real audit findings</h2>
+        <p>Six anonymized findings from real audits — supplier names, locations, contacts and banking details removed.</p>
+      </div>
+      <div class="fd-grid">
+        <div class="fd-card">
+          <div class="fd-mark">&ldquo;</div>
+          <p>QC department was not independent and no ISO certificate existed — scored C. Factory was asked to fix the system before we approved mass production.</p>
+        </div>
+        <div class="fd-card">
+          <div class="fd-mark">&ldquo;</div>
+          <p>A key outsourced process (metal casing) went to an unaudited tiny workshop. Flagged as a risk; product went out only after the workshop passed a follow-up check.</p>
+        </div>
+        <div class="fd-card">
+          <div class="fd-mark">&ldquo;</div>
+          <p>Online QC existed but daily yield and defect records could not be produced. We required written defect logs before repeat orders.</p>
+        </div>
+        <div class="fd-card">
+          <div class="fd-mark">&ldquo;</div>
+          <p>Finished goods showed a ~10% mold-mark defect rate and bottles lacked clarity. The factory's answer: &lsquo;we can sort by your standard&rsquo; — we required a sorting plan and AQL inspection before shipment.</p>
+        </div>
+        <div class="fd-card">
+          <div class="fd-mark">&ldquo;</div>
+          <p>70% of finished goods were stored outdoors on pallets under shrink-wrap, exposed to sun and dust. Warehousing scored down; indoor storage was made a condition.</p>
+        </div>
+        <div class="fd-card">
+          <div class="fd-mark">&ldquo;</div>
+          <p>New product development scored D — no in-house designers, no patents, tooling was repair-only. Fine for repeat glassware; a deal-breaker for custom molds.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1455,6 +1983,39 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
           <div class="faq-answer">
             <div class="faq-answer-inner">
               Yes. The audit documentation is suitable for retailer compliance requirements (e.g. BSCI, SMETA equivalent evidence).
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            What's the difference between supplier verification and factory audit?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Verification is a fast desk check that filters suppliers before quoting. An audit is a deeper on-site 27-point inspection with a written A/B/C/D report — the professional check we run before large orders, molds or FBA first orders. Most clients start with verification and upgrade to an audit when the order matters.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            How do you know a factory is real from a desk check?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Three layers. Official records first — license, credit code, penalties, tax status. Then independent platform cross-checks for judicial and operational risk. Then what 10+ years of sourcing across thousands of suppliers teaches you: whether the business scope says specialist manufacturer or reseller, whether the address is a real production site or just a mailbox, and whether the location competes on labor, raw materials, logistics or machinery. A fake factory fails long before we ever call.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            Will you share the actual audit report with me?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. You receive the written audit report — the same structured template we use internally, with the 27-point findings, the 8-dimension scorecard and the photo log. Sensitive details are removed; every fact we verified stays. You can keep it, share it with partners, and use it to hold the factory accountable.
             </div>
           </div>
         </div>
@@ -1790,6 +2351,30 @@ function toggleDropdown(el){var dd=el.closest('.nav-dropdown');if(!dd)return;doc
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes. The audit documentation is suitable for retailer compliance requirements (e.g. BSCI, SMETA equivalent evidence)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between supplier verification and factory audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Verification is a fast desk check that filters suppliers before quoting. An audit is a deeper on-site 27-point inspection with a written A/B/C/D report — the professional check we run before large orders, molds or FBA first orders. Most clients start with verification and upgrade to an audit when the order matters."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you know a factory is real from a desk check?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Three layers. Official records first — license, credit code, penalties, tax status. Then independent platform cross-checks for judicial and operational risk. Then what 10+ years of sourcing across thousands of suppliers teaches you: whether the business scope says specialist manufacturer or reseller, whether the address is a real production site or just a mailbox, and whether the location competes on labor, raw materials, logistics or machinery. A fake factory fails long before we ever call."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will you share the actual audit report with me?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You receive the written audit report — the same structured template we use internally, with the 27-point findings, the 8-dimension scorecard and the photo log. Sensitive details are removed; every fact we verified stays. You can keep it, share it with partners, and use it to hold the factory accountable."
         }
       }
     ]
