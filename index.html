@@ -563,6 +563,11 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 .pm-name{font-size:14px;font-weight:700;color:#0a2a2b;line-height:1.3}
 .pm-item:hover .pm-name{color:#1F5C4D}
 .pm-desc{font-size:12px;color:#6a7282;line-height:1.35;margin-top:2px}
+/* Mobile All Products row — matches the desktop pm-item */
+#mobileProductsBody .pm-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;margin-bottom:2px;background:#f3f1ea}
+#mobileProductsBody .pm-item:hover{background:#e6e3d8}
+#mobileProductsBody .pm-item .pm-icon{width:32px;height:32px;font-size:15px;background:#0a2a2b}
+#mobileProductsBody .pm-item .pm-desc{margin-top:0;line-height:1.35}
 </style>
 <style id="nav-mobile-css">
 /* Mobile drawer: collapsed by default, scrolls when taller than the viewport */
@@ -648,10 +653,10 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
       <!-- Products mega menu -->
       <li class="services-mega products-mega">
-        <button type="button" class="mega-trigger px-2 py-2 xl:px-3 hover:text-amber transition-colors text-brandgray-600 font-semibold" aria-haspopup="true" aria-expanded="false" aria-controls="navProductsPanel">
+        <a href="/all-products" class="mega-trigger px-2 py-2 xl:px-3 hover:text-amber transition-colors text-brandgray-600 font-semibold" aria-haspopup="true" aria-expanded="false" aria-controls="navProductsPanel">
           Products
           <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+        </a>
         <div class="mega-panel products-panel" id="navProductsPanel" role="menu">
           <div class="pm-grid">
             <a href="/products/home-kitchen" class="pm-item" role="menuitem">
@@ -783,6 +788,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         </button>
         <div class="ms-body" id="mobileProductsBody">
           <ul class="py-1 space-y-0.5">
+            <li><a href="/all-products" class="pm-item" role="menuitem"><span class="pm-icon">🗂️</span><span><span class="pm-desc" style="font-weight:800;">All Products</span><br><span class="pm-desc">Browse all 10 categories with sourcing guides</span></span></a></li>
             <li><a href="/products/home-kitchen">Home &amp; Kitchen</a></li>
             <li><a href="/products/pet-supplies">Pet Supplies</a></li>
             <li><a href="/products/beauty-tools">Beauty Tools</a></li>
@@ -848,7 +854,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
                 Chat on WhatsApp
               </a>
-              <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-quote">Get Free Quote</a>
+              <a href="/free-quote" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-quote">Get Free Quote</a>
               <a href="/services/product-sourcing" class="hero-btn hero-btn-ghost">Explore Services →</a>
             </div>
           </div>
@@ -876,7 +882,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
                 Chat on WhatsApp
               </a>
-              <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-quote">Get Free Quote</a>
+              <a href="/free-quote" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-quote">Get Free Quote</a>
               <a href="/services/product-sourcing" class="hero-btn hero-btn-ghost">Explore Services →</a>
             </div>
           </div>
@@ -905,7 +911,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
                 Chat on WhatsApp
               </a>
-              <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-quote">Get Free Quote</a>
+              <a href="/free-quote" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-quote">Get Free Quote</a>
               <a href="/services/product-sourcing" class="hero-btn hero-btn-ghost">Explore Services →</a>
             </div>
           </div>
@@ -934,7 +940,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
                 Chat on WhatsApp
               </a>
-              <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-quote">Get Free Quote</a>
+              <a href="/free-quote" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-quote">Get Free Quote</a>
               <a href="/services/product-sourcing" class="hero-btn hero-btn-ghost">Explore Services →</a>
             </div>
           </div>
@@ -1428,7 +1434,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
           <li><a href="/how-it-works" class="hover:text-amber transition-colors">How It Works</a></li>
           <li><a href="/about" class="hover:text-amber transition-colors">About Us</a></li>
           <li><a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" class="hover:text-amber transition-colors">Contact Us</a></li>
-          <li><a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" class="hover:text-amber transition-colors">Free Quote</a></li>
+          <li><a href="/free-quote" target="_blank" rel="noopener noreferrer" class="hover:text-amber transition-colors">Free Quote</a></li>
           <li><a href="/faq" class="hover:text-amber transition-colors">FAQ</a></li>
           <li><a href="/blog" class="hover:text-amber transition-colors">Blog</a></li>
         </ul>
@@ -1518,6 +1524,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     var btn = li.querySelector('.mega-trigger');
     if (!btn) return;
     btn.addEventListener('click', function (e) {
+      if (btn.tagName === 'A') return;
       e.preventDefault();
       var willOpen = !li.classList.contains('open');
       closeMega(li);

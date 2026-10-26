@@ -10,3 +10,6 @@
 /services/amazon-fba-prep-labeling /services/amazon-brand-management 301
 /services/amazon-fba-prep-labeling/ /services/amazon-brand-management 301
 /services/amazon-fba-prep-labeling.html /services/amazon-brand-management 301
+
+# Real 404 for unmatched paths — stop silently serving the homepage.
+/* /404.html 404
