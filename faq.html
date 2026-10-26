@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1406,7 +1406,35 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 #mobileMenu .ms-chevron { width: 14px; height: 14px; flex-shrink: 0; }
 /* Sticky header offset when jumping to the quote form */
 #quote { scroll-margin-top: 88px; }
-</style></head>
+</style><style id="faq-v3">
+/* FAQ body v3 — scoped to this page only */
+.fq2{display:grid;grid-template-columns:220px minmax(0,1fr);gap:34px;align-items:start;margin:18px 0 8px}
+.fq2-side{position:sticky;top:96px;align-self:start}
+.fq2-side-label{font-size:13px;font-weight:800;letter-spacing:.02em;color:#0F2540;background:#F3F4F6;border-radius:8px;padding:10px 12px;margin-bottom:10px}
+.fq2-nav{display:flex;flex-direction:column;gap:6px}
+.fq2-btn{display:block;width:100%;text-align:left;padding:10px 12px;font-size:13.5px;line-height:1.35;font-weight:600;color:#0F2540;background:#fff;border:1px solid #E5E7EB;border-radius:8px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.fq2-btn:hover{background:#F3F4F6}
+.fq2-btn.is-active{background:#0F2540;color:#fff;border-color:#0F2540;font-weight:700}
+.fq2-main{min-width:0}
+.fq2-cat{margin:0 0 30px}
+.fq2-cat[hidden]{display:none}
+.fq2-cat h2{font-size:19px;font-weight:700;line-height:1.3;color:#0F2540;margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid #E5E7EB}
+.fq2-item{background:#fff;border:1px solid #E5E7EB;border-radius:8px;margin-bottom:8px;overflow:hidden}
+.fq2-q{display:flex;width:100%;align-items:flex-start;justify-content:space-between;gap:14px;text-align:left;padding:14px 16px;font-family:inherit;font-size:14.5px;font-weight:700;line-height:1.45;color:#0F2540;background:none;border:0;cursor:pointer}
+.fq2-q:hover{background:#FAFAFA}
+.fq2-sign{flex:none;font-size:18px;line-height:1.1;font-weight:700;color:#E87722}
+.fq2-a{max-height:0;overflow:hidden;transition:max-height .22s ease}
+.fq2-item.is-open .fq2-a{max-height:640px}
+.fq2-a-inner{padding:0 16px 16px;font-size:14px;line-height:1.75;color:#374151}
+.fq2-proof{font-weight:700;color:#0F2540}
+@media (max-width:767.98px){
+  .fq2{grid-template-columns:1fr;gap:22px}
+  .fq2-side{position:static}
+  .fq2-nav{flex-direction:column}
+  .fq2-btn{padding:10px 12px}
+}
+</style>
+</head>
 <body>
 
 <!-- ============ NAVBAR ============ -->
@@ -1663,164 +1691,262 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <!-- BREADCRUMB -->
       <nav class="fq-breadcrumb-nav" aria-label="Breadcrumb"><a href="./">Home</a><span class="sep">/</span><span>FAQ</span></nav>
 
-      <!-- STICKY CATEGORY TABS -->
-      <div class="fq-tabs" id="fqTabs">
-        <button type="button" class="fq-tab active" data-cat="company">🏢 Company &amp; Trust</button>
-        <button type="button" class="fq-tab" data-cat="start">🚀 Getting Started</button>
-        <button type="button" class="fq-tab" data-cat="sourcing">🔍 Sourcing &amp; Suppliers</button>
-        <button type="button" class="fq-tab" data-cat="oem">🏷️ Private Label &amp; OEM</button>
-        <button type="button" class="fq-tab" data-cat="fba">📦 Amazon FBA</button>
-        <button type="button" class="fq-tab" data-cat="qc">✅ Quality Control</button>
-        <button type="button" class="fq-tab" data-cat="shipping">🚚 Logistics &amp; Shipping</button>
-        <button type="button" class="fq-tab" data-cat="pricing">💰 Pricing &amp; Payment</button>
-        <button type="button" class="fq-tab" data-cat="pitfalls">⚠️ Avoiding Pitfalls</button>
-        <button type="button" class="fq-tab" data-cat="resources">📚 Resources</button>
+      <div class="fq2">
+        <aside class="fq2-side" aria-label="FAQ categories">
+          <div class="fq2-side-label">FAQ Categories</div>
+          <div class="fq2-nav" id="fq2Nav">
+          <button type="button" class="fq2-btn is-active" data-cat="all">All Questions</button>
+          <button type="button" class="fq2-btn" data-cat="company">Company &amp; Trust</button>
+          <button type="button" class="fq2-btn" data-cat="start">Getting Started</button>
+          <button type="button" class="fq2-btn" data-cat="sourcing">Sourcing &amp; Suppliers</button>
+          <button type="button" class="fq2-btn" data-cat="qc">Quality Control &amp; AQL 2.5</button>
+          <button type="button" class="fq2-btn" data-cat="oem">Private Label &amp; OEM</button>
+          <button type="button" class="fq2-btn" data-cat="pricing">Pricing &amp; Fees</button>
+          <button type="button" class="fq2-btn" data-cat="shipping">Logistics &amp; FBA Shipping</button>
+          <button type="button" class="fq2-btn" data-cat="payments">Payments &amp; Terms</button>
+          <button type="button" class="fq2-btn" data-cat="pitfalls">Avoiding Pitfalls</button>
+          </div>
+        </aside>
+        <div class="fq2-main" id="fq2Main">
+
+        <section class="fq2-cat" data-cat="company">
+          <h2>Company &amp; Trust</h2>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Can you share your business license and Unified Social Credit Code before I pay?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes. We are a registered Yiwu company operating since <strong class="fq2-proof">2015</strong>. After you sign a short NDA we share our legal name, business license, USC, and registered address — all verifiable on China's National Enterprise Credit Information Publicity System (gsxt.gov.cn). A legitimate sourcing partner never hides its legal identity. Message us on WhatsApp and we will send the documents the same day.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Where is your office? Can I visit you in Yiwu?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Our team works out of Yiwu, Zhejiang, with an <strong class="fq2-proof">800 sqm warehouse</strong>. You are welcome to visit the office and walk the Yiwu International Trade City with us when you are in town. This is exactly where we do our on-the-ground supplier visits. Request a free quote and we will plan the visit around your trip.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>How long have you been sourcing, and who is your founder?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Milebond was founded in <strong class="fq2-proof">2015 by Monica Zhu</strong>. Before Milebond she built and ran Amazon brands including Juvale and Blue Panda. So we source the way we wished someone had sourced for us: transparent, on-site, and listing-aware. Message us on WhatsApp if you would like to hear how that experience shapes a quote.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Can you share real client references?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">We have helped <strong class="fq2-proof">50+ brands</strong> scale from idea to repeat orders in 30+ countries. We share anonymized case studies on request. We can also connect you with a reference client once we have their permission. Request a free quote and tell us which category you are sourcing, and we will match you with the closest case.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>What payment methods do you accept?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">We accept T/T bank transfer to our corporate account (never a personal account), PayPal, and Alibaba Trade Assurance. We also accept Western Union for small orders. Every payment is tied to an official proforma invoice. Message us on WhatsApp and we will send the invoice details for your quote.</div></div>
+          </div>
+        </section>
+
+        <section class="fq2-cat" data-cat="start">
+          <h2>Getting Started</h2>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>What is your minimum order quantity? Do you really accept one carton?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes — our MOQ starts at a single carton, from around <strong class="fq2-proof">$100</strong>. Custom logo and your own spec are allowed on that first carton. No 500-piece minimum, no dead-stock gamble. Request a free quote and we will confirm the MOQ for your exact product.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>I'm an individual seller with no registered company — can you work with me?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Absolutely. We work with individual sellers, sole proprietors, and registered companies. For Amazon FBA sellers, Amazon's importer-of-record handles customs, so you do not need your own import license. We will tell you upfront if your product category or destination requires a local importer. Message us on WhatsApp with your destination and we will confirm the requirements.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>I only have a product photo — can you find it?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes. Send clear photos (or a 1688/Alibaba link) and we search across 1688, Yiwu market stalls, and our factory network. We come back with <strong class="fq2-proof">2–3 quotes side by side</strong>, plus supplier notes. If there is no exact match we suggest close alternatives in the same category. Request a free quote and attach the photo to get started.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Can you place orders on 1688 or Taobao links for me?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes — you do not need a Chinese Alipay account. Send us the link, and we contact the supplier, negotiate, arrange samples, inspect, consolidate, and ship. You see the <strong class="fq2-proof">itemized cost</strong> before anything is paid. Message us on WhatsApp with your link and target quantity.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>How fast do I get a quote after inquiry?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">We reply within <strong class="fq2-proof">24 hours</strong> on average, usually around 6 hours. You get a dedicated WhatsApp account manager — no ticket system, no chatbot. Request a free quote and we will come back with options and pricing in the same thread.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>What should I send to get started?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Any of these works: a product photo, a 1688/Alibaba link, a CAD drawing, or a rough description. We handle the rest. Your first call is a <strong class="fq2-proof">free 30-minute sourcing consultation</strong>. Message us on WhatsApp to book a slot.</div></div>
+          </div>
+        </section>
+
+        <section class="fq2-cat" data-cat="sourcing">
+          <h2>Sourcing &amp; Suppliers</h2>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Do you work directly with factories, or are you just a 1688 middleman?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">We source across three tiers — 1688 wholesalers, Yiwu market stalls (<strong class="fq2-proof">75,000+ booths</strong>), and directly audited factories. We always tell you which tier your quote comes from. We never pretend a trader is a factory. Request a free quote and we will label the source tier on every line.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>How do you verify a factory before recommending it?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Every recommended factory passes a <strong class="fq2-proof">27-point on-site audit</strong>: fire safety, electrical certifications, export license, tooling capacity, and QC staff count. Audit reports are yours to share. Message us on WhatsApp if you would like to see a sample report.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>I already found a supplier on Alibaba — can you beat that price?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Often yes. We run multi-supplier comparison on the same spec. In one case study, a stainless steel canning rack listed at ¥11/unit from an Alibaba "304" supplier was re-sourced through Yiwu at <strong class="fq2-proof">¥5.40 — 51% savings</strong>, and we confirmed the metal was actually 304 via spectrometer. Send us the link and we will benchmark it for free.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Which regions do you cover?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">HQ in Yiwu (small commodities, home and kitchen, pet, toys, stationery) with partner networks in <strong class="fq2-proof">Guangzhou</strong> for hardgoods and <strong class="fq2-proof">Shenzhen</strong> for electronics. That coverage lets us compare factories across regions, not just within one city. Request a free quote and tell us where your product category sits.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>What categories are you strongest in?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Home &amp; Kitchen, Pet Supplies, Toys, Stationery, and Hardware. Across those we have managed <strong class="fq2-proof">54,930+ SKUs</strong> and worked with <strong class="fq2-proof">6,900+ suppliers</strong>. That depth is why quotes come back with real alternatives rather than one option. Message us on WhatsApp with your category.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Can you visit a factory in person and send a live video tour?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes — we walk the floor, inspect tooling, meet the QC staff, and send you the footage. You will see the real production environment, not a showroom. Request a free quote and we will schedule the visit around your approval timeline.</div></div>
+          </div>
+        </section>
+
+        <section class="fq2-cat" data-cat="qc">
+          <h2>Quality Control &amp; AQL 2.5</h2>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>What is AQL 2.5 and why does it matter?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">AQL 2.5 is the industry-standard acceptance quality limit for consumer goods. At that level we sample statistically and reject the batch if major defects exceed a set threshold. Every Milebond reorder runs an <strong class="fq2-proof">AQL 2.5 pre-shipment inspection</strong>, with a written report sent to you. Message us on WhatsApp to see a sample report.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>What are your three QC gates?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Gate 1 is a pre-production sample test, where we confirm the sample matches your spec before bulk starts. Gate 2 is a bulk sample test on the first units off the line. Gate 3 is the <strong class="fq2-proof">AQL 2.5 pre-shipment inspection</strong> before the container closes. Request a free quote and we will map these gates to your order timeline.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Do you send photos of the real production batch, or catalog stock photos?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Real batch photos and videos, never supplier catalog images. We photograph appearance, packaging, labels, and quantity. We also run <strong class="fq2-proof">functional tests (leak, switch, drop, charge) on video</strong>. You approve in writing before anything ships. Message us on WhatsApp if you want to see an example inspection pack.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>What if bulk production doesn't match the approved sample?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">We rework, replace, or recolor at our cost before shipping. Your balance is only released after you approve the batch photos. If an issue slips through, we handle returns and exchanges under our refund policy. Request a free quote and we will include the <strong class="fq2-proof">QC terms in writing</strong>.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Do you test function, not just appearance?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes. Appearance-only inspections miss the failures that turn into Amazon returns. We run functional tests and <strong class="fq2-proof">record them on video</strong>. What works in the sample works in the container. Message us on WhatsApp with your product type and we will list the tests we would run.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Do you handle FBA prep?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes — polybags, Amazon FNSKU labels, carton content info, suffocation stickers, and carton marking, all to Amazon's spec. Cartons <strong class="fq2-proof">pass receiving</strong>; they do not get kicked back. Request a free quote and tell us which marketplace you are shipping to.</div></div>
+          </div>
+        </section>
+
+        <section class="fq2-cat" data-cat="oem">
+          <h2>Private Label &amp; OEM</h2>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Do you support custom logo and packaging?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes — custom logo, custom packaging, and your own parts and spec are available from the <strong class="fq2-proof">very first carton</strong>. No tooling commitment is needed to start. Message us on WhatsApp with your artwork and target quantity.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Who owns the injection mold after I pay for it?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">You do. Before any tooling starts, we sign a contract clause stating the mold, the design, and the tooling deposit belong to you. The <strong class="fq2-proof">factory cannot re-sell your product</strong> to another buyer. Request a free quote and we will share the clause wording up front.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>How do you stop factories from copying my design?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">We require every factory we share your design with to sign an <strong class="fq2-proof">NNN agreement</strong> (Non-Disclosure, Non-Use, Non-Circumvention). It is drafted in Chinese under PRC law, with RMB-denominated penalties. A Western-style NDA alone is hard to enforce in China. Message us on WhatsApp if you would like to review the template.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Should I register my trademark in China before ordering?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes — China follows first-to-file, so someone could squat your brand name. Registration through a Chinese trademark attorney costs roughly <strong class="fq2-proof">$300–600 per class</strong>, and we coordinate it through a licensed local firm. Request a free quote and we will add trademark timing to your launch plan.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>How long does OEM take from idea to sample?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Samples in 3–7 days, mass production in 20–30 days. One brand we work with went from design to market in <strong class="fq2-proof">5 weeks</strong>. Message us on WhatsApp with your deadline and we will confirm what is realistic.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>I have a CAD drawing but no factory — can you help?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes. We match your design, margin, and MOQ to audited factories. We do not <strong class="fq2-proof">scatter your drawing</strong> to 20 unknown suppliers. Request a free quote and send the drawing under NDA.</div></div>
+          </div>
+        </section>
+
+        <section class="fq2-cat" data-cat="pricing">
+          <h2>Pricing &amp; Fees</h2>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>How much do you charge?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">A flat service fee of <strong class="fq2-proof">3–8% of order value</strong>, tiered by order size. That is our only margin — we do not take factory kickbacks. Message us on WhatsApp with your order size and we will quote the exact tier.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Do factories pay you kickbacks baked into my price?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">No. We show you the real factory invoice. Every saving we negotiate on your behalf stays with you: <strong class="fq2-proof">"my margin is my fee, your savings are yours."</strong> Request a free quote and compare our line items against any competitor.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Can I see the factory invoice?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes — your quote is itemized: part cost, packaging, labor, domestic freight, and our fee. You can verify it against the <strong class="fq2-proof">real factory invoice</strong>. Message us on WhatsApp if you would like a sample quote layout before ordering.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>What does your service fee include?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Supplier search and screening, price negotiation, sample management, pre-shipment QC, domestic shipping to our Yiwu warehouse, and customs documentation. It <strong class="fq2-proof">does not include international freight or destination duty</strong>. Request a free quote and we will separate those lines clearly.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Does my unit price drop on reorders?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Every reorder is renegotiated — materials, payment terms, packaging. Our clients see roughly <strong class="fq2-proof">10% lower landed cost</strong> on reorders while quality holds. Message us on WhatsApp and we will review your reorder pricing.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Can you give me a full landed-cost breakdown?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes — before you commit we show product cost, domestic shipping, our fee, freight (air, sea, or express), and estimated duty. You can calculate your margin <strong class="fq2-proof">before ordering</strong>. Request a free quote with your target retail price and we will model it.</div></div>
+          </div>
+        </section>
+
+        <section class="fq2-cat" data-cat="shipping">
+          <h2>Logistics &amp; FBA Shipping</h2>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Do you ship directly to Amazon FBA warehouses?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes. We handle FBA prep, labeling, and shipping to the Amazon fulfillment center of your choice. Message us on WhatsApp with your <strong class="fq2-proof">warehouse code</strong> and we will confirm routing.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Do you offer DDP door-to-door?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes — DDP to the US, EU, UAE, Australia and <strong class="fq2-proof">30+ other countries</strong>. The quote includes international freight, customs duty, import VAT, clearance, and last-mile delivery. No surprises at the border. Request a free quote with your delivery address.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>I buy from 4 suppliers — can you consolidate?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes. We consolidate goods from multiple suppliers at our <strong class="fq2-proof">800 sqm Yiwu warehouse</strong> and ship as one container. We offer up to 15 days of free consolidation storage. Message us on WhatsApp with your supplier list.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>How long does shipping take?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Express 3–7 days, air freight 5–15 days, sea freight 25–45 days. We match the method to your <strong class="fq2-proof">launch window and budget</strong>. Request a free quote and tell us your in-stock date.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>What customs documents do you prepare?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Commercial invoice, detailed packing list, certificate of origin, and product-specific certifications (CE, FDA, FCC, RoHS, food-grade) as required. Message us on WhatsApp with your destination country so we can confirm the <strong class="fq2-proof">exact document set</strong>.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Which countries do you ship to?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner"><strong class="fq2-proof">30+ countries</strong> across North America, Europe, the Middle East, Southeast Asia, and Oceania. If your destination is not on the usual list, ask — we will confirm feasibility before quoting. Request a free quote with your delivery port.</div></div>
+          </div>
+        </section>
+
+        <section class="fq2-cat" data-cat="payments">
+          <h2>Payments &amp; Terms</h2>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>What are your deposit and balance terms?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Standard <strong class="fq2-proof">30% deposit</strong> to start production, and the <strong class="fq2-proof">70% balance only after QC photos and your written approval</strong>. Never before. Message us on WhatsApp if you need to discuss terms for a first order.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Do you support Alibaba Trade Assurance?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes — <strong class="fq2-proof">Trade Assurance is available for first-time orders</strong>. Repeat clients typically use direct T/T to our corporate account. Request a free quote and tell us which payment route you prefer.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Do you offer Net-30 for repeat wholesalers?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes — after <strong class="fq2-proof">3+ successful orders</strong> we can extend Net-30 terms to wholesale and repeat buyers. Message us on WhatsApp with your order history to check eligibility.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Can I pay in USD?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes — all quotes and invoices are in <strong class="fq2-proof">USD</strong>. We accept T/T, PayPal, and Trade Assurance. Request a free quote and we will send the invoice in USD.</div></div>
+          </div>
+        </section>
+
+        <section class="fq2-cat" data-cat="pitfalls">
+          <h2>Avoiding Pitfalls</h2>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>How do I avoid Alibaba/1688 sourcing scams?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Never pay to a personal account, always start with a small trial order, verify the business license, and use third-party payment protection. <strong class="fq2-proof">On-site inspection is the strongest filter.</strong> Message us on WhatsApp and we will review a quote or supplier you are unsure about.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>The factory quietly switched materials — how do you prevent that?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">We do material verification, for example spectrometer testing on stainless steel, and compare the bulk sample against the approved sample. In one case we caught a factory <strong class="fq2-proof">labeling 201 steel as 304</strong> before the container shipped, saving the client from negative reviews and returns. Request a free quote and we will list the checks for your material.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>How do I choose a reliable sourcing agent?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Ask four questions: Do you audit factories on-site? Is your fee transparent? Do you send real batch photos? Who owns the mold? <strong class="fq2-proof">Compare Milebond on those four</strong> and you will see the difference. Message us on WhatsApp for the answers in writing.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>What are common first-order mistakes new Amazon sellers make?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Four we see every week: over-ordering MOQ, skipping pre-shipment QC, ignoring trademark and patent clearance, and wrong packaging for FBA. <strong class="fq2-proof">We walk first-time sellers through all four</strong>. Request a free quote and we will flag the risks specific to your product.</div></div>
+          </div>
+          <div class="fq2-item">
+            <button type="button" class="fq2-q" aria-expanded="false"><span>Can bad sourcing get my Amazon account suspended?</span><span class="fq2-sign" aria-hidden="true">+</span></button>
+            <div class="fq2-a"><div class="fq2-a-inner">Yes — infringement and non-compliance are common suspension causes. We flag trademark and patent risks before production and ensure compliance documentation (CE, FDA, FCC) <strong class="fq2-proof">matches your listing</strong>. Message us on WhatsApp with your product link and we will run a quick risk check.</div></div>
+          </div>
+        </section>
+
+        </div>
       </div>
-
-      <!-- FAQ PANELS (one per category tab) -->
-      <div class="fq-panels">
-
-        <!-- ===== 1. Company & Trust ===== -->
-        <section class="fq-panel active" id="fq-company">
-          <h2>🏢 Company &amp; Trust</h2>
-          <p class="fq-cat-sub">How to verify us before you send a single dollar — license, transparency and references.</p>
-          <div class="faq-list">
-            <div class="faq-item active"><button type="button" class="faq-question">How can I verify that MileBond is a legitimate company in China?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Ask for three things any real China sourcing agent can show within 24 hours:<ul><li><strong>Business license (营业执照)</strong> with a Unified Social Credit Code you can check yourself on the National Enterprise Credit Information Publicity System (gsxt.gov.cn)</li><li><strong>A company bank account in the company's name</strong> — never a personal account</li><li><strong>A live video call</strong> from the office and warehouse, plus an address you can visit</li></ul>We share all three on the first call, together with our Yiwu office address.<div class="fq-hl"><strong>Red flag:</strong> an "agent" who only accepts payment to a personal Alipay or WeChat account. That is the #1 setup in sourcing-scam reports on Reddit and Facebook groups.</div><p class="fq-more">Related guide: <a href="/blog/how-to-find-reliable-china-suppliers-avoid-scams/">How to Find Reliable China Suppliers &amp; Avoid Scams →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">How do I know you don't take kickbacks from factories?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Our quote shows the <strong>factory price and our service fee as two separate lines</strong> — you see both, every time. You can verify the factory price against the 1688 listing or a competing quote. If a factory offers us a rebate, it is passed to you as a discount on your next order. Our margin is our fee — your savings are yours.<p class="fq-more">Related guide: <a href="/blog/transparent-sourcing-service-fee-benchmark/">Transparent Sourcing Service Fee Benchmark →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Can I speak to your current clients before committing?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. For orders above $5,000 we can introduce you to 1–2 existing clients (Amazon US/EU sellers and wholesale importers) by email so you can ask them anything directly. We also share anonymized QC reports, packing photos and landed-cost breakdowns from real orders on request.</div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Will you tell me the factory's name and contact details?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes — once your order is confirmed, the factory's business name, license number and the proforma invoice are all visible to you. Many agents hide supplier names so you can't bypass them; we don't, because our value is vetting, negotiation, QC and logistics — not information asymmetry.<p class="fq-more">Related guide: <a href="/blog/did-my-agent-actually-negotiate-price/">Did My Agent Actually Negotiate the Price? →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">What makes MileBond different from other China sourcing agents?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">We spent 10+ years as Amazon brand operators before becoming an agent, so we source with listings, compliance, returns and cash flow in mind — not just the lowest unit price. Concretely:<ul><li><strong>MOQ from 1 carton (~$100)</strong> with custom logo — built for startups</li><li><strong>First FBA order inspected piece by piece</strong>, reorders at AQL 2.5 with functional test videos</li><li><strong>≈10% lower landed cost on every reorder</strong> through renegotiation</li><li><strong>Full cost breakdown</strong> — part, packaging, labor, freight — verifiable against real invoices</li></ul></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Which countries do your clients come from?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">30+ countries — mainly the US, Canada, UK, Germany, France, UAE and Australia. We ship DDP door-to-door to Amazon FBA warehouses, 3PLs and private addresses, so your country's import paperwork is handled by us, not you.</div></div></div>
-          </div>
-        </section>
-
-        <!-- ===== 2. Getting Started ===== -->
-        <section class="fq-panel" id="fq-start">
-          <h2>🚀 Getting Started</h2>
-          <p class="fq-cat-sub">No company, no experience, no problem — exactly how your first order works.</p>
-          <div class="faq-list">
-            <div class="faq-item"><button type="button" class="faq-question">I'm completely new to importing — how do I start sourcing from China?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Five steps:<ul><li><strong>① Send us a photo, link or spec</strong> of the product you want</li><li><strong>② Get a quote within 48 hours</strong> with 2–3 vetted supplier options</li><li><strong>③ Order samples</strong> ($30–$80 typical, 5–7 days to your door)</li><li><strong>④ Confirm and pay a 30% deposit</strong> to start production</li><li><strong>⑤ We inspect (AQL 2.5, video proof), you pay the balance, we ship DDP</strong> to your door</li></ul>First trial orders start from $100 / 1 carton.<p class="fq-more">Related guide: <a href="/blog/1688-agent-pre-order-checklist/">1688 Agent Pre-Order Checklist →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Can you find a product if I only have a photo or an Amazon link?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes — photo sourcing is about 40% of our inquiries. We reverse-search via 1688 image search plus the Yiwu market stalls we walk weekly, and usually return 3+ candidate suppliers with quotes within 48 hours. The clearer your target spec (size, material, color), the closer the match.</div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">What's the minimum budget for a first trial order?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">From <strong>$100 for stock products</strong> (1 carton, custom logo included). A realistic first-test budget is <strong>$300–$800 product cost + $150–$400 shipping</strong> — enough to validate quality and demand without gambling on a full container.<p class="fq-more">Related guide: <a href="/blog/reduce-moq-chinese-supplier/">How to Reduce MOQ with Chinese Suppliers →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Do I need a registered company or import license to work with you?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">No. You can buy as an individual: we handle export declaration under our company, and DDP shipping clears customs and pays duties for you. Only a few B2B cases in the EU require your own EORI number — we'll tell you upfront if yours does.</div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">I found a product on 1688 — can you buy it for me?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes — paste the 1688 link. We verify the supplier (business license, transaction history, store age), negotiate, pay in RMB, inspect the goods at our Yiwu warehouse and ship to you. 1688 prices typically run <strong>20–40% below Alibaba</strong> for the same item, which usually more than covers our fee.<p class="fq-more">Related guide: <a href="/blog/how-to-buy-from-1688-without-agent/">How to Buy from 1688 Without an Agent →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">How long does the whole process take, from inquiry to delivery?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Typical timeline: quote <strong>48h</strong> → samples <strong>5–7 days</strong> → production <strong>15–30 days</strong> → QC <strong>2–3 days</strong> → sea DDP <strong>28–40 days</strong> (US) or air DDP <strong>8–12 days</strong>. Plan roughly 6–8 weeks door-to-door by sea; add buffer around Chinese New Year.<p class="fq-more">Related guide: <a href="/blog/supplier-lead-time-safety-stock/">Supplier Lead Time &amp; Safety Stock Planning →</a></p></div></div></div>
-          </div>
-        </section>
-
-        <!-- ===== 3. Sourcing & Suppliers ===== -->
-        <section class="fq-panel" id="fq-sourcing">
-          <h2>🔍 Sourcing &amp; Suppliers</h2>
-          <p class="fq-cat-sub">How we find, vet and negotiate with factories — 1,000+ field-vetted, 6,900+ worked with.</p>
-          <div class="faq-list">
-            <div class="faq-item"><button type="button" class="faq-question">How do you verify a Chinese factory before recommending it?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Three-layer vetting:<ul><li><strong>① Paper check</strong> — business license, registered capital, years in operation, legal disputes</li><li><strong>② On-site visit</strong> — we walk the production lines and photograph workers, equipment and inventory</li><li><strong>③ Track record</strong> — transaction and export history plus a physical sample test</li></ul>Of roughly 10 factories screened, 3–4 pass. That's how our network reached 1,000+ field-vetted suppliers out of 6,900+ we've worked with.<p class="fq-more">Related guide: <a href="/blog/how-to-verify-1688-suppliers/">How to Verify 1688 Suppliers →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Should I buy from a factory or a trading company?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Factories: usually 10–20% cheaper but higher MOQ and weaker English/service. Trading companies: lower MOQ, broader product mix, but add 5–15% margin. The trap is that many "factories" on Alibaba are actually traders — we check who physically owns the production line during the audit, so you know exactly which one you're paying.</div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">How much room is there to negotiate with Chinese suppliers?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Typically <strong>5–15% on first orders</strong>, more on reorders. The leverage points are material grade, packaging spec, payment terms and order timing (factories are hungry right after Chinese New Year). We renegotiate materials, terms and packaging on every reorder — that's where the ≈10% landed-cost reduction per reorder comes from.<p class="fq-more">Related guide: <a href="/blog/how-to-negotiate-with-1688-factories/">How to Negotiate with 1688 Factories →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Can you beat the price of my current supplier?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Send us your current quote and spec sheet — we'll quote the identical spec from 2–3 vetted factories within 48 hours, free. Clients typically save 10–25%.<div class="fq-hl"><strong>Real case:</strong> a 304 stainless-steel canning rack came back <strong>51% cheaper per unit</strong> after we resourced it — same material, verified by spectrometer test. The old "factory" was a trader adding two layers of margin.</div><p class="fq-more">Related guide: <a href="/blog/chinese-supplier-price-increase/">Why Your Chinese Supplier Raised the Price (and What to Do) →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">How long do samples take, and what do they cost?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Stock samples: 2–5 days, often free — you pay only international freight ($25–$60). Custom samples with your logo or spec: 7–15 days, $50–$300 depending on tooling. Sample fees are usually deducted from your first bulk order.</div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Yiwu market vs Canton Fair — where should I source?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Canton Fair runs twice a year: big factories, higher MOQs, good for discovering new product lines. Yiwu market is open year-round with 75,000+ booths, low MOQs and mixed-container flexibility — best for small commodities and startups. We're based in Yiwu and walk the market every week.<p class="fq-more">Related guide: <a href="/blog/canton-fair-vs-yiwu-suppliers/">Canton Fair vs Yiwu Suppliers →</a></p></div></div></div>
-          </div>
-        </section>
-
-        <!-- ===== 4. Private Label & OEM ===== -->
-        <section class="fq-panel" id="fq-oem">
-          <h2>🏷️ Private Label &amp; OEM</h2>
-          <p class="fq-cat-sub">Custom logo, custom spec, custom mold — and your IP stays yours.</p>
-          <div class="faq-list">
-            <div class="faq-item"><button type="button" class="faq-question">How does the OEM / private label process work, step by step?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Six steps:<ul><li><strong>① Spec sheet</strong> — dimensions, materials, colors, packaging, compliance targets</li><li><strong>② Factory shortlist</strong> — 3+ vetted factories quoted against your spec</li><li><strong>③ Sample</strong> with your logo/parts → revision round until approved</li><li><strong>④ Mass production</strong> with in-line checks at 20–30% completion</li><li><strong>⑤ AQL 2.5 pre-shipment inspection</strong> with functional test videos</li><li><strong>⑥ DDP delivery</strong> to FBA or your warehouse</li></ul>Timeline: 4–8 weeks depending on customization depth.<p class="fq-more">Related guide: <a href="/blog/private-label-sourcing-supply-chain-optimization/">Private Label Sourcing &amp; Supply Chain Optimization →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Who pays for the mold, and who owns it afterwards?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">You pay the mold cost once — typically <strong>$300–$3,000 for plastics</strong>, more for metal tooling. Ownership is <strong>yours</strong>: we write a mold-custody clause into the purchase contract stating the factory cannot use your mold for any other buyer, and we can physically transfer the mold to another factory at any time.</div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">How do you protect my design and IP from being copied?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Three layers:<ul><li><strong>① NNN agreement</strong> (non-disclosure, non-use, non-circumvention) drafted in Chinese and enforceable in Chinese courts — signed <em>before</em> any drawings are sent</li><li><strong>② Split sourcing</strong> — sensitive components come from different suppliers so no single factory has the full picture</li><li><strong>③ China trademark registration</strong> before production starts</li></ul><div class="fq-hl"><strong>Critical:</strong> China is a first-to-file country. If a factory registers your brand first, they can legally block YOUR goods at customs. Register your Chinese trademark (≈$300–500) before your first order.</div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">What's the MOQ for custom / private label products?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Custom logo on a stock product: <strong>from 1 carton (~$100)</strong>. Custom color or material: typically 300–500 units. Custom mold / new design: 500–1,000 units depending on the factory. We regularly negotiate MOQs down by adding your run to a larger client's production slot.<p class="fq-more">Related guide: <a href="/blog/reduce-moq-chinese-supplier/">How to Reduce MOQ with Chinese Suppliers →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Can you improve my product based on my Amazon negative reviews?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes — send us your listing. We mine your 1–3 star reviews for repeating defect patterns (e.g., "lid cracks after a week" → upgrade PP to Tritan), spec the fix with the factory, and sample the improved version before committing. This is how a private-label product beats me-too listings on durability instead of price.<p class="fq-more">Related guide: <a href="/blog/amazon-negative-review-analysis/">Amazon Negative Review Analysis for Product Improvement →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Can I get custom packaging, inserts and thank-you cards?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes: printed color boxes (MOQ ~500), polybags with suffocation warnings, inserts, FNSKU/barcode labels and thank-you cards. Packaging is quoted line-by-line against the printer's real quote — packaging markup is one of the classic hidden fees in this industry, and we show you the invoice.<p class="fq-more">Related guide: <a href="/blog/1688-packaging-cost-hidden-markup/">1688 Packaging Cost &amp; Hidden Markup →</a></p></div></div></div>
-          </div>
-        </section>
-
-        <!-- ===== 5. Amazon FBA ===== -->
-        <section class="fq-panel" id="fq-fba">
-          <h2>📦 Amazon FBA</h2>
-          <p class="fq-cat-sub">FBA prep, compliance and packaging — sourced the way a seller would source it.</p>
-          <div class="faq-list">
-            <div class="faq-item"><button type="button" class="faq-question">Do you handle FBA labeling, prep and shipping plans?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Full prep service: FNSKU labels, polybagging, bubble wrap, bundling, carton labels per your shipping plan and palletizing. We follow Amazon's packaging and prep requirements so cartons pass receiving instead of getting kicked back. Typical prep cost: <strong>$0.30–$0.80 per unit</strong> depending on the work involved.</div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">How can packaging optimization cut my FBA dimensional-weight fees?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Dimensional weight drives both your FBA fulfillment fee tier and your freight cost. We model Amazon's size tiers <em>before</em> finalizing packaging.<div class="fq-hl"><strong>Real case:</strong> repackaging a kitchen gadget from 30×25×20cm to 25×20×15cm dropped it one size tier — saving about <strong>$1.10 per unit in FBA fees</strong> plus 18% on freight. At 5,000 units/year that's a $5,500 difference from cardboard.</div><p class="fq-more">Related guide: <a href="/blog/fba-packaging-optimization-sourcing/">FBA Packaging Optimization &amp; Sourcing →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Which certifications does my product need for Amazon US / EU?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">It depends on the category: CPC for toys (US), FDA registration for food-contact and beauty tools, CE/RoHS/REACH for EU electronics, FCC for anything with radio, UL/ETL for some electrical goods. Amazon can request documents at any time — we source only from factories whose certificates we verify with the issuing lab, and keep the PDFs on file for your Seller Central submissions.<p class="fq-more">Related service: <a href="services/product-compliance.html">Product Compliance &amp; Certification →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">How do I avoid patent infringement when sourcing from China?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Three practical checks:<ul><li><strong>① Search USPTO/EUIPO</strong> for design and utility patents before committing</li><li><strong>② Image-search the product on Amazon US</strong> — if 20 sellers list identical items it's likely a generic mold (lower risk); if only 1–2 sellers have it, be careful</li><li><strong>③ Ask us</strong> — we flag known "patent trap" products we see sellers get burned on</li></ul>This is practical risk screening, not legal advice — for high-value launches, hire an IP attorney for a freedom-to-operate search.</div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">What happens if Amazon rejects my shipment at the warehouse?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Prevention first: we photograph every carton label and packing spec before ship-out, and keep cartons under Amazon's 50lb limit. If a rejection still happens, we coordinate with your 3PL or removal service, identify the cause (label, packaging, weight), rework and reship — and document the root cause so it never repeats.</div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Do you really inspect every unit of my first FBA order?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. <strong>Your first FBA order is checked piece by piece</strong>, with a QC report and photos before you pay the balance. Reorders run on AQL 2.5 sampling with functional test videos. Catching a defect in Yiwu costs nothing to fix; catching it in a US 3PL costs $1–3 per unit plus removal fees.<p class="fq-more">Related guide: <a href="/blog/1688-quality-control-inspection-checklist/">1688 Quality Control Inspection Checklist →</a></p></div></div></div>
-          </div>
-        </section>
-
-
-        <!-- ===== 6. Quality Control ===== -->
-        <section class="fq-panel" id="fq-qc">
-          <h2>✅ Quality Control</h2>
-          <p class="fq-cat-sub">Three QC gates on every order — with dated photos and functional test videos.</p>
-          <div class="faq-list">
-            <div class="faq-item"><button type="button" class="faq-question">What does your quality control process actually include?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Three gates:<ul><li><strong>① Pre-production</strong> — golden sample and spec confirmation, raw material check</li><li><strong>② During production</strong> — in-line check when 20–30% of the run is completed</li><li><strong>③ Pre-shipment</strong> — AQL 2.5 sampling inspection: appearance, function, quantity, packaging, plus drop tests where relevant</li></ul>Functional tests are recorded on video so you see the product working, not just a checklist.</div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Will I get real photos and videos before shipment?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes — every inspection includes dated photos, functional test videos and a written report with a defect list graded by severity (critical / major / minor). You approve the shipment, or the factory reworks first. Nothing ships without your sign-off.</div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">What if the bulk goods don't match the approved sample?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">The approved golden sample is sealed and kept at our warehouse; the pre-shipment inspection compares bulk units against it side by side. On mismatch, the factory reworks or replaces at their own cost per the purchase contract — which is exactly why we never release your balance before QC passes.</div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">What is AQL 2.5, and why does it matter?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">AQL (Acceptable Quality Limit) 2.5 is the consumer-goods inspection standard. Example: for a 500-unit order we inspect 50 units (General Inspection Level II) and the lot passes with up to 3 major defects; for 501–1,200 units we inspect 80, passing at up to 5 majors.<div class="fq-hl"><strong>Insider tip:</strong> an agent quoting "100% inspection" on a large order at no extra cost is usually sampling and calling it 100%. Always ask for the AQL standard and sample size in writing.</div></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">What happens if defects are discovered at my warehouse?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Report within 14 days of delivery with photos: we verify against the inspection records and negotiate replacement, refund or credit with the factory. Defect liability is written into the purchase contract before production starts, so the factory can't argue it away.</div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Do you inspect before I pay the balance?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Always. The sequence is: 30% deposit → production → QC pass + your report approval → 70% balance → ship. Your money is the leverage that makes factories fix problems fast — we structure every order so the leverage stays on your side until the goods are proven good.<p class="fq-more">Related guide: <a href="/blog/1688-quality-control-inspection-checklist/">1688 Quality Control Inspection Checklist →</a></p></div></div></div>
-          </div>
-        </section>
-
-        <!-- ===== 7. Logistics & Shipping ===== -->
-        <section class="fq-panel" id="fq-shipping">
-          <h2>🚚 Logistics &amp; Shipping</h2>
-          <p class="fq-cat-sub">Sea, air, DDP — transparent freight you can audit against real rate sheets.</p>
-          <div class="faq-list">
-            <div class="faq-item"><button type="button" class="faq-question">Sea vs air vs express — which shipping method should I choose?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">It depends on weight/volume, margin and urgency:<div class="fq-table-wrap"><table class="fq-table"><tr><th>Method</th><th>Transit (to US)</th><th>Cost level</th><th>Best for</th></tr><tr><td>Express (DHL/FedEx/UPS)</td><td>3–7 days</td><td>$$$$</td><td>Samples, urgent &lt;100kg</td></tr><tr><td>Air freight</td><td>8–12 days</td><td>$$$</td><td>100–500kg, high-value, fast restock</td></tr><tr><td>Sea LCL</td><td>28–40 days</td><td>$$</td><td>1–15 CBM, regular orders</td></tr><tr><td>Sea FCL</td><td>25–35 days</td><td>$</td><td>Full container, lowest unit cost</td></tr><tr><td>Rail (EU only)</td><td>18–25 days</td><td>$$</td><td>Mid-weight shipments to Europe</td></tr></table></div>Rule of thumb: air if the stockout costs more than the freight premium; sea for everything else.<p class="fq-more">Related guide: <a href="/blog/1688-shipping-cost-calculator-guide/">1688 Shipping Cost Calculator Guide →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">How long does shipping from China to the US or EU take?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">US sea DDP: 28–40 days door-to-door (West Coast faster, East Coast +5–7 days); air DDP 8–12 days. EU sea 30–45 days; rail 18–25 days. Add a 3–5 day buffer in peak season (August–October) and around Chinese New Year, when factories and ports slow down for 2–3 weeks.</div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">What exactly is included in your DDP shipping price?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">DDP (Delivered Duty Paid) covers: pickup from the factory, export customs, ocean/air freight, import customs, duties and taxes, and last-mile delivery to your address or FBA warehouse. One price, no surprise bills on arrival. The only possible extras are seller-side changes — e.g., a shipping-plan change or address correction after dispatch.</div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Can you combine orders from multiple suppliers into one shipment?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes — consolidation is standard: suppliers deliver to our Yiwu warehouse, we inspect everything, repack if needed, and load one LCL or FCL container. Consolidation typically saves <strong>20–40% versus shipping separately</strong>, and you receive one clean set of customs documents instead of five.<p class="fq-more">Related guide: <a href="/blog/separate-freight-forwarder-from-buying-agent/">Why Separate Your Freight Forwarder from Your Buying Agent →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Which customs documents do you prepare for me?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Commercial invoice, packing list, bill of lading or airway bill, export declaration, and certificate of origin when it lowers your duty rate — plus product certificates (CPC / FDA / CE) kept ready for customs spot checks. You receive scans of everything for your records.</div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">How can I check I'm not being overcharged on freight?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Our freight is quoted with the forwarder's real rate sheet — verifiable against market indexes like Freightos — and we show you the CBM/weight calculation. If your current agent bills shipping as a black box with no breakdown, that's one of the classic markup spots in this industry.<p class="fq-more">Related guide: <a href="/blog/1688-agent-overcharged-shipping-how-to-check/">1688 Agent Overcharged Shipping — How to Check →</a></p></div></div></div>
-          </div>
-        </section>
-
-        <!-- ===== 8. Pricing & Payment ===== -->
-        <section class="fq-panel" id="fq-pricing">
-          <h2>💰 Pricing &amp; Payment</h2>
-          <p class="fq-cat-sub">Factory price + our fee — you see both, every time.</p>
-          <div class="faq-list">
-            <div class="faq-item"><button type="button" class="faq-question">How much do you charge, exactly?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Service fee of <strong>3–10% of order value</strong>, depending on product complexity and scope (sourcing-only vs end-to-end with QC, consolidation and DDP). Quoted upfront in writing — never a percentage of vague "savings". Example: a $3,000 order with full QC and DDP coordination typically carries a $180–300 service fee.<p class="fq-more">Related guide: <a href="/blog/transparent-sourcing-service-fee-benchmark/">Transparent Sourcing Service Fee Benchmark →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Are there any hidden fees I should know about?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">No. Every quote breaks down: product, packaging, labor/prep, inland freight, international freight, duties (on DDP) and our fee. If a cost isn't in the table, you don't pay it.<div class="fq-hl"><strong>The 3 classic hidden markups in this industry:</strong> an inflated "factory price", padded freight CBM, and 3–5× packaging upcharges. We show the real invoices for all three — that's the whole point of transparent pricing.</div><p class="fq-more">Related guide: <a href="/blog/1688-packaging-cost-hidden-markup/">1688 Packaging Cost &amp; Hidden Markup →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Which payment methods can I use?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Wire transfer (T/T) to our company account, Wise, PayPal (orders under $1,000, buyer covers the fee) and Alibaba Trade Assurance on request. Terms are 30% deposit / 70% after QC passes. One rule protects you everywhere in China trade: <strong>never pay to a personal account</strong> — ours or anyone else's.<p class="fq-more">Related guide: <a href="/blog/1688-payment-methods-for-foreign-buyers/">1688 Payment Methods for Foreign Buyers →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Can I get Net 30 or Net 60 payment terms?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes — typically from the 3rd–5th order, based on order history and volume. Net 30 is common; Net 60 for established clients. The first 1–2 orders run deposit + balance; terms are earned. We also negotiate better payment terms from factories on your behalf as volumes grow.<p class="fq-more">Related guide: <a href="/blog/net-payment-terms-chinese-supplier/">How to Get Net Payment Terms from Chinese Suppliers →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Is it cheaper to buy on 1688 myself or use an agent?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Honest comparison:<div class="fq-table-wrap"><table class="fq-table"><tr><th></th><th>DIY on 1688</th><th>With MileBond</th></tr><tr><td>Product price</td><td>1688 list price (lowest on paper)</td><td>Negotiated, often 5–15% below list</td></tr><tr><td>Payment</td><td>Needs Chinese account / cross-border workaround</td><td>Pay in USD by wire or Wise</td></tr><tr><td>Quality control</td><td>None — what ships is what you get</td><td>AQL 2.5 + video before the balance</td></tr><tr><td>Shipping</td><td>Arrange your own forwarder; DDP hard to get</td><td>DDP door-to-door, consolidated</td></tr><tr><td>Scam exposure</td><td>High (fake shops, switched goods)</td><td>Vetted suppliers, contract liability</td></tr><tr><td>Time cost</td><td>20–40h learning curve per category</td><td>Send a photo, quote in 48h</td></tr></table></div>DIY wins on paper for tiny repeat orders once you already trust a supplier. An agent wins on first orders, custom products, and anything where one defective batch costs more than the fee.<p class="fq-more">Related guide: <a href="/blog/diy-vs-agent-vs-sourcing-service-cost-comparison/">DIY vs Agent vs Sourcing Service — Cost Comparison →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Do I pay before or after the quality inspection?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">After. The balance is due only when QC has passed and you've approved the photo/video report. If inspection fails, the factory reworks at their own cost before seeing a cent of the balance.</div></div></div>
-          </div>
-        </section>
-
-
-        <!-- ===== 9. Avoiding Pitfalls ===== -->
-        <section class="fq-panel" id="fq-pitfalls">
-          <h2>⚠️ Avoiding Pitfalls</h2>
-          <p class="fq-cat-sub">The scams we see every week — and how to make sure they never happen to you.</p>
-          <div class="faq-list">
-            <div class="faq-item"><button type="button" class="faq-question">What are the most common scams when sourcing from China?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">The six we see reported most often:<ul><li><strong>① Too-good pricing</strong> — deposit paid, "supplier" disappears</li><li><strong>② Golden sample, junk bulk</strong> — sample perfect, mass production downgraded</li><li><strong>③ Secret supplier switch</strong> — your agent quietly moves to a cheaper factory</li><li><strong>④ Photoshopped 1688 payment proofs</strong> — you're billed more than the agent paid</li><li><strong>⑤ Fake freight invoices</strong> — padded CBM or invented surcharges</li><li><strong>⑥ Packaging upcharges</strong> — 3–5× the printer's real price</li></ul>All six share one fix: verifiable invoices plus independent QC before the balance.<p class="fq-more">Related guide: <a href="/blog/yiwu-market-scams-to-avoid/">Yiwu Market Scams to Avoid →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">How can I tell if my current agent is taking hidden kickbacks?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Run this test: ask for the factory's 1688 link or business license "for your compliance records". If the agent refuses or stalls, a markup is likely. Then compare your unit price with similar 1688 items — an unexplained gap above 20% is a flag. Finally, ask for the forwarder's rate sheet behind your freight quote.<p class="fq-more">Related guide: <a href="/blog/how-to-audit-your-1688-agent-invoice/">How to Audit Your 1688 Agent's Invoice →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">What are the biggest mistakes first-time importers make?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">The seven that cost the most money:<ul><li>① Skipping samples to "save time"</li><li>② Paying 100% upfront</li><li>③ No written spec sheet — "same as the photo" is not a spec</li><li>④ Ignoring compliance documents until customs holds the goods</li><li>⑤ Ordering 1,000 units of an unvalidated product</li><li>⑥ Comparing quotes on price only while the spec quietly creeps down</li><li>⑦ No pre-shipment inspection</li></ul>The single fix covering most of them: a two-page spec sheet plus QC before the balance.<p class="fq-more">Related guide: <a href="/blog/1688-agent-pre-order-checklist/">1688 Agent Pre-Order Checklist →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">How do I spot a fake payment screenshot from an agent?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Ask for the bank TT slip (MT103 for wires) instead of screenshots — a screenshot takes five minutes to Photoshop. Cross-check every amount against the proforma invoice, and if the agent "paid 1688" for you, demand the 1688 order screenshot <strong>with the order number</strong>, which the supplier can confirm.<div class="fq-hl"><strong>Real pattern:</strong> agent shows a ¥38,000 "payment proof" for goods that cost ¥29,500 — the ¥8,500 difference is pure hidden margin. We audit cases like this for sellers every month.</div><p class="fq-more">Related guide: <a href="/blog/1688-agent-fake-invoice-photoshopped-payment/">1688 Agent Fake Invoice &amp; Photoshopped Payment →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">I think my agent switched my supplier — what should I do now?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Don't accuse yet — collect evidence first: compare bulk goods against the golden sample, check packaging and labels for differences, request production photos with date stamps, and demand the factory name and address on the invoice. If confirmed, withhold the balance and commission an independent inspection. We take over mid-crisis cases like this regularly.<p class="fq-more">Related guide: <a href="/blog/suspect-agent-switched-supplier-next-steps/">Suspect Your Agent Switched Supplier? Next Steps →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Is it safe to pay a 1688 supplier directly?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">1688 is built for domestic Chinese trade: most suppliers can't receive USD, can't provide export documents, and platform protection assumes you read Chinese and can return goods domestically. If you do pay, use Alipay's cross-border solution or an agent escrow — and never wire to a personal account in exchange for a "company discount".<p class="fq-more">Related guide: <a href="/blog/1688-supplier-no-cross-border-pay-solutions/">1688 Supplier Can't Accept Cross-Border Payment — Solutions →</a></p></div></div></div>
-          </div>
-        </section>
-
-        <!-- ===== 10. Resources ===== -->
-        <section class="fq-panel" id="fq-resources">
-          <h2>📚 Resources</h2>
-          <p class="fq-cat-sub">Free guides, checklists and a free consultation before you spend anything.</p>
-          <div class="faq-list">
-            <div class="faq-item"><button type="button" class="faq-question">Which guides should I read before placing my first order?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Start with these four, all free on our blog:<ul><li><a href="/blog/how-to-source-products-from-china-for-amazon-fba/">How to Source Products from China for Amazon FBA</a> — the full workflow end to end</li><li><a href="/blog/1688-agent-pre-order-checklist/">1688 Agent Pre-Order Checklist</a> — what to confirm before paying anything</li><li><a href="/blog/diy-vs-agent-vs-sourcing-service-cost-comparison/">DIY vs Agent vs Sourcing Service</a> — decide your sourcing model with real numbers</li><li><a href="/blog/yiwu-market-scams-to-avoid/">Yiwu Market Scams to Avoid</a> — the patterns that catch first-timers</li></ul></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Do you offer a free consultation before I commit?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes — a free 30-minute call or WhatsApp chat. Bring a product idea or link, and leave with supplier options, a realistic MOQ and a landed-cost estimate. No obligation. We reply within 24 hours, 6 on average.<p class="fq-more">Start here: <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener">Chat on WhatsApp →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Can you train me to source from Yiwu market myself?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes — we offer Yiwu market guidance: translation, booth negotiation tactics and a walking tour of the 5-district market with its 75,000+ booths. Many clients visit once a year to build supplier relationships in person, then let us handle orders, QC and shipping remotely for the rest of the year.<p class="fq-more">Related guide: <a href="/blog/canton-fair-vs-yiwu-suppliers/">Canton Fair vs Yiwu Suppliers →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Where can I learn to audit my current sourcing agent?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Our blog covers it end to end: auditing invoices, detecting photoshopped payment proofs, checking freight overcharges and verifying whether your agent really negotiated. Start with "How to Audit Your 1688 Agent's Invoice" — it includes the exact documents to request.<p class="fq-more">Related guide: <a href="/blog/how-to-audit-your-1688-agent-invoice/">How to Audit Your 1688 Agent's Invoice →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Do you have checklists I can download or copy?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes — the quality-control inspection checklist and the pre-order checklist on our blog are written as copy-paste documents you can hand to any agent, including us. If an agent refuses to work from a written checklist, that tells you something too.<p class="fq-more">Related guide: <a href="/blog/1688-quality-control-inspection-checklist/">1688 Quality Control Inspection Checklist →</a></p></div></div></div>
-            <div class="faq-item"><button type="button" class="faq-question">Where can I see real cost breakdowns and savings case studies?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Every quote we send already is a case study — product, packaging, labor, freight and our fee as separate lines. For aggregated numbers, see our supply-chain cost-reduction write-up, which shows how renegotiating materials, payment terms and packaging compounds to roughly 10% lower landed cost per reorder.<p class="fq-more">Related guide: <a href="/blog/amazon-seller-supply-chain-cost-reduction/">Amazon Seller Supply Chain Cost Reduction →</a></p></div></div></div>
-          </div>
-        </section>
 
         <!-- CTA -->
         <div class="faq-cta">
@@ -1920,23 +2046,29 @@ function toggleDropdown(el) {
 }
 
 
-// ============ FAQ V2: sticky tabs + accordion (scoped IIFE) ============
+// ============ FAQ body v3: category filter + accordion (scoped IIFE) ============
 (function(){
-  var tabs=document.querySelectorAll('.fq-tab'), panels=document.querySelectorAll('.fq-panel'), tabsBar=document.getElementById('fqTabs');
-  function openItem(item){var a=item.querySelector('.faq-answer'),ic=item.querySelector('.faq-icon');item.classList.add('active');if(a)a.style.maxHeight=a.scrollHeight+'px';if(ic)ic.textContent='−';}
-  function closeItem(item){var a=item.querySelector('.faq-answer'),ic=item.querySelector('.faq-icon');item.classList.remove('active');if(a)a.style.maxHeight=null;if(ic)ic.textContent='+';}
-  function activate(cat){
-    tabs.forEach(function(t){t.classList.toggle('active',t.getAttribute('data-cat')===cat);});
-    panels.forEach(function(p){var on=p.id==='fq-'+cat;p.classList.toggle('active',on);
-      if(on){p.querySelectorAll('.faq-item').forEach(function(it,i){if(i===0)openItem(it);else closeItem(it);});}});
-    if(tabsBar){var y=tabsBar.getBoundingClientRect().top+window.pageYOffset-84;if(window.pageYOffset>y)window.scrollTo({top:y,behavior:'smooth'});}
+  var nav = document.getElementById('fq2Nav');
+  var main = document.getElementById('fq2Main');
+  if (!nav || !main) return;
+  var btns = nav.querySelectorAll('.fq2-btn');
+  var cats = main.querySelectorAll('.fq2-cat');
+  function filter(cat){
+    Array.prototype.forEach.call(btns, function(b){ b.classList.toggle('is-active', b.getAttribute('data-cat') === cat); });
+    Array.prototype.forEach.call(cats, function(c){ c.hidden = !(cat === 'all' || c.getAttribute('data-cat') === cat); });
   }
-  tabs.forEach(function(t){t.addEventListener('click',function(){activate(t.getAttribute('data-cat'));});});
-  document.querySelectorAll('.fq-panel .faq-question').forEach(function(btn){
-    btn.addEventListener('click',function(){var item=btn.parentElement,panel=item.closest('.fq-panel'),wasOpen=item.classList.contains('active');
-      panel.querySelectorAll('.faq-item').forEach(closeItem);if(!wasOpen)openItem(item);});
+  Array.prototype.forEach.call(btns, function(b){
+    b.addEventListener('click', function(){ filter(b.getAttribute('data-cat')); });
   });
-  activate('company');
+  Array.prototype.forEach.call(main.querySelectorAll('.fq2-q'), function(q){
+    q.addEventListener('click', function(){
+      var item = q.parentElement;
+      var open = item.classList.toggle('is-open');
+      q.setAttribute('aria-expanded', open ? 'true' : 'false');
+      item.querySelector('.fq2-sign').textContent = open ? '\u2212' : '+';
+    });
+  });
+  filter('all');
 })();
 
 
