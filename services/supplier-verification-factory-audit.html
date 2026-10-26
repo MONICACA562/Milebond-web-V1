@@ -1070,6 +1070,48 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 }
 #inquiry{scroll-margin-top:88px}
 </style>
+<style id="sv-hero-v2">
+/* ===== Hero v2 — light minimal (scoped to this page) ===== */
+.hero{background:#fff;min-height:0;display:block;overflow:visible;padding:0}
+.hero .hero-bg,.hero .hero-overlay{display:none}
+.hero .hero-content{padding:64px 24px 40px;max-width:var(--container)}
+.sv-eyebrow{font-size:12.5px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#C98A2D;margin:0 0 18px}
+.hero h1{font-size:54px;font-weight:800;line-height:1.08;letter-spacing:-1.6px;color:#1F2B27;max-width:880px;margin:0 0 20px}
+.hero h1 span{color:#0E4438}
+.hero .hero-sub{font-size:17.5px;line-height:1.6;color:#5E6E67;max-width:760px;margin:0 0 30px}
+.hero .hero-sub strong{color:#1F2B27;font-weight:700}
+.sv-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 14px}
+.sv-btn{display:inline-flex;align-items:center;justify-content:center;border-radius:6px;padding:13px 26px;font-size:15.5px;font-weight:600;line-height:1.2;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+.sv-btn-primary{background:#0E4438;color:#fff;border:1.5px solid #0E4438}
+.sv-btn-primary:hover{background:#0b3529;border-color:#0b3529;color:#fff}
+.sv-btn-ghost{background:#fff;color:#0E4438;border:1.5px solid #0E4438}
+.sv-btn-ghost:hover{background:#0E4438;color:#fff}
+.sv-hero-note{font-size:14px;color:#5E6E67;margin:0}
+.hero .hero-trust{border-top:1px solid #E3E8E5;margin-top:36px;padding-top:24px;gap:12px}
+.hero .hero-tag{background:#fff;border:1px solid #DFE6E2;color:#3E5C54;font-size:13.5px;font-weight:600;padding:8px 14px}
+/* free check banner (below hero) */
+.sv-banner-wrap{background:#fafaf7;padding:28px 0 4px}
+.sv-banner{max-width:var(--container);margin:0 auto;padding:0 24px}
+.sv-banner-card{display:flex;align-items:center;justify-content:space-between;gap:24px;background:#E8F2ED;border:1px solid #CFE2D8;border-radius:10px;padding:22px 24px}
+.sv-banner-text{min-width:0}
+.sv-banner-title{font-size:16px;font-weight:800;color:#0E4438;line-height:1.4;margin:0 0 4px}
+.sv-banner-sub{font-size:14.5px;color:#3E5C54;line-height:1.5;margin:0}
+.sv-banner-btn{flex:none;display:inline-flex;align-items:center;justify-content:center;background:#0E4438;color:#fff;border-radius:6px;padding:10px 20px;font-size:14px;font-weight:600;text-decoration:none;transition:background .2s}
+.sv-banner-btn:hover{background:#0b3529;color:#fff}
+/* nav free-entry link */
+.sv-nav-free{color:#0E4438;font-weight:600;font-size:14px;text-decoration:none;white-space:nowrap;border:0;background:none;padding:8px 2px;transition:color .2s}
+.sv-nav-free:hover{color:#0b3529;text-decoration:underline}
+@media (max-width:767px){
+  .hero .hero-content{padding:44px 20px 30px}
+  .hero h1{font-size:34px;letter-spacing:-1px;line-height:1.12}
+  .hero .hero-sub{font-size:16px}
+  .sv-actions{flex-direction:column;align-items:stretch}
+  .sv-btn{width:100%}
+  .hero .hero-trust{gap:8px}
+  .sv-banner-card{flex-direction:column;align-items:center;text-align:center;padding:20px}
+  .sv-banner-btn{width:100%}
+}
+</style>
 </head>
 <body>
 
@@ -1199,7 +1241,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     </ul>
 
     <!-- desktop CTA -->
-    <div class="hidden md:block ml-1 shrink-0">
+    <div class="hidden md:flex items-center gap-5 ml-1 shrink-0">
+      <a href="#inquiry" class="sv-nav-free">Verify a supplier — free</a>
       <a href="/#quote"
          class="nav-cta inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-amber hover:bg-amber-600 text-white font-semibold text-sm shadow-card transition-colors">
         Get a Quote
@@ -1313,29 +1356,34 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
   <!-- ================= HERO ================= -->
   <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-badge"><span class="dot"></span> SUPPLIER VERIFICATION &amp; FACTORY AUDIT</div>
+      <p class="sv-eyebrow">SUPPLIER VERIFICATION · FACTORY AUDIT</p>
       <h1>Two checks, one goal: <span>never let a bad supplier touch your order.</span></h1>
       <p class="hero-sub">
-        Supplier Verification is a fast desk check that filters out shell companies and fake factories before you quote. Factory Audit is the deeper, on-site inspection — a 27-point verification of the factory itself, scored and documented in a written audit report. Start with verification; upgrade to an audit when the order matters.
+        Independent verification of any Chinese supplier you're considering — a fast desk check first, a full 27-point on-site audit when the order matters. The desk check is free and comes back <strong>within 24 hours</strong>.
       </p>
-      <div class="sv-hook">
-        <div class="sv-hook-text">
-          <strong>Free supplier verification — report within 24 hours.</strong>
-          <span>Send us your supplier and get a Pass / Not Pass desk check back tomorrow.</span>
-        </div>
-        <a href="#inquiry" class="btn btn-primary btn-sm">Verify My Supplier Free</a>
+      <div class="sv-actions">
+        <a href="#inquiry" class="sv-btn sv-btn-primary">Verify My Supplier — Free</a>
+        <a href="#inquiry" class="sv-btn sv-btn-ghost">Book a Factory Audit</a>
       </div>
-      <div class="hero-actions">
-        <a href="../index.html#quote" class="btn btn-primary">Get a Free Quote</a>
-        <a href="#process" class="btn btn-white">See the 6-Step Process</a>
-      </div>
+      <p class="sv-hero-note">Free preliminary check · Pass / Not Pass verdict tomorrow · No obligation</p>
       <div class="hero-trust">
         <span class="hero-tag"><span class="hero-tag-icon">✅</span> 27-point on-site audit checklist</span>
         <span class="hero-tag"><span class="hero-tag-icon">🔍</span> Desk check before we even visit</span>
         <span class="hero-tag"><span class="hero-tag-icon">🏭</span> 6,900+ factories vetted through orders</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FREE CHECK BANNER ================= -->
+  <section class="sv-banner-wrap">
+    <div class="sv-banner">
+      <div class="sv-banner-card">
+        <div class="sv-banner-text">
+          <p class="sv-banner-title">Free supplier verification — report within 24 hours</p>
+          <p class="sv-banner-sub">Send us your supplier and get a Pass / Not Pass desk check back tomorrow.</p>
+        </div>
+        <a href="#inquiry" class="sv-banner-btn">Get the Free Check</a>
       </div>
     </div>
   </section>
