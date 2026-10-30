@@ -1,0 +1,59 @@
+name: Freight rate reminder
+
+on:
+  schedule:
+    # 01:00 UTC on the 1st of every month
+    - cron: "0 1 1 * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open a monthly rate update issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const now = new Date();
+            const month = now.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+            const title = `Update freight rates — ${month}`;
+
+            const open = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100
+            });
+            if (open.data.some((issue) => issue.title === title)) {
+              core.info(`Issue already exists: ${title}`);
+              return;
+            }
+
+            const body = [
+              'Monthly check for the Ningbo → Los Angeles lane.',
+              '',
+              '## Checklist',
+              '- [ ] Pull the latest quotes from your forwarders (LCL per CBM, 20GP, 40HQ, DDP per kg)',
+              '- [ ] Update `data/freight-rates.json` (four `rate` values + `qty` if the default shipment changed)',
+              '- [ ] Update the `updated` field to today (YYYY-MM-DD)',
+              '- [ ] Update the **Freight reference** table in `tools/landed-cost-calculator/index.html`',
+              '- [ ] Commit and push',
+              '- [ ] Run `node scripts/indexnow.mjs https://www.milebond.com/tools/landed-cost-calculator/`',
+              '',
+              '## Current sources',
+              '- Drewry WCI (weekly, Thursdays): https://www.drewry.co.uk/supply-chain-advisors/world-container-index-weekly-update',
+              '- Forwarder rate sheets for Ningbo–Los Angeles',
+              '',
+              '> If rates have not moved, still update `updated` so the page shows a current date.'
+            ].join('\n');
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body
+            });
+            core.info(`Created issue: ${title}`);

@@ -1,0 +1,49 @@
+{
+  "updated": "2026-10-30",
+  "lane": {
+    "origin": "Ningbo",
+    "destination": "Los Angeles"
+  },
+  "currency": "USD",
+  "rates": {
+    "lcl": {
+      "qtyLabel": "Volume (CBM)",
+      "qty": 6,
+      "rate": 90,
+      "min": 1,
+      "unitLabel": "(USD per CBM)",
+      "note": "Market range: $60–120 per CBM, port-to-port, minimum 1 CBM (forwarder rate sheets, Oct 2026)."
+    },
+    "fcl20": {
+      "qtyLabel": "Containers (20GP)",
+      "qty": 1,
+      "rate": 5600,
+      "min": 1,
+      "unitLabel": "(USD per container)",
+      "note": "Market range: $4,800–6,400 per 20GP, Ningbo–Los Angeles (forwarder rate sheets, Oct 2026)."
+    },
+    "fcl40": {
+      "qtyLabel": "Containers (40HQ)",
+      "qty": 1,
+      "rate": 7400,
+      "min": 1,
+      "unitLabel": "(USD per container)",
+      "note": "Market range: $6,900–8,000 per 40HQ. Drewry WCI Shanghai–LA: $7,514 on 29 Oct 2026."
+    },
+    "ddp": {
+      "qtyLabel": "Chargeable weight (kg)",
+      "qty": 500,
+      "rate": 1.8,
+      "min": 0,
+      "unitLabel": "(USD per kg)",
+      "note": "Market range: $1.28–2.30 per kg, sea DDP door-to-door; depends on weight break (Oct 2026)."
+    }
+  },
+  "sources": [
+    "Drewry World Container Index, 29 Oct 2026 — Shanghai–Los Angeles $7,514 per FEU",
+    "Forwarder LCL rate sheets, Oct 2026 — $60–120 per CBM port-to-port",
+    "Sino Shipping, 17 Oct 2026 — $137.22 per CBM all-in reference"
+  ]
+}
+
+

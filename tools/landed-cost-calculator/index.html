@@ -1367,6 +1367,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
       <li><a href="/blog" class="px-2 py-2 xl:px-3 hover:text-amber transition-colors">Blog</a></li>
 
+      <li><a href="/tools/" class="px-2 py-2 xl:px-3 hover:text-amber transition-colors">Tools</a></li>
+
       <!-- About dropdown -->
       <li class="services-mega">
         <button type="button" class="mega-trigger px-2 py-2 xl:px-3 hover:text-amber transition-colors text-brandgray-600 font-semibold" aria-haspopup="true" aria-expanded="false" aria-controls="navAboutPanel">
@@ -1466,6 +1468,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       </li>
 
       <li><a href="/blog" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-semibold">Blog</a></li>
+
+      <li><a href="/tools/" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-semibold">Tools</a></li>
 
       <!-- About accordion -->
       <li class="mobile-services" id="mobileAbout">
@@ -1591,7 +1595,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
           </div>
 
           <div class="lc-freight">
-            <p class="lc-freight-title">Estimate freight · Ningbo → Los Angeles <span>market reference · updated 30 Oct 2026</span></p>
+            <p class="lc-freight-title">Estimate freight · Ningbo → Los Angeles <span id="lcFRateDate">market reference · updated 30 Oct 2026</span></p>
             <div class="lc-seg" id="lcFMode">
               <button type="button" data-fmode="quote" class="active">I have a quote</button>
               <button type="button" data-fmode="lcl">LCL · per CBM</button>
@@ -1706,7 +1710,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <div class="section-header">
         <span class="ship-tag">Freight reference</span>
         <h2>Ningbo → Los Angeles: what the market is charging</h2>
-        <p>Indicative market ranges, last checked 30 October 2026. Freight moves weekly — use these to sanity-check a quote, not to replace one.</p>
+        <p id="lcRefDate">Indicative market ranges, last checked 30 October 2026. Freight moves weekly — use these to sanity-check a quote, not to replace one.</p>
       </div>
       <table class="lc-table">
         <thead><tr><th>Mode</th><th>Market range</th><th>What it covers</th></tr></thead>
@@ -1847,6 +1851,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         <li><a href="/faq">FAQ</a></li>
       </ul>
       <a class="footer-blog-link" href="/blog">Blog</a>
+      <a class="footer-blog-link" href="/tools/">Free Tools</a>
     </div>
 <div class="footer-col">
           <h4>Contact</h4>
@@ -1969,7 +1974,8 @@ function toggleDropdown(el){var dd=el.closest('.nav-dropdown');if(!dd)return;doc
         "@type": "BreadcrumbList",
         "itemListElement": [
           {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.milebond.com/"},
-          {"@type": "ListItem", "position": 2, "name": "Landed Cost Calculator"}
+          {"@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://www.milebond.com/tools/"},
+          {"@type": "ListItem", "position": 3, "name": "Landed Cost Calculator"}
         ]
       }
     ]
@@ -2285,7 +2291,7 @@ function submitInquiry(e){
     $('lcFQtyLabel').textContent = f.qtyLabel;
     $('lcFQty').value = f.qty;
     $('lcFRate').value = f.rate;
-    $('lcFRateLabel').textContent = m === 'lcl' ? '(USD per CBM)' : m === 'ddp' ? '(USD per kg)' : '(USD per container)';
+    $('lcFRateLabel').textContent = f.unitLabel || (m === 'lcl' ? '(USD per CBM)' : m === 'ddp' ? '(USD per kg)' : '(USD per container)');
     note.textContent = f.note;
   }
 
@@ -2474,6 +2480,25 @@ function submitInquiry(e){
 
   setChannel('amazon');
   setFMode('quote');
+
+  fetch('/data/freight-rates.json', { cache: 'no-cache' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (!d || !d.rates) return;
+      Object.keys(FREIGHT).forEach(function (k) {
+        if (d.rates[k]) FREIGHT[k] = Object.assign({}, FREIGHT[k], d.rates[k]);
+      });
+      if (d.updated) {
+        var dt = new Date(d.updated + 'T00:00:00');
+        if (!isNaN(dt.getTime())) {
+          var label = dt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+          var a = $('lcFRateDate'); if (a) a.textContent = 'market reference · updated ' + label;
+          var b = $('lcRefDate'); if (b) b.textContent = 'Indicative market ranges, last checked ' + label + '. Freight moves weekly — use these to sanity-check a quote, not to replace one.';
+        }
+      }
+      if (fmode !== 'quote') setFMode(fmode);
+    })
+    .catch(function () {});
 })();
 </script>
 </body></html>
