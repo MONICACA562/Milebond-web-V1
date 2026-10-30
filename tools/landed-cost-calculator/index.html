@@ -1,0 +1,2479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landed Cost & Margin Calculator for China Imports | Milebond</title>
+  <meta name="description" content="Model the real margin on a China order: landed cost, duty, Amazon FBA or retail fees and break-even price. Free, no signup, works in your browser.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://www.milebond.com/tools/landed-cost-calculator/">
+  <meta property="og:title" content="Landed Cost & Margin Calculator for China Imports | Milebond">
+  <meta property="og:description" content="Model the real margin on a China order: landed cost, duty, Amazon FBA or retail fees and break-even price. Free, no signup, works in your browser.">
+  <meta property="og:url" content="https://www.milebond.com/tools/landed-cost-calculator/">
+  <meta property="og:site_name" content="MileBond — China Sourcing Agent">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://www.milebond.com/images/blog/china-supplier-vetting-2026.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="China Factory Audit Service — 27-Point On-Site Supplier Verification">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Landed Cost & Margin Calculator for China Imports | Milebond">
+  <meta name="twitter:description" content="Model the real margin on a China order: landed cost, duty, Amazon FBA or retail fees and break-even price. Free, no signup, works in your browser.">
+  <meta name="twitter:image" content="https://www.milebond.com/images/blog/china-supplier-vetting-2026.jpg">
+  <style>
+    /* ============ RESET & BASE ============ */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Inter',system-ui,-apple-system,sans-serif;
+      color:#1A1A1A;
+      background:#fafaf7;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    h1,h2,h3,h4,h5{font-family:'Fraunces','Inter',sans-serif;font-weight:700;line-height:1.15;color:#0a2a2b}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    ul{list-style:none}
+    button{cursor:pointer;font-family:inherit;border:none;background:none}
+
+    /* ============ DESIGN TOKENS ============ */
+    :root{
+      --navy:#0a2a2b;
+      --navy-light:#0f3d3e;
+      --orange:#a06a30;
+      --orange-light:#c08648;
+      --cream:#fafaf7;
+      --white:#FFFFFF;
+      --gray-900:#1A1A1A;
+      --gray-600:#6a7282;
+      --gray-400:#99a1af;
+      --gray-200:#e6e3d8;
+      --steel:#3D5A80;
+      --shadow-sm:0 1px 3px rgba(10,42,43,.08);
+      --shadow-md:0 4px 16px rgba(10,42,43,.1);
+      --shadow-lg:0 12px 40px rgba(10,42,43,.14);
+      --radius:10px;
+      --radius-lg:16px;
+      --container:1200px;
+    }
+
+    /* ============ CONTAINER ============ */
+    .container{max-width:var(--container);margin:0 auto;padding:0 24px}
+
+    /* ============ SIGNATURE: CONTAINER CORRUGATED STRIP ============ */
+    .corrugated-strip{
+      height:8px;
+      background:repeating-linear-gradient(
+        90deg,
+        var(--orange) 0px,var(--orange) 6px,
+        #C95F12 6px,#C95F12 8px,
+        var(--orange) 8px,var(--orange) 14px,
+        #7a5024 14px,#7a5024 16px
+      );
+    }
+
+    /* ============ SHIPPING LABEL TAG ============ */
+    .ship-tag{
+      display:inline-flex;align-items:center;gap:6px;
+      font-family:'Fraunces',monospace;
+      font-size:11px;font-weight:600;letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--orange);
+      background:rgba(160,106,48,.08);
+      border:1px solid rgba(160,106,48,.25);
+      padding:5px 12px;border-radius:4px;
+    }
+    .ship-tag::before{
+      content:'';width:6px;height:6px;background:var(--orange);border-radius:50%;
+    }
+
+    /* ============ BUTTONS ============ */
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      font-family:'Fraunces',sans-serif;
+      font-weight:600;font-size:15px;
+      padding:14px 28px;border-radius:8px;
+      transition:all .25s ease;
+      white-space:nowrap;
+    }
+    .btn-primary{
+      background:var(--orange);color:#fff;
+      box-shadow:0 4px 14px rgba(160,106,48,.35);
+    }
+    .btn-primary:hover{background:#7a5024;transform:translateY(-2px);box-shadow:0 6px 20px rgba(160,106,48,.45)}
+    .btn-outline{
+      background:transparent;color:var(--navy);
+      border:2px solid var(--navy);
+    }
+    .btn-outline:hover{background:var(--navy);color:#fff}
+    .btn-white{
+      background:#fff;color:var(--navy);
+      box-shadow:var(--shadow-md);
+    }
+    .btn-white:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+    .btn-sm{padding:10px 20px;font-size:13px}
+
+    /* ============ NAVBAR ============ */
+    .navbar{
+      position:sticky;top:0;z-index:1000;
+      background:rgba(255,255,255,.95);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--gray-200);
+    }
+    .nav-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      height:72px;max-width:var(--container);margin:0 auto;padding:0 24px;
+    }
+    .logo{
+      font-family:'Fraunces',sans-serif;
+      font-size:22px;font-weight:700;color:var(--navy);
+      display:flex;align-items:center;gap:10px;
+      cursor:pointer;
+    }
+    .logo-mark{
+      width:38px;height:38px;background:var(--navy);border-radius:8px;
+      display:flex;align-items:center;justify-content:center;
+      color:var(--orange);font-size:18px;font-weight:700;
+      letter-spacing:-.5px;
+    }
+    .logo-text{letter-spacing:-.3px}
+    .logo-text span{color:var(--orange)}
+    .nav-menu{display:flex;align-items:center;gap:32px}
+    .nav-menu a{
+      font-size:14px;font-weight:500;color:var(--gray-900);
+      transition:color .2s;position:relative;cursor:pointer;
+    }
+    .nav-menu a:hover{color:var(--orange)}
+    .nav-menu a::after{
+      content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;
+      background:var(--orange);transition:width .25s;
+    }
+    .nav-menu a:hover::after{width:100%}
+    .nav-cta{display:flex;align-items:center;gap:12px}
+    .mobile-toggle{display:none;flex-direction:column;gap:5px;padding:8px}
+    .mobile-toggle span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+
+    /* ============ NAV DROPDOWN ============ */
+    .nav-dropdown{position:relative}
+    .nav-trigger{display:inline-flex;align-items:center;gap:6px}
+    .chevron{transition:transform .25s}
+    .nav-dropdown:hover .chevron{transform:rotate(180deg)}
+    .dropdown-menu{
+      position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);
+      background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);
+      border:1px solid var(--gray-200);padding:12px;min-width:320px;
+      opacity:0;visibility:hidden;transition:all .25s ease;
+      z-index:100;margin-top:8px;
+    }
+    .nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+    /* ============ MEGA MENU OVERRIDE ============ */
+    .nav-dropdown.mega-menu-wrap:hover .dropdown-menu,
+    .nav-dropdown.mega-menu-wrap.open .dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+    .nav-dropdown.mega-menu-wrap .dropdown-menu{
+      left:50%;right:auto;width:720px;min-width:720px;max-width:90vw;
+      top:calc(100% + 14px);
+      padding:28px 24px 20px;
+      border-top:3px solid var(--orange);
+      box-shadow:0 16px 48px rgba(10,42,43,.18);
+    }
+    .mega-menu-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:28px;
+    }
+    .mega-menu-col-title{
+      font-family:'Fraunces',sans-serif;
+      font-size:11px;font-weight:700;letter-spacing:.14em;
+      text-transform:uppercase;color:#99a1af;
+      padding-bottom:10px;margin-bottom:14px;
+      border-bottom:2px solid #e6e3d8;
+    }
+    .mega-item{
+      display:flex;align-items:flex-start;gap:14px;
+      padding:14px;border-radius:10px;
+      transition:all .2s ease;
+      cursor:pointer;text-decoration:none;color:inherit;
+      position:relative;
+    }
+    .mega-item:hover{
+      background:#f8f9fb;
+      transform:translateY(-1px);
+    }
+    .mega-item:hover .mega-icon{
+      background:linear-gradient(135deg,#a06a30,#c08648);
+      color:#fff;
+    }
+    .mega-item:hover .mega-name{color:var(--orange)}
+    .mega-icon{
+      width:36px;height:36px;flex-shrink:0;border-radius:8px;
+      background:linear-gradient(135deg,#0a2a2b,#0f3d3e);
+      display:flex;align-items:center;justify-content:center;
+      color:#a06a30;font-family:'Fraunces',sans-serif;
+      font-size:13px;font-weight:700;letter-spacing:-.5px;
+      transition:all .2s ease;
+    }
+    .mega-text{flex:1;min-width:0}
+    .mega-name{
+      font-size:14px;font-weight:700;color:var(--navy);
+      font-family:'Fraunces',sans-serif;margin-bottom:4px;
+      transition:color .2s;
+      display:flex;align-items:center;gap:8px;
+    }
+    .mega-desc{
+      font-size:12px;color:#6a7282;line-height:1.5;
+    }
+    .mega-tag{
+      font-size:10px;font-weight:700;
+      padding:2px 6px;border-radius:4px;
+      font-family:'Fraunces',sans-serif;
+      letter-spacing:.05em;
+      flex-shrink:0;
+    }
+    .mega-tag.p0{background:#FEE2E2;color:#B91C1C}
+    .mega-tag.p1{background:#f4e6cc;color:#7a5024}
+    .mega-tag.p2{background:#DCFCE7;color:#15803D}
+    .mega-tag.p3{background:#f4e6cc;color:#0f3d3e}
+    .mega-tag.core{background:#a06a30;color:#fff}
+    .mega-tag.new{background:#008138;color:#fff}
+    .products-menu-wrap .dropdown-menu{width:700px;min-width:700px}
+
+    /* Mega menu hover animation */
+    .nav-dropdown.mega-menu-wrap{position:relative}
+
+    /* Mobile responsive */
+    @media(max-width:768px){
+      .nav-dropdown.mega-menu-wrap .dropdown-menu{
+        width:100%;min-width:auto;left:0;right:0;top:calc(100% + 4px);
+        transform:none;padding:16px;
+      }
+      .mega-menu-grid{grid-template-columns:1fr;gap:12px}
+      .mega-item{padding:12px}
+    }
+    .dropdown-item{
+      display:flex;align-items:flex-start;gap:12px;padding:12px;border-radius:8px;
+      transition:background .2s;
+    }
+    .dropdown-item:hover{background:var(--cream)}
+    .di-icon{
+      width:36px;height:36px;background:rgba(10,42,43,.08);border-radius:8px;
+      display:flex;align-items:center;justify-content:center;
+      color:var(--navy);flex-shrink:0;
+    }
+    .di-text{display:flex;flex-direction:column;gap:2px}
+    .di-name{font-family:'Fraunces',sans-serif;font-size:14px;font-weight:600;color:var(--navy)}
+    .di-desc{font-size:12px;color:var(--gray-600)}
+    .nav-menu .nav-trigger[style*="--orange"]::after{width:100%}
+
+    /* ============ HERO ============ */
+    .hero{
+      position:relative;min-height:640px;
+      display:flex;align-items:center;
+      background:var(--navy);
+      overflow:hidden;
+    }
+    .hero-bg{
+      position:absolute;inset:0;
+      background:url('https://aka.doubaocdn.com/s/tAuCBlFl7s') center/cover no-repeat;
+      opacity:.35;
+    }
+    .hero-overlay{
+      position:absolute;inset:0;
+      background:linear-gradient(105deg,rgba(10,42,43,.92) 0%,rgba(10,42,43,.7) 50%,rgba(10,42,43,.4) 100%);
+    }
+    .hero-content{
+      position:relative;z-index:2;
+      max-width:var(--container);margin:0 auto;padding:80px 24px;
+      width:100%;
+    }
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(160,106,48,.15);border:1px solid rgba(160,106,48,.4);
+      color:#c08648;font-size:13px;font-weight:600;
+      padding:8px 16px;border-radius:50px;margin-bottom:24px;
+    }
+    .hero-badge .dot{width:8px;height:8px;background:var(--orange-light);border-radius:50%;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    .hero h1{
+      font-size:clamp(36px,5vw,56px);color:#fff;
+      max-width:680px;margin-bottom:20px;
+    }
+    .hero h1 span{color:var(--orange-light)}
+    .hero-sub{
+      font-size:18px;color:rgba(255,255,255,.8);
+      max-width:560px;margin-bottom:36px;line-height:1.7;
+    }
+    .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px}
+    .hero-trust{
+      display:flex;gap:40px;flex-wrap:wrap;
+      padding-top:32px;border-top:1px solid rgba(255,255,255,.15);
+    }
+    .hero-tag{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);
+      color:#fff;font-size:14px;font-weight:500;
+      padding:10px 16px;border-radius:50px;
+      white-space:nowrap;
+    }
+    .hero-tag-icon{font-size:16px;flex-shrink:0}
+
+    /* ============ SECTION COMMON ============ */
+    .section{padding:96px 0}
+    .section-header{text-align:center;max-width:720px;margin:0 auto 56px}
+    .section-header .ship-tag{margin-bottom:16px}
+    .section-header h2{
+      font-size:clamp(28px,3.5vw,40px);margin-bottom:16px;
+    }
+    .section-header p{
+      font-size:17px;color:var(--gray-600);line-height:1.7;
+    }
+
+    /* ============ BUSINESS INTRO SECTION ============ */
+    .intro-section{background:var(--cream)}
+    .intro-grid{display:grid;grid-template-columns:1fr;gap:24px;max-width:820px;margin:0 auto}
+    .intro-block h3{font-size:20px;margin-bottom:12px}
+    .intro-block p{font-size:15px;color:var(--gray-600);line-height:1.8}
+    .intro-block a{color:var(--orange);font-weight:600;text-decoration:underline}
+
+    /* ============ PROCESS ============ */
+    .process-section{background:#fff}
+    .process-grid{
+      display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+      position:relative;
+    }
+    .process-step{
+      padding:0 24px;position:relative;
+    }
+    .process-step:not(:last-child)::after{
+      content:'';position:absolute;top:36px;right:-12px;
+      width:24px;height:2px;background:var(--orange);opacity:.4;
+    }
+    .step-circle{
+      width:72px;height:72px;border-radius:50%;
+      background:#fff;border:2px solid var(--orange);
+      display:flex;align-items:center;justify-content:center;
+      font-family:'Fraunces',sans-serif;
+      font-size:24px;font-weight:700;color:var(--orange);
+      margin-bottom:24px;position:relative;z-index:2;
+      box-shadow:0 4px 12px rgba(160,106,48,.15);
+    }
+    .process-step h3{font-size:18px;margin-bottom:10px}
+    .process-step p{font-size:14px;color:var(--gray-600);line-height:1.7;margin-bottom:16px}
+
+    /* ============ DELIVERABLES ============ */
+    .deliverables-section{background:var(--cream)}
+    .deliverables-grid{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:24px;
+    }
+    .deliverable-card{
+      background:#fff;border-radius:var(--radius);padding:32px 28px;
+      border-left:4px solid var(--orange);
+      transition:all .3s;
+    }
+    .deliverable-card:hover{box-shadow:var(--shadow-md);transform:translateX(4px)}
+    .deliverable-card .d-icon{
+      width:40px;height:40px;background:rgba(10,42,43,.08);border-radius:8px;
+      display:flex;align-items:center;justify-content:center;
+      color:var(--navy);margin-bottom:16px;
+    }
+    .deliverable-card h3{font-size:17px;margin-bottom:8px}
+    .deliverable-card p{font-size:14px;color:var(--gray-600);line-height:1.7}
+
+    /* ============ CHECKLIST SECTION ============ */
+    .checklist-section{background:#fff}
+    .checklist-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .checklist-card{background:var(--cream);border-radius:var(--radius);padding:28px 24px;border-left:4px solid var(--orange)}
+    .checklist-card h4{font-size:16px;margin-bottom:14px}
+    .checklist-card ul{list-style:none}
+    .checklist-card li{font-size:13px;color:var(--gray-600);padding:4px 0 4px 18px;position:relative}
+    .checklist-card li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;background:var(--orange);border-radius:50%}
+    .checklist-tip{text-align:center;margin-top:32px;font-size:14px;color:var(--gray-600)}
+    .checklist-tip a{color:var(--orange);font-weight:600;text-decoration:underline}
+
+    /* ============ GRADING SECTION ============ */
+    .grade-section{background:var(--cream)}
+    .grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .grade-card{background:#fff;border-radius:var(--radius-lg);padding:28px 24px;border:1px solid var(--gray-200);transition:all .3s}
+    .grade-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px)}
+    .grade-badge{font-family:'Fraunces',sans-serif;font-size:28px;font-weight:700;text-align:center;margin-bottom:8px}
+    .grade-a{color:#16A34A}
+    .grade-b{color:#a06a30}
+    .grade-c{color:#D97706}
+    .grade-d{color:#DC2626}
+    .grade-title{font-size:14px;font-weight:700;color:var(--navy);text-align:center;margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em}
+    .grade-desc{font-size:13px;color:var(--gray-600);line-height:1.6}
+
+    /* ============ CASE HIGHLIGHT ============ */
+    .case-section{background:var(--navy);color:#fff}
+    .case-section .section-header h2{color:#fff}
+    .case-section .section-header p{color:rgba(255,255,255,.7)}
+    .case-card{
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+      border-radius:var(--radius-lg);padding:48px 40px;max-width:820px;margin:0 auto;
+    }
+    .case-card h3{color:var(--orange-light);font-size:24px;margin-bottom:16px}
+    .case-card p{color:rgba(255,255,255,.8);font-size:16px;line-height:1.8;margin-bottom:24px}
+    .case-stats{display:flex;gap:40px;flex-wrap:wrap;margin-bottom:24px}
+    .case-stat .cs-num{font-family:'Fraunces',sans-serif;font-size:36px;font-weight:700;color:var(--orange-light)}
+    .case-stat .cs-label{font-size:13px;color:rgba(255,255,255,.6);margin-top:4px}
+
+    /* ============ FAQ ============ */
+    .faq-section{background:#fff}
+    .faq-list{max-width:820px;margin:0 auto}
+    .faq-item{
+      background:var(--cream);border-radius:var(--radius);margin-bottom:12px;
+      border:1px solid var(--gray-200);overflow:hidden;
+      transition:box-shadow .3s;
+    }
+    .faq-item:hover{box-shadow:var(--shadow-sm)}
+    .faq-question{
+      width:100%;display:flex;align-items:center;justify-content:space-between;
+      padding:22px 28px;text-align:left;
+      font-family:'Fraunces',sans-serif;
+      font-size:16px;font-weight:600;color:var(--navy);
+      gap:16px;
+    }
+    .faq-question .faq-icon{
+      width:28px;height:28px;flex-shrink:0;border-radius:50%;
+      background:rgba(160,106,48,.1);color:var(--orange);
+      display:flex;align-items:center;justify-content:center;
+      transition:transform .3s,background .3s;
+      font-size:18px;font-weight:400;
+    }
+    .faq-item.active .faq-icon{transform:rotate(45deg);background:var(--orange);color:#fff}
+    .faq-answer{
+      max-height:0;overflow:hidden;transition:max-height .35s ease;
+    }
+    .faq-answer-inner{
+      padding:0 28px 24px;font-size:14px;color:var(--gray-600);line-height:1.8;
+    }
+
+    /* ============ CTA BANNER ============ */
+    .cta-banner{
+      background:var(--navy);padding:72px 0;position:relative;overflow:hidden;
+    }
+    .cta-banner::before{
+      content:'';position:absolute;top:-50%;right:-10%;
+      width:500px;height:500px;border-radius:50%;
+      background:radial-gradient(circle,rgba(160,106,48,.15),transparent 70%);
+    }
+    .cta-banner .container{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:40px;flex-wrap:wrap;position:relative;z-index:2;
+    }
+    .cta-banner h2{color:#fff;font-size:32px;max-width:520px}
+    .cta-banner p{color:rgba(255,255,255,.7);font-size:16px;margin-top:8px}
+    .cta-banner .cta-side{text-align:center}
+    .cta-banner .cta-helper{color:rgba(255,255,255,.6);font-size:13px;margin-top:14px}
+
+/* ============ RELATED LINKS ============ */
+.related-links{background:#fff;padding:72px 0}
+.rl-header{text-align:center;margin-bottom:48px}
+.rl-header h2{font-size:clamp(28px,4vw,40px);color:var(--navy);margin:12px 0 8px}
+.rl-header p{color:#666;max-width:520px;margin:0 auto}
+.rl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.rl-col h3{font-size:16px;color:var(--navy);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--orange)}
+.rl-col li{margin-bottom:12px}
+.rl-col a{font-size:14px;color:#444;transition:color .2s;display:block;padding:6px 0;border-bottom:1px solid #f0f0f0}
+.rl-col a:hover{color:var(--orange);border-color:var(--orange)}
+@media(max-width:768px){.rl-grid{grid-template-columns:1fr;gap:32px}}
+
+    /* ============ FOOTER ============ */
+    .footer{background:var(--navy);color:rgba(255,255,255,.7);padding:72px 0 0}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;
+      padding-bottom:48px;
+    }
+    .footer-brand .logo{color:#fff;margin-bottom:16px}
+    .footer-brand .logo-mark{background:var(--orange);color:#fff}
+    .footer-brand p{font-size:14px;line-height:1.8;margin-bottom:20px}
+    .footer-social{display:flex;gap:12px}
+    .footer-social a{
+      width:36px;height:36px;border-radius:8px;
+      background:rgba(255,255,255,.08);
+      display:flex;align-items:center;justify-content:center;
+      color:rgba(255,255,255,.7);transition:all .2s;
+    }
+    .footer-social a:hover{background:var(--orange);color:#fff}
+    .footer-col h4{
+      color:#fff;font-size:14px;text-transform:uppercase;
+      letter-spacing:.1em;margin-bottom:20px;
+    }
+    .footer-col li{margin-bottom:10px}
+    .footer-col a{font-size:14px;transition:color .2s;cursor:pointer}
+    .footer-col a:hover{color:var(--orange-light)}
+    .footer-contact li{
+      display:flex;align-items:flex-start;gap:10px;
+      font-size:14px;margin-bottom:14px;line-height:1.6;
+    }
+    .footer-contact .fc-icon{
+      width:20px;height:20px;flex-shrink:0;color:var(--orange-light);margin-top:2px;
+    }
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,.1);
+      padding:24px 0;display:flex;justify-content:space-between;
+      align-items:center;flex-wrap:wrap;gap:12px;
+      font-size:13px;
+    }
+    .footer-bottom a{color:var(--orange-light);cursor:pointer}
+
+        /* ============ RELATED SERVICES ============ */
+    .related-section{background:var(--cream)}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .related-card{
+      background:#fff;border-radius:var(--radius-lg);padding:32px 28px;
+      border:1px solid var(--gray-200);
+      transition:all .3s;text-align:center;
+    }
+    .related-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent}
+    .related-card .r-icon{
+      width:48px;height:48px;background:var(--navy);border-radius:10px;
+      display:flex;align-items:center;justify-content:center;
+      color:var(--orange-light);margin:0 auto 16px;
+    }
+    .related-card h3{font-size:18px;margin-bottom:8px}
+    .related-card p{font-size:14px;color:var(--gray-600);margin-bottom:16px;line-height:1.6}
+    .related-card .r-link{
+      font-family:'Fraunces',sans-serif;
+      font-size:13px;font-weight:600;color:var(--orange);
+      display:inline-flex;align-items:center;gap:6px;
+      transition:gap .2s;
+    }
+    .related-card .r-link:hover{gap:10px}
+
+    /* ============ NOTE BOX ============ */
+    .note-box{
+      background:#FFF8F0;border:1px solid rgba(160,106,48,.2);
+      border-radius:var(--radius);padding:24px 28px;
+      text-align:center;max-width:720px;margin:0 auto;
+    }
+    .note-box p{font-size:15px;color:var(--navy);line-height:1.7}
+
+    /* ============ COMPARISON TABLE ============ */
+    .cmp-wrap{overflow-x:auto;border-radius:var(--radius)}
+    .cmp-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);min-width:680px}
+    .cmp-table th,.cmp-table td{padding:14px 18px;font-size:14px;text-align:left;border-bottom:1px solid var(--gray-200);line-height:1.6}
+    .cmp-table thead th{background:var(--navy);color:#fff;font-family:'Fraunces',sans-serif;font-weight:700;font-size:14px}
+    .cmp-table tbody th{color:var(--navy);font-weight:600;background:var(--cream);white-space:nowrap}
+    .cmp-table tbody td{color:var(--gray-600)}
+    .cmp-table tr:last-child th,.cmp-table tr:last-child td{border-bottom:none}
+
+    /* ============ SOURCING MODES ============ */
+    .modes-section{background:var(--cream)}
+    .modes-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+    }
+    .mode-card{
+      background:#fff;border-radius:var(--radius-lg);padding:36px 32px;
+      border:1px solid var(--gray-200);transition:all .3s;
+    }
+    .mode-card:hover{
+      box-shadow:var(--shadow-lg);transform:translateY(-4px);
+      border-color:transparent;
+    }
+    .mode-card .mode-icon{
+      width:56px;height:56px;border-radius:50%;
+      background:rgba(160,106,48,.1);
+      display:flex;align-items:center;justify-content:center;
+      color:var(--orange);margin-bottom:20px;
+    }
+    .mode-card h3{font-size:22px;margin-bottom:10px}
+    .mode-card .mode-label{
+      font-family:'Fraunces',sans-serif;
+      font-size:11px;font-weight:700;color:var(--orange);
+      text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;
+    }
+    .mode-card .mode-desc{
+      font-size:14px;color:var(--gray-600);margin-bottom:20px;
+      line-height:1.7;font-style:italic;
+    }
+    .mode-card .mode-what-label{
+      font-family:'Fraunces',sans-serif;
+      font-size:11px;font-weight:700;color:var(--orange);
+      text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;
+    }
+    .mode-card ul{margin-bottom:24px}
+    .mode-card li{
+      font-size:14px;color:var(--gray-900);padding:5px 0 5px 22px;
+      position:relative;line-height:1.6;
+    }
+    .mode-card li::before{
+      content:'';position:absolute;left:0;top:12px;
+      width:8px;height:8px;background:var(--orange);border-radius:50%;
+    }
+    .mode-card .mode-link{
+      font-family:'Fraunces',sans-serif;
+      font-size:14px;font-weight:600;color:var(--orange);
+      display:inline-flex;align-items:center;gap:6px;
+      transition:gap .2s;cursor:pointer;
+    }
+    .mode-card .mode-link:hover{gap:10px;text-decoration:underline}
+
+    @media(max-width:1024px){
+      .related-grid{grid-template-columns:repeat(2,1fr)}
+      .modes-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:768px){
+      .related-grid{grid-template-columns:1fr}
+      .modes-grid{grid-template-columns:1fr}
+    }
+
+/* ============ RESPONSIVE ============ */
+    @media(max-width:1024px){
+      .process-grid{grid-template-columns:repeat(2,1fr);gap:40px}
+      .process-step:not(:last-child)::after{display:none}
+      .deliverables-grid{grid-template-columns:1fr}
+      .checklist-grid{grid-template-columns:1fr}
+      .grade-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:768px){
+      .nav-menu{display:none}
+      /* Mobile dropdown toggle */
+      .nav-menu .nav-dropdown .dropdown-menu{
+        position:static;top:auto;left:auto;right:auto;transform:none;
+        min-width:auto;width:100%;
+        box-shadow:none;border:none;background:transparent;
+        padding:8px 0;margin-top:8px;border-radius:8px;
+        opacity:1;visibility:visible;
+        display:none;
+      }
+      .nav-menu .nav-dropdown.open .dropdown-menu{display:block}
+      .nav-menu .nav-dropdown > .nav-trigger::after{display:none}
+      .nav-menu .nav-dropdown.open > .nav-trigger .chevron{transform:rotate(180deg)}
+      .mobile-toggle{display:flex}
+      .nav-cta .btn-outline{display:none}
+      .hero{min-height:560px}
+      .hero-trust{gap:16px}
+      .hero-tag{font-size:12px;padding:8px 14px;white-space:normal}
+      .section{padding:64px 0}
+      .process-grid{grid-template-columns:1fr}
+      .grade-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      .cta-banner .container{flex-direction:column;text-align:center}
+      .case-stats{flex-direction:column;gap:20px}
+    }
+.search-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.45);z-index:2000;align-items:flex-start;justify-content:center;padding-top:100px}
+.search-modal.open{display:flex}
+.search-box{background:#fff;border-radius:16px;width:100%;max-width:520px;box-shadow:0 20px 60px rgba(0,0,0,.2);overflow:hidden}
+.search-input-wrap{display:flex;align-items:center;padding:20px;border-bottom:1px solid var(--gray-200);gap:12px}
+.search-input-wrap svg{width:20px;height:20px;color:var(--gray-400);flex-shrink:0}
+.search-input-wrap input{flex:1;border:none;outline:none;font-size:16px;font-family:'Inter',sans-serif;background:transparent}
+.search-results{max-height:400px;overflow-y:auto;padding:8px}
+.search-result{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:8px;cursor:pointer;transition:background .15s}
+.search-result:hover{background:var(--cream)}
+.search-result-icon{width:32px;height:32px;background:rgba(160,106,48,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--orange);flex-shrink:0}
+.search-result-text h4{font-size:14px;color:var(--navy);font-family:'Inter',sans-serif;font-weight:600;margin-bottom:2px}
+.search-result-text p{font-size:12px;color:var(--gray-600)}
+.search-empty{padding:32px;text-align:center;color:var(--gray-400);font-size:14px}
+.nav-mini{position:relative}
+.nav-mini .dropdown-menu{min-width:140px;left:auto;right:0;transform:translateX(0)}
+.nav-mini:hover .dropdown-menu{transform:translateX(0) translateY(0)}
+.nav-mini-trigger{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--navy);cursor:pointer;padding:6px 10px;border-radius:6px;transition:background .15s;background:none;border:none;font-family:inherit}
+.nav-mini-trigger:hover{background:rgba(0,0,0,.04)}
+.nav-icon-btn{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--navy);transition:all .2s;background:none;border:none;cursor:pointer}
+.nav-icon-btn:hover{color:var(--orange);background:rgba(160,106,48,.08)}
+.lang-toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:14px 28px;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,.2);z-index:3000;font-size:14px;opacity:0;transition:opacity .3s;pointer-events:none}
+.lang-toast.show{opacity:1}
+  /* ============ QUOTE MODAL ============ */
+.qm-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:2500;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .2s}
+.qm-overlay.open{display:flex;opacity:1}
+.qm-box{background:#fff;border-radius:10px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.2);position:relative;transform:translateY(20px);transition:transform .25s}
+.qm-overlay.open .qm-box{transform:translateY(0)}
+.qm-header{padding:24px 28px 0;display:flex;justify-content:space-between;align-items:flex-start}
+.qm-title{font-family:'Fraunces',sans-serif;font-size:22px;font-weight:700;color:#0a2a2b;margin:0}
+.qm-subtitle{font-size:13px;color:#6a7282;margin-top:4px}
+.qm-close{background:none;border:none;font-size:28px;color:#99a1af;cursor:pointer;padding:0;line-height:1;transition:color .15s}
+.qm-close:hover{color:#0a2a2b}
+.qm-body{padding:20px 28px 28px}
+.qm-row{display:flex;gap:14px;margin-bottom:14px}
+.qm-row > .qm-field{flex:1}
+.qm-field{margin-bottom:0}
+.qm-field.qm-full{margin-bottom:14px}
+.qm-label{display:block;font-size:13px;font-weight:500;color:#0a2a2b;margin-bottom:6px}
+.qm-label .qm-req{color:#a06a30;margin-left:2px}
+.qm-input,.qm-textarea,.qm-select{width:100%;padding:11px 14px;border:1px solid #e6e3d8;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:#0a2a2b;background:#fff;transition:border-color .15s,box-shadow .15s;box-sizing:border-box}
+.qm-input:focus,.qm-textarea:focus,.qm-select:focus{outline:none;border-color:#a06a30;box-shadow:0 0 0 3px rgba(160,106,48,.1)}
+.qm-textarea{min-height:90px;resize:vertical}
+.qm-price-row{display:flex;gap:8px}
+.qm-price-row .qm-input{flex:1}
+.qm-price-row .qm-select{width:90px;flex-shrink:0}
+.qm-submit{width:100%;padding:13px;background:#a06a30;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:background .2s}
+.qm-submit:hover{background:#d66a1b}
+.qm-hint{font-size:11px;color:#99a1af;text-align:center;margin-top:10px}
+.fc-btns{position:fixed;bottom:24px;right:24px;display:flex;flex-direction:column;gap:12px;z-index:950}
+.fc-btn{width:52px;height:52px;border-radius:50%;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform .2s,box-shadow .2s;cursor:pointer;border:none}
+.fc-btn:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(0,0,0,.2)}
+.fc-btn svg{width:24px;height:24px}
+.fc-whatsapp svg{color:#008138}
+.fc-email svg{color:#a06a30}
+@media(max-width:480px){.fc-btns{bottom:16px;right:16px;gap:10px}.fc-btn{width:44px;height:44px}.fc-btn svg{width:20px;height:20px}.qm-row{flex-direction:column;gap:0}}</style>
+<style>
+/* QSFC theme override (fonts/colors/backgrounds only) */
+body{background:#fafaf7!important}
+h1,h2,h3,h4,h5,h6{font-family:'Fraunces','Inter',Georgia,serif;letter-spacing:-.01em}
+a:focus-visible,button:focus-visible{outline-color:#008138}
+footer a:hover{color:#e8c998!important}.btn-primary{background:#008138!important;color:#fff!important}
+.btn-primary:hover{background:#0f3d3e!important}
+.hero-badge{color:#e8c998}
+.hero h1 span{color:#e8c998}
+
+/* ===== MEGA MENU CSS (injected from index.html) ===== */
+.navbar-scrolled {
+  background-color: rgba(255,255,255,.92) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(15,42,74,.08);
+}
+
+/* ============ SERVICES MEGA MENU ============ */
+.services-mega { position: relative; }
+.services-mega > .mega-trigger {
+  display: inline-flex; align-items: center; gap: 4px;
+  cursor: pointer;
+}
+.services-mega > .mega-trigger .mega-chevron {
+  width: 12px; height: 12px; transition: transform .2s;
+}
+.services-mega:hover > .mega-trigger .mega-chevron { transform: rotate(180deg); color: #F59E0B; }
+.services-mega .mega-panel {
+  position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%) translateY(-6px);
+  width: 720px; max-width: 92vw;
+  background: #fff; border: 1px solid #EEF1F6; border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(15,42,74,.14);
+  padding: 10px; opacity: 0; visibility: hidden;
+  transition: opacity .18s, transform .18s, visibility .18s;
+  z-index: 60;
+}
+.services-mega:hover .mega-panel,
+.services-mega.open .mega-panel {
+  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+}
+.mega-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.mega-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 12px; border-radius: 10px;
+  text-decoration: none; transition: background .15s;
+}
+.mega-item:hover { background: #F7F8FA; }
+.mega-item:hover .mega-icon-bg { background: #F59E0B; color: #fff; }
+.mega-icon-bg {
+  width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0;
+  background: #0F2A4A; color: #F59E0B;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700; font-family: 'Inter', sans-serif;
+  transition: all .15s;
+}
+.mega-item .mega-title { font-size: 15px; font-weight: 600; color: #0F2A4A; }
+.mega-item:hover .mega-title { color: #F59E0B; }
+.mega-item .mega-desc { font-size: 13px; color: #64748B; margin-top: 1px; line-height: 1.4; }
+
+/* Mobile Services accordion */
+.mobile-services {
+  border-radius: 8px; overflow: hidden;
+}
+.mobile-services > .ms-head {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 3px;
+  font-size: 16px; font-weight: 600; color: #334155;
+  cursor: pointer; background: none; border: none; font-family: inherit; text-align: left;
+}
+.mobile-services > .ms-head .ms-chevron {
+  width: 14px; height: 14px; transition: transform .2s;
+}
+.mobile-services.open > .ms-head .ms-chevron { transform: rotate(180deg); color: #F59E0B; }
+.mobile-services > .ms-body {
+  max-height: 0; overflow: hidden; transition: max-height .25s ease;
+  padding-left: 4px;
+}
+.mobile-services.open > .ms-body { max-height: 600px; }
+.mobile-services > .ms-body a {
+  display: block; padding: 8px 12px; border-radius: 6px;
+  font-size: 14px; color: #475569;
+}
+.mobile-services > .ms-body a:hover { background: #F7F8FA; color: #F59E0B; }
+
+
+<!-- Theme override: qualitysourcingfromchina.com tokens (fonts / colors / backgrounds only) -->
+<style>
+h1,h2,h3,h4,h5,h6{font-family:'Fraunces','Inter',Georgia,serif;letter-spacing:-.01em}
+body{background:#fafaf7!important}   /* 盖过 body 的 bg-white 工具类 */
+.navbar-scrolled{background-color:rgba(250,250,247,.92)!important;box-shadow:0 2px 12px rgba(10,42,43,.06)}
+/* mega 菜单 */
+.services-mega:hover>.mega-trigger .mega-chevron{color:#008138}
+.services-mega .mega-panel{background:#fafaf7;border-color:#e6e3d8;box-shadow:0 12px 40px rgba(10,42,43,.12)}
+.mega-item:hover{background:#f3f1ea}
+.mega-item:hover .mega-icon-bg{background:#008138;color:#fff}
+.mega-icon-bg{background:#0a2a2b;color:#e8c998}
+.mega-item .mega-title{color:#0a2a2b;font-size:16px}
+.mega-item:hover .mega-title{color:#008138}
+.mega-item .mega-desc{color:#6a7282;font-size:13px}
+.mobile-services>.ms-head{color:#364153}
+.mobile-services.open>.ms-head .ms-chevron{color:#008138}
+.mobile-services>.ms-body a{color:#5a5950}
+.mobile-services>.ms-body a:hover{background:#f3f1ea;color:#008138}
+/* hero：深蓝渐变 → 暖米 */
+.hero-carousel{background:linear-gradient(135deg,#f3f1ea 0%,#fafaf7 55%,#fbf5ec 100%)}
+.hero-carousel::before{background-image:linear-gradient(rgba(10,42,43,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(10,42,43,.045) 1px,transparent 1px)}
+.hero-eyebrow{color:#a06a30;font-size:13px}
+.hero-title{color:#0a2a2b;font-size:clamp(32px,4.5vw,54px)}
+.hero-title .hl{color:#c08648}
+.hero-sub{color:#6a7282;font-size:16px}
+.hero-chip{color:#364153;border-color:#cdc8b8;font-size:13px}
+.hero-btn{font-size:15px}
+.hero-btn-wa{background:#0f3d3e}
+.hero-btn-wa:hover{background:#0a2a2b;box-shadow:0 10px 24px rgba(10,42,43,.28)}
+.hero-btn-quote{background:#008138}
+.hero-btn-quote:hover{background:#0f3d3e;box-shadow:0 10px 24px rgba(0,129,56,.30)}
+.hero-btn-ghost{color:#0a2a2b;border-color:#cdc8b8}
+.hero-btn-ghost:hover{background:#f3f1ea}
+.hero-img-card{border-color:#e6e3d8;box-shadow:0 24px 60px rgba(10,42,43,.16);background:#f3f1ea}
+.hero-dot{background:#cdc8b8}
+.hero-dot.active{background:#008138}
+.hero-counter{color:#6a7282}
+.hero-counter .cur{color:#0a2a2b}
+.hero-stats{border-top-color:#e6e3d8}
+.hero-stat .num{color:#0a2a2b;font-size:clamp(26px,2.8vw,38px)}
+.hero-stat .num .u{color:#c08648}
+.hero-stat .lbl{color:#6a7282;font-size:13px}
+.nav-btn{background:#008138;color:#fff}
+.nav-btn:hover{background:#0f3d3e}
+/* 主 CTA 与徽章 */
+a.rounded-full.bg-amber{background-color:#008138!important}
+a.rounded-full.bg-amber:hover{background-color:#0f3d3e!important}
+.bg-amber.text-white{background-color:#f4e6cc!important;color:#7a5024!important}
+.bg-navy .text-amber{color:#e8c998!important}
+footer a:hover{color:#e8c998!important}
+/* 联系/报价区 */
+.cb-h2{color:#0a2a2b;font-size:32px}
+.cb-h2-sub{color:#6a7282;font-size:15px}
+.cb-shell{background:#fafaf7;box-shadow:0 30px 70px rgba(10,42,43,.12)}
+.cb-left{background:radial-gradient(circle at 0% 0%, rgba(192,134,72,.18), transparent 45%),radial-gradient(circle at 100% 100%, rgba(0,129,56,.14), transparent 45%),linear-gradient(135deg,#0a2a2b 0%,#173d3e 55%,#0f3d3e 100%)}
+.cb-tag{background:#008138;color:#fff;font-size:13px}
+.cb-title{font-size:28px}
+.cb-lead{color:rgba(250,250,247,.82);font-size:15px}
+.cb-intro{background:rgba(250,250,247,.08);border-color:rgba(250,250,247,.18);color:rgba(250,250,247,.88)}
+.cb-intro b{color:#e8c998}
+.cb-slogan{border-top-color:rgba(232,201,152,.45);font-size:19px;color:#e8c998}
+.cb-addr{color:rgba(250,250,247,.75)}
+.cb-right{background:#fafaf7}
+.cb-form-title{color:#0a2a2b;font-size:26px}
+.cb-form-sub{color:#6a7282;font-size:14px}
+.cb-label{color:#0a2a2b;font-size:13px}
+.cb-label em{color:#bf000f}
+.cb-input,.cb-select,.cb-textarea{color:#0a2a2b;background:#fafaf7;border-color:#d1d5dc}
+.cb-input:focus,.cb-select:focus,.cb-textarea:focus{border-color:#008138;box-shadow:0 0 0 3px rgba(0,129,56,.14)}
+.cb-input::placeholder,.cb-textarea::placeholder{color:#99a1af}
+.cb-consent{color:#5a5950}
+.cb-consent input{accent-color:#008138}
+.cb-consent a{color:#0a2a2b}
+.cb-submit{color:#fff;background:#008138}
+.cb-submit:hover{background:#0f3d3e;box-shadow:0 12px 28px rgba(0,129,56,.30)}
+.cb-note{color:#6a7282;font-size:13px}
+.cb-note .dot{background:#008138}
+a:focus-visible,button:focus-visible{outline-color:#008138}
+/* 导航栏衬线化（仅字体，不改字号/间距） */
+nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-services a,.mobile-services button{font-family:'Fraunces','Inter',Georgia,serif}
+/* Products 下拉菜单（仅作用于 .products-panel，2 列 × 5 行） */
+.products-mega .mega-panel.products-panel{width:640px;padding:20px;background:#fff;border:1px solid #EEF1F6;border-radius:16px;box-shadow:0 12px 40px rgba(10,42,43,.10)}
+.pm-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px}
+.pm-item{display:flex;align-items:center;gap:12px;padding:8px;border-radius:10px;text-decoration:none;transition:background .15s}
+.pm-item:hover{background:#f3f1ea}
+.pm-icon{width:40px;height:40px;border-radius:10px;background:#1F5C4D;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pm-icon svg{width:20px;height:20px;display:block}
+.pm-text{display:flex;flex-direction:column;min-width:0}
+.pm-name{font-size:14px;font-weight:700;color:#0a2a2b;line-height:1.3}
+.pm-item:hover .pm-name{color:#1F5C4D}
+.pm-desc{font-size:12px;color:#6a7282;line-height:1.35;margin-top:2px}
+</style>
+</style>
+<link href="https://miaoda.feishu.cn/fonts/css2?family=Fraunces:opsz,wght@9..144,400..900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/assets/milebond-favicon.png">
+
+<!-- Tailwind CDN first, then config assignment → guaranteed custom colors register -->
+<script src="https://cdn.tailwindcss.com"></script>
+<style id="nav-mobile-css">
+/* Mobile drawer: collapsed by default, scrolls when taller than the viewport */
+.mobile-menu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+.mobile-menu.open { max-height: calc(100vh - 64px); overflow-y: auto; padding-bottom: calc(4.5rem + env(safe-area-inset-bottom)); }
+@media (min-width: 768px) { .mobile-menu { display: none !important; } }
+/* Accordions collapse reliably regardless of page-level CSS */
+#mobileMenu .mobile-services > .ms-body { max-height: 0 !important; overflow: hidden; }
+#mobileMenu .mobile-services.open > .ms-body { max-height: none !important; }
+/* Primary CTA keeps white text on the green pill */
+#navbar a.nav-cta { background-color: #008138 !important; color: #ffffff !important; }
+#navbar a.nav-cta:hover { background-color: #0f3d3e !important; }
+/* Chevron sizing — some page templates omit width/height */
+#navbar .mega-chevron { width: 12px; height: 12px; flex-shrink: 0; }
+#mobileMenu .ms-chevron { width: 14px; height: 14px; flex-shrink: 0; }
+/* Sticky header offset when jumping to the quote form */
+#quote { scroll-margin-top: 88px; }
+</style><style>
+    /* ============ INLINE INQUIRY FORM (bottom of page) ============ */
+    .inq-section{background:var(--cream);padding:72px 0}
+    .inq-wrap{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:36px 32px}
+    .inq-head{text-align:center;margin-bottom:26px}
+    .inq-head h2{font-size:26px;color:var(--navy);margin:14px 0 8px}
+    .inq-head p{color:var(--gray-600);font-size:15px;max-width:560px;margin:0 auto}
+    .inq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .inq-field{margin-bottom:14px}
+    .inq-field label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px}
+    .inq-field .req{color:var(--orange);margin-left:2px}
+    .inq-field input,.inq-field textarea{width:100%;padding:12px 14px;border:1px solid var(--gray-200);border-radius:8px;font-family:inherit;font-size:14px;color:var(--gray-900);background:#fff;transition:border-color .2s,box-shadow .2s}
+    .inq-field input:focus,.inq-field textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(160,106,48,.12)}
+    .inq-field textarea{min-height:120px;resize:vertical}
+    .inq-submit{width:100%;padding:15px 24px;background:var(--orange);color:#fff;border:none;border-radius:8px;font-family:'Fraunces',sans-serif;font-weight:600;font-size:16px;cursor:pointer;transition:background .2s,transform .2s;margin-top:6px}
+    .inq-submit:hover{background:#7a5024;transform:translateY(-1px)}
+    .inq-submit:disabled{opacity:.7;cursor:not-allowed;transform:none}
+    .inq-hint{font-size:12px;color:var(--gray-400);text-align:center;margin-top:12px}
+    .inq-hint a{color:var(--orange);text-decoration:underline}
+    .inq-status{display:none;margin-top:14px;padding:12px 16px;border-radius:8px;font-size:14px;text-align:center;line-height:1.5}
+    .inq-status.ok{display:block;background:#e6f4ea;color:#137333;border:1px solid #ceead6}
+    .inq-status.err{display:block;background:#fce8e6;color:#c5221f;border:1px solid #fad2cf}
+    @media(max-width:640px){
+      .inq-section{padding:48px 0 64px}
+      .inq-wrap{padding:26px 20px}
+      .inq-head h2{font-size:22px}
+      .inq-grid{grid-template-columns:1fr;gap:0}
+    }
+  </style>
+<style id="footer-nav-refresh">
+/* Footer navigation refresh (scoped to the site footer only) */
+.footer .footer-grid{grid-template-columns:1.55fr 1fr 1fr 1.35fr 1fr 1.3fr;gap:28px}
+.footer .footer-brand .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;text-decoration:none}
+.footer .footer-brand .footer-logo-mark{width:32px;height:32px;border-radius:6px;background:#162D54;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;line-height:1;flex:0 0 auto}
+.footer .footer-brand .footer-logo-text{font-family:'Fraunces','Inter',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em;color:#fff;line-height:1.1}
+.footer .footer-col .footer-blog-link{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7)}
+.footer .footer-col .footer-blog-link:hover{color:var(--orange)}
+.footer .footer-contact{list-style:none;margin:0;padding:0}
+.footer .footer-contact li{display:flex;align-items:flex-start;gap:10px;font-size:14px;margin-bottom:14px;line-height:1.6}
+.footer .footer-contact .fc-icon{width:20px;height:20px;flex-shrink:0;color:var(--orange-light, var(--orange));margin-top:2px}
+@media (max-width:1200px){.footer .footer-grid{grid-template-columns:1.4fr 1fr 1fr 1.25fr 1fr 1.2fr;gap:22px}}
+@media (max-width:1024px){.footer .footer-grid{grid-template-columns:repeat(3,1fr);gap:28px}}
+@media (max-width:640px){.footer .footer-grid{grid-template-columns:1fr;gap:26px}}
+</style>
+<style id="sv-page-blocks">
+/* ============ SUPPLIER VERIFICATION PAGE — NEW CONTENT BLOCKS ============ */
+/* --- Free verification hook (hero) --- */
+.sv-hook{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;max-width:720px;background:#e9f5ec;border:1px solid rgba(0,129,56,.28);border-radius:12px;padding:16px 20px;margin:0 0 28px;box-shadow:0 12px 30px rgba(0,0,0,.22)}
+.sv-hook-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+.sv-hook-text strong{font-family:'Fraunces','Inter',sans-serif;font-size:15px;color:#0a2a2b;line-height:1.4}
+.sv-hook-text span{font-size:13.5px;color:#3c5a48;line-height:1.5}
+.sv-hook .btn{flex-shrink:0}
+
+/* --- Step comparison (Supplier Verification vs Factory Audit) --- */
+.vs-section{background:var(--cream)}
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1040px;margin:0 auto}
+.vs-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--gray-200);border-left:4px solid var(--orange);border-radius:var(--radius-lg);padding:32px 30px;transition:box-shadow .3s,transform .3s}
+.vs-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.vs-head{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin-bottom:10px}
+.vs-step{font-family:'Fraunces','Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);background:rgba(160,106,48,.08);border:1px solid rgba(160,106,48,.25);padding:4px 8px;border-radius:4px;white-space:nowrap}
+.vs-title{font-size:22px}
+.vs-label{font-family:'Fraunces','Inter',sans-serif;font-size:13px;font-weight:600;color:var(--orange);margin-bottom:18px;line-height:1.5}
+.vs-list{flex:1;margin:0;padding:0;list-style:none}
+.vs-list li{position:relative;padding:5px 0 5px 22px;font-size:14px;color:var(--gray-900);line-height:1.6}
+.vs-list li::before{content:'';position:absolute;left:0;top:12px;width:8px;height:8px;border-radius:50%;background:var(--orange)}
+.vs-foot{margin-top:22px;padding-top:16px;border-top:1px solid var(--gray-200);font-size:14px;color:var(--gray-600);line-height:1.6}
+
+/* --- Three layers desk check --- */
+.lv-section{background:#fff}
+.lv-wrap{max-width:1000px;margin:0 auto}
+.lv-layer{background:var(--cream);border:1px solid var(--gray-200);border-left:4px solid var(--orange);border-radius:var(--radius);padding:26px 28px 22px;margin-bottom:18px}
+.lv-layer:last-of-type{margin-bottom:0}
+.lv-title{font-size:17px;margin-bottom:12px;line-height:1.4}
+.lv-title span{display:block;margin-top:4px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:500;color:var(--gray-600);letter-spacing:0}
+.lv-list{margin:0;padding:0;list-style:none}
+.lv-list li{position:relative;padding:4px 0 4px 18px;font-size:13.5px;color:var(--gray-600);line-height:1.65}
+.lv-list li::before{content:'';position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.mb-edge{margin-top:22px;background:#e9f5ec;border:1px solid rgba(0,129,56,.28);border-left:4px solid #008138;border-radius:var(--radius);padding:22px 26px;font-size:14.5px;color:var(--navy);line-height:1.75}
+.mb-edge strong{color:#0a6b36}
+
+/* --- 27-point sub-block (inside "What you actually get") --- */
+.pt-sub{margin-top:64px;padding-top:56px;border-top:1px solid var(--gray-200)}
+.pt-head{max-width:760px;margin:0 auto 32px;text-align:center}
+.pt-head h3{font-size:clamp(24px,3vw,32px);margin:14px 0 10px}
+.pt-head p{font-size:15.5px;color:var(--gray-600);line-height:1.7}
+.pt-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1000px;margin:0 auto}
+.pt-card{background:#fff;border:1px solid var(--gray-200);border-left:4px solid var(--orange);border-radius:var(--radius);padding:22px 24px}
+.pt-card h4{font-family:'Fraunces','Inter',sans-serif;font-size:15px;color:var(--navy);margin-bottom:10px}
+.pt-card ul{margin:0;padding:0;list-style:none}
+.pt-card li{position:relative;padding:3px 0 3px 18px;font-size:13px;color:var(--gray-600);line-height:1.6}
+.pt-card li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:#008138}
+
+/* --- Factory audit report S1–S6 --- */
+.rp-section{background:#fff}
+.rp-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1040px;margin:0 auto}
+.rp-card{background:var(--cream);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:24px 26px 20px}
+.rp-tag{display:inline-flex;align-items:center;font-family:'Fraunces','Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0a6b36;background:rgba(0,129,56,.1);border:1px solid rgba(0,129,56,.25);padding:4px 8px;border-radius:4px;margin-bottom:12px}
+.rp-card h3{font-size:16.5px;margin-bottom:12px}
+.rp-card ul{margin:0;padding:0;list-style:none}
+.rp-card li{position:relative;padding:4px 0 4px 18px;font-size:13.5px;color:var(--gray-600);line-height:1.6}
+.rp-card li::before{content:'';position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:#008138}
+.dl-hook{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;max-width:1040px;margin:32px auto 0;background:#e9f5ec;border:1px solid rgba(0,129,56,.28);border-radius:var(--radius-lg);padding:24px 28px}
+.dl-hook p{font-size:14.5px;color:var(--navy);line-height:1.65;max-width:620px}
+.dl-hook .btn{flex-shrink:0}
+
+/* --- 8-dimension scoring --- */
+.sc-section{background:#fff}
+.sc-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:32px;max-width:1060px;margin:0 auto;align-items:start}
+.sc-dims{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.sc-dim{background:var(--cream);border:1px solid var(--gray-200);border-radius:var(--radius);padding:20px}
+.sc-idx{font-family:'Fraunces','Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--orange)}
+.sc-dim h4{font-size:14.5px;margin:6px 0 8px}
+.sc-dim p{font-size:13px;color:var(--gray-600);line-height:1.6}
+.sc-side{position:sticky;top:96px;background:var(--navy);border-radius:var(--radius-lg);padding:28px 26px;color:#fff}
+.sc-side h3{color:#fff;font-size:18px;margin-bottom:6px}
+.sc-side .sc-lead{color:rgba(255,255,255,.65);font-size:12.5px;line-height:1.6;margin-bottom:14px}
+.sc-grade{display:flex;gap:14px;padding:14px 0;border-top:1px solid rgba(255,255,255,.12)}
+.sc-grade:first-of-type{border-top:none;padding-top:4px}
+.sc-letter{font-family:'Fraunces','Inter',sans-serif;font-size:22px;font-weight:700;line-height:1.2;flex:0 0 26px}
+.sc-grade h4{color:#fff;font-size:13.5px;margin-bottom:2px}
+.sc-grade p{color:rgba(255,255,255,.72);font-size:12.5px;line-height:1.55}
+.g-a{color:#4ade80}.g-b{color:#e8c998}.g-c{color:#fbbf24}.g-d{color:#f87171}
+
+/* --- Real audit findings --- */
+.fd-section{background:#fff}
+.fd-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1060px;margin:0 auto}
+.fd-card{background:var(--cream);border:1px solid var(--gray-200);border-left:4px solid var(--orange);border-radius:var(--radius);padding:24px 26px}
+.fd-mark{font-family:'Fraunces','Inter',sans-serif;font-size:30px;font-weight:700;color:rgba(160,106,48,.35);line-height:1;margin-bottom:10px}
+.fd-card p{font-size:14px;color:var(--gray-900);line-height:1.7}
+
+/* --- Definitions --- */
+.df-section{background:var(--cream)}
+.df-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1040px;margin:0 auto}
+.df-card{background:#fff;border:1px solid var(--gray-200);border-left:4px solid var(--orange);border-radius:var(--radius);padding:30px 28px}
+.df-card h3{font-size:19px;margin-bottom:12px}
+.df-card p{font-size:14.5px;color:var(--gray-600);line-height:1.8}
+
+/* --- Who needs which check --- */
+.wn-section{background:#fff}
+.wn-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1000px;margin:0 auto}
+.wn-card{background:var(--cream);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:30px 28px}
+.wn-card h3{font-size:19px;margin-bottom:16px}
+.wn-card ul{margin:0;padding:0;list-style:none}
+.wn-card li{position:relative;padding:6px 0 6px 20px;font-size:14px;color:var(--gray-900);line-height:1.6}
+.wn-card li::before{content:'';position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--orange)}
+
+/* --- Responsive --- */
+@media(max-width:1024px){
+  .sc-grid{grid-template-columns:1fr}
+  .sc-side{position:static}
+}
+@media(max-width:900px){
+  .vs-grid,.rp-grid,.fd-grid,.df-grid,.wn-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .sc-dims,.pt-grid{grid-template-columns:1fr}
+  .sv-hook{flex-direction:column;align-items:flex-start}
+  .sv-hook .btn{width:100%;justify-content:center}
+  .dl-hook{flex-direction:column;align-items:flex-start}
+  .dl-hook .btn{width:100%;justify-content:center}
+  .pt-sub{margin-top:44px;padding-top:40px}
+}
+#inquiry{scroll-margin-top:88px}
+</style>
+<style id="sv-hero-v2">
+/* ===== Hero v2 — light minimal (scoped to this page) ===== */
+.hero{background:#fff;min-height:0;display:block;overflow:visible;padding:0}
+.hero .hero-bg,.hero .hero-overlay{display:none}
+.hero .hero-content{padding:64px 24px 40px;max-width:var(--container)}
+.sv-eyebrow{font-size:12.5px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#C98A2D;margin:0 0 18px}
+.hero h1{font-size:54px;font-weight:800;line-height:1.08;letter-spacing:-1.6px;color:#1F2B27;max-width:880px;margin:0 0 20px}
+.hero h1 span{color:#0E4438}
+.hero .hero-sub{font-size:17.5px;line-height:1.6;color:#5E6E67;max-width:760px;margin:0 0 30px}
+.hero .hero-sub strong{color:#1F2B27;font-weight:700}
+.sv-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 14px}
+.sv-btn{display:inline-flex;align-items:center;justify-content:center;border-radius:6px;padding:13px 26px;font-size:15.5px;font-weight:600;line-height:1.2;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+.sv-btn-primary{background:#0E4438;color:#fff;border:1.5px solid #0E4438}
+.sv-btn-primary:hover{background:#0b3529;border-color:#0b3529;color:#fff}
+.sv-btn-ghost{background:#fff;color:#0E4438;border:1.5px solid #0E4438}
+.sv-btn-ghost:hover{background:#0E4438;color:#fff}
+.sv-hero-note{font-size:14px;color:#5E6E67;margin:0}
+.hero .hero-trust{border-top:1px solid #E3E8E5;margin-top:36px;padding-top:24px;gap:12px}
+.hero .hero-tag{background:#fff;border:1px solid #DFE6E2;color:#3E5C54;font-size:13.5px;font-weight:600;padding:8px 14px}
+/* free check banner (below hero) */
+.sv-banner-wrap{background:#fafaf7;padding:28px 0 4px}
+.sv-banner{max-width:var(--container);margin:0 auto;padding:0 24px}
+.sv-banner-card{display:flex;align-items:center;justify-content:space-between;gap:24px;background:#E8F2ED;border:1px solid #CFE2D8;border-radius:10px;padding:22px 24px}
+.sv-banner-text{min-width:0}
+.sv-banner-title{font-size:16px;font-weight:800;color:#0E4438;line-height:1.4;margin:0 0 4px}
+.sv-banner-sub{font-size:14.5px;color:#3E5C54;line-height:1.5;margin:0}
+.sv-banner-btn{flex:none;display:inline-flex;align-items:center;justify-content:center;background:#0E4438;color:#fff;border-radius:6px;padding:10px 20px;font-size:14px;font-weight:600;text-decoration:none;transition:background .2s}
+.sv-banner-btn:hover{background:#0b3529;color:#fff}
+/* nav free-entry link */
+.sv-nav-free{color:#0E4438;font-weight:600;font-size:14px;text-decoration:none;white-space:nowrap;border:0;background:none;padding:8px 2px;transition:color .2s}
+.sv-nav-free:hover{color:#0b3529;text-decoration:underline}
+@media (max-width:767px){
+  .hero .hero-content{padding:44px 20px 30px}
+  .hero h1{font-size:34px;letter-spacing:-1px;line-height:1.12}
+  .hero .hero-sub{font-size:16px}
+  .sv-actions{flex-direction:column;align-items:stretch}
+  .sv-btn{width:100%}
+  .hero .hero-trust{gap:8px}
+  .sv-banner-card{flex-direction:column;align-items:center;text-align:center;padding:20px}
+  .sv-banner-btn{width:100%}
+}
+</style>
+<style id="nav-brand-tokens">
+/* Nav-only design tokens — mirrors homepage tailwind.config so #navbar renders identically */
+#navbar{color:#364153}
+#navbar .text-brandgray-600{color:#5a5950}
+#navbar .text-brandgray-700{color:#364153}
+#navbar .text-brandgray-500{color:#6a7282}
+#navbar.border-brandgray-100,#navbar .border-brandgray-100{border-color:#e6e3d8}
+#navbar .bg-brandgray-100{background-color:#e6e3d8}
+#navbar .bg-brandgray-50{background-color:#f3f1ea}
+#navbar .shadow-card{box-shadow:0 4px 20px rgba(10,42,43,.08)}
+#navbar a.nav-cta{background-color:#008138;color:#fff}
+#navbar a.nav-cta:hover{background-color:#0f3d3e}
+#navbar .hover\:text-amber:hover{color:#a06a30}
+#navbar .hover\:bg-brandgray-100:hover{background-color:#e6e3d8}
+#navbar .hover\:bg-brandgray-50:hover{background-color:#f3f1ea}
+#navbar .hover\:bg-amber-600:hover{background-color:#7a5024}
+</style>
+<style id="fvc-block">
+/* ===== Factory visit checklist block (new, self-contained) ===== */
+.fvc-section{background:var(--cream)}
+.fvc-grid{display:grid;grid-template-columns:1fr;gap:20px;align-items:start}
+@media (min-width:820px){.fvc-grid{grid-template-columns:1fr 1fr}}
+.fvc-card{background:#fff;border:1px solid var(--gray-200);border-left:4px solid var(--orange);border-radius:var(--radius);padding:24px 26px}
+.fvc-card h3{font-size:18px;line-height:1.3;color:var(--navy);margin:0 0 4px}
+.fvc-card-sub{font-size:13.5px;color:var(--gray-600);margin:0 0 14px;line-height:1.5}
+.fvc-list{list-style:none;margin:0;padding:0}
+.fvc-list li{position:relative;padding-left:18px;font-size:14px;line-height:1.6;color:#374151;margin-bottom:8px}
+.fvc-list li:last-child{margin-bottom:0}
+.fvc-list li::before{content:"";position:absolute;left:2px;top:8px;width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.fvc-note{margin:14px 0 0;padding-top:12px;border-top:1px dashed var(--gray-200);font-size:13px;color:var(--gray-600);font-style:italic;line-height:1.5}
+.fvc-wide{grid-column:1 / -1}
+.fvc-hook{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:#E8F2ED;border:1px solid #CFE2D8;border-radius:10px;padding:22px 24px;margin-top:28px}
+.fvc-hook-text{min-width:0}
+.fvc-hook-title{font-size:16px;font-weight:800;color:#0E4438;line-height:1.4;margin:0 0 4px}
+.fvc-hook-sub{font-size:14.5px;color:#3E5C54;line-height:1.5;margin:0}
+.fvc-hook-btn{flex:none;display:inline-flex;align-items:center;justify-content:center;background:#0E4438;color:#fff;border-radius:6px;padding:10px 20px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s}
+.fvc-hook-btn:hover{background:#0b3529;color:#fff}
+@media (max-width:767px){
+  .fvc-hook{flex-direction:column;align-items:flex-start;padding:20px}
+  .fvc-hook-btn{width:100%}
+}
+</style>
+<style id="nav-canonical">
+/* Canonical navbar — keeps every page rendering like the homepage */
+#navbar{background:#fff;border-bottom:1px solid #e6e3d8}
+#navbar.navbar-scrolled{background-color:rgba(250,250,247,.92)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 12px rgba(10,42,43,.06)!important}
+#navbar a{text-decoration:none}
+#navbar button{-webkit-appearance:none;appearance:none;background:transparent;border:0;font:inherit;color:#364153;cursor:pointer}
+#navbar nav > ul > li > a,#navbar nav > ul > li > button{color:#5a5950}
+#navbar a.nav-cta{color:#fff;border-radius:9999px!important}
+#navbar #mobileMenu{background:#fff;border-top:1px solid #e6e3d8}
+#navbar #mobileMenu > ul{padding:16px 20px;margin:0;list-style:none;display:flex;flex-direction:column;gap:4px}
+#navbar #mobileMenu a{display:block;padding:12px;border-radius:8px;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:16px;font-weight:600;line-height:24px;color:#364153;text-decoration:none}
+#navbar #mobileMenu a:hover{background:#f3f1ea}
+#navbar #mobileMenu .mobile-services > .ms-head{padding:10px 3px;font-size:16px;font-weight:600;line-height:24px;color:#364153}
+#navbar #mobileMenu .mobile-services > .ms-body a{padding:8px 12px;font-size:14px;font-weight:400;line-height:21px;color:#5a5950}
+#navbar #mobileMenu a.nav-cta{margin:12px 0 0;padding:12px 20px!important;height:48px;border-radius:9999px!important;background:#008138!important;color:#fff!important;font-size:16px!important;font-weight:600;line-height:24px;text-align:center}
+</style>
+
+<style id="hub-blocks">
+.hub-wrap{overflow-x:auto;border:1px solid var(--gray-200);border-radius:14px;background:#fff}
+.hub-table{width:100%;border-collapse:collapse;font-size:15px;min-width:660px}
+.hub-table th,.hub-table td{padding:16px 18px;text-align:left;vertical-align:top;border-bottom:1px solid var(--gray-200);line-height:1.55}
+.hub-table thead th{background:#f7f5f0;font-weight:700;font-size:14px}
+.hub-table tbody tr:last-child td{border-bottom:none}
+.hub-table td:first-child{width:19%;font-weight:600;color:#1A1A1A}
+.hub-table td:nth-child(2){background:#fbfdfb}
+.hub-note{margin-top:14px;font-size:13px;color:var(--gray-500);line-height:1.6}
+.hub-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.hub-card{background:#fff;border:1px solid var(--gray-200);border-radius:16px;padding:30px;display:flex;flex-direction:column}
+.hub-card.free{border-top:4px solid #008138}
+.hub-card.paid{border-top:4px solid var(--orange)}
+.hub-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 10px;border-radius:999px;background:#e9f5ec;color:#008138;margin-bottom:12px;width:fit-content}
+.hub-badge.paid{background:#fff3e6;color:#c2410c}
+.hub-card h3{font-family:'Fraunces','Inter',sans-serif;font-size:22px;margin-bottom:6px}
+.hub-list{list-style:none;margin:12px 0 22px;padding:0}
+.hub-list li{position:relative;padding-left:22px;margin-bottom:10px;font-size:15px;line-height:1.6;color:#333}
+.hub-list li::before{content:"\2713";position:absolute;left:0;top:0;color:#008138;font-weight:700}
+.hub-btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 24px;border-radius:999px;background:var(--orange);color:#fff;font-weight:600;text-decoration:none;margin-top:auto}
+.hub-btn.light{background:#fff;color:#1A1A1A;border:1px solid var(--gray-300)}
+.hub-btn.free{background:#008138}
+.hub-price td:first-child{width:36%}
+.hub-split{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.hub-mini{background:#fff;border:1px solid var(--gray-200);border-radius:14px;padding:24px}
+.hub-mini h4{font-size:16px;margin-bottom:10px}
+@media(max-width:768px){.hub-cards,.hub-split{grid-template-columns:1fr}}
+</style>
+
+<style id="lc-blocks">
+.lc-layout{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:start;max-width:1120px;margin:0 auto}
+.lc-panel{background:#fff;border:1px solid var(--gray-200);border-radius:16px;padding:26px 28px}
+.lc-step{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#a06a30;margin:22px 0 10px}
+.lc-step:first-of-type{margin-top:0}
+.lc-seg{display:flex;gap:8px;flex-wrap:wrap}
+.lc-seg button{border:1px solid #d9d5c8;background:#fff;color:#444;border-radius:999px;padding:9px 16px;font-size:13.5px;cursor:pointer}
+.lc-seg button.active{background:#0E4438;border-color:#0E4438;color:#fff}
+.lc-field{margin-bottom:14px}
+.lc-label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:#1f2933}
+.lc-label span{font-weight:400;color:#6b7280}
+.lc-input,.lc-select{width:100%;border:1px solid #d9d5c8;border-radius:10px;padding:10px 12px;font-size:14.5px;font-family:inherit;color:#1f2933;background:#fff}
+.lc-input:focus,.lc-select:focus{outline:2px solid #a06a30;border-color:#a06a30}
+.lc-hint{font-size:12px;color:#6b7280;margin-top:5px;line-height:1.5}
+.lc-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.lc-three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.lc-hs-row{display:flex;gap:8px}
+.lc-hs-row .lc-input{flex:1}
+.lc-hs-btn{border:none;background:#0E4438;color:#fff;border-radius:10px;padding:0 16px;font-size:13.5px;font-weight:600;cursor:pointer;white-space:nowrap}
+.lc-hs-results{margin-top:8px;border:1px solid #e6e3d8;border-radius:10px;overflow:hidden;display:none}
+.lc-hs-item{padding:10px 12px;border-bottom:1px solid #f0ede4;font-size:13px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.lc-hs-item:last-child{border-bottom:none}
+.lc-hs-item b{display:block;font-size:13.5px;color:#0E4438}
+.lc-hs-item small{color:#6b7280;display:block;margin-top:2px}
+.lc-hs-use{border:1px solid #0E4438;background:#fff;color:#0E4438;border-radius:6px;padding:6px 10px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
+.lc-note{background:#fbf7f1;border-left:3px solid #a06a30;padding:10px 12px;font-size:12.5px;color:#4b4237;line-height:1.55;margin:10px 0 0;border-radius:0 6px 6px 0}
+.lc-freight{margin:14px 0 4px;border:1px dashed #d9d5c8;border-radius:12px;padding:14px}
+.lc-freight-title{font-size:12.5px;font-weight:700;color:#1f2933;margin:0 0 10px}
+.lc-freight-title span{font-weight:400;color:#6b7280}
+.lc-fapply{border:none;background:#0E4438;color:#fff;border-radius:999px;padding:9px 16px;font-size:13px;font-weight:600;cursor:pointer;margin-top:4px}
+.lc-ddp{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#4b4237;margin:10px 0 0;line-height:1.5}
+.lc-result{position:sticky;top:92px;background:#0E4438;color:#fff;border-radius:16px;padding:24px}
+.lc-verdict{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;margin-bottom:10px}
+.lc-verdict.good{background:#16a34a;color:#fff}
+.lc-verdict.thin{background:#E9A45B;color:#231a10}
+.lc-verdict.bad{background:#b91c1c;color:#fff}
+.lc-margin{font-family:'Fraunces','Inter',serif;font-size:46px;line-height:1.05;font-weight:700}
+.lc-margin small{font-size:14px;opacity:.65;font-weight:400}
+.lc-sub{font-size:13.5px;opacity:.85;margin-top:6px;line-height:1.5}
+.lc-breakdown{margin:16px 0 0;border-top:1px solid rgba(255,255,255,.15);padding-top:12px}
+.lc-row{display:flex;justify-content:space-between;font-size:12.8px;margin-bottom:7px;opacity:.92}
+.lc-row span:last-child{font-weight:600}
+.lc-row.muted{opacity:.55}
+.lc-kpis{display:flex;gap:16px;margin-top:12px;border-top:1px solid rgba(255,255,255,.15);padding-top:12px;flex-wrap:wrap}
+.lc-kpi{font-size:12px;opacity:.8}
+.lc-kpi b{display:block;font-size:15px;opacity:1;margin-top:2px}
+.lc-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.lc-btn{display:inline-flex;justify-content:center;align-items:center;padding:11px 18px;border-radius:999px;background:var(--orange);color:#fff;text-decoration:none;font-weight:600;font-size:13.5px;border:none;cursor:pointer}
+.lc-btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff}
+.lc-reset{background:none;border:1px solid #d9d5c8;color:#555;border-radius:999px;padding:10px 18px;font-size:13.5px;cursor:pointer;margin-top:8px}
+.lc-table{width:100%;border-collapse:collapse;font-size:14.5px}
+.lc-table th,.lc-table td{padding:11px 14px;border-bottom:1px solid #e6e3d8;text-align:left;vertical-align:top}
+.lc-table th{background:#f7f5f0;font-size:13px}
+@media(max-width:900px){.lc-layout{grid-template-columns:1fr}.lc-result{position:static}.lc-three{grid-template-columns:1fr}}
+@media(max-width:520px){.lc-two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+  <!-- Corrugated Strip -->
+  <div class="corrugated-strip"></div>
+
+  <!-- NAVBAR -->
+  
+<!-- ============ NAVBAR ============ -->
+<header id="navbar" class="sticky top-0 z-50 bg-white border-b border-brandgray-100 transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-4 lg:px-6 h-16 md:h-18 flex items-center justify-between gap-3">
+
+    <!-- wordmark -->
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="/assets/milebond-logo.png" alt="Milebond" width="108" height="36" class="h-9 w-auto object-contain" loading="eager" decoding="async">
+    </a>
+
+    <!-- desktop nav (md+) -->
+    <ul class="hidden md:flex items-center gap-0.5 xl:gap-2 text-[15px] xl:text-base font-semibold text-brandgray-600">
+
+      <!-- Services mega menu -->
+      <li class="services-mega">
+        <a href="/all-services" class="mega-trigger px-2 py-2 xl:px-3 hover:text-amber transition-colors text-brandgray-600 font-semibold" aria-haspopup="true" aria-expanded="false" aria-controls="navServicesPanel">
+          Services
+          <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="mega-panel" id="navServicesPanel" role="menu">
+          <div class="mega-grid">
+            <a href="/services/product-sourcing" class="mega-item" role="menuitem"><span class="mega-icon-bg">PS</span><div><div class="mega-title">Product Sourcing</div><div class="mega-desc">Find the right suppliers at the right price</div></div></a>
+            <a href="/services/supplier-verification-factory-audit" class="mega-item" role="menuitem"><span class="mega-icon-bg">SV</span><div><div class="mega-title">Supplier Verification &amp; Factory Audit</div><div class="mega-desc">Desk checks plus 27-point on-site audit</div></div></a>
+            <a href="/services/quality-control" class="mega-item" role="menuitem"><span class="mega-icon-bg">QC</span><div><div class="mega-title">Quality Control &amp; Inspection</div><div class="mega-desc">Piece-by-piece &amp; AQL inspection</div></div></a>
+            
+            <a href="/services/amazon-brand-management" class="mega-item" role="menuitem"><span class="mega-icon-bg">AB</span><div><div class="mega-title">Amazon Brand Management</div><div class="mega-desc">End-to-end for Amazon sellers, from idea to FBA warehouse</div></div></a>
+            <a href="/services/private-label-oem" class="mega-item" role="menuitem"><span class="mega-icon-bg">PL</span><div><div class="mega-title">Private Label &amp; OEM</div><div class="mega-desc">Build your own brand, low MOQ</div></div></a>
+            <a href="/services/product-development" class="mega-item" role="menuitem"><span class="mega-icon-bg">PD</span><div><div class="mega-title">Product Development</div><div class="mega-desc">From idea to sampling &amp; tooling</div></div></a>
+            <a href="/services/warehousing-shipping" class="mega-item" role="menuitem"><span class="mega-icon-bg">WS</span><div><div class="mega-title">Warehousing &amp; Shipping</div><div class="mega-desc">Consolidation and DDP delivery</div></div></a>
+            <a href="/services/sourcing-fees-pricing" class="mega-item" role="menuitem"><span class="mega-icon-bg">$</span><div><div class="mega-title">Sourcing Fees &amp; Pricing</div><div class="mega-desc">Flat 3–8% fee, zero kickbacks</div></div></a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Solutions mega menu -->
+      <li class="services-mega">
+        <a href="/all-solutions" class="mega-trigger px-2 py-2 xl:px-3 hover:text-amber transition-colors text-brandgray-600 font-semibold" aria-haspopup="true" aria-expanded="false" aria-controls="navSolutionsPanel">
+          Solutions
+          <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="mega-panel" id="navSolutionsPanel" role="menu" style="width:420px;">
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <a href="/solutions/for-amazon-ecommerce-sellers" class="mega-item" role="menuitem"><span class="mega-icon-bg">AZ</span><div><div class="mega-title">For Amazon &amp; E-commerce Sellers</div><div class="mega-desc">FBA-ready sourcing, prep and QC</div></div></a>
+            <a href="/solutions/for-small-businesses-startups" class="mega-item" role="menuitem"><span class="mega-icon-bg">SB</span><div><div class="mega-title">For Small Businesses &amp; Startups</div><div class="mega-desc">Low MOQ, test the market first</div></div></a>
+            <a href="/solutions/for-wholesalers-importers" class="mega-item" role="menuitem"><span class="mega-icon-bg">WH</span><div><div class="mega-title">For Wholesalers &amp; Importers</div><div class="mega-desc">Audited factories, itemized quotes</div></div></a>
+            <a href="/solutions/for-brand-owners" class="mega-item" role="menuitem"><span class="mega-icon-bg">BO</span><div><div class="mega-title">For Brand Owners</div><div class="mega-desc">Your mold, design and tooling stay yours</div></div></a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Products mega menu -->
+      <li class="services-mega products-mega">
+        <a href="/all-products" class="mega-trigger px-2 py-2 xl:px-3 hover:text-amber transition-colors text-brandgray-600 font-semibold" aria-haspopup="true" aria-expanded="false" aria-controls="navProductsPanel">
+          Products
+          <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="mega-panel products-panel" id="navProductsPanel" role="menu">
+          <div class="pm-grid">
+            <a href="/products/home-kitchen" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/><path d="M9.5 21v-6h5v6"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Home &amp; Kitchen</span><span class="pm-desc">Utensils, glassware, cutlery, storage</span></span>
+            </a>
+            <a href="/products/pet-supplies" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6.2" cy="10.2" r="2.1"/><circle cx="10" cy="6.2" r="2.1"/><circle cx="14.6" cy="6.2" r="2.1"/><circle cx="18.2" cy="10.2" r="2.1"/><path d="M12.2 11.4c3.2 0 5.8 2.2 5.8 4.9 0 1.9-1.5 3.3-3.4 3.3-1.2 0-1.7-.5-2.4-.5s-1.2.5-2.4.5c-1.9 0-3.4-1.4-3.4-3.3 0-2.7 2.6-4.9 5.8-4.9z"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Pet Supplies</span><span class="pm-desc">Toys, grooming, feeding, carriers</span></span>
+            </a>
+            <a href="/products/beauty-tools" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5 9 15"/><path d="M8 14.2 6.8 13a2.2 2.2 0 0 1 0-3.1l5.6-5.6a2.2 2.2 0 0 1 3.1 0l1.2 1.2a2.2 2.2 0 0 1 0 3.1l-5.6 5.6a2.2 2.2 0 0 1-3.1 0z"/><path d="m12 6.5 5.5 5.5"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Beauty Tools</span><span class="pm-desc">Skincare devices, nail, hair tools</span></span>
+            </a>
+            <a href="/products/arts-crafts" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3.5 20.5 9"/><path d="M13.6 6.2 17.8 10.4"/><path d="M12.8 7.6 5.2 15.2a5 5 0 0 0 3.6 3.6l7.6-7.6"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Arts &amp; Crafts</span><span class="pm-desc">DIY, hobbies, gift supplies</span></span>
+            </a>
+            <a href="/products/clothing-shoes-jewelry" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 3.5 4 5.5 2.5 9.5l3 1.5V21h13v-10l3-1.5-1.5-4-4.5-2a4 4 0 0 1-7.5 0z"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Clothing, Shoes &amp; Jewelry</span><span class="pm-desc">Apparel, footwear, watches, accessories</span></span>
+            </a>
+            <a href="/products/toys-games" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6v2.4a2.4 2.4 0 0 0 4.8 0V4H20v6h-2.4a2.4 2.4 0 0 0 0 4.8H20V20h-5.2v-2.4a2.4 2.4 0 0 0-4.8 0V20H4v-5.2h2.4a2.4 2.4 0 0 0 0-4.8H4z"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Toys &amp; Games</span><span class="pm-desc">STEM, outdoor play, puzzles, RC</span></span>
+            </a>
+            <a href="/products/sports-outdoors" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 8v8"/><path d="M3.5 10v4"/><path d="M17.5 8v8"/><path d="M20.5 10v4"/><path d="M6.5 12h11"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Sports &amp; Outdoors</span><span class="pm-desc">Fitness, camping, cycling, water sports</span></span>
+            </a>
+            <a href="/products/electronics" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Electronics</span><span class="pm-desc">Audio, smart home, wearables, cameras</span></span>
+            </a>
+            <a href="/products/health-household" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-9.7A4.2 4.2 0 0 1 12 7.9a4.2 4.2 0 0 1 7.5 2.9c0 5.1-7.5 9.7-7.5 9.7z"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Health &amp; Household</span><span class="pm-desc">Wellness, vitamins, cleaning essentials</span></span>
+            </a>
+            <a href="/products/others" class="pm-item" role="menuitem">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg></span>
+              <span class="pm-text"><span class="pm-name">Others</span><span class="pm-desc">Everything else — tell us what you need</span></span>
+            </a>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="/blog" class="px-2 py-2 xl:px-3 hover:text-amber transition-colors">Blog</a></li>
+
+      <!-- About dropdown -->
+      <li class="services-mega">
+        <button type="button" class="mega-trigger px-2 py-2 xl:px-3 hover:text-amber transition-colors text-brandgray-600 font-semibold" aria-haspopup="true" aria-expanded="false" aria-controls="navAboutPanel">
+          About
+          <svg xmlns="http://www.w3.org/2000/svg" class="mega-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mega-panel" id="navAboutPanel" role="menu" style="width:250px;padding:8px;">
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <a href="/about" class="mega-item" role="menuitem"><div><div class="mega-title">About Milebond</div><div class="mega-desc">Who we are, what we stand for</div></div></a>
+            <a href="/how-it-works" class="mega-item" role="menuitem"><div><div class="mega-title">How It Works</div><div class="mega-desc">Our 4-step sourcing process</div></div></a>
+            <a href="/case-studies" class="mega-item" role="menuitem"><div><div class="mega-title">Case Studies</div><div class="mega-desc">Documented sourcing cases</div></div></a>
+          </div>
+        </div>
+      </li>
+      <li><a href="/faq" class="px-2 py-2 xl:px-3 hover:text-amber transition-colors">FAQ</a></li>
+    </ul>
+
+    <!-- desktop CTA -->
+    <div class="hidden md:block ml-1 shrink-0">
+      <a href="/#quote"
+         class="nav-cta inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-amber hover:bg-amber-600 text-white font-semibold text-sm shadow-card transition-colors">
+        Get a Quote
+      </a>
+    </div>
+
+    <!-- mobile hamburger -->
+    <button id="mobileToggle" type="button"
+            class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-navy hover:bg-brandgray-100"
+            aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+      <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </nav>
+
+  <!-- mobile drawer -->
+  <div id="mobileMenu" class="mobile-menu md:hidden border-t border-brandgray-100 bg-white">
+    <ul class="px-5 py-4 flex flex-col gap-1 text-brandgray-700">
+
+      <!-- Services accordion -->
+      <li class="mobile-services" id="mobileServices">
+        <button type="button" class="ms-head px-3" aria-expanded="false" aria-controls="mobileServicesBody">
+          Services
+          <svg xmlns="http://www.w3.org/2000/svg" class="ms-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ms-body" id="mobileServicesBody">
+          <ul class="py-1 space-y-0.5">
+            <li><a href="/services/product-sourcing">Product Sourcing</a></li>
+            <li><a href="/services/supplier-verification-factory-audit">Supplier Verification &amp; Factory Audit</a></li>
+            <li><a href="/services/quality-control">Quality Control &amp; Inspection</a></li>
+            
+            <li><a href="/services/amazon-brand-management">Amazon Brand Management</a></li>
+            <li><a href="/services/private-label-oem">Private Label &amp; OEM</a></li>
+            <li><a href="/services/product-development">Product Development</a></li>
+            <li><a href="/services/warehousing-shipping">Warehousing &amp; Shipping</a></li>
+            <li><a href="/services/sourcing-fees-pricing">Sourcing Fees &amp; Pricing</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- Solutions accordion -->
+      <li class="mobile-services" id="mobileSolutions">
+        <button type="button" class="ms-head px-3" aria-expanded="false" aria-controls="mobileSolutionsBody">
+          Solutions
+          <svg xmlns="http://www.w3.org/2000/svg" class="ms-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ms-body" id="mobileSolutionsBody">
+          <ul class="py-1 space-y-0.5">
+            <li><a href="/solutions/for-amazon-ecommerce-sellers">For Amazon &amp; E-commerce Sellers</a></li>
+            <li><a href="/solutions/for-small-businesses-startups">For Small Businesses &amp; Startups</a></li>
+            <li><a href="/solutions/for-wholesalers-importers">For Wholesalers &amp; Importers</a></li>
+            <li><a href="/solutions/for-brand-owners">For Brand Owners</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- Products accordion -->
+      <li class="mobile-services" id="mobileProducts">
+        <button type="button" class="ms-head px-3" aria-expanded="false" aria-controls="mobileProductsBody">
+          Products
+          <svg xmlns="http://www.w3.org/2000/svg" class="ms-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ms-body" id="mobileProductsBody">
+          <ul class="py-1 space-y-0.5">
+            <li><a href="/all-products" class="pm-item" role="menuitem"><span class="pm-icon">🗂️</span><span><span class="pm-desc" style="font-weight:800;">All Products</span><br><span class="pm-desc">Browse all 10 categories with sourcing guides</span></span></a></li>
+            <li><a href="/products/home-kitchen">Home &amp; Kitchen</a></li>
+            <li><a href="/products/pet-supplies">Pet Supplies</a></li>
+            <li><a href="/products/beauty-tools">Beauty Tools</a></li>
+            <li><a href="/products/arts-crafts">Arts &amp; Crafts</a></li>
+            <li><a href="/products/clothing-shoes-jewelry">Clothing, Shoes &amp; Jewelry</a></li>
+            <li><a href="/products/toys-games">Toys &amp; Games</a></li>
+            <li><a href="/products/electronics">Electronics</a></li>
+            <li><a href="/products/health-household">Health &amp; Household</a></li>
+            <li><a href="/products/sports-outdoors">Sports &amp; Outdoors</a></li>
+            <li><a href="/products/others">Others</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li><a href="/blog" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-semibold">Blog</a></li>
+
+      <!-- About accordion -->
+      <li class="mobile-services" id="mobileAbout">
+        <button type="button" class="ms-head px-3" aria-expanded="false" aria-controls="mobileAboutBody">
+          About
+          <svg xmlns="http://www.w3.org/2000/svg" class="ms-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ms-body" id="mobileAboutBody">
+          <ul class="py-1 space-y-0.5">
+            <li><a href="/about">About Milebond</a></li>
+            <li><a href="/how-it-works">How It Works</a></li>
+            <li><a href="/case-studies">Case Studies</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li><a href="/faq" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-semibold">FAQ</a></li>
+
+      <li class="pt-3 mt-2 border-t border-brandgray-100">
+        <a href="/#quote"
+           class="nav-cta block w-full text-center px-5 py-3 rounded-full bg-amber text-white font-semibold">
+          Get a Quote
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+
+<div class="search-modal" id="searchModal" onclick="closeSearch(event)"><div class="search-box" onclick="event.stopPropagation()"><div class="search-input-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" id="searchInput" placeholder="Search products, services..." oninput="doSearch(this.value)"><button onclick="closeSearch()" style="font-size:20px;color:var(--gray-400);background:none;border:none">×</button></div><div class="search-results" id="searchResults"></div></div></div>
+<div class="lang-toast" id="langToast"></div>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="sv-eyebrow">FREE TOOL · NO SIGNUP</p>
+      <h1>Landed cost &amp; margin calculator: <span>is this product worth importing?</span></h1>
+      <p class="hero-sub">
+        Pick your market and sales channel, add the factory price — the calculator returns landed cost per unit, Amazon or retail fees, net margin and a break-even price. So you can decide before you place the order.
+      </p>
+      <p class="sv-hero-note">No email · No signup · Runs in your browser</p>
+    </div>
+  </section>
+
+  <!-- ================= TOOL ================= -->
+  <section class="section" style="background:var(--cream)">
+    <div class="container">
+      <div class="lc-layout">
+        <div class="lc-panel">
+
+          <p class="lc-step">1 · Market and channel</p>
+          <div class="lc-two">
+            <div class="lc-field">
+              <label class="lc-label" for="lcCountry">Destination market</label>
+              <select class="lc-select" id="lcCountry">
+                <option value="US">United States</option>
+                <option value="UK">United Kingdom</option>
+                <option value="EU">European Union</option>
+                <option value="CA">Canada</option>
+                <option value="AU">Australia</option>
+              </select>
+            </div>
+            <div class="lc-field">
+              <label class="lc-label" for="lcVat">Import VAT / GST <span>(%)</span></label>
+              <input class="lc-input" id="lcVat" type="number" min="0" step="0.1" value="0" inputmode="decimal">
+            </div>
+          </div>
+
+          <div class="lc-seg" id="lcChannel" role="group" aria-label="Sales channel">
+            <button type="button" class="active" data-channel="amazon">Amazon FBA</button>
+            <button type="button" data-channel="dtc">DTC / Shopify</button>
+            <button type="button" data-channel="offline">Offline retail</button>
+          </div>
+
+          <p class="lc-step">2 · Product and HS code</p>
+          <div class="lc-field">
+            <label class="lc-label" for="lcProduct">Product name <span>(we suggest an HS6 code — always verify)</span></label>
+            <div class="lc-hs-row">
+              <input class="lc-input" id="lcProduct" type="text" placeholder="e.g. ceramic mug, pet bed, power bank">
+              <button type="button" class="lc-hs-btn" id="lcHsBtn">Suggest HS</button>
+            </div>
+            <div class="lc-hs-results" id="lcHsResults"></div>
+            <p class="lc-hint" id="lcHsHint">Suggestions are HS6 only. Duty depends on the 8–10 digit national code and any trade measures.</p>
+          </div>
+
+          <div class="lc-three">
+            <div class="lc-field">
+              <label class="lc-label" for="lcHs">HS code</label>
+              <input class="lc-input" id="lcHs" type="text" placeholder="—">
+            </div>
+            <div class="lc-field">
+              <label class="lc-label" for="lcDuty">Duty rate <span>(%)</span></label>
+              <input class="lc-input" id="lcDuty" type="number" min="0" step="0.1" value="5" inputmode="decimal">
+            </div>
+            <div class="lc-field">
+              <label class="lc-label" for="lcExtra">Extra duty <span>(%, 301/232)</span></label>
+              <input class="lc-input" id="lcExtra" type="number" min="0" step="0.1" value="0" inputmode="decimal">
+            </div>
+          </div>
+          <p class="lc-note" id="lcHsNote">We do not auto-fill duty rates. The same product name can map to different 8–10 digit codes, and US Section 301 / 232 duties change with trade policy. Check your national tariff, then enter the rate — we confirm it again in every quote.</p>
+          <label class="lc-ddp"><input type="checkbox" id="lcDdp"> This shipment is DDP — duty and import VAT are already included in the freight price</label>
+
+          <p class="lc-step">3 · Order costs</p>
+          <div class="lc-two">
+            <div class="lc-field">
+              <label class="lc-label" for="lcFob">FOB price per unit <span>(USD)</span></label>
+              <input class="lc-input" id="lcFob" type="number" min="0" step="0.01" value="4.20" inputmode="decimal">
+            </div>
+            <div class="lc-field">
+              <label class="lc-label" for="lcQty">Quantity <span>(units)</span></label>
+              <input class="lc-input" id="lcQty" type="number" min="1" step="1" value="1000" inputmode="numeric">
+            </div>
+          </div>
+          <div class="lc-two">
+            <div class="lc-field">
+              <label class="lc-label" for="lcFreight">Total freight <span>(USD)</span></label>
+              <input class="lc-input" id="lcFreight" type="number" min="0" step="1" value="1800" inputmode="decimal">
+            </div>
+            <div class="lc-field">
+              <label class="lc-label" for="lcInsurance">Insurance <span>(% of goods)</span></label>
+              <input class="lc-input" id="lcInsurance" type="number" min="0" step="0.1" value="0.5" inputmode="decimal">
+            </div>
+          </div>
+
+          <div class="lc-freight">
+            <p class="lc-freight-title">Estimate freight · Ningbo → Los Angeles <span>market reference, Oct 2026</span></p>
+            <div class="lc-seg" id="lcFMode">
+              <button type="button" data-fmode="quote" class="active">I have a quote</button>
+              <button type="button" data-fmode="lcl">LCL · per CBM</button>
+              <button type="button" data-fmode="fcl20">20GP</button>
+              <button type="button" data-fmode="fcl40">40HQ</button>
+              <button type="button" data-fmode="ddp">DDP · per kg</button>
+            </div>
+            <div class="lc-two" id="lcFInputs" style="margin-top:12px;display:none">
+              <div class="lc-field">
+                <label class="lc-label" for="lcFQty"><span id="lcFQtyLabel">Volume (CBM)</span></label>
+                <input class="lc-input" id="lcFQty" type="number" min="0" step="0.1" value="6" inputmode="decimal">
+              </div>
+              <div class="lc-field">
+                <label class="lc-label" for="lcFRate">Rate <span id="lcFRateLabel">(USD per unit)</span></label>
+                <input class="lc-input" id="lcFRate" type="number" min="0" step="0.01" value="90" inputmode="decimal">
+              </div>
+            </div>
+            <p class="lc-hint" id="lcFNote">Enter the all-in freight from your forwarder, or switch above to estimate from market rates.</p>
+            <button type="button" class="lc-fapply" id="lcFApply" style="display:none">Apply to total freight</button>
+          </div>
+          <div class="lc-two">
+            <div class="lc-field">
+              <label class="lc-label" for="lcAgent">Sourcing fee <span>(% of goods)</span></label>
+              <input class="lc-input" id="lcAgent" type="number" min="0" step="0.1" value="5" inputmode="decimal">
+            </div>
+            <div class="lc-field">
+              <label class="lc-label" for="lcOther">Other costs <span>(USD, total)</span></label>
+              <input class="lc-input" id="lcOther" type="number" min="0" step="1" value="300" inputmode="decimal">
+            </div>
+          </div>
+
+          <p class="lc-step">4 · Selling price and channel fees</p>
+          <div class="lc-two">
+            <div class="lc-field">
+              <label class="lc-label" for="lcPrice"><span id="lcPriceLabel">Amazon selling price</span> <span>(USD/unit)</span></label>
+              <input class="lc-input" id="lcPrice" type="number" min="0" step="0.01" value="24.99" inputmode="decimal">
+            </div>
+            <div class="lc-field" id="lcFee1Wrap">
+              <label class="lc-label" for="lcFee1"><span id="lcFee1Label">Referral fee</span> <span>(%)</span></label>
+              <input class="lc-input" id="lcFee1" type="number" min="0" step="0.1" value="15" inputmode="decimal">
+            </div>
+          </div>
+          <div class="lc-two" id="lcFee2Wrap">
+            <div class="lc-field">
+              <label class="lc-label" for="lcFee2"><span id="lcFee2Label">FBA fulfilment fee</span> <span>(USD/unit)</span></label>
+              <input class="lc-input" id="lcFee2" type="number" min="0" step="0.01" value="3.50" inputmode="decimal">
+            </div>
+            <div class="lc-field">
+              <label class="lc-label" for="lcFee3"><span id="lcFee3Label">Advertising</span> <span>(% of price)</span></label>
+              <input class="lc-input" id="lcFee3" type="number" min="0" step="0.1" value="10" inputmode="decimal">
+            </div>
+          </div>
+          <div class="lc-two">
+            <div class="lc-field">
+              <label class="lc-label" for="lcReturns">Returns &amp; allowances <span>(%)</span></label>
+              <input class="lc-input" id="lcReturns" type="number" min="0" step="0.1" value="3" inputmode="decimal">
+            </div>
+            <div class="lc-field">
+              <label class="lc-label" for="lcTarget">Target margin <span>(%)</span></label>
+              <input class="lc-input" id="lcTarget" type="number" min="0" step="1" value="20" inputmode="numeric">
+            </div>
+          </div>
+
+          <button type="button" class="lc-reset" id="lcReset">Reset to example</button>
+        </div>
+
+        <aside class="lc-result" aria-live="polite">
+          <div class="lc-verdict good" id="lcVerdict">Profitable</div>
+          <div class="lc-margin" id="lcMargin">0%</div>
+          <div class="lc-sub" id="lcSub">Net margin per unit</div>
+
+          <div class="lc-kpis">
+            <div class="lc-kpi">Landed (ex-VAT)<b id="lcKpiLanded">$0.00</b></div>
+            <div class="lc-kpi">Profit / unit<b id="lcKpiProfit">$0.00</b></div>
+            <div class="lc-kpi">Break-even<b id="lcKpiBreak">$0.00</b></div>
+          </div>
+
+          <div class="lc-breakdown" id="lcBreakdown"></div>
+
+          <div class="lc-actions">
+            <a class="lc-btn" href="/services/supplier-verification-factory-audit#inquiry">Get a real quote</a>
+            <a class="lc-btn ghost" href="/tools/supplier-risk-score/">Check the supplier</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW IT WORKS ================= -->
+  <section class="section" style="background:#fff">
+    <div class="container" style="max-width:900px">
+      <div class="section-header">
+        <span class="ship-tag">The model</span>
+        <h2>How the margin is calculated</h2>
+        <p>Landed cost first, then the fees your channel takes. The verdict compares the result with your target margin.</p>
+      </div>
+      <table class="lc-table">
+        <thead><tr><th>Channel</th><th>Fees deducted from the selling price</th><th>What the verdict means</th></tr></thead>
+        <tbody>
+          <tr><td>Amazon FBA</td><td>Referral fee, FBA fulfilment, advertising (TACoS), returns, storage</td><td>Margin ≥ target: profitable. 10–20%: thin. Below 10%: usually not worth the cash cycle.</td></tr>
+          <tr><td>DTC / Shopify</td><td>Payment processing, ad spend per order, outbound shipping, returns</td><td>Ad cost is the variable that usually decides viability.</td></tr>
+          <tr><td>Offline retail</td><td>Retailer allowances, markdown support</td><td>Compare wholesale price with landed cost; retail margin belongs to the store.</td></tr>
+        </tbody>
+      </table>
+      <p class="hub-note" style="margin-top:14px">US importers also pay Merchandise Processing Fee (0.3464%, min/max applies) and, for ocean freight, Harbor Maintenance Fee (0.125%). Both are included when the destination is the US.</p>
+    </div>
+  </section>
+
+  <!-- ================= FREIGHT REFERENCE ================= -->
+  <section class="section" style="background:#fff">
+    <div class="container" style="max-width:900px">
+      <div class="section-header">
+        <span class="ship-tag">Freight reference</span>
+        <h2>Ningbo → Los Angeles: what the market is charging</h2>
+        <p>Indicative market ranges, last checked 30 October 2026. Freight moves weekly — use these to sanity-check a quote, not to replace one.</p>
+      </div>
+      <table class="lc-table">
+        <thead><tr><th>Mode</th><th>Market range</th><th>What it covers</th></tr></thead>
+        <tbody>
+          <tr><td>LCL</td><td>$60–120 per CBM</td><td>Port-to-port, minimum 1 CBM. Add origin and destination charges if quoted separately.</td></tr>
+          <tr><td>FCL 20GP</td><td>$4,800–6,400 per container</td><td>Port-to-port, Ningbo–Los Angeles / Long Beach.</td></tr>
+          <tr><td>FCL 40HQ</td><td>$6,900–8,000 per container</td><td>Port-to-port. Drewry WCI Shanghai–LA was $7,514 per FEU on 29 Oct 2026.</td></tr>
+          <tr><td>DDP sea</td><td>$1.28–2.30 per kg</td><td>Door-to-door, duty and VAT included; rate depends on weight break and destination ZIP.</td></tr>
+        </tbody>
+      </table>
+      <p class="hub-note">Sources: Drewry World Container Index (29 Oct 2026), published forwarder rate sheets for Ningbo–Los Angeles (Oct 2026). Your rate depends on commodity, weight, season and contract terms.</p>
+    </div>
+  </section>
+
+  <!-- ================= HS ================= -->
+  <section class="section" style="background:var(--cream)">
+    <div class="container" style="max-width:900px">
+      <div class="section-header">
+        <span class="ship-tag">HS codes</span>
+        <h2>What we can suggest — and what only a customs classification can confirm</h2>
+      </div>
+      <p>A product name can point you to a <strong>6-digit HS heading</strong>: ceramic mugs to 6912.00, power banks to 8507.60, wooden furniture to 9403.60. That is useful for orientation.</p>
+      <p>It cannot reliably produce the <strong>8–10 digit national code</strong> that sets the actual rate. The same “bag” can be 4202.21 (leather) or 4202.92 (textile), with materially different duty. The same “toy” can be 9503 (toys) or 4016 (rubber articles). National codes also change, and the US adds Section 301 duties on top of MFN rates for many Chinese goods.</p>
+      <p>So this tool suggests the HS6 heading and sends you to the official tariff. The duty field stays editable, and every Milebond quote confirms the classification in writing before you order.</p>
+      <p><a href="https://hts.usitc.gov/" target="_blank" rel="noopener">US HTS</a> · <a href="https://www.trade-tariff.service.gov.uk/" target="_blank" rel="noopener">UK Trade Tariff</a> · <a href="https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp?Lang=en" target="_blank" rel="noopener">EU TARIC</a> · <a href="https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/menu-eng.html" target="_blank" rel="noopener">Canada</a> · <a href="https://www.abf.gov.au/importing-exporting-and-manufacturing/tariff-classification/Pages/default.aspx" target="_blank" rel="noopener">Australia</a></p>
+    </div>
+  </section>
+
+  <!-- ================= EXAMPLE ================= -->
+  <section class="section" style="background:#fff">
+    <div class="container" style="max-width:900px">
+      <div class="section-header">
+        <span class="ship-tag">Worked example</span>
+        <h2>Why the $4.20 unit becomes $8.10 landed</h2>
+      </div>
+      <table class="lc-table">
+        <thead><tr><th>Line</th><th>Calculation</th><th>Amount</th></tr></thead>
+        <tbody>
+          <tr><td>Goods (1,000 × $4.20)</td><td>—</td><td>$4,200.00</td></tr>
+          <tr><td>Freight</td><td>—</td><td>$1,800.00</td></tr>
+          <tr><td>Insurance (0.5%)</td><td>$4,200 × 0.5%</td><td>$21.00</td></tr>
+          <tr><td>Duty (5% of CIF)</td><td>($4,200 + $1,800 + $21) × 5%</td><td>$301.05</td></tr>
+          <tr><td>Import VAT (20%)</td><td>($6,021 + $301.05) × 20%</td><td>$1,264.41</td></tr>
+          <tr><td>Sourcing fee (5%)</td><td>$4,200 × 5%</td><td>$210.00</td></tr>
+          <tr><td>Other</td><td>Testing, bank, last-mile</td><td>$300.00</td></tr>
+          <tr><td><strong>Total landed</strong></td><td>—</td><td><strong>$8,096.46</strong></td></tr>
+          <tr><td><strong>Per unit</strong></td><td>$8,096.46 ÷ 1,000</td><td><strong>$8.10</strong></td></tr>
+        </tbody>
+      </table>
+      <p class="hub-note" style="margin-top:14px">VAT is recoverable for VAT-registered importers; duty is not. The calculator excludes recoverable VAT from the margin calculation and shows it separately.</p>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section" style="background:var(--cream)">
+    <div class="container" style="max-width:880px">
+      <div class="section-header">
+        <span class="ship-tag">FAQ</span>
+        <h2>Questions buyers ask before pricing</h2>
+      </div>
+      <div class="hub-split" style="grid-template-columns:1fr">
+        <div class="hub-mini"><h4>Is this an Amazon FBA fee calculator?</h4><p>It models the Amazon costs that decide margin — referral fee, fulfilment, advertising, returns and storage — using the rates you enter. Amazon's actual fees depend on category, size tier and weight, so check Seller Central for your exact SKU.</p></div>
+        <div class="hub-mini"><h4>Can it classify my product automatically?</h4><p>It suggests the 6-digit HS heading from a product name. It does not assign the national 8–10 digit code, because that depends on material, construction and end use, and it carries legal responsibility. We confirm the classification in every quote.</p></div>
+        <div class="hub-mini"><h4>Is duty charged on FOB or CIF?</h4><p>In most markets duty is charged on CIF: goods plus international freight plus insurance. Expensive freight therefore increases duty, which is why a low unit price can still produce a high landed cost.</p></div>
+        <div class="hub-mini"><h4>Do I pay VAT if I am not registered?</h4><p>Yes. VAT or GST is collected at import whether or not you are registered. Registration only determines whether you can recover it later.</p></div>
+        <div class="hub-mini"><h4>What counts as a good margin?</h4><p>For Amazon or DTC, 20%+ net is healthy, 10–20% leaves little room for price wars and returns, below 10% rarely survives advertising and cash-flow costs. Offline wholesale depends on volume and payment terms.</p></div>
+        <div class="hub-mini"><h4>Can you confirm the numbers before I order?</h4><p>Yes. Send the product, quantity and destination and we return an itemized quote with goods, freight, duty, our fee and the landed cost per unit — within 24 hours.</p></div>
+      </div>
+      <div style="text-align:center;margin-top:30px">
+        <a href="/services/supplier-verification-factory-audit#inquiry" class="hub-btn">Get an itemized quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="cta-banner">
+    <div class="container">
+      <div>
+        <h2>Price the order before you place it</h2>
+        <p>Send the product, quantity and destination. We confirm the HS code, duty and landed cost in writing.</p>
+      </div>
+      <a href="/services/supplier-verification-factory-audit#inquiry" class="btn btn-primary">Get a Quote</a>
+    </div>
+  </section>
+
+<footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="footer-logo" href="/">
+        <img src="/assets/milebond-logo-white.png" alt="Milebond" width="96" height="32" style="height:32px;width:auto;display:block" loading="lazy" decoding="async">
+      </a>
+      <p>Your trusted one-stop China sourcing agent based in Yiwu. From product sourcing to global shipping, we handle it all — so you can focus on growing your business.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/services/product-sourcing">Product Sourcing</a></li>
+        <li><a href="/services/supplier-verification-factory-audit">Supplier Verification &amp; Factory Audit</a></li>
+        <li><a href="/services/quality-control">Quality Control &amp; Inspection</a></li>
+        <li><a href="/services/amazon-brand-management">Amazon Brand Management</a></li>
+        <li><a href="/services/private-label-oem">Private Label &amp; OEM</a></li>
+        <li><a href="/services/product-development">Product Development</a></li>
+        <li><a href="/services/warehousing-shipping">Warehousing &amp; Shipping</a></li>
+        <li><a href="/services/sourcing-fees-pricing">Sourcing Fees &amp; Pricing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="/solutions/for-amazon-ecommerce-sellers">For Amazon &amp; E-commerce Sellers</a></li>
+        <li><a href="/solutions/for-small-businesses-startups">For Small Businesses &amp; Startups</a></li>
+        <li><a href="/solutions/for-wholesalers-importers">For Wholesalers &amp; Importers</a></li>
+        <li><a href="/solutions/for-brand-owners">For Brand Owners</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="/products/home-kitchen">Home &amp; Kitchen</a></li>
+        <li><a href="/products/pet-supplies">Pet Supplies</a></li>
+        <li><a href="/products/beauty-tools">Beauty Tools</a></li>
+        <li><a href="/products/arts-crafts">Arts &amp; Crafts</a></li>
+        <li><a href="/products/clothing-shoes-jewelry">Clothing, Shoes &amp; Jewelry</a></li>
+        <li><a href="/products/toys-games">Toys &amp; Games</a></li>
+        <li><a href="/products/sports-outdoors">Sports &amp; Outdoors</a></li>
+        <li><a href="/products/electronics">Electronics</a></li>
+        <li><a href="/products/health-household">Health &amp; Household</a></li>
+        <li><a href="/products/others">Others</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="/about">About Milebond</a></li>
+        <li><a href="/how-it-works">How It Works</a></li>
+        <li><a href="/case-studies">Case Studies</a></li>
+        <li><a href="/faq">FAQ</a></li>
+      </ul>
+      <a class="footer-blog-link" href="/blog">Blog</a>
+    </div>
+<div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-contact">
+            <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Shengli Road, Yiwu, Zhejiang, China</li>
+            <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><a href="https://wa.me/8615057960102" target="_blank">+86 150 5796 0102</a></li>
+            <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><a href="mailto:info@milebond.com">info@milebond.com</a></li>
+            <li><span class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Mon–Sat: 9:00 AM – 6:00 PM (CST)</li>
+          </ul>
+          <a onclick="openQuoteModal()" class="btn btn-primary btn-sm open-quote-modal" style="margin-top:14px;display:inline-block">Get a Free Quote</a>
+        </div>
+    </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 MileBond. All rights reserved.</span>
+        <span style="font-size:12px;display:block;margin-top:4px;">Powered by MileBond Supply Chain</span>
+        <span><a>Privacy Policy</a> &nbsp;|&nbsp; <a>Terms of Service</a> &nbsp;|&nbsp; <a onclick="openQuoteModal()">Get a Free Quote</a></span>
+      </div>
+    </div>
+  </footer><!-- ============ FLOATING CONTACT BUTTONS ============ -->
+<div class="fc-btns">
+  <a class="fc-btn fc-whatsapp" href="https://wa.me/8615057960102" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.9 11.9 0 0 0 12.04 0C5.46 0 .12 5.34.12 11.92c0 2.1.55 4.14 1.6 5.95L0 24l6.28-1.64c1.74.96 3.7 1.46 5.76 1.46 6.58 0 11.92-5.34 11.92-11.92 0-3.18-1.24-6.17-3.44-8.42zM12.04 21.8c-1.75 0-3.46-.47-4.94-1.35l-.35-.21-3.72.97 1-3.63-.23-.37a9.88 9.88 0 0 1-1.52-5.26c0-5.45 4.43-9.88 9.88-9.88s9.88 4.43 9.88 9.88c0 5.45-4.43 9.85-9.88 9.85zm5.42-7.38c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.18-.3-.02-.46.13-.61.13-.13.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.68-1.64-.93-2.25-.25-.6-.5-.52-.68-.53h-.58c-.2 0-.53.07-.8.38-.28.3-1.06 1.04-1.06 2.53 0 1.49 1.09 2.93 1.24 3.13.15.2 2.14 3.27 5.2 4.59.73.32 1.3.51 1.74.66.73.23 1.39.2 1.91.12.58-.08 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.07-.13-.28-.2-.58-.35z"/></svg>
+  </a>
+  <button type="button" class="fc-btn fc-email open-quote-modal" onclick="openQuoteModal()" aria-label="Email">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  </button>
+</div>
+
+<!-- ============ QUOTE MODAL ============ -->
+<div class="qm-overlay" id="quoteModal" onclick="closeQuoteModal(event)">
+  <div class="qm-box" onclick="event.stopPropagation()">
+    <div class="qm-header">
+      <div>
+        <h3 class="qm-title">Request a Quote</h3>
+        <div class="qm-subtitle">Fill in the form and we'll reply within 48 hours</div>
+      </div>
+      <button class="qm-close" onclick="closeQuoteModal()" aria-label="Close">脳</button>
+    </div>
+    <form class="qm-body" id="quoteForm" onsubmit="submitQuote(event)">
+            <input type="hidden" name="access_key" value="e2b6db8d-48d6-4faa-ad15-6b2b0a15402c">
+      <input type="hidden" name="_subject" value="New Inquiry from MileBond Website">
+      <input type="hidden" name="from_name" value="MileBond Website">
+      <input type="hidden" name="access_key" value="e2b6db8d-48d6-4faa-ad15-6b2b0a15402c"><input type="hidden" name="_subject" value="New Inquiry from MileBond Website"><input type="hidden" name="from_name" value="MileBond Website"><input type="hidden" name="source_page" id="qSource">
+      <div class="qm-field qm-full"><label class="qm-label">Your Name<span class="qm-req">*</span></label><input type="text" name="name" class="qm-input" required placeholder="John Doe"></div>
+      <div class="qm-field qm-full"><label class="qm-label">Email<span class="qm-req">*</span></label><input type="email" name="email" class="qm-input" required placeholder="you@company.com"></div>
+      <div class="qm-field qm-full"><label class="qm-label">WhatsApp / WeChat</label><input type="text" name="contact" class="qm-input" placeholder="+86 ... or WeChat ID"></div>
+      <div class="qm-row"><div class="qm-field"><label class="qm-label">Product SKU</label><input type="text" name="sku" id="qSkuView" class="qm-input" placeholder="HK-001 (if known)"></div><div class="qm-field"><label class="qm-label">Product Name</label><input type="text" name="product" id="qProductView" class="qm-input" placeholder="Product name"></div></div>
+      <div class="qm-row"><div class="qm-field"><label class="qm-label">Quantity</label><input type="text" name="qty" class="qm-input" placeholder="e.g. 500 pcs / 10 cartons"></div><div class="qm-field"><label class="qm-label">Target Price</label><div class="qm-price-row"><input type="text" name="price" class="qm-input" placeholder="0.00"><select name="currency" class="qm-select"><option value="USD">USD</option><option value="EUR">EUR</option><option value="GBP">GBP</option><option value="CNY">CNY</option></select></div></div></div>
+      <div class="qm-field qm-full"><label class="qm-label">Message<span class="qm-req">*</span></label><textarea name="message" class="qm-textarea" required placeholder="Tell us about your project: specs, quality requirements, timeline..."></textarea></div>
+      <button type="submit" class="qm-submit">Send Inquiry 鈫?/button>
+    </form>
+  </div>
+</div>
+
+<script>
+function openQuoteModal(sku,productName){document.getElementById('qSkuView').value=sku||'';document.getElementById('qProductView').value=productName||'';document.getElementById('qSource').value=location.href;document.getElementById('quoteModal').classList.add('open')}
+function closeQuoteModal(e){if(e&&e.target!==document.getElementById('quoteModal'))return;document.getElementById('quoteModal').classList.remove('open')}
+function submitQuote(e){e.preventDefault();var f=e.target,b=f.querySelector('.qm-submit'),d=new FormData(f),n=(d.get('name')||'').trim(),em=(d.get('email')||'').trim(),mg=(d.get('message')||'').trim();if(!n||!em||!mg){alert('Please fill in all required fields.');return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){alert('Please enter a valid email address.');return}b.disabled=true;b.textContent='Sending...';fetch('https://api.web3forms.com/submit',{method:'POST',body:d,headers:{'Accept':'application/json'}}).then(function(r){return r.json()}).then(function(x){if(x.success){alert('Thank you! We received your inquiry and will contact you within 24 hours.');f.reset();closeQuoteModal()}else{alert('Oops! Something went wrong. Try again or email info@milebond.com');b.disabled=false;b.textContent='Send Inquiry →'}}).catch(function(){alert('Network error. Check connection or email info@milebond.com');b.disabled=false;b.textContent='Send Inquiry →'})}
+document.addEventListener('click',function(e){var b=e.target.closest('.open-quote-modal');if(b){e.preventDefault();openQuoteModal(b.getAttribute('data-sku')||'',b.getAttribute('data-product-name')||'')}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){var qm=document.getElementById('quoteModal');if(qm&&qm.classList.contains('open'))closeQuoteModal()}});
+</script>
+
+  <script>
+var searchIndex=[{url:'../index.html',title:'MileBond Home',desc:'China sourcing agent homepage',tags:'sourcing china yiwu agent home'},{url:'./product-sourcing.html',title:'Product Sourcing',desc:'Find suppliers in 48h, save 30%+',tags:'product sourcing supplier china yiwu'},{url:'./private-label-oem.html',title:'Private Label & OEM',desc:'MOQ from $50, tooling protection',tags:'private label oem custom brand'},{url:'./amazon-brand-management.html',title:'Amazon Brand Management',desc:'50+ Amazon brands served, FBA ready',tags:'amazon FBA listing brand management'},{url:'./supply-chain-optimization.html',title:'Supply Chain Optimization',desc:'Cost, lead-time & quality upgrade',tags:'supply chain cost optimization supplier'},{url:'./factory-audit.html',title:'Factory Audit',desc:'27-point on-site supplier verification',tags:'factory audit verification QC inspection'},{url:'./quality-control.html',title:'Quality Control',desc:'AQL 2.5 multi-stage inspection',tags:'quality control inspection AQL QC'},{url:'./warehousing-shipping.html',title:'Warehousing & Shipping',desc:'1-month free storage, DDP shipping',tags:'warehousing storage shipping logistics DDP'},{url:'/products/home-kitchen/stainless-steel-utensils/',title:'Home & Kitchen',desc:'10,000+ SKUs, 30%+ cost savings',tags:'home kitchen storage kitchen gadgets'},{url:'../products/pet-supplies.html',title:'Pet Supplies',desc:'5,000+ SKUs, fastest-growing category',tags:'pet supplies dog cat toys accessories'},{url:'../products/beauty-tools.html',title:'Beauty Tools',desc:'3,000+ SKUs, 40%+ average margin',tags:'beauty tools skincare jade roller LED mask'},{url:'../products/arts-crafts.html',title:'Arts & Crafts',desc:'4,000+ SKUs, kids product safety',tags:'arts crafts DIY painting jewelry diamond'}];
+var searchOpen=false;function openSearch(){document.getElementById('searchModal').classList.add('open');document.getElementById('searchInput').focus();document.getElementById('searchResults').innerHTML='<div class="search-empty">Start typing to search...</div>';searchOpen=true}function closeSearch(e){if(!e||e.target===document.getElementById('searchModal')){document.getElementById('searchModal').classList.remove('open');searchOpen=false}}function doSearch(q){var r=document.getElementById('searchResults');if(!q.trim()){r.innerHTML='<div class="search-empty">Start typing to search...</div>';return}q=q.toLowerCase();var m=searchIndex.filter(function(p){return(p.title+p.desc+p.tags).toLowerCase().indexOf(q)!==-1});if(!m.length){r.innerHTML='<div class="search-empty">No results found</div>';return}r.innerHTML=m.map(function(p){return'<a class="search-result" href="'+p.url+'"><span class="search-result-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span><span class="search-result-text"><h4>'+p.title+'</h4><p>'+p.desc+'</p></span></a>'}).join('')}
+var fx={USD:1,EUR:.92,GBP:.79,AUD:1.52,CAD:1.36};function setCurrency(code,sym){localStorage.setItem('mb_currency',code);document.getElementById('currencyLabel').textContent=code;document.querySelectorAll('[data-price]').forEach(function(el){var v=parseFloat(el.getAttribute('data-price'));if(!isNaN(v)){el.textContent=sym+(v*fx[code]).toFixed(2)}})};(function(){var lbl=document.getElementById('currencyLabel');if(!lbl)return;var c=localStorage.getItem('mb_currency')||'USD';lbl.textContent=c;document.querySelectorAll('[data-price]').forEach(function(el){var v=parseFloat(el.getAttribute('data-price'));if(!isNaN(v)){var sym={USD:'$',EUR:'€',GBP:'£',AUD:'A$',CAD:'C$'}[c];el.textContent=sym+(v*fx[c]).toFixed(2)}})})();
+function setLanguage(l){localStorage.setItem('mb_lang',l);document.getElementById('langLabel').textContent=l;if(l!=='English'){var t=document.getElementById('langToast');t.textContent=l+' version coming soon. Contact us for support in your language.';t.classList.add('show');setTimeout(function(){t.classList.remove('show')},3000)}};(function(){var lbl=document.getElementById('langLabel');if(!lbl)return;lbl.textContent=localStorage.getItem('mb_lang')||'English'})();
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&searchOpen){closeSearch()}});
+    function toggleMobileMenu() {
+      var navMenu = document.getElementById('navMenu');
+      if (navMenu.style.display === 'flex') { navMenu.style.display = ''; }
+      else {
+        navMenu.style.display = 'flex'; navMenu.style.position = 'absolute'; navMenu.style.top = '72px';
+        navMenu.style.left = '0'; navMenu.style.right = '0'; navMenu.style.flexDirection = 'column';
+        navMenu.style.background = '#fff'; navMenu.style.padding = '24px'; navMenu.style.gap = '16px';
+        navMenu.style.boxShadow = '0 8px 24px rgba(0,0,0,.1)';
+      }
+    }
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.parentElement;
+        var answer = item.querySelector('.faq-answer');
+        var isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('active'); i.querySelector('.faq-answer').style.maxHeight = null; });
+        if (!isActive) { item.classList.add('active'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+      });
+    });
+  </script>
+
+
+<script>
+function toggleDropdown(el){var dd=el.closest('.nav-dropdown');if(!dd)return;document.querySelectorAll('.nav-dropdown.open').forEach(function(d){if(d!==dd)d.classList.remove('open')});dd.classList.toggle('open')}
+</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Landed Cost and Margin Calculator",
+        "url": "https://www.milebond.com/tools/landed-cost-calculator/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "description": "Free landed cost and margin calculator for imports from China. Model Amazon FBA, DTC and offline retail margins with duty, VAT, channel fees and break-even price.",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "provider": {"@type": "Organization", "name": "Milebond", "url": "https://www.milebond.com"}
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Is this an Amazon FBA fee calculator?", "acceptedAnswer": {"@type": "Answer", "text": "It models the Amazon costs that decide margin: referral fee, fulfilment, advertising, returns and storage, using the rates you enter. Actual fees depend on category, size tier and weight."}},
+          {"@type": "Question", "name": "Can it classify my product automatically?", "acceptedAnswer": {"@type": "Answer", "text": "It suggests the 6-digit HS heading from a product name. It does not assign the national 8–10 digit code, because that depends on material, construction and end use and carries legal responsibility."}},
+          {"@type": "Question", "name": "Is duty charged on FOB or CIF?", "acceptedAnswer": {"@type": "Answer", "text": "In most markets duty is charged on CIF: goods plus international freight plus insurance."}},
+          {"@type": "Question", "name": "Do I pay VAT if I am not registered?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. VAT or GST is collected at import whether or not you are registered; registration only affects whether you can recover it later."}},
+          {"@type": "Question", "name": "What counts as a good margin?", "acceptedAnswer": {"@type": "Answer", "text": "For Amazon or DTC, 20 percent or more net is healthy, 10–20 percent leaves little room for price wars, and below 10 percent rarely survives advertising and cash-flow costs."}},
+          {"@type": "Question", "name": "Can you confirm the numbers before I order?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Milebond returns an itemized quote with goods, freight, duty, service fee and landed cost per unit within 24 hours."}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.milebond.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Landed Cost Calculator"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+<script>
+const navbar = document.getElementById('navbar');
+  function updateNav() {
+    if (window.scrollY > 8) navbar.classList.add('navbar-scrolled');
+    else navbar.classList.remove('navbar-scrolled');
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+
+  // 2) Mobile hamburger — aria-expanded sync + close on link click
+  const toggle  = document.getElementById('mobileToggle');
+  const menu    = document.getElementById('mobileMenu');
+  const iconO   = document.getElementById('iconOpen');
+  const iconC   = document.getElementById('iconClose');
+
+  function openMenu() {
+    menu.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    iconO.classList.add('hidden');
+    iconC.classList.remove('hidden');
+  }
+  function closeMenu() {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    iconO.classList.remove('hidden');
+    iconC.classList.add('hidden');
+    // also close Services accordion
+    document.querySelectorAll('.mobile-services.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.ms-head').setAttribute('aria-expanded', 'false');
+    });
+  }
+  toggle.addEventListener('click', () => {
+    menu.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  // 2b) Mobile Services accordion toggle
+  document.querySelectorAll('.mobile-services').forEach(acc => {
+    const head = acc.querySelector('.ms-head');
+    head.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = acc.classList.toggle('open');
+      head.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
+
+  // Close mobile menu (and accordion) when any nav/service link clicked
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  // 2c) Desktop mega menus: hover (CSS) + click + keyboard + Escape + outside click
+  const megaItems = Array.prototype.slice.call(document.querySelectorAll('.services-mega'));
+  function closeMega(except) {
+    megaItems.forEach(function (li) {
+      if (li === except) return;
+      li.classList.remove('open');
+      var b = li.querySelector('.mega-trigger');
+      if (b) b.setAttribute('aria-expanded', 'false');
+    });
+  }
+  megaItems.forEach(function (li) {
+    var btn = li.querySelector('.mega-trigger');
+    if (!btn) return;
+    btn.addEventListener('click', function (e) {
+      if (btn.tagName === 'A') return;
+      e.preventDefault();
+      var willOpen = !li.classList.contains('open');
+      closeMega(li);
+      li.classList.toggle('open', willOpen);
+      btn.setAttribute('aria-expanded', String(willOpen));
+    });
+    btn.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        li.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.focus();
+      }
+    });
+    li.addEventListener('mouseenter', function () { btn.setAttribute('aria-expanded', 'true'); });
+    li.addEventListener('mouseleave', function () {
+      if (!li.classList.contains('open')) btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMega(null);
+  });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest || !e.target.closest('.services-mega')) closeMega(null);
+  });
+
+  // 3) Smooth scroll polyfill fallback (html { scroll-behavior:smooth } handles modern browsers)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const id = this.getAttribute('href');
+      if (id.length > 1) {
+        const el = document.querySelector(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+
+  // 4) Hero carousel — 5s autoplay, pause on hover/touch, dots + counter
+  (function () {
+    const carousel = document.getElementById('heroCarousel');
+    if (!carousel) return;
+    const slides = Array.from(carousel.querySelectorAll('.hero-slide'));
+    const dots   = Array.from(carousel.querySelectorAll('.hero-dot'));
+    const curEl  = document.getElementById('heroCur');
+    const total  = slides.length;
+    let index = 0;
+    let touchPauseUntil = 0;
+
+    function render(i) {
+      index = (i + total) % total;
+      slides.forEach((s, k) => s.classList.toggle('active', k === index));
+      dots.forEach((d, k) => d.classList.toggle('active', k === index));
+      if (curEl) curEl.textContent = String(index + 1).padStart(2, '0');
+    }
+
+    // Self-healing tick: never permanently stopped; skips a turn while
+    // the hero is hovered, recently touched, or the tab is hidden.
+    setInterval(() => {
+      if (document.hidden) return;
+      if (carousel.matches(':hover')) return;
+      if (Date.now() < touchPauseUntil) return;
+      render(index + 1);
+    }, 5000);
+
+    dots.forEach(d => d.addEventListener('click', () => {
+      render(parseInt(d.getAttribute('data-goto'), 10));
+      touchPauseUntil = Date.now() + 5000; // give the reader a full window after manual jump
+    }));
+
+    carousel.addEventListener('touchstart', () => {
+      touchPauseUntil = Date.now() + 8000; // pause while interacting on touch devices
+    }, { passive: true });
+
+    render(0);
+  })();
+
+  // 5) Homepage contact/quote form — Web3Forms submit (same backend as /free-quote)
+  (function () {
+    const form = document.getElementById('cbForm');
+    if (!form) return;
+    const btn = form.querySelector('.cb-submit');
+    const label = btn.textContent;
+    const src = document.getElementById('cbSource');
+    if (src) src.value = location.href;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const d = new FormData(form);
+      const name = (d.get('name') || '').trim();
+      const email = (d.get('email') || '').trim();
+      const category = (d.get('category') || '').trim();
+      const service = (d.get('service') || '').trim();
+      if (!name) { alert('Please enter your name.'); return; }
+      if (!category) { alert('Please select a product category.'); return; }
+      if (!service) { alert('Please select the service type you need.'); return; }
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
+
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: d,
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(r => r.json())
+        .then(x => {
+          if (x.success) {
+            alert("Thank you! We've received your inquiry and will contact you within 24 hours.");
+            form.reset();
+            if (src) src.value = location.href;
+          } else {
+            alert('Oops! Something went wrong. Try again or email info@milebond.com');
+          }
+        })
+        .catch(() => {
+          alert('Network error. Check your connection or email info@milebond.com');
+        })
+        .then(() => {
+          btn.disabled = false;
+          btn.textContent = label;
+        });
+    });
+  })();
+
+  // 6) Hero arrow controls — drive the existing carousel through its dot buttons
+  (function () {
+    var prev = document.querySelector('.nav-btn.prev');
+    var next = document.querySelector('.nav-btn.next');
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slide'));
+    var dots = Array.prototype.slice.call(document.querySelectorAll('.hero-dot'));
+    if (!prev || !next || !slides.length) return;
+
+    function curIndex() {
+      for (var i = 0; i < slides.length; i++) {
+        if (slides[i].classList.contains('active')) return i;
+      }
+      return 0;
+    }
+    function step(d) {
+      var n = slides.length;
+      var target = (curIndex() + d + n) % n;
+      if (dots[target]) {
+        // reuse the existing dot handler → keeps slides, dots, page counter and autoplay in sync
+        dots[target].click();
+      } else {
+        slides.forEach(function (s, k) { s.classList.toggle('active', k === target); });
+        var count = document.getElementById('heroCur');
+        if (count) count.textContent = '0' + (target + 1);
+      }
+    }
+    prev.addEventListener('click', function () { step(-1); });
+    next.addEventListener('click', function () { step(1); });
+  })();
+</script>  <script>
+function submitInquiry(e){
+  e.preventDefault();
+  var f=e.target,b=f.querySelector('.inq-submit'),s=document.getElementById('inqStatus');
+  var d=new FormData(f),n=(d.get('name')||'').trim(),em=(d.get('email')||'').trim(),mg=(d.get('message')||'').trim();
+  s.className='inq-status';s.textContent='';
+  if(!n||!em||!mg){s.className='inq-status err';s.textContent='Please fill in your name, email and requirements.';return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){s.className='inq-status err';s.textContent='Please enter a valid email address.';return}
+  b.disabled=true;b.textContent='Sending...';
+  fetch('https://api.web3forms.com/submit',{method:'POST',body:d,headers:{'Accept':'application/json'}})
+    .then(function(r){return r.json()})
+    .then(function(x){
+      if(x.success){s.className='inq-status ok';s.textContent='Thank you! We received your inquiry and will reply within 24 hours.';f.reset()}
+      else{s.className='inq-status err';s.textContent='Something went wrong. Please try again or email info@milebond.com'}
+      b.disabled=false;b.textContent='Send My Inquiry \u2192';
+    })
+    .catch(function(){s.className='inq-status err';s.textContent='Network error. Please try again or email info@milebond.com';b.disabled=false;b.textContent='Send My Inquiry \u2192'});
+}
+  </script>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var fields = ['lcVat','lcFob','lcQty','lcFreight','lcInsurance','lcDuty','lcExtra','lcAgent','lcOther','lcPrice','lcFee1','lcFee2','lcFee3','lcReturns','lcTarget'];
+  var el = {};
+  fields.forEach(function (id) { el[id] = $(id); });
+
+  var HS = [
+    { k: ['ceramic','mug','porcelain','tableware','dinnerware'], hs: '6912.00', d: 'Ceramic tableware, kitchenware' },
+    { k: ['glass','glassware','tumbler','drinking'], hs: '7013.37', d: 'Glass drinking glasses' },
+    { k: ['stainless','cookware','pan','pot','utensil','cutlery'], hs: '7323.93', d: 'Stainless steel household articles' },
+    { k: ['plastic','kitchen','container','lunch box','food storage'], hs: '3924.10', d: 'Plastic tableware and kitchenware' },
+    { k: ['silicone','spatula','baking mat'], hs: '3924.10', d: 'Silicone kitchenware (plastic tableware heading)' },
+    { k: ['notebook','journal','stationery','planner'], hs: '4820.10', d: 'Registers, notebooks, order books' },
+    { k: ['pen','ballpoint','gel pen'], hs: '9608.10', d: 'Ballpoint pens' },
+    { k: ['marker','highlighter'], hs: '9608.20', d: 'Felt-tipped and porous-tipped pens' },
+    { k: ['toy','puzzle','plush','kids'], hs: '9503.00', d: 'Toys (verify material-based alternatives)' },
+    { k: ['bag','backpack','tote','shopping bag'], hs: '4202.92', d: 'Textile travel and shopping bags' },
+    { k: ['leather bag','wallet','handbag'], hs: '4202.21', d: 'Leather handbags' },
+    { k: ['t-shirt','tee','hoodie','apparel','clothing'], hs: '6109.10', d: 'Cotton t-shirts and vests' },
+    { k: ['sock','socks'], hs: '6115.95', d: 'Cotton socks' },
+    { k: ['furniture','chair','desk','table','cabinet'], hs: '9403.60', d: 'Wooden furniture' },
+    { k: ['led','lamp','light','luminaire'], hs: '9405.42', d: 'LED luminaires and lamps' },
+    { k: ['power bank','battery','lithium'], hs: '8507.60', d: 'Lithium-ion accumulators' },
+    { k: ['charger','adapter','power supply'], hs: '8504.40', d: 'Static converters' },
+    { k: ['cable','usb','wire'], hs: '8544.42', d: 'Electric cables with connectors' },
+    { k: ['earbud','headphone','speaker','audio'], hs: '8518.30', d: 'Headphones and earphones' },
+    { k: ['hair dryer','hairdryer'], hs: '8516.31', d: 'Hair dryers' },
+    { k: ['massage','fascia gun','massager'], hs: '9019.10', d: 'Massage apparatus' },
+    { k: ['brush','makeup brush','cosmetic brush'], hs: '9603.29', d: 'Brushes (cosmetic, hair)' },
+    { k: ['candle'], hs: '3406.00', d: 'Candles, tapers and the like' },
+    { k: ['pet bed','cushion','mattress'], hs: '9404.90', d: 'Mattress supports, bedding articles' },
+    { k: ['vacuum flask','thermos','flask'], hs: '9617.00', d: 'Vacuum flasks and insulated vessels' }
+  ];
+
+  var LINKS = {
+    US: 'https://hts.usitc.gov/search?query=',
+    UK: 'https://www.trade-tariff.service.gov.uk/search?q=',
+    EU: 'https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp?Lang=en',
+    CA: 'https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/menu-eng.html',
+    AU: 'https://www.abf.gov.au/importing-exporting-and-manufacturing/tariff-classification/Pages/default.aspx'
+  };
+  var VAT = { US: 0, UK: 20, EU: 20, CA: 5, AU: 10 };
+  var channel = 'amazon';
+  var fmode = 'quote';
+  var FREIGHT = {
+    lcl:   { qtyLabel: 'Volume (CBM)',              qty: 6,   rate: 90,   min: 1, note: 'Market range: $60–120 per CBM, port-to-port, minimum 1 CBM (forwarder rate sheets, Oct 2026).' },
+    fcl20: { qtyLabel: 'Containers (20GP)',         qty: 1,   rate: 5600, min: 1, note: 'Market range: $4,800–6,400 per 20GP, Ningbo–Los Angeles (forwarder rate sheets, Oct 2026).' },
+    fcl40: { qtyLabel: 'Containers (40HQ)',         qty: 1,   rate: 7400, min: 1, note: 'Market range: $6,900–8,000 per 40HQ. Drewry WCI Shanghai–LA: $7,514 on 29 Oct 2026.' },
+    ddp:   { qtyLabel: 'Chargeable weight (kg)',    qty: 500, rate: 1.80, min: 0, note: 'Market range: $1.28–2.30 per kg, sea DDP door-to-door; depends on weight break (Oct 2026).' }
+  };
+
+  function setFMode(m) {
+    fmode = m;
+    document.querySelectorAll('#lcFMode button').forEach(function (b) {
+      b.classList.toggle('active', b.getAttribute('data-fmode') === m);
+    });
+    var box = $('lcFInputs'), note = $('lcFNote'), btn = $('lcFApply');
+    if (m === 'quote') {
+      box.style.display = 'none';
+      btn.style.display = 'none';
+      note.textContent = 'Enter the all-in freight from your forwarder, or switch above to estimate from market rates.';
+      return;
+    }
+    var f = FREIGHT[m];
+    box.style.display = 'grid';
+    btn.style.display = 'inline-block';
+    $('lcFQtyLabel').textContent = f.qtyLabel;
+    $('lcFQty').value = f.qty;
+    $('lcFRate').value = f.rate;
+    $('lcFRateLabel').textContent = m === 'lcl' ? '(USD per CBM)' : m === 'ddp' ? '(USD per kg)' : '(USD per container)';
+    note.textContent = f.note;
+  }
+
+  function num(id) {
+    var node = el[id] || document.getElementById(id);
+    if (!node) return 0;
+    var v = parseFloat(node.value);
+    return isNaN(v) ? 0 : v;
+  }
+  function money(n) { return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function pct(n) { return n.toFixed(1) + '%'; }
+
+  function calcLanded() {
+    var qty = Math.max(num('lcQty'), 1);
+    var goods = num('lcFob') * qty;
+    var freight = num('lcFreight');
+    var insurance = goods * num('lcInsurance') / 100;
+    var cif = goods + freight + insurance;
+    var duty = cif * (num('lcDuty') + num('lcExtra')) / 100;
+    var vat = (cif + duty) * num('lcVat') / 100;
+    if ($('lcDdp').checked) { duty = 0; vat = 0; }
+    var agent = goods * num('lcAgent') / 100;
+    var other = num('lcOther');
+    var mpf = 0, hmf = 0;
+    if ($('lcCountry').value === 'US') {
+      mpf = Math.min(Math.max(cif * 0.003464, 32.71), 634.62);
+      hmf = cif * 0.00125;
+    }
+    var total = cif + duty + vat + agent + other + mpf + hmf;
+    return { qty: qty, goods: goods, freight: freight, insurance: insurance, cif: cif, duty: duty, vat: vat, agent: agent, other: other, mpf: mpf, hmf: hmf, total: total, unit: total / qty, unitExVat: (total - vat) / qty };
+  }
+
+  function channelFees(price) {
+    var fee1 = num('lcFee1'), fee2 = num('lcFee2'), fee3 = num('lcFee3'), ret = num('lcReturns') / 100;
+    if (channel === 'amazon') {
+      return { referral: price * fee1 / 100, fulfilment: fee2, ads: price * fee3 / 100, returns: price * ret, total: price * fee1 / 100 + fee2 + price * fee3 / 100 + price * ret };
+    }
+    if (channel === 'dtc') {
+      return { referral: price * fee1 / 100 + 0.30, fulfilment: 0, ads: fee2, returns: price * ret, total: price * fee1 / 100 + 0.30 + fee2 + price * ret };
+    }
+    return { referral: 0, fulfilment: 0, ads: 0, returns: price * ret, total: price * ret };
+  }
+
+  function breakeven(landed) {
+    var price = num('lcPrice');
+    if (channel === 'offline') {
+      var r = num('lcReturns') / 100;
+      return r >= 1 ? 0 : landed / (1 - r);
+    }
+    if (channel === 'amazon') {
+      var r1 = (num('lcFee1') + num('lcFee3') + num('lcReturns')) / 100;
+      return r1 >= 1 ? 0 : (landed + num('lcFee2')) / (1 - r1);
+    }
+    var r2 = (num('lcFee1') + num('lcReturns')) / 100;
+    return r2 >= 1 ? 0 : (landed + num('lcFee2') + 0.30) / (1 - r2);
+  }
+
+  function render() {
+    var L = calcLanded();
+    var price = num('lcPrice');
+    var fees = channelFees(price);
+    var profit = price - fees.total - L.unitExVat;
+    var margin = price > 0 ? profit / price * 100 : 0;
+    var target = num('lcTarget');
+
+    $('lcMargin').textContent = pct(margin);
+    $('lcSub').textContent = 'Net margin · ' + money(profit) + ' profit per unit';
+    $('lcKpiLanded').textContent = money(L.unitExVat);
+    $('lcKpiProfit').textContent = money(profit);
+    $('lcKpiBreak').textContent = money(breakeven(L.unitExVat));
+
+    var v = $('lcVerdict');
+    v.className = 'lc-verdict ' + (margin >= target ? 'good' : margin >= 10 ? 'thin' : 'bad');
+    v.textContent = margin >= target ? 'Profitable' : margin >= 10 ? 'Thin margin' : 'Not worth it';
+
+    var rows = [
+      ['Goods', L.goods / L.qty, false],
+      ['Freight', L.freight / L.qty, false],
+      ['Insurance', L.insurance / L.qty, false],
+      ['Duty' + (num('lcExtra') > 0 ? ' (incl. extra)' : ''), L.duty / L.qty, false],
+      ['Import VAT', L.vat / L.qty, true],
+      ['Sourcing fee', L.agent / L.qty, false],
+      ['Other', L.other / L.qty, false]
+    ];
+    if (L.mpf > 0) rows.push(['US MPF', L.mpf / L.qty, false]);
+    if (L.hmf > 0) rows.push(['US HMF', L.hmf / L.qty, false]);
+    rows.push(['Channel fees', fees.total, false]);
+
+    $('lcBreakdown').innerHTML = rows.map(function (r) {
+      return '<div class="lc-row' + (r[2] ? ' muted' : '') + '"><span>' + r[0] + '</span><span>' + money(r[1]) + '</span></div>';
+    }).join('');
+  }
+
+  function setChannel(ch) {
+    channel = ch;
+    document.querySelectorAll('#lcChannel button').forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-channel') === ch); });
+    var p = $('lcPrice'), f1 = $('lcFee1'), f2 = $('lcFee2'), f3 = $('lcFee3');
+    if (ch === 'amazon') {
+      $('lcPriceLabel').textContent = 'Amazon selling price';
+      $('lcFee1Label').textContent = 'Referral fee'; f1.value = 15;
+      $('lcFee2Label').textContent = 'FBA fulfilment fee'; f2.value = 3.50;
+      $('lcFee3Label').textContent = 'Advertising (TACoS)'; f3.value = 10;
+      p.value = 24.99;
+    } else if (ch === 'dtc') {
+      $('lcPriceLabel').textContent = 'Website selling price';
+      $('lcFee1Label').textContent = 'Payment fee'; f1.value = 2.9;
+      $('lcFee2Label').textContent = 'Ad spend per order'; f2.value = 8;
+      $('lcFee3Label').textContent = 'Not used'; f3.value = 0;
+      p.value = 19.99;
+    } else {
+      $('lcPriceLabel').textContent = 'Wholesale price to retailer';
+      $('lcFee1Label').textContent = 'Not used'; f1.value = 0;
+      $('lcFee2Label').textContent = 'Not used'; f2.value = 0;
+      $('lcFee3Label').textContent = 'Not used'; f3.value = 0;
+      p.value = 9.99;
+    }
+    render();
+  }
+
+  $('lcHsBtn').addEventListener('click', function () {
+    var q = ($('lcProduct').value || '').toLowerCase().trim();
+    var box = $('lcHsResults');
+    $('lcHsHint').textContent = 'Suggestions are HS6 only. Duty depends on the 8–10 digit national code and any trade measures.';
+    if (!q) { box.style.display = 'none'; return; }
+    var words = q.split(/[\s,]+/);
+    var hits = HS.filter(function (h) {
+      return h.k.some(function (k) { return words.some(function (w) { return w.length > 2 && k.indexOf(w) !== -1; }); });
+    }).slice(0, 4);
+    if (!hits.length) {
+      box.innerHTML = '<div class="lc-hs-item"><div><b>No match in our short list</b><small>Use the official tariff link below, or send us the product for classification.</small></div></div>';
+      box.style.display = 'block';
+      return;
+    }
+    var country = $('lcCountry').value;
+    box.innerHTML = hits.map(function (h) {
+      var link = LINKS[country];
+      var href = (country === 'US' || country === 'UK') ? link + encodeURIComponent(h.hs) : link;
+      return '<div class="lc-hs-item"><div><b>' + h.hs + '</b><small>' + h.d + '</small></div><div style="display:flex;gap:8px;align-items:center"><a href="' + href + '" target="_blank" rel="noopener" style="font-size:12px">Official</a><button type="button" class="lc-hs-use" data-hs="' + h.hs + '">Use</button></div></div>';
+    }).join('');
+    box.style.display = 'block';
+    box.querySelectorAll('.lc-hs-use').forEach(function (b) {
+      b.addEventListener('click', function () {
+        $('lcHs').value = b.getAttribute('data-hs');
+        $('lcHsHint').textContent = 'HS6 ' + b.getAttribute('data-hs') + ' selected. Enter the duty rate from your national tariff.';
+        box.style.display = 'none';
+      });
+    });
+  });
+
+  $('lcCountry').addEventListener('change', function () {
+    el.lcVat.value = VAT[this.value];
+    render();
+  });
+
+  document.querySelectorAll('#lcChannel button').forEach(function (b) {
+    b.addEventListener('click', function () { setChannel(b.getAttribute('data-channel')); });
+  });
+
+  document.querySelectorAll('#lcFMode button').forEach(function (b) {
+    b.addEventListener('click', function () { setFMode(b.getAttribute('data-fmode')); });
+  });
+
+  $('lcFApply').addEventListener('click', function () {
+    if (fmode === 'quote') return;
+    var f = FREIGHT[fmode];
+    var q = Math.max(num('lcFQty'), f.min);
+    $('lcFreight').value = Math.round(q * num('lcFRate'));
+    if (fmode === 'ddp') $('lcDdp').checked = true;
+    render();
+  });
+
+  $('lcDdp').addEventListener('change', render);
+
+  fields.forEach(function (id) { el[id].addEventListener('input', render); });
+
+  $('lcReset').addEventListener('click', function () {
+    $('lcCountry').value = 'US'; el.lcVat.value = 0;
+    ['lcFob','lcQty','lcFreight','lcInsurance','lcDuty','lcExtra','lcAgent','lcOther','lcReturns','lcTarget'].forEach(function (id) {
+      el[id].value = { lcFob: 4.20, lcQty: 1000, lcFreight: 1800, lcInsurance: 0.5, lcDuty: 5, lcExtra: 0, lcAgent: 5, lcOther: 300, lcReturns: 3, lcTarget: 20 }[id];
+    });
+    $('lcHs').value = ''; $('lcProduct').value = ''; $('lcHsResults').style.display = 'none';
+    $('lcDdp').checked = false;
+    setFMode('quote');
+    setChannel('amazon');
+  });
+
+  setChannel('amazon');
+  setFMode('quote');
+})();
+</script>
+</body></html>
