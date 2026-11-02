@@ -19,27 +19,54 @@ jobs:
       - name: Generate sitemap.xml
         run: |
           cat > generate_sitemap.py << 'EOF'
-          import os, datetime
+          import os, subprocess, datetime
+
+          TODAY = datetime.date.today().isoformat()
+
+          def last_commit_date(rel):
+              # File mtime is just the checkout time in CI — use the real commit date.
+              try:
+                  out = subprocess.check_output(
+                      ['git', 'log', '-1', '--format=%cs', '--', rel], text=True).strip()
+                  return out or TODAY
+              except Exception:
+                  return TODAY
+
+          # Non-content directories and files
+          SKIP_DIRS = {'.github', '.git', 'node_modules', 'assets', 'images',
+                       'downloads', 'preview', 'scripts', 'data', 'screenshots',
+                       'blog-next', '.vscode', '__pycache__', '_next'}
+          SKIP_FILES = {'404.html', 'index-legacy.html'}
+          # Pages that 301 elsewhere — never list them in the sitemap
+          REDIRECTED = {
+              '/products/outdoor-sports',
+              '/products/all-products',
+              '/services/supplier-verification',
+              '/services/factory-audit',
+              '/services/amazon-fba-prep-labeling',
+          }
+
           urls = []
           for root, dirs, files in os.walk('.'):
-              # 跳过 .github, .git, node_modules, assets, images
-              dirs[:] = [d for d in dirs if d not in ['.github', '.git', 'node_modules', 'assets', 'images', 'downloads', 'preview']]
+              dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
               for f in files:
-                  if f == 'index.html':
-                      path = os.path.relpath(os.path.join(root, f), '.')
-                      # index.html -> /  ; about/index.html -> /about/
-                      if path == './index.html':
-                          loc = 'https://www.milebond.com/'
-                      else:
-                          loc = 'https://www.milebond.com/' + os.path.dirname(path).lstrip('./') + '/'
-                      mtime = os.path.getmtime(os.path.join(root, f))
-                      lastmod = datetime.datetime.utcfromtimestamp(mtime).strftime('%Y-%m-%d')
-                      urls.append((loc, lastmod))
-                  elif f.endswith('.html') and root == '.':
-                      loc = 'https://www.milebond.com/' + f
-                      mtime = os.path.getmtime(f)
-                      lastmod = datetime.datetime.utcfromtimestamp(mtime).strftime('%Y-%m-%d')
-                      urls.append((loc, lastmod))
+                  if not f.endswith('.html'):
+                      continue
+                  rel = os.path.relpath(os.path.join(root, f), '.').replace(os.sep, '/')
+                  if rel in SKIP_FILES:
+                      continue
+                  if rel == 'index.html':
+                      path = '/'
+                  elif f == 'index.html':
+                      path = '/' + os.path.dirname(rel) + '/'
+                  else:
+                      # Serving layer 308s *.html to the clean URL
+                      path = '/' + rel[:-5]
+                  if path.rstrip('/') in REDIRECTED:
+                      continue
+                  loc = 'https://www.milebond.com' + path
+                  urls.append((loc, last_commit_date(rel)))
+
           urls = sorted(set(urls))
           with open('sitemap.xml', 'w') as out:
               out.write('<?xml version="1.0" encoding="UTF-8"?>\n')
