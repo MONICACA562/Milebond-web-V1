@@ -1,3 +1,11 @@
 # Static imagery — filenames are stable, so cache aggressively
 /images/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Self-hosted fonts never change
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Compiled CSS can change on deploy — short cache
+/assets/*.css
+  Cache-Control: public, max-age=3600

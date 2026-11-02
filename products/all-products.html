@@ -22,9 +22,6 @@
   <meta name="twitter:title" content="All Product Categories | MileBond — China Sourcing Agent">
   <meta name="twitter:description" content="Browse all product categories available for sourcing from China.">
   <meta name="twitter:image" content="https://www.milebond.com/images/blog/china-supplier-vetting-2026.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -329,8 +326,10 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 </style>
 </style>
 
-<!-- Tailwind CDN first, then config assignment → guaranteed custom colors register -->
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/assets/tailwind.css">
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
 <style id="nav-mobile-css">
 /* Mobile drawer: collapsed by default, scrolls when taller than the viewport */
 .mobile-menu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
@@ -379,8 +378,6 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 #navbar .hover\:bg-brandgray-50:hover{background-color:#f3f1ea}
 #navbar .hover\:bg-amber-600:hover{background-color:#7a5024}
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link href="https://miaoda.feishu.cn/fonts/css2?family=Fraunces:opsz,wght@9..144,400..900&display=swap" rel="stylesheet">
 <style id="nav-canonical">
 /* Canonical navbar — keeps every page rendering like the homepage */
 #navbar{background:#fff;border-bottom:1px solid #e6e3d8}
