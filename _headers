@@ -1,0 +1,7 @@
+# Optimized image assets — content-addressed filenames never change
+/images/cdn/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Locally hosted imagery
+/images/*
+  Cache-Control: public, max-age=2592000
