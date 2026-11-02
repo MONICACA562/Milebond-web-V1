@@ -1,6 +1,6 @@
-/* Shared quote / inquiry form handler — validation, file check, Web3Forms submit, lead event */
+/* Shared quote / inquiry form handler — validation, file check, native FormSubmit post, lead event */
 (function () {
-  var MAX_FILE = 5 * 1024 * 1024;
+  var MAX_FILE = 10 * 1024 * 1024;
   var forms = document.querySelectorAll('form[data-quote-form]');
   if (!forms.length) return;
 
@@ -26,6 +26,7 @@
     var source = form.querySelector('input[name="source_page"]');
     var pageUrl = form.querySelector('input[name="page_url"]');
     var type = form.getAttribute('data-form-type') || 'quote';
+    var sending = false;
 
     function setStatus(msg, isError) {
       if (!status) return;
@@ -35,10 +36,6 @@
 
     function fail(msg) {
       setStatus(msg, true);
-      if (btn) {
-        btn.disabled = false;
-        btn.textContent = btn.getAttribute('data-label') || 'Send Inquiry →';
-      }
       return false;
     }
 
@@ -49,7 +46,7 @@
       file.addEventListener('change', function () {
         if (file.files && file.files.length && file.files[0].size > MAX_FILE) {
           file.value = '';
-          setStatus('That file is larger than 5 MB. Please attach a smaller file or email it to info@milebond.com.', true);
+          setStatus('That file is larger than 10 MB. Please email it to info@milebond.com instead.', true);
         } else {
           setStatus('', false);
         }
@@ -57,7 +54,10 @@
     }
 
     form.addEventListener('submit', function (e) {
-      e.preventDefault();
+      if (sending) {
+        e.preventDefault();
+        return;
+      }
       setStatus('', false);
 
       var data = new FormData(form);
@@ -65,52 +65,40 @@
       var email = String(data.get('email') || '').trim();
       var message = String(data.get('message') || '').trim();
 
-      if (data.get('botcheck')) return false;
-      if (!name) return fail('Please enter your name.');
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return fail('Please enter a valid email address.');
-      if (!data.get('category')) return fail('Please select a product category.');
-      if (!data.get('service')) return fail('Please select the service you need.');
-      if (!message) return fail('Please describe what you are sourcing.');
-      if (!data.get('consent')) return fail('Please accept the privacy terms before sending.');
+      if (data.get('_honey')) {
+        e.preventDefault();
+        return;
+      }
+      if (!name) { e.preventDefault(); return fail('Please enter your name.'); }
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        e.preventDefault();
+        return fail('Please enter a valid email address.');
+      }
+      if (!data.get('category')) { e.preventDefault(); return fail('Please select a product category.'); }
+      if (!data.get('service')) { e.preventDefault(); return fail('Please select the service you need.'); }
+      if (!message) { e.preventDefault(); return fail('Please describe what you are sourcing.'); }
+      if (!data.get('consent')) { e.preventDefault(); return fail('Please accept the privacy terms before sending.'); }
       if (file && file.files && file.files.length && file.files[0].size > MAX_FILE) {
-        return fail('That file is larger than 5 MB. Please attach a smaller file.');
+        e.preventDefault();
+        return fail('That file is larger than 10 MB. Please email it to info@milebond.com instead.');
       }
 
-      if (pageUrl) pageUrl.value = location.href;
-      if (source && !source.value) source.value = location.href;
+      if (pageUrl) pageUrl.value = window.location.href;
+      if (source && !source.value) source.value = window.location.href;
 
+      sending = true;
       if (btn) {
         btn.setAttribute('data-label', btn.textContent);
         btn.disabled = true;
         btn.textContent = 'Sending…';
       }
 
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      })
-        .then(function (r) { return r.json(); })
-        .then(function (d) {
-          if (d && d.success) {
-            try {
-              window.dataLayer = window.dataLayer || [];
-              window.dataLayer.push({ event: 'generate_lead', form_type: type });
-            } catch (err) { /* noop */ }
-            window.location.href = '/thank-you?type=' + encodeURIComponent(type);
-            return;
-          }
-          fail('Something went wrong. Please try again or email info@milebond.com.');
-        })
-        .catch(function () {
-          fail('Network error. Please try again or email info@milebond.com.');
-        })
-        .then(function () {
-          if (btn && btn.disabled) {
-            btn.disabled = false;
-            btn.textContent = btn.getAttribute('data-label') || 'Send Inquiry →';
-          }
-        });
+      try {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'generate_lead', form_type: type });
+      } catch (err) { /* noop */ }
+
+      /* Native POST continues to https://formsubmit.co/... with all fields and attachments */
     });
   });
 })();
