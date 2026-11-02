@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="Case study cover: DIY craft kits, unit cost down 10 percent, almost zero new quality reviews, return rate reduced">
+  <rect width="1200" height="900" fill="#0a2a2b"/>
+  <circle cx="1080" cy="120" r="280" fill="#123b3d"/>
+  <circle cx="1080" cy="120" r="180" fill="#164a4c"/>
+  <text x="80" y="120" fill="#c08648" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="4">MILEBOND · CASE STUDY</text>
+  <text x="80" y="250" fill="#ffffff" font-family="Georgia, serif" font-size="66" font-weight="700">DIY Craft Kits</text>
+  <text x="80" y="330" fill="#ffffff" font-family="Georgia, serif" font-size="66" font-weight="700">10+ Components</text>
+  <text x="80" y="392" fill="#cdc8b8" font-family="Arial, Helvetica, sans-serif" font-size="26">Toy set · Amazon FBA · USA</text>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="80" y="560" fill="#c08648" font-size="88" font-weight="700">-10%</text>
+    <text x="80" y="604" fill="#ffffff" font-size="24">Total unit cost</text>
+    <text x="480" y="560" fill="#c08648" font-size="88" font-weight="700">~0</text>
+    <text x="480" y="604" fill="#ffffff" font-size="24">new QC reviews in 2 years</text>
+    <text x="880" y="560" fill="#c08648" font-size="88" font-weight="700">10+</text>
+    <text x="880" y="604" fill="#ffffff" font-size="24">suppliers consolidated</text>
+  </g>
+  <text x="80" y="840" fill="#8fa3a3" font-family="Arial, Helvetica, sans-serif" font-size="20">Client and supplier names anonymized</text>
+</svg>

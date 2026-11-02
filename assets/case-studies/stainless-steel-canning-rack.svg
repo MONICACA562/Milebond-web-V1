@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="Case study cover: stainless steel canning rack, MOQ down 70 percent, unit price down 51 percent, lead time down 50 percent">
+  <rect width="1200" height="900" fill="#0a2a2b"/>
+  <circle cx="1080" cy="120" r="280" fill="#123b3d"/>
+  <circle cx="1080" cy="120" r="180" fill="#164a4c"/>
+  <text x="80" y="120" fill="#c08648" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="4">MILEBOND · CASE STUDY</text>
+  <text x="80" y="250" fill="#ffffff" font-family="Georgia, serif" font-size="66" font-weight="700">Stainless Steel</text>
+  <text x="80" y="330" fill="#ffffff" font-family="Georgia, serif" font-size="66" font-weight="700">Canning Rack</text>
+  <text x="80" y="392" fill="#cdc8b8" font-family="Arial, Helvetica, sans-serif" font-size="26">2-pack · Amazon FBA · USA</text>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="80" y="560" fill="#c08648" font-size="88" font-weight="700">-70%</text>
+    <text x="80" y="604" fill="#ffffff" font-size="24">MOQ: 1,000 → 300 pcs</text>
+    <text x="480" y="560" fill="#c08648" font-size="88" font-weight="700">-51%</text>
+    <text x="480" y="604" fill="#ffffff" font-size="24">Unit price: ¥11 → ¥5.40</text>
+    <text x="880" y="560" fill="#c08648" font-size="88" font-weight="700">-50%</text>
+    <text x="880" y="604" fill="#ffffff" font-size="24">Lead time: 40 → 20 days</text>
+  </g>
+  <text x="80" y="840" fill="#8fa3a3" font-family="Arial, Helvetica, sans-serif" font-size="20">Client and supplier names anonymized</text>
+</svg>
