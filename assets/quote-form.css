@@ -1,0 +1,124 @@
+/* Shared quote / inquiry form — used on quote page, contact page, homepage, product modals and service pages */
+.qf {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+  margin-top: 20px;
+  text-align: left;
+}
+.qf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.qf-full { grid-column: 1 / -1; }
+.qf-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #364153;
+  line-height: 1.35;
+}
+.qf-req { color: #b42318; margin-left: 2px; }
+.qf-input,
+.qf-select,
+.qf-textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #d8d5ca;
+  border-radius: 9px;
+  background: #fff;
+  color: #0a2a2b;
+  font-size: 14px;
+  font-family: inherit;
+  line-height: 1.4;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.qf-input:focus,
+.qf-select:focus,
+.qf-textarea:focus {
+  border-color: #008138;
+  box-shadow: 0 0 0 3px rgba(0, 129, 56, .12);
+}
+.qf-textarea { min-height: 96px; resize: vertical; }
+.qf-price { display: flex; gap: 8px; }
+.qf-price .qf-input { flex: 1; min-width: 0; }
+.qf-price .qf-select { width: 86px; flex: none; padding-left: 8px; padding-right: 8px; }
+.qf-file {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px dashed #cdc8b8;
+  border-radius: 9px;
+  background: #fafaf7;
+  font-size: 13px;
+  color: #5a5950;
+  cursor: pointer;
+}
+.qf-file::file-selector-button {
+  margin-right: 10px;
+  padding: 7px 12px;
+  border: 0;
+  border-radius: 999px;
+  background: #0a2a2b;
+  color: #fff;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.qf-consent {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #5a5950;
+}
+.qf-consent input { margin-top: 3px; accent-color: #008138; flex: none; }
+.qf-consent a { color: #0a2a2b; text-decoration: underline; }
+.qf-submit {
+  grid-column: 1 / -1;
+  width: 100%;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: #008138;
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s, box-shadow .15s;
+}
+.qf-submit:hover { background: #0f3d3e; box-shadow: 0 12px 28px rgba(0, 129, 56, .28); }
+.qf-submit:disabled { opacity: .65; cursor: wait; }
+.qf-status {
+  grid-column: 1 / -1;
+  min-height: 18px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.qf-status.err { color: #b42318; }
+.qf-hint {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #6a7282;
+}
+.qf-hint a { color: #0a2a2b; font-weight: 600; }
+
+/* Keep the taller unified form scrollable inside the product modal */
+#quoteModal .qm-body {
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+@media (max-width: 640px) {
+  .qf { grid-template-columns: 1fr; }
+  .qf-price .qf-select { width: 80px; }
+}

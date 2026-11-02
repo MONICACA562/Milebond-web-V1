@@ -36,7 +36,7 @@ jobs:
           SKIP_DIRS = {'.github', '.git', 'node_modules', 'assets', 'images',
                        'downloads', 'preview', 'scripts', 'data', 'screenshots',
                        'blog-next', '.vscode', '__pycache__', '_next'}
-          SKIP_FILES = {'404.html', 'index-legacy.html'}
+          SKIP_FILES = {'404.html', 'index-legacy.html', 'thank-you.html'}
           # Pages that 301 elsewhere — never list them in the sitemap
           REDIRECTED = {
               '/products/outdoor-sports',

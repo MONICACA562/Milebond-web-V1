@@ -21,6 +21,7 @@
 <link rel="preload" as="image" href="/images/cdn/PUeubwVdqoSS8WxAP5ncC8YXnmf.jpg" fetchpriority="high">
 <link rel="stylesheet" href="/assets/tailwind.css">
 <link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/quote-form.css">
 <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -1278,82 +1279,131 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <div class="cb-right" id="quote">
         <h3 class="cb-form-title">Request a Free Quote</h3>
         <p class="cb-form-sub">Tell us what you're sourcing — we reply with a plan and 2–3 quotes.</p>
-        <form class="cb-form" id="cbForm">
-          <input type="hidden" name="access_key" value="e2b6db8d-48d6-4faa-ad15-6b2b0a15402c">
-          <input type="hidden" name="_subject" value="New Inquiry from MileBond Website">
-          <input type="hidden" name="from_name" value="MileBond Website">
-          <input type="hidden" name="source_page" id="cbSource">
+        <form class="qf" id="cbForm" data-quote-form data-form-type="main" method="POST">
+  <input type="hidden" name="access_key" value="e2b6db8d-48d6-4faa-ad15-6b2b0a15402c">
+  <input type="hidden" name="_subject" value="New Sourcing Inquiry - Milebond Website">
+  <input type="hidden" name="from_name" value="Milebond Website">
+  <input type="hidden" name="source_page" id="cbSource">
+  <input type="hidden" name="page_url" value="">
+  <input type="hidden" name="utm" value="">
+  <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
 
-          <div class="cb-field">
-            <label class="cb-label" for="cbName">Your Name<em>*</em></label>
-            <input class="cb-input" type="text" id="cbName" name="name" placeholder="Full name" required>
-          </div>
-          <div class="cb-field">
-            <label class="cb-label" for="cbEmail">Email Address</label>
-            <input class="cb-input" type="email" id="cbEmail" name="email" placeholder="you@company.com">
-          </div>
-
-          <div class="cb-field cb-full">
-            <label class="cb-label" for="cbPhone">Phone Number</label>
-            <input class="cb-input" type="tel" id="cbPhone" name="phone" placeholder="+1 234 567 8900">
-          </div>
-
-          <div class="cb-field cb-full">
-            <label class="cb-label" for="cbCategory">Select Product Category<em>*</em></label>
-            <select class="cb-select" id="cbCategory" name="category" required>
-              <option value="">Select a category…</option>
-              <option>Home &amp; Kitchen</option>
-              <option>Pet Supplies</option>
-              <option>Beauty Tools</option>
-              <option>Arts &amp; Crafts</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <div class="cb-field cb-full">
-            <label class="cb-label" for="cbProduct">Product Name / SKU</label>
-            <input class="cb-input" type="text" id="cbProduct" name="product" placeholder="e.g. Storage Box 500ml">
-          </div>
-
-          <div class="cb-field">
-            <label class="cb-label" for="cbQty">Quantity Needed (optional)</label>
-            <input class="cb-input" type="text" id="cbQty" name="quantity" placeholder="e.g. 2,000 pcs">
-          </div>
-          <div class="cb-field">
-            <label class="cb-label" for="cbMoq">MOQ Preference</label>
-            <select class="cb-select" id="cbMoq" name="moq">
-              <option value="">Select…</option>
-              <option>1 Carton</option>
-              <option>$100 Minimum</option>
-              <option>Custom</option>
-            </select>
-          </div>
-
-          <div class="cb-field cb-full">
-            <label class="cb-label" for="cbService">Service Type Needed<em>*</em></label>
-            <select class="cb-select" id="cbService" name="service" required>
-              <option value="">Select a service…</option>
-              <option>Product Sourcing</option>
-              <option>Private Label &amp; OEM</option>
-              <option>Quality Control &amp; Compliance</option>
-              <option>Amazon Brand Support</option>
-              <option>Wholesale Bulk</option>
-            </select>
-          </div>
-
-          <div class="cb-field cb-full">
-            <label class="cb-label" for="cbMsg">Please describe your requirements in detail</label>
-            <textarea class="cb-textarea" id="cbMsg" name="message" placeholder="Product specs, target price, compliance needs (CE / FDA / CPC…), timeline…"></textarea>
-          </div>
-
-          <label class="cb-consent">
-            <input type="checkbox" name="consent" value="Agreed">
-            <span>I agree to be contacted about my inquiry. See our <a href="/terms" style="white-space:nowrap">Terms of Service</a> and <a href="/privacy-policy" style="white-space:nowrap">Privacy Policy</a>.</span>
-          </label>
-
-          <button type="submit" class="cb-submit">Request Free Quote →</button>
-          <p class="cb-note"><span class="dot"></span>Prefer to chat? WhatsApp us — average reply within 6 hours (China time).</p>
-        </form>
+  <div class="qf-field">
+    <label class="qf-label" for="cbName">Your name<span class="qf-req">*</span></label>
+    <input class="qf-input" type="text" id="cbName" name="name" required autocomplete="name" placeholder="Full name">
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="cbEmail">Work email<span class="qf-req">*</span></label>
+    <input class="qf-input" type="email" id="cbEmail" name="email" required autocomplete="email" placeholder="you@company.com">
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="cbContact">WhatsApp / WeChat</label>
+    <input class="qf-input" type="text" id="cbContact" name="contact" autocomplete="tel" placeholder="+1 234 567 8900 or WeChat ID">
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="cbCompany">Company</label>
+    <input class="qf-input" type="text" id="cbCompany" name="company" autocomplete="organization" placeholder="Company name (optional)">
+  </div>
+  <div class="qf-field qf-full">
+    <label class="qf-label" for="cbCategory">Product category<span class="qf-req">*</span></label>
+    <select class="qf-select" id="cbCategory" name="category" required>
+      <option value="">Select a category&hellip;</option>
+      <option>Home &amp; Kitchen</option>
+      <option>Pet Supplies</option>
+      <option>Beauty Tools</option>
+      <option>Arts &amp; Crafts</option>
+      <option>Clothing, Shoes &amp; Jewelry</option>
+      <option>Toys &amp; Games</option>
+      <option>Sports &amp; Outdoors</option>
+      <option>Electronics</option>
+      <option>Health &amp; Household</option>
+      <option>Office &amp; Stationery</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="cbProduct">Product name</label>
+    <input class="qf-input" type="text" id="cbProduct" name="product" placeholder="e.g. Silicone kitchen utensil set">
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="cbSku">SKU (if known)</label>
+    <input class="qf-input" type="text" id="cbSku" name="sku" placeholder="e.g. HK-001">
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="cbQty">Quantity</label>
+    <input class="qf-input" type="text" id="cbQty" name="qty" placeholder="e.g. 2,000 pcs / 10 cartons">
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="cbPrice">Target price</label>
+    <div class="qf-price">
+      <input class="qf-input" type="text" id="cbPrice" name="price" placeholder="e.g. 2.50">
+      <select class="qf-select" name="currency" aria-label="Currency">
+        <option>USD</option><option>EUR</option><option>GBP</option><option>CNY</option>
+      </select>
+    </div>
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="cbTimeline">Timeline</label>
+    <select class="qf-select" id="cbTimeline" name="timeline">
+      <option value="">Select&hellip;</option>
+      <option>ASAP (within 2 weeks)</option>
+      <option>Within 1 month</option>
+      <option>1-3 months</option>
+      <option>Just exploring</option>
+    </select>
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="cbService">Service needed<span class="qf-req">*</span></label>
+    <select class="qf-select" id="cbService" name="service" required>
+      <option value="">Select a service&hellip;</option>
+      <option>Product Sourcing</option>
+      <option>Private Label &amp; OEM</option>
+      <option>Product Development</option>
+      <option>Quality Control &amp; Inspection</option>
+      <option>Factory Audit &amp; Supplier Verification</option>
+      <option>Product Compliance</option>
+      <option>Warehousing &amp; Shipping</option>
+      <option>Amazon Brand Management</option>
+      <option>Supply Chain Optimization</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="cbChannel">Sales channel</label>
+    <select class="qf-select" id="cbChannel" name="channel">
+      <option value="">Select&hellip;</option>
+      <option>Amazon FBA</option>
+      <option>Amazon FBM</option>
+      <option>Shopify / DTC</option>
+      <option>Wholesale / Offline</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="qf-field qf-full">
+    <label class="qf-label" for="cbSupplier">Current supplier</label>
+    <select class="qf-select" id="cbSupplier" name="supplier">
+      <option value="">Select&hellip;</option>
+      <option>No supplier yet</option>
+      <option>Have a supplier, need a comparison</option>
+      <option>Have a supplier, need QC / shipping only</option>
+    </select>
+  </div>
+  <div class="qf-field qf-full">
+    <label class="qf-label" for="cbMsg">Requirements<span class="qf-req">*</span></label>
+    <textarea class="qf-textarea" id="cbMsg" name="message" required placeholder="Specs, materials, packaging, compliance (CE / FDA / CPC), target market and timeline..."></textarea>
+  </div>
+  <div class="qf-field qf-full">
+    <label class="qf-label" for="cbFile">Attach a drawing, photo or spec sheet <span style="font-weight:500;color:#6a7282">(optional, max 5 MB)</span></label>
+    <input class="qf-file" type="file" id="cbFile" name="attachment" accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx,.xls,.xlsx,.csv,.zip">
+  </div>
+  <label class="qf-consent">
+    <input type="checkbox" name="consent" value="Agreed" required>
+    <span>I agree to be contacted about this inquiry and have read the <a href="/terms">Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a>.<span class="qf-req">*</span></span>
+  </label>
+  <button type="submit" class="qf-submit" data-label="Request Free Quote &rarr;">Request Free Quote &rarr;</button>
+  <p class="qf-status" role="status" aria-live="polite"></p>
+  <p class="qf-hint">Prefer to chat? <a href="https://wa.me/8615057960102" target="_blank" rel="noopener">WhatsApp us</a> - average reply within 6 hours (China time).</p>
+</form>
       </div>
     </div>
   </div>
@@ -1593,52 +1643,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   })();
 
   // 5) Homepage contact/quote form — Web3Forms submit (same backend as /free-quote)
-  (function () {
-    const form = document.getElementById('cbForm');
-    if (!form) return;
-    const btn = form.querySelector('.cb-submit');
-    const label = btn.textContent;
-    const src = document.getElementById('cbSource');
-    if (src) src.value = location.href;
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const d = new FormData(form);
-      const name = (d.get('name') || '').trim();
-      const email = (d.get('email') || '').trim();
-      const category = (d.get('category') || '').trim();
-      const service = (d.get('service') || '').trim();
-      if (!name) { alert('Please enter your name.'); return; }
-      if (!category) { alert('Please select a product category.'); return; }
-      if (!service) { alert('Please select the service type you need.'); return; }
-      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
-
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: d,
-        headers: { 'Accept': 'application/json' }
-      })
-        .then(r => r.json())
-        .then(x => {
-          if (x.success) {
-            alert("Thank you! We've received your inquiry and will contact you within 24 hours.");
-            form.reset();
-            if (src) src.value = location.href;
-          } else {
-            alert('Oops! Something went wrong. Try again or email info@milebond.com');
-          }
-        })
-        .catch(() => {
-          alert('Network error. Check your connection or email info@milebond.com');
-        })
-        .then(() => {
-          btn.disabled = false;
-          btn.textContent = label;
-        });
-    });
-  })();
+  
 
   // 6) Hero arrow controls — drive the existing carousel through its dot buttons
   (function () {
@@ -1670,5 +1675,6 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     next.addEventListener('click', function () { step(1); });
   })();
 </script>
+<script src="/assets/quote-form.js" defer></script>
 </body>
 </html>
