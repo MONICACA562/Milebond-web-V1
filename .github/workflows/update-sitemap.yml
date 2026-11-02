@@ -1,0 +1,64 @@
+name: Update Sitemap
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 18 * * *'   # 每天 UTC 18:00（北京时间凌晨 2 点）自动跑一次
+  workflow_dispatch:        # 也支持手动触发
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate sitemap.xml
+        run: |
+          cat > generate_sitemap.py << 'EOF'
+          import os, datetime
+          urls = []
+          for root, dirs, files in os.walk('.'):
+              # 跳过 .github, .git, node_modules, assets, images
+              dirs[:] = [d for d in dirs if d not in ['.github', '.git', 'node_modules', 'assets', 'images', 'downloads', 'preview']]
+              for f in files:
+                  if f == 'index.html':
+                      path = os.path.relpath(os.path.join(root, f), '.')
+                      # index.html -> /  ; about/index.html -> /about/
+                      if path == './index.html':
+                          loc = 'https://www.milebond.com/'
+                      else:
+                          loc = 'https://www.milebond.com/' + os.path.dirname(path).lstrip('./') + '/'
+                      mtime = os.path.getmtime(os.path.join(root, f))
+                      lastmod = datetime.datetime.utcfromtimestamp(mtime).strftime('%Y-%m-%d')
+                      urls.append((loc, lastmod))
+                  elif f.endswith('.html') and root == '.':
+                      loc = 'https://www.milebond.com/' + f
+                      mtime = os.path.getmtime(f)
+                      lastmod = datetime.datetime.utcfromtimestamp(mtime).strftime('%Y-%m-%d')
+                      urls.append((loc, lastmod))
+          urls = sorted(set(urls))
+          with open('sitemap.xml', 'w') as out:
+              out.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+              out.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+              for loc, lastmod in urls:
+                  out.write(f'  <url><loc>{loc}</loc><lastmod>{lastmod}</lastmod><changefreq>weekly</changefreq></url>\n')
+              out.write('</urlset>\n')
+          print(f'Generated sitemap with {len(urls)} URLs')
+          EOF
+          python3 generate_sitemap.py
+
+      - name: Commit sitemap.xml if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          if git diff --staged --quiet; then
+            echo "No changes to sitemap.xml"
+          else
+            git commit -m "chore: auto-update sitemap.xml [skip ci]"
+            git push
+          fi
