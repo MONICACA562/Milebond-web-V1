@@ -21,5 +21,10 @@
 /products/all-products/ /all-products 301
 /products/all-products.html /all-products 301
 
+# Legacy pricing shortcut → the live sourcing fees page.
+/pricing /services/sourcing-fees-pricing 301
+/pricing/ /services/sourcing-fees-pricing 301
+/pricing.html /services/sourcing-fees-pricing 301
+
 # Real 404 for unmatched paths — stop silently serving the homepage.
 /* /404.html 404
