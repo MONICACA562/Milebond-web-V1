@@ -1,0 +1,29 @@
+/* Shared quote modal - extracted from the product page template */
+.qm-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:2500;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .2s}
+.qm-overlay.open{display:flex;opacity:1}
+.qm-box{background:#fff;border-radius:10px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.2);position:relative;transform:translateY(20px);transition:transform .25s}
+.qm-overlay.open .qm-box{transform:translateY(0)}
+.qm-header{padding:24px 28px 0;display:flex;justify-content:space-between;align-items:flex-start}
+.qm-title{font-family:'Fraunces',sans-serif;font-size:22px;font-weight:700;color:#0a2a2b;margin:0}
+.qm-subtitle{font-size:13px;color:#6a7282;margin-top:4px}
+.qm-close{background:none;border:none;font-size:28px;color:#99a1af;cursor:pointer;padding:0;line-height:1;transition:color .15s}
+.qm-close:hover{color:#0a2a2b}
+.qm-body{padding:20px 28px 28px}
+.qm-row{display:flex;gap:14px;margin-bottom:14px}
+.qm-row > .qm-field{flex:1}
+.qm-field{margin-bottom:0}
+.qm-field.qm-full{margin-bottom:14px}
+.qm-label{display:block;font-size:13px;font-weight:500;color:#0a2a2b;margin-bottom:6px}
+.qm-label .qm-req{color:#a06a30;margin-left:2px}
+.qm-input,.qm-textarea,.qm-select{width:100%;padding:11px 14px;border:1px solid #e6e3d8;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:#0a2a2b;background:#fff;transition:border-color .15s,box-shadow .15s;box-sizing:border-box}
+.qm-input:focus,.qm-textarea:focus,.qm-select:focus{outline:none;border-color:#a06a30;box-shadow:0 0 0 3px rgba(160,106,48,.1)}
+.qm-textarea{min-height:90px;resize:vertical}
+.qm-price-row{display:flex;gap:8px}
+.qm-price-row .qm-input{flex:1}
+.qm-price-row .qm-select{width:90px;flex-shrink:0}
+.qm-submit{width:100%;padding:13px;background:#a06a30;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:background .2s}
+.qm-submit:hover{background:#d66a1b}
+.qm-hint{font-size:11px;color:#99a1af;text-align:center;margin-top:10px}
+.qm-row{flex-direction:column;gap:0}
+
+@media(max-width:480px){.qm-row{flex-direction:column;gap:0}}

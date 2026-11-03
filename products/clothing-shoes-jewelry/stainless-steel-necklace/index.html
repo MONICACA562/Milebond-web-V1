@@ -241,6 +241,8 @@
 <link rel="icon" type="image/png" href="/assets/milebond-favicon.png">
 <link rel="stylesheet" href="/assets/tailwind.css">
 <link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/quote-form.css">
+<link rel="stylesheet" href="/assets/quote-modal.css">
 <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
 <style id="site-header-footer">
@@ -503,7 +505,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
     <!-- desktop CTA -->
     <div class="hidden md:block ml-1 shrink-0">
-      <a href="/#quote"
+      <a href="/#quote" onclick="openQuoteModal();return false;"
          class="nav-cta inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-amber hover:bg-amber-600 text-white font-semibold text-sm shadow-card transition-colors">
         Get a Quote
       </a>
@@ -604,7 +606,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <li><a href="/faq" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-semibold">FAQ</a></li>
 
       <li class="pt-3 mt-2 border-t border-brandgray-100">
-        <a href="/#quote"
+        <a href="/#quote" onclick="openQuoteModal();return false;"
            class="nav-cta block w-full text-center px-5 py-3 rounded-full bg-amber text-white font-semibold">
           Get a Quote
         </a>
@@ -612,6 +614,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     </ul>
   </div>
 </header>
+
 <div class="wrap">
   <div class="breadcrumb">
     <a href="/all-products">All Products</a> / <a href="/products/clothing-shoes-jewelry">Clothing Shoes & Jewelry</a> / <span>Stainless Steel Necklace</span>
@@ -624,13 +627,13 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     </div>
     <div class="qb-total">Est. total: <b id="totalEst">$0.00</b></div>
     <div class="qb-cta">
-      <a class="btn btn-orange" href="https://www.milebond.com/free-quote">Request a Quote</a>
+      <a class="btn btn-orange" href="https://www.milebond.com/free-quote" onclick="openQuoteModal();return false;">Request a Quote</a>
       <a class="btn btn-ghost" href="https://www.milebond.com/contact-us">Ask Us</a>
     </div>
   </div>
   <div class="keyfacts">
     <div class="keyfact"><div class="k">Material</div><div class="v">316L surgical stainless steel, 18K PVD plating</div></div>
-    <div class="keyfact"><div class="k">Size</div><div class="v">On request</div></div>
+    <div class="keyfact"><div class="k">Size</div><div class="v">5 × 3 × 3 in</div></div>
     <div class="keyfact"><div class="k">MOQ</div><div class="v">1000 pcs</div></div>
   </div>
   <div class="title-row">
@@ -708,9 +711,9 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
           <tr><th>Origin</th><td>China (factory direct)</td></tr>
           <tr><th>Certifications</th><td>Nickel-release · cadmium · lead reports on request</td></tr>
           <tr><th>Material</th><td>316L surgical stainless steel, 18K PVD plating</td></tr>
-          <tr><th>Sizes</th><td>On request</td></tr>
+          <tr><th>Sizes</th><td>5 × 3 × 3 in</td></tr>
           <tr><th>Care</th><td>Wipe with a soft jewellery cloth; keep dry and away from perfume / sweat to preserve the plating. Store flat in the provided pouch.</td></tr>
-          <tr><th>Packaging</th><td>On request (FBA-ready packaging options available)</td></tr>
+          <tr><th>Packaging</th><td>PP bag</td></tr>
           <tr><th>Lead Time</th><td>20–30 days production + 5–7 days shipping</td></tr>
           <tr><th>Payment Terms</th><td>30% deposit, balance before shipment (T/T or escrow)</td></tr>
           <tr><th>QC Standard</th><td>100% first-order inspection · AQL 2.5 sampling on repeat orders</td></tr>
@@ -1081,5 +1084,146 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     next.addEventListener('click', function () { step(1); });
   })();
 </script>
+<!-- ============ QUOTE MODAL ============ -->
+<div class="qm-overlay" id="quoteModal" data-category="Clothing, Shoes & Jewelry" onclick="closeQuoteModal(event)">
+  <div class="qm-box" onclick="event.stopPropagation()">
+    <div class="qm-header">
+      <div>
+        <h3 class="qm-title">Request a Quote</h3>
+        <div class="qm-subtitle">Fill in the form and we'll reply within 48 hours</div>
+      </div>
+      <button class="qm-close" onclick="closeQuoteModal()" aria-label="Close">×</button>
+    </div>
+    <form class="qf" id="quoteForm" data-quote-form data-form-type="modal" method="POST" action="https://formsubmit.co/a77a207a6c2f4b4b59770fa4b3fb3d69" enctype="multipart/form-data">
+  
+  <input type="hidden" name="_subject" value="New Sourcing Inquiry - Milebond Website">
+  <input type="hidden" name="_next" value="https://www.milebond.com/thank-you">
+  <input type="hidden" name="_template" value="table">
+  
+  <input type="hidden" name="source_page" id="qSource">
+  <input type="hidden" name="page_url" value="">
+  <input type="hidden" name="utm" value="">
+  <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+
+  <div class="qf-field">
+    <label class="qf-label" for="qName">Your name<span class="qf-req">*</span></label>
+    <input class="qf-input" type="text" id="qName" name="name" required autocomplete="name" placeholder="Full name">
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="qEmail">Work email<span class="qf-req">*</span></label>
+    <input class="qf-input" type="email" id="qEmail" name="email" required autocomplete="email" placeholder="you@company.com">
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="qContact">WhatsApp / WeChat</label>
+    <input class="qf-input" type="text" id="qContact" name="contact" autocomplete="tel" placeholder="+1 234 567 8900 or WeChat ID">
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="qCompany">Company</label>
+    <input class="qf-input" type="text" id="qCompany" name="company" autocomplete="organization" placeholder="Company name (optional)">
+  </div>
+  <div class="qf-field qf-full">
+    <label class="qf-label" for="qCategory">Product category<span class="qf-req">*</span></label>
+    <select class="qf-select" id="qCategory" name="category" required>
+      <option value="">Select a category&hellip;</option>
+      <option>Home &amp; Kitchen</option>
+      <option>Pet Supplies</option>
+      <option>Beauty Tools</option>
+      <option>Arts &amp; Crafts</option>
+      <option>Clothing, Shoes &amp; Jewelry</option>
+      <option>Toys &amp; Games</option>
+      <option>Sports &amp; Outdoors</option>
+      <option>Electronics</option>
+      <option>Health &amp; Household</option>
+      <option>Office &amp; Stationery</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="qProductView">Product name</label>
+    <input class="qf-input" type="text" id="qProductView" name="product" placeholder="e.g. Silicone kitchen utensil set">
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="qSkuView">SKU (if known)</label>
+    <input class="qf-input" type="text" id="qSkuView" name="sku" placeholder="e.g. HK-001">
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="qQty">Quantity</label>
+    <input class="qf-input" type="text" id="qQty" name="qty" placeholder="e.g. 2,000 pcs / 10 cartons">
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="qPrice">Target price</label>
+    <div class="qf-price">
+      <input class="qf-input" type="text" id="qPrice" name="price" placeholder="e.g. 2.50">
+      <select class="qf-select" name="currency" aria-label="Currency">
+        <option>USD</option><option>EUR</option><option>GBP</option><option>CNY</option>
+      </select>
+    </div>
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="qTimeline">Timeline</label>
+    <select class="qf-select" id="qTimeline" name="timeline">
+      <option value="">Select&hellip;</option>
+      <option>ASAP (within 2 weeks)</option>
+      <option>Within 1 month</option>
+      <option>1-3 months</option>
+      <option>Just exploring</option>
+    </select>
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="qService">Service needed<span class="qf-req">*</span></label>
+    <select class="qf-select" id="qService" name="service" required>
+      <option value="">Select a service&hellip;</option>
+      <option selected>Product Sourcing</option>
+      <option>Private Label &amp; OEM</option>
+      <option>Product Development</option>
+      <option>Quality Control &amp; Inspection</option>
+      <option>Factory Audit &amp; Supplier Verification</option>
+      <option>Product Compliance</option>
+      <option>Warehousing &amp; Shipping</option>
+      <option>Amazon Brand Management</option>
+      <option>Supply Chain Optimization</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="qf-field">
+    <label class="qf-label" for="qChannel">Sales channel</label>
+    <select class="qf-select" id="qChannel" name="channel">
+      <option value="">Select&hellip;</option>
+      <option>Amazon FBA</option>
+      <option>Amazon FBM</option>
+      <option>Shopify / DTC</option>
+      <option>Wholesale / Offline</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="qf-field qf-full">
+    <label class="qf-label" for="qSupplier">Current supplier</label>
+    <select class="qf-select" id="qSupplier" name="supplier">
+      <option value="">Select&hellip;</option>
+      <option>No supplier yet</option>
+      <option>Have a supplier, need a comparison</option>
+      <option>Have a supplier, need QC / shipping only</option>
+    </select>
+  </div>
+  <div class="qf-field qf-full">
+    <label class="qf-label" for="qMsg">Requirements<span class="qf-req">*</span></label>
+    <textarea class="qf-textarea" id="qMsg" name="message" required placeholder="Specs, materials, packaging, compliance (CE / FDA / CPC), target market and timeline..."></textarea>
+  </div>
+  <div class="qf-field qf-full">
+    <label class="qf-label" for="qFile">Attach a drawing, photo or spec sheet <span style="font-weight:500;color:#6a7282">(optional, max 10 MB)</span></label>
+    <input class="qf-file" type="file" id="qFile" name="attachment" accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx,.xls,.xlsx,.csv,.zip">
+  </div>
+  <label class="qf-consent">
+    <input type="checkbox" name="consent" value="Agreed" required>
+    <span>I agree to be contacted about this inquiry and have read the <a href="/terms">Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a>.<span class="qf-req">*</span></span>
+  </label>
+  <button type="submit" class="qf-submit" data-label="Send Inquiry &rarr;">Send Inquiry &rarr;</button>
+  <p class="qf-status" role="status" aria-live="polite"></p>
+  <p class="qf-hint">Prefer to chat? <a href="https://wa.me/8615057960102" target="_blank" rel="noopener">WhatsApp us</a> - average reply within 6 hours (China time).</p>
+</form>
+  </div>
+</div>
+<script src="/assets/quote-form.js" defer></script>
+<script src="/assets/quote-modal.js" defer></script>
 </body>
 </html>
