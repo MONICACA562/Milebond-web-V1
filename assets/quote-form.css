@@ -111,6 +111,47 @@
 }
 .qf-hint a { color: #0a2a2b; font-weight: 600; }
 
+/* Optional details — collapsed, so the first screen stays at 4 fields */
+.qf-more {
+  grid-column: 1 / -1;
+  border-top: 1px solid #e6e2d6;
+  padding-top: 12px;
+}
+.qf-more-sum {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #0a2a2b;
+}
+.qf-more-sum::-webkit-details-marker { display: none; }
+.qf-more-sum::before {
+  content: "+";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #eef3ef;
+  color: #008138;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+.qf-more[open] .qf-more-sum::before { content: "\2212"; }
+.qf-more-opt { font-weight: 500; color: #6a7282; }
+.qf-more-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+  margin-top: 14px;
+}
+
 /* Keep the taller unified form scrollable inside the product modal */
 #quoteModal .qm-body {
   max-height: calc(100vh - 48px);
@@ -120,5 +161,6 @@
 
 @media (max-width: 640px) {
   .qf { grid-template-columns: 1fr; }
+  .qf-more-grid { grid-template-columns: 1fr; }
   .qf-price .qf-select { width: 80px; }
 }

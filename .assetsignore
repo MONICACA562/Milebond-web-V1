@@ -1,0 +1,5 @@
+# Keep the static-asset bundle under Cloudflare's 20,000-file limit.
+# blog-next/ is a local Next.js workspace; its output is copied into /blog/ already.
+blog-next
+.github
+node_modules

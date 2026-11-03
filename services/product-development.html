@@ -926,6 +926,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 #navbar #mobileMenu .mobile-services > .ms-body a{padding:8px 12px;font-size:14px;font-weight:400;line-height:21px;color:#5a5950}
 #navbar #mobileMenu a.nav-cta{margin:12px 0 0;padding:12px 20px!important;height:48px;border-radius:9999px!important;background:#008138!important;color:#fff!important;font-size:16px!important;font-weight:600;line-height:24px;text-align:center}
 </style>
+<script src="/assets/analytics.js" defer></script>
 </head>
 <body>
 
@@ -1054,8 +1055,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
     <!-- desktop CTA -->
     <div class="hidden md:block ml-1 shrink-0">
-      <a href="/#quote"
-         class="nav-cta inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-amber hover:bg-amber-600 text-white font-semibold text-sm shadow-card transition-colors">
+      <a href="/free-quote"
+         class="nav-cta inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-amber hover:bg-amber-600 text-white font-semibold text-sm shadow-card transition-colors open-quote-modal">
         Get a Quote
       </a>
     </div>
@@ -1155,8 +1156,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <li><a href="/faq" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-semibold">FAQ</a></li>
 
       <li class="pt-3 mt-2 border-t border-brandgray-100">
-        <a href="/#quote"
-           class="nav-cta block w-full text-center px-5 py-3 rounded-full bg-amber text-white font-semibold">
+        <a href="/free-quote"
+           class="nav-cta block w-full text-center px-5 py-3 rounded-full bg-amber text-white font-semibold open-quote-modal">
           Get a Quote
         </a>
       </li>
@@ -1508,6 +1509,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   <input type="hidden" name="_subject" value="New Sourcing Inquiry - Milebond Website">
   <input type="hidden" name="_next" value="https://www.milebond.com/thank-you">
   <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_autoresponse" value="Thanks for your sourcing request. Monica from Milebond will reply within 24 hours (usually 6) with 2-3 quotes and a full cost breakdown. If you have a spec sheet, drawing or reference link, just reply to this email. Need it faster? WhatsApp +86 150 5796 0102.">
   
   <input type="hidden" name="source_page" value="Product Development Service">
   <input type="hidden" name="page_url" value="">
@@ -1515,24 +1517,35 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
 
   <div class="qf-field">
-    <label class="qf-label" for="devName">Your name<span class="qf-req">*</span></label>
-    <input class="qf-input" type="text" id="devName" name="name" required autocomplete="name" placeholder="Full name">
-  </div>
-  <div class="qf-field">
     <label class="qf-label" for="devEmail">Work email<span class="qf-req">*</span></label>
     <input class="qf-input" type="email" id="devEmail" name="email" required autocomplete="email" placeholder="you@company.com">
   </div>
-  <div class="qf-field">
+<div class="qf-field">
     <label class="qf-label" for="devContact">WhatsApp / WeChat</label>
     <input class="qf-input" type="text" id="devContact" name="contact" autocomplete="tel" placeholder="+1 234 567 8900 or WeChat ID">
   </div>
-  <div class="qf-field">
+<div class="qf-field">
+    <label class="qf-label" for="devProduct">What do you want to source?<span class="qf-req">*</span></label>
+    <input required class="qf-input" type="text" id="devProduct" name="product" placeholder="e.g. Silicone kitchen utensil set, 2,000 pcs">
+  </div>
+<div class="qf-field">
+    <label class="qf-label" for="devQty">Target quantity</label>
+    <input class="qf-input" type="text" id="devQty" name="qty" placeholder="e.g. 2,000 pcs / 10 cartons">
+  </div>
+<details class="qf-more">
+  <summary class="qf-more-sum">Add details — faster, more accurate quote <span class="qf-more-opt">(optional)</span></summary>
+  <div class="qf-more-grid">
+<div class="qf-field">
+    <label class="qf-label" for="devName">Your name</label>
+    <input class="qf-input" type="text" id="devName" name="name" autocomplete="name" placeholder="Full name">
+  </div>
+<div class="qf-field">
     <label class="qf-label" for="devCompany">Company</label>
     <input class="qf-input" type="text" id="devCompany" name="company" autocomplete="organization" placeholder="Company name (optional)">
   </div>
-  <div class="qf-field qf-full">
-    <label class="qf-label" for="devCategory">Product category<span class="qf-req">*</span></label>
-    <select class="qf-select" id="devCategory" name="category" required>
+<div class="qf-field qf-full">
+    <label class="qf-label" for="devCategory">Product category</label>
+    <select class="qf-select" id="devCategory" name="category">
       <option value="">Select a category&hellip;</option>
       <option>Home &amp; Kitchen</option>
       <option>Pet Supplies</option>
@@ -1547,40 +1560,9 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <option>Other</option>
     </select>
   </div>
-  <div class="qf-field">
-    <label class="qf-label" for="devProduct">Product name</label>
-    <input class="qf-input" type="text" id="devProduct" name="product" placeholder="e.g. Silicone kitchen utensil set">
-  </div>
-  <div class="qf-field">
-    <label class="qf-label" for="devSku">SKU (if known)</label>
-    <input class="qf-input" type="text" id="devSku" name="sku" placeholder="e.g. HK-001">
-  </div>
-  <div class="qf-field">
-    <label class="qf-label" for="devQty">Quantity</label>
-    <input class="qf-input" type="text" id="devQty" name="qty" placeholder="e.g. 2,000 pcs / 10 cartons">
-  </div>
-  <div class="qf-field">
-    <label class="qf-label" for="devPrice">Target price</label>
-    <div class="qf-price">
-      <input class="qf-input" type="text" id="devPrice" name="price" placeholder="e.g. 2.50">
-      <select class="qf-select" name="currency" aria-label="Currency">
-        <option>USD</option><option>EUR</option><option>GBP</option><option>CNY</option>
-      </select>
-    </div>
-  </div>
-  <div class="qf-field">
-    <label class="qf-label" for="devTimeline">Timeline</label>
-    <select class="qf-select" id="devTimeline" name="timeline">
-      <option value="">Select&hellip;</option>
-      <option>ASAP (within 2 weeks)</option>
-      <option>Within 1 month</option>
-      <option>1-3 months</option>
-      <option>Just exploring</option>
-    </select>
-  </div>
-  <div class="qf-field">
-    <label class="qf-label" for="devService">Service needed<span class="qf-req">*</span></label>
-    <select class="qf-select" id="devService" name="service" required>
+<div class="qf-field">
+    <label class="qf-label" for="devService">Service needed</label>
+    <select class="qf-select" id="devService" name="service">
       <option value="">Select a service&hellip;</option>
       <option>Product Sourcing</option>
       <option>Private Label &amp; OEM</option>
@@ -1594,7 +1576,17 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <option>Other</option>
     </select>
   </div>
-  <div class="qf-field">
+<div class="qf-field">
+    <label class="qf-label" for="devTimeline">Timeline</label>
+    <select class="qf-select" id="devTimeline" name="timeline">
+      <option value="">Select&hellip;</option>
+      <option>ASAP (within 2 weeks)</option>
+      <option>Within 1 month</option>
+      <option>1-3 months</option>
+      <option>Just exploring</option>
+    </select>
+  </div>
+<div class="qf-field">
     <label class="qf-label" for="devChannel">Sales channel</label>
     <select class="qf-select" id="devChannel" name="channel">
       <option value="">Select&hellip;</option>
@@ -1605,7 +1597,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <option>Other</option>
     </select>
   </div>
-  <div class="qf-field qf-full">
+<div class="qf-field qf-full">
     <label class="qf-label" for="devSupplier">Current supplier</label>
     <select class="qf-select" id="devSupplier" name="supplier">
       <option value="">Select&hellip;</option>
@@ -1614,15 +1606,30 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <option>Have a supplier, need QC / shipping only</option>
     </select>
   </div>
-  <div class="qf-field qf-full">
-    <label class="qf-label" for="devMsg">Requirements<span class="qf-req">*</span></label>
-    <textarea class="qf-textarea" id="devMsg" name="message" required placeholder="Specs, materials, packaging, compliance (CE / FDA / CPC), target market and timeline..."></textarea>
+<div class="qf-field">
+    <label class="qf-label" for="devPrice">Target price</label>
+    <div class="qf-price">
+      <input class="qf-input" type="text" id="devPrice" name="price" placeholder="e.g. 2.50">
+      <select class="qf-select" name="currency" aria-label="Currency">
+        <option>USD</option><option>EUR</option><option>GBP</option><option>CNY</option>
+      </select>
+    </div>
   </div>
-  <div class="qf-field qf-full">
+<div class="qf-field">
+    <label class="qf-label" for="devSku">SKU (if known)</label>
+    <input class="qf-input" type="text" id="devSku" name="sku" placeholder="e.g. HK-001">
+  </div>
+<div class="qf-field qf-full">
+    <label class="qf-label" for="devMsg">Requirements / specs <span style="font-weight:500;color:#6a7282">(optional)</span></label>
+    <textarea class="qf-textarea" id="devMsg" name="message" placeholder="Specs, materials, packaging, compliance (CE / FDA / CPC), target market and timeline..."></textarea>
+  </div>
+<div class="qf-field qf-full">
     <label class="qf-label" for="devFile">Attach a drawing, photo or spec sheet <span style="font-weight:500;color:#6a7282">(optional, max 10 MB)</span></label>
     <input class="qf-file" type="file" id="devFile" name="attachment" accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx,.xls,.xlsx,.csv,.zip">
   </div>
-  <label class="qf-consent">
+  </div>
+</details>
+<label class="qf-consent">
     <input type="checkbox" name="consent" value="Agreed" required>
     <span>I agree to be contacted about this inquiry and have read the <a href="/terms">Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a>.<span class="qf-req">*</span></span>
   </label>
@@ -1736,6 +1743,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   <input type="hidden" name="_subject" value="New Sourcing Inquiry - Milebond Website">
   <input type="hidden" name="_next" value="https://www.milebond.com/thank-you">
   <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_autoresponse" value="Thanks for your sourcing request. Monica from Milebond will reply within 24 hours (usually 6) with 2-3 quotes and a full cost breakdown. If you have a spec sheet, drawing or reference link, just reply to this email. Need it faster? WhatsApp +86 150 5796 0102.">
   
   <input type="hidden" name="source_page" id="qSource">
   <input type="hidden" name="page_url" value="">
@@ -1743,24 +1751,35 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
 
   <div class="qf-field">
-    <label class="qf-label" for="qName">Your name<span class="qf-req">*</span></label>
-    <input class="qf-input" type="text" id="qName" name="name" required autocomplete="name" placeholder="Full name">
-  </div>
-  <div class="qf-field">
     <label class="qf-label" for="qEmail">Work email<span class="qf-req">*</span></label>
     <input class="qf-input" type="email" id="qEmail" name="email" required autocomplete="email" placeholder="you@company.com">
   </div>
-  <div class="qf-field">
+<div class="qf-field">
     <label class="qf-label" for="qContact">WhatsApp / WeChat</label>
     <input class="qf-input" type="text" id="qContact" name="contact" autocomplete="tel" placeholder="+1 234 567 8900 or WeChat ID">
   </div>
-  <div class="qf-field">
+<div class="qf-field">
+    <label class="qf-label" for="qProductView">What do you want to source?<span class="qf-req">*</span></label>
+    <input required class="qf-input" type="text" id="qProductView" name="product" placeholder="e.g. Silicone kitchen utensil set, 2,000 pcs">
+  </div>
+<div class="qf-field">
+    <label class="qf-label" for="qQty">Target quantity</label>
+    <input class="qf-input" type="text" id="qQty" name="qty" placeholder="e.g. 2,000 pcs / 10 cartons">
+  </div>
+<details class="qf-more">
+  <summary class="qf-more-sum">Add details — faster, more accurate quote <span class="qf-more-opt">(optional)</span></summary>
+  <div class="qf-more-grid">
+<div class="qf-field">
+    <label class="qf-label" for="qName">Your name</label>
+    <input class="qf-input" type="text" id="qName" name="name" autocomplete="name" placeholder="Full name">
+  </div>
+<div class="qf-field">
     <label class="qf-label" for="qCompany">Company</label>
     <input class="qf-input" type="text" id="qCompany" name="company" autocomplete="organization" placeholder="Company name (optional)">
   </div>
-  <div class="qf-field qf-full">
-    <label class="qf-label" for="qCategory">Product category<span class="qf-req">*</span></label>
-    <select class="qf-select" id="qCategory" name="category" required>
+<div class="qf-field qf-full">
+    <label class="qf-label" for="qCategory">Product category</label>
+    <select class="qf-select" id="qCategory" name="category">
       <option value="">Select a category&hellip;</option>
       <option>Home &amp; Kitchen</option>
       <option>Pet Supplies</option>
@@ -1775,40 +1794,9 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <option>Other</option>
     </select>
   </div>
-  <div class="qf-field">
-    <label class="qf-label" for="qProductView">Product name</label>
-    <input class="qf-input" type="text" id="qProductView" name="product" placeholder="e.g. Silicone kitchen utensil set">
-  </div>
-  <div class="qf-field">
-    <label class="qf-label" for="qSkuView">SKU (if known)</label>
-    <input class="qf-input" type="text" id="qSkuView" name="sku" placeholder="e.g. HK-001">
-  </div>
-  <div class="qf-field">
-    <label class="qf-label" for="qQty">Quantity</label>
-    <input class="qf-input" type="text" id="qQty" name="qty" placeholder="e.g. 2,000 pcs / 10 cartons">
-  </div>
-  <div class="qf-field">
-    <label class="qf-label" for="qPrice">Target price</label>
-    <div class="qf-price">
-      <input class="qf-input" type="text" id="qPrice" name="price" placeholder="e.g. 2.50">
-      <select class="qf-select" name="currency" aria-label="Currency">
-        <option>USD</option><option>EUR</option><option>GBP</option><option>CNY</option>
-      </select>
-    </div>
-  </div>
-  <div class="qf-field">
-    <label class="qf-label" for="qTimeline">Timeline</label>
-    <select class="qf-select" id="qTimeline" name="timeline">
-      <option value="">Select&hellip;</option>
-      <option>ASAP (within 2 weeks)</option>
-      <option>Within 1 month</option>
-      <option>1-3 months</option>
-      <option>Just exploring</option>
-    </select>
-  </div>
-  <div class="qf-field">
-    <label class="qf-label" for="qService">Service needed<span class="qf-req">*</span></label>
-    <select class="qf-select" id="qService" name="service" required>
+<div class="qf-field">
+    <label class="qf-label" for="qService">Service needed</label>
+    <select class="qf-select" id="qService" name="service">
       <option value="">Select a service&hellip;</option>
       <option>Product Sourcing</option>
       <option>Private Label &amp; OEM</option>
@@ -1822,7 +1810,17 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <option>Other</option>
     </select>
   </div>
-  <div class="qf-field">
+<div class="qf-field">
+    <label class="qf-label" for="qTimeline">Timeline</label>
+    <select class="qf-select" id="qTimeline" name="timeline">
+      <option value="">Select&hellip;</option>
+      <option>ASAP (within 2 weeks)</option>
+      <option>Within 1 month</option>
+      <option>1-3 months</option>
+      <option>Just exploring</option>
+    </select>
+  </div>
+<div class="qf-field">
     <label class="qf-label" for="qChannel">Sales channel</label>
     <select class="qf-select" id="qChannel" name="channel">
       <option value="">Select&hellip;</option>
@@ -1833,7 +1831,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <option>Other</option>
     </select>
   </div>
-  <div class="qf-field qf-full">
+<div class="qf-field qf-full">
     <label class="qf-label" for="qSupplier">Current supplier</label>
     <select class="qf-select" id="qSupplier" name="supplier">
       <option value="">Select&hellip;</option>
@@ -1842,15 +1840,30 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <option>Have a supplier, need QC / shipping only</option>
     </select>
   </div>
-  <div class="qf-field qf-full">
-    <label class="qf-label" for="qMsg">Requirements<span class="qf-req">*</span></label>
-    <textarea class="qf-textarea" id="qMsg" name="message" required placeholder="Specs, materials, packaging, compliance (CE / FDA / CPC), target market and timeline..."></textarea>
+<div class="qf-field">
+    <label class="qf-label" for="qPrice">Target price</label>
+    <div class="qf-price">
+      <input class="qf-input" type="text" id="qPrice" name="price" placeholder="e.g. 2.50">
+      <select class="qf-select" name="currency" aria-label="Currency">
+        <option>USD</option><option>EUR</option><option>GBP</option><option>CNY</option>
+      </select>
+    </div>
   </div>
-  <div class="qf-field qf-full">
+<div class="qf-field">
+    <label class="qf-label" for="qSkuView">SKU (if known)</label>
+    <input class="qf-input" type="text" id="qSkuView" name="sku" placeholder="e.g. HK-001">
+  </div>
+<div class="qf-field qf-full">
+    <label class="qf-label" for="qMsg">Requirements / specs <span style="font-weight:500;color:#6a7282">(optional)</span></label>
+    <textarea class="qf-textarea" id="qMsg" name="message" placeholder="Specs, materials, packaging, compliance (CE / FDA / CPC), target market and timeline..."></textarea>
+  </div>
+<div class="qf-field qf-full">
     <label class="qf-label" for="qFile">Attach a drawing, photo or spec sheet <span style="font-weight:500;color:#6a7282">(optional, max 10 MB)</span></label>
     <input class="qf-file" type="file" id="qFile" name="attachment" accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx,.xls,.xlsx,.csv,.zip">
   </div>
-  <label class="qf-consent">
+  </div>
+</details>
+<label class="qf-consent">
     <input type="checkbox" name="consent" value="Agreed" required>
     <span>I agree to be contacted about this inquiry and have read the <a href="/terms">Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a>.<span class="qf-req">*</span></span>
   </label>
@@ -1932,92 +1945,111 @@ function submitDevForm(e){
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Product Development",
-    "description": "We take your product idea through sampling, iteration and tooling - with real supplier switching when quality or cost demands it. Mold ownership in writing, in-house QC team with experience since 2015.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Milebond",
-      "url": "https://www.milebond.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.milebond.com/logo.png"
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Product Development",
+  "description": "We take your product idea through sampling, iteration and tooling - with real supplier switching when quality or cost demands it. Mold ownership in writing, in-house QC team with experience since 2015.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Milebond",
+    "url": "https://www.milebond.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.milebond.com/logo.png"
+    }
+  },
+  "areaServed": [
+    "Europe",
+    "United States",
+    "United Kingdom",
+    "Australia"
+  ],
+  "url": "https://www.milebond.com/services/product-development",
+  "mainEntityOfPage": "https://www.milebond.com/services/product-development"
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.milebond.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://www.milebond.com/#services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Product Development"
+    }
+  ]
+}
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's the difference between product development and private label?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Private label is adding your logo or packaging to an existing product. Product development is building a product that doesn't exist yet — custom parts, custom function, custom tooling."
       }
     },
-    "areaServed": ["Europe", "United States", "United Kingdom", "Australia"],
-    "url": "https://www.milebond.com/services/product-development",
-    "mainEntityOfPage": "https://www.milebond.com/services/product-development"
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.milebond.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.milebond.com/#services"},
-      {"@type": "ListItem", "position": 3, "name": "Product Development"}
-    ]
-  }
-  </script>
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What's the difference between product development and private label?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Private label is adding your logo or packaging to an existing product. Product development is building a product that doesn't exist yet — custom parts, custom function, custom tooling."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does sampling take?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Simple products: 3–7 days. Products requiring tooling: 30–45 days for the first sample. We iterate until you approve."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Who owns the mold?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You do. We write mold ownership into your contract before any steel is cut. You can move production to another factory if needed."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you switch factories mid-development?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes — and we have. In a 2015 case, the first factory failed drop tests, the second couldn't customize packaging. We found a third at half the price with better quality. We don't stick with a factory out of loyalty."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What if my idea isn't viable?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We tell you. We'd rather lose a project than have you spend money on tooling for a product that can't pass compliance or make margin."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you handle compliance testing?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We identify required tests and coordinate third-party labs. Testing fees are passed through at cost."
-        }
+    {
+      "@type": "Question",
+      "name": "How long does sampling take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simple products: 3–7 days. Products requiring tooling: 30–45 days for the first sample. We iterate until you approve."
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Question",
+      "name": "Who owns the mold?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You do. We write mold ownership into your contract before any steel is cut. You can move production to another factory if needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you switch factories mid-development?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — and we have. In a 2015 case, the first factory failed drop tests, the second couldn't customize packaging. We found a third at half the price with better quality. We don't stick with a factory out of loyalty."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my idea isn't viable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We tell you. We'd rather lose a project than have you spend money on tooling for a product that can't pass compliance or make margin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you handle compliance testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We identify required tests and coordinate third-party labs. Testing fees are passed through at cost."
+      }
+    }
+  ]
+}
+</script>
 
 
 <script>
