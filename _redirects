@@ -29,6 +29,3 @@
 # Legacy duplicate homepage — never index a second copy of the homepage.
 /index-legacy.html / 301
 /index-legacy / 301
-
-# Real 404 for unmatched paths — stop silently serving the homepage.
-/* /404.html 404
