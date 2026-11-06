@@ -744,10 +744,17 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 .m21 .ev-figure{margin:16px 0 0}
 .m21 .ev-figure img{border-radius:4px}
 .m21 .ev-figure figcaption{font-size:12.5px;color:#8FA3AE;line-height:1.5;margin-top:8px}
-.m21 .part-list{list-style:none;margin:14px 0 0;padding:0}
-.m21 .part-list li{display:flex;align-items:baseline;justify-content:space-between;gap:10px;font-size:13px;color:#B0BEC5;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-.m21 .part-list li strong{color:#fff;font-weight:600;flex-shrink:0}
-.m21 .part-list li em{font-style:normal;color:#8FA3AE;font-size:12px;text-align:right}
+.m21 .bom-head{display:grid;grid-template-columns:1fr 32px 84px;gap:10px;margin-top:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.18);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:#8FA3AE}
+.m21 .bom-head .q{text-align:center}
+.m21 .bom-head .c{text-align:right}
+.m21 .bom{list-style:none;margin:0;padding:0}
+.m21 .bom li{display:grid;grid-template-columns:1fr 32px 84px;gap:10px;align-items:start;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:13px;color:#B0BEC5}
+.m21 .bom b{display:block;color:#fff;font-weight:600;line-height:1.35}
+.m21 .bom em{display:block;font-style:normal;font-size:11.5px;color:#8FA3AE;line-height:1.45;margin-top:2px}
+.m21 .bom .q{text-align:center;color:#B0BEC5;font-size:12.5px}
+.m21 .bom .c{text-align:right;color:#fff;font-weight:700;font-variant-numeric:tabular-nums}
+.m21 .bom .c small{display:block;font-weight:400;font-size:10px;color:#8FA3AE;white-space:nowrap}
+.m21 .bom-total{display:flex;justify-content:space-between;margin-top:10px;padding-top:8px;border-top:1px solid rgba(255,255,255,.18);font-size:13px;font-weight:700;color:#fff}
 .m21 .trace{margin-top:12px;font-size:13px;color:#B0BEC5;line-height:1.5;border-left:2px solid var(--accent-soft);padding-left:10px}
 .m21 .steps{display:flex;flex-direction:column;gap:12px;margin:16px 0}
 .m21 .step{display:flex;align-items:center;gap:12px}
@@ -1263,7 +1270,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     <div class="wrap">
       <div class="section-label">See what a real quote looks like</div>
       <h2>No surprises at the port.</h2>
-      <p class="section-sub">A client sent two photos of a baby gift basket. It came back as 9 parts — each measured, each quoted by a separate factory, each on its own line.</p>
+      <p class="section-sub">A client sent two photos of a baby gift basket. It came back as 9 lines — every spec measured, every factory price shown, before a single unit was ordered.</p>
 
       <div class="evidence-grid">
         <div class="ev-card">
@@ -1277,7 +1284,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
             </div>
             <div class="step">
               <div class="step-num">2</div>
-              <div><strong>We break it into every part</strong><br><span>Basket, tin, bow, ribbon, cut-outs, pegs, flowers, card, carton — each with spec, qty and factory cost.</span></div>
+              <div><strong>We break it into every part</strong><br><span>Basket, bows, ribbon, gender sign, clips, flowers, card, packing and assembly — each with spec, qty and factory cost.</span></div>
             </div>
             <div class="step">
               <div class="step-num">3</div>
@@ -1287,23 +1294,61 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         </div>
         <div class="ev-card">
           <h4>What we came back with — part by part</h4>
-          <ul class="part-list">
-            <li><strong>1. Woven basket</strong><em>woven wicker · hinged lid</em></li>
-            <li><strong>2. Metal tin</strong><em>round tinplate insert</em></li>
-            <li><strong>3. Satin bow</strong><em>11 × 4 cm · 5 colours</em></li>
-            <li><strong>4. Organza ribbon</strong><em>cream · sheer</em></li>
-            <li><strong>5. MDF cut-outs</strong><em>bunny shapes · MDF board</em></li>
-            <li><strong>6. Wooden pegs</strong><em>35 mm · natural wood</em></li>
-            <li><strong>7. Artificial flowers</strong><em>blue hydrangea · cream roses</em></li>
-            <li><strong>8. Thank-you card</strong><em>150 × 100 mm · printed</em></li>
-            <li><strong>9. Shipping carton</strong><em>corrugated box</em></li>
+          <div class="bom-head"><span>Part &amp; spec</span><span class="q">Qty</span><span class="c">Factory cost</span></div>
+          <ul class="bom">
+            <li>
+              <span><b>Woven basket</b><em>Natural water hyacinth wire basket, removable fabric liner, moisture below 12% · 36 × 26 × 16 cm · natural</em></span>
+              <span class="q">1</span>
+              <span class="c">$5.46</span>
+            </li>
+            <li>
+              <span><b>Pre-tied satin bows</b><em>2-colour set, 4 pcs · 12 cm · blue + pink</em></span>
+              <span class="q">4</span>
+              <span class="c">$0.98<small>with ribbon</small></span>
+            </li>
+            <li>
+              <span><b>Satin ribbon</b><em>Satin ribbon roll · 4.8 × 24 yd · ivory</em></span>
+              <span class="q">1</span>
+              <span class="c">—</span>
+            </li>
+            <li>
+              <span><b>Gender sign</b><em>Raised lettering and raised border, 2-pc set · 10 × 15 cm/pc · blue + pink</em></span>
+              <span class="q">1</span>
+              <span class="c">$0.68<small>with clips</small></span>
+            </li>
+            <li>
+              <span><b>Clips with rope</b><em>35 mm clip + 50 cm rope · 4 pcs · kraft</em></span>
+              <span class="q">4</span>
+              <span class="c">—</span>
+            </li>
+            <li>
+              <span><b>Flowers</b><em>Blue + pink as a set · each 20 cm dia</em></span>
+              <span class="q">2</span>
+              <span class="c">$1.49</span>
+            </li>
+            <li>
+              <span><b>Insert card</b><em>Printed insert card · 150 × 100 mm · colourful</em></span>
+              <span class="q">1</span>
+              <span class="c">$0.12</span>
+            </li>
+            <li>
+              <span><b>Brown box + packing</b><em>Product brown box, 2 silk gel bags, master carton</em></span>
+              <span class="q">—</span>
+              <span class="c">$0.38</span>
+            </li>
+            <li>
+              <span><b>Assembly &amp; FBA prep</b><em>Assembly, barcode and FBA prep labelling</em></span>
+              <span class="q">—</span>
+              <span class="c">$0.38</span>
+            </li>
           </ul>
-          <a class="ev-link" href="/images/home/quote-bom-parts-baby-basket.jpg" target="_blank" rel="noopener">Open the full 9-part sourcing sheet ↗</a>
+          <p class="bom-total"><span>Factory cost for the set</span><span>$9.49</span></p>
           <figure class="ev-figure">
             <img src="/images/home/bow-spec-vs-quoted.jpg" width="1100" height="373" alt="Satin bow reference versus the factory-quoted bows, with the 11 cm x 4 cm measurement marked" loading="lazy" decoding="async">
-            <figcaption>Satin bow: the reference we were sent, the 11 × 4 cm we measured, and the 5 colours the factory actually produced.</figcaption>
+            <figcaption>The bow was sent as a photo. We measured it, then quoted 12 cm pre-tied in the 2 colours the client asked for.</figcaption>
           </figure>
-          <p class="trace">Each part is one factory quote. Your BOM shows the factory invoice price per line, our 3–8% fee as its own line, and the forwarder's cost at pass-through — so you can check every number yourself.</p>
+          <p class="trace">Every figure above is the factory invoice price we paid on this job — the bow and ribbon lines were invoiced together, as were the sign and clips. In your quote each part sits at that invoice price, our sourcing fee is its own separate line, and the forwarder's cost passes through at what we were charged.</p>
+          <a class="ev-link" href="/images/home/quote-bom-parts-baby-basket.jpg" target="_blank" rel="noopener">See the part photos from this job ↗</a>
         </div>
       </div>
     </div>
