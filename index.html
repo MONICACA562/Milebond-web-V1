@@ -752,10 +752,14 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 .m21 .bom b{display:block;color:#fff;font-weight:600;line-height:1.35}
 .m21 .bom em{display:block;font-style:normal;font-size:11.5px;color:#8FA3AE;line-height:1.45;margin-top:2px}
 .m21 .bom .q{text-align:center;color:#B0BEC5;font-size:12.5px}
-.m21 .bom .c{text-align:right;color:#fff;font-weight:700;font-variant-numeric:tabular-nums}
-.m21 .bom .c small{display:block;font-weight:400;font-size:10px;color:#8FA3AE;white-space:nowrap}
-.m21 .bom-total{display:flex;justify-content:space-between;margin-top:10px;padding-top:8px;border-top:1px solid rgba(255,255,255,.18);font-size:13px;font-weight:700;color:#fff}
-.m21 .trace{margin-top:12px;font-size:13px;color:#B0BEC5;line-height:1.5;border-left:2px solid var(--accent-soft);padding-left:10px}
+.m21 .bom .c{text-align:right;color:#8FA3AE;font-size:11.5px}
+.m21 .build{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.m21 .build-step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:12px}
+.m21 .build-n{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--accent-soft);color:#1E2A32;font-size:11px;font-weight:700;margin-bottom:7px}
+.m21 .build-step b{display:block;color:#fff;font-size:12.5px;line-height:1.3;margin-bottom:4px}
+.m21 .build-step p{font-size:11.5px;color:#B0BEC5;line-height:1.45;margin:0}
+.m21 .formula{margin-top:12px;text-align:center;font-size:13px;font-weight:600;color:#fff;letter-spacing:.02em}
+.m21 .formula span{color:var(--accent-soft);margin:0 7px;font-weight:700}
 .m21 .steps{display:flex;flex-direction:column;gap:12px;margin:16px 0}
 .m21 .step{display:flex;align-items:center;gap:12px}
 .m21 .step-num{width:32px;height:32px;border-radius:50%;background:var(--accent-soft);color:#1E2A32;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
@@ -776,6 +780,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 @media (max-width:700px){
   .m21 .hero{padding:48px 0 40px}
   .m21 .hero h1{font-size:34px}
+  .m21 .build{grid-template-columns:1fr}
   .m21 .badges{grid-template-columns:repeat(2,1fr)}
   .m21 .svc-grid{grid-template-columns:1fr}
   .m21 h2{font-size:28px}
@@ -1270,7 +1275,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     <div class="wrap">
       <div class="section-label">See what a real quote looks like</div>
       <h2>No surprises at the port.</h2>
-      <p class="section-sub">A client sent two photos of a baby gift basket. It came back as 9 lines — every spec measured, every factory price shown, before a single unit was ordered.</p>
+      <p class="section-sub">A client sent two photos of a baby gift basket. It came back as 9 lines — every spec measured, every part traced to a factory invoice, and the price built in the open.</p>
 
       <div class="evidence-grid">
         <div class="ev-card">
@@ -1294,60 +1299,78 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         </div>
         <div class="ev-card">
           <h4>What we came back with — part by part</h4>
-          <div class="bom-head"><span>Part &amp; spec</span><span class="q">Qty</span><span class="c">Factory cost</span></div>
+          <div class="bom-head"><span>Part &amp; spec</span><span class="q">Qty</span><span class="c">Source</span></div>
           <ul class="bom">
             <li>
               <span><b>Woven basket</b><em>Natural water hyacinth wire basket, removable fabric liner, moisture below 12% · 36 × 26 × 16 cm · natural</em></span>
               <span class="q">1</span>
-              <span class="c">$5.46</span>
+              <span class="c">invoice</span>
             </li>
             <li>
               <span><b>Pre-tied satin bows</b><em>2-colour set, 4 pcs · 12 cm · blue + pink</em></span>
               <span class="q">4</span>
-              <span class="c">$0.98<small>with ribbon</small></span>
+              <span class="c">invoice</span>
             </li>
             <li>
               <span><b>Satin ribbon</b><em>Satin ribbon roll · 4.8 × 24 yd · ivory</em></span>
               <span class="q">1</span>
-              <span class="c">—</span>
+              <span class="c">invoice</span>
             </li>
             <li>
               <span><b>Gender sign</b><em>Raised lettering and raised border, 2-pc set · 10 × 15 cm/pc · blue + pink</em></span>
               <span class="q">1</span>
-              <span class="c">$0.68<small>with clips</small></span>
+              <span class="c">invoice</span>
             </li>
             <li>
               <span><b>Clips with rope</b><em>35 mm clip + 50 cm rope · 4 pcs · kraft</em></span>
               <span class="q">4</span>
-              <span class="c">—</span>
+              <span class="c">invoice</span>
             </li>
             <li>
               <span><b>Flowers</b><em>Blue + pink as a set · each 20 cm dia</em></span>
               <span class="q">2</span>
-              <span class="c">$1.49</span>
+              <span class="c">invoice</span>
             </li>
             <li>
               <span><b>Insert card</b><em>Printed insert card · 150 × 100 mm · colourful</em></span>
               <span class="q">1</span>
-              <span class="c">$0.12</span>
+              <span class="c">invoice</span>
             </li>
             <li>
               <span><b>Brown box + packing</b><em>Product brown box, 2 silk gel bags, master carton</em></span>
               <span class="q">—</span>
-              <span class="c">$0.38</span>
+              <span class="c">invoice</span>
             </li>
             <li>
               <span><b>Assembly &amp; FBA prep</b><em>Assembly, barcode and FBA prep labelling</em></span>
               <span class="q">—</span>
-              <span class="c">$0.38</span>
+              <span class="c">invoice</span>
             </li>
           </ul>
-          <p class="bom-total"><span>Factory cost for the set</span><span>$9.49</span></p>
+
+          <div class="build">
+            <div class="build-step">
+              <span class="build-n">1</span>
+              <b>Factory invoice</b>
+              <p>The price each factory charges for its part. You see that number as it is.</p>
+            </div>
+            <div class="build-step">
+              <span class="build-n">2</span>
+              <b>Our fee</b>
+              <p>One stated percentage of the factory invoice, on its own line. Never folded into a part price.</p>
+            </div>
+            <div class="build-step">
+              <span class="build-n">3</span>
+              <b>You pay</b>
+              <p>Factory invoice plus our fee. The forwarder's bill passes through at what we were charged.</p>
+            </div>
+          </div>
+          <p class="formula">Factory invoice <span>+</span> our fee <span>=</span> your price</p>
+
           <figure class="ev-figure">
             <img src="/images/home/bow-spec-vs-quoted.jpg" width="1100" height="373" alt="Satin bow reference versus the factory-quoted bows, with the 11 cm x 4 cm measurement marked" loading="lazy" decoding="async">
             <figcaption>The bow was sent as a photo. We measured it, then quoted 12 cm pre-tied in the 2 colours the client asked for.</figcaption>
           </figure>
-          <p class="trace">Every figure above is the factory invoice price we paid on this job — the bow and ribbon lines were invoiced together, as were the sign and clips. In your quote each part sits at that invoice price, our sourcing fee is its own separate line, and the forwarder's cost passes through at what we were charged.</p>
           <a class="ev-link" href="/images/home/quote-bom-parts-baby-basket.jpg" target="_blank" rel="noopener">See the part photos from this job ↗</a>
         </div>
       </div>
