@@ -738,6 +738,17 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 .m21 .ev-card h4{font-size:14px;font-weight:600;color:var(--accent-soft);margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px}
 .m21 .ev-card img{width:100%;border-radius:4px;display:block;border:1px solid rgba(255,255,255,.1)}
 .m21 .ev-card p{font-size:14px;color:#B0BEC5;margin-top:14px;line-height:1.5}
+.m21 .ev-photo{margin:14px 0}
+.m21 .ev-link{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--accent-soft);text-decoration:none;border-bottom:1px solid rgba(232,168,124,.4);padding-bottom:1px}
+.m21 .ev-link:hover{color:#fff;border-bottom-color:#fff}
+.m21 .ev-figure{margin:16px 0 0}
+.m21 .ev-figure img{border-radius:4px}
+.m21 .ev-figure figcaption{font-size:12.5px;color:#8FA3AE;line-height:1.5;margin-top:8px}
+.m21 .part-list{list-style:none;margin:14px 0 0;padding:0}
+.m21 .part-list li{display:flex;align-items:baseline;justify-content:space-between;gap:10px;font-size:13px;color:#B0BEC5;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.m21 .part-list li strong{color:#fff;font-weight:600;flex-shrink:0}
+.m21 .part-list li em{font-style:normal;color:#8FA3AE;font-size:12px;text-align:right}
+.m21 .trace{margin-top:12px;font-size:13px;color:#B0BEC5;line-height:1.5;border-left:2px solid var(--accent-soft);padding-left:10px}
 .m21 .steps{display:flex;flex-direction:column;gap:12px;margin:16px 0}
 .m21 .step{display:flex;align-items:center;gap:12px}
 .m21 .step-num{width:32px;height:32px;border-radius:50%;background:var(--accent-soft);color:#1E2A32;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
@@ -754,7 +765,6 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
 @media (max-width:900px){
   .m21 .why-grid,.m21 .qa-grid,.m21 .wont-grid,.m21 .evidence-grid{grid-template-columns:1fr}
-  .m21 .ev-card img{max-height:320px;object-fit:cover}
 }
 @media (max-width:700px){
   .m21 .hero{padding:48px 0 40px}
@@ -1253,11 +1263,13 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     <div class="wrap">
       <div class="section-label">See what a real quote looks like</div>
       <h2>No surprises at the port.</h2>
-      <p class="section-sub">Every quote ships with two things: a line-item BOM, and side-by-side photos of what you asked for vs what we can actually source.</p>
+      <p class="section-sub">A client sent two photos of a baby gift basket. It came back as 9 parts — each measured, each quoted by a separate factory, each on its own line.</p>
 
       <div class="evidence-grid">
         <div class="ev-card">
-          <h4>Send one photo. Get a full breakdown.</h4>
+          <h4>What the client sent</h4>
+          <img class="ev-photo" src="/images/home/client-reference-baby-basket.jpg" width="572" height="231" alt="Two reference photos of a woven baby gift basket with a satin bow, flowers and a photo card" loading="lazy" decoding="async">
+          <p>Two photos and a rough idea. No tech pack, no drawing, no supplier.</p>
           <div class="steps">
             <div class="step">
               <div class="step-num">1</div>
@@ -1265,19 +1277,33 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
             </div>
             <div class="step">
               <div class="step-num">2</div>
-              <div><strong>We break it into every part</strong><br><span>Basket, liner, flowers, sign, packaging, assembly — each with spec, qty, and factory cost.</span></div>
+              <div><strong>We break it into every part</strong><br><span>Basket, tin, bow, ribbon, cut-outs, pegs, flowers, card, carton — each with spec, qty and factory cost.</span></div>
             </div>
             <div class="step">
               <div class="step-num">3</div>
               <div><strong>You choose how we work</strong><br><span>We source everything for you (flat 3–8%), or you supply components and we handle kitting + QC + prep. Supplier details shared either way.</span></div>
             </div>
           </div>
-          <p class="ev-note">Full BOM with line-item pricing, factory invoice included — before you commit to anything.</p>
         </div>
         <div class="ev-card">
-          <h4>What you want vs what we quote</h4>
-          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=split%20screen%20product%20photo%20comparison%2C%20left%20a%20styled%20woven%20baby%20gift%20basket%20with%20a%20ribbon%20bow%2C%20right%20the%20same%20basket%20in%20factory%20packing%2C%20e-commerce%20product%20photography%2C%20soft%20studio%20light%2C%20clean%20background&image_size=landscape_4_3" alt="Reference product vs factory-quoted version, side by side" loading="lazy" decoding="async">
-          <p>You send the reference. We don't say "yes" blindly — we source the real sample, measure it, and show you the actual color and size before you commit.</p>
+          <h4>What we came back with — part by part</h4>
+          <ul class="part-list">
+            <li><strong>1. Woven basket</strong><em>natural willow · hinged lid</em></li>
+            <li><strong>2. Metal tin</strong><em>round tinplate insert</em></li>
+            <li><strong>3. Satin bow</strong><em>11 × 4 cm · 5 colours</em></li>
+            <li><strong>4. Organza ribbon</strong><em>cream · satin sheen</em></li>
+            <li><strong>5. MDF cut-outs</strong><em>bunny shapes · 3 mm board</em></li>
+            <li><strong>6. Wooden pegs</strong><em>35 mm · natural wood</em></li>
+            <li><strong>7. Artificial flowers</strong><em>blue hydrangea · cream roses</em></li>
+            <li><strong>8. Thank-you card</strong><em>150 × 100 mm · printed both sides</em></li>
+            <li><strong>9. Shipping carton</strong><em>corrugated · double-wall</em></li>
+          </ul>
+          <a class="ev-link" href="/images/home/quote-bom-parts-baby-basket.jpg" target="_blank" rel="noopener">Open the full 9-part sourcing sheet ↗</a>
+          <figure class="ev-figure">
+            <img src="/images/home/bow-spec-vs-quoted.jpg" width="1100" height="373" alt="Satin bow reference versus the factory-quoted bows, with the 11 cm x 4 cm measurement marked" loading="lazy" decoding="async">
+            <figcaption>Satin bow: the reference we were sent, the 11 × 4 cm we measured, and the 5 colours the factory actually produced.</figcaption>
+          </figure>
+          <p class="trace">Each part is one factory quote. Your BOM shows the factory invoice price per line, our 3–8% fee as its own line, and the forwarder's cost at pass-through — so you can check every number yourself.</p>
         </div>
       </div>
     </div>
