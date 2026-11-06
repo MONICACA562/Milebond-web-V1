@@ -730,7 +730,9 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
 /* Services */
 .m21 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.m21 .svc{padding:20px;border-left:2px solid var(--line)}
+.m21 .svc{display:block;padding:20px;border-left:2px solid var(--line);text-decoration:none;color:inherit;transition:border-color .15s,background .15s}
+.m21 .svc:hover{border-left-color:var(--accent);background:#FBF9F5}
+.m21 .svc:hover h4{color:var(--accent)}
 .m21 .svc h4{font-size:16px;margin-bottom:6px}
 .m21 .svc p{font-size:14px;color:var(--ink-2);line-height:1.5}
 
@@ -1212,30 +1214,30 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <p class="section-sub">Six services, one 3–8% fee. No per-service upcharges on the standard package.</p>
 
       <div class="svc-grid">
-        <div class="svc">
+        <a class="svc" href="/services/product-sourcing">
           <h4>Product Sourcing</h4>
           <p>Vetted factory shortlist, price benchmarking, same-day sample collection in Yiwu.</p>
-        </div>
-        <div class="svc">
+        </a>
+        <a class="svc" href="/services/supplier-verification-factory-audit">
           <h4>Supplier Verification</h4>
           <p>On-site factory audit, business license and banking check. Free for your first supplier.</p>
-        </div>
-        <div class="svc">
+        </a>
+        <a class="svc" href="/services/quality-control">
           <h4>Quality Control</h4>
           <p>In-line inspection on the factory floor + 100% check at our warehouse before repack. Not random sampling luck.</p>
-        </div>
-        <div class="svc">
+        </a>
+        <a class="svc" href="/services/warehousing-shipping">
           <h4>Prep, Pack &amp; Assembly</h4>
           <p>Barcode labeling, polybagging, kitting, bubble wrap, retail-ready packaging — all in our 800㎡ Jinhua warehouse.</p>
-        </div>
-        <div class="svc">
+        </a>
+        <a class="svc" href="/services/warehousing-shipping">
           <h4>DDP Logistics</h4>
           <p>Sea/air freight to your warehouse, fulfillment center, or retail distribution point. Forwarder cost passed through at price — no markup.</p>
-        </div>
-        <div class="svc">
+        </a>
+        <a class="svc" href="/services/private-label-oem">
           <h4>OEM / Private Label</h4>
           <p>Custom packaging, printing, embossing on our own equipment. Small runs from 50 pcs, no mold fee unless needed.</p>
-        </div>
+        </a>
       </div>
     </div>
   </section>
