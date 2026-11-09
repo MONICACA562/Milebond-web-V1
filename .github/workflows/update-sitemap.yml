@@ -15,6 +15,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          # Full history: lastmod is taken from each file's last commit date.
+          # A shallow clone (default depth 1) makes `git log -1 -- <file>` empty
+          # for every file not touched by HEAD, so all URLs fall back to today.
+          fetch-depth: 0
 
       - name: Generate sitemap.xml
         run: |
