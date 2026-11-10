@@ -59,6 +59,29 @@
 
   var path = function () { return window.location.pathname; };
 
+  /* WhatsApp sends no referrer, so a message arrives with no idea which page
+     produced it. On click, rewrite the prefilled text to carry the page path.
+     The buyer still reads a normal sentence; the message tells us the source. */
+  document.addEventListener('click', function (e) {
+    var el = e.target;
+    while (el && el.tagName !== 'A') { el = el.parentElement; }
+    if (!el) return;
+    var href = el.getAttribute('href') || '';
+    if (!/^(https?:\/\/)?(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)/i.test(href.replace(/^\/\//, 'https://'))) return;
+    try {
+      var url = new URL(href, window.location.href);
+      var current = url.searchParams.get('text') || '';
+      var page = path() || '/';
+      if (current.indexOf(page) !== -1) return;
+      var generic = !current || /^hi,?\s*i'?d like a (sourcing )?quote\.?$/i.test(current.trim());
+      var text = generic
+        ? "Hi, I'm on " + page + " and I'd like a sourcing quote."
+        : current + ' [via ' + page + ']';
+      url.searchParams.set('text', text);
+      el.setAttribute('href', url.toString());
+    } catch (err) { /* noop */ }
+  }, true);
+
   /* Outbound / CTA click tracking (delegated, works for dynamically added links). */
   document.addEventListener('click', function (e) {
     var el = e.target;
