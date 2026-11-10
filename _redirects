@@ -29,3 +29,11 @@
 # Legacy duplicate homepage — never index a second copy of the homepage.
 /index-legacy.html / 301
 /index-legacy / 301
+
+# Retired services (no longer offered). Old URLs point at the services hub.
+/services/product-compliance /all-services 301
+/services/product-compliance/ /all-services 301
+/services/product-compliance.html /all-services 301
+/services/supply-chain-optimization /all-services 301
+/services/supply-chain-optimization/ /all-services 301
+/services/supply-chain-optimization.html /all-services 301
