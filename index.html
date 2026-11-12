@@ -808,16 +808,34 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 .m21 .qa-card p{font-size:15px;color:var(--ink-2);line-height:1.6}
 .m21 .qa-wide{grid-column:1/-1}
 
-/* What we won't do */
-.m21 .band-dark{background:var(--dark);color:#fff}
+/* What we won't do — high-contrast trust band */
+.m21 .band-dark{
+  position:relative;overflow:hidden;color:#fff;
+  background:
+    radial-gradient(880px 420px at 92% -12%,rgba(200,80,46,.30),transparent 62%),
+    radial-gradient(680px 380px at -8% 112%,rgba(232,168,124,.16),transparent 60%),
+    linear-gradient(158deg,#1E2A32 0%,#18232A 58%,#131C22 100%);
+}
+.m21 .band-dark::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:56px 56px;
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.85),rgba(0,0,0,.12));
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.85),rgba(0,0,0,.12));
+}
+.m21 .band-dark .wrap{position:relative;z-index:1}
 .m21 .band-dark .section-label{color:var(--accent-soft)}
 .m21 .band-dark h2{color:#fff}
+.m21 .band-dark h2 em{font-style:italic;color:var(--accent-soft)}
 .m21 .band-dark .section-sub{color:#B0BEC5;margin-bottom:0}
 .m21 .band-dark .takeaway{background:rgba(232,168,124,.12);border-left-color:var(--accent-soft);color:#fff}
-.m21 .wont-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
-.m21 .wont-grid p{font-size:15px;color:#B0BEC5;line-height:1.7;margin-bottom:16px}
-.m21 .wont-grid p:last-child{margin-bottom:0}
-.m21 .wont-grid strong{color:#fff}
+
+.m21 .wont-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.m21 .wont-item{position:relative;padding:26px 26px 24px;border:1px solid rgba(255,255,255,.09);border-radius:6px;background:rgba(255,255,255,.035);transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.m21 .wont-item:hover{transform:translateY(-2px);border-color:rgba(232,168,124,.45);background:rgba(255,255,255,.06)}
+.m21 .wont-num{display:block;font-family:Georgia,'Times New Roman',serif;font-size:13px;letter-spacing:2px;color:var(--accent-soft);margin-bottom:12px}
+.m21 .wont-item h3{font-size:17px;line-height:1.35;color:#fff}
+.m21 .wont-item p{font-size:15px;color:#B0BEC5;line-height:1.7;margin-top:9px}
 
 /* Evidence */
 .m21 .evidence{background:var(--dark);color:#fff}
@@ -1184,6 +1202,39 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     </div>
   </header>
 
+  <!-- WHAT WE WON'T DO -->
+  <section class="band-dark" id="what-we-dont-do">
+    <div class="wrap">
+      <div class="section-label">What we don't do</div>
+      <h2>Four things Milebond <em>won't</em> do — and why that protects your margin.</h2>
+      <p class="section-sub">Most sourcing agents say yes to everything. These are the four lines we don't cross, and what each one means for your money.</p>
+
+      <div class="wont-grid">
+        <div class="wont-item">
+          <span class="wont-num">01</span>
+          <h3>We don't pretend to be a 20-year-old company.</h3>
+          <p>Milebond was registered this year. The people behind it were not. Product development, order management, supplier management, compliance, QC, assembly and freight sit with a team that already has 11+ years on the factory floor in Yiwu — backed by freight forwarders we have shipped with for years. You get a newly registered company with an experienced bench behind it, and we tell you which is which.</p>
+        </div>
+        <div class="wont-item">
+          <span class="wont-num">02</span>
+          <h3>We don't say yes to every product.</h3>
+          <p>We don't encourage e-commerce clients to chase whatever is trending. Using our own selling experience, we test whether a product can be developed or improved, then weigh the ROI, landed cost and cash-turnover cycle before you commit a deposit. If the numbers don't work, we say so — even when it costs us the order.</p>
+        </div>
+        <div class="wont-item">
+          <span class="wont-num">03</span>
+          <h3>We don't quote numbers you can't trace.</h3>
+          <p>Every part of your quote — accessories, packaging, printing, stickers, materials, assembly, labour and freight — traces back to a real supplier quote you can see. Our 3–8% fee is its own line, the factory invoice is shown as it is, and the forwarder's bill passes through at cost. No "miscellaneous" line, no mark-up hidden inside a part price. That is what transparent pricing looks like.</p>
+        </div>
+        <div class="wont-item">
+          <span class="wont-num">04</span>
+          <h3>We don't tell you "the more the better".</h3>
+          <p>We don't push a bigger order to grow our commission. We start from your sell-through, storage costs and how long your cash will be tied up, then recommend a quantity and spec that fit — which is sometimes smaller than what we could invoice. An objective second opinion beats an optimistic first order.</p>
+        </div>
+      </div>
+      <p class="takeaway">In short: an 11+ year team behind a newly registered company, quotes traced line by line, and quantity advice measured in your ROI and cash-turnover cycle.</p>
+    </div>
+  </section>
+
   <!-- STORY TIMELINE -->
   <section id="story">
     <div class="wrap">
@@ -1274,27 +1325,6 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
           <p>Our fee is 3–8%, listed as its own line. The factory invoice is shown to you. We negotiate price, payment terms and defect rework on your behalf — because we've been on the factory side, we know what a real floor price looks like and where the fake margins are. The forwarder's bill passes through at cost.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- WHAT WE WON'T DO -->
-  <section class="band-dark" id="what-we-dont-do">
-    <div class="wrap">
-      <div class="section-label">What we don't do</div>
-      <h2>What Milebond won't do — and why that protects your margin.</h2>
-      <p class="section-sub">Most sourcing agents say yes to everything. These are the four lines we don't cross, and what each one means for your money.</p>
-
-      <div class="wont-grid">
-        <div>
-          <p><strong>— We don't pretend to be a 20-year-old company.</strong> Milebond was registered this year. The people behind it were not. Product development, order management, supplier management, compliance, QC, assembly and freight sit with a team that already has 11+ years on the factory floor in Yiwu — backed by freight forwarders we have shipped with for years. You get a newly registered company with an experienced bench behind it, and we tell you which is which.</p>
-          <p><strong>— We don't say yes to every product.</strong> We don't encourage e-commerce clients to chase whatever is trending. Using our own selling experience, we test whether a product can be developed or improved, then weigh the ROI, landed cost and cash-turnover cycle before you commit a deposit. If the numbers don't work, we say so — even when it costs us the order.</p>
-        </div>
-        <div>
-          <p><strong>— We don't quote numbers you can't trace.</strong> Every part of your quote — accessories, packaging, printing, stickers, materials, assembly, labour and freight — traces back to a real supplier quote you can see. Our 3–8% fee is its own line, the factory invoice is shown as it is, and the forwarder's bill passes through at cost. No "miscellaneous" line, no mark-up hidden inside a part price. That is what transparent pricing looks like.</p>
-          <p><strong>— We don't tell you "the more the better".</strong> We don't push a bigger order to grow our commission. We start from your sell-through, storage costs and how long your cash will be tied up, then recommend a quantity and spec that fit — which is sometimes smaller than what we could invoice. An objective second opinion beats an optimistic first order.</p>
-        </div>
-      </div>
-      <p class="takeaway">In short: an 11+ year team behind a newly registered company, quotes traced line by line, and quantity advice measured in your ROI and cash-turnover cycle.</p>
     </div>
   </section>
 
