@@ -765,6 +765,17 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 .m21 .hero-note a{color:var(--accent);text-decoration:none}
 .m21 .hero-partner{margin-top:32px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-3)}
 .m21 .hero-partner strong{color:var(--ink-2)}
+
+/* Hero proof column — team photo + brand wall */
+.m21 .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center}
+.m21 .hero-grid h1,.m21 .hero-grid p.lede,.m21 .hero-grid p.answer{max-width:none}
+.m21 .hero-proof{display:flex;flex-direction:column;gap:14px}
+.m21 .proof-team{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 24px 48px -32px rgba(30,42,50,.35)}
+.m21 .proof-team img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:50% 40%}
+.m21 .proof-team figcaption{padding:11px 16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-3);line-height:1.4}
+.m21 .proof-brands{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 24px 48px -32px rgba(30,42,50,.35)}
+.m21 .proof-label{font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin:0;padding:14px 18px 12px}
+.m21 .proof-brands > img{display:block;width:100%;height:auto}
 .m21 .badges{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:48px}
 .m21 .badge{background:var(--card);padding:20px}
 .m21 .badge .num{font-family:Georgia,serif;font-size:24px;font-weight:700;color:var(--dark);display:block;margin-bottom:4px}
@@ -887,6 +898,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
 @media (max-width:900px){
   .m21 .why-grid,.m21 .qa-grid,.m21 .wont-grid,.m21 .evidence-grid{grid-template-columns:1fr}
+  .m21 .hero-grid{grid-template-columns:1fr;gap:36px}
+  .m21 .hero-proof{max-width:560px;margin:0 auto}
 }
 @media (max-width:700px){
   .m21 .hero{padding:48px 0 40px}
@@ -1168,27 +1181,42 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
   <!-- HERO -->
   <header class="hero" id="top">
-    <div class="wrap">
-      <div class="eyebrow">Yiwu, China · From a packaging factory floor to your brand's first shipment</div>
-      <h1>A Yiwu sourcing agent that <em>started on the factory floor</em>, not in a call center.</h1>
-      <p class="answer">Milebond is a sourcing agent in Yiwu, China. We source, inspect, consolidate and ship for Amazon sellers, private-label brands and offline wholesalers in 30+ countries. Fee: 3–8% of the factory invoice, US$50 minimum. MOQ from 1 pc on stock items. Quotes within 24 hours.</p>
-      <p class="lede">
-        We started as a small <strong>packaging factory</strong>, spent more than a decade
-        sourcing, QC-ing and shipping for e-commerce and retail brand owners,
-        and built a dedicated team to work directly with international
-        buyers. <strong>Flat 3–8% fee, factory invoice shown, low MOQ from 1 pc,
-        DDP to your door</strong> — and we negotiate hard with factories on your
-        behalf, optimize every carton centimeter to cut your landed cost, and
-        judge every sample ourselves. We care about your ROI, not our order size.
-      </p>
-      <div class="hero-ctas">
-        <a href="mailto:info@milebond.com?subject=Quote%20Request%20-%20Milebond" class="btn btn-primary">Get a Free Quote</a>
-        <a href="#evidence" class="btn btn-ghost">See how we work</a>
-      </div>
-      <div class="hero-note">
-        Already talking to a factory? <a href="/services/supplier-verification-factory-audit">We'll verify one supplier for free →</a>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Yiwu, China · From a packaging factory floor to your brand's first shipment</div>
+        <h1>A Yiwu sourcing agent that <em>started on the factory floor</em>, not in a call center.</h1>
+        <p class="answer">Milebond is a sourcing agent in Yiwu, China. We source, inspect, consolidate and ship for Amazon sellers, private-label brands and offline wholesalers in 30+ countries. Fee: 3–8% of the factory invoice, US$50 minimum. MOQ from 1 pc on stock items. Quotes within 24 hours.</p>
+        <p class="lede">
+          We started as a small <strong>packaging factory</strong>, spent more than a decade
+          sourcing, QC-ing and shipping for e-commerce and retail brand owners,
+          and built a dedicated team to work directly with international
+          buyers. <strong>Flat 3–8% fee, factory invoice shown, low MOQ from 1 pc,
+          DDP to your door</strong> — and we negotiate hard with factories on your
+          behalf, optimize every carton centimeter to cut your landed cost, and
+          judge every sample ourselves. We care about your ROI, not our order size.
+        </p>
+        <div class="hero-ctas">
+          <a href="mailto:info@milebond.com?subject=Quote%20Request%20-%20Milebond" class="btn btn-primary">Get a Free Quote</a>
+          <a href="#evidence" class="btn btn-ghost">See how we work</a>
+        </div>
+        <div class="hero-note">
+          Already talking to a factory? <a href="/services/supplier-verification-factory-audit">We'll verify one supplier for free →</a>
+        </div>
       </div>
 
+      <aside class="hero-proof" aria-label="The Milebond team and client brands">
+        <figure class="proof-team">
+          <img src="/images/team/milebond-team.jpg" alt="The Milebond team in Yiwu, China" width="900" height="591" loading="eager" decoding="async">
+          <figcaption>The Milebond team — sourcing, QC, compliance and shipping</figcaption>
+        </figure>
+        <div class="proof-brands">
+          <p class="proof-label">Brands we've sourced for</p>
+          <img src="/images/brand/partner-logos-hero.png" alt="Client brand logos: Juvale, Prestee, CareTouch, Boulder Tools, ZAP IT!, Meika, Prestex, Aya's Cutlery" width="600" height="88" loading="lazy" decoding="async">
+        </div>
+      </aside>
+    </div>
+
+    <div class="wrap">
       <div class="badges">
         <div class="badge"><span class="num">3–8%</span><span class="label">Flat fee, published</span></div>
         <div class="badge"><span class="num">1 pc</span><span class="label">Stock MOQ, custom runs from 50 pcs</span></div>
