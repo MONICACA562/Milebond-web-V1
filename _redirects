@@ -37,3 +37,8 @@
 /services/supply-chain-optimization /all-services 301
 /services/supply-chain-optimization/ /all-services 301
 /services/supply-chain-optimization.html /all-services 301
+
+# QC checklist library moved under the service page: /services/quality-control/{category}/
+/quality-control/ /services/quality-control 301
+/quality-control /services/quality-control 301
+/quality-control/* /services/quality-control/:splat 301
