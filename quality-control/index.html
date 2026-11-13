@@ -1466,6 +1466,39 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 <div class="search-modal" id="searchModal" onclick="closeSearch(event)"><div class="search-box" onclick="event.stopPropagation()"><div class="search-input-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" id="searchInput" placeholder="Search products, services..." oninput="doSearch(this.value)"><button onclick="closeSearch()" style="font-size:20px;color:var(--gray-400);background:none;border:none">×</button></div><div class="search-results" id="searchResults"></div></div></div>
 <div class="lang-toast" id="langToast"></div>
 
+
+  <style>
+    .qc-wrap .section-header{max-width:none;margin:0 0 30px;text-align:left}
+    .qc-wrap .qc-table th:last-child,.qc-wrap .qc-table td:last-child{text-align:center;white-space:nowrap}
+    .qc-wrap .qc-table td:nth-child(3){white-space:nowrap}
+    .hero .hero-content{max-width:960px;padding:48px 24px 22px}
+    .qc-scope{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 34px}
+    .qc-scope div{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:14px 16px;font-size:13.5px;line-height:1.55;color:#4b5563}
+    .qc-scope b{display:inline-flex;width:20px;height:20px;align-items:center;justify-content:center;border-radius:50%;background:#0a2a2b;color:#fff;font-size:11px;margin-right:6px}
+    .qc-scope strong{color:#0a2a2b}
+    @media (max-width:900px){.qc-scope{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:560px){.qc-scope{grid-template-columns:1fr}}
+    .qc-layer{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8a6a3b;margin-bottom:8px;display:block}
+    .qc-wrap .qc-channel{table-layout:fixed}
+    .qc-wrap .qc-channel th:nth-child(1),.qc-wrap .qc-channel td:nth-child(1){width:17%}
+    .qc-wrap .qc-channel th:nth-child(2),.qc-wrap .qc-channel td:nth-child(2){width:29%}
+    .qc-wrap .qc-channel th:nth-child(3),.qc-wrap .qc-channel td:nth-child(3){width:21%;white-space:normal}
+    .qc-wrap .qc-channel th:nth-child(4),.qc-wrap .qc-channel td:nth-child(4){width:33%;text-align:left;white-space:normal}
+    .qc-answer{background:#fff;border:1px solid var(--gray-200);border-left:4px solid var(--orange);border-radius:10px;padding:20px 24px;margin:4px 0 22px}
+    .qc-answer p{font-size:15.5px;line-height:1.75;color:#1f2937;margin:0}
+    .qc-answer-tag{display:block;font-family:'Inter',sans-serif;font-size:11.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:8px}
+    .qc-record{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:6px 0 18px}
+    .qc-record-page{position:relative;background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:18px;min-height:300px;box-shadow:0 10px 24px -18px rgba(0,0,0,.35)}
+    .qc-record-top{display:flex;justify-content:space-between;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1.1px;color:#94a3b8;font-weight:700;border-bottom:1px solid #e5e7eb;padding-bottom:8px;margin-bottom:14px}
+    .qc-record-line{height:7px;border-radius:3px;background:#e5e7eb;margin:7px 0}
+    .qc-record-line.w40{width:40%}.qc-record-line.w60{width:60%}.qc-record-line.w80{width:80%}
+    .qc-record-grid{margin-top:14px;border-top:1px solid #e5e7eb}
+    .qc-record-row{display:grid;grid-template-columns:24% 1fr 24%;gap:8px;padding:7px 0;border-bottom:1px solid #f1f2ee}
+    .qc-record-row i{height:6px;background:#eceef0;border-radius:3px;display:block}
+    .qc-record-stamp{position:absolute;right:14px;bottom:12px;border:2px solid #d97706;color:#d97706;font-size:10.5px;font-weight:800;letter-spacing:1.4px;padding:3px 8px;transform:rotate(-8deg);border-radius:4px;opacity:.85}
+    @media (max-width:760px){.qc-record{grid-template-columns:1fr}}
+  </style>
+
 <style>
     .qc-wrap .section-header{max-width:none;margin:0 0 30px;text-align:left}
     .hero .hero-content{max-width:960px}

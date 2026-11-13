@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chemical Products: Inspection Criteria (ICQ) | Milebond</title>
-  <meta name="description" content="The 35 checks Milebond runs on chemical products — candles, putty, coloured sand, powder and bath items: burn performance, heat stability, seal and leak tests, odour, caking and warnings. Product criteria plus channel-specific packaging rules for FBA, WFS, 3PL and wholesale.">
+  <title>Chemical Products QC Checklist: 35 Checks (AQL 2.5) | Milebond</title>
+  <meta name="description" content="35 QC checks for candles, putty, sand and powder: burn performance, heat stability, seal and leak tests, caking, odour and warnings, at AQL 2.5.">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1">
   <link rel="canonical" href="https://www.milebond.com/quality-control/chemical-products/">
-  <meta property="og:title" content="Chemical Products: Inspection Criteria (ICQ) | Milebond">
-  <meta property="og:description" content="The 35 checks Milebond runs on chemical products: burn performance, heat stability, seal and leak tests, odour, caking and warnings — with channel-specific packaging rules.">
+  <meta property="og:title" content="Chemical Products QC Checklist: 35 Checks (AQL 2.5) | Milebond">
+  <meta property="og:description" content="35 QC checks for candles, putty, sand and powder: burn performance, heat stability, seal and leak tests, caking, odour and warnings, at AQL 2.5.">
   <meta property="og:url" content="https://www.milebond.com/quality-control/chemical-products/">
   <meta property="og:site_name" content="Milebond — China Sourcing Agent">
   <meta property="og:locale" content="en_US">
@@ -19,8 +19,8 @@
   <meta property="og:image:alt" content="Chemical products inspection criteria — candles, putty, sand and powder QC checklist">
   <meta property="og:type" content="article">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Chemical Products: Inspection Criteria (ICQ) | Milebond">
-  <meta name="twitter:description" content="The 35 checks Milebond runs on chemical products: burn performance, heat stability, seal and leak tests, odour, caking and warnings — with channel-specific packaging rules.">
+  <meta name="twitter:title" content="Chemical Products QC Checklist: 35 Checks (AQL 2.5) | Milebond">
+  <meta name="twitter:description" content="35 QC checks for candles, putty, sand and powder: burn performance, heat stability, seal and leak tests, caking, odour and warnings, at AQL 2.5.">
   <meta name="twitter:image" content="https://www.milebond.com/images/blog/china-supplier-vetting-2026.jpg">
   <style>
     /* ============ RESET & BASE ============ */
@@ -1466,6 +1466,39 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 <div class="search-modal" id="searchModal" onclick="closeSearch(event)"><div class="search-box" onclick="event.stopPropagation()"><div class="search-input-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" id="searchInput" placeholder="Search products, services..." oninput="doSearch(this.value)"><button onclick="closeSearch()" style="font-size:20px;color:var(--gray-400);background:none;border:none">×</button></div><div class="search-results" id="searchResults"></div></div></div>
 <div class="lang-toast" id="langToast"></div>
 
+
+  <style>
+    .qc-wrap .section-header{max-width:none;margin:0 0 30px;text-align:left}
+    .qc-wrap .qc-table th:last-child,.qc-wrap .qc-table td:last-child{text-align:center;white-space:nowrap}
+    .qc-wrap .qc-table td:nth-child(3){white-space:nowrap}
+    .hero .hero-content{max-width:960px;padding:48px 24px 22px}
+    .qc-scope{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 34px}
+    .qc-scope div{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:14px 16px;font-size:13.5px;line-height:1.55;color:#4b5563}
+    .qc-scope b{display:inline-flex;width:20px;height:20px;align-items:center;justify-content:center;border-radius:50%;background:#0a2a2b;color:#fff;font-size:11px;margin-right:6px}
+    .qc-scope strong{color:#0a2a2b}
+    @media (max-width:900px){.qc-scope{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:560px){.qc-scope{grid-template-columns:1fr}}
+    .qc-layer{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8a6a3b;margin-bottom:8px;display:block}
+    .qc-wrap .qc-channel{table-layout:fixed}
+    .qc-wrap .qc-channel th:nth-child(1),.qc-wrap .qc-channel td:nth-child(1){width:17%}
+    .qc-wrap .qc-channel th:nth-child(2),.qc-wrap .qc-channel td:nth-child(2){width:29%}
+    .qc-wrap .qc-channel th:nth-child(3),.qc-wrap .qc-channel td:nth-child(3){width:21%;white-space:normal}
+    .qc-wrap .qc-channel th:nth-child(4),.qc-wrap .qc-channel td:nth-child(4){width:33%;text-align:left;white-space:normal}
+    .qc-answer{background:#fff;border:1px solid var(--gray-200);border-left:4px solid var(--orange);border-radius:10px;padding:20px 24px;margin:4px 0 22px}
+    .qc-answer p{font-size:15.5px;line-height:1.75;color:#1f2937;margin:0}
+    .qc-answer-tag{display:block;font-family:'Inter',sans-serif;font-size:11.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:8px}
+    .qc-record{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:6px 0 18px}
+    .qc-record-page{position:relative;background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:18px;min-height:300px;box-shadow:0 10px 24px -18px rgba(0,0,0,.35)}
+    .qc-record-top{display:flex;justify-content:space-between;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1.1px;color:#94a3b8;font-weight:700;border-bottom:1px solid #e5e7eb;padding-bottom:8px;margin-bottom:14px}
+    .qc-record-line{height:7px;border-radius:3px;background:#e5e7eb;margin:7px 0}
+    .qc-record-line.w40{width:40%}.qc-record-line.w60{width:60%}.qc-record-line.w80{width:80%}
+    .qc-record-grid{margin-top:14px;border-top:1px solid #e5e7eb}
+    .qc-record-row{display:grid;grid-template-columns:24% 1fr 24%;gap:8px;padding:7px 0;border-bottom:1px solid #f1f2ee}
+    .qc-record-row i{height:6px;background:#eceef0;border-radius:3px;display:block}
+    .qc-record-stamp{position:absolute;right:14px;bottom:12px;border:2px solid #d97706;color:#d97706;font-size:10.5px;font-weight:800;letter-spacing:1.4px;padding:3px 8px;transform:rotate(-8deg);border-radius:4px;opacity:.85}
+    @media (max-width:760px){.qc-record{grid-template-columns:1fr}}
+  </style>
+
 <style>
     .qc-wrap .section-header{max-width:none;margin:0 0 30px;text-align:left}
     .qc-wrap .qc-table th:last-child,.qc-wrap .qc-table td:last-child{text-align:center;white-space:nowrap}
@@ -1491,8 +1524,13 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   <!-- ================= HERO ================= -->
   <section class="hero">
     <div class="hero-content">
+      <nav aria-label="Breadcrumb" style="font-size:12px;color:#8a8a80;margin-bottom:14px;font-family:'Inter',sans-serif">
+        <a href="/" style="color:inherit;text-decoration:none">Home</a> <span style="opacity:.5">›</span>
+        <a href="/quality-control/" style="color:inherit;text-decoration:none">Quality Control</a> <span style="opacity:.5">›</span>
+        <span style="color:#0a2a2b">Chemical Products</span>
+      </nav>
       <p class="sv-eyebrow">CATEGORY-SPECIFIC INSPECTION STANDARD</p>
-      <h1>Chemical products <span>— our inspection criteria</span></h1>
+      <h1>Chemical products <span>QC checklist</span></h1>
       <p class="hero-sub">
         Chemical products fail differently from paper or plastic. A candle can pass a visual check and still smoke, tunnel or burn unevenly. A sealed container can look perfect and leak after two hours on a table. Powder can leave the factory soft and arrive caked. This is the inspection criteria sheet (ICQ) we apply to candles, putty, coloured sand, powder, bubble solution and similar chemical products — with the product checks separated from the platform packing rules.
       </p>
@@ -1500,7 +1538,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         <a href="#checks" class="sv-btn sv-btn-primary">See the 35 checks</a>
         <a href="#channels" class="sv-btn sv-btn-ghost">Channel rules</a>
       </div>
-      <p class="sv-hero-note">AQL Level II sampling · Accept CR 0 / MA 1.5 / MI 4.0 · Criteria V1.0 · Updated November 2026 · Amazon FBA defaults, adapted per channel</p>
+      <p class="sv-hero-note">AQL Level II sampling · Accept CR 0 / MA 1.5 / MI 4.0 · Criteria V1.0 · Reviewed by Monica Zhu · Updated November 2026</p>
     </div>
   </section>
 
@@ -1675,6 +1713,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       </div>
       <div class="qc-grid" style="margin-top:20px">
         <div class="qc-card"><h3>What is an ICQ in quality inspection?</h3><p>An inspection criteria sheet (ICQ) is the written standard for one product: the checks, the tools, the sample size, the acceptance tolerance and the defect class. It is agreed before production so the factory and the inspector measure the same things.</p></div>
+        <div class="qc-card"><h3>What AQL level do you use?</h3><p>AQL Level II is the baseline (Level III tightened for first orders), with CR 0 / MA 1.5 / MI 4.0 acceptance. Any critical defect stops the shipment regardless of the AQL result.</p></div>
         <div class="qc-card"><h3>Do these standards apply if I don't sell on Amazon?</h3><p>Yes for layers A–C: dimensions, burn performance, seal, odour, appearance and safety do not change with the marketplace. Only layer D — carton limits, labels, polybags and inserts — is replaced with your channel's rules, whether that is WFS, a 3PL, wholesale or ocean freight.</p></div>
         <div class="qc-card"><h3>What tests do you run on candles?</h3><p>Wick centring ≤ 1/3 of the radius, 0.5–2 cm wick exposure, 35 °C heat stability for 24 hours, an 8° stability test, and a 15-minute burn test checking for black smoke, self-extinguishing, flame height above 5 cm and decoration ignition.</p></div>
         <div class="qc-card"><h3>How do you test a sealed container?</h3><p>Fill to capacity, shake 10 times, invert on tissue for 2 hours, rotate 180° for another 2 hours, then 20 back-and-forth shakes. Any water mark on the tissue fails the unit.</p></div>
@@ -1984,8 +2023,8 @@ function toggleDropdown(el){var dd=el.closest('.nav-dropdown');if(!dd)return;doc
   "@graph": [
     {
       "@type": "TechArticle",
-      "headline": "Chemical Products: Inspection Criteria (ICQ)",
-      "description": "The 35 checks Milebond runs on chemical products — candles, putty, coloured sand, powder and bath items: burn performance, heat stability, seal and leak tests, odour, caking and warnings. Product criteria plus channel-specific packaging rules for FBA, WFS, 3PL and wholesale.",
+      "headline": "Chemical products QC checklist: 35 checks",
+      "description": "35 QC checks for candles, putty, sand and powder: burn performance, heat stability, seal and leak tests, caking, odour and warnings, at AQL 2.5.",
       "author": {
         "@type": "Person",
         "name": "Monica Zhu"
@@ -2008,6 +2047,14 @@ function toggleDropdown(el){var dd=el.closest('.nav-dropdown');if(!dd)return;doc
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "An inspection criteria sheet (ICQ) is the written standard for one product: the checks, the tools, the sample size, the acceptance tolerance and the defect class. It is agreed before production so the factory and the inspector measure the same things."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What AQL level do you use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AQL Level II is the baseline, with Level III tightened for first orders and CR 0 / MA 1.5 / MI 4.0 acceptance. Any critical defect stops the shipment regardless of the AQL result."
           }
         },
         {
