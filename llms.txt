@@ -12,7 +12,7 @@
 - [Sourcing fees and pricing](https://www.milebond.com/services/sourcing-fees-pricing): 3–8% fee model, USD 50 minimum, zero kickbacks.
 - [Product sourcing](https://www.milebond.com/services/product-sourcing): Supplier search, comparison and factory negotiation.
 - [Supplier verification and factory audit](https://www.milebond.com/services/supplier-verification-factory-audit): Desk checks plus on-site audit.
-- [Quality control and inspection](https://www.milebond.com/services/quality-control): Pre-shipment inspection, final warehouse QC, and published inspection criteria (ICQ) checklists for 41 product categories under /services/quality-control/{category}/, all on an AQL Level II baseline (CR 0 / MA 1.5 / MI 4.0).
+- [Quality control and inspection](https://www.milebond.com/services/quality-control/): Pre-shipment inspection, final warehouse QC, and published inspection criteria (ICQ) checklists for 41 product categories under /services/quality-control/{category}/, all on an AQL Level II baseline (CR 0 / MA 1.5 / MI 4.0).
 - [Private label and OEM](https://www.milebond.com/services/private-label-oem): Custom branded production from 50 pcs.
 - [Warehousing and shipping](https://www.milebond.com/services/warehousing-shipping): Consolidation, FBA prep and DDP delivery.
 - [Blog](https://www.milebond.com/blog/): China sourcing guides and agent comparison research.
