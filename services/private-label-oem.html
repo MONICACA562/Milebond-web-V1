@@ -605,7 +605,32 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 .fc-btn svg{width:24px;height:24px}
 .fc-whatsapp svg{color:#008138}
 .fc-email svg{color:#a06a30}
-@media(max-width:480px){.fc-btns{bottom:16px;right:16px;gap:10px}.fc-btn{width:44px;height:44px}.fc-btn svg{width:20px;height:20px}.qm-row{flex-direction:column;gap:0}}</style>
+@media(max-width:480px){.fc-btns{bottom:16px;right:16px;gap:10px}.fc-btn{width:44px;height:44px}.fc-btn svg{width:20px;height:20px}.qm-row{flex-direction:column;gap:0}}
+    /* ============ PRIVATE LABEL DEEP DIVE ============ */
+    .pl-jump{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:20px 0 0}
+    .pl-jump a{font-size:13px;border:1px solid var(--gray-200);border-radius:999px;padding:7px 13px;color:var(--navy);background:#fff;font-weight:600}
+    .pl-jump a:hover{border-color:var(--orange)}
+    .pl-answer{background:#fff;border:1px solid var(--gray-200);border-left:4px solid var(--orange);border-radius:10px;padding:20px 24px;margin:0 0 24px}
+    .pl-answer p{margin:0;font-size:15.5px;line-height:1.75;color:#1f2937}
+    .pl-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);min-width:820px}
+    .pl-table th,.pl-table td{padding:12px 14px;font-size:13.5px;text-align:left;border-bottom:1px solid var(--gray-200);line-height:1.55;vertical-align:top}
+    .pl-table thead th{background:var(--navy);color:#fff;font-family:'Fraunces',sans-serif;font-weight:700;font-size:13px}
+    .pl-table tbody th{color:var(--navy);font-weight:600;background:var(--cream);white-space:nowrap}
+    .pl-table tbody td{color:var(--gray-600)}
+    .pl-table tr:last-child th,.pl-table tr:last-child td{border-bottom:none}
+    .pl-note{font-size:13px;color:#6b7280;line-height:1.7;margin-top:14px}
+    .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:26px}
+    .risk-card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:26px}
+    .risk-card h3{font-size:17px;margin-bottom:10px}
+    .risk-card .r-label{display:block;font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;font-weight:700;color:#9a6a3a;margin:14px 0 4px}
+    .risk-card p{font-size:14px;color:var(--gray-600);line-height:1.7;margin:0}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+    .why-card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:26px}
+    .why-card h3{font-size:17px;margin-bottom:10px}
+    .why-card p{font-size:14px;color:var(--gray-600);line-height:1.7;margin:0}
+    .why-stat{font-family:'Fraunces',sans-serif;font-size:30px;color:var(--orange);line-height:1;margin-bottom:8px}
+    @media(max-width:860px){.risk-grid,.why-grid{grid-template-columns:1fr}}
+</style>
 <style>
 /* QSFC theme override (fonts/colors/backgrounds only) */
 body{background:#fafaf7!important}
@@ -1319,6 +1344,183 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     </div>
   </section>
 
+
+  <!-- ================= BRAND-BUILDING DEEP DIVE ================= -->
+  <section class="section" id="customization" style="background:var(--cream);padding-bottom:0">
+    <div class="container">
+      <div class="section-header">
+        <span class="ship-tag">Customization, costed honestly</span>
+        <h2>What your logo really costs: MOQ, tooling and the process behind it</h2>
+        <p>Before you commit to a brand you need three numbers: the minimum run your process allows, the one-time cost to set it up, and what changes if you halve it. This section gives those three numbers by material — plus the failure modes that decide whether batch two looks like batch one.</p>
+      </div>
+      <div class="pl-jump">
+        <a href="#moq">MOQ by process</a>
+        <a href="#tooling">Mold &amp; tooling fees</a>
+        <a href="#risks">Where projects fail</a>
+        <a href="#yiwu">Why Yiwu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MOQ BY PROCESS ================= -->
+  <section class="section" id="moq" style="background:var(--cream);padding-top:56px">
+    <div class="container">
+      <div class="section-header">
+        <span class="ship-tag">MOQ</span>
+        <h2>Your MOQ is set by the process, not by the agent</h2>
+        <p>The same product can start at 50 pcs or 3,000 pcs depending on what you change.</p>
+      </div>
+      <div class="pl-answer">
+        <p><strong>The short answer:</strong> MOQ is driven by setup, not by volume. A label on a stock item needs no setup and can start at 50–200 pcs; screen printing needs a screen per colour, so 300–1,000 pcs; a new injection mold needs steel, so 1,000–3,000 pcs. We quote the real band for your item and show which change lowers it.</p>
+      </div>
+      <div class="cmp-wrap">
+        <table class="pl-table">
+          <thead>
+            <tr><th>What changes on the product</th><th>Typical MOQ</th><th>One-time setup</th><th>Why the floor exists</th><th>How to lower it</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>Label, sticker or hangtag on a stock item</th><td>50–200 pcs</td><td>None</td><td>Nothing on the line changes</td><td>Put several SKUs in one carton</td></tr>
+            <tr><th>Laser engraving (wood, metal, glass)</th><td>50–200 pcs</td><td>None to USD 100 fixture</td><td>Machine time per unit, not setup</td><td>Keep one artwork and one size</td></tr>
+            <tr><th>Pad or screen print (plastic, metal, glass)</th><td>300–1,000 pcs</td><td>USD 30–80 per colour</td><td>One screen and one setup per colour</td><td>Cut four colours to one or two</td></tr>
+            <tr><th>Heat transfer or sublimation</th><td>300–500 pcs</td><td>USD 80–200 per design</td><td>A film or transfer run per design</td><td>Reuse one design across sizes</td></tr>
+            <tr><th>Digital print (labels, cartons, cards)</th><td>100–500 pcs</td><td>None</td><td>No plate, so short runs stay economic</td><td>Accept a higher unit price at 100</td></tr>
+            <tr><th>Offset print (boxes, cards, booklets)</th><td>500–1,000 pcs</td><td>USD 60–150 per plate, per colour</td><td>Plates and make-ready per colour</td><td>Digital under 500, offset above 2,000</td></tr>
+            <tr><th>Woven labels, printed labels, hangtags</th><td>500–1,000 pcs</td><td>USD 50–150 per design</td><td>Loom or die setup per design</td><td>Standard sizes, two colours</td></tr>
+            <tr><th>Embroidery or heat-seal on textile</th><td>100–300 pcs</td><td>USD 50–120 per logo file</td><td>A machine program per logo</td><td>Fewer thread colours, one placement</td></tr>
+            <tr><th>Silicone or rubber molding</th><td>500–1,000 pcs</td><td>USD 300–900 per mold</td><td>A mold is cut per shape</td><td>Use a stock mold and change colour</td></tr>
+            <tr><th>Plastic injection molding</th><td>1,000–3,000 pcs</td><td>USD 800–5,000+ per mold</td><td>Steel, trial shots, first-article approval</td><td>Family mold, or a stock shell with a custom lid</td></tr>
+            <tr><th>Die-cut, foam insert or blister</th><td>500–1,000 pcs</td><td>USD 80–300 per die</td><td>One cutting die per shape</td><td>Stock insert with a printed sleeve</td></tr>
+            <tr><th>Electronics assembly (PCB, test jig)</th><td>500–1,000 pcs</td><td>USD 300–1,500 for stencil and jig</td><td>SMT setup and a test program</td><td>Certified module, custom shell</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="pl-note">Bands are indicative, drawn from current Yiwu and Jinhua suppliers. Your written quote states the exact MOQ, setup cost and unit price for the item you chose. When a factory has an open line, we ask for a lower run before we tell you it is impossible.</p>
+    </div>
+  </section>
+
+  <!-- ================= TOOLING ================= -->
+  <section class="section" id="tooling" style="background:#fff">
+    <div class="container">
+      <div class="section-header">
+        <span class="ship-tag">Tooling</span>
+        <h2>Mold fees: what you pay for, and who owns the steel</h2>
+        <p>Tooling is the most common place a first-time brand loses money. It does not have to be.</p>
+      </div>
+      <div class="pl-answer">
+        <p><strong>The short answer:</strong> a tooling fee is a one-time payment for the steel or die that makes your shape — not a markup. We quote it at cost with the factory invoice, name you as the owner in writing before cutting starts, and hand over the mold ID, photos and transfer terms. Amortized or bought outright, the decision stays yours.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <h3>What triggers tooling</h3>
+          <p>A new shape, a new cavity, a new die-cut or a new test jig. If an existing mold already covers your size, you pay for colour and print, not steel.</p>
+        </div>
+        <div class="why-card">
+          <h3>What the fee covers</h3>
+          <p>Design-for-manufacturing review, the steel, trial shots, revisions up to sample approval, and first-article inspection before the first production run.</p>
+        </div>
+        <div class="why-card">
+          <h3>Who owns it</h3>
+          <p>You do, once the fee is paid. The mold carries an ID plate, storage is documented, and transfer to another factory is written into the agreement.</p>
+        </div>
+      </div>
+      <p class="pl-note">Before quoting new steel we search the factory's existing mold library and family molds — a large share of "custom" projects can use a mold that already exists. Written terms and a steel invoice are what let you move the mold later: <a href="/blog/mold-ownership-china-tooling-case-study/" style="color:var(--orange);font-weight:600">how mold ownership works in China</a>.</p>
+    </div>
+  </section>
+
+  <!-- ================= RISKS ================= -->
+  <section class="section" id="risks" style="background:var(--cream)">
+    <div class="container">
+      <div class="section-header">
+        <span class="ship-tag">Risk map</span>
+        <h2>Where private label projects actually fail</h2>
+        <p>Seven failures we see repeatedly — the cause, and the control that prevents each.</p>
+      </div>
+      <div class="risk-grid">
+        <div class="risk-card">
+          <h3>The logo colour drifts by batch two</h3>
+          <span class="r-label">Why it happens</span>
+          <p>Ink mixed by eye, a Pantone matched on a screen, or a substrate that absorbs differently from the approved sample.</p>
+          <span class="r-label">What we do</span>
+          <p>A physical drawdown is approved against your Pantone reference and kept as the sealed standard; bulk is measured against it with a working tolerance of ΔE ≤ 2.</p>
+        </div>
+        <div class="risk-card">
+          <h3>The print peels after a month of use</h3>
+          <span class="r-label">Why it happens</span>
+          <p>Low surface energy on PP or PE, no corona or flame treatment, or an ink chosen for speed rather than adhesion.</p>
+          <span class="r-label">What we do</span>
+          <p>Treatment is specified before printing, and adhesion is tested at AQL with a 3M 610 tape pull plus a dry-rub check on every inspection.</p>
+        </div>
+        <div class="risk-card">
+          <h3>Packaging triggers a marketplace rejection</h3>
+          <span class="r-label">Why it happens</span>
+          <p>Artwork copied from a competitor, missing warnings, a barcode that scans to the wrong case, or no importer address.</p>
+          <span class="r-label">What we do</span>
+          <p>A channel compliance checklist is signed before print, and FNSKU, carton marks, poly-bag warnings and label placement are checked pre-press and again at the final gate.</p>
+        </div>
+        <div class="risk-card">
+          <h3>The sample was perfect, the bulk was not</h3>
+          <span class="r-label">Why it happens</span>
+          <p>The factory substitutes a component or moves part of the order to a subcontractor once the PO is signed.</p>
+          <span class="r-label">What we do</span>
+          <p>A sealed golden sample at each gate, a component-level BOM check, and <a href="/services/supplier-verification-factory-audit" style="color:var(--orange);font-weight:600">supplier verification</a> before the order is placed.</p>
+        </div>
+        <div class="risk-card">
+          <h3>MOQ turns into dead stock</h3>
+          <span class="r-label">Why it happens</span>
+          <p>One large run is ordered to reach a price break, before sell-through is known.</p>
+          <span class="r-label">What we do</span>
+          <p>We quote an MOQ ladder of two or three tiers, start with a test order, and plan the reorder cadence from actual sell-through.</p>
+        </div>
+        <div class="risk-card">
+          <h3>You paid for a mold you cannot move</h3>
+          <span class="r-label">Why it happens</span>
+          <p>No ownership clause, no mold ID, and the factory holds the tool as leverage on the next order.</p>
+          <span class="r-label">What we do</span>
+          <p>Ownership is agreed before cutting, the mold is photographed and tagged, and transfer terms plus the steel invoice are handed to you at the end of the run.</p>
+        </div>
+        <div class="risk-card">
+          <h3>Assembly errors ship as returns</h3>
+          <span class="r-label">Why it happens</span>
+          <p>Multi-part kits are counted by hand at the factory, with no weight check and no photo of what went into the carton.</p>
+          <span class="r-label">What we do</span>
+          <p>Kitting and counting happen in our Jinhua warehouse against a count sheet, with a carton weight check and a photo record before sealing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY YIWU ================= -->
+  <section class="section" id="yiwu" style="background:#fff">
+    <div class="container">
+      <div class="section-header">
+        <span class="ship-tag">Why Yiwu</span>
+        <h2>A Yiwu base, not just a Yiwu address</h2>
+        <p>Supplier density, one warehouse, and a QC gate that sees the product before the carton does.</p>
+      </div>
+      <div class="pl-answer">
+        <p><strong>The short answer:</strong> Yiwu is not a cheaper address, it is a denser one. In a single morning the same brief can go to a print shop, a mold shop and a packaging converter, and the parts can then be assembled under one roof in Jinhua. That density is what makes small branded runs viable.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-stat">6,900+</div>
+          <h3>Pre-screened suppliers</h3>
+          <p>Several factories quoted per component instead of one, so MOQ, tooling and lead time can be compared on the same brief.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-stat">800㎡</div>
+          <h3>Jinhua assembly and QC floor</h3>
+          <p>Components from different factories are consolidated, kitted and counted here — one branded SKU out, not five parcels.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-stat">3 gates</div>
+          <h3>Sealed-sample inspection</h3>
+          <p>Pre-production, bulk sample and pre-shipment, each against the sample you signed — including the logo and the artwork.</p>
+        </div>
+      </div>
+      <p class="pl-note">Assembly is only as good as what arrives. The checks behind this floor are published per category in our <a href="/services/quality-control/" style="color:var(--orange);font-weight:600">QC checklist library</a>, from <a href="/services/quality-control/paper-boxes/" style="color:var(--orange);font-weight:600">paper boxes</a> to <a href="/services/quality-control/clothing-accessories/" style="color:var(--orange);font-weight:600">clothing &amp; accessories</a>.</p>
+    </div>
+  </section>
+
   <!-- ================= FAQ ================= -->
   <section class="section faq-section" id="faq">
     <div class="container">
@@ -1391,6 +1593,50 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
           <div class="faq-answer">
             <div class="faq-answer-inner">
               Every reorder is checked against your sealed sample. We also renegotiate pricing — clients typically land about 10% lower landed cost per batch.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            What is a realistic MOQ for a private label product?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              It depends on what changes. A label or laser engraving on a stock item starts at 50–200 pcs, screen printing at 300–1,000 pcs, and a new injection mold at 1,000–3,000 pcs. The table above gives the band per process, and your quote states the exact figure for your item.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            Who owns the mold if I pay for it?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              You do, once the tooling fee is paid. The agreement is signed before steel is cut and records the mold ID, storage terms and the conditions for transferring it to another factory.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            Can you assemble a multi-part kit under my brand?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. Components sourced from different factories are consolidated and assembled in our Jinhua warehouse, with a count sheet, a carton weight check and a photo record before each carton is sealed.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            How do you keep the logo colour consistent between batches?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              A physical drawdown is approved against your Pantone reference and kept as the sealed standard. Bulk production is measured against it with a working tolerance of ΔE ≤ 2, and the colour is re-checked at pre-shipment.
             </div>
           </div>
         </div>
@@ -1965,6 +2211,38 @@ function toggleDropdown(el){var dd=el.closest('.nav-dropdown');if(!dd)return;doc
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Every reorder is checked against your sealed sample. We also renegotiate pricing — clients typically land about 10% lower landed cost per batch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a realistic MOQ for a private label product?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on what changes. A label or laser engraving on a stock item starts at 50–200 pcs, screen printing at 300–1,000 pcs, and a new injection mold at 1,000–3,000 pcs. The table above gives the band per process, and your quote states the exact figure for your item."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who owns the mold if I pay for it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You do, once the tooling fee is paid. The agreement is signed before steel is cut and records the mold ID, storage terms and the conditions for transferring it to another factory."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you assemble a multi-part kit under my brand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Components sourced from different factories are consolidated and assembled in our Jinhua warehouse, with a count sheet, a carton weight check and a photo record before each carton is sealed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you keep the logo colour consistent between batches?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A physical drawdown is approved against your Pantone reference and kept as the sealed standard. Bulk production is measured against it with a working tolerance of ΔE ≤ 2, and the colour is re-checked at pre-shipment."
       }
     }
   ]
