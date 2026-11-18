@@ -717,6 +717,33 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     <li><strong>Pay via WorldFirst business</strong> — sometimes works when personal KJB was rejected. Register a WorldFirst business account in your country and link it to 1688.</li>
   </ol>
 
+  <h2 id="europe">Registration From Europe: What Actually Differs</h2>
+  <p>The country code is where most European registrations stall, and it is the one field you must correct by hand. 1688 reads your IP and pre-fills a dialing code; when it shows +86, open the dropdown and select your own country before typing the number. In our tests a +44 number passed the SMS check, and the rest of the flow ran with a UK passport.</p>
+  <p>Your passport is the identity document here. The real-name step is built around the passport photo page, so have a clear, well-lit image ready before you start. Type your name exactly as it appears on the passport, including any middle names.</p>
+  <p>Do not enter a Chinese proxy address to look local. A fake Chinese address is the number one reason foreign accounts are suspended within 72 hours — usually as error code 88, and usually during KJB setup rather than at registration. Use your actual home address.</p>
+  <p>Once you submit KJB, review typically takes 30 minutes to 4 hours, and you receive an SMS when it is approved. If it takes longer, check that the name and address on the application match your passport exactly before you resubmit.</p>
+
+  <h2 id="us">Registering From the US: The Three Blockers</h2>
+  <p>A US number works, but how you receive the SMS decides whether you get through. In our tests a real T-Mobile SIM delivered the code consistently, while Google Voice often failed to deliver it at all. The code normally arrives within a minute; if it does not, check that you did not type the country code twice.</p>
+  <p>The second blocker is the address. Enter your actual US residential address — not a Chinese address, not a forwarder. 1688 cross-references the billing details you use later with the phone's country code, and a mismatch is what triggers the anti-fraud review. Complete email binding, the payment password and two-factor setup before you start KJB; new accounts stay flagged until those three are done.</p>
+  <p>The third blocker shows up at checkout, not at signup. If 1688 refuses your payment, the account is usually fine and the supplier is the problem: many suppliers have not enabled cross-border shipping. Look for the green Cross-Border Ready badge in the supplier's shop header before you assume your account is broken.</p>
+  <p>For the payment step, we tested with a Wise card. Keep the card details consistent with the billing address you entered during KJB setup.</p>
+
+  <h2 id="us-phone">Can You Use a US Phone Number? What We Actually Saw</h2>
+  <p>A US number is not the problem; the type of number is. Here is what we saw across the three routes buyers actually try.</p>
+  <table class="ba-table">
+    <thead><tr><th>Number type</th><th>SMS arrives</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Real US SIM (T-Mobile / AT&amp;T)</td><td>works consistently</td><td>the only route with no follow-up risk</td></tr>
+      <tr><td>Google Voice</td><td>often fails</td><td>the code frequently never arrives</td></tr>
+      <tr><td>Virtual number (Twilio, MessageBird)</td><td>works, account at risk</td><td>codes arrive, but real-name verification and later KJB verification often fail</td></tr>
+    </tbody>
+  </table>
+  <p>If the number is the only thing between you and the account, stop here — we buy and pay on 1688 on your behalf.</p>
+
+  <h2 id="spanish" lang="es">¿Cómo registrarse en 1688? Respuesta rápida en español</h2>
+  <p lang="es">Al abrir la página de registro, 1688 detecta tu país por la IP y suele mostrar el prefijo de China. Cámbialo manualmente por el de tu país antes de escribir tu número. La verificación de identidad se hace con tu pasaporte y tu dirección real de residencia, así que no necesitas una dirección china. Con la cuenta creada, activa KJB (Kuajing Bao), el canal de pago transfronterizo, antes de intentar pagar; sin él, el pedido no se completa.</p>
+
   <h2 id="conclusion">Conclusion</h2>
   <p>Registering a 1688 account as a foreigner is not an exploit — 1688 built the KJB channel specifically for you. The failure rate is high because most buyers skip the KJB step, use fake addresses, or block SMS on their phone.</p>
   <p>The process takes about 20 minutes of active work plus 1–4 hours of KJB review. Once active, you have the same access as any Chinese wholesaler to 100,000+ factories with prices 30–50% below Alibaba quotes.</p>
