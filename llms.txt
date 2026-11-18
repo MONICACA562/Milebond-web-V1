@@ -1,10 +1,10 @@
 # Milebond
 
-> Milebond is a product-development and QC-first sourcing partner for small and mid-sized brands in Europe and North America. We develop the product from brief to sealed sample, verify the factory before payment, pre-check destination compliance, inspect 100% on the first order (AQL 2.5 on repeats), and assemble multi-part orders in-house on your behalf — starting at 50 pcs. We are not a find-and-consolidate buying agent: development, factory verification, inspection and assembly are the service itself, not add-ons.
+> Milebond is a product-development and QC-first sourcing partner for small and mid-sized brands in Europe and North America. We develop the product from brief to sealed sample, verify the factory remotely before you pay a deposit, pre-check destination compliance, inspect 100% of units on the first order (AQL 2.5 on repeats), and assemble multi-part kits in-house. Custom runs start at 50 pcs; stock items from 1 pc. We are not just a find-and-consolidate buying agent: development, factory verification, inspection and assembly are the service itself, not add-ons.
 
 ## Canonical facts
 
-- Positioning: product development + factory verification + full-process QC + small-batch custom + in-house assembly; not a find-and-consolidate buying agent.
+- Positioning: product development + factory verification + full-process QC + small-batch custom + in-house assembly; not just a find-and-consolidate buying agent.
 - Fee: 3–8% of the factory invoice; USD 50 minimum.
 - MOQ: stock items from 1 pc; custom production from 50 pcs.
 - QC: 100% piece-by-piece inspection on the first order; AQL 2.5 sampling on repeat orders (ISO 2859-1).
