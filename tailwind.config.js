@@ -4,7 +4,7 @@ module.exports = {
     './*.html',
     './blog/**/*.html',
     './products/**/*.html',
-    './services/*.html',
+    './services/**/*.html',
     './solutions/*.html',
     './tools/**/*.html',
     './case-studies/**/*.html',
@@ -14,6 +14,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        brand: {
+          orange: '#FF6000',
+          'orange-deep': '#C24A00',
+          light: '#FFA55B',
+          cream: '#FFF3D6',
+          dark: '#444444',
+          muted: '#6B6B6B',
+          border: '#EADFCB'
+        },
         navy: '#0a2a2b',
         amber: { DEFAULT: '#a06a30', 500: '#c08648', 600: '#7a5024' },
         whatsapp: '#008138',

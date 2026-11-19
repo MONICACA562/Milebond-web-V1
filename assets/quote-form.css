@@ -16,7 +16,7 @@
 .qf-label {
   font-size: 13px;
   font-weight: 600;
-  color: #364153;
+  color: #444444;
   line-height: 1.35;
 }
 .qf-req { color: #b42318; margin-left: 2px; }
@@ -28,7 +28,7 @@
   border: 1px solid #d8d5ca;
   border-radius: 9px;
   background: #fff;
-  color: #0a2a2b;
+  color: #444444;
   font-size: 14px;
   font-family: inherit;
   line-height: 1.4;
@@ -38,8 +38,8 @@
 .qf-input:focus,
 .qf-select:focus,
 .qf-textarea:focus {
-  border-color: #008138;
-  box-shadow: 0 0 0 3px rgba(0, 129, 56, .12);
+  border-color: #ff6000;
+  box-shadow: 0 0 0 3px rgba(255,96,0, .12);
 }
 .qf-textarea { min-height: 96px; resize: vertical; }
 .qf-price { display: flex; gap: 8px; }
@@ -48,11 +48,11 @@
 .qf-file {
   width: 100%;
   padding: 10px 12px;
-  border: 1px dashed #cdc8b8;
+  border: 1px dashed #d9c9ac;
   border-radius: 9px;
-  background: #fafaf7;
+  background: #fff3d6;
   font-size: 13px;
-  color: #5a5950;
+  color: #6b6b6b;
   cursor: pointer;
 }
 .qf-file::file-selector-button {
@@ -60,7 +60,7 @@
   padding: 7px 12px;
   border: 0;
   border-radius: 999px;
-  background: #0a2a2b;
+  background: #444444;
   color: #fff;
   font: inherit;
   font-size: 12.5px;
@@ -74,17 +74,17 @@
   gap: 9px;
   font-size: 12.5px;
   line-height: 1.55;
-  color: #5a5950;
+  color: #6b6b6b;
 }
-.qf-consent input { margin-top: 3px; accent-color: #008138; flex: none; }
-.qf-consent a { color: #0a2a2b; text-decoration: underline; }
+.qf-consent input { margin-top: 3px; accent-color: #ff6000; flex: none; }
+.qf-consent a { color: #444444; text-decoration: underline; }
 .qf-submit {
   grid-column: 1 / -1;
   width: 100%;
   padding: 14px 18px;
   border: 0;
   border-radius: 999px;
-  background: #008138;
+  background: #ff6000;
   color: #fff;
   font-family: inherit;
   font-size: 15px;
@@ -92,7 +92,7 @@
   cursor: pointer;
   transition: background .15s, box-shadow .15s;
 }
-.qf-submit:hover { background: #0f3d3e; box-shadow: 0 12px 28px rgba(0, 129, 56, .28); }
+.qf-submit:hover { background: #3a3a3a; box-shadow: 0 12px 28px rgba(255,96,0, .28); }
 .qf-submit:disabled { opacity: .65; cursor: wait; }
 .qf-status {
   grid-column: 1 / -1;
@@ -107,9 +107,9 @@
   margin: 0;
   font-size: 12.5px;
   line-height: 1.5;
-  color: #6a7282;
+  color: #6b6b6b;
 }
-.qf-hint a { color: #0a2a2b; font-weight: 600; }
+.qf-hint a { color: #444444; font-weight: 600; }
 
 /* Optional details — collapsed, so the first screen stays at 4 fields */
 .qf-more {
@@ -125,7 +125,7 @@
   list-style: none;
   font-size: 13.5px;
   font-weight: 600;
-  color: #0a2a2b;
+  color: #444444;
 }
 .qf-more-sum::-webkit-details-marker { display: none; }
 .qf-more-sum::before {
@@ -138,13 +138,13 @@
   height: 18px;
   border-radius: 50%;
   background: #eef3ef;
-  color: #008138;
+  color: #ff6000;
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
 }
 .qf-more[open] .qf-more-sum::before { content: "\2212"; }
-.qf-more-opt { font-weight: 500; color: #6a7282; }
+.qf-more-opt { font-weight: 500; color: #6b6b6b; }
 .qf-more-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -112,8 +112,8 @@
 </script>
 <style>
   :root{
-    --navy:#162D54; --navy2:#2a4a7c; --orange:#E87722; --gold:#F5A623;
-    --green:#10B981; --red:#EF4444; --bg:#f2f4f7; --ink:#1f2937; --gray:#6B7280; --line:#E5E7EB;
+    --navy:#444444; --navy2:#6b6b6b; --orange:#ff6000; --gold:#ffa55b;
+    --green:#10B981; --red:#EF4444; --bg:#fff3d6; --ink:#444444; --gray:#6b6b6b; --line:#eadfcb;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
@@ -140,7 +140,7 @@
 
   .page-head{padding:18px 0 8px;}
   .page-head h1{font-size:clamp(24px,3vw,32px);color:var(--navy);line-height:1.3;margin-bottom:10px;}
-  .page-head .lede{font-size:15px;color:#374151;max-width:82ch;margin-bottom:12px;}
+  .page-head .lede{font-size:15px;color:#444444;max-width:82ch;margin-bottom:12px;}
 
   .toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 6px;}
   .toolbar input[type=search]{flex:1;min-width:220px;padding:11px 15px;border:1px solid var(--line);border-radius:8px;font-size:16px;font-family:inherit;color:var(--ink);background:#fff;}
@@ -157,15 +157,15 @@
   .sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:26px 0 14px;}
   .sec-head h2{font-size:22px;color:var(--navy);display:flex;align-items:center;gap:8px;}
   .sec-dot{width:12px;height:12px;border-radius:3px;background:var(--orange);display:inline-block;}
-  .sec-count{font-size:12px;font-weight:700;color:var(--orange);background:#FEF1E6;border:1px solid #F8D9BE;padding:2px 9px;border-radius:12px;}
-  .sec-note{font-size:13.5px;color:#4b5563;max-width:100%;flex-basis:100%;}
+  .sec-count{font-size:12px;font-weight:700;color:var(--orange);background:#ffe3cb;border:1px solid #ffc08a;padding:2px 9px;border-radius:12px;}
+  .sec-note{font-size:13.5px;color:#6b6b6b;max-width:100%;flex-basis:100%;}
 
   .catalog{display:grid;grid-template-columns:1fr;gap:18px;}
   @media (min-width:600px){.catalog{grid-template-columns:repeat(2,1fr);}}
   @media (min-width:1000px){.catalog{grid-template-columns:repeat(3,1fr);}}
 
-  .card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(22,45,84,.06);transition:box-shadow .15s,transform .15s;display:flex;flex-direction:column;}
-  .card:hover{box-shadow:0 8px 22px rgba(22,45,84,.14);transform:translateY(-2px);}
+  .card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(68,68,68,.06);transition:box-shadow .15s,transform .15s;display:flex;flex-direction:column;}
+  .card:hover{box-shadow:0 8px 22px rgba(68,68,68,.14);transform:translateY(-2px);}
   .card-link{display:block;text-decoration:none;color:inherit;flex:1;}
   .card-img{display:block;position:relative;aspect-ratio:4/3;background:var(--bg);overflow:hidden;}
   .card-img img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -173,16 +173,16 @@
   .card-info{display:block;padding:12px 14px 8px;}
   .card-meta{display:flex;gap:10px;align-items:baseline;font-size:12px;color:var(--gray);margin-bottom:5px;}
   .card-meta .sku{font-weight:700;color:var(--navy2);}
-  .card-meta .moq{font-weight:700;color:#374151;}
+  .card-meta .moq{font-weight:700;color:#444444;}
   .card-name{font-size:14px;font-weight:700;color:var(--ink);line-height:1.45;min-height:40px;margin-bottom:6px;}
   .card-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px;}
-  .tag{font-size:11px;color:var(--navy2);background:#EEF3FB;border:1px solid #DCE6F4;padding:1px 8px;border-radius:10px;}
+  .tag{font-size:11px;color:var(--navy2);background:#fff3d6;border:1px solid #eadfcb;padding:1px 8px;border-radius:10px;}
   .card-buy{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px 14px;border-top:1px dashed var(--line);margin-top:8px;}
   .card-buy .price{font-size:17px;font-weight:800;color:var(--navy);}
   .card-buy .quote-btn{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;padding:7px 13px;border-radius:6px;white-space:nowrap;}
-  .card-buy .quote-btn:hover{background:#d4651a;}
+  .card-buy .quote-btn:hover{background:#c24a00;}
 
-  footer{background:var(--navy);color:#c8d4ea;padding:26px 0;font-size:13px;text-align:center;}
+  footer{background:var(--navy);color:#eadfcb;padding:26px 0;font-size:13px;text-align:center;}
   footer a{color:var(--gold);text-decoration:none;}
 </style>
 <!-- Standard site navigation assets -->
@@ -193,21 +193,22 @@
 <link rel="stylesheet" href="/assets/site-nav.css">
 <style id="nav-canonical">
 /* Canonical navbar — keeps every page rendering like the homepage */
-#navbar{background:#fff;border-bottom:1px solid #e6e3d8}
-#navbar.navbar-scrolled{background-color:rgba(250,250,247,.92)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 12px rgba(10,42,43,.06)!important}
+#navbar{background:#fff;border-bottom:1px solid #eadfcb}
+#navbar.navbar-scrolled{background-color:rgba(255,243,214,.92)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 12px rgba(68,68,68,.06)!important}
 #navbar a{text-decoration:none}
-#navbar button{-webkit-appearance:none;appearance:none;background:transparent;border:0;font:inherit;color:#364153;cursor:pointer}
-#navbar nav > ul > li > a,#navbar nav > ul > li > button{color:#5a5950}
+#navbar button{-webkit-appearance:none;appearance:none;background:transparent;border:0;font:inherit;color:#444444;cursor:pointer}
+#navbar nav > ul > li > a,#navbar nav > ul > li > button{color:#6b6b6b}
 #navbar a.nav-cta{color:#fff;border-radius:9999px!important}
-#navbar #mobileMenu{background:#fff;border-top:1px solid #e6e3d8}
+#navbar #mobileMenu{background:#fff;border-top:1px solid #eadfcb}
 #navbar #mobileMenu > ul{padding:16px 20px;margin:0;list-style:none;display:flex;flex-direction:column;gap:4px}
-#navbar #mobileMenu a{display:block;padding:12px;border-radius:8px;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:16px;font-weight:600;line-height:24px;color:#364153;text-decoration:none}
-#navbar #mobileMenu a:hover{background:#f3f1ea}
-#navbar #mobileMenu .mobile-services > .ms-head{padding:10px 3px;font-size:16px;font-weight:600;line-height:24px;color:#364153}
-#navbar #mobileMenu .mobile-services > .ms-body a{padding:8px 12px;font-size:14px;font-weight:400;line-height:21px;color:#5a5950}
-#navbar #mobileMenu a.nav-cta{margin:12px 0 0;padding:12px 20px!important;height:48px;border-radius:9999px!important;background:#008138!important;color:#fff!important;font-size:16px!important;font-weight:600;line-height:24px;text-align:center}
+#navbar #mobileMenu a{display:block;padding:12px;border-radius:8px;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:16px;font-weight:600;line-height:24px;color:#444444;text-decoration:none}
+#navbar #mobileMenu a:hover{background:#fff3d6}
+#navbar #mobileMenu .mobile-services > .ms-head{padding:10px 3px;font-size:16px;font-weight:600;line-height:24px;color:#444444}
+#navbar #mobileMenu .mobile-services > .ms-body a{padding:8px 12px;font-size:14px;font-weight:400;line-height:21px;color:#6b6b6b}
+#navbar #mobileMenu a.nav-cta{margin:12px 0 0;padding:12px 20px!important;height:48px;border-radius:9999px!important;background:#ff6000!important;color:#fff!important;font-size:16px!important;font-weight:600;line-height:24px;text-align:center}
 </style>
 <script src="/assets/analytics.js" defer></script>
+<link rel="stylesheet" href="/assets/brand.css">
 </head>
 <body>
 <!-- ============ NAVBAR ============ -->
@@ -443,7 +444,7 @@
     </ul>
   </div>
 </header>
-<div class="wrap">
+<div class="wrap content-wrap">
   <div class="breadcrumb">
     <a href="/all-products">All Products</a> / <span>Toys & Games</span>
   </div>
@@ -470,12 +471,12 @@
   </div>
   <div class="result-line" id="resultLine">Showing all products in 5 categories.</div>
 
-  <section class="cat-section" id="puzzles" data-cat="puzzles">
+  <section class="section-fullwidth cat-section" id="puzzles" data-cat="puzzles">
     <div class="sec-head">
       <h2><span class="sec-dot"></span> Puzzles <span class="sec-count">2</span></h2>
       <p class="sec-note">Puzzles track stable adult de-stress and gifting demand; the premium sits in artwork licensing, piece-count accuracy and non-toxic print compliance.</p>
     </div>
-    <div class="catalog">
+    <div class="catalog product-grid">
       <div class="card" data-cat="puzzles" id="MBD-0184">
         <a class="card-link" href="https://www.milebond.com/products/toys-games/jigsaw-puzzle-1000-pieces-adult-oil-painting/">
           <span class="card-img">
@@ -512,12 +513,12 @@
       </div>
     </div>
   </section>
-  <section class="cat-section" id="building-blocks" data-cat="building-blocks">
+  <section class="section-fullwidth cat-section" id="building-blocks" data-cat="building-blocks">
     <div class="sec-head">
       <h2><span class="sec-dot"></span> Building Blocks <span class="sec-count">2</span></h2>
       <p class="sec-note">Building bricks are high-frequency, low-price MOC and promo drivers; volume, small-particle safety and set value win.</p>
     </div>
-    <div class="catalog">
+    <div class="catalog product-grid">
       <div class="card" data-cat="building-blocks" id="MBD-0185">
         <a class="card-link" href="https://www.milebond.com/products/toys-games/building-blocks-set-small-particle-diy/">
           <span class="card-img">
@@ -554,12 +555,12 @@
       </div>
     </div>
   </section>
-  <section class="cat-section" id="outdoor-toys" data-cat="outdoor-toys">
+  <section class="section-fullwidth cat-section" id="outdoor-toys" data-cat="outdoor-toys">
     <div class="sec-head">
       <h2><span class="sec-dot"></span> Outdoor Toys <span class="sec-count">2</span></h2>
       <p class="sec-note">Outdoor toys peak in summer and festival seasons; battery / electronic compliance and eye-catching motion or LED features drive conversion.</p>
     </div>
-    <div class="catalog">
+    <div class="catalog product-grid">
       <div class="card" data-cat="outdoor-toys" id="MBD-0187">
         <a class="card-link" href="https://www.milebond.com/products/toys-games/automatic-bubble-machine-gun-led/">
           <span class="card-img">
@@ -596,12 +597,12 @@
       </div>
     </div>
   </section>
-  <section class="cat-section" id="board-games-cards" data-cat="board-games-cards">
+  <section class="section-fullwidth cat-section" id="board-games-cards" data-cat="board-games-cards">
     <div class="sec-head">
       <h2><span class="sec-dot"></span> Board Games & Cards <span class="sec-count">3</span></h2>
       <p class="sec-note">Cards and tabletop games cover gifting and family nights; waterproof PVC and custom deck packaging lift margin over commodity cards.</p>
     </div>
-    <div class="catalog">
+    <div class="catalog product-grid">
       <div class="card" data-cat="board-games-cards" id="MBD-0189">
         <a class="card-link" href="https://www.milebond.com/products/toys-games/playing-cards-pvc-waterproof-jumbo-index/">
           <span class="card-img">
@@ -655,12 +656,12 @@
       </div>
     </div>
   </section>
-  <section class="cat-section" id="plush-toys" data-cat="plush-toys">
+  <section class="section-fullwidth cat-section" id="plush-toys" data-cat="plush-toys">
     <div class="sec-head">
       <h2><span class="sec-dot"></span> Plush Toys <span class="sec-count">1</span></h2>
       <p class="sec-note">Plush toys cover grab-machine and cuddly-pillow niches; the lever is EN71-1 filling, flammability compliance and custom character development.</p>
     </div>
-    <div class="catalog">
+    <div class="catalog product-grid">
       <div class="card" data-cat="plush-toys" id="MBD-0191">
         <a class="card-link" href="https://www.milebond.com/products/toys-games/plush-stuffed-animal-doll-cuddly-pillow/">
           <span class="card-img">
@@ -683,7 +684,7 @@
 
 </div>
 <footer>
-  <div class="wrap">
+  <div class="wrap content-wrap">
     <p><a href="https://www.milebond.com/free-quote">Get a Free Quote</a> · <a href="https://www.milebond.com/contact-us">Contact Us</a> · © 2026 Milebond Sourcing. All rights reserved.</p>
         <p style="margin-top:6px;font-size:12px;line-height:1.6;opacity:.72">Milebond is the trading brand of 义乌脉邦贸易有限公司, Yiwu, Zhejiang, China.</p>
   </div>

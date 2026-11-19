@@ -125,8 +125,8 @@
 <style>
 
   :root{
-    --navy:#162D54; --navy2:#2a4a7c; --orange:#E87722; --gold:#F5A623;
-    --green:#10B981; --red:#EF4444; --bg:#f2f4f7; --ink:#1f2937; --gray:#6B7280; --line:#E5E7EB;
+    --navy:#444444; --navy2:#6b6b6b; --orange:#ff6000; --gold:#ffa55b;
+    --green:#10B981; --red:#EF4444; --bg:#fff3d6; --ink:#444444; --gray:#6b6b6b; --line:#eadfcb;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
@@ -136,18 +136,18 @@
   .breadcrumb a{color:var(--navy2);text-decoration:none;}
   .breadcrumb a:hover{text-decoration:underline;}
   .quickbar{background:var(--navy);color:#fff;border-radius:10px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:14px 20px;margin:14px 0 8px;}
-  .quickbar .qb-price .label{font-size:12px;color:#9fb0cd;}
+  .quickbar .qb-price .label{font-size:12px;color:#8a8a8a;}
   .quickbar .qb-price .val{font-size:24px;font-weight:800;}
   .quickbar .qb-qty{display:flex;align-items:center;gap:8px;}
-  .quickbar .qb-qty input{width:76px;padding:9px 10px;border:1px solid #2a4a7c;border-radius:6px;font-size:16px;font-family:inherit;background:#fff;color:var(--navy);}
-  .quickbar .qb-total{font-size:14px;color:#c8d4ea;}
+  .quickbar .qb-qty input{width:76px;padding:9px 10px;border:1px solid #6b6b6b;border-radius:6px;font-size:16px;font-family:inherit;background:#fff;color:var(--navy);}
+  .quickbar .qb-total{font-size:14px;color:#eadfcb;}
   .quickbar .qb-total b{color:#fff;font-size:16px;}
   .quickbar .qb-cta{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap;}
   .btn{display:inline-block;text-decoration:none;font-weight:700;font-size:14px;padding:10px 18px;border-radius:7px;}
   .btn-orange{background:var(--orange);color:#fff;}
-  .btn-orange:hover{background:#d4651a;}
-  .btn-ghost{background:transparent;color:#fff;border:1px solid #5a78a8;}
-  .btn-ghost:hover{background:#2a4a7c;border-color:#2a4a7c;}
+  .btn-orange:hover{background:#c24a00;}
+  .btn-ghost{background:transparent;color:#fff;border:1px solid #6b6b6b;}
+  .btn-ghost:hover{background:#6b6b6b;border-color:#6b6b6b;}
   .keyfacts{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:0 0 18px;}
   @media (min-width:640px){.keyfacts{grid-template-columns:repeat(3,1fr);}}
   .keyfact{background:#fff;padding:12px 16px;}
@@ -169,7 +169,7 @@
   .quote-card .price-big{font-size:26px;font-weight:800;color:var(--navy);margin-bottom:2px;}
   .quote-card .price-note{font-size:13px;color:var(--green);font-weight:700;margin-bottom:12px;}
   .quote-card ul{list-style:none;margin:8px 0 14px;}
-  .quote-card li{position:relative;padding-left:22px;font-size:13.5px;color:#374151;margin-bottom:7px;}
+  .quote-card li{position:relative;padding-left:22px;font-size:13.5px;color:#444444;margin-bottom:7px;}
   .quote-card li::before{content:"";position:absolute;left:2px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--green);}
   .quote-card .qc-line{font-size:12.5px;color:var(--gray);border-top:1px dashed var(--line);padding-top:10px;margin-top:4px;}
   .quote-card .mini-cta{display:block;text-align:center;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;padding:12px;border-radius:8px;margin-top:12px;font-size:15px;}
@@ -181,16 +181,16 @@
   @media (min-width:640px){.feature-list{grid-template-columns:1fr 1fr;}}
   .feature{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 16px;}
   .feature .ft{font-size:13px;font-weight:800;color:var(--orange);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
-  .feature p{font-size:13.5px;color:#374151;}
+  .feature p{font-size:13.5px;color:#444444;}
   .score-row{display:flex;align-items:center;gap:14px;margin-bottom:10px;flex-wrap:wrap;}
   .score-row .dim{width:88px;font-size:13px;font-weight:700;color:var(--navy2);}
-  .score-bar{flex:1;min-width:140px;height:10px;background:#e6ecf3;border-radius:6px;overflow:hidden;}
+  .score-bar{flex:1;min-width:140px;height:10px;background:#eadfcb;border-radius:6px;overflow:hidden;}
   .score-bar i{display:block;height:100%;background:var(--green);border-radius:6px;}
   .score-row .sc{width:52px;font-size:14px;font-weight:800;color:var(--navy);}
   .score-total{display:flex;align-items:baseline;gap:10px;background:var(--navy);color:#fff;border-radius:10px;padding:12px 18px;margin-top:6px;}
   .score-total .big{font-size:26px;font-weight:800;}
-  .score-total .lbl{font-size:12px;color:#9fb0cd;font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
-  .score-total .formula{margin-left:auto;font-size:11.5px;color:#9fb0cd;}
+  .score-total .lbl{font-size:12px;color:#8a8a8a;font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
+  .score-total .formula{margin-left:auto;font-size:11.5px;color:#8a8a8a;}
   .spec-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;}
   table.spec{width:100%;border-collapse:collapse;table-layout:fixed;min-width:620px;}
   table.spec colgroup col:nth-child(1){width:30%;}
@@ -198,7 +198,7 @@
   table.spec th,table.spec td{padding:11px 14px;text-align:left;font-size:13.5px;vertical-align:top;}
   table.spec thead th{background:var(--navy);color:#fff;font-weight:700;}
   table.spec tbody tr:nth-child(even){background:var(--bg);}
-  table.spec tbody th{font-weight:700;color:var(--navy);background:#eef2f8;}
+  table.spec tbody th{font-weight:700;color:var(--navy);background:#eadfcb;}
   .fix-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px;}
   @media (max-width:760px){.fix-grid{grid-template-columns:1fr;}}
   .fix-card{border-radius:10px;padding:16px;border:1px solid var(--line);}
@@ -215,21 +215,21 @@
   @media (min-width:640px){.qc-grid{grid-template-columns:repeat(3,1fr);}}
   .qc-step{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 16px;}
   .qc-step .st{font-size:12px;font-weight:800;color:var(--navy2);margin-bottom:4px;}
-  .qc-step p{font-size:13px;color:#374151;}
+  .qc-step p{font-size:13px;color:#444444;}
   .check-list{list-style:none;margin-top:12px;}
-  .check-list li{position:relative;padding-left:24px;font-size:13.5px;color:#374151;margin-bottom:8px;}
+  .check-list li{position:relative;padding-left:24px;font-size:13.5px;color:#444444;margin-bottom:8px;}
   .check-list li::before{content:"";position:absolute;left:2px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--green);}
   details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:10px;overflow:hidden;}
   summary{cursor:pointer;padding:13px 18px;font-weight:700;font-size:14.5px;color:var(--navy);list-style:none;position:relative;}
   summary::-webkit-details-marker{display:none;}
   summary::after{content:"+";position:absolute;right:18px;top:11px;font-size:19px;color:var(--orange);font-weight:800;}
   details[open] summary::after{content:"\2212";}
-  details p{padding:2px 18px 15px;font-size:13.5px;color:#374151;}
+  details p{padding:2px 18px 15px;font-size:13.5px;color:#444444;}
   .cta-band{background:var(--navy);border-radius:14px;color:#fff;text-align:center;padding:36px 24px;margin:6px 0 28px;}
   .cta-band h3{font-size:23px;margin-bottom:8px;}
-  .cta-band p{color:#c8d4ea;margin-bottom:16px;font-size:14.5px;}
+  .cta-band p{color:#eadfcb;margin-bottom:16px;font-size:14.5px;}
   .cta-band .btn-orange{font-size:15px;padding:13px 28px;}
-  .cta-band .small{font-size:12.5px;color:#9fb0cd;margin-top:10px;}
+  .cta-band .small{font-size:12.5px;color:#8a8a8a;margin-top:10px;}
   .product-img .thumbs{display:grid;gap:6px;padding:8px;background:#fff;}
   .product-img .thumbs img{width:100%;height:70px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent;display:block;}
   .product-img .thumbs img.t.on{border-color:var(--orange);}
@@ -248,7 +248,7 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 .navbar-scrolled {
   background-color: rgba(255,255,255,.92) !important;
   backdrop-filter: blur(10px);
-  box-shadow: 0 2px 12px rgba(15,42,74,.08);
+  box-shadow: 0 2px 12px rgba(68,68,68,.08);
 }
 /* ============ SERVICES MEGA MENU ============ */
 .services-mega { position: relative; }
@@ -259,12 +259,12 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 .services-mega > .mega-trigger .mega-chevron {
   width: 12px; height: 12px; transition: transform .2s;
 }
-.services-mega:hover > .mega-trigger .mega-chevron { transform: rotate(180deg); color: #F59E0B; }
+.services-mega:hover > .mega-trigger .mega-chevron { transform: rotate(180deg); color: #ffa55b; }
 .services-mega .mega-panel {
   position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%) translateY(-6px);
   width: 720px; max-width: 92vw;
-  background: #fff; border: 1px solid #EEF1F6; border-radius: 14px;
-  box-shadow: 0 12px 40px rgba(15,42,74,.14);
+  background: #fff; border: 1px solid #eadfcb; border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(68,68,68,.14);
   padding: 10px; opacity: 0; visibility: hidden;
   transition: opacity .18s, transform .18s, visibility .18s;
   z-index: 60;
@@ -279,18 +279,18 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
   padding: 10px 12px; border-radius: 10px;
   text-decoration: none; transition: background .15s;
 }
-.mega-item:hover { background: #F7F8FA; }
-.mega-item:hover .mega-icon-bg { background: #F59E0B; color: #fff; }
+.mega-item:hover { background: #fff3d6; }
+.mega-item:hover .mega-icon-bg { background: #ffa55b; color: #fff; }
 .mega-icon-bg {
   width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0;
-  background: #0F2A4A; color: #F59E0B;
+  background: #444444; color: #ffa55b;
   display: flex; align-items: center; justify-content: center;
   font-size: 10px; font-weight: 700; font-family: 'Inter', sans-serif;
   transition: all .15s;
 }
-.mega-item .mega-title { font-size: 15px; font-weight: 600; color: #0F2A4A; }
-.mega-item:hover .mega-title { color: #F59E0B; }
-.mega-item .mega-desc { font-size: 13px; color: #64748B; margin-top: 1px; line-height: 1.4; }
+.mega-item .mega-title { font-size: 15px; font-weight: 600; color: #444444; }
+.mega-item:hover .mega-title { color: #ffa55b; }
+.mega-item .mega-desc { font-size: 13px; color: #6b6b6b; margin-top: 1px; line-height: 1.4; }
 /* Mobile Services accordion */
 .mobile-services {
   border-radius: 8px; overflow: hidden;
@@ -298,13 +298,13 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 .mobile-services > .ms-head {
   width: 100%; display: flex; align-items: center; justify-content: space-between;
   padding: 10px 3px;
-  font-size: 16px; font-weight: 600; color: #334155;
+  font-size: 16px; font-weight: 600; color: #444444;
   cursor: pointer; background: none; border: none; font-family: inherit; text-align: left;
 }
 .mobile-services > .ms-head .ms-chevron {
   width: 14px; height: 14px; transition: transform .2s;
 }
-.mobile-services.open > .ms-head .ms-chevron { transform: rotate(180deg); color: #F59E0B; }
+.mobile-services.open > .ms-head .ms-chevron { transform: rotate(180deg); color: #ffa55b; }
 .mobile-services > .ms-body {
   max-height: 0; overflow: hidden; transition: max-height .25s ease;
   padding-left: 4px;
@@ -312,41 +312,41 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 .mobile-services.open > .ms-body { max-height: 600px; }
 .mobile-services > .ms-body a {
   display: block; padding: 8px 12px; border-radius: 6px;
-  font-size: 14px; color: #475569;
+  font-size: 14px; color: #6b6b6b;
 }
-.mobile-services > .ms-body a:hover { background: #F7F8FA; color: #F59E0B; }
+.mobile-services > .ms-body a:hover { background: #fff3d6; color: #ffa55b; }
 /* Hide scrollbar on mobile nav drawer (if ever needed) */
 .mobile-menu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
 .mobile-menu.open { max-height: 520px; }
-body{background:#fafaf7!important}
+body{background:#fff3d6!important}
 /* 盖过 body 的 bg-white 工具类 */
-.navbar-scrolled{background-color:rgba(250,250,247,.92)!important;box-shadow:0 2px 12px rgba(10,42,43,.06)}
+.navbar-scrolled{background-color:rgba(255,243,214,.92)!important;box-shadow:0 2px 12px rgba(68,68,68,.06)}
 /* mega 菜单 */
-.services-mega:hover>.mega-trigger .mega-chevron{color:#008138}
-.services-mega .mega-panel{background:#fafaf7;border-color:#e6e3d8;box-shadow:0 12px 40px rgba(10,42,43,.12)}
-.mega-item:hover{background:#f3f1ea}
-.mega-item:hover .mega-icon-bg{background:#008138;color:#fff}
-.mega-icon-bg{background:#0a2a2b;color:#e8c998}
-.mega-item .mega-title{color:#0a2a2b;font-size:16px}
-.mega-item:hover .mega-title{color:#008138}
-.mega-item .mega-desc{color:#6a7282;font-size:13px}
-.mobile-services>.ms-head{color:#364153}
-.mobile-services.open>.ms-head .ms-chevron{color:#008138}
-.mobile-services>.ms-body a{color:#5a5950}
-.mobile-services>.ms-body a:hover{background:#f3f1ea;color:#008138}
+.services-mega:hover>.mega-trigger .mega-chevron{color:#ff6000}
+.services-mega .mega-panel{background:#fff3d6;border-color:#eadfcb;box-shadow:0 12px 40px rgba(68,68,68,.12)}
+.mega-item:hover{background:#fff3d6}
+.mega-item:hover .mega-icon-bg{background:#ff6000;color:#fff}
+.mega-icon-bg{background:#444444;color:#ffa55b}
+.mega-item .mega-title{color:#444444;font-size:16px}
+.mega-item:hover .mega-title{color:#ff6000}
+.mega-item .mega-desc{color:#6b6b6b;font-size:13px}
+.mobile-services>.ms-head{color:#444444}
+.mobile-services.open>.ms-head .ms-chevron{color:#ff6000}
+.mobile-services>.ms-body a{color:#6b6b6b}
+.mobile-services>.ms-body a:hover{background:#fff3d6;color:#ff6000}
 /* 导航栏衬线化（仅字体，不改字号/间距） */
 nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-services a,.mobile-services button{font-family:'Fraunces','Inter',Georgia,serif}
 /* Products 下拉菜单（仅作用于 .products-panel，2 列 × 5 行） */
-.products-mega .mega-panel.products-panel{width:640px;padding:20px;background:#fff;border:1px solid #EEF1F6;border-radius:16px;box-shadow:0 12px 40px rgba(10,42,43,.10)}
+.products-mega .mega-panel.products-panel{width:640px;padding:20px;background:#fff;border:1px solid #eadfcb;border-radius:16px;box-shadow:0 12px 40px rgba(68,68,68,.10)}
 .pm-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px}
 .pm-item{display:flex;align-items:center;gap:12px;padding:8px;border-radius:10px;text-decoration:none;transition:background .15s}
-.pm-item:hover{background:#f3f1ea}
-.pm-icon{width:40px;height:40px;border-radius:10px;background:#1F5C4D;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pm-item:hover{background:#fff3d6}
+.pm-icon{width:40px;height:40px;border-radius:10px;background:#444444;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .pm-icon svg{width:20px;height:20px;display:block}
 .pm-text{display:flex;flex-direction:column;min-width:0}
-.pm-name{font-size:14px;font-weight:700;color:#0a2a2b;line-height:1.3}
-.pm-item:hover .pm-name{color:#1F5C4D}
-.pm-desc{font-size:12px;color:#6a7282;line-height:1.35;margin-top:2px}
+.pm-name{font-size:14px;font-weight:700;color:#444444;line-height:1.3}
+.pm-item:hover .pm-name{color:#444444}
+.pm-desc{font-size:12px;color:#6b6b6b;line-height:1.35;margin-top:2px}
 /* Mobile drawer: collapsed by default, scrolls when taller than the viewport */
 .mobile-menu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
 .mobile-menu.open { max-height: calc(100vh - 64px); overflow-y: auto; padding-bottom: calc(4.5rem + env(safe-area-inset-bottom)); }
@@ -354,29 +354,30 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 #mobileMenu .mobile-services > .ms-body { max-height: 0 !important; overflow: hidden; }
 #mobileMenu .mobile-services.open > .ms-body { max-height: none !important; }
 /* Primary CTA keeps white text on the green pill */
-#navbar a.nav-cta { background-color: #008138 !important; color: #ffffff !important; }
-#navbar a.nav-cta:hover { background-color: #0f3d3e !important; }
+#navbar a.nav-cta { background-color: #ff6000 !important; color: #ffffff !important; }
+#navbar a.nav-cta:hover { background-color: #3a3a3a !important; }
 /* Chevron sizing — some page templates omit width/height */
 #navbar .mega-chevron { width: 12px; height: 12px; flex-shrink: 0; }
 #mobileMenu .ms-chevron { width: 14px; height: 14px; flex-shrink: 0; }
 </style>
 <style id="nav-canonical">
 /* Canonical navbar — keeps every page rendering like the homepage */
-#navbar{background:#fff;border-bottom:1px solid #e6e3d8}
-#navbar.navbar-scrolled{background-color:rgba(250,250,247,.92)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 12px rgba(10,42,43,.06)!important}
+#navbar{background:#fff;border-bottom:1px solid #eadfcb}
+#navbar.navbar-scrolled{background-color:rgba(255,243,214,.92)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 12px rgba(68,68,68,.06)!important}
 #navbar a{text-decoration:none}
-#navbar button{-webkit-appearance:none;appearance:none;background:transparent;border:0;font:inherit;color:#364153;cursor:pointer}
-#navbar nav > ul > li > a,#navbar nav > ul > li > button{color:#5a5950}
+#navbar button{-webkit-appearance:none;appearance:none;background:transparent;border:0;font:inherit;color:#444444;cursor:pointer}
+#navbar nav > ul > li > a,#navbar nav > ul > li > button{color:#6b6b6b}
 #navbar a.nav-cta{color:#fff;border-radius:9999px!important}
-#navbar #mobileMenu{background:#fff;border-top:1px solid #e6e3d8}
+#navbar #mobileMenu{background:#fff;border-top:1px solid #eadfcb}
 #navbar #mobileMenu > ul{padding:16px 20px;margin:0;list-style:none;display:flex;flex-direction:column;gap:4px}
-#navbar #mobileMenu a{display:block;padding:12px;border-radius:8px;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:16px;font-weight:600;line-height:24px;color:#364153;text-decoration:none}
-#navbar #mobileMenu a:hover{background:#f3f1ea}
-#navbar #mobileMenu .mobile-services > .ms-head{padding:10px 3px;font-size:16px;font-weight:600;line-height:24px;color:#364153}
-#navbar #mobileMenu .mobile-services > .ms-body a{padding:8px 12px;font-size:14px;font-weight:400;line-height:21px;color:#5a5950}
-#navbar #mobileMenu a.nav-cta{margin:12px 0 0;padding:12px 20px!important;height:48px;border-radius:9999px!important;background:#008138!important;color:#fff!important;font-size:16px!important;font-weight:600;line-height:24px;text-align:center}
+#navbar #mobileMenu a{display:block;padding:12px;border-radius:8px;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:16px;font-weight:600;line-height:24px;color:#444444;text-decoration:none}
+#navbar #mobileMenu a:hover{background:#fff3d6}
+#navbar #mobileMenu .mobile-services > .ms-head{padding:10px 3px;font-size:16px;font-weight:600;line-height:24px;color:#444444}
+#navbar #mobileMenu .mobile-services > .ms-body a{padding:8px 12px;font-size:14px;font-weight:400;line-height:21px;color:#6b6b6b}
+#navbar #mobileMenu a.nav-cta{margin:12px 0 0;padding:12px 20px!important;height:48px;border-radius:9999px!important;background:#ff6000!important;color:#fff!important;font-size:16px!important;font-weight:600;line-height:24px;text-align:center}
 </style>
 <script src="/assets/analytics.js" defer></script>
+<link rel="stylesheet" href="/assets/brand.css">
 </head>
 <body>
 <header id="navbar" class="sticky top-0 z-50 bg-white border-b border-brandgray-100 transition-all duration-300">
@@ -612,14 +613,14 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   </div>
 </header>
 
-<div class="wrap">
+<div class="wrap content-wrap">
   <div class="breadcrumb">
     <a href="/all-products">All Products</a> / <a href="/products/toys-games">Toys & Games</a> / <span>Building Blocks Set (Small Particle, DIY)</span>
   </div>
   <div class="quickbar">
     <div class="qb-price"><span class="label">Wholesale Price</span><div class="val" id="unitPrice">$0.07–$0.67</div></div>
     <div class="qb-qty">
-      <label for="qty" style="font-size:13px;color:#c8d4ea;">Qty</label>
+      <label for="qty" style="font-size:13px;color:#eadfcb;">Qty</label>
       <input type="number" id="qty" value="100" min="1" step="50" inputmode="numeric">
     </div>
     <div class="qb-total">Est. total: <b id="totalEst">$0.00</b></div>
@@ -658,7 +659,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <a class="mini-cta" href="https://www.milebond.com/free-quote">Get My Free Quote →</a>
     </div>
   </div>
-  <section id="trend">
+  <section class="section-fullwidth" id="trend">
     <h2 class="sec-title">Trend Signal — Verified</h2>
     <p class="sec-sub">Building Blocks and related queries track steady, demand-led search volume in our selection analysis.</p>
     <div class="qc-grid">
@@ -667,7 +668,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <div class="qc-step"><div class="st">Market & Timing</div><p>Keyword-verified selection; set bundles and custom branding lift the average order value.</p></div>
     </div>
   </section>
-  <section id="score">
+  <section class="section-fullwidth" id="score">
     <h2 class="sec-title">Selection Score — 5.4 / 10</h2>
     <p class="sec-sub">Weighted index: Demand ×0.25 + Profit ×0.25 + (10 − Competition) ×0.20 + Repeat ×0.20 + Season ×0.10.</p>
     <div class="score-row"><span class="dim">Demand</span><span class="score-bar"><i style="width:width:70%"></i></span><span class="sc">7 / 10</span></div>
@@ -677,12 +678,18 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     <div class="score-row"><span class="dim">Repeat Buy</span><span class="score-bar"><i style="width:width:70%"></i></span><span class="sc">7 / 10</span></div>
     <div class="score-total"><span class="big">5.4</span><span class="lbl">Overall Recommendation Index</span><span class="formula">7×.25 + 5×.25 + 3×.20 + 7×.20 + 4×.10</span></div>
   </section>
-  <section id="overview">
+  <section class="section-fullwidth" id="overview">
     <h2 class="sec-title">Product Overview</h2>
     <p class="sec-sub">This SKU (MBD-0185) is the Multi Building Blocks Set (Small Particle, DIY) — a building blocks pick that tracks search terms (building blocks, mini blocks, diy bricks). Procurement cost band $0.07–$0.67; typical retail $3–$4.</p>
     <p class="sec-sub" style="margin-bottom:0;">Sourced from verified manufacturers with on-site 27-point audit. A 3-stage QC pipeline — IQC incoming-material, IPQC in-line at 4 checkpoints, OQC pre-shipment — runs on every batch, with photo + video inspection reports shared before the balance payment milestone.</p>
   </section>
-  <section id="features">
+
+  <section class="section-fullwidth" data-aeo="sourcing-note">
+    <h2 class="sec-title">Sourcing note</h2>
+    <p class="sec-sub"><strong>Building Blocks Set (Small Particle, DIY) (MBD-0185)</strong> is sourced through Milebond's verified supplier process: the factory is checked before the first order, and the first order is inspected 100% piece-by-piece (AQL 2.5 on repeats). Custom colours, logo and packaging are available — standard custom production starts at 50 pcs, subject to component MOQ; this SKU's listed MOQ is 5 pcs. Multi-part kitting or assembly can be added in our Jinhua warehouse.</p>
+    <p class="sec-sub"><a href="/services/quality-control/">See the QC criteria</a> · <a href="/services/kitting-assembly">Kitting &amp; assembly</a> · <a href="/services/private-label-oem">Custom MOQ</a></p>
+  </section>
+  <section class="section-fullwidth" id="features">
     <h2 class="sec-title">Key Features</h2>
     <div class="feature-list">
       <div class="feature"><div class="ft">For Amazon Sellers</div><p>Compliance documentation on file; the set / bundle commands a $3–$4 retail band and roughly 75% source-level margin.</p></div>
@@ -691,7 +698,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <div class="feature"><div class="ft">Blue-Ocean Edge</div><p>Beyond commodity pricing, the compliance-backed spec and OEM customisation turn a generic item into a repeatable branded listing.</p></div>
     </div>
   </section>
-  <section id="specs">
+  <section class="section-fullwidth" id="specs">
     <h2 class="sec-title">Product Specifications</h2>
     <div class="spec-table-wrap">
       <table class="spec">
@@ -720,7 +727,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       </table>
     </div>
   </section>
-  <section id="compliance">
+  <section class="section-fullwidth" id="compliance">
     <h2 class="sec-title">EU Compliance Checklist</h2>
     <p class="sec-sub">Compliance support for selling Building Blocks Set (Small Particle, DIY) into the EU / UK market.</p>
     <ul class="check-list">
@@ -730,7 +737,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <li>Small-part / choking-hazard warning labelling</li>
     </ul>
   </section>
-  <section id="quality">
+  <section class="section-fullwidth" id="quality">
     <h2 class="sec-title">Why Building Blocks Set (Small Particle, DIY) Wins — and How We Source It</h2>
     <p class="sec-sub">This pick sits on verified demand — see the Trend Signal section for the search terms behind it.</p>
     <div class="fix-grid">
@@ -750,7 +757,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       </div>
     </div>
   </section>
-  <section id="qc">
+  <section class="section-fullwidth" id="qc">
     <h2 class="sec-title">QC &amp; Factory Audit</h2>
     <p class="sec-sub">A 3-stage QC pipeline runs on every batch, with a 27-point factory audit applied to every supplier.</p>
     <div class="qc-grid">
@@ -759,7 +766,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <div class="qc-step"><div class="st">3 · OQC — Pre-Shipment</div><p>Function test, finish check and AQL 2.5 sampling. Photo + video report before balance payment.</p></div>
     </div>
   </section>
-  <section id="faq">
+  <section class="section-fullwidth" id="faq">
     <h2 class="sec-title">Frequently Asked Questions</h2>
       <details open><summary>What is the minimum order quantity (MOQ)?</summary><p>MOQ is 5 pcs per SKU. Sample orders ship within 3–5 business days; custom packaging and tiered pricing are available.</p></details>
       <details><summary>What materials are used and is it safe?</summary><p>Made from ABS / PP small-particle bricks. Materials are verified batch-by-batch on every order; QC checks incoming material, build and surface finish before shipment.</p></details>
@@ -794,24 +801,24 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 })();
 </script>
 <footer id="about" class="bg-navy pt-16 pb-6 text-white">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 content-wrap">
     <div class="grid md:grid-cols-[1.5fr_1fr_1fr_1.2fr] gap-10 pb-10 border-b border-white/10">
 
       <!-- Column 1 — Milebond -->
       <div>
         <a href="/" class="inline-flex items-center mb-4">
-          <img src="/images/brand/logo-white.png" alt="Milebond" width="96" height="32" class="h-8 w-auto object-contain" loading="lazy" decoding="async">
+          <img src="/images/brand/logo-white-footer.png" alt="Milebond" width="96" height="32" class="h-8 w-auto object-contain" loading="lazy" decoding="async">
         </a>
         <p class="text-white/70 text-sm leading-relaxed max-w-sm mb-5">
           Yiwu-based sourcing partner for Amazon brands, private labels, and offline wholesalers.
         </p>
         <ul class="space-y-2 text-sm text-white/60">
           <li class="flex items-start gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffa55b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             <a href="mailto:info@milebond.com" class="hover:text-amber transition-colors">info@milebond.com</a>
           </li>
           <li class="flex items-start gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffa55b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
             <a href="https://wa.me/8615057960102" target="_blank" rel="noopener noreferrer" class="hover:text-amber transition-colors">Chat on WhatsApp</a>
           </li>
         </ul>
@@ -1210,11 +1217,11 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     <input class="qf-input" type="text" id="qSkuView" name="sku" placeholder="e.g. HK-001">
   </div>
 <div class="qf-field qf-full">
-    <label class="qf-label" for="qMsg">Requirements / specs <span style="font-weight:500;color:#6a7282">(optional)</span></label>
+    <label class="qf-label" for="qMsg">Requirements / specs <span style="font-weight:500;color:#6b6b6b">(optional)</span></label>
     <textarea class="qf-textarea" id="qMsg" name="message" placeholder="Specs, materials, packaging, compliance (CE / FDA / CPC), target market and timeline..."></textarea>
   </div>
 <div class="qf-field qf-full">
-    <label class="qf-label" for="qFile">Attach a drawing, photo or spec sheet <span style="font-weight:500;color:#6a7282">(optional, max 10 MB)</span></label>
+    <label class="qf-label" for="qFile">Attach a drawing, photo or spec sheet <span style="font-weight:500;color:#6b6b6b">(optional, max 10 MB)</span></label>
     <input class="qf-file" type="file" id="qFile" name="attachment" accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx,.xls,.xlsx,.csv,.zip">
   </div>
   </div>

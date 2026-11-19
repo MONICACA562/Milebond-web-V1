@@ -34,7 +34,7 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 .navbar-scrolled {
   background-color: rgba(255,255,255,.92) !important;
   backdrop-filter: blur(10px);
-  box-shadow: 0 2px 12px rgba(15,42,74,.08);
+  box-shadow: 0 2px 12px rgba(68,68,68,.08);
 }
 
 /* ============ SERVICES MEGA MENU ============ */
@@ -46,12 +46,12 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 .services-mega > .mega-trigger .mega-chevron {
   width: 12px; height: 12px; transition: transform .2s;
 }
-.services-mega:hover > .mega-trigger .mega-chevron { transform: rotate(180deg); color: #F59E0B; }
+.services-mega:hover > .mega-trigger .mega-chevron { transform: rotate(180deg); color: #ffa55b; }
 .services-mega .mega-panel {
   position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%) translateY(-6px);
   width: 720px; max-width: 92vw;
-  background: #fff; border: 1px solid #EEF1F6; border-radius: 14px;
-  box-shadow: 0 12px 40px rgba(15,42,74,.14);
+  background: #fff; border: 1px solid #eadfcb; border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(68,68,68,.14);
   padding: 10px; opacity: 0; visibility: hidden;
   transition: opacity .18s, transform .18s, visibility .18s;
   z-index: 60;
@@ -66,18 +66,18 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
   padding: 10px 12px; border-radius: 10px;
   text-decoration: none; transition: background .15s;
 }
-.mega-item:hover { background: #F7F8FA; }
-.mega-item:hover .mega-icon-bg { background: #F59E0B; color: #fff; }
+.mega-item:hover { background: #fff3d6; }
+.mega-item:hover .mega-icon-bg { background: #ffa55b; color: #fff; }
 .mega-icon-bg {
   width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0;
-  background: #0F2A4A; color: #F59E0B;
+  background: #444444; color: #ffa55b;
   display: flex; align-items: center; justify-content: center;
   font-size: 10px; font-weight: 700; font-family: 'Inter', sans-serif;
   transition: all .15s;
 }
-.mega-item .mega-title { font-size: 15px; font-weight: 600; color: #0F2A4A; }
-.mega-item:hover .mega-title { color: #F59E0B; }
-.mega-item .mega-desc { font-size: 13px; color: #64748B; margin-top: 1px; line-height: 1.4; }
+.mega-item .mega-title { font-size: 15px; font-weight: 600; color: #444444; }
+.mega-item:hover .mega-title { color: #ffa55b; }
+.mega-item .mega-desc { font-size: 13px; color: #6b6b6b; margin-top: 1px; line-height: 1.4; }
 
 /* Mobile Services accordion */
 .mobile-services {
@@ -86,13 +86,13 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 .mobile-services > .ms-head {
   width: 100%; display: flex; align-items: center; justify-content: space-between;
   padding: 10px 3px;
-  font-size: 16px; font-weight: 600; color: #334155;
+  font-size: 16px; font-weight: 600; color: #444444;
   cursor: pointer; background: none; border: none; font-family: inherit; text-align: left;
 }
 .mobile-services > .ms-head .ms-chevron {
   width: 14px; height: 14px; transition: transform .2s;
 }
-.mobile-services.open > .ms-head .ms-chevron { transform: rotate(180deg); color: #F59E0B; }
+.mobile-services.open > .ms-head .ms-chevron { transform: rotate(180deg); color: #ffa55b; }
 .mobile-services > .ms-body {
   max-height: 0; overflow: hidden; transition: max-height .25s ease;
   padding-left: 4px;
@@ -100,14 +100,14 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 .mobile-services.open > .ms-body { max-height: 600px; }
 .mobile-services > .ms-body a {
   display: block; padding: 8px 12px; border-radius: 6px;
-  font-size: 14px; color: #475569;
+  font-size: 14px; color: #6b6b6b;
 }
-.mobile-services > .ms-body a:hover { background: #F7F8FA; color: #F59E0B; }
+.mobile-services > .ms-body a:hover { background: #fff3d6; color: #ffa55b; }
 
 /* ============ HERO CAROUSEL ============ */
 .hero-carousel {
   position: relative;
-  background: linear-gradient(135deg, #0A1D33 0%, #0F2A4A 50%, #123055 100%);
+  background: linear-gradient(135deg, #3a3a3a 0%, #444444 50%, #6b6b6b 100%);
   overflow: hidden;
 }
 .hero-carousel::before {
@@ -129,7 +129,7 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 @keyframes heroFade { from { opacity: 0; } to { opacity: 1; } }
 
 .hero-eyebrow {
-  color: #F59E0B;
+  color: #ffa55b;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: .18em;
@@ -143,9 +143,9 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
   letter-spacing: -.02em;
   margin-top: 18px;
 }
-.hero-title .hl { color: #F59E0B; font-style: normal; }
+.hero-title .hl { color: #ffa55b; font-style: normal; }
 .hero-sub {
-  color: #B8C7DB;
+  color: #fff3d6;
   font-size: 15px;
   line-height: 1.65;
   margin-top: 18px;
@@ -172,9 +172,9 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 }
 .hero-btn:hover { transform: translateY(-2px); }
 .hero-btn-wa { background: #25D366; color: #fff; }
-.hero-btn-wa:hover { background: #1fbf5c; box-shadow: 0 10px 24px rgba(37,211,102,.35); }
-.hero-btn-quote { background: #F59E0B; color: #fff; }
-.hero-btn-quote:hover { background: #e08e08; box-shadow: 0 10px 24px rgba(245,158,11,.35); }
+.hero-btn-wa:hover { background: #1fbf5c; box-shadow: 0 10px 24px rgba(255,165,91,.35); }
+.hero-btn-quote { background: #ffa55b; color: #fff; }
+.hero-btn-quote:hover { background: #ffa55b; box-shadow: 0 10px 24px rgba(255,165,91,.35); }
 .hero-btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.4); }
 .hero-btn-ghost:hover { background: rgba(255,255,255,.08); }
 
@@ -208,7 +208,7 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
   padding: 0;
   transition: width .25s ease, background-color .25s ease;
 }
-.hero-dot.active { width: 26px; background: #F59E0B; }
+.hero-dot.active { width: 26px; background: #ffa55b; }
 .hero-counter {
   color: rgba(255,255,255,.65);
   font-size: 13px;
@@ -230,9 +230,9 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
   font-size: clamp(24px, 2.6vw, 34px);
   letter-spacing: -.01em;
 }
-.hero-stat .num .u { color: #F59E0B; }
+.hero-stat .num .u { color: #ffa55b; }
 .hero-stat .lbl {
-  color: #B8C7DB;
+  color: #fff3d6;
   font-size: 12.5px;
   line-height: 1.5;
   margin-top: 6px;
@@ -258,8 +258,8 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 .mobile-menu.open { max-height: 520px; }
 
 /* ============ CONTACT / QUOTE BAND ============ */
-.cb-h2 { font-size: 30px; font-weight: 800; color: #0F2A4A; line-height: 1.2; }
-.cb-h2-sub { margin-top: 8px; font-size: 14px; color: #64748B; }
+.cb-h2 { font-size: 30px; font-weight: 800; color: #444444; line-height: 1.2; }
+.cb-h2-sub { margin-top: 8px; font-size: 14px; color: #6b6b6b; }
 
 .cb-shell {
   display: grid;
@@ -267,7 +267,7 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
   border-radius: 24px;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 30px 70px rgba(15,42,74,.16);
+  box-shadow: 0 30px 70px rgba(68,68,68,.16);
 }
 .cb-left {
   position: relative;
@@ -275,9 +275,9 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
   color: #fff;
   text-align: center;
   background:
-    radial-gradient(circle at 0% 0%, rgba(245,158,11,.10), transparent 45%),
-    radial-gradient(circle at 100% 100%, rgba(37,211,102,.08), transparent 45%),
-    linear-gradient(135deg, #0A1D33 0%, #0F2A4A 50%, #123055 100%);
+    radial-gradient(circle at 0% 0%, rgba(255,165,91,.10), transparent 45%),
+    radial-gradient(circle at 100% 100%, rgba(255,165,91,.08), transparent 45%),
+    linear-gradient(135deg, #3a3a3a 0%, #444444 50%, #6b6b6b 100%);
 }
 .cb-avatar {
   width: 108px; height: 108px;
@@ -301,7 +301,7 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
   letter-spacing: .04em;
 }
 .cb-title { margin-top: 16px; font-size: 26px; font-weight: 800; color: #fff; line-height: 1.2; }
-.cb-lead { margin-top: 12px; font-size: 14px; line-height: 1.7; color: #B8C7DB; }
+.cb-lead { margin-top: 12px; font-size: 14px; line-height: 1.7; color: #fff3d6; }
 .cb-intro {
   margin-top: 20px;
   text-align: left;
@@ -311,17 +311,17 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
   padding: 18px 20px;
   font-size: 14px;
   line-height: 1.75;
-  color: #E9EFF7;
+  color: #eadfcb;
 }
-.cb-intro b { color: #F59E0B; }
+.cb-intro b { color: #ffa55b; }
 .cb-slogan {
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 1px solid rgba(245,158,11,.4);
+  border-top: 1px solid rgba(255,165,91,.4);
   font-size: 18px;
   font-weight: 800;
   line-height: 1.4;
-  color: #F59E0B;
+  color: #ffa55b;
 }
 .cb-addr {
   margin-top: 20px;
@@ -330,13 +330,13 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
   justify-content: center;
   gap: 6px;
   font-size: 12.5px;
-  color: #B8C7DB;
+  color: #fff3d6;
 }
 .cb-addr svg { flex-shrink: 0; }
 
 .cb-right { background: #fff; padding: 44px 46px 40px; }
-.cb-form-title { font-size: 24px; font-weight: 800; color: #0F2A4A; line-height: 1.2; }
-.cb-form-sub { margin-top: 6px; font-size: 13px; color: #64748B; }
+.cb-form-title { font-size: 24px; font-weight: 800; color: #444444; line-height: 1.2; }
+.cb-form-sub { margin-top: 6px; font-size: 13px; color: #6b6b6b; }
 .cb-form {
   margin-top: 22px;
   display: grid;
@@ -345,16 +345,16 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 }
 .cb-field { display: flex; flex-direction: column; min-width: 0; }
 .cb-full { grid-column: 1 / -1; }
-.cb-label { font-size: 12.5px; font-weight: 700; color: #0F2A4A; margin-bottom: 6px; }
+.cb-label { font-size: 12.5px; font-weight: 700; color: #444444; margin-bottom: 6px; }
 .cb-label em { color: #DC2626; font-style: normal; margin-left: 2px; }
 .cb-input, .cb-select, .cb-textarea {
   width: 100%;
   box-sizing: border-box;
   font-family: inherit;
   font-size: 16px;
-  color: #0F2A4A;
-  background: #FBFCFE;
-  border: 1px solid #D9E2EC;
+  color: #444444;
+  background: #fff3d6;
+  border: 1px solid #eadfcb;
   border-radius: 10px;
   height: 44px;
   padding: 0 12px;
@@ -363,22 +363,22 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 .cb-textarea { height: 96px; padding: 10px 12px; line-height: 1.5; resize: vertical; }
 .cb-input:focus, .cb-select:focus, .cb-textarea:focus {
   outline: none;
-  border-color: #F59E0B;
-  box-shadow: 0 0 0 3px rgba(245,158,11,.18);
+  border-color: #ffa55b;
+  box-shadow: 0 0 0 3px rgba(255,165,91,.18);
 }
-.cb-input::placeholder, .cb-textarea::placeholder { color: #94A3B8; font-size: 14px; }
+.cb-input::placeholder, .cb-textarea::placeholder { color: #8a8a8a; font-size: 14px; }
 .cb-consent {
   grid-column: 1 / -1;
   display: flex;
   align-items: flex-start;
   gap: 8px;
   font-size: 12.5px;
-  color: #475569;
+  color: #6b6b6b;
   line-height: 1.5;
   cursor: pointer;
 }
-.cb-consent input { width: 15px; height: 15px; margin-top: 2px; accent-color: #F59E0B; flex-shrink: 0; }
-.cb-consent a { color: #0F2A4A; text-decoration: underline; }
+.cb-consent input { width: 15px; height: 15px; margin-top: 2px; accent-color: #ffa55b; flex-shrink: 0; }
+.cb-consent a { color: #444444; text-decoration: underline; }
 .cb-submit {
   grid-column: 1 / -1;
   width: 100%;
@@ -387,13 +387,13 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
   font-family: inherit;
   font-size: 15px;
   font-weight: 800;
-  color: #3a2500;
-  background: #F59E0B;
+  color: #444444;
+  background: #ffa55b;
   border-radius: 12px;
   padding: 15px 20px;
   transition: transform .18s, box-shadow .18s, background-color .18s;
 }
-.cb-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(245,158,11,.32); background: #e08e08; }
+.cb-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(255,165,91,.32); background: #ffa55b; }
 .cb-submit:disabled { opacity: .7; cursor: default; transform: none; }
 .cb-note {
   grid-column: 1 / -1;
@@ -402,7 +402,7 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
   justify-content: center;
   gap: 7px;
   font-size: 12px;
-  color: #64748B;
+  color: #6b6b6b;
 }
 .cb-note .dot { width: 9px; height: 9px; border-radius: 999px; background: #25D366; flex-shrink: 0; }
 
@@ -414,7 +414,7 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-
 }
 
 /* Lighthouse-friendly: ensure focus rings exist */
-a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offset: 2px; border-radius: 4px; }
+a:focus-visible, button:focus-visible { outline: 2px solid #ffa55b; outline-offset: 2px; border-radius: 4px; }
 
 /* ============ HERO ARROW CONTROLS ============ */
 /* Arrows sit INSIDE .hero-track (position:relative), so top:50% = the centre of
@@ -422,7 +422,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
    also wraps the bottom stats strip.
    Width is capped to the gutter between the page edge and the content column
    (px-8 = 32px at >=1024px) so the arrows never overlap the copy or the image. */
-.nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:32px;height:32px;border-radius:50%;border:none;background:#F59E0B;color:#0A1D33;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .15s ease, box-shadow .15s ease;font-size:20px;font-weight:600;line-height:1;padding-bottom:2px;}
+.nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:32px;height:32px;border-radius:50%;border:none;background:#ffa55b;color:#3a3a3a;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .15s ease, box-shadow .15s ease;font-size:20px;font-weight:600;line-height:1;padding-bottom:2px;}
 .nav-btn:hover{transform:translateY(-50%) scale(1.08);box-shadow:0 10px 24px rgba(0,0,0,.4);}
 .nav-btn.prev{left:-32px;}
 .nav-btn.next{right:-32px;}
@@ -446,98 +446,98 @@ a:focus-visible, button:focus-visible { outline: 2px solid #F59E0B; outline-offs
 <!-- Theme override: qualitysourcingfromchina.com tokens (fonts / colors / backgrounds only) -->
 <style>
 h1,h2,h3,h4,h5,h6{font-family:'Fraunces','Inter',Georgia,serif;letter-spacing:-.01em}
-body{background:#fafaf7!important}   /* 盖过 body 的 bg-white 工具类 */
-.navbar-scrolled{background-color:rgba(250,250,247,.92)!important;box-shadow:0 2px 12px rgba(10,42,43,.06)}
+body{background:#fff3d6!important}   /* 盖过 body 的 bg-white 工具类 */
+.navbar-scrolled{background-color:rgba(255,243,214,.92)!important;box-shadow:0 2px 12px rgba(68,68,68,.06)}
 /* mega 菜单 */
-.services-mega:hover>.mega-trigger .mega-chevron{color:#008138}
-.services-mega .mega-panel{background:#fafaf7;border-color:#e6e3d8;box-shadow:0 12px 40px rgba(10,42,43,.12)}
-.mega-item:hover{background:#f3f1ea}
-.mega-item:hover .mega-icon-bg{background:#008138;color:#fff}
-.mega-icon-bg{background:#0a2a2b;color:#e8c998}
-.mega-item .mega-title{color:#0a2a2b;font-size:16px}
-.mega-item:hover .mega-title{color:#008138}
-.mega-item .mega-desc{color:#6a7282;font-size:13px}
-.mobile-services>.ms-head{color:#364153}
-.mobile-services.open>.ms-head .ms-chevron{color:#008138}
-.mobile-services>.ms-body a{color:#5a5950}
-.mobile-services>.ms-body a:hover{background:#f3f1ea;color:#008138}
+.services-mega:hover>.mega-trigger .mega-chevron{color:#ff6000}
+.services-mega .mega-panel{background:#fff3d6;border-color:#eadfcb;box-shadow:0 12px 40px rgba(68,68,68,.12)}
+.mega-item:hover{background:#fff3d6}
+.mega-item:hover .mega-icon-bg{background:#ff6000;color:#fff}
+.mega-icon-bg{background:#444444;color:#ffa55b}
+.mega-item .mega-title{color:#444444;font-size:16px}
+.mega-item:hover .mega-title{color:#ff6000}
+.mega-item .mega-desc{color:#6b6b6b;font-size:13px}
+.mobile-services>.ms-head{color:#444444}
+.mobile-services.open>.ms-head .ms-chevron{color:#ff6000}
+.mobile-services>.ms-body a{color:#6b6b6b}
+.mobile-services>.ms-body a:hover{background:#fff3d6;color:#ff6000}
 /* hero：深蓝渐变 → 暖米 */
-.hero-carousel{background:linear-gradient(135deg,#f3f1ea 0%,#fafaf7 55%,#fbf5ec 100%)}
-.hero-carousel::before{background-image:linear-gradient(rgba(10,42,43,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(10,42,43,.045) 1px,transparent 1px)}
-.hero-eyebrow{color:#a06a30;font-size:13px}
-.hero-title{color:#0a2a2b;font-size:clamp(32px,4.5vw,54px)}
-.hero-title .hl{color:#c08648}
-.hero-sub{color:#6a7282;font-size:16px}
-.hero-chip{color:#364153;border-color:#cdc8b8;font-size:13px}
+.hero-carousel{background:linear-gradient(135deg,#fff3d6 0%,#fff3d6 55%,#fff3d6 100%)}
+.hero-carousel::before{background-image:linear-gradient(rgba(68,68,68,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(68,68,68,.045) 1px,transparent 1px)}
+.hero-eyebrow{color:#ff6000;font-size:13px}
+.hero-title{color:#444444;font-size:clamp(32px,4.5vw,54px)}
+.hero-title .hl{color:#ffa55b}
+.hero-sub{color:#6b6b6b;font-size:16px}
+.hero-chip{color:#444444;border-color:#d9c9ac;font-size:13px}
 .hero-btn{font-size:15px}
-.hero-btn-wa{background:#0f3d3e}
-.hero-btn-wa:hover{background:#0a2a2b;box-shadow:0 10px 24px rgba(10,42,43,.28)}
-.hero-btn-quote{background:#008138}
-.hero-btn-quote:hover{background:#0f3d3e;box-shadow:0 10px 24px rgba(0,129,56,.30)}
-.hero-btn-ghost{color:#0a2a2b;border-color:#cdc8b8}
-.hero-btn-ghost:hover{background:#f3f1ea}
-.hero-img-card{border-color:#e6e3d8;box-shadow:0 24px 60px rgba(10,42,43,.16);background:#f3f1ea}
-.hero-dot{background:#cdc8b8}
-.hero-dot.active{background:#008138}
-.hero-counter{color:#6a7282}
-.hero-counter .cur{color:#0a2a2b}
-.hero-stats{border-top-color:#e6e3d8}
-.hero-stat .num{color:#0a2a2b;font-size:clamp(26px,2.8vw,38px)}
-.hero-stat .num .u{color:#c08648}
-.hero-stat .lbl{color:#6a7282;font-size:13px}
-.nav-btn{background:#008138;color:#fff}
-.nav-btn:hover{background:#0f3d3e}
+.hero-btn-wa{background:#3a3a3a}
+.hero-btn-wa:hover{background:#444444;box-shadow:0 10px 24px rgba(68,68,68,.28)}
+.hero-btn-quote{background:#ff6000}
+.hero-btn-quote:hover{background:#3a3a3a;box-shadow:0 10px 24px rgba(255,96,0,.30)}
+.hero-btn-ghost{color:#444444;border-color:#d9c9ac}
+.hero-btn-ghost:hover{background:#fff3d6}
+.hero-img-card{border-color:#eadfcb;box-shadow:0 24px 60px rgba(68,68,68,.16);background:#fff3d6}
+.hero-dot{background:#d9c9ac}
+.hero-dot.active{background:#ff6000}
+.hero-counter{color:#6b6b6b}
+.hero-counter .cur{color:#444444}
+.hero-stats{border-top-color:#eadfcb}
+.hero-stat .num{color:#444444;font-size:clamp(26px,2.8vw,38px)}
+.hero-stat .num .u{color:#ffa55b}
+.hero-stat .lbl{color:#6b6b6b;font-size:13px}
+.nav-btn{background:#ff6000;color:#fff}
+.nav-btn:hover{background:#3a3a3a}
 /* 主 CTA 与徽章 */
-a.rounded-full.bg-amber{background-color:#008138!important}
-a.rounded-full.bg-amber:hover{background-color:#0f3d3e!important}
-.bg-amber.text-white{background-color:#f4e6cc!important;color:#7a5024!important}
-.bg-navy .text-amber{color:#e8c998!important}
-footer a:hover{color:#e8c998!important}
+a.rounded-full.bg-amber{background-color:#ff6000!important}
+a.rounded-full.bg-amber:hover{background-color:#3a3a3a!important}
+.bg-amber.text-white{background-color:#fff3d6!important;color:#c24a00!important}
+.bg-navy .text-amber{color:#ffa55b!important}
+footer a:hover{color:#ffa55b!important}
 /* 联系/报价区 */
-.cb-h2{color:#0a2a2b;font-size:32px}
-.cb-h2-sub{color:#6a7282;font-size:15px}
-.cb-shell{background:#fafaf7;box-shadow:0 30px 70px rgba(10,42,43,.12)}
-.cb-left{background:radial-gradient(circle at 0% 0%, rgba(192,134,72,.18), transparent 45%),radial-gradient(circle at 100% 100%, rgba(0,129,56,.14), transparent 45%),linear-gradient(135deg,#0a2a2b 0%,#173d3e 55%,#0f3d3e 100%)}
-.cb-tag{background:#008138;color:#fff;font-size:13px}
+.cb-h2{color:#444444;font-size:32px}
+.cb-h2-sub{color:#6b6b6b;font-size:15px}
+.cb-shell{background:#fff3d6;box-shadow:0 30px 70px rgba(68,68,68,.12)}
+.cb-left{background:radial-gradient(circle at 0% 0%, rgba(255,165,91,.18), transparent 45%),radial-gradient(circle at 100% 100%, rgba(255,96,0,.14), transparent 45%),linear-gradient(135deg,#444444 0%,#3a3a3a 55%,#3a3a3a 100%)}
+.cb-tag{background:#ff6000;color:#fff;font-size:13px}
 .cb-title{font-size:28px}
-.cb-lead{color:rgba(250,250,247,.82);font-size:15px}
-.cb-intro{background:rgba(250,250,247,.08);border-color:rgba(250,250,247,.18);color:rgba(250,250,247,.88)}
-.cb-intro b{color:#e8c998}
-.cb-slogan{border-top-color:rgba(232,201,152,.45);font-size:19px;color:#e8c998}
-.cb-addr{color:rgba(250,250,247,.75)}
-.cb-right{background:#fafaf7}
-.cb-form-title{color:#0a2a2b;font-size:26px}
-.cb-form-sub{color:#6a7282;font-size:14px}
-.cb-label{color:#0a2a2b;font-size:13px}
+.cb-lead{color:rgba(255,243,214,.82);font-size:15px}
+.cb-intro{background:rgba(255,243,214,.08);border-color:rgba(255,243,214,.18);color:rgba(255,243,214,.88)}
+.cb-intro b{color:#ffa55b}
+.cb-slogan{border-top-color:rgba(255,165,91,.45);font-size:19px;color:#ffa55b}
+.cb-addr{color:rgba(255,243,214,.75)}
+.cb-right{background:#fff3d6}
+.cb-form-title{color:#444444;font-size:26px}
+.cb-form-sub{color:#6b6b6b;font-size:14px}
+.cb-label{color:#444444;font-size:13px}
 .cb-label em{color:#bf000f}
-.cb-input,.cb-select,.cb-textarea{color:#0a2a2b;background:#fafaf7;border-color:#d1d5dc}
-.cb-input:focus,.cb-select:focus,.cb-textarea:focus{border-color:#008138;box-shadow:0 0 0 3px rgba(0,129,56,.14)}
-.cb-input::placeholder,.cb-textarea::placeholder{color:#99a1af}
-.cb-consent{color:#5a5950}
-.cb-consent input{accent-color:#008138}
-.cb-consent a{color:#0a2a2b}
-.cb-submit{color:#fff;background:#008138}
-.cb-submit:hover{background:#0f3d3e;box-shadow:0 12px 28px rgba(0,129,56,.30)}
-.cb-note{color:#6a7282;font-size:13px}
-.cb-note .dot{background:#008138}
-a:focus-visible,button:focus-visible{outline-color:#008138}
+.cb-input,.cb-select,.cb-textarea{color:#444444;background:#fff3d6;border-color:#eadfcb}
+.cb-input:focus,.cb-select:focus,.cb-textarea:focus{border-color:#ff6000;box-shadow:0 0 0 3px rgba(255,96,0,.14)}
+.cb-input::placeholder,.cb-textarea::placeholder{color:#8a8a8a}
+.cb-consent{color:#6b6b6b}
+.cb-consent input{accent-color:#ff6000}
+.cb-consent a{color:#444444}
+.cb-submit{color:#fff;background:#ff6000}
+.cb-submit:hover{background:#3a3a3a;box-shadow:0 12px 28px rgba(255,96,0,.30)}
+.cb-note{color:#6b6b6b;font-size:13px}
+.cb-note .dot{background:#ff6000}
+a:focus-visible,button:focus-visible{outline-color:#ff6000}
 /* 导航栏衬线化（仅字体，不改字号/间距） */
 nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-services a,.mobile-services button{font-family:'Fraunces','Inter',Georgia,serif}
 /* Products 下拉菜单（仅作用于 .products-panel，2 列 × 5 行） */
-.products-mega .mega-panel.products-panel{width:640px;padding:20px;background:#fff;border:1px solid #EEF1F6;border-radius:16px;box-shadow:0 12px 40px rgba(10,42,43,.10)}
+.products-mega .mega-panel.products-panel{width:640px;padding:20px;background:#fff;border:1px solid #eadfcb;border-radius:16px;box-shadow:0 12px 40px rgba(68,68,68,.10)}
 .pm-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px}
 .pm-item{display:flex;align-items:center;gap:12px;padding:8px;border-radius:10px;text-decoration:none;transition:background .15s}
-.pm-item:hover{background:#f3f1ea}
-.pm-icon{width:40px;height:40px;border-radius:10px;background:#1F5C4D;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pm-item:hover{background:#fff3d6}
+.pm-icon{width:40px;height:40px;border-radius:10px;background:#444444;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .pm-icon svg{width:20px;height:20px;display:block}
 .pm-text{display:flex;flex-direction:column;min-width:0}
-.pm-name{font-size:14px;font-weight:700;color:#0a2a2b;line-height:1.3}
-.pm-item:hover .pm-name{color:#1F5C4D}
-.pm-desc{font-size:12px;color:#6a7282;line-height:1.35;margin-top:2px}
+.pm-name{font-size:14px;font-weight:700;color:#444444;line-height:1.3}
+.pm-item:hover .pm-name{color:#444444}
+.pm-desc{font-size:12px;color:#6b6b6b;line-height:1.35;margin-top:2px}
 /* Mobile All Products row — matches the desktop pm-item */
-#mobileProductsBody .pm-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;margin-bottom:2px;background:#f3f1ea}
-#mobileProductsBody .pm-item:hover{background:#e6e3d8}
-#mobileProductsBody .pm-item .pm-icon{width:32px;height:32px;font-size:15px;background:#0a2a2b}
+#mobileProductsBody .pm-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;margin-bottom:2px;background:#fff3d6}
+#mobileProductsBody .pm-item:hover{background:#eadfcb}
+#mobileProductsBody .pm-item .pm-icon{width:32px;height:32px;font-size:15px;background:#444444}
 #mobileProductsBody .pm-item .pm-desc{margin-top:0;line-height:1.35}
 </style>
 <style id="nav-mobile-css">
@@ -549,8 +549,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 #mobileMenu .mobile-services > .ms-body { max-height: 0 !important; overflow: hidden; }
 #mobileMenu .mobile-services.open > .ms-body { max-height: none !important; }
 /* Primary CTA keeps white text on the green pill */
-#navbar a.nav-cta { background-color: #008138 !important; color: #ffffff !important; }
-#navbar a.nav-cta:hover { background-color: #0f3d3e !important; }
+#navbar a.nav-cta { background-color: #ff6000 !important; color: #ffffff !important; }
+#navbar a.nav-cta:hover { background-color: #3a3a3a !important; }
 /* Chevron sizing — some page templates omit width/height */
 #navbar .mega-chevron { width: 12px; height: 12px; flex-shrink: 0; }
 #mobileMenu .ms-chevron { width: 14px; height: 14px; flex-shrink: 0; }
@@ -559,19 +559,19 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 </style>  <link rel="icon" type="image/png" href="/assets/milebond-favicon.png">
 <style id="nav-canonical">
 /* Canonical navbar — keeps every page rendering like the homepage */
-#navbar{background:#fff;border-bottom:1px solid #e6e3d8}
-#navbar.navbar-scrolled{background-color:rgba(250,250,247,.92)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 12px rgba(10,42,43,.06)!important}
+#navbar{background:#fff;border-bottom:1px solid #eadfcb}
+#navbar.navbar-scrolled{background-color:rgba(255,243,214,.92)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 12px rgba(68,68,68,.06)!important}
 #navbar a{text-decoration:none}
-#navbar button{-webkit-appearance:none;appearance:none;background:transparent;border:0;font:inherit;color:#364153;cursor:pointer}
-#navbar nav > ul > li > a,#navbar nav > ul > li > button{color:#5a5950}
+#navbar button{-webkit-appearance:none;appearance:none;background:transparent;border:0;font:inherit;color:#444444;cursor:pointer}
+#navbar nav > ul > li > a,#navbar nav > ul > li > button{color:#6b6b6b}
 #navbar a.nav-cta{color:#fff;border-radius:9999px!important}
-#navbar #mobileMenu{background:#fff;border-top:1px solid #e6e3d8}
+#navbar #mobileMenu{background:#fff;border-top:1px solid #eadfcb}
 #navbar #mobileMenu > ul{padding:16px 20px;margin:0;list-style:none;display:flex;flex-direction:column;gap:4px}
-#navbar #mobileMenu a{display:block;padding:12px;border-radius:8px;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:16px;font-weight:600;line-height:24px;color:#364153;text-decoration:none}
-#navbar #mobileMenu a:hover{background:#f3f1ea}
-#navbar #mobileMenu .mobile-services > .ms-head{padding:10px 3px;font-size:16px;font-weight:600;line-height:24px;color:#364153}
-#navbar #mobileMenu .mobile-services > .ms-body a{padding:8px 12px;font-size:14px;font-weight:400;line-height:21px;color:#5a5950}
-#navbar #mobileMenu a.nav-cta{margin:12px 0 0;padding:12px 20px!important;height:48px;border-radius:9999px!important;background:#008138!important;color:#fff!important;font-size:16px!important;font-weight:600;line-height:24px;text-align:center}
+#navbar #mobileMenu a{display:block;padding:12px;border-radius:8px;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:16px;font-weight:600;line-height:24px;color:#444444;text-decoration:none}
+#navbar #mobileMenu a:hover{background:#fff3d6}
+#navbar #mobileMenu .mobile-services > .ms-head{padding:10px 3px;font-size:16px;font-weight:600;line-height:24px;color:#444444}
+#navbar #mobileMenu .mobile-services > .ms-body a{padding:8px 12px;font-size:14px;font-weight:400;line-height:21px;color:#6b6b6b}
+#navbar #mobileMenu a.nav-cta{margin:12px 0 0;padding:12px 20px!important;height:48px;border-radius:9999px!important;background:#ff6000!important;color:#fff!important;font-size:16px!important;font-weight:600;line-height:24px;text-align:center}
 </style>
 <script type="application/ld+json">
 {
@@ -734,9 +734,9 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 <style id="m21-home">
 /* ===== Homepage rebuild (preview layout, scoped under .m21) ===== */
 .m21{
-  --bg:#FAFAF8; --ink:#1A1A1A; --ink-2:#555555; --ink-3:#888888;
-  --line:#E5E2DB; --accent:#C8502E; --accent-soft:#E8A87C; --dark:#1E2A32;
-  --card:#FFFFFF; --cream:#F0EDE6;
+  --bg:#fff3d6; --ink:#444444; --ink-2:#6b6b6b; --ink-3:#8a8a8a;
+  --line:#eadfcb; --accent:#ff6000; --accent-soft:#ffa55b; --dark:#444444;
+  --card:#FFFFFF; --cream:#fff3d6;
   background:var(--bg); color:var(--ink);
   font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
   font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
@@ -753,7 +753,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
 .m21 .btn{display:inline-block;padding:12px 24px;border-radius:4px;text-decoration:none;font-size:15px;font-weight:600;transition:all .15s;cursor:pointer;border:none}
 .m21 .btn-primary{background:var(--dark);color:#fff}
-.m21 .btn-primary:hover{background:#000}
+.m21 .btn-primary:hover{background:#444444}
 .m21 .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .m21 .btn-ghost:hover{border-color:var(--ink)}
 
@@ -774,10 +774,10 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 .m21 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
 .m21 .hero-grid h1,.m21 .hero-grid p.lede,.m21 .hero-grid p.answer{max-width:none}
 .m21 .hero-proof{display:flex;flex-direction:column;gap:14px}
-.m21 .proof-team{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 24px 48px -32px rgba(30,42,50,.35)}
+.m21 .proof-team{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 24px 48px -32px rgba(68,68,68,.35)}
 .m21 .proof-team img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 38%}
 .m21 .proof-team figcaption{padding:11px 16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-3);line-height:1.4}
-.m21 .proof-brands{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 24px 48px -32px rgba(30,42,50,.35)}
+.m21 .proof-brands{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 24px 48px -32px rgba(68,68,68,.35)}
 .m21 .proof-label{font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin:0;padding:14px 18px 12px}
 .m21 .proof-brands > img{display:block;width:100%;height:auto}
 .m21 .badges{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:48px}
@@ -827,9 +827,9 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 .m21 .band-dark{
   position:relative;overflow:hidden;color:#fff;
   background:
-    radial-gradient(880px 420px at 92% -12%,rgba(200,80,46,.30),transparent 62%),
-    radial-gradient(680px 380px at -8% 112%,rgba(232,168,124,.16),transparent 60%),
-    linear-gradient(158deg,#1E2A32 0%,#18232A 58%,#131C22 100%);
+    radial-gradient(880px 420px at 92% -12%,rgba(255,96,0,.30),transparent 62%),
+    radial-gradient(680px 380px at -8% 112%,rgba(255,165,91,.16),transparent 60%),
+    linear-gradient(158deg,#444444 0%,#18232A 58%,#131C22 100%);
 }
 .m21 .band-dark::before{
   content:"";position:absolute;inset:0;pointer-events:none;
@@ -842,56 +842,56 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 .m21 .band-dark .section-label{color:var(--accent-soft)}
 .m21 .band-dark h2{color:#fff}
 .m21 .band-dark h2 em{font-style:italic;color:var(--accent-soft)}
-.m21 .band-dark .section-sub{color:#B0BEC5;margin-bottom:0}
-.m21 .band-dark .takeaway{background:rgba(232,168,124,.12);border-left-color:var(--accent-soft);color:#fff}
+.m21 .band-dark .section-sub{color:#8a8a8a;margin-bottom:0}
+.m21 .band-dark .takeaway{background:rgba(255,165,91,.12);border-left-color:var(--accent-soft);color:#fff}
 
 .m21 .wont-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
 .m21 .wont-item{position:relative;padding:26px 26px 24px;border:1px solid rgba(255,255,255,.09);border-radius:6px;background:rgba(255,255,255,.035);transition:transform .18s ease,border-color .18s ease,background .18s ease}
-.m21 .wont-item:hover{transform:translateY(-2px);border-color:rgba(232,168,124,.45);background:rgba(255,255,255,.06)}
+.m21 .wont-item:hover{transform:translateY(-2px);border-color:rgba(255,165,91,.45);background:rgba(255,255,255,.06)}
 .m21 .wont-num{display:block;font-family:Georgia,'Times New Roman',serif;font-size:13px;letter-spacing:2px;color:var(--accent-soft);margin-bottom:12px}
 .m21 .wont-item h3{font-size:17px;line-height:1.35;color:#fff}
-.m21 .wont-item p{font-size:15px;color:#B0BEC5;line-height:1.7;margin-top:9px}
+.m21 .wont-item p{font-size:15px;color:#8a8a8a;line-height:1.7;margin-top:9px}
 
 /* Evidence */
 .m21 .evidence{background:var(--dark);color:#fff}
 .m21 .evidence .section-label{color:var(--accent-soft)}
 .m21 .evidence h2{color:#fff}
-.m21 .evidence .section-sub{color:#B0BEC5}
+.m21 .evidence .section-sub{color:#8a8a8a}
 .m21 .evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .m21 .ev-card{background:#2A3A44;border-radius:8px;padding:24px}
 .m21 .ev-card h4{font-size:14px;font-weight:600;color:var(--accent-soft);margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px}
 .m21 .ev-card img{width:100%;border-radius:4px;display:block;border:1px solid rgba(255,255,255,.1)}
-.m21 .ev-card p{font-size:14px;color:#B0BEC5;margin-top:14px;line-height:1.5}
+.m21 .ev-card p{font-size:14px;color:#8a8a8a;margin-top:14px;line-height:1.5}
 .m21 .ev-photo{margin:14px 0}
-.m21 .ev-link{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--accent-soft);text-decoration:none;border-bottom:1px solid rgba(232,168,124,.4);padding-bottom:1px}
+.m21 .ev-link{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--accent-soft);text-decoration:none;border-bottom:1px solid rgba(255,165,91,.4);padding-bottom:1px}
 .m21 .ev-link:hover{color:#fff;border-bottom-color:#fff}
 .m21 .ev-figure{margin:16px 0 0}
 .m21 .ev-figure img{border-radius:4px}
-.m21 .ev-figure figcaption{font-size:12.5px;color:#8FA3AE;line-height:1.5;margin-top:8px}
-.m21 .bom-head{display:grid;grid-template-columns:1fr 32px 84px;gap:10px;margin-top:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.18);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:#8FA3AE}
+.m21 .ev-figure figcaption{font-size:12.5px;color:#8a8a8a;line-height:1.5;margin-top:8px}
+.m21 .bom-head{display:grid;grid-template-columns:1fr 32px 84px;gap:10px;margin-top:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.18);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:#8a8a8a}
 .m21 .bom-head .q{text-align:center}
 .m21 .bom-head .c{text-align:right}
 .m21 .bom{list-style:none;margin:0;padding:0}
-.m21 .bom li{display:grid;grid-template-columns:1fr 32px 84px;gap:10px;align-items:start;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:13px;color:#B0BEC5}
+.m21 .bom li{display:grid;grid-template-columns:1fr 32px 84px;gap:10px;align-items:start;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:13px;color:#8a8a8a}
 .m21 .bom b{display:block;color:#fff;font-weight:600;line-height:1.35}
-.m21 .bom em{display:block;font-style:normal;font-size:11.5px;color:#8FA3AE;line-height:1.45;margin-top:2px}
-.m21 .bom .q{text-align:center;color:#B0BEC5;font-size:12.5px}
-.m21 .bom .c{text-align:right;color:#8FA3AE;font-size:11.5px}
+.m21 .bom em{display:block;font-style:normal;font-size:11.5px;color:#8a8a8a;line-height:1.45;margin-top:2px}
+.m21 .bom .q{text-align:center;color:#8a8a8a;font-size:12.5px}
+.m21 .bom .c{text-align:right;color:#8a8a8a;font-size:11.5px}
 .m21 .build{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
 .m21 .build-step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:12px}
-.m21 .build-n{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--accent-soft);color:#1E2A32;font-size:11px;font-weight:700;margin-bottom:7px}
+.m21 .build-n{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--accent-soft);color:#444444;font-size:11px;font-weight:700;margin-bottom:7px}
 .m21 .build-step b{display:block;color:#fff;font-size:12.5px;line-height:1.3;margin-bottom:4px}
-.m21 .build-step p{font-size:11.5px;color:#B0BEC5;line-height:1.45;margin:0}
+.m21 .build-step p{font-size:11.5px;color:#8a8a8a;line-height:1.45;margin:0}
 .m21 .formula{margin-top:12px;text-align:center;font-size:13px;font-weight:600;color:#fff;letter-spacing:.02em}
 .m21 .formula span{color:var(--accent-soft);margin:0 7px;font-weight:700}
-.m21 .takeaway{margin:24px 0 0;padding:13px 16px;background:rgba(200,80,46,.07);border-left:3px solid var(--accent);font-size:14.5px;line-height:1.55;color:var(--ink)}
-.m21 .evidence .takeaway{background:rgba(232,168,124,.12);border-left-color:var(--accent-soft);color:#fff}
+.m21 .takeaway{margin:24px 0 0;padding:13px 16px;background:rgba(255,96,0,.07);border-left:3px solid var(--accent);font-size:14.5px;line-height:1.55;color:var(--ink)}
+.m21 .evidence .takeaway{background:rgba(255,165,91,.12);border-left-color:var(--accent-soft);color:#fff}
 .m21 .steps{display:flex;flex-direction:column;gap:12px;margin:16px 0}
 .m21 .step{display:flex;align-items:center;gap:12px}
-.m21 .step-num{width:32px;height:32px;border-radius:50%;background:var(--accent-soft);color:#1E2A32;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+.m21 .step-num{width:32px;height:32px;border-radius:50%;background:var(--accent-soft);color:#444444;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
 .m21 .step strong{color:#fff;font-size:14px}
-.m21 .step span{color:#B0BEC5;font-size:13px}
-.m21 .ev-note{font-size:13px;color:#B0BEC5;margin-top:8px}
+.m21 .step span{color:#8a8a8a;font-size:13px}
+.m21 .ev-note{font-size:13px;color:#8a8a8a;margin-top:8px}
 
 /* Final CTA */
 .m21 .final-cta{background:var(--card);border-top:1px solid var(--line);text-align:center;padding:64px 0}
@@ -920,12 +920,13 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   .m21 .tl-year{font-size:15px}
 }
 /* Floating mail-to CTA (sits above the existing WhatsApp bubble) */
-.mb-mail-float{position:fixed;right:24px;bottom:calc(env(safe-area-inset-bottom) + 5.75rem);z-index:951;background:#C8502E;color:#fff;padding:13px 22px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px;box-shadow:0 4px 16px rgba(0,0,0,.2);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+.mb-mail-float{position:fixed;right:24px;bottom:calc(env(safe-area-inset-bottom) + 5.75rem);z-index:951;background:#ff6000;color:#fff;padding:13px 22px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px;box-shadow:0 4px 16px rgba(0,0,0,.2);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 .mb-mail-float:hover{background:#A63F22;color:#fff}
 @media (max-width:700px){
   .mb-mail-float{padding:11px 18px;font-size:13px;bottom:calc(env(safe-area-inset-bottom) + 5.5rem)}
 }
 </style>
+<link rel="stylesheet" href="/assets/brand.css">
 </head>
 <body class="bg-white text-brandgray-700">
 
@@ -1185,7 +1186,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
   <!-- HERO -->
   <header class="hero" id="top">
-    <div class="wrap hero-grid">
+    <div class="wrap hero-grid content-wrap">
       <div class="hero-copy">
         <div class="eyebrow">China · From factory floors to your brand's first shipment</div>
         <h1>A Yiwu sourcing agent for <em>custom development, QC and assembly</em> — from 50 pcs.</h1>
@@ -1218,7 +1219,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       </aside>
     </div>
 
-    <div class="wrap">
+    <div class="wrap content-wrap">
       <div class="badges">
         <div class="badge"><span class="num">3–8%</span><span class="label">Flat fee, published</span></div>
         <div class="badge"><span class="num">1 pc</span><span class="label">Stock MOQ, custom runs from 50 pcs</span></div>
@@ -1233,8 +1234,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   </header>
 
   <!-- WHAT WE WON'T DO -->
-  <section class="band-dark" id="what-we-dont-do">
-    <div class="wrap">
+  <section class="section-fullwidth band-dark" id="what-we-dont-do">
+    <div class="wrap content-wrap">
       <div class="section-label">What we don't do</div>
       <h2>Four things Milebond <em>won't</em> do — and why that protects your margin.</h2>
       <p class="section-sub">Most sourcing agents say yes to everything. These are the four lines we don't cross, and what each one means for your money.</p>
@@ -1266,8 +1267,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   </section>
 
   <!-- WHY -->
-  <section class="band-cream">
-    <div class="wrap">
+  <section class="section-fullwidth band-cream">
+    <div class="wrap content-wrap">
       <div class="section-label">Why now, and why us</div>
       <h2>What 11+ years on the factory floor gives you.</h2>
       <p class="section-sub">
@@ -1298,8 +1299,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   </section>
 
   <!-- STORY TIMELINE -->
-  <section id="story">
-    <div class="wrap">
+  <section class="section-fullwidth" id="story">
+    <div class="wrap content-wrap">
       <div class="section-label">Our story</div>
       <h2>We didn't start as a trading company. We started as a factory.</h2>
       <p class="section-sub">
@@ -1359,8 +1360,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   </section>
 
   <!-- SERVICES -->
-  <section class="band-card">
-    <div class="wrap">
+  <section class="section-fullwidth band-card">
+    <div class="wrap content-wrap">
       <div class="section-label">What we do</div>
       <h2>One team. From factory floor to your shelf.</h2>
       <p class="section-sub">Six services, one 3–8% fee. No per-service upcharges on the standard package.</p>
@@ -1395,8 +1396,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   </section>
 
   <!-- Q&A -->
-  <section>
-    <div class="wrap">
+  <section class="section-fullwidth">
+    <div class="wrap content-wrap">
       <div class="section-label">Buyers ask us these. Here are honest answers.</div>
       <h2>How we actually work.</h2>
       <p class="section-sub">No sales pitch. Just how we run quotes and QC — the parts most agents leave out.</p>
@@ -1427,8 +1428,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   </section>
 
   <!-- EVIDENCE -->
-  <section class="evidence" id="evidence">
-    <div class="wrap">
+  <section class="section-fullwidth evidence" id="evidence">
+    <div class="wrap content-wrap">
       <div class="section-label">See what a real quote looks like</div>
       <h2>No surprises at the port.</h2>
       <p class="section-sub">A client sent two photos of a baby gift basket. It came back as 9 lines — every spec measured, every part traced to a factory invoice, and the price built in the open.</p>
@@ -1537,8 +1538,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   </section>
 
   <!-- FINAL CTA -->
-  <section class="final-cta">
-    <div class="wrap">
+  <section class="section-fullwidth final-cta">
+    <div class="wrap content-wrap">
       <h2>Send us your reference. Get a real BOM in 24 hours.</h2>
       <p>No template replies. We break your product into parts, source real samples, and show you factory cost + our 3–8% — before you commit.</p>
       <a href="mailto:info@milebond.com?subject=Quote%20Request%20-%20Milebond" class="btn btn-primary">Get a Quote</a>
@@ -1549,71 +1550,71 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 </div>
 
 <!-- ===== Why Milebond · Our Core Advantages（替换 We run the boring part） ===== -->
-<section class="why-milebond" style="padding:64px 6% 60px;background:#FFFFFF;">
+<section class="section-fullwidth why-milebond" style="padding:64px 6% 60px;background:#FFFFFF;">
   <div style="text-align:center;margin-bottom:38px;">
     <div style="font-size:11px;font-weight:800;letter-spacing:.16em;color:#C97F06;text-transform:uppercase;">Why Milebond</div>
-    <h2 style="font-size:32px;font-weight:800;color:#0F2A4A;letter-spacing:-.02em;margin-top:8px;">Our Core <span style="color:#F59E0B;">Advantages</span></h2>
-    <p style="font-size:14px;color:#64748B;margin-top:10px;">Low-MOQ sourcing, verified factories and transparent pricing — one team that sells what it sources</p>
+    <h2 style="font-size:32px;font-weight:800;color:#444444;letter-spacing:-.02em;margin-top:8px;">Our Core <span style="color:#ffa55b;">Advantages</span></h2>
+    <p style="font-size:14px;color:#6b6b6b;margin-top:10px;">Low-MOQ sourcing, verified factories and transparent pricing — one team that sells what it sources</p>
   </div>
-  <div class="wm-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1200px;margin:0 auto;">
+  <div class="wm-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1320px;margin:0 auto;">
     <!-- 1 Low MOQ -->
-    <div style="background:#F7F8FA;border:1px solid #E3E9F2;border-radius:16px;padding:20px 18px 16px;position:relative;">
-      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#FFF7E6;border:1px solid #F5C76B;border-radius:999px;padding:4px 10px;">1 Carton · from $100</span>
-      <div style="width:36px;height:36px;border-radius:10px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#F59E0B;font-weight:800;">01</div>
-      <h3 style="font-size:16px;font-weight:800;color:#0A1D33;line-height:1.3;">Low MOQ Sourcing</h3>
-      <p style="font-size:13px;color:#475569;line-height:1.6;margin-top:8px;">Start with a single carton — <b style="color:#0F2A4A;">custom logo, your own parts and spec</b>. No 500-piece minimum, no dead stock gamble. Built for startups and new Amazon sellers.</p>
-      <a href="/services/product-sourcing" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#0F2A4A;text-decoration:none;margin-top:14px;">Learn more →</a>
+    <div style="background:#fff3d6;border:1px solid #eadfcb;border-radius:16px;padding:20px 18px 16px;position:relative;">
+      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#fff3d6;border:1px solid #ffa55b;border-radius:999px;padding:4px 10px;">1 Carton · from $100</span>
+      <div style="width:36px;height:36px;border-radius:10px;background:#444444;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#ffa55b;font-weight:800;">01</div>
+      <h3 style="font-size:16px;font-weight:800;color:#3a3a3a;line-height:1.3;">Low MOQ Sourcing</h3>
+      <p style="font-size:13px;color:#6b6b6b;line-height:1.6;margin-top:8px;">Start with a single carton — <b style="color:#444444;">custom logo, your own parts and spec</b>. No 500-piece minimum, no dead stock gamble. Built for startups and new Amazon sellers.</p>
+      <a href="/services/product-sourcing" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#444444;text-decoration:none;margin-top:14px;">Learn more →</a>
     </div>
     <!-- 2 Amazon FBA -->
-    <div style="background:#F7F8FA;border:1px solid #E3E9F2;border-radius:16px;padding:20px 18px 16px;position:relative;">
-      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#FFF7E6;border:1px solid #F5C76B;border-radius:999px;padding:4px 10px;">10+ Years · 50+ Brands</span>
-      <div style="width:36px;height:36px;border-radius:10px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#F59E0B;font-weight:800;">02</div>
-      <h3 style="font-size:16px;font-weight:800;color:#0A1D33;line-height:1.3;">Amazon FBA &amp; Private Label</h3>
-      <p style="font-size:13px;color:#475569;line-height:1.6;margin-top:8px;">10+ years as an Amazon brand operator: we source with <b style="color:#0F2A4A;">listings, compliance, returns and cash flow</b> in mind — FBA-ready, private-label products that actually sell.</p>
-      <a href="/services/amazon-brand-management" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#0F2A4A;text-decoration:none;margin-top:14px;">Learn more →</a>
+    <div style="background:#fff3d6;border:1px solid #eadfcb;border-radius:16px;padding:20px 18px 16px;position:relative;">
+      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#fff3d6;border:1px solid #ffa55b;border-radius:999px;padding:4px 10px;">10+ Years · 50+ Brands</span>
+      <div style="width:36px;height:36px;border-radius:10px;background:#444444;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#ffa55b;font-weight:800;">02</div>
+      <h3 style="font-size:16px;font-weight:800;color:#3a3a3a;line-height:1.3;">Amazon FBA &amp; Private Label</h3>
+      <p style="font-size:13px;color:#6b6b6b;line-height:1.6;margin-top:8px;">10+ years as an Amazon brand operator: we source with <b style="color:#444444;">listings, compliance, returns and cash flow</b> in mind — FBA-ready, private-label products that actually sell.</p>
+      <a href="/services/amazon-brand-management" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#444444;text-decoration:none;margin-top:14px;">Learn more →</a>
     </div>
     <!-- 3 Verified Suppliers -->
-    <div style="background:#F7F8FA;border:1px solid #E3E9F2;border-radius:16px;padding:20px 18px 16px;position:relative;">
-      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#FFF7E6;border:1px solid #F5C76B;border-radius:999px;padding:4px 10px;">1,000+ Field-Vetted</span>
-      <div style="width:36px;height:36px;border-radius:10px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#F59E0B;font-weight:800;">03</div>
-      <h3 style="font-size:16px;font-weight:800;color:#0A1D33;line-height:1.3;">Verified China Suppliers</h3>
-      <p style="font-size:13px;color:#475569;line-height:1.6;margin-top:8px;">Every factory is <b style="color:#0F2A4A;">visited, compared and confirmed in Yiwu</b> — quality and delivery checked by us, not by a catalog.</p>
-      <a href="/services/supplier-verification-factory-audit" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#0F2A4A;text-decoration:none;margin-top:14px;">Learn more →</a>
+    <div style="background:#fff3d6;border:1px solid #eadfcb;border-radius:16px;padding:20px 18px 16px;position:relative;">
+      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#fff3d6;border:1px solid #ffa55b;border-radius:999px;padding:4px 10px;">1,000+ Field-Vetted</span>
+      <div style="width:36px;height:36px;border-radius:10px;background:#444444;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#ffa55b;font-weight:800;">03</div>
+      <h3 style="font-size:16px;font-weight:800;color:#3a3a3a;line-height:1.3;">Verified China Suppliers</h3>
+      <p style="font-size:13px;color:#6b6b6b;line-height:1.6;margin-top:8px;">Every factory is <b style="color:#444444;">visited, compared and confirmed in Yiwu</b> — quality and delivery checked by us, not by a catalog.</p>
+      <a href="/services/supplier-verification-factory-audit" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#444444;text-decoration:none;margin-top:14px;">Learn more →</a>
     </div>
     <!-- 4 QC & AQL -->
-    <div style="background:#F7F8FA;border:1px solid #E3E9F2;border-radius:16px;padding:20px 18px 16px;position:relative;">
-      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#FFF7E6;border:1px solid #F5C76B;border-radius:999px;padding:4px 10px;">AQL 2.5 · Video Proof</span>
-      <div style="width:36px;height:36px;border-radius:10px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#F59E0B;font-weight:800;">04</div>
-      <h3 style="font-size:16px;font-weight:800;color:#0A1D33;line-height:1.3;">Quality Inspection &amp; AQL 2.5</h3>
-      <p style="font-size:13px;color:#475569;line-height:1.6;margin-top:8px;">Pre-shipment inspection on every order — <b style="color:#0F2A4A;">AQL 2.5 with functional test videos</b>. No surprise QC failures at the port.</p>
-      <a href="/services/quality-control/" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#0F2A4A;text-decoration:none;margin-top:14px;">Learn more →</a>
+    <div style="background:#fff3d6;border:1px solid #eadfcb;border-radius:16px;padding:20px 18px 16px;position:relative;">
+      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#fff3d6;border:1px solid #ffa55b;border-radius:999px;padding:4px 10px;">AQL 2.5 · Video Proof</span>
+      <div style="width:36px;height:36px;border-radius:10px;background:#444444;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#ffa55b;font-weight:800;">04</div>
+      <h3 style="font-size:16px;font-weight:800;color:#3a3a3a;line-height:1.3;">Quality Inspection &amp; AQL 2.5</h3>
+      <p style="font-size:13px;color:#6b6b6b;line-height:1.6;margin-top:8px;">Pre-shipment inspection on every order — <b style="color:#444444;">AQL 2.5 with functional test videos</b>. No surprise QC failures at the port.</p>
+      <a href="/services/quality-control/" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#444444;text-decoration:none;margin-top:14px;">Learn more →</a>
     </div>
     <!-- 5 Transparent Pricing -->
-    <div style="background:#F7F8FA;border:1px solid #E3E9F2;border-radius:16px;padding:20px 18px 16px;position:relative;">
-      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#FFF7E6;border:1px solid #F5C76B;border-radius:999px;padding:4px 10px;">Part · Pack · Labor · Freight</span>
-      <div style="width:36px;height:36px;border-radius:10px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#F59E0B;font-weight:800;">05</div>
-      <h3 style="font-size:16px;font-weight:800;color:#0A1D33;line-height:1.3;">Transparent Pricing</h3>
-      <p style="font-size:13px;color:#475569;line-height:1.6;margin-top:8px;">Full cost breakdown on every quote — <b style="color:#0F2A4A;">part, packaging, labor, freight</b> — verifiable against real invoices. We earn <b style="color:#0F2A4A;">our service fee only</b>: no hidden fees, no padding, no kickbacks.</p>
-      <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#0F2A4A;text-decoration:none;margin-top:14px;">Learn more →</a>
+    <div style="background:#fff3d6;border:1px solid #eadfcb;border-radius:16px;padding:20px 18px 16px;position:relative;">
+      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#fff3d6;border:1px solid #ffa55b;border-radius:999px;padding:4px 10px;">Part · Pack · Labor · Freight</span>
+      <div style="width:36px;height:36px;border-radius:10px;background:#444444;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#ffa55b;font-weight:800;">05</div>
+      <h3 style="font-size:16px;font-weight:800;color:#3a3a3a;line-height:1.3;">Transparent Pricing</h3>
+      <p style="font-size:13px;color:#6b6b6b;line-height:1.6;margin-top:8px;">Full cost breakdown on every quote — <b style="color:#444444;">part, packaging, labor, freight</b> — verifiable against real invoices. We earn <b style="color:#444444;">our service fee only</b>: no hidden fees, no padding, no kickbacks.</p>
+      <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#444444;text-decoration:none;margin-top:14px;">Learn more →</a>
     </div>
     <!-- 6 Cost Reduction -->
-    <div style="background:#F7F8FA;border:1px solid #E3E9F2;border-radius:16px;padding:20px 18px 16px;position:relative;">
-      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#FFF7E6;border:1px solid #F5C76B;border-radius:999px;padding:4px 10px;">≈10% Lower Landed Cost</span>
-      <div style="width:36px;height:36px;border-radius:10px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#F59E0B;font-weight:800;">06</div>
-      <h3 style="font-size:16px;font-weight:800;color:#0A1D33;line-height:1.3;">Cost Reduction on Reorders</h3>
-      <p style="font-size:13px;color:#475569;line-height:1.6;margin-top:8px;">Every reorder gets renegotiated — <b style="color:#0F2A4A;">materials, payment terms, packaging</b> — <b style="color:#0F2A4A;">≈10% lower landed cost per reorder</b>, while quality holds.</p>
-      <a href="/services/product-sourcing" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#0F2A4A;text-decoration:none;margin-top:14px;">Learn more →</a>
+    <div style="background:#fff3d6;border:1px solid #eadfcb;border-radius:16px;padding:20px 18px 16px;position:relative;">
+      <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#C97F06;background:#fff3d6;border:1px solid #ffa55b;border-radius:999px;padding:4px 10px;">≈10% Lower Landed Cost</span>
+      <div style="width:36px;height:36px;border-radius:10px;background:#444444;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#ffa55b;font-weight:800;">06</div>
+      <h3 style="font-size:16px;font-weight:800;color:#3a3a3a;line-height:1.3;">Cost Reduction on Reorders</h3>
+      <p style="font-size:13px;color:#6b6b6b;line-height:1.6;margin-top:8px;">Every reorder gets renegotiated — <b style="color:#444444;">materials, payment terms, packaging</b> — <b style="color:#444444;">≈10% lower landed cost per reorder</b>, while quality holds.</p>
+      <a href="/services/product-sourcing" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#444444;text-decoration:none;margin-top:14px;">Learn more →</a>
     </div>
   </div>
   <div class="wm-cta" style="display:flex;align-items:center;justify-content:center;gap:24px;margin-top:34px;">
-    <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener" style="background:#F59E0B;color:#3a2500;font-size:15px;font-weight:800;padding:13px 34px;border-radius:12px;text-decoration:none;">Get Free Quote</a>
+    <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener" style="background:#ffa55b;color:#444444;font-size:15px;font-weight:800;padding:13px 34px;border-radius:12px;text-decoration:none;">Get Free Quote</a>
   </div>
 </section>
 <!-- ===== /Why Milebond ===== -->
 
 <!-- ============ WHO WE SERVE ============ -->
-<section id="who-we-serve" class="bg-brandgray-50 py-16 md:py-24">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+<section id="who-we-serve" class="section-fullwidth bg-brandgray-50 py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 content-wrap">
     <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16">
       <h2 class="text-navy font-extrabold text-3xl md:text-4xl tracking-tight">Which business are you building?</h2>
       <p class="mt-4 text-brandgray-600 text-base md:text-lg">Pick your path — every plan is tailored to how you sell.</p>
@@ -1727,8 +1728,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 </section>
 
 <!-- ============ DATA STRIP ============ -->
-<section class="bg-navy py-14 md:py-20">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+<section class="section-fullwidth bg-navy py-14 md:py-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 content-wrap">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 text-center md:text-left">
       <div>
         <p class="text-white font-extrabold text-4xl md:text-5xl tracking-tight">50+</p>
@@ -1751,8 +1752,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 </section>
 
 <!-- ============ TESTIMONIALS ============ -->
-<section class="bg-brandgray-50 py-16 md:py-24">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+<section class="section-fullwidth bg-brandgray-50 py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 content-wrap">
     <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16">
       <h2 class="text-navy font-extrabold text-3xl md:text-4xl tracking-tight">Trusted by sellers who've been burned before</h2>
     </div>
@@ -1804,8 +1805,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 </section>
 
 <!-- ============ CONTACT / QUOTE ============ -->
-<section class="bg-white py-16 md:py-24">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+<section class="section-fullwidth bg-white py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 content-wrap">
     <div class="text-center max-w-2xl mx-auto mb-10 md:mb-14">
       <h2 class="cb-h2">Stop guessing. Start verifying.</h2>
       <p class="cb-h2-sub">One inquiry — a clear plan back within 24 hours.</p>
@@ -1821,19 +1822,19 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         <div class="cb-intro">Hi I'm <b>Monica Zhu</b> — Founder &amp; CEO of Milebond. With 10+ years of Amazon brand-building experience, I run sourcing the way I wished someone had run it for me: transparent fees, zero kickbacks, and every saving we negotiate passed straight to you.</div>
         <p class="cb-slogan">My margin is my fee — your savings are yours.</p>
         <p class="cb-addr">
-          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ffa55b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Yiwu City, Zhejiang Province, China
         </p>
         <div style="margin-top:16px;display:flex;flex-direction:column;gap:10px;">
           <div style="display:flex;align-items:center;gap:10px;">
-            <span style="width:34px;height:34px;border-radius:50%;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.5);display:flex;align-items:center;justify-content:center;flex:none;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span style="width:34px;height:34px;border-radius:50%;background:rgba(255,165,91,.15);border:1px solid rgba(255,165,91,.5);display:flex;align-items:center;justify-content:center;flex:none;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffa55b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </span>
             <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20a%20sourcing%20quote" target="_blank" rel="noopener" style="font-size:14px;font-weight:700;color:#FFFFFF;text-decoration:none;">+86 150 5796 0102 (WhatsApp)</a>
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
-            <span style="width:34px;height:34px;border-radius:50%;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.5);display:flex;align-items:center;justify-content:center;flex:none;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+            <span style="width:34px;height:34px;border-radius:50%;background:rgba(255,165,91,.15);border:1px solid rgba(255,165,91,.5);display:flex;align-items:center;justify-content:center;flex:none;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffa55b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
             </span>
             <a href="mailto:info@milebond.com" style="font-size:14px;font-weight:700;color:#FFFFFF;text-decoration:none;">info@milebond.com</a>
           </div>
@@ -1960,11 +1961,11 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     <input class="qf-input" type="text" id="cbSku" name="sku" placeholder="e.g. HK-001">
   </div>
 <div class="qf-field qf-full">
-    <label class="qf-label" for="cbMsg">Requirements / specs <span style="font-weight:500;color:#6a7282">(optional)</span></label>
+    <label class="qf-label" for="cbMsg">Requirements / specs <span style="font-weight:500;color:#6b6b6b">(optional)</span></label>
     <textarea class="qf-textarea" id="cbMsg" name="message" placeholder="Specs, materials, packaging, compliance (CE / FDA / CPC), target market and timeline..."></textarea>
   </div>
 <div class="qf-field qf-full">
-    <label class="qf-label" for="cbFile">Attach a drawing, photo or spec sheet <span style="font-weight:500;color:#6a7282">(optional, max 10 MB)</span></label>
+    <label class="qf-label" for="cbFile">Attach a drawing, photo or spec sheet <span style="font-weight:500;color:#6b6b6b">(optional, max 10 MB)</span></label>
     <input class="qf-file" type="file" id="cbFile" name="attachment" accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx,.xls,.xlsx,.csv,.zip">
   </div>
   </div>
@@ -1983,7 +1984,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 </section>
 
 <!-- ============ FINAL CTA ============ -->
-<section class="bg-white py-16 md:py-24">
+<section class="section-fullwidth bg-white py-16 md:py-24">
   <div class="max-w-3xl mx-auto px-5 lg:px-8 text-center">
     <h2 class="text-navy font-extrabold text-3xl md:text-4xl tracking-tight">Ready to hand over sourcing?</h2>
     <p class="mt-4 text-brandgray-600 text-base md:text-lg max-w-xl mx-auto">We'll give you a plan in 24 hours — no obligation, no pressure, just 2–3 quotes side by side.</p>
@@ -2001,8 +2002,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 <!-- COMPANY FACTS -->
 <style>
 .cf-table{width:100%;border-collapse:collapse;font-size:14.5px;line-height:1.55}
-.cf-table th,.cf-table td{padding:11px 0;border-bottom:1px solid #E6E3D8;vertical-align:top;text-align:left}
-.cf-table th{width:30%;color:#0F2A4A;font-weight:700;padding-right:20px}
+.cf-table th,.cf-table td{padding:11px 0;border-bottom:1px solid #eadfcb;vertical-align:top;text-align:left}
+.cf-table th{width:30%;color:#444444;font-weight:700;padding-right:20px}
 .cf-table td{color:#4A5563}
 @media (max-width:640px){
   .cf-table th,.cf-table td{display:block;width:100%;padding:0}
@@ -2010,10 +2011,10 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   .cf-table td{padding-bottom:12px;font-size:14px}
 }
 </style>
-<section style="background:#FFFFFF;border-top:1px solid #E6E3D8;">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12">
-    <h2 style="font-family:'Fraunces','Inter',serif;font-size:24px;font-weight:700;color:#0a2a2b;margin:0 0 8px;">Company facts</h2>
-    <p style="font-size:14px;color:#5A5950;margin:0 0 20px;max-width:640px;">The numbers we actually work to, in one place. If a figure here ever differs from your quote, the quote wins and we correct this page.</p>
+<section class="section-fullwidth" style="background:#FFFFFF;border-top:1px solid #eadfcb;">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12 content-wrap">
+    <h2 style="font-family:'Fraunces','Inter',serif;font-size:24px;font-weight:700;color:#444444;margin:0 0 8px;">Company facts</h2>
+    <p style="font-size:14px;color:#6b6b6b;margin:0 0 20px;max-width:640px;">The numbers we actually work to, in one place. If a figure here ever differs from your quote, the quote wins and we correct this page.</p>
     <table class="cf-table">
       <tbody>
         <tr><th scope="row">Sourcing since</th><td>2015 — our team. Milebond is the trading brand we work under.</td></tr>
@@ -2034,33 +2035,33 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 </section>
 
 <!-- E-E-A-T byline -->
-<div style="background:#FAFAF8;border-top:1px solid #E6E3D8;">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-6" style="font-size:13px;line-height:1.6;color:#5A5950;">
-    Page maintained by <a href="/about" style="color:#0F2A4A;font-weight:700;text-decoration:underline;">Monica Zhu</a>, founder of Milebond — sourcing in Yiwu since 2015, 6,900+ suppliers worked with, 1,000+ field-vetted.<br>
+<div style="background:#fff3d6;border-top:1px solid #eadfcb;">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-6 content-wrap" style="font-size:13px;line-height:1.6;color:#6b6b6b;">
+    Page maintained by <a href="/about" style="color:#444444;font-weight:700;text-decoration:underline;">Monica Zhu</a>, founder of Milebond — sourcing in Yiwu since 2015, 6,900+ suppliers worked with, 1,000+ field-vetted.<br>
     Last reviewed <time datetime="2026-11-06">6 November 2026</time>.
   </div>
 </div>
 
 <!-- ============ FOOTER ============ -->
 <footer id="about" class="bg-navy pt-16 pb-6 text-white">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 content-wrap">
     <div class="grid md:grid-cols-[1.5fr_1fr_1fr_1.2fr] gap-10 pb-10 border-b border-white/10">
 
       <!-- Column 1 — Milebond -->
       <div>
         <a href="/" class="inline-flex items-center mb-4">
-          <img src="/images/brand/logo-white.png" alt="Milebond" width="96" height="32" class="h-8 w-auto object-contain" loading="lazy" decoding="async">
+          <img src="/images/brand/logo-white-footer.png" alt="Milebond" width="96" height="32" class="h-8 w-auto object-contain" loading="lazy" decoding="async">
         </a>
         <p class="text-white/70 text-sm leading-relaxed max-w-sm mb-5">
           Yiwu-based sourcing partner for Amazon brands, private labels, and offline wholesalers.
         </p>
         <ul class="space-y-2 text-sm text-white/60">
           <li class="flex items-start gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffa55b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             <a href="mailto:info@milebond.com" class="hover:text-amber transition-colors">info@milebond.com</a>
           </li>
           <li class="flex items-start gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffa55b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
             <a href="https://wa.me/8615057960102" target="_blank" rel="noopener noreferrer" class="hover:text-amber transition-colors">Chat on WhatsApp</a>
           </li>
         </ul>

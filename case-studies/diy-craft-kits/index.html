@@ -26,21 +26,21 @@
 
   <style>
 html { scroll-behavior: smooth; }
-body { font-family: 'Inter', system-ui, -apple-system, sans-serif; color:#364153; background:#fff; -webkit-font-smoothing: antialiased; line-height:1.6; }
-h1,h2,h3,h4,h5 { font-family:'Fraunces','Inter',sans-serif; font-weight:700; line-height:1.15; color:#0a2a2b; }
+body { font-family: 'Inter', system-ui, -apple-system, sans-serif; color:#444444; background:#fff; -webkit-font-smoothing: antialiased; line-height:1.6; }
+h1,h2,h3,h4,h5 { font-family:'Fraunces','Inter',sans-serif; font-weight:700; line-height:1.15; color:#444444; }
 * { box-sizing: border-box; }
 img { max-width: 100%; display:block; }
 button { cursor:pointer; font-family:inherit; border:none; background:none; }
 
 /* Navbar scroll state */
-#navbar.navbar-scrolled { box-shadow: 0 6px 24px rgba(10,42,43,.08); }
+#navbar.navbar-scrolled { box-shadow: 0 6px 24px rgba(68,68,68,.08); }
 
 /* Mega menu — shared by Services / Products / About */
 .services-mega { position: relative; }
 .services-mega > .mega-trigger { display:flex; align-items:center; gap:4px; }
 .services-mega > .mega-trigger .mega-chevron { transition: transform .2s ease, color .2s ease; }
 .services-mega:hover > .mega-trigger .mega-chevron,
-.services-mega.open > .mega-trigger .mega-chevron { transform: rotate(180deg); color:#0a2a2b; }
+.services-mega.open > .mega-trigger .mega-chevron { transform: rotate(180deg); color:#444444; }
 .services-mega .mega-panel {
   position: absolute;
   left: 50%;
@@ -48,9 +48,9 @@ button { cursor:pointer; font-family:inherit; border:none; background:none; }
   transform: translateX(-50%) translateY(-6px);
   width: 620px;
   background:#fff;
-  border:1px solid #e6e3d8;
+  border:1px solid #eadfcb;
   border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(10,42,43,.10);
+  box-shadow: 0 12px 40px rgba(68,68,68,.10);
   padding:18px;
   opacity: 0;
   visibility: hidden;
@@ -67,12 +67,12 @@ button { cursor:pointer; font-family:inherit; border:none; background:none; }
 .mega-item {
   display:flex; gap:10px; padding:10px 12px; border-radius:10px; text-decoration:none; transition:background .15s;
 }
-.mega-item:hover { background:#f3f1ea; }
-.mega-item:hover .mega-icon-bg { background:#008138; color:#fff; }
-.mega-icon-bg { background:#0a2a2b; color:#e8c998; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-weight:700; font-size:12px; }
-.mega-item .mega-title { color:#0a2a2b; font-size:16px; font-weight:700; line-height:1.3; }
-.mega-item:hover .mega-title { color:#008138; }
-.mega-item .mega-desc { color:#6a7282; font-size:13px; line-height:1.35; margin-top:2px; }
+.mega-item:hover { background:#fff3d6; }
+.mega-item:hover .mega-icon-bg { background:#ff6000; color:#fff; }
+.mega-icon-bg { background:#444444; color:#ffa55b; width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-weight:700; font-size:12px; }
+.mega-item .mega-title { color:#444444; font-size:16px; font-weight:700; line-height:1.3; }
+.mega-item:hover .mega-title { color:#ff6000; }
+.mega-item .mega-desc { color:#6b6b6b; font-size:13px; line-height:1.35; margin-top:2px; }
 
 /* About panel = simple vertical list (no mega-grid) */
 .about-panel {
@@ -85,36 +85,36 @@ button { cursor:pointer; font-family:inherit; border:none; background:none; }
 .products-mega .mega-panel.products-panel { width:640px; padding:20px; }
 .pm-grid { display:grid; grid-template-columns: 1fr 1fr; gap:6px 24px; }
 .pm-item { display:flex; align-items:center; gap:12px; padding:8px; border-radius:10px; text-decoration:none; transition:background .15s; }
-.pm-item:hover { background:#f3f1ea; }
-.pm-icon { width:40px; height:40px; border-radius:10px; background:#1F5C4D; color:#fff; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.pm-item:hover { background:#fff3d6; }
+.pm-icon { width:40px; height:40px; border-radius:10px; background:#444444; color:#fff; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .pm-icon svg { width:20px; height:20px; display:block; }
 .pm-text { display:flex; flex-direction:column; min-width:0; }
-.pm-name { font-size:14px; font-weight:700; color:#0a2a2b; line-height:1.3; }
-.pm-item:hover .pm-name { color:#1F5C4D; }
-.pm-desc { font-size:12px; color:#6a7282; line-height:1.35; margin-top:2px; }
+.pm-name { font-size:14px; font-weight:700; color:#444444; line-height:1.3; }
+.pm-item:hover .pm-name { color:#444444; }
+.pm-desc { font-size:12px; color:#6b6b6b; line-height:1.35; margin-top:2px; }
 
 /* Mobile nav */
 .mobile-menu { max-height: 0; overflow: hidden; transition: max-height .35s ease; background:#fff; }
 .mobile-menu.open { max-height: 800px; }
 .mobile-services > .ms-head {
   width:100%; text-align:left; padding:14px 12px; display:flex; align-items:center; justify-content:space-between;
-  font-weight:600; font-size:16px; color:#0a2a2b; font-family:'Fraunces', 'Inter', sans-serif;
+  font-weight:600; font-size:16px; color:#444444; font-family:'Fraunces', 'Inter', sans-serif;
 }
-.mobile-services > .ms-head .ms-chevron { transition: transform .2s ease; color:#6a7282; }
-.mobile-services.open > .ms-head .ms-chevron { transform: rotate(180deg); color:#008138; }
+.mobile-services > .ms-head .ms-chevron { transition: transform .2s ease; color:#6b6b6b; }
+.mobile-services.open > .ms-head .ms-chevron { transform: rotate(180deg); color:#ff6000; }
 .mobile-services > .ms-body {
   max-height: 0; overflow: hidden; transition: max-height .3s ease;
 }
 .mobile-services.open > .ms-body { max-height: 600px; }
 .mobile-services > .ms-body a {
-  display:block; padding:10px 20px 10px 36px; font-size:14px; color:#364153; border-radius:8px; margin:1px 6px;
+  display:block; padding:10px 20px 10px 36px; font-size:14px; color:#444444; border-radius:8px; margin:1px 6px;
 }
-.mobile-services > .ms-body a:hover { background:#f3f1ea; color:#008138; }
+.mobile-services > .ms-body a:hover { background:#fff3d6; color:#ff6000; }
 
 /* Nav font */
 nav, nav a, nav button, nav span, .mega-title, .mega-desc, .mobile-services, .mobile-services a, .mobile-services button { font-family:'Fraunces','Inter',Georgia,serif; }
 
-:focus-visible { outline-color: #008138; }
+:focus-visible { outline-color: #ff6000; }
   </style>
 <style id="nav-mobile-css">
 /* Mobile drawer: collapsed by default, scrolls when taller than the viewport */
@@ -125,8 +125,8 @@ nav, nav a, nav button, nav span, .mega-title, .mega-desc, .mobile-services, .mo
 #mobileMenu .mobile-services > .ms-body { max-height: 0 !important; overflow: hidden; }
 #mobileMenu .mobile-services.open > .ms-body { max-height: none !important; }
 /* Primary CTA keeps white text on the green pill */
-#navbar a.nav-cta { background-color: #008138 !important; color: #ffffff !important; }
-#navbar a.nav-cta:hover { background-color: #0f3d3e !important; }
+#navbar a.nav-cta { background-color: #ff6000 !important; color: #ffffff !important; }
+#navbar a.nav-cta:hover { background-color: #3a3a3a !important; }
 /* Chevron sizing — some page templates omit width/height */
 #navbar .mega-chevron { width: 12px; height: 12px; flex-shrink: 0; }
 #mobileMenu .ms-chevron { width: 14px; height: 14px; flex-shrink: 0; }
@@ -135,21 +135,22 @@ nav, nav a, nav button, nav span, .mega-title, .mega-desc, .mobile-services, .mo
 </style>  <link rel="icon" type="image/png" href="/assets/milebond-favicon.png">
 <style id="nav-canonical">
 /* Canonical navbar — keeps every page rendering like the homepage */
-#navbar{background:#fff;border-bottom:1px solid #e6e3d8}
-#navbar.navbar-scrolled{background-color:rgba(250,250,247,.92)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 12px rgba(10,42,43,.06)!important}
+#navbar{background:#fff;border-bottom:1px solid #eadfcb}
+#navbar.navbar-scrolled{background-color:rgba(255,243,214,.92)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 12px rgba(68,68,68,.06)!important}
 #navbar a{text-decoration:none}
-#navbar button{-webkit-appearance:none;appearance:none;background:transparent;border:0;font:inherit;color:#364153;cursor:pointer}
-#navbar nav > ul > li > a,#navbar nav > ul > li > button{color:#5a5950}
+#navbar button{-webkit-appearance:none;appearance:none;background:transparent;border:0;font:inherit;color:#444444;cursor:pointer}
+#navbar nav > ul > li > a,#navbar nav > ul > li > button{color:#6b6b6b}
 #navbar a.nav-cta{color:#fff;border-radius:9999px!important}
-#navbar #mobileMenu{background:#fff;border-top:1px solid #e6e3d8}
+#navbar #mobileMenu{background:#fff;border-top:1px solid #eadfcb}
 #navbar #mobileMenu > ul{padding:16px 20px;margin:0;list-style:none;display:flex;flex-direction:column;gap:4px}
-#navbar #mobileMenu a{display:block;padding:12px;border-radius:8px;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:16px;font-weight:600;line-height:24px;color:#364153;text-decoration:none}
-#navbar #mobileMenu a:hover{background:#f3f1ea}
-#navbar #mobileMenu .mobile-services > .ms-head{padding:10px 3px;font-size:16px;font-weight:600;line-height:24px;color:#364153}
-#navbar #mobileMenu .mobile-services > .ms-body a{padding:8px 12px;font-size:14px;font-weight:400;line-height:21px;color:#5a5950}
-#navbar #mobileMenu a.nav-cta{margin:12px 0 0;padding:12px 20px!important;height:48px;border-radius:9999px!important;background:#008138!important;color:#fff!important;font-size:16px!important;font-weight:600;line-height:24px;text-align:center}
+#navbar #mobileMenu a{display:block;padding:12px;border-radius:8px;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:16px;font-weight:600;line-height:24px;color:#444444;text-decoration:none}
+#navbar #mobileMenu a:hover{background:#fff3d6}
+#navbar #mobileMenu .mobile-services > .ms-head{padding:10px 3px;font-size:16px;font-weight:600;line-height:24px;color:#444444}
+#navbar #mobileMenu .mobile-services > .ms-body a{padding:8px 12px;font-size:14px;font-weight:400;line-height:21px;color:#6b6b6b}
+#navbar #mobileMenu a.nav-cta{margin:12px 0 0;padding:12px 20px!important;height:48px;border-radius:9999px!important;background:#ff6000!important;color:#fff!important;font-size:16px!important;font-weight:600;line-height:24px;text-align:center}
 </style>
 <script src="/assets/analytics.js" defer></script>
+<link rel="stylesheet" href="/assets/brand.css">
 </head>
 <body>
 
@@ -389,7 +390,7 @@ nav, nav a, nav button, nav span, .mega-title, .mega-desc, .mobile-services, .mo
 
 <main>
   <div class="bg-brandgray-50 border-b border-brandgray-100">
-    <div class="max-w-6xl mx-auto px-5 lg:px-8 py-3.5">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8 py-3.5 content-wrap">
       <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-brandgray-500">
         <a href="/" class="hover:text-amber transition-colors">Home</a>
         <span aria-hidden="true">/</span>
@@ -408,7 +409,7 @@ nav, nav a, nav button, nav span, .mega-title, .mega-desc, .mobile-services, .mo
       <h1 class="text-3xl md:text-5xl font-extrabold text-navy tracking-tight">Ten Suppliers, One Assembly Line, 10% Lower Unit Cost</h1>
     </header>
 
-    <section aria-label="Client profile" class="mt-8 md:mt-10 rounded-2xl border border-brandgray-100 shadow-soft overflow-hidden">
+    <section aria-label="Client profile" class="section-fullwidth mt-8 md:mt-10 rounded-2xl border border-brandgray-100 shadow-soft overflow-hidden">
       <dl class="grid grid-cols-2 md:grid-cols-4 gap-px bg-brandgray-100">
         <div class="bg-white p-5 md:p-6">
           <dt class="text-[11px] font-bold uppercase tracking-widest text-brandgray-500 mb-1.5">Client</dt>
@@ -434,7 +435,7 @@ nav, nav a, nav button, nav span, .mega-title, .mega-desc, .mobile-services, .mo
         <div class="bg-brandgray-50 p-4 md:p-6">
           <img src="/assets/case-studies/diy-craft-kits.svg" alt="Case study cover for DIY craft kits with cost reduction and quality results" width="1200" height="900" class="block w-full max-w-[800px] mx-auto h-auto rounded-xl border border-brandgray-100 bg-white shadow-soft" loading="eager" decoding="async">
         </div>
-        <section aria-label="Results" class="bg-navy">
+        <section aria-label="Results" class="section-fullwidth bg-navy">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10">
             <div class="bg-navy px-4 py-6 md:py-7 text-center">
               <p class="text-2xl md:text-4xl font-extrabold text-amber-500 leading-none">-10%</p>
@@ -464,7 +465,7 @@ nav, nav a, nav button, nav span, .mega-title, .mega-desc, .mobile-services, .mo
       <p>We took over coordination of all 10+ component suppliers, replaced the ones that could not hold tolerance or delivery, and consolidated every component at our own warehouse for assembly and final QC before packing.</p>
     </div>
 
-    <section class="mt-10 md:mt-12 max-w-3xl">
+    <section class="section-fullwidth mt-10 md:mt-12 max-w-3xl">
       <h2 class="text-2xl md:text-3xl font-extrabold text-navy tracking-tight mb-5">The result</h2>
       <div class="overflow-x-auto rounded-xl border border-brandgray-100">
         <table class="w-full text-sm">
@@ -507,7 +508,7 @@ nav, nav a, nav button, nav span, .mega-title, .mega-desc, .mobile-services, .mo
       <p class="mt-5 text-sm text-brandgray-500 leading-relaxed">Client identity and ASINs are anonymized. No client or supplier names are disclosed. Where a figure did not change, it is shown unchanged.</p>
     </section>
 
-    <section class="mt-12 md:mt-16 rounded-2xl bg-brandgray-50 border border-brandgray-100 p-7 md:p-10">
+    <section class="section-fullwidth mt-12 md:mt-16 rounded-2xl bg-brandgray-50 border border-brandgray-100 p-7 md:p-10">
       <div class="md:flex md:items-center md:justify-between gap-8">
         <div class="max-w-xl">
           <h2 class="text-2xl md:text-3xl font-extrabold text-navy tracking-tight">Sourcing a similar product?</h2>
@@ -524,22 +525,22 @@ nav, nav a, nav button, nav span, .mega-title, .mega-desc, .mobile-services, .mo
 
 <!-- ============ FOOTER ============ -->
 <footer class="bg-navy pt-16 pb-6 text-white">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 content-wrap">
     <div class="grid md:grid-cols-[1.5fr_1fr_1fr_1.2fr] gap-10 pb-10 border-b border-white/10">
       <div>
         <a href="/" class="inline-flex items-center mb-4">
-          <img src="/images/brand/logo-white.png" alt="Milebond" width="96" height="32" class="h-8 w-auto object-contain" loading="lazy" decoding="async">
+          <img src="/images/brand/logo-white-footer.png" alt="Milebond" width="96" height="32" class="h-8 w-auto object-contain" loading="lazy" decoding="async">
         </a>
         <p class="text-white/70 text-sm leading-relaxed max-w-sm mb-5">
           Yiwu-based sourcing partner for Amazon brands, private labels, and offline wholesalers.
         </p>
         <ul class="space-y-2 text-sm text-white/60">
           <li class="flex items-start gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffa55b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             <a href="mailto:info@milebond.com" class="hover:text-amber transition-colors">info@milebond.com</a>
           </li>
           <li class="flex items-start gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffa55b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
             <a href="https://wa.me/8615057960102" target="_blank" rel="noopener noreferrer" class="hover:text-amber transition-colors">Chat on WhatsApp</a>
           </li>
         </ul>

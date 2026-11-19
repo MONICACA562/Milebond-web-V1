@@ -1,0 +1,344 @@
+/* ============================================================
+   Milebond brand layer (visual only)
+   Loaded last in <head> so it wins over legacy inline palettes.
+   No content, markup text or behaviour is defined here.
+   ============================================================ */
+
+:root {
+  --brand-orange: #FF6000;
+  --brand-orange-deep: #C24A00;
+  --brand-light: #FFA55B;
+  --brand-cream: #FFF3D6;
+  --brand-dark: #444444;
+  --brand-muted: #6B6B6B;
+  --brand-border: #EADFCB;
+
+  /* Legacy aliases used by page-level inline CSS */
+  --navy: #444444;
+  --navy-light: #3A3A3A;
+  --orange: #FF6000;
+  --orange-light: #FFA55B;
+  --cream: #FFF3D6;
+  --container: 1320px;
+  --ink: #444444;
+  --ink-2: #6B6B6B;
+  --ink-3: #8A8A8A;
+  --line: #EADFCB;
+  --accent: #FF6000;
+  --accent-soft: #FFA55B;
+  --dark: #444444;
+  --card: #FFFFFF;
+  --bg: #FFF3D6;
+  --gray-900: #444444;
+  --gray-600: #6B6B6B;
+  --gray-400: #8A8A8A;
+  --gray-200: #EADFCB;
+}
+
+html,
+body {
+  background-color: #FFF3D6;
+  color: #444444;
+}
+
+/* ---------- Layout utilities ---------- */
+.section-fullwidth {
+  width: 100%;
+  max-width: none;
+}
+
+.content-wrap {
+  width: 100%;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-wrap:not(.container):not(.wrap):not(.nav-inner):not(.pdp) {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 640px) {
+  .content-wrap:not(.container):not(.wrap):not(.nav-inner):not(.pdp) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .content-wrap:not(.container):not(.wrap):not(.nav-inner):not(.pdp) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* Legacy containers: widen to the same 1320px content column */
+.container,
+.wrap,
+.nav-inner,
+.hero .hero-content,
+.hero .hero-inner,
+.sv-banner,
+.ct-inner,
+.cb-inner,
+.pdp,
+.cat-wrap,
+.page-wrap,
+.fq-wrap {
+  max-width: 1320px !important;
+}
+
+.m21 .wrap {
+  max-width: 1320px !important;
+}
+
+#navbar > nav {
+  max-width: 1320px !important;
+}
+
+/* ---------- Product grid utility ---------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+@media (min-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---------- Primary CTA ---------- */
+.btn-primary,
+.pdp-btn-orange,
+.pdp-mini-cta,
+.nav-cta,
+#navbar a.nav-cta,
+.blog-cta-inline a {
+  background-color: #FF6000;
+  border-color: #FF6000;
+  color: #FFFFFF;
+}
+
+.btn-primary:hover,
+.pdp-btn-orange:hover,
+.pdp-mini-cta:hover,
+.nav-cta:hover,
+#navbar a.nav-cta:hover,
+.blog-cta-inline a:hover {
+  background-color: #FFA55B;
+  border-color: #FFA55B;
+  color: #444444;
+}
+
+#navbar a.nav-cta {
+  background-color: #FF6000 !important;
+  color: #FFFFFF !important;
+}
+
+#navbar a.nav-cta:hover {
+  background-color: #FFA55B !important;
+  color: #444444 !important;
+}
+
+/* Scoped legacy CTA variants */
+.m21 .btn-primary {
+  background-color: #FF6000;
+  color: #FFFFFF;
+}
+
+.m21 .btn-primary:hover {
+  background-color: #FFA55B;
+  color: #444444;
+}
+
+.blog-hero .btn-primary:hover {
+  background-color: #FFA55B;
+  color: #444444;
+}
+
+/* Tailwind amber CTAs rendered as anchors (homepage variants) */
+a.bg-amber.text-white {
+  background-color: #FF6000 !important;
+  color: #FFFFFF !important;
+}
+
+a.bg-amber.text-white:hover {
+  background-color: #FFA55B !important;
+  color: #444444 !important;
+}
+
+.nav-btn {
+  background-color: #FF6000;
+  color: #FFFFFF;
+}
+
+.nav-btn:hover {
+  background-color: #FFA55B;
+  color: #444444;
+}
+
+.sv-btn-primary {
+  background-color: #FF6000;
+  border-color: #FF6000;
+  color: #FFFFFF;
+}
+
+.sv-btn-primary:hover {
+  background-color: #FFA55B;
+  border-color: #FFA55B;
+  color: #444444;
+}
+
+/* ---------- Tailwind legacy colour utilities ---------- */
+.bg-navy {
+  background-color: #444444 !important;
+}
+
+.text-navy {
+  color: #444444 !important;
+}
+
+.bg-amber {
+  background-color: #FF6000 !important;
+}
+
+.text-amber {
+  color: #FF6000 !important;
+}
+
+.hover\:bg-amber-600:hover {
+  background-color: #FFA55B !important;
+}
+
+.bg-brandgray-50 {
+  background-color: #FFF3D6 !important;
+}
+
+.text-brandgray-600 {
+  color: #6B6B6B !important;
+}
+
+.text-brandgray-700 {
+  color: #444444 !important;
+}
+
+/* Navigation accents */
+.mega-item:hover .mega-icon-bg,
+#navbar .mega-item:hover .mega-icon-bg {
+  background-color: #FF6000;
+  color: #FFFFFF;
+}
+
+.mega-item:hover .mega-title,
+#navbar .mega-item:hover .mega-title {
+  color: #FF6000;
+}
+
+/* ---------- Footer ---------- */
+footer,
+.footer {
+  background-color: #444444 !important;
+  color: #FFF3D6 !important;
+}
+
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6,
+.footer h1,
+.footer h2,
+.footer h3,
+.footer h4,
+.footer h5,
+.footer h6 {
+  color: #FFF3D6;
+}
+
+footer p,
+footer li,
+footer a,
+footer span,
+.footer p,
+.footer li,
+.footer a,
+.footer span {
+  color: #FFF3D6;
+}
+
+footer a:hover,
+.footer a:hover {
+  color: #FFA55B;
+}
+
+footer strong,
+.footer strong {
+  color: #FFA55B;
+}
+
+/* Footer logo: trimmed transparent asset, aligned to the text column */
+footer img[src*="logo-white-footer"] {
+  width: 110px !important;
+  height: auto !important;
+  max-height: 32px;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+}
+
+footer .footer-logo,
+footer a.inline-flex {
+  overflow: visible;
+}
+
+/* ---------- White surfaces for product content ---------- */
+.card,
+.pdp-spec,
+.pdp-spec-wrap,
+.pdp-keyfacts,
+.pdp-quote,
+.intro-stat {
+  background-color: #FFFFFF;
+}
+
+/* ---------- Reading column ---------- */
+.faq-hero p.faq-sub {
+  color: #FFF3D6;
+}
+
+.blog-article {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #444444;
+}
+
+.blog-article a {
+  color: #C24A00;
+}
+
+.blog-article a:hover {
+  color: #FF6000;
+}
+
+/* ---------- Small-text orange links need deeper tone for AA ---------- */
+a.link-orange,
+.text-orange-sm {
+  color: #C24A00;
+}

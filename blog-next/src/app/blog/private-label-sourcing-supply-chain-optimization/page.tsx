@@ -114,8 +114,8 @@ export default function BlogPage() {
 
       {/* Blog styles (reuse from first blog) */}
       <style>{`
-        :root { --navy:#162D54; --orange:#E87722; --navy-light:#2a4a7c; --white:#ffffff; --bg-light:#f8f9fb; }
-        .blog-article { max-width: 820px; margin: 0 auto; padding: 48px 24px 80px; font-family: 'Manrope', sans-serif; color: #2c3e50; line-height: 1.75; }
+        :root { --navy:#444444; --orange:#ff6000; --navy-light:#555555; --white:#ffffff; --bg-light:#fff3d6; }
+        .blog-article { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; font-family: 'Manrope', sans-serif; color: #444444; line-height: 1.75; }
         .blog-article h2 { font-family:'Space Grotesk',sans-serif; font-size:1.85rem; font-weight:700; color:var(--navy); margin:48px 0 20px; line-height:1.3; border-bottom:3px solid var(--orange); padding-bottom:10px; display:inline-block; }
         .blog-article h3 { font-size:1.3rem; font-weight:700; color:var(--navy); margin:28px 0 14px; }
         .blog-article p { font-size:1.02rem; margin-bottom:18px; }
@@ -141,28 +141,28 @@ export default function BlogPage() {
         /* Dual col comparison */
         .blog-compare { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:28px 0; }
         .blog-compare .col { border-radius:12px; padding:24px; }
-        .blog-compare .col.bad { background:#f3f4f6; border:1px solid #e5e7eb; }
-        .blog-compare .col.good { background:linear-gradient(135deg,#162D54 0%,#2a4a7c 100%); color:#fff; border:1px solid #162D54; }
+        .blog-compare .col.bad { background:#fff3d6; border:1px solid #eadfcb; }
+        .blog-compare .col.good { background:linear-gradient(135deg,#444444 0%,#555555 100%); color:#fff; border:1px solid #444444; }
         .blog-compare h4 { font-size:1rem; font-weight:700; margin-bottom:12px; }
         .blog-compare ol { padding-left:20px; }
         .blog-compare li { margin-bottom:8px; font-size:.95rem; }
-        .blog-compare .col.good li::marker { color:#E87722; }
+        .blog-compare .col.good li::marker { color:#ff6000; }
 
         /* Three col card */
         .blog-three-col { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:28px 0; }
-        .blog-three-col .col { background:#fff; border:2px solid #e5e7eb; border-radius:12px; padding:24px; transition:all .2s; }
+        .blog-three-col .col { background:#fff; border:2px solid #eadfcb; border-radius:12px; padding:24px; transition:all .2s; }
         .blog-three-col .col.recommended { border-color:var(--orange); box-shadow:0 8px 28px rgba(232,119,34,.18); position:relative; }
         .blog-three-col .col.recommended::before { content:'RECOMMENDED'; position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--orange); color:#fff; font-size:11px; font-weight:700; padding:4px 14px; border-radius:20px; letter-spacing:.5px; }
         .blog-three-col .col h4 { font-size:1rem; font-weight:700; color:var(--navy); margin-bottom:12px; }
         .blog-three-col table { width:100%; font-size:.85rem; border-collapse:collapse; margin-bottom:12px; }
-        .blog-three-col td { padding:4px 0; border-bottom:1px solid #f0f0f0; }
-        .blog-three-col td:first-child { color:#6b7280; font-weight:500; }
-        .blog-three-col .best-for { font-size:.85rem; color:#6b7280; margin-top:8px; padding-top:10px; border-top:1px solid #f0f0f0; }
+        .blog-three-col td { padding:4px 0; border-bottom:1px solid #eadfcb; }
+        .blog-three-col td:first-child { color:#6b6b6b; font-weight:500; }
+        .blog-three-col .best-for { font-size:.85rem; color:#6b6b6b; margin-top:8px; padding-top:10px; border-top:1px solid #eadfcb; }
         .blog-three-col .col.recommended table td { border-bottom-color:#ffe8cc; }
 
         /* Four issue icons */
         .blog-four-col { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:28px 0; }
-        .blog-four-col .item { text-align:center; padding:20px 12px; background:#fff; border:1px solid #eef0f4; border-radius:10px; }
+        .blog-four-col .item { text-align:center; padding:20px 12px; background:#fff; border:1px solid #eadfcb; border-radius:10px; }
         .blog-four-col .pct { font-size:2rem; font-weight:800; color:var(--orange); }
         .blog-four-col .label { font-size:.9rem; font-weight:700; color:var(--navy); margin:4px 0 8px; }
         .blog-four-col .desc { font-size:.82rem; color:#5a6a7a; line-height:1.5; }
@@ -172,26 +172,26 @@ export default function BlogPage() {
         .blog-qc-stage { flex:1; min-width:120px; text-align:center; position:relative; }
         .blog-qc-stage .dot { width:56px; height:56px; border-radius:50%; background:var(--navy); color:#fff; display:flex; align-items:center; justify-content:center; margin:0 auto 10px; font-weight:800; font-size:1.1rem; }
         .blog-qc-stage .title { font-weight:700; color:var(--navy); font-size:.82rem; margin-bottom:4px; }
-        .blog-qc-stage .sub { font-size:.75rem; color:#6b7280; line-height:1.4; padding:0 4px; }
+        .blog-qc-stage .sub { font-size:.75rem; color:#6b6b6b; line-height:1.4; padding:0 4px; }
         .blog-qc-connector { width:24px; height:2px; background:var(--orange); margin-top:27px; flex-shrink:0; }
 
         /* Dashboard */
         .blog-dashboard { display:grid; grid-template-columns:repeat(6,1fr); gap:14px; margin:28px 0; }
-        .blog-dash-card { background:#fff; border:1px solid #eef0f4; border-radius:10px; padding:16px 12px; text-align:center; }
-        .blog-dash-card .label { font-size:.72rem; font-weight:700; color:#6b7280; text-transform:uppercase; letter-spacing:.4px; margin-bottom:6px; }
-        .blog-dash-card .before { font-size:1rem; color:#6b7280; text-decoration:line-through; font-weight:500; }
+        .blog-dash-card { background:#fff; border:1px solid #eadfcb; border-radius:10px; padding:16px 12px; text-align:center; }
+        .blog-dash-card .label { font-size:.72rem; font-weight:700; color:#6b6b6b; text-transform:uppercase; letter-spacing:.4px; margin-bottom:6px; }
+        .blog-dash-card .before { font-size:1rem; color:#6b6b6b; text-decoration:line-through; font-weight:500; }
         .blog-dash-card .arrow { font-size:.8rem; color:#10B981; margin:4px 0; }
         .blog-dash-card .after { font-size:1.1rem; color:var(--navy); font-weight:800; }
         .blog-dash-card .change { font-size:.8rem; font-weight:700; color:#10B981; margin-top:4px; }
 
         /* Stats grid */
         .blog-stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:28px 0; }
-        .blog-stat { background:#fff; border:1px solid #eef0f4; border-radius:10px; padding:20px 16px; text-align:center; }
+        .blog-stat { background:#fff; border:1px solid #eadfcb; border-radius:10px; padding:20px 16px; text-align:center; }
         .blog-stat .num { font-size:1.6rem; font-weight:800; color:var(--orange); }
         .blog-stat .desc { font-size:.82rem; color:#5a6a7a; margin-top:6px; line-height:1.5; }
 
         /* Quote box */
-        .blog-quote { background:linear-gradient(135deg,#162D54 0%,#2a4a7c 100%); color:#fff; border-radius:12px; padding:24px 28px; margin:28px 0; font-size:1rem; line-height:1.7; font-weight:600; }
+        .blog-quote { background:linear-gradient(135deg,#444444 0%,#555555 100%); color:#fff; border-radius:12px; padding:24px 28px; margin:28px 0; font-size:1rem; line-height:1.7; font-weight:600; }
 
         /* Decision box */
         .blog-decision { background:#fff5eb; border-left:4px solid var(--orange); border-radius:0 10px 10px 0; padding:18px 22px; margin:24px 0; }
@@ -205,7 +205,7 @@ export default function BlogPage() {
 
         /* FAQ Accordion */
         .blog-faq { margin-top:28px; }
-        .blog-faq-item { border-bottom:1px solid #eef0f4; }
+        .blog-faq-item { border-bottom:1px solid #eadfcb; }
         .blog-faq-q { width:100%; text-align:left; padding:18px 0; font-weight:700; color:var(--navy); font-size:1rem; cursor:pointer; background:none; border:none; display:flex; justify-content:space-between; align-items:center; font-family:inherit; }
         .blog-faq-q .plus { color:var(--orange); font-size:1.3rem; font-weight:700; transition:transform .2s; flex-shrink:0; margin-left:12px; }
         .blog-faq-q.open .plus { transform:rotate(45deg); }
@@ -214,7 +214,7 @@ export default function BlogPage() {
         .blog-faq-a p { color:#5a6a7a; font-size:.95rem; line-height:1.7; margin:0; }
 
         /* Keep reading */
-        .blog-keep-reading { background:#f8f9fb; border-radius:12px; padding:32px 24px; margin-top:40px; }
+        .blog-keep-reading { background:#fff3d6; border-radius:12px; padding:32px 24px; margin-top:40px; }
         .blog-keep-reading h3 { text-align:center; font-size:1.2rem; margin-bottom:20px; }
 
         /* Responsive */
@@ -232,12 +232,12 @@ export default function BlogPage() {
         }
 
         /* Flow cards (Step card in Part 6) */
-        .blog-step { background:#fff; border:1px solid #eef0f4; border-radius:12px; padding:20px 24px; margin:12px 0; }
+        .blog-step { background:#fff; border:1px solid #eadfcb; border-radius:12px; padding:20px 24px; margin:12px 0; }
         .blog-step h4 { color:var(--orange); font-size:.85rem; font-weight:700; margin-bottom:6px; text-transform:uppercase; letter-spacing:.5px; }
         .blog-step h5 { color:var(--navy); font-size:1.05rem; font-weight:700; margin-bottom:8px; }
 
         /* Shipment banner */
-        .blog-eu-banner { background:linear-gradient(135deg,#162D54,#2a4a7c); color:#fff; border-radius:12px; padding:20px 24px; margin:20px 0; font-size:.95rem; line-height:1.65; }
+        .blog-eu-banner { background:linear-gradient(135deg,#444444,#555555); color:#fff; border-radius:12px; padding:20px 24px; margin:20px 0; font-size:.95rem; line-height:1.65; }
         .blog-eu-banner strong { color:#f59e5b; }
 
         /* Responsive keep reading cards */
@@ -245,7 +245,7 @@ export default function BlogPage() {
         @media (max-width:768px) {
           .blog-related-grid { grid-template-columns:1fr; }
         }
-        .blog-related-card { background:#fff; border:1px solid #eef0f4; border-radius:10px; padding:18px; text-decoration:none; color:inherit; transition:all .2s; }
+        .blog-related-card { background:#fff; border:1px solid #eadfcb; border-radius:10px; padding:18px; text-decoration:none; color:inherit; transition:all .2s; }
         .blog-related-card:hover { border-color:var(--orange); box-shadow:0 4px 14px rgba(22,45,84,.08); transform:translateY(-2px); text-decoration:none; }
         .blog-related-card h4 { color:var(--navy); font-size:.95rem; font-weight:700; margin-bottom:6px; }
         .blog-related-card:hover h4 { color:var(--orange); }
@@ -292,20 +292,20 @@ export default function BlogPage() {
           <h2>Which type of private label seller are you?</h2>
           <p>Jump to the section most relevant to your situation:</p>
           <div className="blog-three-col" style={{ gridTemplateColumns: "repeat(3,1fr)" }}>
-            <div className="col" style={{ borderColor: "#e5e7eb" }}>
-              <h4 style={{ color: "#162D54" }}>👉 First-time private label seller</h4>
-              <p style={{fontSize:'.85rem', color:'#6b7280', marginBottom:'14px'}}>&ldquo;I want to launch my own brand with small batch testing&rdquo;</p>
-              <a href="#part-6-a-case" style={{display:'inline-block', fontSize:'.82rem', fontWeight:700, color:'#E87722', textDecoration:'none'}}>Jump to Part 6 →</a>
+            <div className="col" style={{ borderColor: "#eadfcb" }}>
+              <h4 style={{ color: "#444444" }}>👉 First-time private label seller</h4>
+              <p style={{fontSize:'.85rem', color:'#6b6b6b', marginBottom:'14px'}}>&ldquo;I want to launch my own brand with small batch testing&rdquo;</p>
+              <a href="#part-6-a-case" style={{display:'inline-block', fontSize:'.82rem', fontWeight:700, color:'#ff6000', textDecoration:'none'}}>Jump to Part 6 →</a>
             </div>
-            <div className="col" style={{borderColor:'#e5e7eb'}}>
-              <h4 style={{color:'#162D54'}}>👉 Already have a supplier?</h4>
-              <p style={{fontSize:'.85rem', color:'#6b7280', marginBottom:'14px'}}>&ldquo;I want to reduce cost, improve quality, or find a backup supplier&rdquo;</p>
-              <a href="#part-7-b-case" style={{display:'inline-block', fontSize:'.82rem', fontWeight:700, color:'#E87722', textDecoration:'none'}}>Jump to Part 7 →</a>
+            <div className="col" style={{borderColor:'#eadfcb'}}>
+              <h4 style={{color:'#444444'}}>👉 Already have a supplier?</h4>
+              <p style={{fontSize:'.85rem', color:'#6b6b6b', marginBottom:'14px'}}>&ldquo;I want to reduce cost, improve quality, or find a backup supplier&rdquo;</p>
+              <a href="#part-7-b-case" style={{display:'inline-block', fontSize:'.82rem', fontWeight:700, color:'#ff6000', textDecoration:'none'}}>Jump to Part 7 →</a>
             </div>
-            <div className="col" style={{borderColor:'#e5e7eb'}}>
-              <h4 style={{color:'#162D54'}}>👉 Want to see our QC process?</h4>
-              <p style={{fontSize:'.85rem', color:'#6b7280', marginBottom:'14px'}}>&ldquo;I want to see how you control quality at every stage&rdquo;</p>
-              <a href="#part-5-qc-process" style={{display:'inline-block', fontSize:'.82rem', fontWeight:700, color:'#E87722', textDecoration:'none'}}>Jump to Part 5 →</a>
+            <div className="col" style={{borderColor:'#eadfcb'}}>
+              <h4 style={{color:'#444444'}}>👉 Want to see our QC process?</h4>
+              <p style={{fontSize:'.85rem', color:'#6b6b6b', marginBottom:'14px'}}>&ldquo;I want to see how you control quality at every stage&rdquo;</p>
+              <a href="#part-5-qc-process" style={{display:'inline-block', fontSize:'.82rem', fontWeight:700, color:'#ff6000', textDecoration:'none'}}>Jump to Part 5 →</a>
             </div>
           </div>
         </section>
@@ -328,7 +328,7 @@ export default function BlogPage() {
               <p className="best-for"><strong>Best for:</strong> Personal use / arbitrage</p>
             </div>
             <div className="col recommended">
-              <h4 style={{color:'#E87722'}}>Private Label (Recommended)</h4>
+              <h4 style={{color:'#ff6000'}}>Private Label (Recommended)</h4>
               <table>
                 <tr><td>Product base</td><td>Existing quality + your brand</td></tr>
                 <tr><td>Your brand</td><td>✅ Your logo, packaging</td></tr>
@@ -584,22 +584,22 @@ export default function BlogPage() {
           <div style={{ overflowX:'auto', margin:'20px 0' }}>
             <table style={{ width:'100%', borderCollapse:'collapse', fontSize:'.92rem' }}>
               <thead>
-                <tr style={{ borderBottom:'2px solid #e5e7eb' }}>
-                  <th style={{ textAlign:'left', padding:'10px 6px', color:'#162D54', fontSize:'.85rem' }}>Dimension</th>
-                  <th style={{ textAlign:'left', padding:'10px 6px', color:'#6b7280', fontSize:'.85rem' }}>Before (Big Agent)</th>
-                  <th style={{ textAlign:'left', padding:'10px 6px', color:'#162D54', fontSize:'.85rem' }}>After (MileBond)</th>
+                <tr style={{ borderBottom:'2px solid #eadfcb' }}>
+                  <th style={{ textAlign:'left', padding:'10px 6px', color:'#444444', fontSize:'.85rem' }}>Dimension</th>
+                  <th style={{ textAlign:'left', padding:'10px 6px', color:'#6b6b6b', fontSize:'.85rem' }}>Before (Big Agent)</th>
+                  <th style={{ textAlign:'left', padding:'10px 6px', color:'#444444', fontSize:'.85rem' }}>After (MileBond)</th>
                   <th style={{ textAlign:'center', padding:'10px 6px', color:'#10B981', fontWeight:700, fontSize:'.85rem' }}>Change</th>
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ borderBottom:'1px solid #f0f0f0' }}><td style={{ padding:'8px 6px' }}>Unit Price</td><td style={{ padding:'8px 6px', color:'#6b7280' }}>¥16</td><td style={{ padding:'8px 6px' }}>¥11</td><td style={{ padding:'8px 6px', textAlign:'center', color:'#10B981', fontWeight:700 }}>↓31%</td></tr>
-                <tr style={{ borderBottom:'1px solid #f0f0f0' }}><td style={{ padding:'8px 6px' }}>Material</td><td style={{ padding:'8px 6px', color:'#6b7280' }}>201 stainless, failed salt spray</td><td style={{ padding:'8px 6px' }}>304 stainless, passed salt spray</td><td style={{ padding:'8px 6px', textAlign:'center', color:'#10B981', fontWeight:700 }}>Upgrade</td></tr>
-                <tr style={{ borderBottom:'1px solid #f0f0f0' }}><td style={{ padding:'8px 6px' }}>Weight</td><td style={{ padding:'8px 6px', color:'#6b7280' }}>Lighter, thinner</td><td style={{ padding:'8px 6px' }}>Heavier, more solid</td><td style={{ padding:'8px 6px', textAlign:'center', color:'#10B981', fontWeight:700 }}>↑</td></tr>
-                <tr style={{ borderBottom:'1px solid #f0f0f0' }}><td style={{ padding:'8px 6px' }}>Packaging</td><td style={{ padding:'8px 6px', color:'#6b7280' }}>Bubble wrap, bulky</td><td style={{ padding:'8px 6px' }}>Stretch wrap, 30% smaller</td><td style={{ padding:'8px 6px', textAlign:'center', color:'#10B981', fontWeight:700 }}>↓30%</td></tr>
-                <tr style={{ borderBottom:'1px solid #f0f0f0' }}><td style={{ padding:'8px 6px' }}>Lead Time</td><td style={{ padding:'8px 6px', color:'#6b7280' }}>≤45 days required</td><td style={{ padding:'8px 6px' }}>Proactively 20 days</td><td style={{ padding:'8px 6px', textAlign:'center', color:'#10B981', fontWeight:700 }}>↓55%</td></tr>
-                <tr style={{ borderBottom:'1px solid #f0f0f0' }}><td style={{ padding:'8px 6px' }}>Amazon Rating</td><td style={{ padding:'8px 6px', color:'#6b7280' }}>4.5 (rust complaints)</td><td style={{ padding:'8px 6px' }}>4.8 (rust gone)</td><td style={{ padding:'8px 6px', textAlign:'center', color:'#10B981', fontWeight:700 }}>+0.3</td></tr>
-                <tr style={{ borderBottom:'1px solid #f0f0f0' }}><td style={{ padding:'8px 6px' }}>QC Pass Rate</td><td style={{ padding:'8px 6px', color:'#6b7280' }}>Not specified</td><td style={{ padding:'8px 6px' }}>100% (5 orders)</td><td style={{ padding:'8px 6px', textAlign:'center', color:'#10B981', fontWeight:700 }}>Zero defects</td></tr>
-                <tr><td style={{ padding:'8px 6px' }}>Returns / Rework</td><td style={{ padding:'8px 6px', color:'#6b7280' }}>Not specified</td><td style={{ padding:'8px 6px' }}>Zero</td><td style={{ padding:'8px 6px', textAlign:'center', color:'#10B981', fontWeight:700 }}>Perfect</td></tr>
+                <tr style={{ borderBottom:'1px solid #eadfcb' }}><td style={{ padding:'8px 6px' }}>Unit Price</td><td style={{ padding:'8px 6px', color:'#6b6b6b' }}>¥16</td><td style={{ padding:'8px 6px' }}>¥11</td><td style={{ padding:'8px 6px', textAlign:'center', color:'#10B981', fontWeight:700 }}>↓31%</td></tr>
+                <tr style={{ borderBottom:'1px solid #eadfcb' }}><td style={{ padding:'8px 6px' }}>Material</td><td style={{ padding:'8px 6px', color:'#6b6b6b' }}>201 stainless, failed salt spray</td><td style={{ padding:'8px 6px' }}>304 stainless, passed salt spray</td><td style={{ padding:'8px 6px', textAlign:'center', color:'#10B981', fontWeight:700 }}>Upgrade</td></tr>
+                <tr style={{ borderBottom:'1px solid #eadfcb' }}><td style={{ padding:'8px 6px' }}>Weight</td><td style={{ padding:'8px 6px', color:'#6b6b6b' }}>Lighter, thinner</td><td style={{ padding:'8px 6px' }}>Heavier, more solid</td><td style={{ padding:'8px 6px', textAlign:'center', color:'#10B981', fontWeight:700 }}>↑</td></tr>
+                <tr style={{ borderBottom:'1px solid #eadfcb' }}><td style={{ padding:'8px 6px' }}>Packaging</td><td style={{ padding:'8px 6px', color:'#6b6b6b' }}>Bubble wrap, bulky</td><td style={{ padding:'8px 6px' }}>Stretch wrap, 30% smaller</td><td style={{ padding:'8px 6px', textAlign:'center', color:'#10B981', fontWeight:700 }}>↓30%</td></tr>
+                <tr style={{ borderBottom:'1px solid #eadfcb' }}><td style={{ padding:'8px 6px' }}>Lead Time</td><td style={{ padding:'8px 6px', color:'#6b6b6b' }}>≤45 days required</td><td style={{ padding:'8px 6px' }}>Proactively 20 days</td><td style={{ padding:'8px 6px', textAlign:'center', color:'#10B981', fontWeight:700 }}>↓55%</td></tr>
+                <tr style={{ borderBottom:'1px solid #eadfcb' }}><td style={{ padding:'8px 6px' }}>Amazon Rating</td><td style={{ padding:'8px 6px', color:'#6b6b6b' }}>4.5 (rust complaints)</td><td style={{ padding:'8px 6px' }}>4.8 (rust gone)</td><td style={{ padding:'8px 6px', textAlign:'center', color:'#10B981', fontWeight:700 }}>+0.3</td></tr>
+                <tr style={{ borderBottom:'1px solid #eadfcb' }}><td style={{ padding:'8px 6px' }}>QC Pass Rate</td><td style={{ padding:'8px 6px', color:'#6b6b6b' }}>Not specified</td><td style={{ padding:'8px 6px' }}>100% (5 orders)</td><td style={{ padding:'8px 6px', textAlign:'center', color:'#10B981', fontWeight:700 }}>Zero defects</td></tr>
+                <tr><td style={{ padding:'8px 6px' }}>Returns / Rework</td><td style={{ padding:'8px 6px', color:'#6b6b6b' }}>Not specified</td><td style={{ padding:'8px 6px' }}>Zero</td><td style={{ padding:'8px 6px', textAlign:'center', color:'#10B981', fontWeight:700 }}>Perfect</td></tr>
               </tbody>
             </table>
           </div>
@@ -648,10 +648,10 @@ export default function BlogPage() {
               { q: "Do you provide compliance and certification documents?", a: "Yes, we provide all necessary compliance and certification documents for your target market. For European markets, this includes CE, RoHS, and REACH compliance documentation. For the US, we can provide CPC, FCC, FDA, and other relevant certifications depending on the product category. We also provide test reports from third-party laboratories (SGS, Intertek, TUV) when required. All documentation is provided before shipment so you can clear customs without issues." },
             ].map((item, i) => (
               <div className="blog-faq-item" key={i}>
-                <h4 className="blog-faq-q" style={{ fontSize: "1rem", fontWeight: 700, color: "#162D54", padding: "14px 0", margin: 0, borderBottom: "1px solid #eef0f4" }}>
+                <h4 className="blog-faq-q" style={{ fontSize: "1rem", fontWeight: 700, color: "#444444", padding: "14px 0", margin: 0, borderBottom: "1px solid #eadfcb" }}>
                   {item.q}
                 </h4>
-                <p style={{ color: "#5a6a7a", fontSize: ".95rem", lineHeight: 1.7, padding: "10px 0 18px", margin: 0, borderBottom: "1px solid #eef0f4" }}>{item.a}</p>
+                <p style={{ color: "#5a6a7a", fontSize: ".95rem", lineHeight: 1.7, padding: "10px 0 18px", margin: 0, borderBottom: "1px solid #eadfcb" }}>{item.a}</p>
               </div>
             ))}
           </div>
@@ -684,7 +684,7 @@ export default function BlogPage() {
         </section>
 
         {/* ============ PART 10: FINAL CTA ============ */}
-        <section style={{ textAlign:'center', margin:'48px 0 20px', padding:'40px 24px', background:'linear-gradient(135deg,#162D54,#2a4a7c)', borderRadius:'14px', color:'#fff' }}>
+        <section style={{ textAlign:'center', margin:'48px 0 20px', padding:'40px 24px', background:'linear-gradient(135deg,#444444,#555555)', borderRadius:'14px', color:'#fff' }}>
           <h2 style={{ color:'#fff', border:'none', display:'block', margin:'0 0 14px', padding:'0' }}>
             Ready to Launch or Optimize Your Private Label Brand?
           </h2>
@@ -693,7 +693,7 @@ export default function BlogPage() {
             <em style={{ opacity:.8 }}>Serving European sellers with DDP delivery, CE/RoHS/REACH compliance docs, and EUR pricing.</em>
           </p>
           <div>
-            <a href="https://www.milebond.com/free-quote" style={{ display:'inline-block', background:'#E87722', color:'#fff', padding:'16px 36px', borderRadius:'10px', fontWeight:700, textDecoration:'none', fontSize:'1.08rem', margin:'8px 6px' }}>Get Free Quote — See Your Product Before You Pay</a>
+            <a href="https://www.milebond.com/free-quote" style={{ display:'inline-block', background:'#ff6000', color:'#fff', padding:'16px 36px', borderRadius:'10px', fontWeight:700, textDecoration:'none', fontSize:'1.08rem', margin:'8px 6px' }}>Get Free Quote — See Your Product Before You Pay</a>
             <a href="https://www.milebond.com/products/home-kitchen" style={{ display:'inline-block', background:'transparent', color:'#fff', border:'2px solid #fff', padding:'14px 30px', borderRadius:'10px', fontWeight:700, textDecoration:'none', fontSize:'1rem', margin:'8px 6px' }}>Browse Our Product Categories</a>
           </div>
         </section>

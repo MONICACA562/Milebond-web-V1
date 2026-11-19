@@ -21,18 +21,18 @@
 <style>
 .pp-wrap{max-width:820px;margin:0 auto;padding:0 24px}
 .pp-head{padding:64px 0 8px}
-.pp-eyebrow{font-size:12.5px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#C98A2D;margin:0 0 16px}
-.pp-head h1{font-size:clamp(30px,4vw,44px);font-weight:800;line-height:1.15;letter-spacing:-1px;color:#1F2B27;margin:0 0 16px}
-.pp-meta{font-size:14px;color:#5E6E67;margin:0}
-.pp-body{padding:32px 0 72px;color:#374151;font-size:16px;line-height:1.8}
-.pp-body h2{font-size:20px;font-weight:700;color:#162D54;margin:34px 0 10px}
-.pp-body h3{font-size:16px;font-weight:700;color:#162D54;margin:20px 0 8px}
+.pp-eyebrow{font-size:12.5px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#ffa55b;margin:0 0 16px}
+.pp-head h1{font-size:clamp(30px,4vw,44px);font-weight:800;line-height:1.15;letter-spacing:-1px;color:#444444;margin:0 0 16px}
+.pp-meta{font-size:14px;color:#6b6b6b;margin:0}
+.pp-body{padding:32px 0 72px;color:#444444;font-size:16px;line-height:1.8}
+.pp-body h2{font-size:20px;font-weight:700;color:#444444;margin:34px 0 10px}
+.pp-body h3{font-size:16px;font-weight:700;color:#444444;margin:20px 0 8px}
 .pp-body p{margin:0 0 12px}
 .pp-body ul{margin:0 0 14px;padding-left:20px;list-style:disc}
 .pp-body li{margin-bottom:6px}
-.pp-body a{color:#0E4438;text-decoration:underline}
-.pp-body strong{color:#1F2B27}
-.pp-note{background:#E8F2ED;border:1px solid #CFE2D8;border-radius:10px;padding:18px 20px;margin:0 0 8px;font-size:15px;color:#3E5C54}
+.pp-body a{color:#3a3a3a;text-decoration:underline}
+.pp-body strong{color:#444444}
+.pp-note{background:#fff3d6;border:1px solid #eadfcb;border-radius:10px;padding:18px 20px;margin:0 0 8px;font-size:15px;color:#444444}
 </style>
 <style id="nav-site-css">
 
@@ -45,13 +45,13 @@
   width: 12px; height: 12px; transition: transform .2s;
 }
 
-.services-mega:hover > .mega-trigger .mega-chevron { transform: rotate(180deg); color: #F59E0B; }
+.services-mega:hover > .mega-trigger .mega-chevron { transform: rotate(180deg); color: #ffa55b; }
 
 .services-mega .mega-panel {
   position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%) translateY(-6px);
   width: 720px; max-width: 92vw;
-  background: #fff; border: 1px solid #EEF1F6; border-radius: 14px;
-  box-shadow: 0 12px 40px rgba(15,42,74,.14);
+  background: #fff; border: 1px solid #eadfcb; border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(68,68,68,.14);
   padding: 10px; opacity: 0; visibility: hidden;
   transition: opacity .18s, transform .18s, visibility .18s;
   z-index: 60;
@@ -70,23 +70,23 @@
   text-decoration: none; transition: background .15s;
 }
 
-.mega-item:hover { background: #F7F8FA; }
+.mega-item:hover { background: #fff3d6; }
 
-.mega-item:hover .mega-icon-bg { background: #F59E0B; color: #fff; }
+.mega-item:hover .mega-icon-bg { background: #ffa55b; color: #fff; }
 
 .mega-icon-bg {
   width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0;
-  background: #0F2A4A; color: #F59E0B;
+  background: #444444; color: #ffa55b;
   display: flex; align-items: center; justify-content: center;
   font-size: 10px; font-weight: 700; font-family: 'Inter', sans-serif;
   transition: all .15s;
 }
 
-.mega-item .mega-title { font-size: 15px; font-weight: 600; color: #0F2A4A; }
+.mega-item .mega-title { font-size: 15px; font-weight: 600; color: #444444; }
 
-.mega-item:hover .mega-title { color: #F59E0B; }
+.mega-item:hover .mega-title { color: #ffa55b; }
 
-.mega-item .mega-desc { font-size: 13px; color: #64748B; margin-top: 1px; line-height: 1.4; }
+.mega-item .mega-desc { font-size: 13px; color: #6b6b6b; margin-top: 1px; line-height: 1.4; }
 
 
 /* Mobile Services accordion */
@@ -97,7 +97,7 @@
 .mobile-services > .ms-head {
   width: 100%; display: flex; align-items: center; justify-content: space-between;
   padding: 10px 3px;
-  font-size: 16px; font-weight: 600; color: #334155;
+  font-size: 16px; font-weight: 600; color: #444444;
   cursor: pointer; background: none; border: none; font-family: inherit; text-align: left;
 }
 
@@ -105,7 +105,7 @@
   width: 14px; height: 14px; transition: transform .2s;
 }
 
-.mobile-services.open > .ms-head .ms-chevron { transform: rotate(180deg); color: #F59E0B; }
+.mobile-services.open > .ms-head .ms-chevron { transform: rotate(180deg); color: #ffa55b; }
 
 .mobile-services > .ms-body {
   max-height: 0; overflow: hidden; transition: max-height .25s ease;
@@ -116,10 +116,10 @@
 
 .mobile-services > .ms-body a {
   display: block; padding: 8px 12px; border-radius: 6px;
-  font-size: 14px; color: #475569;
+  font-size: 14px; color: #6b6b6b;
 }
 
-.mobile-services > .ms-body a:hover { background: #F7F8FA; color: #F59E0B; }
+.mobile-services > .ms-body a:hover { background: #fff3d6; color: #ffa55b; }
 
 
 /* Hide scrollbar on mobile nav drawer (if ever needed) */
@@ -128,60 +128,60 @@
 .mobile-menu.open { max-height: 520px; }
 
 /* mega 菜单 */
-.services-mega:hover>.mega-trigger .mega-chevron{color:#008138}
+.services-mega:hover>.mega-trigger .mega-chevron{color:#ff6000}
 
-.services-mega .mega-panel{background:#fafaf7;border-color:#e6e3d8;box-shadow:0 12px 40px rgba(10,42,43,.12)}
+.services-mega .mega-panel{background:#fff3d6;border-color:#eadfcb;box-shadow:0 12px 40px rgba(68,68,68,.12)}
 
-.mega-item:hover{background:#f3f1ea}
+.mega-item:hover{background:#fff3d6}
 
-.mega-item:hover .mega-icon-bg{background:#008138;color:#fff}
+.mega-item:hover .mega-icon-bg{background:#ff6000;color:#fff}
 
-.mega-icon-bg{background:#0a2a2b;color:#e8c998}
+.mega-icon-bg{background:#444444;color:#ffa55b}
 
-.mega-item .mega-title{color:#0a2a2b;font-size:16px}
+.mega-item .mega-title{color:#444444;font-size:16px}
 
-.mega-item:hover .mega-title{color:#008138}
+.mega-item:hover .mega-title{color:#ff6000}
 
-.mega-item .mega-desc{color:#6a7282;font-size:13px}
+.mega-item .mega-desc{color:#6b6b6b;font-size:13px}
 
-.mobile-services>.ms-head{color:#364153}
+.mobile-services>.ms-head{color:#444444}
 
-.mobile-services.open>.ms-head .ms-chevron{color:#008138}
+.mobile-services.open>.ms-head .ms-chevron{color:#ff6000}
 
-.mobile-services>.ms-body a{color:#5a5950}
+.mobile-services>.ms-body a{color:#6b6b6b}
 
-.mobile-services>.ms-body a:hover{background:#f3f1ea;color:#008138}
+.mobile-services>.ms-body a:hover{background:#fff3d6;color:#ff6000}
 
 /* 导航栏衬线化（仅字体，不改字号/间距） */
 nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-services a,.mobile-services button{font-family:'Fraunces','Inter',Georgia,serif}
 
 /* Products 下拉菜单（仅作用于 .products-panel，2 列 × 5 行） */
-.products-mega .mega-panel.products-panel{width:640px;padding:20px;background:#fff;border:1px solid #EEF1F6;border-radius:16px;box-shadow:0 12px 40px rgba(10,42,43,.10)}
+.products-mega .mega-panel.products-panel{width:640px;padding:20px;background:#fff;border:1px solid #eadfcb;border-radius:16px;box-shadow:0 12px 40px rgba(68,68,68,.10)}
 
 .pm-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px}
 
 .pm-item{display:flex;align-items:center;gap:12px;padding:8px;border-radius:10px;text-decoration:none;transition:background .15s}
 
-.pm-item:hover{background:#f3f1ea}
+.pm-item:hover{background:#fff3d6}
 
-.pm-icon{width:40px;height:40px;border-radius:10px;background:#1F5C4D;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pm-icon{width:40px;height:40px;border-radius:10px;background:#444444;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
 .pm-icon svg{width:20px;height:20px;display:block}
 
 .pm-text{display:flex;flex-direction:column;min-width:0}
 
-.pm-name{font-size:14px;font-weight:700;color:#0a2a2b;line-height:1.3}
+.pm-name{font-size:14px;font-weight:700;color:#444444;line-height:1.3}
 
-.pm-item:hover .pm-name{color:#1F5C4D}
+.pm-item:hover .pm-name{color:#444444}
 
-.pm-desc{font-size:12px;color:#6a7282;line-height:1.35;margin-top:2px}
+.pm-desc{font-size:12px;color:#6b6b6b;line-height:1.35;margin-top:2px}
 
 /* Mobile All Products row — matches the desktop pm-item */
-#mobileProductsBody .pm-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;margin-bottom:2px;background:#f3f1ea}
+#mobileProductsBody .pm-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;margin-bottom:2px;background:#fff3d6}
 
-#mobileProductsBody .pm-item:hover{background:#e6e3d8}
+#mobileProductsBody .pm-item:hover{background:#eadfcb}
 
-#mobileProductsBody .pm-item .pm-icon{width:32px;height:32px;font-size:15px;background:#0a2a2b}
+#mobileProductsBody .pm-item .pm-icon{width:32px;height:32px;font-size:15px;background:#444444}
 
 #mobileProductsBody .pm-item .pm-desc{margin-top:0;line-height:1.35}
 
@@ -198,9 +198,9 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 #mobileMenu .mobile-services.open > .ms-body { max-height: none !important; }
 
 /* Primary CTA keeps white text on the green pill */
-#navbar a.nav-cta { background-color: #008138 !important; color: #ffffff !important; }
+#navbar a.nav-cta { background-color: #ff6000 !important; color: #ffffff !important; }
 
-#navbar a.nav-cta:hover { background-color: #0f3d3e !important; }
+#navbar a.nav-cta:hover { background-color: #3a3a3a !important; }
 
 /* Chevron sizing — some page templates omit width/height */
 #navbar .mega-chevron { width: 12px; height: 12px; flex-shrink: 0; }
@@ -210,49 +210,49 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
 
 /* Canonical navbar — keeps every page rendering like the homepage */
-#navbar{background:#fff;border-bottom:1px solid #e6e3d8}
+#navbar{background:#fff;border-bottom:1px solid #eadfcb}
 
-#navbar.navbar-scrolled{background-color:rgba(250,250,247,.92)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 12px rgba(10,42,43,.06)!important}
+#navbar.navbar-scrolled{background-color:rgba(255,243,214,.92)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 12px rgba(68,68,68,.06)!important}
 
 #navbar a{text-decoration:none}
 
-#navbar button{-webkit-appearance:none;appearance:none;background:transparent;border:0;font:inherit;color:#364153;cursor:pointer}
+#navbar button{-webkit-appearance:none;appearance:none;background:transparent;border:0;font:inherit;color:#444444;cursor:pointer}
 
-#navbar nav > ul > li > a,#navbar nav > ul > li > button{color:#5a5950}
+#navbar nav > ul > li > a,#navbar nav > ul > li > button{color:#6b6b6b}
 #navbar .services-mega{position:relative}
 
 #navbar a.nav-cta{color:#fff;border-radius:9999px!important}
 
-#navbar #mobileMenu{background:#fff;border-top:1px solid #e6e3d8}
+#navbar #mobileMenu{background:#fff;border-top:1px solid #eadfcb}
 
 #navbar #mobileMenu > ul{padding:16px 20px;margin:0;list-style:none;display:flex;flex-direction:column;gap:4px}
 
-#navbar #mobileMenu a{display:block;padding:12px;border-radius:8px;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:16px;font-weight:600;line-height:24px;color:#364153;text-decoration:none}
+#navbar #mobileMenu a{display:block;padding:12px;border-radius:8px;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:16px;font-weight:600;line-height:24px;color:#444444;text-decoration:none}
 
-#navbar #mobileMenu a:hover{background:#f3f1ea}
+#navbar #mobileMenu a:hover{background:#fff3d6}
 
-#navbar #mobileMenu .mobile-services > .ms-head{padding:10px 3px;font-size:16px;font-weight:600;line-height:24px;color:#364153}
+#navbar #mobileMenu .mobile-services > .ms-head{padding:10px 3px;font-size:16px;font-weight:600;line-height:24px;color:#444444}
 
-#navbar #mobileMenu .mobile-services > .ms-body a{padding:8px 12px;font-size:14px;font-weight:400;line-height:21px;color:#5a5950}
+#navbar #mobileMenu .mobile-services > .ms-body a{padding:8px 12px;font-size:14px;font-weight:400;line-height:21px;color:#6b6b6b}
 
-#navbar #mobileMenu a.nav-cta{margin:12px 0 0;padding:12px 20px!important;height:48px;border-radius:9999px!important;background:#008138!important;color:#fff!important;font-size:16px!important;font-weight:600;line-height:24px;text-align:center}
+#navbar #mobileMenu a.nav-cta{margin:12px 0 0;padding:12px 20px!important;height:48px;border-radius:9999px!important;background:#ff6000!important;color:#fff!important;font-size:16px!important;font-weight:600;line-height:24px;text-align:center}
 </style>
 <style id="nav-canonical">
 /* Canonical navbar — keeps every page rendering like the homepage */
-#navbar{background:#fff;border-bottom:1px solid #e6e3d8}
-#navbar.navbar-scrolled{background-color:rgba(250,250,247,.92)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 12px rgba(10,42,43,.06)!important}
+#navbar{background:#fff;border-bottom:1px solid #eadfcb}
+#navbar.navbar-scrolled{background-color:rgba(255,243,214,.92)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 12px rgba(68,68,68,.06)!important}
 #navbar a{text-decoration:none}
-#navbar button{-webkit-appearance:none;appearance:none;background:transparent;border:0;font:inherit;color:#364153;cursor:pointer}
-#navbar nav > ul > li > a,#navbar nav > ul > li > button{color:#5a5950}
+#navbar button{-webkit-appearance:none;appearance:none;background:transparent;border:0;font:inherit;color:#444444;cursor:pointer}
+#navbar nav > ul > li > a,#navbar nav > ul > li > button{color:#6b6b6b}
 #navbar .services-mega{position:relative}
-#navbar a.nav-cta{color:#fff;border-radius:9999px!important;background:#008138!important}
-#navbar #mobileMenu{background:#fff;border-top:1px solid #e6e3d8}
+#navbar a.nav-cta{color:#fff;border-radius:9999px!important;background:#ff6000!important}
+#navbar #mobileMenu{background:#fff;border-top:1px solid #eadfcb}
 #navbar #mobileMenu > ul{padding:16px 20px;margin:0;list-style:none;display:flex;flex-direction:column;gap:4px}
-#navbar #mobileMenu a{display:block;padding:12px;border-radius:8px;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:16px;font-weight:600;line-height:24px;color:#364153;text-decoration:none}
-#navbar #mobileMenu a:hover{background:#f3f1ea}
-#navbar #mobileMenu .mobile-services > .ms-head{padding:10px 3px;font-size:16px;font-weight:600;line-height:24px;color:#364153}
-#navbar #mobileMenu .mobile-services > .ms-body a{padding:8px 12px;font-size:14px;font-weight:400;line-height:21px;color:#5a5950}
-#navbar #mobileMenu a.nav-cta{margin:12px 0 0;padding:12px 20px!important;height:48px;border-radius:9999px!important;background:#008138!important;color:#fff!important;font-size:16px!important;font-weight:600;line-height:24px;text-align:center}
+#navbar #mobileMenu a{display:block;padding:12px;border-radius:8px;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:16px;font-weight:600;line-height:24px;color:#444444;text-decoration:none}
+#navbar #mobileMenu a:hover{background:#fff3d6}
+#navbar #mobileMenu .mobile-services > .ms-head{padding:10px 3px;font-size:16px;font-weight:600;line-height:24px;color:#444444}
+#navbar #mobileMenu .mobile-services > .ms-body a{padding:8px 12px;font-size:14px;font-weight:400;line-height:21px;color:#6b6b6b}
+#navbar #mobileMenu a.nav-cta{margin:12px 0 0;padding:12px 20px!important;height:48px;border-radius:9999px!important;background:#ff6000!important;color:#fff!important;font-size:16px!important;font-weight:600;line-height:24px;text-align:center}
 </style>
 <style id="nav-drawer">
 .mobile-menu{max-height:0;overflow:hidden;transition:max-height .3s ease}
@@ -260,8 +260,9 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 @media (min-width:768px){.mobile-menu{display:none!important}}
 </style>
 <script src="/assets/analytics.js" defer></script>
+<link rel="stylesheet" href="/assets/brand.css">
 </head>
-<body class="bg-[#fafaf7]">
+<body class="bg-[#fff3d6]">
 <header id="navbar" class="sticky top-0 z-50 bg-white border-b border-brandgray-100 transition-all duration-300">
   <nav class="max-w-7xl mx-auto px-4 lg:px-6 h-16 md:h-18 flex items-center justify-between gap-3">
 
@@ -581,24 +582,24 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   </main>
 
 <footer id="about" class="bg-navy pt-16 pb-6 text-white">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 content-wrap">
     <div class="grid md:grid-cols-[1.5fr_1fr_1fr_1.2fr] gap-10 pb-10 border-b border-white/10">
 
       <!-- Column 1 — Milebond -->
       <div>
         <a href="/" class="inline-flex items-center mb-4">
-          <img src="/images/brand/logo-white.png" alt="Milebond" width="96" height="32" class="h-8 w-auto object-contain" loading="lazy" decoding="async">
+          <img src="/images/brand/logo-white-footer.png" alt="Milebond" width="96" height="32" class="h-8 w-auto object-contain" loading="lazy" decoding="async">
         </a>
         <p class="text-white/70 text-sm leading-relaxed max-w-sm mb-5">
           Yiwu-based sourcing partner for Amazon brands, private labels, and offline wholesalers.
         </p>
         <ul class="space-y-2 text-sm text-white/60">
           <li class="flex items-start gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffa55b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             <a href="mailto:info@milebond.com" class="hover:text-amber transition-colors">info@milebond.com</a>
           </li>
           <li class="flex items-start gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffa55b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.57 0 .27 5.3.27 11.77c0 2.07.54 4.09 1.57 5.88L0 24l6.58-1.72a11.77 11.77 0 0 0 5.46 1.35h.01c6.47 0 11.77-5.3 11.77-11.77 0-3.14-1.22-6.09-3.3-8.38z"/></svg>
             <a href="https://wa.me/8615057960102" target="_blank" rel="noopener noreferrer" class="hover:text-amber transition-colors">Chat on WhatsApp</a>
           </li>
         </ul>

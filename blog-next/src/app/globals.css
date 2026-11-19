@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #162D54;
-  --navy: #162D54;
-  --orange: #E87722;
-  --orange-light: #f59e5b;
+  --background: #FFF3D6;
+  --foreground: #444444;
+  --navy: #444444;
+  --orange: #FF6000;
+  --orange-light: #FFA55B;
+  --cream: #FFF3D6;
 }
 
 @theme inline {
@@ -24,11 +25,47 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ============ Layout utilities ============ */
+.section-fullwidth {
+  width: 100%;
+  max-width: none;
+}
+
+.content-wrap {
+  width: 100%;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+@media (min-width: 640px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .product-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1280px) {
+  .product-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
 /* ============ Blog Typography ============ */
 .blog-article {
   font-size: 17px;
   line-height: 1.75;
-  color: #2c3e50;
+  color: #444444;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .blog-article p {
   margin-bottom: 1.25rem;
@@ -68,17 +105,17 @@ body {
   color: var(--navy);
 }
 .blog-article a {
-  color: var(--orange);
+  color: #C24A00;
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color .2s;
 }
 .blog-article a:hover {
-  color: #c25f10;
+  color: #FF6000;
 }
 .blog-article strong {
   font-weight: 700;
-  color: #162D54;
+  color: #444444;
 }
 .blog-article table {
   width: 100%;
@@ -100,28 +137,28 @@ body {
 }
 .blog-article td {
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #EADFCB;
   vertical-align: top;
 }
 .blog-article tbody tr:nth-child(even) {
-  background: #f9fafb;
+  background: #FFF3D6;
 }
 .blog-article tbody tr:hover {
-  background: #fef3e8;
+  background: #FFE9C2;
 }
 .blog-article blockquote {
   border-left: 4px solid var(--orange);
-  background: #fff7f0;
+  background: #FFF3D6;
   padding: 1rem 1.25rem;
   margin: 1.5rem 0;
   border-radius: 0 8px 8px 0;
   font-style: italic;
-  color: #444;
+  color: #444444;
 }
 
 /* CTA in article */
 .blog-cta-inline {
-  background: linear-gradient(135deg, #162D54 0%, #2a4a7c 100%);
+  background: linear-gradient(135deg, #444444 0%, #555555 100%);
   color: #fff;
   padding: 1.5rem 2rem;
   border-radius: 12px;
