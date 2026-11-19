@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="Case study cover: EU outdoor gift set, 7 BOM lines from 6 Alibaba links, 4 suppliers replaced, RMB 26.47 per set including assembly">
+  <rect width="1200" height="900" fill="#0a2a2b"/>
+  <circle cx="1080" cy="120" r="280" fill="#123b3d"/>
+  <circle cx="1080" cy="120" r="180" fill="#164a4c"/>
+  <text x="80" y="120" fill="#c08648" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="4">MILEBOND · CASE STUDY</text>
+  <text x="80" y="250" fill="#ffffff" font-family="Georgia, serif" font-size="66" font-weight="700">EU Outdoor</text>
+  <text x="80" y="330" fill="#ffffff" font-family="Georgia, serif" font-size="66" font-weight="700">Gift Set</text>
+  <text x="80" y="392" fill="#cdc8b8" font-family="Arial, Helvetica, sans-serif" font-size="26">7 components · 6 Alibaba links · 1,000 sets</text>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <g>
+      <rect x="80" y="450" width="230" height="86" rx="12" fill="#0f3d3e" stroke="#2a5a5a"/>
+      <text x="100" y="486" fill="#c08648" font-size="14" letter-spacing="2">01</text>
+      <text x="100" y="516" fill="#ffffff" font-size="22">Brush set</text>
+    </g>
+    <g>
+      <rect x="330" y="450" width="230" height="86" rx="12" fill="#0f3d3e" stroke="#2a5a5a"/>
+      <text x="350" y="486" fill="#c08648" font-size="14" letter-spacing="2">02</text>
+      <text x="350" y="516" fill="#ffffff" font-size="22">Water bag</text>
+    </g>
+    <g>
+      <rect x="580" y="450" width="230" height="86" rx="12" fill="#0f3d3e" stroke="#2a5a5a"/>
+      <text x="600" y="486" fill="#c08648" font-size="14" letter-spacing="2">03</text>
+      <text x="600" y="516" fill="#ffffff" font-size="22">Towel</text>
+    </g>
+    <g>
+      <rect x="830" y="450" width="230" height="86" rx="12" fill="#0f3d3e" stroke="#2a5a5a"/>
+      <text x="850" y="486" fill="#c08648" font-size="14" letter-spacing="2">04</text>
+      <text x="850" y="516" fill="#ffffff" font-size="22">Glove</text>
+    </g>
+    <g>
+      <rect x="80" y="556" width="230" height="86" rx="12" fill="#0f3d3e" stroke="#2a5a5a"/>
+      <text x="100" y="592" fill="#c08648" font-size="14" letter-spacing="2">05</text>
+      <text x="100" y="622" fill="#ffffff" font-size="22">Shovel</text>
+    </g>
+    <g>
+      <rect x="330" y="556" width="230" height="86" rx="12" fill="#0f3d3e" stroke="#2a5a5a"/>
+      <text x="350" y="592" fill="#c08648" font-size="14" letter-spacing="2">06</text>
+      <text x="350" y="622" fill="#ffffff" font-size="22">Bottle cavity</text>
+    </g>
+    <g>
+      <rect x="580" y="556" width="230" height="86" rx="12" fill="#0f3d3e" stroke="#2a5a5a"/>
+      <text x="600" y="592" fill="#c08648" font-size="14" letter-spacing="2">07</text>
+      <text x="600" y="622" fill="#ffffff" font-size="22">Case (PPWR)</text>
+    </g>
+  </g>
+  <g transform="translate(80 690)">
+    <rect x="0" y="0" width="1040" height="130" rx="18" fill="#0f3d3e" stroke="#2a5a5a"/>
+    <text x="30" y="52" fill="#e6e3d8" font-family="Arial, Helvetica, sans-serif" font-size="24">Five sourced components + one bottle cavity + PPWR-compliant case requirement</text>
+    <text x="30" y="92" fill="#8fa3a3" font-family="Arial, Helvetica, sans-serif" font-size="20">EUDR · LFGB · EU 1007 · PPE 2016/425 · PPWR</text>
+  </g>
+  <text x="80" y="870" fill="#8fa3a3" font-family="Arial, Helvetica, sans-serif" font-size="20">Client and supplier names anonymized</text>
+</svg>
