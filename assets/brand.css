@@ -209,6 +209,42 @@ a.bg-amber.text-white:hover {
   background-color: #444444 !important;
 }
 
+/* Content-page CTA and data bands: light brand palette */
+section.bg-navy {
+  background-color: #FFF3D6 !important;
+  color: #444444 !important;
+  border-top: 1px solid #EADFCB;
+  border-bottom: 1px solid #EADFCB;
+}
+
+section.bg-navy .text-white {
+  color: #444444 !important;
+}
+
+section.bg-navy [class*="text-white/"] {
+  color: #6B6B6B !important;
+}
+
+section.bg-navy .text-amber {
+  color: #FF6000 !important;
+}
+
+section.bg-navy .text-amber-500 {
+  color: #C24A00 !important;
+}
+
+section.bg-navy .bg-navy {
+  background-color: #FFFFFF !important;
+}
+
+section.bg-navy [class*="bg-white/"] {
+  background-color: #EADFCB !important;
+}
+
+section.bg-navy [class*="border-white/"] {
+  border-color: #EADFCB !important;
+}
+
 .text-navy {
   color: #444444 !important;
 }
