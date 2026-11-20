@@ -55,3 +55,103 @@
 
 # Category page lives at the flat .html URL, not a directory.
 /products/home-kitchen/ /products/home-kitchen 301
+
+# Legacy flat product URLs. Until 2026-11-02 the category pages linked product
+# cards relatively ("<slug>.html"), so /products/<category> resolved them to
+# /products/<slug>.html. Generated from the real PDP paths; keep in sync if a
+# product slug changes.
+/products/5d-diamond-painting-kit.html /products/arts-crafts/5d-diamond-painting-kit/ 301
+/products/acrylic-paint-set-12-colors.html /products/arts-crafts/acrylic-paint-set-12-colors/ 301
+/products/air-dry-clay-kit-24-colors.html /products/arts-crafts/air-dry-clay-kit-24-colors/ 301
+/products/alcohol-disinfecting-wipes-80-count.html /products/health-household/alcohol-disinfecting-wipes-80-count/ 301
+/products/all-purpose-kitchen-degreaser-spray.html /products/health-household/all-purpose-kitchen-degreaser-spray/ 301
+/products/art-supplies-drawing-kit-150-piece.html /products/arts-crafts/art-supplies-drawing-kit-150-piece/ 301
+/products/automatic-bubble-machine-gun-led.html /products/toys-games/automatic-bubble-machine-gun-led/ 301
+/products/ball-pump-mini-handheld-with-needle.html /products/sports-outdoors/ball-pump-mini-handheld-with-needle/ 301
+/products/beauty-sponge-blender-set.html /products/beauty-tools/beauty-sponge-blender-set/ 301
+/products/blank-baseball-cap.html /products/clothing-shoes-jewelry/blank-baseball-cap/ 301
+/products/building-blocks-set-small-particle-diy.html /products/toys-games/building-blocks-set-small-particle-diy/ 301
+/products/canvas-panels-pack-cotton.html /products/arts-crafts/canvas-panels-pack-cotton/ 301
+/products/canvas-tote-bag.html /products/clothing-shoes-jewelry/canvas-tote-bag/ 301
+/products/car-phone-mount-air-vent-magnetic.html /products/others/car-phone-mount-air-vent-magnetic/ 301
+/products/car-phone-mount-holder.html /products/electronics/car-phone-mount-holder/ 301
+/products/ceramic-coffee-mug-white.html /products/home-kitchen/ceramic-coffee-mug-white/ 301
+/products/christmas-ball-ornaments-set-36-pack.html /products/others/christmas-ball-ornaments-set-36-pack/ 301
+/products/cluster-false-eyelashes-d-diy.html /products/beauty-tools/cluster-false-eyelashes-d-diy/ 301
+/products/colored-pencils-set-120-count.html /products/arts-crafts/colored-pencils-set-120-count/ 301
+/products/cotton-crew-socks-solid.html /products/clothing-shoes-jewelry/cotton-crew-socks-solid/ 301
+/products/cotton-swabs-wood-sticks-200-count.html /products/health-household/cotton-swabs-wood-sticks-200-count/ 301
+/products/desktop-organizer-storage-box-clear.html /products/others/desktop-organizer-storage-box-clear/ 301
+/products/dish-drying-rack-stainless-steel.html /products/home-kitchen/dish-drying-rack-stainless-steel/ 301
+/products/dish-sponge-scouring-pads-pack-of-10.html /products/health-household/dish-sponge-scouring-pads-pack-of-10/ 301
+/products/diy-beads-jewelry-making-kit.html /products/arts-crafts/diy-beads-jewelry-making-kit/ 301
+/products/double-sided-cutting-board.html /products/home-kitchen/double-sided-cutting-board/ 301
+/products/drawstring-trash-bags-roll.html /products/health-household/drawstring-trash-bags-roll/ 301
+/products/envelope-sleeping-bag-cold-weather.html /products/sports-outdoors/envelope-sleeping-bag-cold-weather/ 301
+/products/fitness-tracker-smart-watch.html /products/electronics/fitness-tracker-smart-watch/ 301
+/products/flying-disc-175g-ultimate-pp.html /products/toys-games/flying-disc-175g-ultimate-pp/ 301
+/products/folding-camping-chair-moon-chair.html /products/sports-outdoors/folding-camping-chair-moon-chair/ 301
+/products/food-storage-containers-set-bpa-free.html /products/home-kitchen/food-storage-containers-set-bpa-free/ 301
+/products/gel-pens-bulk-set-black-05mm.html /products/others/gel-pens-bulk-set-black-05mm/ 301
+/products/glass-water-bottle-bamboo-lid-bpa-free.html /products/others/glass-water-bottle-bamboo-lid-bpa-free/ 301
+/products/glassware-drinkware.html /products/home-kitchen/glassware-drinkware/ 301
+/products/hair-claw-clips-set.html /products/beauty-tools/hair-claw-clips-set/ 301
+/products/heatless-curling-rod-set.html /products/beauty-tools/heatless-curling-rod-set/ 301
+/products/jade-gua-sha-stone.html /products/beauty-tools/jade-gua-sha-stone/ 301
+/products/jigsaw-puzzle-1000-pieces-adult-oil-painting.html /products/toys-games/jigsaw-puzzle-1000-pieces-adult-oil-painting/ 301
+/products/knee-brace-silicone-pad-spring-support.html /products/sports-outdoors/knee-brace-silicone-pad-spring-support/ 301
+/products/led-makeup-mirror.html /products/beauty-tools/led-makeup-mirror/ 301
+/products/led-string-lights-battery-operated-copper-wire.html /products/others/led-string-lights-battery-operated-copper-wire/ 301
+/products/magnetic-tiles-set-clear-3d-building.html /products/toys-games/magnetic-tiles-set-clear-3d-building/ 301
+/products/makeup-brush-set-24-piece.html /products/beauty-tools/makeup-brush-set-24-piece/ 301
+/products/manual-can-opener.html /products/home-kitchen/manual-can-opener/ 301
+/products/measuring-cups-and-spoons-set.html /products/home-kitchen/measuring-cups-and-spoons-set/ 301
+/products/microfiber-cleaning-cloths-bulk.html /products/others/microfiber-cleaning-cloths-bulk/ 301
+/products/microfiber-cleaning-cloths-pack-of-10.html /products/health-household/microfiber-cleaning-cloths-pack-of-10/ 301
+/products/nail-clippers-kit-stainless-steel.html /products/beauty-tools/nail-clippers-kit-stainless-steel/ 301
+/products/oil-pastels-set-36-colors.html /products/arts-crafts/oil-pastels-set-36-colors/ 301
+/products/over-ear-bluetooth-headphones.html /products/electronics/over-ear-bluetooth-headphones/ 301
+/products/paint-brushes-set-nylon-hair.html /products/arts-crafts/paint-brushes-set-nylon-hair/ 301
+/products/playing-cards-pvc-waterproof-jumbo-index.html /products/toys-games/playing-cards-pvc-waterproof-jumbo-index/ 301
+/products/plush-stuffed-animal-doll-cuddly-pillow.html /products/toys-games/plush-stuffed-animal-doll-cuddly-pillow/ 301
+/products/polyester-drawstring-backpack-bag.html /products/others/polyester-drawstring-backpack-bag/ 301
+/products/portable-bluetooth-speaker.html /products/electronics/portable-bluetooth-speaker/ 301
+/products/portable-power-bank-10000mah.html /products/electronics/portable-power-bank-10000mah/ 301
+/products/press-on-nails-reusable.html /products/beauty-tools/press-on-nails-reusable/ 301
+/products/push-up-bars-s-shape-steel.html /products/sports-outdoors/push-up-bars-s-shape-steel/ 301
+/products/rc-mini-car-1-64-bluetooth-alloy.html /products/toys-games/rc-mini-car-1-64-bluetooth-alloy/ 301
+/products/reed-diffuser-air-freshener.html /products/health-household/reed-diffuser-air-freshener/ 301
+/products/reusable-silicone-food-storage-bags.html /products/home-kitchen/reusable-silicone-food-storage-bags/ 301
+/products/reusable-silicone-zipper-bags-bpa-free.html /products/others/reusable-silicone-zipper-bags-bpa-free/ 301
+/products/satin-silk-scarf-square.html /products/clothing-shoes-jewelry/satin-silk-scarf-square/ 301
+/products/shoe-charms-pack.html /products/clothing-shoes-jewelry/shoe-charms-pack/ 301
+/products/silicone-baking-mat.html /products/home-kitchen/silicone-baking-mat/ 301
+/products/silicone-kitchen-utensil-set-with-holder.html /products/home-kitchen/silicone-kitchen-utensil-set-with-holder/ 301
+/products/slime-kit-crystal-mud-diy-set.html /products/toys-games/slime-kit-crystal-mud-diy-set/ 301
+/products/soccer-ball-size-5-machine-stitched.html /products/sports-outdoors/soccer-ball-size-5-machine-stitched/ 301
+/products/soft-bristle-toothbrush-pack-of-4.html /products/health-household/soft-bristle-toothbrush-pack-of-4/ 301
+/products/speed-jump-rope-ball-bearing-adjustable.html /products/sports-outdoors/speed-jump-rope-ball-bearing-adjustable/ 301
+/products/sports-insoles-memory-foam.html /products/clothing-shoes-jewelry/sports-insoles-memory-foam/ 301
+/products/sports-wristbands-towel-sweatband-pair.html /products/sports-outdoors/sports-wristbands-towel-sweatband-pair/ 301
+/products/stainless-steel-hoop-earrings.html /products/clothing-shoes-jewelry/stainless-steel-hoop-earrings/ 301
+/products/stainless-steel-necklace.html /products/clothing-shoes-jewelry/stainless-steel-necklace/ 301
+/products/stainless-steel-rings-set.html /products/clothing-shoes-jewelry/stainless-steel-rings-set/ 301
+/products/stainless-steel-utensils.html /products/home-kitchen/stainless-steel-utensils/ 301
+/products/sticky-notes-set-neon-colors.html /products/others/sticky-notes-set-neon-colors/ 301
+/products/tempered-glass-screen-protector.html /products/electronics/tempered-glass-screen-protector/ 301
+/products/toilet-bowl-cleaner-liquid.html /products/health-household/toilet-bowl-cleaner-liquid/ 301
+/products/tritan-sports-water-bottle-32oz.html /products/sports-outdoors/tritan-sports-water-bottle-32oz/ 301
+/products/tritan-water-bottle-bpa-free.html /products/home-kitchen/tritan-water-bottle-bpa-free/ 301
+/products/usb-c-charging-cable.html /products/electronics/usb-c-charging-cable/ 301
+/products/usb-c-pd-fast-charger-20w.html /products/electronics/usb-c-pd-fast-charger-20w/ 301
+/products/uv-led-nail-lamp.html /products/beauty-tools/uv-led-nail-lamp/ 301
+/products/watercolor-paint-set-12-colors.html /products/arts-crafts/watercolor-paint-set-12-colors/ 301
+/products/waterproof-shower-curtain.html /products/health-household/waterproof-shower-curtain/ 301
+/products/wireless-charger-pad-15w.html /products/electronics/wireless-charger-pad-15w/ 301
+/products/wireless-earbuds-tws-with-charging-case.html /products/electronics/wireless-earbuds-tws-with-charging-case/ 301
+/products/womens-thin-belt.html /products/clothing-shoes-jewelry/womens-thin-belt/ 301
+/products/wooden-dominoes-set-colorful-blocks.html /products/toys-games/wooden-dominoes-set-colorful-blocks/ 301
+/products/yoga-resistance-bands-latex-loop-set.html /products/sports-outdoors/yoga-resistance-bands-latex-loop-set/ 301
+
+# Old QC checklist-library index (retired 2026-11-13).
+/quality-control/index.html /services/quality-control/ 301
