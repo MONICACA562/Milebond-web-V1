@@ -4,6 +4,9 @@ blog-next
 .github
 node_modules
 
+# Internal ops notes (quote email templates, playbooks) — never served publicly.
+docs
+
 # Retired duplicates. Both are 301'd in _redirects and excluded from sitemap;
 # keeping them out of the deployed bundle stops them from ever being served as
 # a second, competing copy of /all-products and /products/sports-outdoors.
