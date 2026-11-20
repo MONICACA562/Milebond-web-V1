@@ -76,7 +76,9 @@ jobs:
               out.write('<?xml version="1.0" encoding="UTF-8"?>\n')
               out.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
               for loc, lastmod in urls:
-                  out.write(f'  <url><loc>{loc}</loc><lastmod>{lastmod}</lastmod><changefreq>weekly</changefreq></url>\n')
+                  # No changefreq: Google and Bing ignore it, and a uniform
+                  # "weekly" on every URL is noise rather than a signal.
+                  out.write(f'  <url><loc>{loc}</loc><lastmod>{lastmod}</lastmod></url>\n')
               out.write('</urlset>\n')
           print(f'Generated sitemap with {len(urls)} URLs')
           EOF

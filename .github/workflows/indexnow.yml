@@ -1,0 +1,23 @@
+name: IndexNow ping
+
+# Pushes URLs touched by each push to Bing / Yandex / Seznam via IndexNow.
+# Google does not support IndexNow; it discovers changes through the sitemap.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Submit URLs changed in this commit
+        run: node scripts/indexnow.mjs
