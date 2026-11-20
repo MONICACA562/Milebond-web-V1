@@ -1,0 +1,1358 @@
+{
+  "_note": "Working HS classification generated from docs/product-hs-mapping.csv (high + medium confidence only). Confirm national 8/10-digit lines against the specification before declaring a shipment.",
+  "updated": "2026-11",
+  "items": {
+    "/products/arts-crafts/acrylic-paint-set-12-colors/": {
+      "product": "Acrylic Paint Set (12 Colors)",
+      "group": "Paints & painting sets",
+      "hs6": "3213.10",
+      "eu": "3213 10 00",
+      "us": "3213.10",
+      "confidence": "medium"
+    },
+    "/products/arts-crafts/art-supplies-drawing-kit-150-piece/": {
+      "product": "Art Supplies Drawing Kit (150-Piece)",
+      "group": "Pencils & crayons",
+      "hs6": "9609.90",
+      "eu": "9609 90 90",
+      "us": "9609.90",
+      "confidence": "high"
+    },
+    "/products/arts-crafts/canvas-panels-pack-cotton/": {
+      "product": "Canvas Panels Pack (Cotton)",
+      "group": "Prepared painting canvas",
+      "hs6": "5901.90",
+      "eu": "5901 90 00",
+      "us": "5901.90",
+      "confidence": "medium"
+    },
+    "/products/arts-crafts/colored-pencils-set-120-count/": {
+      "product": "Colored Pencils Set (120 Count)",
+      "group": "Pencils & crayons",
+      "hs6": "9609.90",
+      "eu": "9609 90 90",
+      "us": "9609.90",
+      "confidence": "high"
+    },
+    "/products/arts-crafts/diy-beads-jewelry-making-kit/": {
+      "product": "DIY Beads Jewelry Making Kit",
+      "group": "Imitation jewellery",
+      "hs6": "7117.19",
+      "eu": "7117 19 00",
+      "us": "7117.19",
+      "confidence": "high"
+    },
+    "/products/arts-crafts/oil-pastels-set-36-colors/": {
+      "product": "Oil Pastels Set (36 Colors)",
+      "group": "Pencils & crayons",
+      "hs6": "9609.90",
+      "eu": "9609 90 90",
+      "us": "9609.90",
+      "confidence": "high"
+    },
+    "/products/arts-crafts/paint-brushes-set-nylon-hair/": {
+      "product": "Paint Brushes Set (Nylon Hair)",
+      "group": "Aluminium articles",
+      "hs6": "7616.99",
+      "eu": "7616 99 90",
+      "us": "7616.99",
+      "confidence": "medium"
+    },
+    "/products/arts-crafts/watercolor-paint-set-12-colors/": {
+      "product": "Watercolor Paint Set (12 Colors)",
+      "group": "Paints & painting sets",
+      "hs6": "3213.10",
+      "eu": "3213 10 00",
+      "us": "3213.10",
+      "confidence": "medium"
+    },
+    "/products/beauty-tools/beauty-sponge-blender-set/": {
+      "product": "Beauty Sponge Blender Set",
+      "group": "Powder puffs & beauty sponges",
+      "hs6": "9616.20",
+      "eu": "9616 20 00",
+      "us": "9616.20",
+      "confidence": "medium"
+    },
+    "/products/beauty-tools/cluster-false-eyelashes-d-diy/": {
+      "product": "Cluster False Eyelashes (D DIY)",
+      "group": "False eyelashes & hair pieces",
+      "hs6": "6704.90",
+      "eu": "6704 90 00",
+      "us": "6704.90",
+      "confidence": "high"
+    },
+    "/products/beauty-tools/hair-claw-clips-set/": {
+      "product": "Hair Claw Clips Set",
+      "group": "Other articles of plastics",
+      "hs6": "3926.90",
+      "eu": "3926 90 97",
+      "us": "3926.90",
+      "confidence": "medium"
+    },
+    "/products/beauty-tools/heatless-curling-rod-set/": {
+      "product": "Heatless Curling Rod Set",
+      "group": "Hair dryers & styling appliances",
+      "hs6": "8516.32",
+      "eu": "8516 32 00",
+      "us": "8516.32",
+      "confidence": "medium"
+    },
+    "/products/beauty-tools/jade-gua-sha-stone/": {
+      "product": "Jade Gua Sha Stone",
+      "group": "Worked stone tools",
+      "hs6": "6802.99",
+      "eu": "6802 99 90",
+      "us": "6802.99",
+      "confidence": "medium"
+    },
+    "/products/beauty-tools/led-makeup-mirror/": {
+      "product": "LED Makeup Mirror",
+      "group": "Mirrors",
+      "hs6": "7009.92",
+      "eu": "7009 92 00",
+      "us": "7009.92",
+      "confidence": "medium"
+    },
+    "/products/beauty-tools/makeup-brush-set-24-piece/": {
+      "product": "Makeup Brush Set (24-Piece)",
+      "group": "Brushes",
+      "hs6": "9603.29",
+      "eu": "9603 29 80",
+      "us": "9603.29",
+      "confidence": "high"
+    },
+    "/products/beauty-tools/nail-clippers-kit-stainless-steel/": {
+      "product": "Nail Clippers Kit (Stainless Steel)",
+      "group": "Manicure & pedicure tools",
+      "hs6": "8214.20",
+      "eu": "8214 20 00",
+      "us": "8214.20",
+      "confidence": "high"
+    },
+    "/products/clothing-shoes-jewelry/blank-baseball-cap/": {
+      "product": "Blank Baseball Cap",
+      "group": "Caps & hats",
+      "hs6": "6505.00",
+      "eu": "6505 00 90",
+      "us": "6505.00",
+      "confidence": "high"
+    },
+    "/products/clothing-shoes-jewelry/canvas-tote-bag/": {
+      "product": "Canvas Tote Bag",
+      "group": "Bags, luggage & cases",
+      "hs6": "4202.92",
+      "eu": "4202 92 98",
+      "us": "4202.92",
+      "confidence": "medium"
+    },
+    "/products/clothing-shoes-jewelry/cotton-crew-socks-solid/": {
+      "product": "Cotton Crew Socks (Solid)",
+      "group": "Socks & hosiery",
+      "hs6": "6115.95",
+      "eu": "6115 95 00",
+      "us": "6115.95",
+      "confidence": "high"
+    },
+    "/products/clothing-shoes-jewelry/satin-silk-scarf-square/": {
+      "product": "Satin Silk Scarf Square",
+      "group": "Scarves & shawls",
+      "hs6": "6117.10",
+      "eu": "6117 10 00",
+      "us": "6117.10",
+      "confidence": "medium"
+    },
+    "/products/clothing-shoes-jewelry/shoe-charms-pack/": {
+      "product": "Shoe Charms Pack",
+      "group": "Imitation jewellery",
+      "hs6": "7117.19",
+      "eu": "7117 19 00",
+      "us": "7117.19",
+      "confidence": "high"
+    },
+    "/products/clothing-shoes-jewelry/sports-insoles-memory-foam/": {
+      "product": "Sports Insoles (Memory Foam)",
+      "group": "Footwear parts & insoles",
+      "hs6": "6406.90",
+      "eu": "6406 90 50",
+      "us": "6406.90",
+      "confidence": "medium"
+    },
+    "/products/clothing-shoes-jewelry/stainless-steel-hoop-earrings/": {
+      "product": "Stainless Steel Hoop Earrings",
+      "group": "Imitation jewellery",
+      "hs6": "7117.19",
+      "eu": "7117 19 00",
+      "us": "7117.19",
+      "confidence": "high"
+    },
+    "/products/clothing-shoes-jewelry/stainless-steel-necklace/": {
+      "product": "Stainless Steel Necklace",
+      "group": "Imitation jewellery",
+      "hs6": "7117.19",
+      "eu": "7117 19 00",
+      "us": "7117.19",
+      "confidence": "high"
+    },
+    "/products/clothing-shoes-jewelry/stainless-steel-rings-set/": {
+      "product": "Stainless Steel Rings Set",
+      "group": "Imitation jewellery",
+      "hs6": "7117.19",
+      "eu": "7117 19 00",
+      "us": "7117.19",
+      "confidence": "medium"
+    },
+    "/products/clothing-shoes-jewelry/womens-thin-belt/": {
+      "product": "Women's Thin Belt",
+      "group": "Belts",
+      "hs6": "6217.10",
+      "eu": "6217 10 00",
+      "us": "6217.10",
+      "confidence": "medium"
+    },
+    "/products/electronics/car-phone-mount-holder/": {
+      "product": "Car Phone Mount Holder",
+      "group": "Phone mounts & holders",
+      "hs6": "3926.90",
+      "eu": "3926 90 97",
+      "us": "3926.90",
+      "confidence": "medium"
+    },
+    "/products/electronics/over-ear-bluetooth-headphones/": {
+      "product": "Over-Ear Bluetooth Headphones",
+      "group": "Headphones & speakers",
+      "hs6": "8518.30",
+      "eu": "8518 30 95",
+      "us": "8518.30",
+      "confidence": "high"
+    },
+    "/products/electronics/portable-bluetooth-speaker/": {
+      "product": "Portable Bluetooth Speaker",
+      "group": "Headphones & speakers",
+      "hs6": "8518.30",
+      "eu": "8518 30 95",
+      "us": "8518.30",
+      "confidence": "high"
+    },
+    "/products/electronics/portable-power-bank-10000mah/": {
+      "product": "Portable Power Bank 10000mAh",
+      "group": "Power banks & lithium batteries",
+      "hs6": "8507.60",
+      "eu": "8507 60 00",
+      "us": "8507.60",
+      "confidence": "high"
+    },
+    "/products/electronics/tempered-glass-screen-protector/": {
+      "product": "Tempered Glass Screen Protector",
+      "group": "Glassware",
+      "hs6": "7013.49",
+      "eu": "7013 49 10",
+      "us": "7013.49",
+      "confidence": "medium"
+    },
+    "/products/electronics/usb-c-charging-cable/": {
+      "product": "USB-C Charging Cable",
+      "group": "Cables & connectors",
+      "hs6": "8544.42",
+      "eu": "8544 42 90",
+      "us": "8544.42",
+      "confidence": "high"
+    },
+    "/products/electronics/usb-c-pd-fast-charger-20w/": {
+      "product": "USB-C PD Fast Charger 20W",
+      "group": "Chargers & adapters",
+      "hs6": "8504.40",
+      "eu": "8504 40 90",
+      "us": "8504.40",
+      "confidence": "high"
+    },
+    "/products/electronics/wireless-charger-pad-15w/": {
+      "product": "Wireless Charger Pad 15W",
+      "group": "Chargers & adapters",
+      "hs6": "8504.40",
+      "eu": "8504 40 90",
+      "us": "8504.40",
+      "confidence": "high"
+    },
+    "/products/electronics/wireless-earbuds-tws-with-charging-case/": {
+      "product": "Wireless Earbuds TWS with Charging Case",
+      "group": "Headphones & speakers",
+      "hs6": "8518.30",
+      "eu": "8518 30 95",
+      "us": "8518.30",
+      "confidence": "high"
+    },
+    "/products/health-household/all-purpose-kitchen-degreaser-spray/": {
+      "product": "All-Purpose Kitchen Degreaser Spray",
+      "group": "Cleaning preparations",
+      "hs6": "3402.50",
+      "eu": "3402 50 00",
+      "us": "3402.50",
+      "confidence": "medium"
+    },
+    "/products/health-household/drawstring-trash-bags-roll/": {
+      "product": "Drawstring Trash Bags (Roll)",
+      "group": "Knitted apparel",
+      "hs6": "6110.30",
+      "eu": "6110 30 99",
+      "us": "6110.30",
+      "confidence": "medium"
+    },
+    "/products/health-household/microfiber-cleaning-cloths-pack-of-10/": {
+      "product": "Microfiber Cleaning Cloths (Pack of 10)",
+      "group": "Other made-up textile articles",
+      "hs6": "6307.90",
+      "eu": "6307 90 98",
+      "us": "6307.90",
+      "confidence": "medium"
+    },
+    "/products/health-household/soft-bristle-toothbrush-pack-of-4/": {
+      "product": "Soft Bristle Toothbrush (Pack of 4)",
+      "group": "Brushes",
+      "hs6": "9603.29",
+      "eu": "9603 29 80",
+      "us": "9603.29",
+      "confidence": "high"
+    },
+    "/products/health-household/toilet-bowl-cleaner-liquid/": {
+      "product": "Toilet Bowl Cleaner Liquid",
+      "group": "Cleaning preparations",
+      "hs6": "3402.50",
+      "eu": "3402 50 00",
+      "us": "3402.50",
+      "confidence": "medium"
+    },
+    "/products/health-household/waterproof-shower-curtain/": {
+      "product": "Waterproof Shower Curtain",
+      "group": "Plastic household & storage",
+      "hs6": "3924.90",
+      "eu": "3924 90 00",
+      "us": "3924.90",
+      "confidence": "high"
+    },
+    "/products/home-kitchen/ceramic-coffee-mug-white/": {
+      "product": "Ceramic Coffee Mug White",
+      "group": "Ceramic tableware",
+      "hs6": "6912.00",
+      "eu": "6912 00 83",
+      "us": "6912.00",
+      "confidence": "medium"
+    },
+    "/products/home-kitchen/dish-drying-rack-stainless-steel/": {
+      "product": "Dish Drying Rack Stainless Steel",
+      "group": "Stainless steel kitchen & table articles",
+      "hs6": "7323.93",
+      "eu": "7323 93 00",
+      "us": "7323.93",
+      "confidence": "medium"
+    },
+    "/products/home-kitchen/double-sided-cutting-board/": {
+      "product": "Double-Sided Cutting Board",
+      "group": "Plastic tableware & kitchenware",
+      "hs6": "3924.10",
+      "eu": "3924 10 00",
+      "us": "3924.10",
+      "confidence": "high"
+    },
+    "/products/home-kitchen/food-storage-containers-set-bpa-free/": {
+      "product": "Food Storage Containers Set BPA-Free",
+      "group": "Plastic tableware & kitchenware",
+      "hs6": "3924.10",
+      "eu": "3924 10 00",
+      "us": "3924.10",
+      "confidence": "high"
+    },
+    "/products/home-kitchen/glassware-drinkware/": {
+      "product": "Glassware &amp; Drinkware Sourcing from China: Borosilicate Verification, MOQ &amp; Price Benchmarks (2026)",
+      "group": "Glassware",
+      "hs6": "7013.49",
+      "eu": "7013 49 10",
+      "us": "7013.49",
+      "confidence": "medium"
+    },
+    "/products/home-kitchen/manual-can-opener/": {
+      "product": "Manual Can Opener",
+      "group": "Steel articles",
+      "hs6": "7326.90",
+      "eu": "7326 90 98",
+      "us": "7326.90",
+      "confidence": "medium"
+    },
+    "/products/home-kitchen/measuring-cups-and-spoons-set/": {
+      "product": "Measuring Cups and Spoons Set",
+      "group": "Plastic tableware & kitchenware",
+      "hs6": "3924.10",
+      "eu": "3924 10 00",
+      "us": "3924.10",
+      "confidence": "high"
+    },
+    "/products/home-kitchen/reusable-silicone-food-storage-bags/": {
+      "product": "Reusable Silicone Food Storage Bags",
+      "group": "Plastic sacks & bags",
+      "hs6": "3923.21",
+      "eu": "3923 21 00",
+      "us": "3923.21",
+      "confidence": "high"
+    },
+    "/products/home-kitchen/silicone-baking-mat/": {
+      "product": "Silicone Baking Mat",
+      "group": "Plastic tableware & kitchenware",
+      "hs6": "3924.10",
+      "eu": "3924 10 00",
+      "us": "3924.10",
+      "confidence": "high"
+    },
+    "/products/home-kitchen/silicone-kitchen-utensil-set-with-holder/": {
+      "product": "Silicone Kitchen Utensil Set with Holder",
+      "group": "Plastic tableware & kitchenware",
+      "hs6": "3924.10",
+      "eu": "3924 10 00",
+      "us": "3924.10",
+      "confidence": "high"
+    },
+    "/products/home-kitchen/stainless-steel-utensils/": {
+      "product": "Stainless Steel Kitchen Utensils Sourcing from Yiwu: 304 Verification, MOQ Reduction & Price Benchmarks (2026)",
+      "group": "Stainless steel kitchen & table articles",
+      "hs6": "7323.93",
+      "eu": "7323 93 00",
+      "us": "7323.93",
+      "confidence": "medium"
+    },
+    "/products/home-kitchen/tritan-water-bottle-bpa-free/": {
+      "product": "Tritan Water Bottle BPA-Free",
+      "group": "Plastic bottles & flasks",
+      "hs6": "3923.30",
+      "eu": "3923 30 90",
+      "us": "3923.30",
+      "confidence": "high"
+    },
+    "/products/others/car-phone-mount-air-vent-magnetic/": {
+      "product": "Car Phone Mount (Air Vent, Magnetic)",
+      "group": "Phone mounts & holders",
+      "hs6": "3926.90",
+      "eu": "3926 90 97",
+      "us": "3926.90",
+      "confidence": "medium"
+    },
+    "/products/others/christmas-ball-ornaments-set-36-pack/": {
+      "product": "Christmas Ball Ornaments Set (36 Pack)",
+      "group": "Christmas & festive articles",
+      "hs6": "9505.10",
+      "eu": "9505 10 90",
+      "us": "9505.10",
+      "confidence": "high"
+    },
+    "/products/others/desktop-organizer-storage-box-clear/": {
+      "product": "Desktop Organizer Storage Box (Clear)",
+      "group": "Pens",
+      "hs6": "9608.10",
+      "eu": "9608 10 92",
+      "us": "9608.10",
+      "confidence": "high"
+    },
+    "/products/others/gel-pens-bulk-set-black-05mm/": {
+      "product": "Gel Pens Bulk Set (Black, 0.5mm)",
+      "group": "Pens",
+      "hs6": "9608.10",
+      "eu": "9608 10 92",
+      "us": "9608.10",
+      "confidence": "high"
+    },
+    "/products/others/glass-water-bottle-bamboo-lid-bpa-free/": {
+      "product": "Glass Water Bottle (Bamboo Lid, BPA Free)",
+      "group": "Glass bottles & jars",
+      "hs6": "7010.90",
+      "eu": "7010 90 10",
+      "us": "7010.90",
+      "confidence": "high"
+    },
+    "/products/others/led-string-lights-battery-operated-copper-wire/": {
+      "product": "LED String Lights (Battery Operated, Copper Wire)",
+      "group": "LED lamps & light strings",
+      "hs6": "9405.42",
+      "eu": "9405 42 90",
+      "us": "9405.42",
+      "confidence": "medium"
+    },
+    "/products/others/microfiber-cleaning-cloths-bulk/": {
+      "product": "Microfiber Cleaning Cloths (Bulk)",
+      "group": "Other made-up textile articles",
+      "hs6": "6307.90",
+      "eu": "6307 90 98",
+      "us": "6307.90",
+      "confidence": "medium"
+    },
+    "/products/others/polyester-drawstring-backpack-bag/": {
+      "product": "Polyester Drawstring Backpack Bag",
+      "group": "Bags, luggage & cases",
+      "hs6": "4202.92",
+      "eu": "4202 92 98",
+      "us": "4202.92",
+      "confidence": "medium"
+    },
+    "/products/others/reusable-silicone-zipper-bags-bpa-free/": {
+      "product": "Reusable Silicone Zipper Bags (BPA-Free)",
+      "group": "Bags, luggage & cases",
+      "hs6": "4202.92",
+      "eu": "4202 92 98",
+      "us": "4202.92",
+      "confidence": "medium"
+    },
+    "/products/others/sticky-notes-set-neon-colors/": {
+      "product": "Sticky Notes Set (Neon Colors)",
+      "group": "Notebooks & paper stationery",
+      "hs6": "4820.10",
+      "eu": "4820 10 30",
+      "us": "4820.10",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/3-in-1-electric-interactive-toy-track-ball-feather-butterfly/": {
+      "product": "3-in-1 Electric Interactive Toy (Track Ball + Feather + Butterfly)",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/adjustable-ultrasonic-recall-whistle/": {
+      "product": "Dog Training Whistle (Adjustable Ultrasonic Recall Whistle)",
+      "group": "Whistles",
+      "hs6": "9208.90",
+      "eu": "9208 90 00",
+      "us": "9208.90",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/airtight-pet-food-storage-container/": {
+      "product": "Airtight Pet Food Storage Container",
+      "group": "Plastic tableware & kitchenware",
+      "hs6": "3924.10",
+      "eu": "3924 10 00",
+      "us": "3924.10",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/automatic-ball-launcher-interactive-fetch-machine/": {
+      "product": "Automatic Ball Launcher (Interactive Fetch Machine)",
+      "group": "Toy machines & bubble toys",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/automatic-hide-and-seek-moving-feather-toy/": {
+      "product": "Automatic Hide-and-Seek Moving Feather Toy",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/automatic-pet-feeder-smart/": {
+      "product": "Automatic Pet Feeder (Smart)",
+      "group": "Plastic tableware & kitchenware",
+      "hs6": "3924.10",
+      "eu": "3924 10 00",
+      "us": "3924.10",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/automatic-rotating-laser-cat-toy/": {
+      "product": "Automatic Rotating Laser Cat Toy",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/breakaway-safety-cat-collar-reflective/": {
+      "product": "Breakaway Safety Cat Collar (Reflective)",
+      "group": "Collars, harnesses & leashes",
+      "hs6": "4201.00",
+      "eu": "4201 00 00",
+      "us": "4201.00",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/bubble-window-cat-backpack-carrier/": {
+      "product": "Bubble Window Cat Backpack Carrier",
+      "group": "Toy machines & bubble toys",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/cat-igloo-bed/": {
+      "product": "Cat Igloo Bed",
+      "group": "Mattresses, cushions & pet beds",
+      "hs6": "9404.90",
+      "eu": "9404 90 90",
+      "us": "9404.90",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/cat-puzzle-feeder-slow-feeder-bowl/": {
+      "product": "Cat Puzzle Feeder / Slow Feeder Bowl",
+      "group": "Pet feeding bowls & slow feeders",
+      "hs6": "3924.10",
+      "eu": "3924 10 00",
+      "us": "3924.10",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/cat-water-fountain/": {
+      "product": "Cat Water Fountain",
+      "group": "Plastic tableware & kitchenware",
+      "hs6": "3924.10",
+      "eu": "3924 10 00",
+      "us": "3924.10",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/cat-window-perch-hammock/": {
+      "product": "Cat Window Perch Hammock",
+      "group": "Mattresses, cushions & pet beds",
+      "hs6": "9404.90",
+      "eu": "9404 90 90",
+      "us": "9404.90",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/catnip-plush-toy-banana-fish-shape/": {
+      "product": "Catnip Plush Toy (Banana / Fish Shape)",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/catnip-silvervine-lick-ball-toy/": {
+      "product": "Catnip &amp; Silvervine Lick Ball Toy",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/classic-treat-ball-wobble-feeder-ball/": {
+      "product": "Classic Treat Ball / Wobble Feeder Ball",
+      "group": "Plastic tableware & kitchenware",
+      "hs6": "3924.10",
+      "eu": "3924 10 00",
+      "us": "3924.10",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/clicker-training-kit/": {
+      "product": "Clicker Training Kit",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/clicker-whistle-combo-training-set/": {
+      "product": "Clicker + Whistle Combo Training Set",
+      "group": "Whistles",
+      "hs6": "9208.90",
+      "eu": "9208 90 00",
+      "us": "9208.90",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/collapsible-cat-tunnel/": {
+      "product": "Collapsible Cat Tunnel",
+      "group": "Other made-up textile articles",
+      "hs6": "6307.90",
+      "eu": "6307 90 98",
+      "us": "6307.90",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/collapsible-silicone-dog-bowl/": {
+      "product": "Collapsible Silicone Dog Bowl",
+      "group": "Plastic tableware & kitchenware",
+      "hs6": "3924.10",
+      "eu": "3924 10 00",
+      "us": "3924.10",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/colorful-cat-springs-toy/": {
+      "product": "Colorful Cat Springs Toy",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/corner-self-grooming-cat-brush/": {
+      "product": "Corner Self-Grooming Cat Brush",
+      "group": "Brushes",
+      "hs6": "9603.29",
+      "eu": "9603 29 80",
+      "us": "9603.29",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/dental-chew-toy-dental-stick-toy/": {
+      "product": "Dental Chew Toy / Dental Stick Toy",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/deshedding-brush-undercoat-rake/": {
+      "product": "Deshedding Brush / Undercoat Rake",
+      "group": "Brushes",
+      "hs6": "9603.29",
+      "eu": "9603 29 80",
+      "us": "9603.29",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/dog-bed-with-removable-washable-cover/": {
+      "product": "Dog Bed with Removable Washable Cover",
+      "group": "Mattresses, cushions & pet beds",
+      "hs6": "9404.90",
+      "eu": "9404 90 90",
+      "us": "9404.90",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/dog-calming-anxiety-vest/": {
+      "product": "Calming Vest / Anxiety Wrap for Dogs",
+      "group": "Knitted apparel",
+      "hs6": "6110.30",
+      "eu": "6110 30 99",
+      "us": "6110.30",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/dog-car-seat-bed/": {
+      "product": "Dog Car Seat Bed",
+      "group": "Mattresses, cushions & pet beds",
+      "hs6": "9404.90",
+      "eu": "9404 90 90",
+      "us": "9404.90",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/dog-crate-cover/": {
+      "product": "Dog Crate Cover",
+      "group": "Other made-up textile articles",
+      "hs6": "6307.90",
+      "eu": "6307 90 98",
+      "us": "6307.90",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/dog-frisbee-flying-disc-tpr-rubber/": {
+      "product": "Dog Frisbee / Flying Disc (TPR/Rubber)",
+      "group": "Sports & fitness equipment",
+      "hs6": "9506.91",
+      "eu": "9506 91 90",
+      "us": "9506.91",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/dog-lick-mat/": {
+      "product": "Dog Lick Mat",
+      "group": "Other made-up textile articles",
+      "hs6": "6307.90",
+      "eu": "6307 90 98",
+      "us": "6307.90",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/dog-paw-cleaner-cup/": {
+      "product": "Dog Paw Cleaner Cup",
+      "group": "Cleaning preparations",
+      "hs6": "3402.50",
+      "eu": "3402 50 00",
+      "us": "3402.50",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/dog-sofa-couch-bed/": {
+      "product": "Dog Sofa Couch Bed",
+      "group": "Mattresses, cushions & pet beds",
+      "hs6": "9404.90",
+      "eu": "9404 90 90",
+      "us": "9404.90",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/dog-treat-pouch/": {
+      "product": "Dog Treat Pouch",
+      "group": "Bags, luggage & cases",
+      "hs6": "4202.92",
+      "eu": "4202 92 98",
+      "us": "4202.92",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/donut-calming-dog-cat-bed/": {
+      "product": "Donut Calming Dog/Cat Bed",
+      "group": "Mattresses, cushions & pet beds",
+      "hs6": "9404.90",
+      "eu": "9404 90 90",
+      "us": "9404.90",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/double-sided-dematting-comb/": {
+      "product": "Double-Sided Dematting Comb",
+      "group": "Brushes",
+      "hs6": "9603.29",
+      "eu": "9603 29 80",
+      "us": "9603.29",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/durable-natural-rubber-chew-toy-fetch-ball-bone/": {
+      "product": "Durable Natural Rubber Chew Toy (Fetch Ball / Bone)",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/elevated-adjustable-dog-feeder/": {
+      "product": "Elevated Adjustable Dog Feeder",
+      "group": "Plastic tableware & kitchenware",
+      "hs6": "3924.10",
+      "eu": "3924 10 00",
+      "us": "3924.10",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/escape-proof-cat-harness-vest/": {
+      "product": "Escape-Proof Cat Harness Vest",
+      "group": "Knitted apparel",
+      "hs6": "6110.30",
+      "eu": "6110 30 99",
+      "us": "6110.30",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/felt-cave-cat-bed/": {
+      "product": "Felt Cave Cat Bed",
+      "group": "Mattresses, cushions & pet beds",
+      "hs6": "9404.90",
+      "eu": "9404 90 90",
+      "us": "9404.90",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/floating-no-spill-dog-water-bowl/": {
+      "product": "Floating No-Spill Dog Water Bowl",
+      "group": "Plastic tableware & kitchenware",
+      "hs6": "3924.10",
+      "eu": "3924 10 00",
+      "us": "3924.10",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/fluffy-shaggy-round-cat-bed/": {
+      "product": "Fluffy Shaggy Round Cat Bed",
+      "group": "Mattresses, cushions & pet beds",
+      "hs6": "9404.90",
+      "eu": "9404 90 90",
+      "us": "9404.90",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/foldable-elevated-dog-cot/": {
+      "product": "Foldable Elevated Dog Cot",
+      "group": "Mattresses, cushions & pet beds",
+      "hs6": "9404.90",
+      "eu": "9404 90 90",
+      "us": "9404.90",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/freezable-cooling-chew-toy-popsicle-bone/": {
+      "product": "Freezable Cooling Chew Toy (Popsicle/Bone)",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/gravity-pet-water-dispenser/": {
+      "product": "Gravity Pet Water Dispenser",
+      "group": "Plastic tableware & kitchenware",
+      "hs6": "3924.10",
+      "eu": "3924 10 00",
+      "us": "3924.10",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/hide-seek-plush-puzzle-toy-burrow-tree-stump-pea-pod/": {
+      "product": "Hide &amp; Seek Plush Puzzle Toy (Burrow Tree Stump / Pea Pod)",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/home-dog-agility-training-kit/": {
+      "product": "Dog Agility Training Kit (Home Backyard Set)",
+      "group": "Sports & fitness equipment",
+      "hs6": "9506.91",
+      "eu": "9506 91 90",
+      "us": "9506.91",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/indestructible-chew-toy-for-aggressive-chewers-tpr-nylon/": {
+      "product": "Indestructible Chew Toy for Aggressive Chewers (TPR/Nylon)",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/interactive-feather-teaser-wand-set-retractable-refills/": {
+      "product": "Interactive Feather Teaser Wand Set (Retractable + Refills)",
+      "group": "Toy machines & bubble toys",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/interactive-puzzle-treat-dispenser/": {
+      "product": "Interactive Puzzle Treat Dispenser",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/interactive-puzzle-treat-dispenser-rolling-dumbbell-slow-feeder/": {
+      "product": "Interactive Puzzle Treat Dispenser (Rolling Dumbbell/Slow Feeder)",
+      "group": "Pet feeding bowls & slow feeders",
+      "hs6": "3924.10",
+      "eu": "3924 10 00",
+      "us": "3924.10",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/l-shaped-vertical-corrugated-cat-scratcher/": {
+      "product": "L-Shaped Vertical Corrugated Cat Scratcher",
+      "group": "Other made-up textile articles",
+      "hs6": "6307.90",
+      "eu": "6307 90 98",
+      "us": "6307.90",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/long-line-training-leash/": {
+      "product": "Training Leash with Handle (Long Line / Heel Leash)",
+      "group": "Collars, harnesses & leashes",
+      "hs6": "4201.00",
+      "eu": "4201 00 00",
+      "us": "4201.00",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/motion-activated-automatic-rolling-cat-ball/": {
+      "product": "Motion-Activated Automatic Rolling Cat Ball",
+      "group": "Toy machines & bubble toys",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/no-pull-front-clip-dog-harness/": {
+      "product": "No-Pull Dog Harness (Front-Clip)",
+      "group": "Collars, harnesses & leashes",
+      "hs6": "4201.00",
+      "eu": "4201 00 00",
+      "us": "4201.00",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/nose-work-snuffle-mat/": {
+      "product": "Nose Work / Snuffle Mat Training Toy",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/orthopedic-memory-foam-dog-bed/": {
+      "product": "Orthopedic Memory Foam Dog Bed",
+      "group": "Notebooks & paper stationery",
+      "hs6": "4820.10",
+      "eu": "4820 10 30",
+      "us": "4820.10",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/pet-grooming-gloves/": {
+      "product": "Pet Grooming Gloves",
+      "group": "Other articles of plastics",
+      "hs6": "3926.90",
+      "eu": "3926 90 97",
+      "us": "3926.90",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/pet-hair-dryer-blaster/": {
+      "product": "Pet Hair Dryer / Blaster",
+      "group": "Hair dryers & styling appliances",
+      "hs6": "8516.32",
+      "eu": "8516 32 00",
+      "us": "8516.32",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/pet-nursing-bottle-nipple-feeder/": {
+      "product": "Pet Nursing Bottle / Nipple Feeder",
+      "group": "Plastic bottles & flasks",
+      "hs6": "3923.30",
+      "eu": "3923 30 90",
+      "us": "3923.30",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/pet-teepee-tent-bed/": {
+      "product": "Pet Teepee Tent Bed",
+      "group": "Camping & outdoor gear",
+      "hs6": "6306.40",
+      "eu": "6306 40 00",
+      "us": "6306.40",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/pet-toothbrush-toothpaste-kit/": {
+      "product": "Pet Toothbrush &amp; Toothpaste Kit",
+      "group": "Brushes",
+      "hs6": "9603.29",
+      "eu": "9603 29 80",
+      "us": "9603.29",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/portable-pet-travel-water-bottle/": {
+      "product": "Portable Pet Travel Water Bottle",
+      "group": "Plastic bottles & flasks",
+      "hs6": "3923.30",
+      "eu": "3923 30 90",
+      "us": "3923.30",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/puppy-teething-ring-teething-toy-set/": {
+      "product": "Puppy Teething Ring / Teething Toy Set",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/puzzle-slider-toy-level-2-3-treat-puzzle-board/": {
+      "product": "Puzzle Slider Toy (Level 2-3 Treat Puzzle Board)",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/reinforced-braided-rope-tug-toy/": {
+      "product": "Reinforced Braided Rope Tug Toy",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/reinforced-squeaky-plush-toy-mesh-backed/": {
+      "product": "Reinforced Squeaky Plush Toy (Mesh-Backed)",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/self-cleaning-slicker-brush/": {
+      "product": "Self-Cleaning Slicker Brush",
+      "group": "Brushes",
+      "hs6": "9603.29",
+      "eu": "9603 29 80",
+      "us": "9603.29",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/silicone-lick-mat-lick-pad/": {
+      "product": "Silicone Lick Mat / Lick Pad",
+      "group": "Other made-up textile articles",
+      "hs6": "6307.90",
+      "eu": "6307 90 98",
+      "us": "6307.90",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/silicone-pet-bath-shampoo-brush/": {
+      "product": "Silicone Pet Bath &amp; Shampoo Brush",
+      "group": "Cleaning preparations",
+      "hs6": "3402.50",
+      "eu": "3402 50 00",
+      "us": "3402.50",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/silicone-pet-feeding-placemat/": {
+      "product": "Silicone Pet Feeding Placemat",
+      "group": "Other made-up textile articles",
+      "hs6": "6307.90",
+      "eu": "6307 90 98",
+      "us": "6307.90",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/slow-feeder-dog-bowl/": {
+      "product": "Slow Feeder Dog Bowl",
+      "group": "Pet feeding bowls & slow feeders",
+      "hs6": "3924.10",
+      "eu": "3924 10 00",
+      "us": "3924.10",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/snuffle-ball-felt-foraging-ball/": {
+      "product": "Snuffle Ball (Felt Foraging Ball)",
+      "group": "Other made-up textile articles",
+      "hs6": "6307.90",
+      "eu": "6307 90 98",
+      "us": "6307.90",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/snuffle-mat/": {
+      "product": "Snuffle Mat",
+      "group": "Other made-up textile articles",
+      "hs6": "6307.90",
+      "eu": "6307 90 98",
+      "us": "6307.90",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/snuffle-mat-foraging-nose-work-mat/": {
+      "product": "Snuffle Mat (Foraging Nose Work Mat)",
+      "group": "Other made-up textile articles",
+      "hs6": "6307.90",
+      "eu": "6307 90 98",
+      "us": "6307.90",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/stainless-steel-dog-bowl-non-tip/": {
+      "product": "Stainless Steel Dog Bowl (Non-tip)",
+      "group": "Stainless steel kitchen & table articles",
+      "hs6": "7323.93",
+      "eu": "7323 93 00",
+      "us": "7323.93",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/tall-sisal-scratching-post/": {
+      "product": "Tall Sisal Scratching Post",
+      "group": "Other made-up textile articles",
+      "hs6": "6307.90",
+      "eu": "6307 90 98",
+      "us": "6307.90",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/treat-dispensing-training-ball/": {
+      "product": "Training Treat Ball / Treat-Dispensing Toy",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/tug-of-war-toy-rubber-rope/": {
+      "product": "Tug-of-War Toy (Rubber/Rope)",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/vibration-only-no-shock-training-collar/": {
+      "product": "Vibration-Only Training Collar (No-Shock)",
+      "group": "Collars, harnesses & leashes",
+      "hs6": "4201.00",
+      "eu": "4201 00 00",
+      "us": "4201.00",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/vivifying-snuffle-mat-blue-green-orange/": {
+      "product": "Vivifying Snuffle Mat for Dogs — Interactive Feeding Game (Blue Green Orange)",
+      "group": "Other made-up textile articles",
+      "hs6": "6307.90",
+      "eu": "6307 90 98",
+      "us": "6307.90",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/vivifying-snuffle-mat-pink-yellow/": {
+      "product": "Vivifying Snuffle Mat for Dogs — Foraging &amp; Stress Relief (Pink Yellow)",
+      "group": "Other made-up textile articles",
+      "hs6": "6307.90",
+      "eu": "6307 90 98",
+      "us": "6307.90",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/vivifying-snuffle-mat-yellow-purple/": {
+      "product": "Vivifying Snuffle Mat for Dogs — Slow Eating &amp; Mental Stimulation (Yellow Purple)",
+      "group": "Other made-up textile articles",
+      "hs6": "6307.90",
+      "eu": "6307 90 98",
+      "us": "6307.90",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/wall-mounted-cat-hammock-shelf/": {
+      "product": "Wall-Mounted Cat Hammock &amp; Shelf",
+      "group": "Mattresses, cushions & pet beds",
+      "hs6": "9404.90",
+      "eu": "9404 90 90",
+      "us": "9404.90",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/waterless-dog-shampoo-foam/": {
+      "product": "Waterless Dog Shampoo Foam",
+      "group": "Cleaning preparations",
+      "hs6": "3402.50",
+      "eu": "3402 50 00",
+      "us": "3402.50",
+      "confidence": "medium"
+    },
+    "/products/pet-supplies/waterproof-outdoor-dog-bed/": {
+      "product": "Waterproof Outdoor Dog Bed",
+      "group": "Mattresses, cushions & pet beds",
+      "hs6": "9404.90",
+      "eu": "9404 90 90",
+      "us": "9404.90",
+      "confidence": "high"
+    },
+    "/products/pet-supplies/window-mounted-cat-perch-hammock/": {
+      "product": "Window Mounted Cat Perch Hammock",
+      "group": "Mattresses, cushions & pet beds",
+      "hs6": "9404.90",
+      "eu": "9404 90 90",
+      "us": "9404.90",
+      "confidence": "high"
+    },
+    "/products/sports-outdoors/ball-pump-mini-handheld-with-needle/": {
+      "product": "Ball Pump (Mini Handheld with Needle)",
+      "group": "Sports & fitness equipment",
+      "hs6": "9506.91",
+      "eu": "9506 91 90",
+      "us": "9506.91",
+      "confidence": "medium"
+    },
+    "/products/sports-outdoors/envelope-sleeping-bag-cold-weather/": {
+      "product": "Envelope Sleeping Bag (Cold Weather)",
+      "group": "Camping & outdoor gear",
+      "hs6": "6306.40",
+      "eu": "6306 40 00",
+      "us": "6306.40",
+      "confidence": "medium"
+    },
+    "/products/sports-outdoors/folding-camping-chair-moon-chair/": {
+      "product": "Folding Camping Chair (Moon Chair)",
+      "group": "Camping & outdoor gear",
+      "hs6": "6306.40",
+      "eu": "6306 40 00",
+      "us": "6306.40",
+      "confidence": "medium"
+    },
+    "/products/sports-outdoors/knee-brace-silicone-pad-spring-support/": {
+      "product": "Knee Brace (Silicone Pad, Spring Support)",
+      "group": "Sports & fitness equipment",
+      "hs6": "9506.91",
+      "eu": "9506 91 90",
+      "us": "9506.91",
+      "confidence": "medium"
+    },
+    "/products/sports-outdoors/push-up-bars-s-shape-steel/": {
+      "product": "Push Up Bars (S-Shape Steel)",
+      "group": "Steel articles",
+      "hs6": "7326.90",
+      "eu": "7326 90 98",
+      "us": "7326.90",
+      "confidence": "medium"
+    },
+    "/products/sports-outdoors/soccer-ball-size-5-machine-stitched/": {
+      "product": "Soccer Ball Size 5 (Machine Stitched)",
+      "group": "Sports & fitness equipment",
+      "hs6": "9506.91",
+      "eu": "9506 91 90",
+      "us": "9506.91",
+      "confidence": "medium"
+    },
+    "/products/sports-outdoors/speed-jump-rope-ball-bearing-adjustable/": {
+      "product": "Speed Jump Rope (Ball Bearing, Adjustable)",
+      "group": "Sports & fitness equipment",
+      "hs6": "9506.91",
+      "eu": "9506 91 90",
+      "us": "9506.91",
+      "confidence": "medium"
+    },
+    "/products/sports-outdoors/sports-wristbands-towel-sweatband-pair/": {
+      "product": "Sports Wristbands (Towel Sweatband, Pair)",
+      "group": "Sports & fitness equipment",
+      "hs6": "9506.91",
+      "eu": "9506 91 90",
+      "us": "9506.91",
+      "confidence": "medium"
+    },
+    "/products/sports-outdoors/tritan-sports-water-bottle-32oz/": {
+      "product": "Tritan Sports Water Bottle (32oz)",
+      "group": "Plastic bottles & flasks",
+      "hs6": "3923.30",
+      "eu": "3923 30 90",
+      "us": "3923.30",
+      "confidence": "high"
+    },
+    "/products/sports-outdoors/yoga-resistance-bands-latex-loop-set/": {
+      "product": "TPE Yoga Resistance Bands Set — 5 Colour-Coded Loops (10–40 lbs)",
+      "group": "Sports & fitness equipment",
+      "hs6": "9506.91",
+      "eu": "9506 91 90",
+      "us": "9506.91",
+      "confidence": "medium"
+    },
+    "/products/toys-games/automatic-bubble-machine-gun-led/": {
+      "product": "Automatic Bubble Machine Gun (LED)",
+      "group": "Toy machines & bubble toys",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "medium"
+    },
+    "/products/toys-games/building-blocks-set-small-particle-diy/": {
+      "product": "Building Blocks Set (Small Particle, DIY)",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/toys-games/flying-disc-175g-ultimate-pp/": {
+      "product": "Flying Disc 175g (Ultimate, PP)",
+      "group": "Other articles of plastics",
+      "hs6": "3926.90",
+      "eu": "3926 90 97",
+      "us": "3926.90",
+      "confidence": "medium"
+    },
+    "/products/toys-games/jigsaw-puzzle-1000-pieces-adult-oil-painting/": {
+      "product": "Jigsaw Puzzle 1000 Pieces (Adult, Oil Painting)",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/toys-games/magnetic-tiles-set-clear-3d-building/": {
+      "product": "Magnetic Tiles Set (Clear 3D Building)",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/toys-games/playing-cards-pvc-waterproof-jumbo-index/": {
+      "product": "Playing Cards (PVC Waterproof, Jumbo Index)",
+      "group": "Playing cards",
+      "hs6": "9504.40",
+      "eu": "9504 40 00",
+      "us": "9504.40",
+      "confidence": "high"
+    },
+    "/products/toys-games/plush-stuffed-animal-doll-cuddly-pillow/": {
+      "product": "Plush Stuffed Animal Doll (Cuddly Pillow)",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/toys-games/rc-mini-car-1-64-bluetooth-alloy/": {
+      "product": "RC Mini Car 1:64 (Bluetooth, Alloy)",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/toys-games/slime-kit-crystal-mud-diy-set/": {
+      "product": "Slime Kit (Crystal Mud DIY Set)",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    },
+    "/products/toys-games/wooden-dominoes-set-colorful-blocks/": {
+      "product": "Wooden Dominoes Set (Colorful Blocks)",
+      "group": "Toys & games",
+      "hs6": "9503.00",
+      "eu": "9503 00 95",
+      "us": "9503.00",
+      "confidence": "high"
+    }
+  }
+}

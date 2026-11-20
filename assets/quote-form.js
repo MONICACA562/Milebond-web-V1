@@ -70,6 +70,12 @@
   function prefillProduct(form) {
     var input = form.querySelector('input[name="product"]');
     if (!input || input.value) return;
+    /* Links that carry the request in the URL (e.g. the HS code page's per-row
+       "Ask us") fill the field directly. */
+    try {
+      var qp = new URLSearchParams(window.location.search).get('product');
+      if (qp) { input.value = qp.slice(0, 180); return; }
+    } catch (e) { /* noop */ }
     if (!/^\/products\/[^/]+\/[^/]+/.test(window.location.pathname)) return;
     var h1 = document.querySelector('h1');
     if (!h1) return;
