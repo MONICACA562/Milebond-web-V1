@@ -9,10 +9,12 @@
       "eu_duty": "6.5%",
       "eu_verified": true,
       "us_hts": "3926.90.99",
-      "us_duty": "",
+      "us_duty": "5.3%",
       "ad_cvd": "none known",
       "status": "verified",
-      "code_note": ""
+      "code_note": "",
+      "us_code_resolved": "3926.90.99",
+      "us_source": "USITC HTS general (column 1), retrieved 2026-11-20"
     },
     {
       "group": "Plastic tableware & kitchenware",
@@ -21,10 +23,12 @@
       "eu_duty": "",
       "eu_verified": false,
       "us_hts": "3924.10",
-      "us_duty": "",
+      "us_duty": "3.4%",
       "ad_cvd": "none known",
       "status": "working",
-      "code_note": "US tableware and kitchenware split at the 10-digit level"
+      "code_note": "US tableware and kitchenware split at the 10-digit level",
+      "us_code_resolved": "3924.10.40",
+      "us_source": "USITC HTS general (column 1), retrieved 2026-11-20"
     },
     {
       "group": "Plastic household & storage",
@@ -33,10 +37,12 @@
       "eu_duty": "",
       "eu_verified": false,
       "us_hts": "3924.90",
-      "us_duty": "",
+      "us_duty": "3.4%",
       "ad_cvd": "none known",
       "status": "working",
-      "code_note": ""
+      "code_note": "",
+      "us_code_resolved": "3924.90.56",
+      "us_source": "USITC HTS general (column 1), retrieved 2026-11-20"
     },
     {
       "group": "Toys & games",
@@ -45,10 +51,12 @@
       "eu_duty": "",
       "eu_verified": false,
       "us_hts": "9503.00",
-      "us_duty": "",
+      "us_duty": "Free",
       "ad_cvd": "none known",
       "status": "working",
-      "code_note": "Subheading depends on toy type (construction, dolls, puzzles)"
+      "code_note": "Subheading depends on toy type (construction, dolls, puzzles)",
+      "us_code_resolved": "9503.00.00",
+      "us_source": "USITC HTS general (column 1), retrieved 2026-11-20"
     },
     {
       "group": "Sports & fitness equipment",
@@ -57,10 +65,12 @@
       "eu_duty": "",
       "eu_verified": false,
       "us_hts": "9506.91",
-      "us_duty": "",
+      "us_duty": "4.6%",
       "ad_cvd": "none known",
       "status": "working",
-      "code_note": "9506 91 covers exercise and gym equipment; balls and rackets sit elsewhere in 9506"
+      "code_note": "9506 91 covers exercise and gym equipment; balls and rackets sit elsewhere in 9506",
+      "us_code_resolved": "9506.91.00",
+      "us_source": "USITC HTS general (column 1), retrieved 2026-11-20"
     },
     {
       "group": "Bags, luggage & cases",
@@ -69,10 +79,12 @@
       "eu_duty": "",
       "eu_verified": false,
       "us_hts": "4202.92",
-      "us_duty": "",
+      "us_duty": "6.3–17.6% by fibre",
       "ad_cvd": "none known",
       "status": "working",
-      "code_note": "Split by outer material: plastics 4202 92, textile 4202 92, leather 4202 91"
+      "code_note": "Split by outer material: plastics 4202 92, textile 4202 92, leather 4202 91",
+      "us_code_resolved": "4202.92",
+      "us_source": "USITC HTS general (column 1), retrieved 2026-11-20"
     },
     {
       "group": "Bed & table linen",
@@ -81,10 +93,12 @@
       "eu_duty": "",
       "eu_verified": false,
       "us_hts": "6302",
-      "us_duty": "",
+      "us_duty": "6–20.9% by fibre",
       "ad_cvd": "check — cotton and synthetic linen have active measures in some markets",
       "status": "working",
-      "code_note": "Subheading depends on fibre (cotton / synthetic) and on terry vs flat woven"
+      "code_note": "Subheading depends on fibre (cotton / synthetic) and on terry vs flat woven",
+      "us_code_resolved": "6302",
+      "us_source": "USITC HTS general (column 1), retrieved 2026-11-20"
     },
     {
       "group": "Notebooks & paper stationery",
@@ -93,10 +107,12 @@
       "eu_duty": "",
       "eu_verified": false,
       "us_hts": "4820.10",
-      "us_duty": "",
+      "us_duty": "Free",
       "ad_cvd": "none known",
       "status": "working",
-      "code_note": "Paper bags are 4819; boxes are 4819 — check per item"
+      "code_note": "Paper bags are 4819; boxes are 4819 — check per item",
+      "us_code_resolved": "4820.10.20",
+      "us_source": "USITC HTS general (column 1), retrieved 2026-11-20"
     },
     {
       "group": "Glassware",
@@ -105,10 +121,12 @@
       "eu_duty": "",
       "eu_verified": false,
       "us_hts": "7013.49",
-      "us_duty": "",
+      "us_duty": "7.2–22.5% by value",
       "ad_cvd": "check — glassware has AD measures for some origins",
       "status": "working",
-      "code_note": "Drinking glasses are 7013 37; other kitchen glassware 7013 49"
+      "code_note": "Drinking glasses are 7013 37; other kitchen glassware 7013 49",
+      "us_code_resolved": "7013.49",
+      "us_source": "USITC HTS general (column 1), retrieved 2026-11-20"
     },
     {
       "group": "Cables & connectors",
@@ -117,10 +135,12 @@
       "eu_duty": "",
       "eu_verified": false,
       "us_hts": "8544.42",
-      "us_duty": "",
+      "us_duty": "2.6%",
       "ad_cvd": "check — Section 301 lists cover many electronics",
       "status": "working",
-      "code_note": "Cables only. Chargers are static converters (8504), not 8544"
+      "code_note": "Cables only. Chargers are static converters (8504), not 8544",
+      "us_code_resolved": "8544.42.90",
+      "us_source": "USITC HTS general (column 1), retrieved 2026-11-20"
     },
     {
       "group": "Chargers & power adapters",
@@ -129,10 +149,12 @@
       "eu_duty": "",
       "eu_verified": false,
       "us_hts": "8504.40",
-      "us_duty": "",
+      "us_duty": "Free",
       "ad_cvd": "check — Section 301 lists cover many electronics",
       "status": "working",
-      "code_note": "Static converters. Wireless charging pads also fall in 8504"
+      "code_note": "Static converters. Wireless charging pads also fall in 8504",
+      "us_code_resolved": "8504.40.95",
+      "us_source": "USITC HTS general (column 1), retrieved 2026-11-20"
     },
     {
       "group": "Power banks & batteries",
@@ -141,10 +163,12 @@
       "eu_duty": "",
       "eu_verified": false,
       "us_hts": "8507.60.00",
-      "us_duty": "",
+      "us_duty": "3.4%",
       "ad_cvd": "check — lithium cells carry AD/CVD in some markets",
       "status": "working",
-      "code_note": "Lithium-ion accumulators. Shipping also needs UN38.3 test documentation"
+      "code_note": "Lithium-ion accumulators. Shipping also needs UN38.3 test documentation",
+      "us_code_resolved": "8507.60.00",
+      "us_source": "USITC HTS general (column 1), retrieved 2026-11-20"
     },
     {
       "group": "Brushes & cosmetic tools",
@@ -153,10 +177,12 @@
       "eu_duty": "",
       "eu_verified": false,
       "us_hts": "9603.29",
-      "us_duty": "",
+      "us_duty": "0.3¢ ea + 3.6%",
       "ad_cvd": "none known",
       "status": "working",
-      "code_note": "Manicure and pedicure instruments are 8214; stone tools are 6802"
+      "code_note": "Manicure and pedicure instruments are 8214; stone tools are 6802",
+      "us_code_resolved": "9603.29.80",
+      "us_source": "USITC HTS general (column 1), retrieved 2026-11-20"
     },
     {
       "group": "Ceramic tableware",
@@ -165,10 +191,12 @@
       "eu_duty": "",
       "eu_verified": false,
       "us_hts": "6912.00",
-      "us_duty": "",
+      "us_duty": "4.5–10% by item",
       "ad_cvd": "check — ceramics are subject to AD measures in some markets",
       "status": "working",
-      "code_note": "Porcelain is 6911; other ceramics 6912"
+      "code_note": "Porcelain is 6911; other ceramics 6912",
+      "us_code_resolved": "6912.00",
+      "us_source": "USITC HTS general (column 1), retrieved 2026-11-20"
     },
     {
       "group": "Steel & aluminium articles",
@@ -177,10 +205,13 @@
       "eu_duty": "",
       "eu_verified": false,
       "us_hts": "7326.90 / 7616.99",
-      "us_duty": "",
+      "us_duty": "2.9% steel / 2.5% aluminium",
       "ad_cvd": "likely — metal products frequently carry AD/CVD",
       "status": "working",
-      "code_note": "Steel articles 7326, aluminium articles 7616"
+      "code_note": "Steel articles 7326, aluminium articles 7616",
+      "us_code_resolved": "7326.90.86 / 7616.99",
+      "us_source": "USITC HTS general (column 1), retrieved 2026-11-20"
     }
-  ]
+  ],
+  "_us_note": "US rates are the HTSUS general (column 1) rate retrieved from USITC on 2026-11-20. They exclude Section 301 additional tariffs and any AD/CVD. EU rates require the full 10-digit TARIC line and are confirmed per order."
 }
