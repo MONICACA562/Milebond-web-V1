@@ -32,7 +32,34 @@ export async function onRequest(context) {
 `;
   }
 
+  // --- First-touch attribution (sitewide; read by quote-form.js) ---
+  if (!html.includes('mb_attr_v1')) {
+    injected += ATTR_SNIPPET;
+  }
+
   if (!injected) return response;
   html = html.replace('</head>', injected + '</head>');
   return new Response(html, response);
 }
+
+/* First-touch attribution, injected on every HTML page so the landing page is
+   recorded even when it is not a form page. Read back by assets/quote-form.js. */
+const ATTR_SNIPPET = `<script>
+(function(){try{
+  var K='mb_attr_v1',MAX=2592000000; /* 30 days */
+  var q=new URLSearchParams(location.search);
+  var keys=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','msclkid'];
+  var p={};keys.forEach(function(k){var v=q.get(k);if(v)p[k]=v});
+  var hasCampaign=Object.keys(p).length>0;
+  var prev=null;try{prev=JSON.parse(localStorage.getItem(K)||'null')}catch(e){}
+  if(prev&&(!prev.t||Date.now()-prev.t>MAX))prev=null;
+  if(!hasCampaign&&prev)return; /* keep the original touch */
+  localStorage.setItem(K,JSON.stringify({
+    t:Date.now(),
+    entry:location.pathname+location.search,
+    ref:document.referrer||'',
+    p:p
+  }));
+}catch(e){}})();
+</script>`;
+

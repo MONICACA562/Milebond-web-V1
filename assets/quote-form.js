@@ -4,19 +4,65 @@
   var forms = document.querySelectorAll('form[data-quote-form]');
   if (!forms.length) return;
 
-  function captureUtm(form) {
-    var field = form.querySelector('input[name="utm"]');
-    if (!field) return;
+  /* Attribution: the landing page records first touch sitewide
+     (functions/_middleware.js). Here it is copied into hidden fields so every
+     inquiry email carries where the buyer actually came from — including the
+     case where they landed on a product page and only later opened the form. */
+  var ATTR_KEY = 'mb_attr_v1';
+  var ATTR_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'msclkid'];
+
+  function ensureHidden(form, name) {
+    var el = form.querySelector('input[type="hidden"][name="' + name + '"]');
+    if (!el) {
+      el = document.createElement('input');
+      el.type = 'hidden';
+      el.name = name;
+      form.appendChild(el);
+    }
+    return el;
+  }
+
+  function channelOf(params, referrer) {
+    var src = String(params.utm_source || '').toLowerCase();
+    var med = String(params.utm_medium || '').toLowerCase();
+    if (src) return med ? src + ' / ' + med : src;
+    var host = '';
+    try { host = new URL(referrer).hostname.replace(/^www\./, ''); } catch (e) { host = ''; }
+    if (!host) return 'direct';
+    if (/google\./.test(host)) return 'google organic';
+    if (/bing\.|msn\./.test(host)) return 'bing organic';
+    if (/chatgpt|openai|perplexity|copilot|claude|gemini/.test(host)) return 'ai assistant';
+    if (/linkedin|lnkd\.in/.test(host)) return 'linkedin';
+    if (/mail\.google|outlook|yahoo|qq\.com|163\.com/.test(host)) return 'webmail';
+    return host;
+  }
+
+  function applyAttribution(form) {
+    var stored = null;
+    try { stored = JSON.parse(localStorage.getItem(ATTR_KEY) || 'null'); } catch (e) { stored = null; }
+
+    var params = (stored && stored.p) || {};
     try {
-      var params = new URLSearchParams(window.location.search);
-      var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'];
-      var parts = [];
-      keys.forEach(function (k) {
-        var v = params.get(k);
-        if (v) parts.push(k + '=' + v);
+      var q = new URLSearchParams(window.location.search);
+      ATTR_PARAMS.forEach(function (k) {
+        var v = q.get(k);
+        if (v) params[k] = v;
       });
-      if (parts.length) field.value = parts.join(' | ');
     } catch (e) { /* noop */ }
+
+    var parts = [];
+    Object.keys(params).forEach(function (k) {
+      if (params[k]) parts.push(k + '=' + params[k]);
+    });
+
+    ensureHidden(form, 'utm').value = parts.join(' | ');
+    ensureHidden(form, 'entry_page').value =
+      (stored && stored.entry) || (window.location.pathname + window.location.search);
+    ensureHidden(form, 'referrer').value = (stored && stored.ref) || document.referrer || '';
+    ensureHidden(form, 'first_visit').value =
+      stored && stored.t ? new Date(stored.t).toISOString().slice(0, 10) : '';
+    ensureHidden(form, 'traffic').value =
+      channelOf(params, (stored && stored.ref) || document.referrer || '');
   }
 
   /* On a product detail page, pre-fill "What do you want to source?" from the page H1
@@ -68,7 +114,7 @@
       return false;
     }
 
-    captureUtm(form);
+    applyAttribution(form);
     if (pageUrl) pageUrl.value = window.location.href;
     prefillProduct(form);
 

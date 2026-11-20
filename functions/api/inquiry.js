@@ -47,7 +47,11 @@ export async function onRequest(context) {
     sku: clean(data.get('sku')),
     message: clean(data.get('message')),
     source: clean(data.get('source_page')) || clean(data.get('page_url')),
-    utm: clean(data.get('utm'))
+    utm: clean(data.get('utm')),
+    traffic: clean(data.get('traffic')),
+    entry: clean(data.get('entry_page')),
+    referrer: clean(data.get('referrer')),
+    firstVisit: clean(data.get('first_visit'))
   };
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email) || !f.product) {
@@ -186,7 +190,9 @@ function notificationHtml(f) {
     row('Company', f.company) + row('Quantity', f.qty) + row('Category', f.category) +
     row('Service', f.service) + row('Timeline', f.timeline) + row('Sales channel', f.channel) +
     row('Current supplier', f.supplier) + row('Target price', f.price) + row('SKU', f.sku) +
-    row('Requirements', f.message) + row('Source page', f.source) + row('UTM', f.utm) +
+    row('Requirements', f.message) + row('Source page', f.source) +
+    row('Traffic source', f.traffic) + row('Entry page', f.entry) +
+    row('Referrer', f.referrer) + row('First visit', f.firstVisit) + row('UTM', f.utm) +
     '</table><div style="padding:18px 24px">' +
     '<a href="mailto:' + esc(f.email) + '" style="display:inline-block;background:#008138;color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:11px 20px;border-radius:8px">Reply to buyer</a>' +
     '<span style="color:#94a3b8;font-size:12px;margin-left:12px">Target: first reply within 24h (avg 6h)</span>' +
@@ -208,6 +214,10 @@ function notificationText(f) {
     'SKU: ' + (f.sku || '-'),
     'Requirements: ' + (f.message || '-'),
     'Source: ' + (f.source || '-'),
+    'Traffic source: ' + (f.traffic || '-'),
+    'Entry page: ' + (f.entry || '-'),
+    'Referrer: ' + (f.referrer || '-'),
+    'First visit: ' + (f.firstVisit || '-'),
     'UTM: ' + (f.utm || '-')
   ].join('\n');
 }
