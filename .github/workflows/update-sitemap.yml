@@ -92,6 +92,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to sitemap.xml"
           else
-            git commit -m "chore: auto-update sitemap.xml [skip ci]"
+            git commit -m "chore: auto-update sitemap.xml"
             git push
           fi
