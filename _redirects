@@ -42,3 +42,16 @@
 /quality-control/ /services/quality-control/ 301
 /quality-control /services/quality-control/ 301
 /quality-control/* /services/quality-control/:splat 301
+
+# Case study index lives at /case-studies (no trailing-slash directory).
+/case-studies/ /case-studies 301
+
+# Legacy .html form of the QC service page.
+/services/quality-control.html /services/quality-control/ 301
+
+# Retired /categories tree (replaced by /products/{category}).
+/categories/home-kitchen/* /products/home-kitchen 301
+/categories/* /all-products 301
+
+# Category page lives at the flat .html URL, not a directory.
+/products/home-kitchen/ /products/home-kitchen 301
