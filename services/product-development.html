@@ -150,18 +150,12 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 .hero{
   position:relative;min-height:640px;
   display:flex;align-items:center;
-  background:var(--navy);
+  background:linear-gradient(135deg,#3a3a3a 0%,#444444 50%,#6b6b6b 100%);
   overflow:hidden;
 }
-.hero-bg{
-  position:absolute;inset:0;
-  background:url('https://aka.doubaocdn.com/s/tAuCBlFl7s') center/cover no-repeat;
-  opacity:.35;
-}
-.hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(105deg,rgba(68,68,68,.92) 0%,rgba(68,68,68,.7) 50%,rgba(68,68,68,.4) 100%);
-}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
+.hero-bg{display:none}
+.hero-overlay{display:none}
 .hero-content{
   position:relative;z-index:2;
   max-width:var(--container);margin:0 auto;padding:80px 24px;
