@@ -1,0 +1,109 @@
+{
+  "version": "2026-11-24",
+  "status": "approved-for-public-use-except-items-marked-pending",
+  "currency": "USD",
+  "quotation_policy": {
+    "basis": "itemized",
+    "separate_lines": ["product_cost", "service_fee", "additional_services", "third_party_costs"],
+    "confirmation": "All applicable fees are explained and confirmed before an order is placed.",
+    "status": "approved"
+  },
+  "order_management_policy": {
+    "scope": "Supplier follow-up, quotation comparison, sample coordination, inspection coordination, receiving and consolidation coordination, repeat-order follow-up.",
+    "fee": "3-8% of coordinated order value",
+    "ownership_note": "Customer and Milebond agree in writing whether the customer buys directly or Milebond coordinates purchasing. Coordinating a purchase does not by itself make Milebond the legal owner of the goods.",
+    "status": "approved"
+  },
+  "full_sourcing_policy": {
+    "scope": "Supplier search, factory selection, quotation comparison, price negotiation, sample coordination and order follow-up.",
+    "fee": "3-8% of order value",
+    "order_value_definition": "Product cost of the goods Milebond sources for that order.",
+    "status": "approved"
+  },
+  "oem_policy": {
+    "scope": "Private label and OEM development from 50 pcs, including sampling, tooling coordination and production hand-off.",
+    "fee": "3-8% of order value",
+    "separate": ["tooling", "molds", "certification", "freight"],
+    "status": "approved"
+  },
+  "standalone_service_policy": {
+    "applies_to": ["factory_audit", "quality_inspection", "kitting", "warehousing", "ddp_shipping"],
+    "fee": "Quoted per confirmed project scope",
+    "status": "approved"
+  },
+  "kitting_policy": {
+    "assembly_fee": "Quoted per set, based on component count, sub-assembly steps and packing complexity.",
+    "minimum": "Custom kitting starts at 50 sets.",
+    "sourcing_fee": "3-8% on the value of components Milebond sources only.",
+    "no_double_charge": "A step already included in the agreed kitting quote is not charged again unless the work exceeds the agreed scope.",
+    "separate": ["packaging_material_at_cost", "extra_labeling", "extended_storage"],
+    "status": "approved"
+  },
+  "warehouse_policy": {
+    "location": "1,000+ sqm warehouse in the Yiwu-Jinhua area",
+    "free_storage_days": 20,
+    "free_storage_basis": "calendar_days",
+    "free_storage_clock_start": "When the goods are received and checked into the warehouse.",
+    "free_storage_eligibility": "Orders being consolidated for one shipment.",
+    "after_free_period": "Storage is quoted by CBM, pallet or carton as agreed and approved before it accrues.",
+    "long_term_storage": "Quoted separately.",
+    "status": "approved"
+  },
+  "conditional_fee_policy": {
+    "principle": "Quoted for written approval before the work starts. No conditional fee is applied silently.",
+    "triggers": [
+      "additional_suppliers",
+      "additional_skus",
+      "split_purchase_orders",
+      "partial_shipments",
+      "urgent_handling",
+      "re_inspection",
+      "extended_storage",
+      "additional_warehouse_handling",
+      "supplier_replacement",
+      "additional_sample_rounds",
+      "specification_changes"
+    ],
+    "amounts": "pending_owner_approval",
+    "status": "approved_as_policy"
+  },
+  "third_party_cost_policy": {
+    "passed_through": ["freight", "duty", "taxes", "testing", "certification", "tooling", "molds"],
+    "presentation": "Separate lines with the supporting document set agreed for the project.",
+    "status": "approved"
+  },
+  "repeat_order_policy": {
+    "definition": "Same supplier, same specification and same BOM.",
+    "fee": "Standard 3-8% service fee applies to each order; no separate repeat-order fee.",
+    "supplier_change": "Treated as a new sourcing project.",
+    "new_sampling_or_negotiation": "Quoted separately.",
+    "status": "approved"
+  },
+  "modified_order_policy": {
+    "minor_pre_production": "Coordinated within the confirmed scope.",
+    "after_sample_or_production": "Re-quoted before work continues.",
+    "material_supplier_bom_assembly_change": "Re-quoted because cost and lead time change.",
+    "extra_sampling_or_tooling": "Quoted separately.",
+    "status": "approved"
+  },
+  "order_boundaries": {
+    "standard_supplier_count": "pending_owner_approval",
+    "standard_sku_count": "pending_owner_approval",
+    "split_pos_and_partial_shipments": "Quoted separately and approved before work starts.",
+    "urgent_orders": "Quoted separately and approved before work starts.",
+    "cancellation": "Handled under the agreed order terms.",
+    "status": "partially_pending"
+  },
+  "disclosure_policy": {
+    "approved_statement": "We provide itemized quotations that distinguish product costs, Milebond service fees, and applicable additional expenses. Supplier quotation details and supporting price information can be shared subject to supplier confidentiality, project arrangements, and applicable agreements.",
+    "prohibited_claims": [
+      "100% factory price transparency",
+      "Always direct factory pricing",
+      "No hidden markups guaranteed",
+      "Every supplier's original price is always disclosed",
+      "not intentionally hidden"
+    ],
+    "margin_and_rebate_statements": "require explicit owner approval",
+    "status": "approved"
+  }
+}

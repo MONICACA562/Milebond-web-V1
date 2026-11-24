@@ -1,0 +1,54 @@
+{
+  "version": "2026-11-24",
+  "policy_source": "/data/pricing-policy.json",
+  "STANDARDIZED_PRICING_COPY": {
+    "quotation_description": {
+      "text": "We provide itemized quotations that distinguish product costs, Milebond service fees, and applicable additional expenses. Supplier quotation details and supporting price information can be shared subject to supplier confidentiality, project arrangements, and applicable agreements.",
+      "used_on": ["/all-services", "/services/sourcing-fees-pricing", "/services/product-sourcing", "/services/private-label-oem", "/services/kitting-assembly", "/faq", "/about", "/index"]
+    },
+    "order_management_description": {
+      "text": "Order Management starts when the supplier and price are already agreed: we coordinate the order, inspection, receiving and shipment preparation.",
+      "used_on": ["/all-services", "/services/sourcing-fees-pricing"]
+    },
+    "full_sourcing_description": {
+      "text": "Full Sourcing covers supplier search, factory selection and price negotiation before the order.",
+      "used_on": ["/all-services", "/services/sourcing-fees-pricing", "/services/product-sourcing"]
+    },
+    "oem_description": {
+      "text": "Your logo, packaging and specification, produced from 50 pcs. We manage sampling, tooling and the production hand-off.",
+      "used_on": ["/all-services", "/services/private-label-oem"]
+    },
+    "additional_service_description": {
+      "text": "Additional services are charged separately based on the actual scope of work and confirmed before work starts.",
+      "used_on": ["/all-services", "/services/sourcing-fees-pricing", "/faq"]
+    },
+    "conditional_fee_disclosure": {
+      "text": "Conditional fees — additional suppliers, extra inspection rounds, urgent handling, extended storage, specification changes or additional warehouse handling — are quoted for your written approval before they are incurred.",
+      "used_on": ["/all-services", "/services/sourcing-fees-pricing"]
+    },
+    "factory_price_disclosure": {
+      "text": "We provide itemized quotations that distinguish product costs, Milebond service fees, and applicable additional expenses. Supplier quotation details and supporting price information can be shared subject to supplier confidentiality, project arrangements, and applicable agreements.",
+      "used_on": ["/all-services", "/services/sourcing-fees-pricing", "/services/product-sourcing", "/services/private-label-oem", "/services/kitting-assembly", "/products/home-kitchen/stainless-steel-utensils", "/products/home-kitchen/glassware-drinkware"]
+    },
+    "third_party_cost_disclosure": {
+      "text": "International freight, destination duty and taxes, third-party testing and certification, tooling and mold costs, and courier or warehouse charges incurred outside our service scope are itemized separately from the service fee.",
+      "used_on": ["/all-services", "/services/sourcing-fees-pricing"]
+    },
+    "fee_approval_statement": {
+      "text": "All applicable fees are explained and confirmed before an order is placed.",
+      "used_on": ["/all-services", "/services/sourcing-fees-pricing", "/faq", "/index"]
+    },
+    "repeat_order_disclosure": {
+      "text": "A repeat order keeps the same supplier, specification and BOM, and the standard 3–8% service fee applies. There is no separate repeat-order fee. If the supplier changes, or new sampling and negotiation are required, it is treated as a new sourcing project.",
+      "used_on": ["/all-services", "/services/sourcing-fees-pricing"]
+    },
+    "storage_disclosure": {
+      "text": "20 calendar days free for consolidation, starting when the goods are received and checked into our Jinhua warehouse. After 20 days, storage is quoted by CBM, pallet or carton as agreed and approved before it accrues. Long-term or special storage is quoted separately.",
+      "used_on": ["/all-services", "/services/sourcing-fees-pricing", "/services/warehousing-shipping"]
+    },
+    "kitting_fee_disclosure": {
+      "text": "Assembly is quoted per set, based on component count, sub-assembly steps and packing complexity; custom kitting starts at 50 sets. Components Milebond sources carry the standard 3–8% service fee. Work already included in the agreed kitting quote is not charged again.",
+      "used_on": ["/all-services", "/services/sourcing-fees-pricing", "/services/kitting-assembly"]
+    }
+  }
+}
