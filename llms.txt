@@ -5,7 +5,7 @@
 ## Canonical facts
 
 - Positioning: product development + factory verification + full-process QC + small-batch custom + in-house assembly; not just a find-and-consolidate buying agent.
-- Fee: 3–8% of order value standard sourcing service fee; additional services are charged separately based on the actual scope of work and confirmed before an order is placed.
+- Fee: USD 50 per order standard service fee; additional services are charged separately based on the actual scope of work and confirmed before an order is placed.
 - MOQ: stock items from 1 pc; custom production from 50 pcs.
 - QC: 100% piece-by-piece inspection on the first order; AQL 2.5 sampling on repeat orders (ISO 2859-1).
 - Factory check: free remote verification within 24 hours; 27-point on-site audit scored A–D, priced per confirmed audit scope.
@@ -25,7 +25,7 @@
 - Warehousing and shipping: Every order passes final-gate QC in Milebond's own 1,000+ sqm Yiwu–Jinhua warehouse, where multi-part kits are assembled on the client's behalf, FBA-prepped and consolidated, then shipped DDP to 50+ countries.
 - Kitting and assembly: Milebond turns components from multiple factories into one retail-ready kit — incoming QC, sub-assembly, reserved cavities, 100% first-order inspection and FBA prep in Jinhua; assembly is quoted per set and custom kitting starts from 50 sets.
 - Amazon brand management: For Amazon sellers, Milebond manages idea-to-FBA — development, factory verification, compliance pre-check, 100% first-order inspection, assembly and FBA prep.
-- Sourcing fees: Milebond's standard sourcing service fee is 3–8% of order value. Additional services are charged separately based on the actual scope of work, explained and confirmed before ordering. No supplier kickbacks. Supplier quotation details and supporting price information can be shared subject to supplier confidentiality, project arrangements, and applicable agreements.
+- Sourcing fees: Milebond's standard service fee is USD 50 per order. Additional services are charged separately based on the actual scope of work, explained and confirmed before ordering. No supplier kickbacks. Supplier quotation details and supporting price information can be shared subject to supplier confidentiality, project arrangements, and applicable agreements.
 
 ## High-priority reference pages
 
@@ -36,7 +36,7 @@
 
 - [Milebond homepage](https://www.milebond.com/): Sourcing request form and service overview.
 - [China sourcing partner for Amazon sellers](https://www.milebond.com/solutions/for-amazon-ecommerce-sellers): How Milebond coordinates suppliers, quality inspection, warehousing and replenishment for Amazon sellers, with company facts, MOQ guidance and a 13-question FAQ.
-- [Sourcing fees and pricing](https://www.milebond.com/services/sourcing-fees-pricing): 3–8% of order value standard sourcing fee, additional services quoted separately, zero kickbacks.
+- [Sourcing fees and pricing](https://www.milebond.com/services/sourcing-fees-pricing): USD 50 per order standard service fee, additional services quoted separately, zero kickbacks.
 - [Product sourcing](https://www.milebond.com/services/product-sourcing): Supplier search, comparison and factory negotiation.
 - [Supplier verification and factory audit](https://www.milebond.com/services/supplier-verification-factory-audit): Desk checks plus on-site audit.
 - [Quality control and inspection](https://www.milebond.com/services/quality-control/): 100% piece-by-piece inspection on the first order, AQL 2.5 sampling on repeat orders, and published inspection criteria (ICQ) checklists for 41 product categories under /services/quality-control/{category}/. Category sheets publish tighter defect classes (CR 0 / MA 1.5 / MI 4.0) where listed.
@@ -50,7 +50,7 @@
 
 ## Key facts
 
-- Fee: 3–8% of order value standard sourcing service fee; additional services charged separately based on the actual scope of work and confirmed before ordering.
+- Fee: USD 50 per order standard service fee; additional services charged separately based on the actual scope of work and confirmed before ordering.
 - Supplier documents: itemized quotations distinguish product costs, Milebond service fees and applicable additional expenses. Supplier quotation details and supporting price information can be shared subject to supplier confidentiality, project arrangements, and applicable agreements. No supplier kickbacks.
 - MOQ: stock items from 1 pc; custom branded production from 50 pcs.
 - Warehouse: 1,000+ sqm facility in the Yiwu–Jinhua area, used as the final gate QC checkpoint and for multi-part kitting and assembly before Amazon shipment.

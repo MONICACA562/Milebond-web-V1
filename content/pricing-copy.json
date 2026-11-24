@@ -2,13 +2,25 @@
   "version": "2026-11-24",
   "policy_source": "/data/pricing-policy.json",
   "STANDARDIZED_PRICING_COPY": {
+    "standard_service_fee": {
+      "text": "Our standard service fee is USD 50 per order. Additional services are quoted separately according to the actual scope of work.",
+      "used_on": ["/all-services", "/services/sourcing-fees-pricing", "/services/order-management", "/faq", "/index"]
+    },
+    "charging_unit": {
+      "text": "The standard service fee is charged per order, not separately for each SKU or supplier.",
+      "used_on": ["/all-services", "/services/sourcing-fees-pricing", "/services/order-management", "/faq"]
+    },
+    "large_order_disclosure": {
+      "text": "Service fees may be adjusted for large-value or operationally complex orders based on order value and additional coordination requirements. Any adjustment is communicated and agreed before the order proceeds.",
+      "used_on": ["/services/sourcing-fees-pricing", "/services/order-management"]
+    },
     "quotation_description": {
       "text": "We provide itemized quotations that distinguish product costs, Milebond service fees, and applicable additional expenses. Supplier quotation details and supporting price information can be shared subject to supplier confidentiality, project arrangements, and applicable agreements.",
-      "used_on": ["/all-services", "/services/sourcing-fees-pricing", "/services/product-sourcing", "/services/private-label-oem", "/services/kitting-assembly", "/faq", "/about", "/index"]
+      "used_on": ["/all-services", "/services/sourcing-fees-pricing", "/services/order-management", "/services/product-sourcing", "/services/private-label-oem", "/services/kitting-assembly", "/faq", "/about", "/index"]
     },
     "order_management_description": {
       "text": "Order Management starts when the supplier and price are already agreed: we coordinate the order, inspection, receiving and shipment preparation.",
-      "used_on": ["/all-services", "/services/sourcing-fees-pricing"]
+      "used_on": ["/all-services", "/services/sourcing-fees-pricing", "/services/order-management"]
     },
     "full_sourcing_description": {
       "text": "Full Sourcing covers supplier search, factory selection and price negotiation before the order.",
@@ -39,7 +51,7 @@
       "used_on": ["/all-services", "/services/sourcing-fees-pricing", "/faq", "/index"]
     },
     "repeat_order_disclosure": {
-      "text": "A repeat order keeps the same supplier, specification and BOM, and the standard 3–8% service fee applies. There is no separate repeat-order fee. If the supplier changes, or new sampling and negotiation are required, it is treated as a new sourcing project.",
+      "text": "A repeat order keeps the same supplier, specification and BOM, and the standard USD 50 per order service fee applies. There is no separate repeat-order fee. If the supplier changes, or new sampling and negotiation are required, it is treated as a new sourcing project.",
       "used_on": ["/all-services", "/services/sourcing-fees-pricing"]
     },
     "storage_disclosure": {
@@ -47,8 +59,12 @@
       "used_on": ["/all-services", "/services/sourcing-fees-pricing", "/services/warehousing-shipping"]
     },
     "kitting_fee_disclosure": {
-      "text": "Assembly is quoted per set, based on component count, sub-assembly steps and packing complexity; custom kitting starts at 50 sets. Components Milebond sources carry the standard 3–8% service fee. Work already included in the agreed kitting quote is not charged again.",
+      "text": "Assembly is quoted per set, based on component count, sub-assembly steps and packing complexity; custom kitting starts at 50 sets. Where Milebond sources components, the standard USD 50 per order service fee applies; it is not charged per component. Work already included in the agreed kitting quote is not charged again.",
       "used_on": ["/all-services", "/services/sourcing-fees-pricing", "/services/kitting-assembly"]
+    },
+    "quality_report_disclosure": {
+      "text": "QC report included with every managed order. Inspection scope depends on product type, order requirements and the agreed quality control plan. Additional specialized inspections, laboratory testing or third-party testing may incur separate charges.",
+      "used_on": ["/services/quality-control", "/services/sourcing-fees-pricing", "/services/order-management"]
     }
   }
 }
