@@ -20,7 +20,7 @@
       "type": "service",
       "translations": {
         "en": { "path": "/services/kitting-assembly", "status": "live" },
-        "de": { "path": "/de/services/kitting-assembly", "status": "planned" }
+        "de": { "path": "/de/services/kitting-assembly", "status": "draft" }
       }
     }
   ]

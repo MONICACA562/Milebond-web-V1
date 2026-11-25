@@ -54,12 +54,17 @@ jobs:
           # Drafts and planned locales are ignored, so no alternate points at a
           # page that does not exist yet.
           alternates = {}
+          EXCLUDE_PATHS = set()
           try:
               with open('data/i18n-pages.json', encoding='utf-8') as fh:
                   registry = json.load(fh)
               live = {code for code, cfg in (registry.get('locales') or {}).items()
                       if cfg.get('status') == 'live'}
               default = registry.get('defaultLocale', 'en')
+              for page in registry.get('pages', []):
+                  for cfg in (page.get('translations') or {}).values():
+                      if cfg.get('status') != 'live':
+                          EXCLUDE_PATHS.add((cfg.get('path') or '/').rstrip('/') or '/')
               for page in registry.get('pages', []):
                   translations = {code: cfg for code, cfg in (page.get('translations') or {}).items()
                                   if code in live and cfg.get('status') == 'live'}
@@ -94,6 +99,8 @@ jobs:
                       # Serving layer 308s *.html to the clean URL
                       path = '/' + rel[:-5]
                   if path.rstrip('/') in REDIRECTED:
+                      continue
+                  if (path.rstrip('/') or '/') in EXCLUDE_PATHS:
                       continue
                   loc = 'https://www.milebond.com' + path
                   urls.append((loc, last_commit_date(rel)))

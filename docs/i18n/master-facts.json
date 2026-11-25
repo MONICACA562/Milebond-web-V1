@@ -13,12 +13,9 @@
       "detail": "Warehouse in the Yiwu–Jinhua area used for receiving, inspection, kitting and consolidation."
     },
     "amazon_brands_served": {
-      "status": "conflict",
-      "values_in_use": [
-        { "value": "50+ Amazon brands", "where": "live English pages (14 occurrences)", "verified": false },
-        { "value": "40+ Amazon brands", "where": "approved multilingual brief", "verified": false }
-      ],
-      "rule": "Cumulative brands served, never described as active clients. Owner must confirm one number before any localised page states it."
+      "status": "confirmed",
+      "value": "40+ Amazon brands",
+      "rule": "Cumulative brands served, never described as active clients. Owner confirmed 40+ on 2026-11-25; all public languages must use 40+."
     },
     "supply_chain_experience": {
       "status": "confirmed",
@@ -131,13 +128,6 @@
     }
   ],
   "known_conflicts": [
-    {
-      "id": "amazon_brands_count",
-      "description": "Live pages state 50+ Amazon brands; the approved brief states 40+.",
-      "pages": ["site-wide claims"],
-      "proposed_action": "Owner confirms one number, then update every language consistently.",
-      "status": "pending-owner"
-    },
     {
       "id": "llms_custom_50_pcs",
       "description": "llms.txt states 'Custom runs start at 50 pcs', which conflicts with the MOQ rule.",
