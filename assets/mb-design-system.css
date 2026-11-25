@@ -1,0 +1,127 @@
+/* ==========================================================================
+   Milebond Design System — Foundation
+   Opt-in tokens and primitives. No global element selectors.
+   Load only on pages that adopt the system.
+   ========================================================================== */
+
+:root {
+  /* Brand colours (confirmed) */
+  --mb-orange: #ff6000;
+  --mb-orange-ink: #b03f00;   /* accessible orange for small text on light and beige backgrounds (5.2:1) */
+  --mb-orange-soft: #ffb27a;  /* accessible orange for small text on charcoal (6.4:1) */
+  --mb-charcoal: #3a3a3a;
+  --mb-beige: #f7efe0;
+  --mb-warm-gray: #f6f4ef;
+  --mb-white: #ffffff;
+  --mb-border: #e9e2d4;
+  --mb-text: #444444;
+  --mb-muted: #6b6b6b;
+
+  /* Typography */
+  --mb-font-sans: 'Inter', Roboto, 'Open Sans', system-ui, -apple-system, sans-serif;
+  --mb-fw-regular: 400;
+  --mb-fw-medium: 500;
+  --mb-fw-semibold: 600;
+  --mb-fw-bold: 700;
+  --mb-fs-h1: 44px;
+  --mb-fs-h1-sm: 36px;
+  --mb-fs-h2: 32px;
+  --mb-fs-h2-sm: 28px;
+  --mb-fs-h3: 22px;
+  --mb-fs-h3-sm: 20px;
+  --mb-fs-body: 17px;
+  --mb-fs-body-sm: 16px;
+  --mb-fs-table: 16px;
+  --mb-fs-caption: 16px;
+  --mb-lh-heading: 1.2;
+  --mb-lh-body: 1.7;
+
+  /* Layout */
+  --mb-container: 1160px;
+  --mb-measure: 760px;
+  --mb-answer: 820px;
+  --mb-section-y: 88px;
+  --mb-section-y-sm: 56px;
+
+  /* Surfaces */
+  --mb-radius: 3px;
+  --mb-shadow-hover: 0 6px 20px rgba(58, 58, 58, .08);
+}
+
+/* Primitives — apply explicitly by class */
+
+.mb-container {
+  max-width: var(--mb-container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.mb-measure { max-width: var(--mb-measure); }
+.mb-answer { max-width: var(--mb-answer); }
+
+.mb-eyebrow {
+  font-family: var(--mb-font-sans);
+  font-size: 11px;
+  font-weight: var(--mb-fw-bold);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--mb-orange-ink);
+  margin: 0 0 10px;
+}
+
+.mb-caption {
+  font-family: var(--mb-font-sans);
+  font-size: var(--mb-fs-caption);
+  line-height: 1.55;
+  color: var(--mb-muted);
+}
+
+.mb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: var(--mb-radius);
+  border: 1px solid transparent;
+  font-family: var(--mb-font-sans);
+  font-size: 19px;
+  font-weight: var(--mb-fw-bold);
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+/* White on #ff6000 = 3.0:1, which passes WCAG AA at 19px bold (large text). */
+.mb-btn--primary {
+  background: var(--mb-orange);
+  color: var(--mb-white);
+}
+.mb-btn--primary:hover { background: #e65600; }
+
+.mb-btn--secondary {
+  background: var(--mb-white);
+  color: var(--mb-charcoal);
+  border-color: var(--mb-border);
+}
+.mb-btn--secondary:hover { border-color: var(--mb-charcoal); }
+
+.mb-btn--on-dark {
+  background: transparent;
+  color: var(--mb-white);
+  border-color: rgba(255, 255, 255, .38);
+}
+.mb-btn--on-dark:hover { border-color: var(--mb-white); }
+
+.mb-card {
+  background: var(--mb-white);
+  border: 1px solid var(--mb-border);
+  border-radius: var(--mb-radius);
+}
+
+.mb-card--flat { border-left: 0; border-right: 0; }
+
+@media (max-width: 768px) {
+  .mb-btn { width: 100%; }
+  .mb-container { padding: 0 20px; }
+}
