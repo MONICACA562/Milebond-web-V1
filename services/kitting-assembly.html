@@ -911,265 +911,267 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 @media(max-width:768px){.mb-fab-mail{display:none}}
 </style>
 <style id="kit-upgrade-css">
-/* ============ KITTING PAGE UPGRADE ============ */
-.kit-hero{position:relative;background:linear-gradient(135deg,#3a3a3a 0%,#444444 55%,#6b6b6b 100%);color:#fff;overflow:hidden}
-.kit-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
-.kit-hero-inner{position:relative;z-index:2;max-width:var(--container);margin:0 auto;padding:72px 24px 64px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-.kit-hero h1{font-size:clamp(30px,4vw,50px);color:#fff;letter-spacing:-.02em;margin:16px 0 14px}
-.kit-hero-sub{font-family:'Fraunces',sans-serif;font-size:clamp(18px,2.2vw,24px);color:#ffa55b;margin:0 0 16px}
-.kit-hero-body{font-size:15.5px;color:#fff3d6;line-height:1.7;max-width:600px;margin:0 0 10px}
-.kit-hero-keywords{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 26px}
-.kit-hero-keywords span{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;font-size:12.5px;padding:7px 12px;border-radius:4px}
+/* ============ KITTING PAGE — VISUAL SYSTEM (page-scoped) ============ */
+.kit-hero{background:#3a3a3a;color:#fff;position:relative}
+.kit-hero-inner{max-width:1180px;margin:0 auto;padding:88px 24px 60px}
+.kit-hero .ship-tag{font-family:'Inter',system-ui,sans-serif;font-weight:700;letter-spacing:.14em;color:#ffa55b;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);padding:6px 10px;border-radius:3px;font-size:11px}
+.kit-hero h1{font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:clamp(32px,4vw,47px);font-weight:700;line-height:1.15;letter-spacing:-.02em;color:#fff;max-width:920px;margin:22px 0 20px}
+.kit-hero-line{font-size:clamp(20px,2.3vw,27px);font-weight:600;line-height:1.35;letter-spacing:-.01em;color:#ffa55b;max-width:760px;margin:0 0 20px}
+.kit-hero-body{font-size:17px;line-height:1.7;color:rgba(255,255,255,.82);max-width:760px;margin:0 0 26px}
+.kit-hero-keywords{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+.kit-hero-keywords span{border:1px solid rgba(255,255,255,.22);color:#fff;font-size:13px;font-weight:500;padding:7px 12px;border-radius:3px;background:transparent}
 .kit-hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.kit-hero-note{font-size:12.5px;color:rgba(255,255,255,.62);margin-top:18px;line-height:1.6}
-.kit-hero-art{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);padding:18px}
-.kit-hero-art svg{width:100%;height:auto;display:block}
-.kit-section{padding:84px 0}
+.kit-hero .btn,.kit-section .btn,.kit-cta .btn{font-family:'Inter',system-ui,sans-serif;font-weight:600;font-size:15px;letter-spacing:0}
+.kit-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px;padding-top:26px;border-top:1px solid rgba(255,255,255,.16);max-width:1000px}
+.kit-metric b{display:block;font-size:29px;font-weight:700;letter-spacing:-.02em;line-height:1.1;color:#fff}
+.kit-metric span{display:block;margin-top:6px;font-size:14px;line-height:1.55;color:rgba(255,255,255,.72)}
+
+.kit-section{padding:88px 0;scroll-margin-top:88px}
 .kit-section.alt{background:#fff}
 .kit-section.cream{background:var(--cream)}
-.kit-wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
-.kit-head{max-width:800px;margin-bottom:40px}
-.kit-head .ship-tag{margin-bottom:14px}
-.kit-head h2{font-size:clamp(26px,3.2vw,38px);margin:0 0 12px;letter-spacing:-.015em}
-.kit-head p{font-size:16.5px;color:var(--gray-600);line-height:1.7;margin:0}
-.kit-closing{font-family:'Fraunces',sans-serif;font-size:19px;color:var(--navy);margin:26px 0 0;padding-top:18px;border-top:1px solid var(--gray-200)}
-.kit-problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-200);border:1px solid var(--gray-200)}
-.kit-problem{background:#fff;padding:22px 20px}
-.kit-problem b{display:block;font-size:15px;color:var(--navy);margin-bottom:6px}
-.kit-problem p{font-size:13.5px;color:var(--gray-600);line-height:1.65;margin:0}
-.kit-flow{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;margin-top:34px;align-items:stretch}
-.kit-flow-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-400);margin:0 0 10px}
-.kit-suppliers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.kit-supplier{border:1px solid var(--gray-200);background:#fff;padding:14px 16px;font-size:13.5px;font-weight:700;color:var(--navy)}
-.kit-supplier small{display:block;font-weight:400;color:var(--gray-600);font-size:12px;margin-top:2px}
-.kit-flow-mid{border:1px solid var(--gray-200);background:#fff;padding:18px;display:flex;flex-direction:column;justify-content:center}
-.kit-flow-arrow{text-align:center;color:var(--orange);font-size:18px;line-height:1;margin:6px 0}
-.kit-hub{border:2px solid var(--orange);padding:18px;text-align:center}
-.kit-hub strong{display:block;font-size:15px;color:var(--navy)}
-.kit-hub span{font-size:12px;color:var(--gray-600)}
-.kit-flow-steps{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
-.kit-flow-steps span{border:1px solid var(--gray-200);background:var(--cream);padding:7px 10px;font-size:11.5px;font-weight:700;color:var(--navy)}
-.kit-steps{display:grid;grid-template-columns:repeat(6,1fr);border-top:2px solid var(--gray-200)}
-.kit-step{padding:24px 16px 0;border-right:1px solid var(--gray-200);position:relative}
-.kit-step:last-child{border-right:none}
-.kit-step::before{content:'';position:absolute;top:-6px;left:16px;width:10px;height:10px;background:var(--orange);border-radius:50%}
-.kit-step-no{font-family:'Fraunces',sans-serif;font-size:12px;font-weight:700;color:var(--orange);letter-spacing:.1em}
-.kit-step h3{font-size:15.5px;margin:8px 0 8px;color:var(--navy)}
-.kit-step p{font-size:13px;color:var(--gray-600);line-height:1.6;margin:0}
-.kit-options{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--gray-200);background:#fff}
-.kit-option{padding:32px 30px}
-.kit-option + .kit-option{border-left:1px solid var(--gray-200)}
-.kit-option-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin:0 0 10px}
-.kit-option h3{font-size:22px;color:var(--navy);margin:0 0 12px}
-.kit-option p{font-size:14.5px;color:var(--gray-600);line-height:1.7;margin:0 0 12px}
-.kit-option-note{font-size:13px;color:var(--gray-600);border-left:3px solid var(--gray-200);padding-left:12px}
-.kit-option a,.kit-pricing-note a,.kit-fineprint a,.kit-option-note a{color:var(--orange);font-weight:600;text-decoration:underline}
-.kit-option-flow{grid-column:1/-1;border-top:1px solid var(--gray-200);background:var(--cream);padding:14px 30px;font-size:13px;color:var(--navy);font-weight:600}
-.kit-mid-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:28px}
-.kit-text-link{font-size:14px;font-weight:600;color:var(--orange);text-decoration:underline}
-.kit-ledger{border:1px solid var(--gray-200);background:#fff}
-.kit-ledger-row{display:grid;grid-template-columns:190px 1fr 1fr;gap:18px;padding:16px 20px;border-top:1px solid var(--gray-200);font-size:13.5px;color:var(--gray-600)}
-.kit-ledger-row:first-child{border-top:none;background:#f7efe0;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gray-600);font-weight:700}
-.kit-ledger-row b{font-size:14px;color:var(--navy)}
-.kit-exception-wrap{margin-top:38px;padding-top:30px;border-top:1px solid var(--gray-200)}
-.kit-exception-wrap h3{font-size:24px;color:var(--navy);margin:0 0 8px}
-.kit-exception-wrap > p{font-size:14.5px;color:var(--gray-600);line-height:1.7;max-width:820px;margin:0 0 18px}
-.kit-exception{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--gray-200);border:1px solid var(--gray-200)}
-.kit-exception div{background:#fff;padding:18px;text-align:center}
-.kit-exception b{display:block;font-size:14px;color:var(--navy);margin-bottom:4px}
-.kit-exception span{font-size:12px;color:var(--gray-600)}
-.kit-fineprint{font-size:12.5px;color:var(--gray-600);line-height:1.7;margin:14px 0 0}
-.kit-case{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
-.kit-case-panel{border:1px solid var(--gray-200);background:#fff;padding:28px}
-.kit-case-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin:0 0 10px}
-.kit-case-lead{font-size:14.5px;color:var(--gray-600);line-height:1.7;margin:0 0 18px}
-.kit-case-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.kit-case-item{border:1px solid var(--gray-200);padding:10px 12px;font-size:12.5px;color:var(--navy);line-height:1.45;background:#fff}
-.kit-case-item b{display:block;color:var(--orange);font-size:10.5px;letter-spacing:.1em;margin-bottom:2px}
-.kit-case-meta{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0}
-.kit-case-meta span{font-size:11.5px;border:1px solid var(--gray-200);padding:4px 9px;color:var(--gray-600)}
-.kit-case-coord{list-style:none;margin:0;padding:0}
-.kit-case-coord li{padding:12px 0;border-bottom:1px solid var(--gray-200)}
-.kit-case-coord li:last-child{border-bottom:none}
-.kit-case-coord b{display:block;font-size:14px;color:var(--navy);margin-bottom:3px}
-.kit-case-coord span{font-size:13px;color:var(--gray-600);line-height:1.6}
-.kit-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
-.kit-compare div{border:1px solid var(--gray-200);padding:16px;background:#fff}
-.kit-compare .before{border-left:4px solid #b0b0b0}
-.kit-compare .after{border-left:4px solid var(--orange)}
-.kit-compare b{display:block;font-size:13px;color:var(--navy);margin-bottom:4px}
-.kit-compare span{font-size:12px;color:var(--gray-600);line-height:1.6}
-.kit-bom{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:26px;padding:16px 18px;background:#fff;border:1px solid var(--gray-200)}
-.kit-bom span{border:1px solid var(--gray-200);padding:8px 10px;font-size:12px;color:var(--navy);background:#fff}
-.kit-bom .arrow{color:var(--orange);border:none;padding:0 2px;background:none}
-.kit-bom .final{border:2px solid var(--orange);font-weight:700}
-.kit-case-status{display:inline-block;margin-top:18px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid #d9b36a;background:#fff8e6;color:#8a5a00;padding:6px 10px;font-weight:700}
-.kit-records{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-200);border:1px solid var(--gray-200)}
-.kit-record{background:#fff;padding:22px 20px}
-.kit-record-no{font-family:'Fraunces',sans-serif;font-size:12px;font-weight:700;color:var(--orange);letter-spacing:.1em}
-.kit-record h3{font-size:14.5px;color:var(--navy);margin:10px 0 6px}
-.kit-record p{font-size:13px;color:var(--gray-600);line-height:1.6;margin:0 0 12px}
-.kit-record small{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-400)}
-.kit-pack-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:start}
-.kit-pack-list{margin:0;padding:0}
-.kit-pack-list li{position:relative;padding:12px 0 12px 22px;border-bottom:1px solid var(--gray-200);font-size:14px;color:var(--navy);line-height:1.6}
-.kit-pack-list li::before{content:'';position:absolute;left:0;top:19px;width:8px;height:8px;background:var(--orange)}
+.kit-wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.kit-head{max-width:760px;margin-bottom:40px}
+.kit-head .ship-tag{font-family:'Inter',system-ui,sans-serif;font-weight:700;letter-spacing:.14em;font-size:11px;display:inline-block;margin-bottom:14px}
+.kit-section h2{font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:clamp(26px,2.8vw,34px);font-weight:700;line-height:1.2;letter-spacing:-.02em;color:var(--navy);margin:0 0 14px}
+.kit-section h3{font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:clamp(19px,1.6vw,23px);font-weight:600;line-height:1.3;letter-spacing:-.01em;color:var(--navy);margin:0 0 10px}
+.kit-head p{font-size:17px;line-height:1.7;color:var(--gray-600);margin:0;max-width:760px}
+.kit-lead{font-size:17px;line-height:1.7;color:var(--gray-600);max-width:760px;margin:0 0 28px}
+
+/* quick answer */
+.kit-quick{background:#f6f4ef;border-left:4px solid var(--orange);padding:36px 40px;max-width:980px}
+.kit-quick .kit-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin:0 0 10px}
+.kit-quick h2{font-size:clamp(22px,2.2vw,28px);margin:0 0 14px}
+.kit-quick p{font-size:17px;line-height:1.75;color:var(--navy);margin:0;max-width:760px}
+
+/* comparison */
+.kit-compare2{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;border:1px solid #e6e0d3}
+.kit-compare2 > div{padding:32px 30px}
+.kit-compare2 > div + div{border-left:1px solid #e6e0d3}
+.kit-compare2 .basic{background:#faf9f5}
+.kit-compare2 .label{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gray-400);margin:0 0 8px}
+.kit-compare2 .milebond .label{color:var(--orange)}
+.kit-compare2 h3{font-size:20px;margin:0 0 16px}
+.kit-compare2 ul{list-style:none;margin:0;padding:0}
+.kit-compare2 li{position:relative;padding:9px 0 9px 18px;font-size:15px;color:var(--gray-600);line-height:1.6;border-bottom:1px solid #f0ece4}
+.kit-compare2 li:last-child{border-bottom:none}
+.kit-compare2 li::before{content:'';position:absolute;left:0;top:17px;width:6px;height:6px;background:#c9c2b4}
+.kit-compare2 .milebond li::before{background:var(--orange)}
+.kit-highlight{font-size:19px;font-weight:500;line-height:1.6;color:var(--navy);margin:28px 0 0;padding:20px 24px;background:#fff8e6;border-left:3px solid var(--orange);max-width:980px}
+
+/* buyer challenges */
+.kit-challenges{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid #e6e0d3}
+.kit-challenge-item{padding:26px 24px 26px 0;border-bottom:1px solid #e6e0d3}
+.kit-challenge-item:nth-child(3n+2),.kit-challenge-item:nth-child(3n+3){padding-left:24px;border-left:1px solid #e6e0d3}
+.kit-challenge-item b{display:block;font-size:16px;font-weight:600;color:var(--navy);margin:0 0 6px}
+.kit-challenge-item span{font-size:14px;line-height:1.65;color:var(--gray-600)}
+.kit-closing{font-size:17px;font-weight:500;color:var(--navy);margin:30px 0 0;max-width:760px}
+
+/* primary process */
+.kit-process{display:grid;grid-template-columns:repeat(7,1fr);gap:0;border-top:2px solid #e6e0d3;margin-top:8px}
+.kit-process-step{position:relative;padding:24px 14px 0 0}
+.kit-process-step + .kit-process-step{padding-left:14px}
+.kit-process-step::before{content:'';position:absolute;top:-6px;left:0;width:10px;height:10px;border-radius:50%;background:var(--orange)}
+.kit-process-step + .kit-process-step::before{left:14px}
+.kit-process-no{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--orange)}
+.kit-process-step h3{font-size:15px;font-weight:600;line-height:1.35;margin:6px 0 6px}
+.kit-process-step p{font-size:13px;line-height:1.55;color:var(--gray-600);margin:0}
+.kit-process-note{font-size:14px;color:var(--gray-600);margin:26px 0 0;max-width:760px}
+
+/* case study */
+.kit-case-intro{font-size:17px;line-height:1.75;color:var(--gray-600);max-width:760px;margin:0 0 16px}
+.kit-meta-wide{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 34px}
+.kit-meta-wide span{font-size:13px;border:1px solid #e6e0d3;background:#fff;padding:6px 11px;color:var(--gray-600)}
+.kit-ref-block{margin:0 0 10px}
+.kit-ref-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin:0 0 16px}
+.kit-ref-head h3{margin:0}
+.kit-ref-head span{font-size:14px;color:var(--gray-600)}
+.kit-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:640px}
+.kit-pair figure{margin:0}
+.kit-pair .kit-role{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-400);margin:0 0 8px}
+.kit-pair .kit-role.alt{color:var(--orange)}
+.kit-img-box{border:1px solid #e6e0d3;background:#faf9f5;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:12px}
+.kit-img-box img{width:100%;height:100%;object-fit:contain}
+.kit-pair figcaption{font-size:13px;line-height:1.55;color:var(--gray-600);margin-top:8px}
+.kit-editorial{border-top:1px solid #e6e0d3;padding:40px 0 8px;margin-top:34px}
+.kit-editorial:first-of-type{border-top:2px solid #e6e0d3}
+.kit-editorial-head{display:flex;align-items:baseline;gap:14px;margin:0 0 22px}
+.kit-editorial-no{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--orange);white-space:nowrap}
+.kit-editorial h3{font-size:clamp(20px,1.9vw,25px);margin:0}
+.kit-module-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:0 0 26px}
+.kit-module-grid b{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-400);margin:0 0 7px}
+.kit-module-grid p{font-size:15px;line-height:1.7;color:var(--gray-600);margin:0 0 8px;max-width:420px}
+.kit-wide-figure{margin:0;max-width:1000px}
+.kit-wide-figure .kit-img-box{max-width:440px;aspect-ratio:auto;padding:0;background:#faf9f5;border:1px solid #e6e0d3;display:block}
+.kit-wide-figure .kit-img-box img{width:100%;height:auto}
+.kit-wide-figure img{width:100%;height:auto;max-width:440px;display:block}
+.kit-wide-figure figcaption{font-size:13px;color:var(--gray-600);line-height:1.55;margin-top:10px}
+.kit-citable{margin:22px 0 0;padding:16px 18px;background:#fff8e6;border-left:3px solid var(--orange);font-size:15px;color:var(--navy);line-height:1.65;max-width:900px}
+.kit-citable b{display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:5px}
+.kit-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:0}
+.kit-gallery figure{margin:0}
+.kit-gallery .kit-img-box{aspect-ratio:4/3}
+.kit-gallery figcaption{font-size:12.5px;color:var(--gray-600);line-height:1.5;margin-top:7px}
+.kit-colourboard{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 20px;max-width:760px}
+.kit-swatch{display:flex;align-items:center;gap:10px;border:1px solid #e6e0d3;background:#fff;padding:10px 12px}
+.kit-swatch i{width:26px;height:26px;display:block;flex-shrink:0}
+.kit-swatch span{font-size:13px;color:var(--navy);line-height:1.4}
+.kit-svg-figure{margin:0;max-width:1000px}
+.kit-svg-figure svg{width:100%;height:auto;display:block;border:1px solid #e6e0d3;background:#fff}
+.kit-svg-figure figcaption{font-size:13px;color:var(--gray-600);line-height:1.55;margin-top:10px}
+.kit-mini-flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;border:1px solid #e6e0d3;background:#fff;padding:20px}
+.kit-mini-flow span{font-size:13px;border:1px solid #e6e0d3;padding:7px 10px;color:var(--navy);line-height:1.35}
+.kit-mini-flow span.pre{border-color:var(--orange);background:#fff4e8;font-weight:600}
+.kit-mini-flow i{font-style:normal;color:var(--orange);font-size:12px}
+.kit-col-note{margin:18px 0 0;padding-top:14px;border-top:1px solid #e6e0d3;font-size:14px;color:var(--navy);line-height:1.6}
+.kit-ref-row{display:grid;grid-template-columns:1fr 36px 1fr;gap:22px;align-items:start;max-width:860px;padding:22px 0;border-bottom:1px solid #eee9de}
+.kit-ref-row:last-of-type{border-bottom:none;padding-bottom:0}
+.kit-ref-side{display:flex;flex-direction:column;gap:8px;min-width:0;margin:0}
+.kit-ref-side .kit-role{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-400);margin:0}
+.kit-ref-side .kit-role.alt{color:var(--orange)}
+.kit-ref-side img{max-width:100%;max-height:200px;width:auto;height:auto;border:1px solid #e6e0d3;background:#faf9f5;padding:10px;align-self:flex-start}
+.kit-ref-side figcaption{font-size:13px;line-height:1.55;color:var(--gray-600);margin:0}
+.kit-ref-arrow{align-self:center;text-align:center;color:var(--orange);font-size:18px;line-height:1}
+.kit-section h3.kit-subhead{margin:44px 0 18px}
+
+/* existing suppliers vs sourced */
+.kit-split{display:grid;grid-template-columns:1fr 1fr;border:1px solid #e6e0d3;background:#fff}
+.kit-split > div{padding:34px 30px}
+.kit-split > div + div{border-left:1px solid #e6e0d3}
+.kit-split .kit-option-label{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--orange);margin:0 0 8px}
+.kit-split h3{font-size:21px;margin:0 0 12px}
+.kit-split p{font-size:15px;line-height:1.7;color:var(--gray-600);margin:0 0 12px}
+.kit-split a{color:var(--orange);font-weight:600;text-decoration:underline}
+.kit-split-note{border-top:1px solid #e6e0d3;background:#f6f4ef;padding:16px 30px;font-size:14px;color:var(--navy);grid-column:1/-1}
+
+/* warehouse + qc */
+.kit-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e6e0d3}
+.kit-table th{background:#f6f4ef;text-align:left;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-600);padding:13px 18px;border-bottom:1px solid #e6e0d3}
+.kit-table td{padding:15px 18px;border-bottom:1px solid #eee9de;font-size:14.5px;line-height:1.6;color:var(--gray-600);vertical-align:top}
+.kit-table tr:last-child td{border-bottom:none}
+.kit-table td:first-child{font-weight:600;color:var(--navy);white-space:nowrap}
+.kit-subhead{margin:44px 0 18px;font-size:22px}
+.kit-qc{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid #e6e0d3}
+.kit-qc-item{display:flex;gap:14px;padding:18px 20px 18px 0;border-bottom:1px solid #eee9de}
+.kit-qc-item:nth-child(even){padding-left:20px;border-left:1px solid #eee9de}
+.kit-qc-no{font-size:12px;font-weight:700;color:var(--orange);letter-spacing:.08em;min-width:24px}
+.kit-qc-item b{display:block;font-size:15px;font-weight:600;color:var(--navy);margin:0 0 4px}
+.kit-qc-item span{font-size:14px;line-height:1.6;color:var(--gray-600)}
+
+/* packaging */
+.kit-pack{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.kit-pack-list{list-style:none;margin:0;padding:0}
+.kit-pack-list li{position:relative;padding:12px 0 12px 20px;border-bottom:1px solid #eee9de;font-size:15px;color:var(--navy);line-height:1.6}
+.kit-pack-list li:last-child{border-bottom:none}
+.kit-pack-list li::before{content:'';position:absolute;left:0;top:20px;width:7px;height:7px;background:var(--orange)}
 .kit-stack{display:flex;flex-direction:column;gap:8px}
-.kit-layer{display:grid;grid-template-columns:1fr 180px;gap:14px;align-items:center}
-.kit-layer-bar{height:40px;background:#fff;border:1px solid var(--gray-200);display:flex;align-items:center;padding:0 14px;font-size:12.5px;font-weight:700;color:var(--navy)}
+.kit-layer{display:grid;grid-template-columns:1fr 170px;gap:14px;align-items:center}
+.kit-layer-bar{height:42px;background:#fff;border:1px solid #e6e0d3;display:flex;align-items:center;padding:0 14px;font-size:13px;font-weight:600;color:var(--navy)}
 .kit-layer:nth-child(1) .kit-layer-bar{width:62%}
 .kit-layer:nth-child(2) .kit-layer-bar{width:72%}
 .kit-layer:nth-child(3) .kit-layer-bar{width:82%}
 .kit-layer:nth-child(4) .kit-layer-bar{width:92%}
 .kit-layer:nth-child(5) .kit-layer-bar{width:100%;border-color:var(--orange);border-width:2px}
-.kit-layer-note{font-size:12px;color:var(--gray-600);line-height:1.5}
-.kit-cost{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--gray-200)}
-.kit-cost-item{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--gray-200)}
-.kit-cost-item:nth-child(odd){padding-right:26px}
-.kit-cost-item:nth-child(even){padding-left:26px;border-left:1px solid var(--gray-200)}
-.kit-cost-item:last-child{grid-column:1/-1;border-left:none;padding-left:0}
-.kit-cost-no{font-family:'Fraunces',sans-serif;font-size:13px;font-weight:700;color:var(--orange);min-width:24px}
-.kit-cost-item b{display:block;font-size:14px;color:var(--navy);margin-bottom:3px}
-.kit-cost-item span{font-size:12.5px;color:var(--gray-600);line-height:1.6}
-.kit-pricing-note{font-size:13px;color:var(--gray-600);line-height:1.7;margin:22px 0 0;max-width:900px}
-.kit-faq{border-top:1px solid var(--gray-200)}
-.kit-faq details{border-bottom:1px solid var(--gray-200);padding:18px 0}
-.kit-faq summary{list-style:none;cursor:pointer;font-weight:600;font-size:15.5px;color:var(--navy);display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.kit-layer-note{font-size:12.5px;color:var(--gray-600);line-height:1.5}
+.kit-fineprint{font-size:13px;color:var(--gray-600);line-height:1.65;margin:16px 0 0;max-width:900px}
+.kit-fineprint a{color:var(--orange);font-weight:600;text-decoration:underline}
+
+/* pricing */
+.kit-fee{display:grid;grid-template-columns:280px 1fr;gap:32px;align-items:start;border:1px solid #e6e0d3;background:#fff;padding:32px 30px}
+.kit-fee-amount b{display:block;font-size:44px;font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--orange)}
+.kit-fee-amount span{display:block;margin-top:8px;font-size:14px;color:var(--gray-600)}
+.kit-fee-body p{font-size:15.5px;line-height:1.7;color:var(--gray-600);margin:0 0 12px}
+.kit-fee-body p:last-child{margin-bottom:0}
+.kit-cost{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin-top:34px}
+.kit-cost-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid #eee9de}
+.kit-cost-no{font-size:12px;font-weight:700;color:var(--orange);letter-spacing:.08em;min-width:22px}
+.kit-cost-item b{display:block;font-size:15px;font-weight:600;color:var(--navy);margin:0 0 3px}
+.kit-cost-item span{font-size:13.5px;line-height:1.6;color:var(--gray-600)}
+
+/* FAQ */
+.kit-faq{border-top:1px solid #e6e0d3;max-width:900px}
+.kit-faq details{border-bottom:1px solid #e6e0d3;padding:20px 0}
+.kit-faq summary{list-style:none;cursor:pointer;font-weight:600;font-size:16px;line-height:1.5;color:var(--navy);display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
 .kit-faq summary::-webkit-details-marker{display:none}
 .kit-faq summary::after{content:'+';color:var(--orange);font-size:18px;line-height:1}
 .kit-faq details[open] summary::after{content:'−'}
-.kit-faq p{margin:10px 0 0;font-size:14px;color:var(--gray-600);line-height:1.7;max-width:900px}
-.kit-cta{background:#444444;color:#fff;padding:64px 24px;text-align:center}
-.kit-cta h2{color:#fff;font-size:clamp(26px,3.2vw,36px);margin:0 0 12px}
-.kit-cta p{color:rgba(255,255,255,.72);max-width:640px;margin:0 auto 24px;font-size:15.5px;line-height:1.7}
-.kit-cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.kit-cta-note{font-size:12.5px;color:rgba(255,255,255,.55);margin:20px 0 0}
+.kit-faq p{margin:12px 0 0;font-size:15px;color:var(--gray-600);line-height:1.7;max-width:760px}
+
+/* CTA */
+.kit-cta{background:#3a3a3a;color:#fff;padding:76px 24px;scroll-margin-top:88px}
+.kit-cta h2{font-family:'Inter',system-ui,sans-serif;font-size:clamp(26px,3vw,36px);font-weight:700;line-height:1.2;letter-spacing:-.02em;color:#fff;max-width:900px;margin:0 auto 18px;text-align:center}
+.kit-cta p{color:rgba(255,255,255,.78);max-width:760px;margin:0 auto 14px;font-size:17px;line-height:1.7;text-align:center}
+.kit-cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.kit-cta-note{font-size:13px;color:rgba(255,255,255,.55);text-align:center;margin:20px 0 0}
+
+/* responsive */
 @media(max-width:1024px){
-  .kit-hero-inner{grid-template-columns:1fr;gap:28px}
-  .kit-hero-art{max-width:560px}
-  .kit-flow{grid-template-columns:1fr}
-  .kit-steps{grid-template-columns:repeat(3,1fr)}
-  .kit-step:nth-child(3){border-right:none}
-  .kit-step{padding-bottom:22px}
-  .kit-case{grid-template-columns:1fr}
-  .kit-pack-grid{grid-template-columns:1fr;gap:24px}
+  .kit-process{grid-template-columns:repeat(4,1fr);row-gap:26px}
+  .kit-process-step:nth-child(4n+1)::before{left:0}
+  .kit-gallery{grid-template-columns:repeat(3,1fr)}
+  .kit-module-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:900px){
-  .kit-section{padding:60px 0}
-  .kit-problem-grid{grid-template-columns:1fr 1fr}
-  .kit-options{grid-template-columns:1fr}
-  .kit-option + .kit-option{border-left:none;border-top:1px solid var(--gray-200)}
-  .kit-ledger-row{grid-template-columns:1fr;gap:4px}
-  .kit-ledger-row:first-child{display:none}
-  .kit-records{grid-template-columns:1fr 1fr}
-  .kit-cost{grid-template-columns:1fr}
-  .kit-cost-item:nth-child(even){padding-left:0;border-left:none}
-  .kit-cost-item:nth-child(odd){padding-right:0}
+  .kit-section{padding:64px 0}
+  .kit-hero-inner{padding:64px 24px 52px}
+  .kit-compare2{grid-template-columns:1fr}
+  .kit-compare2 > div + div{border-left:none;border-top:1px solid #e6e0d3}
+  .kit-challenges{grid-template-columns:1fr 1fr}
+  .kit-challenge-item:nth-child(3n+2),.kit-challenge-item:nth-child(3n+3){padding-left:0;border-left:none}
+  .kit-challenge-item:nth-child(2n){padding-left:22px;border-left:1px solid #e6e0d3}
+  .kit-split{grid-template-columns:1fr}
+  .kit-split > div + div{border-left:none;border-top:1px solid #e6e0d3}
+  .kit-pack{grid-template-columns:1fr;gap:26px}
+  .kit-qc{grid-template-columns:1fr}
+  .kit-qc-item:nth-child(even){padding-left:0;border-left:none}
+  .kit-fee{grid-template-columns:1fr;gap:18px}
+  .kit-metrics{grid-template-columns:1fr;gap:18px}
+  .kit-metric{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:baseline}
+  .kit-metric b{font-size:24px}
+  .kit-metric span{margin-top:0}
 }
 @media(max-width:768px){
-  .kit-hero-inner{padding:52px 20px 48px}
+  .kit-section{padding:56px 0}
+  .kit-head{margin-bottom:30px}
   .kit-wrap{padding:0 20px}
-  .kit-steps{grid-template-columns:1fr;border-top:none;border-left:2px solid var(--gray-200);margin-left:6px}
-  .kit-step{border-right:none;padding:0 0 26px 26px}
-  .kit-step::before{top:4px;left:-6px}
-  .kit-step:last-child{padding-bottom:0}
-  .kit-exception{grid-template-columns:1fr 1fr}
+  .kit-hero h1{font-size:clamp(30px,8vw,35px)}
+  .kit-hero-body,.kit-head p,.kit-lead,.kit-case-intro{font-size:16px}
+  .kit-quick{padding:26px 22px}
+  .kit-quick p{font-size:16px}
+  .kit-process{grid-template-columns:1fr;border-top:none;border-left:2px solid #e6e0d3;margin-left:5px}
+  .kit-process-step{padding:0 0 24px 24px}
+  .kit-process-step + .kit-process-step{padding-left:24px}
+  .kit-process-step::before{top:4px;left:-7px}
+  .kit-process-step + .kit-process-step::before{left:-7px}
+  .kit-process-step:last-child{padding-bottom:0}
+  .kit-challenges{grid-template-columns:1fr}
+  .kit-challenge-item{padding:20px 0}
+  .kit-challenge-item:nth-child(2n){padding-left:0;border-left:none}
+  .kit-pair{grid-template-columns:1fr}
+  .kit-gallery{grid-template-columns:1fr 1fr;gap:16px}
+  .kit-module-grid{grid-template-columns:1fr;gap:16px}
+  .kit-colourboard{grid-template-columns:1fr 1fr}
+  .kit-hero-actions .btn,.kit-cta-actions .btn{width:100%;justify-content:center}
+  .kit-table th,.kit-table td{padding:12px 14px}
+  .kit-table td:first-child{white-space:normal}
+  .kit-cost{grid-template-columns:1fr}
   .kit-layer{grid-template-columns:1fr}
   .kit-layer-note{margin-top:-4px}
-  .kit-compare{grid-template-columns:1fr}
+  .kit-fee{padding:26px 20px}
 }
-@media(max-width:600px){
-  .kit-problem-grid{grid-template-columns:1fr}
-  .kit-suppliers{grid-template-columns:1fr}
-  .kit-records{grid-template-columns:1fr}
-  .kit-case-list{grid-template-columns:1fr}
-  .kit-hero-actions .btn,.kit-mid-cta .btn{width:100%;justify-content:center}
-  .kit-cta-actions .btn{width:100%;justify-content:center}
-}
-/* ============ PRE-PRODUCTION POSITIONING & CASE STUDY ============ */
-.kit-hero-diff{background:#fff8e6;border-top:1px solid #e7dcc8;border-bottom:1px solid #e7dcc8;padding:18px 24px;text-align:center;font-size:14.5px;color:var(--navy);line-height:1.6}
-.kit-hero-diff strong{color:var(--orange)}
-.kit-compare2{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--gray-200);background:#fff}
-.kit-compare2 > div{padding:28px 26px}
-.kit-compare2 > div + div{border-left:1px solid var(--gray-200)}
-.kit-compare2 .basic{background:#fbfaf7}
-.kit-compare2 .label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-400);margin:0 0 8px}
-.kit-compare2 .milebond .label{color:var(--orange)}
-.kit-compare2 h3{font-size:19px;color:var(--navy);margin:0 0 14px}
-.kit-compare2 ul{list-style:none;margin:0 0 16px;padding:0}
-.kit-compare2 li{position:relative;padding:7px 0 7px 16px;font-size:13.5px;color:var(--gray-600);line-height:1.6;border-bottom:1px solid #f0ece4}
-.kit-compare2 li:last-child{border-bottom:none}
-.kit-compare2 li::before{content:'';position:absolute;left:0;top:15px;width:6px;height:6px;background:#c9c2b4}
-.kit-compare2 .milebond li::before{background:var(--orange)}
-.kit-focus{font-size:13px;color:var(--navy);background:var(--cream);border-left:3px solid #b0b0b0;padding:12px 14px;line-height:1.6;margin:0}
-.kit-compare2 .milebond .kit-focus{border-left-color:var(--orange)}
-.kit-highlight{font-family:'Fraunces',sans-serif;font-size:18px;color:var(--navy);line-height:1.55;margin:26px 0 0;padding:18px 20px;border:1px solid #e7dcc8;background:#fff8e6}
-.kit-diagram-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
-.kit-diagram{border:1px solid var(--gray-200);background:#fff;padding:18px}
-.kit-diagram > p{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-400);margin:0 0 12px}
-.kit-diagram-flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.kit-diagram-flow span{font-size:11.5px;border:1px solid var(--gray-200);padding:6px 9px;color:var(--navy);line-height:1.35;background:#fff}
-.kit-diagram-flow span.pre{border-color:var(--orange);background:#fff4e8;font-weight:700}
-.kit-diagram-flow i{color:var(--orange);font-style:normal;font-size:11px}
-.kit-phase{border:1px solid var(--gray-200);background:#fff;margin-top:22px}
-.kit-phase-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;padding:14px 20px;background:var(--cream);border-bottom:1px solid var(--gray-200)}
-.kit-phase-head b{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
-.kit-phase-head span{font-size:13px;color:var(--gray-600)}
-.kit-phase .kit-steps{border-top:none;grid-template-columns:repeat(5,1fr)}
-.kit-phase .kit-steps.four{grid-template-columns:repeat(4,1fr)}
-.kit-phase .kit-step{padding:22px 16px 24px;border-right:1px solid var(--gray-200)}
-.kit-phase .kit-step:last-child{border-right:none}
-.kit-case-intro{font-size:15.5px;color:var(--gray-600);line-height:1.75;max-width:920px;margin:0 0 16px}
-.kit-meta-wide{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 26px}
-.kit-meta-wide span{font-size:12px;border:1px solid var(--gray-200);background:#fff;padding:6px 11px;color:var(--gray-600)}
-.kit-photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 12px}
-.kit-photo-grid.two{grid-template-columns:repeat(2,1fr);max-width:600px}
-.kit-figure{margin:0;border:1px solid var(--gray-200);background:#fff;display:flex;flex-direction:column}
-.kit-figure.narrow{max-width:560px}
-.kit-photo{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:#faf8f4;padding:10px}
-.kit-photo img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
-.kit-figure figcaption{font-size:11.5px;color:var(--gray-600);line-height:1.5;padding:9px 11px;border-top:1px solid var(--gray-200)}
-.kit-challenge{border-top:1px solid var(--gray-200);padding:30px 0 6px;margin-top:26px}
-.kit-challenge:first-of-type{border-top:2px solid var(--gray-200)}
-.kit-challenge-head{display:flex;gap:14px;align-items:baseline;margin-bottom:14px}
-.kit-challenge-no{font-family:'Fraunces',sans-serif;font-size:12px;font-weight:700;color:var(--orange);letter-spacing:.1em;white-space:nowrap}
-.kit-challenge h3{font-size:21px;color:var(--navy);margin:0}
-.kit-requirement{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.kit-requirement b{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-400);margin-bottom:6px}
-.kit-requirement p{font-size:14px;color:var(--gray-600);line-height:1.7;margin:0 0 8px}
-.kit-citable{margin:16px 0 0;padding:14px 16px;background:#fff8e6;border-left:3px solid var(--orange);font-size:13.5px;color:var(--navy);line-height:1.65}
-.kit-citable b{display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:4px}
-.kit-colourboard{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0 0}
-.kit-swatch{display:flex;align-items:center;gap:10px;border:1px solid var(--gray-200);background:#fff;padding:10px 12px}
-.kit-swatch i{width:26px;height:26px;display:block;flex-shrink:0}
-.kit-swatch span{font-size:12.5px;color:var(--navy);line-height:1.4}
-.kit-svg-figure{margin:18px 0 0;border:1px solid var(--gray-200);background:#fff;padding:16px}
-.kit-svg-figure svg{width:100%;height:auto;display:block}
-.kit-svg-figure figcaption{font-size:11.5px;color:var(--gray-600);line-height:1.5;margin-top:10px}
-.kit-svg-figure .kit-photo{aspect-ratio:auto;padding:0;background:#fff}
-.kit-svg-figure .kit-photo img{display:block;width:100%;max-width:520px;height:auto;margin:0 auto}
-@media(max-width:1024px){
-  .kit-phase .kit-steps{grid-template-columns:repeat(3,1fr)}
-  .kit-phase .kit-steps.four{grid-template-columns:repeat(2,1fr)}
-  .kit-photo-grid{grid-template-columns:repeat(3,1fr)}
-}
-@media(max-width:900px){
-  .kit-compare2{grid-template-columns:1fr}
-  .kit-compare2 > div + div{border-left:none;border-top:1px solid var(--gray-200)}
-  .kit-diagram-grid{grid-template-columns:1fr}
-  .kit-requirement{grid-template-columns:1fr;gap:16px}
-  .kit-colourboard{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:768px){
-  .kit-phase .kit-steps,.kit-phase .kit-steps.four{grid-template-columns:1fr;border-left:2px solid var(--gray-200);margin-left:6px}
-  .kit-phase .kit-step{border-right:none;padding:0 0 24px 26px}
-  .kit-phase .kit-step::before{top:4px;left:-6px}
-  .kit-phase .kit-step:last-child{padding-bottom:0}
-  .kit-photo-grid,.kit-photo-grid.two{grid-template-columns:1fr 1fr;max-width:none}
-  .kit-hero-diff{text-align:left;font-size:13.5px;padding:16px 20px}
+@media(max-width:640px){
+  .kit-ref-row{grid-template-columns:1fr;gap:12px}
+  .kit-ref-arrow{display:none}
+  .kit-table thead{display:none}
+  .kit-table{border:none;background:transparent}
+  .kit-table tr{display:block;border:1px solid #e6e0d3;margin-bottom:12px;background:#fff}
+  .kit-table td{display:block;border:none;padding:6px 16px}
+  .kit-table td:first-child{padding-top:14px;font-size:16px}
+  .kit-table td:last-child{padding-bottom:14px}
+  .kit-table td:nth-child(2)::before{content:'What we check: ';font-weight:600;color:#8a8a8a}
+  .kit-table td:nth-child(3)::before{content:'Record: ';font-weight:600;color:#8a8a8a}
 }
 @media(max-width:520px){
-  .kit-photo-grid,.kit-photo-grid.two{grid-template-columns:1fr}
+  .kit-gallery{grid-template-columns:1fr}
   .kit-colourboard{grid-template-columns:1fr}
 }
 </style>
@@ -1420,160 +1422,99 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
 <div class="corrugated-strip"></div>
 
-  <!-- ================= HERO ================= -->
+    <!-- ================= HERO ================= -->
   <section class="kit-hero">
     <div class="kit-hero-inner">
-      <div class="kit-hero-copy">
-        <span class="ship-tag">Kitting &amp; Assembly</span>
-        <h1>China Kitting &amp; Assembly for Multi-Supplier Product Bundles</h1>
-        <p class="kit-hero-sub">One Team. Multiple Suppliers. One Retail-Ready Kit.</p>
-        <p class="kit-hero-body">Whether you already work with Chinese factories or need help sourcing the components, Milebond coordinates product requirements before production, supplier communication, incoming checks, BOM-based kitting and packaging preparation in China.</p>
-        <div class="kit-hero-keywords">
-          <span>Pre-Production Coordination</span>
-          <span>Multi-Supplier Management</span>
-          <span>Kitting &amp; Assembly</span>
-          <span>Custom Retail Packaging</span>
-        </div>
-        <div class="kit-hero-actions">
-          <a href="#inquiry" class="btn btn-primary">Get a Kitting Project Quote</a>
-          <a href="#two-ways" class="btn btn-white">Already Have Suppliers? Talk to Our Team</a>
-        </div>
-        <p class="kit-hero-note">1,000+ sqm warehouse in the Yiwu–Jinhua area · Low-volume projects reviewed individually, including projects around 50 sets · 100% first-order inspection according to agreed product and inspection requirements</p>
+      <span class="ship-tag">Kitting &amp; Assembly</span>
+      <h1>China Kitting &amp; Assembly for Multi-Supplier Product Bundles</h1>
+      <p class="kit-hero-line">Coordinate Before Production. Assemble After Arrival.</p>
+      <p class="kit-hero-body">We help coordinate product specifications, branding, colours and packaging across multiple Chinese suppliers — then manage incoming QC, BOM-based assembly and retail packaging preparation.</p>
+      <div class="kit-hero-keywords">
+        <span>Pre-production Coordination</span>
+        <span>Multi-Supplier Sourcing</span>
+        <span>Incoming QC</span>
+        <span>BOM-Based Assembly</span>
       </div>
-      <div class="kit-hero-art">
-        <svg viewBox="0 0 560 420" role="img" aria-label="Seven product components converging into one retail-ready kit in Milebond's Jinhua warehouse">
-          <g font-family="Inter, sans-serif">
-            <text x="0" y="14" fill="#ffa55b" font-size="10.5" letter-spacing="1.6">SEVEN COMPONENTS</text>
-            <rect x="0" y="28" width="176" height="32" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.18)"></rect>
-            <text x="12" y="49" fill="#ffffff" font-size="11.5">01 Collapsible water bottle</text>
-            <rect x="0" y="70" width="176" height="32" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.18)"></rect>
-            <text x="12" y="91" fill="#ffffff" font-size="11.5">02 Silicone food bowl</text>
-            <rect x="0" y="112" width="176" height="32" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.18)"></rect>
-            <text x="12" y="133" fill="#ffffff" font-size="11.5">03 Microfibre towel</text>
-            <rect x="0" y="154" width="176" height="32" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.18)"></rect>
-            <text x="12" y="175" fill="#ffffff" font-size="11.5">04 Metal ground stake</text>
-            <rect x="0" y="196" width="176" height="32" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.18)"></rect>
-            <text x="12" y="217" fill="#ffffff" font-size="11.5">05 Collar light</text>
-            <rect x="0" y="238" width="176" height="32" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.18)"></rect>
-            <text x="12" y="259" fill="#ffffff" font-size="11.5">06 Waste bags</text>
-            <rect x="0" y="280" width="176" height="32" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.18)"></rect>
-            <text x="12" y="301" fill="#ffffff" font-size="11.5">07 Waist bag</text>
-            <path d="M176 44 L250 196" stroke="rgba(255,165,91,.45)" stroke-width="1"></path>
-            <path d="M176 86 L250 196" stroke="rgba(255,165,91,.45)" stroke-width="1"></path>
-            <path d="M176 128 L250 196" stroke="rgba(255,165,91,.45)" stroke-width="1"></path>
-            <path d="M176 170 L250 196" stroke="rgba(255,165,91,.45)" stroke-width="1"></path>
-            <path d="M176 212 L250 196" stroke="rgba(255,165,91,.45)" stroke-width="1"></path>
-            <path d="M176 254 L250 196" stroke="rgba(255,165,91,.45)" stroke-width="1"></path>
-            <path d="M176 296 L250 196" stroke="rgba(255,165,91,.45)" stroke-width="1"></path>
-            <circle cx="250" cy="196" r="4" fill="#ffa55b"></circle>
-            <path d="M250 196 L292 196" stroke="#ffa55b" stroke-width="1.5"></path>
-            <path d="M286 191 L292 196 L286 201" fill="none" stroke="#ffa55b" stroke-width="1.5"></path>
-            <rect x="300" y="132" width="250" height="128" fill="none" stroke="#ffa55b" stroke-width="1.5"></rect>
-            <text x="318" y="162" fill="#ffffff" font-size="14.5" font-weight="700">ONE RETAIL-READY KIT</text>
-            <text x="318" y="186" fill="#fff3d6" font-size="11">BOM-controlled assembly</text>
-            <text x="318" y="207" fill="#fff3d6" font-size="11">Branded packaging and labels</text>
-            <text x="318" y="228" fill="#fff3d6" font-size="11">Final check before packing</text>
-            <text x="318" y="249" fill="#fff3d6" font-size="11">One carton, one shipment</text>
-            <text x="300" y="292" fill="#ffa55b" font-size="10" letter-spacing="1.3">1,000+ SQM JINHUA WAREHOUSE</text>
-            <text x="300" y="312" fill="rgba(255,255,255,.55)" font-size="10">Illustrative workflow diagram</text>
-          </g>
-        </svg>
+      <div class="kit-hero-actions">
+        <a href="#inquiry" class="btn btn-primary">Get a Kitting Project Quote</a>
+        <a href="#suppliers" class="btn btn-white">Already Have Suppliers? Talk to Our Team</a>
+      </div>
+      <div class="kit-metrics">
+        <div class="kit-metric"><b>1,000+ sqm</b><span>Warehouse in the Yiwu–Jinhua area for receiving, QC and kitting.</span></div>
+        <div class="kit-metric"><b>~50 sets</b><span>Example project quantity. Every low-volume project is reviewed individually.</span></div>
+        <div class="kit-metric"><b>100%</b><span>First-order inspection according to agreed product and inspection requirements.</span></div>
       </div>
     </div>
   </section>
 
-  <div class="kit-hero-diff"><strong>More than warehouse packing:</strong> we help coordinate product specifications, branding, colours and packaging across suppliers before the goods arrive.</div>
-
-  <!-- ================= CUSTOMER PROBLEMS ================= -->
-  <section class="kit-section alt" id="problems">
+  <!-- ================= QUICK ANSWER ================= -->
+  <section class="kit-section alt" id="quick-answer">
     <div class="kit-wrap">
-      <div class="kit-head">
-        <span class="ship-tag">The real challenge</span>
-        <h2>Your Products Come from Different Factories. Your Customer Expects One Complete Kit.</h2>
-        <p>Sourcing individual products is only part of the work. The real challenge begins when different suppliers must meet the same product, branding, packaging and delivery requirements.</p>
-      </div>
-      <div class="kit-problem-grid">
-        <div class="kit-problem"><b>Different delivery dates</b><p>Different suppliers deliver at different times, so the last component can hold up the whole kit.</p></div>
-        <div class="kit-problem"><b>Colour and finish consistency</b><p>Product colours and finishes need to match your brand across different materials and factories.</p></div>
-        <div class="kit-problem"><b>Different MOQs</b><p>Each component may have a different MOQ or customization limit before the bundle is viable.</p></div>
-        <div class="kit-problem"><b>Missing quantities</b><p>Missing quantities or inconsistent specifications can delay final assembly.</p></div>
-        <div class="kit-problem"><b>Packaging fit</b><p>Packaging must fit all components while controlling shipping volume.</p></div>
-        <div class="kit-problem"><b>Kit completeness</b><p>Every finished kit needs to contain the correct items and labels.</p></div>
-      </div>
-      <p class="kit-closing">Milebond brings these moving parts into one coordinated workflow in China.</p>
-
-      <div class="kit-flow">
-        <div>
-          <p class="kit-flow-label">Your existing network</p>
-          <div class="kit-suppliers">
-            <div class="kit-supplier">Supplier A<small>Components</small></div>
-            <div class="kit-supplier">Supplier B<small>Components</small></div>
-            <div class="kit-supplier">Supplier C<small>Packaging</small></div>
-            <div class="kit-supplier">Supplier D<small>Labels / inserts</small></div>
-          </div>
-        </div>
-        <div class="kit-flow-mid">
-          <div class="kit-flow-arrow">↓</div>
-          <div class="kit-hub"><strong>Milebond China Warehouse</strong><span>One receiving point, one accountable team</span></div>
-          <div class="kit-flow-arrow">↓</div>
-          <div class="kit-flow-steps">
-            <span>Receiving</span><span>Inspection</span><span>Kitting</span><span>Packaging</span><span>Shipment</span>
-          </div>
-        </div>
+      <div class="kit-quick">
+        <p class="kit-eyebrow">Quick answer</p>
+        <h2>Quick Answer: What Is Multi-Supplier Kitting &amp; Assembly?</h2>
+        <p>Milebond's kitting and assembly service coordinates product specifications, branding methods, colour choices, packaging layouts and BOM requirements across multiple suppliers before production. After goods arrive, we manage incoming quality checks, BOM-based assembly and retail packaging preparation.</p>
       </div>
     </div>
   </section>
 
-  <!-- ================= KITTING VS BASIC CONSOLIDATION ================= -->
+  <!-- ================= COMPARISON ================= -->
   <section class="kit-section cream" id="compare">
     <div class="kit-wrap">
       <div class="kit-head">
-        <span class="ship-tag">Kitting vs. basic consolidation</span>
+        <span class="ship-tag">Kitting vs. warehouse consolidation</span>
         <h2>More Than Warehouse Consolidation: Kitting Starts Before the Goods Arrive</h2>
-        <p>Basic warehouse consolidation usually begins after all products have arrived. Milebond's kitting and assembly service can start earlier, helping coordinate product specifications, branding, colour choices and packaging requirements across suppliers before manufacturing.</p>
+        <p>Basic warehouse consolidation begins after all products have arrived. Milebond's kitting and assembly service starts earlier and continues after arrival.</p>
       </div>
       <div class="kit-compare2">
         <div class="basic">
           <p class="label">Basic warehouse consolidation</p>
-          <h3>Typical scope</h3>
+          <h3>Post-arrival scope</h3>
           <ul>
-            <li>Receive goods after suppliers complete production.</li>
-            <li>Check carton quantities and shipment details.</li>
-            <li>Combine goods from different suppliers.</li>
-            <li>Pack or prepare goods for shipment.</li>
+            <li>Goods arrive after production.</li>
+            <li>Receiving and quantity checks.</li>
+            <li>Combined storage and shipment preparation.</li>
+            <li>Packing and dispatch.</li>
           </ul>
-          <p class="kit-focus">Main focus: handling and combining goods that are already available.</p>
+          <p class="kit-col-note">Main focus: handling and combining goods that are already available.</p>
         </div>
         <div class="milebond">
           <p class="label">Milebond kitting &amp; assembly</p>
           <h3>Pre-production coordination, then post-arrival assembly</h3>
           <ul>
-            <li>Align product specifications across suppliers.</li>
-            <li>Coordinate branding methods and logo requirements.</li>
-            <li>Review colour compatibility across different products and materials.</li>
-            <li>Plan packaging layout and component arrangement.</li>
-            <li>Review and validate the Bill of Materials (BOM) before production.</li>
-            <li>After arrival: incoming quality checks, BOM-based kitting, retail packaging preparation and shipment consolidation.</li>
+            <li>Pre-production product specification alignment.</li>
+            <li>Branding method coordination.</li>
+            <li>Cross-material colour coordination.</li>
+            <li>Packaging layout testing.</li>
+            <li>BOM validation.</li>
+            <li>Incoming QC.</li>
+            <li>BOM-based assembly.</li>
+            <li>Retail packaging preparation.</li>
           </ul>
-          <p class="kit-focus">Main focus: coordinating the products and suppliers before production, then turning the incoming components into a coordinated retail kit.</p>
+          <p class="kit-col-note">Main focus: coordinating products and suppliers before production, then assembling the retail kit.</p>
         </div>
       </div>
       <p class="kit-highlight">Milebond's kitting service connects pre-production supplier coordination with post-arrival QC, assembly and retail packaging preparation.</p>
-      <div class="kit-diagram-grid">
-        <div class="kit-diagram">
-          <p>Basic consolidation</p>
-          <div class="kit-diagram-flow">
-            <span>Supplier production completed</span><i>→</i><span>Goods arrive at warehouse</span><i>→</i><span>Quantity check</span><i>→</i><span>Consolidation / packing</span><i>→</i><span>Shipment</span>
-          </div>
-        </div>
-        <div class="kit-diagram">
-          <p>Milebond kitting &amp; assembly</p>
-          <div class="kit-diagram-flow">
-            <span class="pre">Product and BOM review</span><i>→</i><span class="pre">Supplier specification coordination</span><i>→</i><span class="pre">Branding and colour coordination</span><i>→</i><span class="pre">Packaging layout planning</span><i>→</i><span>Supplier production</span><i>→</i><span>Warehouse receiving and incoming QC</span><i>→</i><span>BOM-based assembly</span><i>→</i><span>Retail packaging preparation</span><i>→</i><span>Shipment</span>
-          </div>
-        </div>
+    </div>
+  </section>
+
+  <!-- ================= BUYER CHALLENGES ================= -->
+  <section class="kit-section alt" id="problems">
+    <div class="kit-wrap">
+      <div class="kit-head">
+        <span class="ship-tag">Buyer challenges</span>
+        <h2>Your Products Come from Different Factories. Your Customer Expects One Complete Kit.</h2>
+        <p>Sourcing individual products is only part of the work. The real challenge begins when different suppliers must meet the same product, branding, packaging and delivery requirements.</p>
       </div>
-      <p class="kit-fineprint">You do not have to replace your existing suppliers. Where agreed, Milebond can coordinate with suppliers you already use. Factory audits, engineering validation and laboratory testing are separate services and are not part of standard kitting unless separately confirmed.</p>
+      <div class="kit-challenges">
+        <div class="kit-challenge-item"><b>Different delivery dates</b><span>Different suppliers deliver at different times, so the last component can hold up the whole kit.</span></div>
+        <div class="kit-challenge-item"><b>Colour and finish consistency</b><span>Product colours and finishes need to match your brand across different materials and factories.</span></div>
+        <div class="kit-challenge-item"><b>Different MOQs</b><span>Each component may have a different MOQ or customization limit before the bundle is viable.</span></div>
+        <div class="kit-challenge-item"><b>Missing quantities</b><span>Missing quantities or inconsistent specifications can delay final assembly.</span></div>
+        <div class="kit-challenge-item"><b>Packaging fit</b><span>Packaging must fit all components while controlling shipping volume.</span></div>
+        <div class="kit-challenge-item"><b>Kit completeness</b><span>Every finished kit needs to contain the correct items and labels.</span></div>
+      </div>
+      <p class="kit-closing">Milebond brings these moving parts into one coordinated workflow in China.</p>
     </div>
   </section>
 
@@ -1581,126 +1522,48 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   <section class="kit-section cream" id="process">
     <div class="kit-wrap">
       <div class="kit-head">
-        <span class="ship-tag">End-to-end workflow</span>
-        <h2>From Pre-Production Coordination to One Finished Shipment</h2>
-        <p>One project owner across both phases. Pre-production decisions are agreed before suppliers start, and each post-arrival step produces a record you can review before the next one begins.</p>
+        <span class="ship-tag">Pre-production to shipment</span>
+        <h2>From Pre-Production Coordination to Shipment</h2>
+        <p>Pre-production decisions are agreed before suppliers start, and each post-arrival stage produces a record you can review before the next one begins.</p>
       </div>
-      <div class="kit-phase">
-        <div class="kit-phase-head"><b>Before production</b><span>Specifications, branding, colour and packaging are agreed across suppliers.</span></div>
-        <div class="kit-steps four">
-          <div class="kit-step">
-            <div class="kit-step-no">01</div>
-            <h3>Product &amp; BOM Review</h3>
-            <p>Review the product list, component specifications and bill of materials before supplier work starts.</p>
-          </div>
-          <div class="kit-step">
-            <div class="kit-step-no">02</div>
-            <h3>Supplier Specification Coordination</h3>
-            <p>Align dimensions, materials, finish and customization requirements with each supplier.</p>
-          </div>
-          <div class="kit-step">
-            <div class="kit-step-no">03</div>
-            <h3>Branding &amp; Colour Coordination</h3>
-            <p>Agree logo methods and a compatible colour direction across different products and materials.</p>
-          </div>
-          <div class="kit-step">
-            <div class="kit-step-no">04</div>
-            <h3>Packaging Layout Planning</h3>
-            <p>Plan component arrangement and packaging format, then check the layout against a physical sample.</p>
-          </div>
+      <div class="kit-process">
+        <div class="kit-process-step">
+          <div class="kit-process-no">01</div>
+          <h3>Pre-production Coordination</h3>
+          <p>Specifications, branding, colour and packaging agreed across suppliers.</p>
+        </div>
+        <div class="kit-process-step">
+          <div class="kit-process-no">02</div>
+          <h3>Supplier Production</h3>
+          <p>Each supplier produces to the agreed specification and quantity.</p>
+        </div>
+        <div class="kit-process-step">
+          <div class="kit-process-no">03</div>
+          <h3>Warehouse Receiving</h3>
+          <p>Cartons received, counted and recorded against the packing list.</p>
+        </div>
+        <div class="kit-process-step">
+          <div class="kit-process-no">04</div>
+          <h3>Incoming QC</h3>
+          <p>Visible condition, quantity and agreed checks before release to kitting.</p>
+        </div>
+        <div class="kit-process-step">
+          <div class="kit-process-no">05</div>
+          <h3>BOM-Based Assembly</h3>
+          <p>Components matched to the approved BOM and assembled into complete sets.</p>
+        </div>
+        <div class="kit-process-step">
+          <div class="kit-process-no">06</div>
+          <h3>Retail Packaging</h3>
+          <p>Approved packaging, inserts and labels applied to each kit.</p>
+        </div>
+        <div class="kit-process-step">
+          <div class="kit-process-no">07</div>
+          <h3>Shipment Preparation</h3>
+          <p>Finished kits verified, cartonised and prepared for the agreed delivery plan.</p>
         </div>
       </div>
-      <div class="kit-phase">
-        <div class="kit-phase-head"><b>After goods arrive</b><span>Receiving, QC, assembly and retail packaging in the 1,000+ sqm Jinhua warehouse.</span></div>
-        <div class="kit-steps">
-          <div class="kit-step">
-            <div class="kit-step-no">05</div>
-            <h3>Warehouse Receiving</h3>
-            <p>Record incoming products, SKU references, quantities and carton information.</p>
-          </div>
-          <div class="kit-step">
-            <div class="kit-step-no">06</div>
-            <h3>Incoming Quality Checks</h3>
-            <p>Check visible condition, quantity and agreed product requirements. Isolate discrepancies for review.</p>
-          </div>
-          <div class="kit-step">
-            <div class="kit-step-no">07</div>
-            <h3>BOM-Based Kitting &amp; Assembly</h3>
-            <p>Match components against your approved BOM and assemble each complete set.</p>
-          </div>
-          <div class="kit-step">
-            <div class="kit-step-no">08</div>
-            <h3>Packaging &amp; Labeling</h3>
-            <p>Apply approved packaging, inserts, product labels and shipping labels.</p>
-          </div>
-          <div class="kit-step">
-            <div class="kit-step-no">09</div>
-            <h3>Final Check &amp; Shipment</h3>
-            <p>Verify finished kits and prepare shipment according to the agreed delivery plan.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= TWO WAYS ================= -->
-  <section class="kit-section alt" id="two-ways">
-    <div class="kit-wrap">
-      <div class="kit-head">
-        <span class="ship-tag">Two ways to work</span>
-        <h2>Already Have Suppliers? Or Need Us to Source the Products?</h2>
-        <p>Both models end in the same warehouse workflow. The difference is who finds and negotiates the components.</p>
-      </div>
-      <div class="kit-options">
-        <div class="kit-option">
-          <p class="kit-option-label">Option A</p>
-          <h3>You Have Your Own Suppliers</h3>
-          <p>We coordinate your nominated factories, arrange collection or delivery to our warehouse, check incoming goods, consolidate the products and complete your kitting requirements.</p>
-          <p class="kit-option-note">You retain your supplier relationships. We coordinate the execution in China, including <a href="/services/order-management">order management</a> and receiving.</p>
-        </div>
-        <div class="kit-option">
-          <p class="kit-option-label">Option B</p>
-          <h3>Milebond Sources the Products</h3>
-          <p>Share your product links, reference images, specifications or BOM. We identify suitable suppliers, compare options, coordinate customization and bring the selected components together for assembly.</p>
-          <p class="kit-option-note">One sourcing contact for the complete bundle. See <a href="/services/product-sourcing">product sourcing</a> for how the supplier search works.</p>
-        </div>
-        <div class="kit-option-flow">Both options → one receiving point → one kitting line → one shipment plan</div>
-      </div>
-      <div class="kit-mid-cta">
-        <a href="#inquiry" class="btn btn-primary">Get a Kitting Project Quote</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= WAREHOUSE OPERATIONS ================= -->
-  <section class="kit-section cream" id="warehouse">
-    <div class="kit-wrap">
-      <div class="kit-head">
-        <span class="ship-tag">Warehouse operations</span>
-        <h2>More Than Receiving and Repacking</h2>
-        <p>Every incoming shipment needs to be managed according to your project requirements. We do more than simply collect cartons from different suppliers.</p>
-      </div>
-      <div class="kit-ledger">
-        <div class="kit-ledger-row"><span>Stage</span><span>What we do</span><span>Record</span></div>
-        <div class="kit-ledger-row"><b>Receiving</b><span>Supplier, SKU, carton and quantity checks.</span><span>Receiving report with discrepancies flagged.</span></div>
-        <div class="kit-ledger-row"><b>Sorting</b><span>Separate products by SKU, supplier or project.</span><span>SKU allocation list.</span></div>
-        <div class="kit-ledger-row"><b>Discrepancy control</b><span>Record missing, damaged or incorrect items.</span><span>Photo log and issue note.</span></div>
-        <div class="kit-ledger-row"><b>Kitting</b><span>Match components against the approved BOM.</span><span>BOM checklist per completed set.</span></div>
-        <div class="kit-ledger-row"><b>Packaging</b><span>Arrange inserts, bags, boxes and labels.</span><span>Packing specification and photos.</span></div>
-        <div class="kit-ledger-row"><b>Dispatch</b><span>Prepare final carton information and shipment handover.</span><span>Carton list and handover record.</span></div>
-      </div>
-
-      <div class="kit-exception-wrap">
-        <h3>What Happens When One Supplier Gets It Wrong?</h3>
-        <p>We isolate affected goods, record issues with photos, inform the customer and coordinate the agreed corrective action before affected items are released for final kitting or shipment.</p>
-        <div class="kit-exception">
-          <div><b>Separate</b><span>Isolate affected goods.</span></div>
-          <div><b>Document</b><span>Record the issue with photos.</span></div>
-          <div><b>Report</b><span>Inform the customer with evidence.</span></div>
-          <div><b>Resolve</b><span>Coordinate the agreed corrective action.</span></div>
-        </div>
-        <p class="kit-fineprint">Replacement, rework, scrap and any additional cost are carried out according to the customer's approved instruction. Milebond does not make that decision unilaterally.</p>
-      </div>
+      <p class="kit-process-note">You do not have to replace your existing suppliers. Where agreed, Milebond can coordinate with suppliers you already use.</p>
     </div>
   </section>
 
@@ -1725,48 +1588,49 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         <span>Project status: sourcing, branding and packaging solution development</span>
       </div>
 
-      <div class="kit-photo-grid">
-        <figure class="kit-figure">
-          <div class="kit-photo"><img src="/images/case-kitting/pet-water-bottle.png" alt="Portable pet water bottle product option" width="201" height="141" loading="lazy" decoding="async"></div>
-          <figcaption>Portable pet water bottle</figcaption>
-        </figure>
-        <figure class="kit-figure">
-          <div class="kit-photo"><img src="/images/case-kitting/collapsible-silicone-bowls.png" alt="Two collapsible silicone pet bowls product option" width="201" height="95" loading="lazy" decoding="async"></div>
-          <figcaption>Two collapsible silicone bowls</figcaption>
-        </figure>
-        <figure class="kit-figure">
-          <div class="kit-photo"><img src="/images/case-kitting/microfiber-pet-towel.png" alt="Grey microfiber pet towel product option" width="134" height="112" loading="lazy" decoding="async"></div>
-          <figcaption>Grey microfiber towel</figcaption>
-        </figure>
-        <figure class="kit-figure">
-          <div class="kit-photo"><img src="/images/case-kitting/tether-stake.png" alt="Metal spiral tether stake product option" width="212" height="106" loading="lazy" decoding="async"></div>
-          <figcaption>Tether / spiral stake</figcaption>
-        </figure>
-        <figure class="kit-figure">
-          <div class="kit-photo"><img src="/images/case-kitting/led-pet-collar.png" alt="Green illuminated pet collar product option" width="139" height="117" loading="lazy" decoding="async"></div>
-          <figcaption>Illuminated collar</figcaption>
-        </figure>
-        <figure class="kit-figure">
-          <div class="kit-photo"><img src="/images/case-kitting/pet-waist-bag.png" alt="Dark green waist bag product option" width="112" height="102" loading="lazy" decoding="async"></div>
-          <figcaption>Dark-green waist bag</figcaption>
-        </figure>
-        <figure class="kit-figure">
-          <div class="kit-photo"><img src="/images/case-kitting/drawstring-storage-bag.png" alt="Cotton drawstring storage bag for the kit" width="200" height="125" loading="lazy" decoding="async"></div>
-          <figcaption>Drawstring storage bag</figcaption>
-        </figure>
-        <figure class="kit-figure">
-          <div class="kit-photo"><img src="/images/case-kitting/retail-box-sample.png" alt="Pet accessory retail box sample with fitted foam insert" width="218" height="142" loading="lazy" decoding="async"></div>
-          <figcaption>Retail box sample with foam insert</figcaption>
-        </figure>
+      <div class="kit-ref-block">
+        <div class="kit-ref-head">
+          <h3>Customer Reference vs. Sourced Option</h3>
+          <span>Brand marks in the reference images are cropped out.</span>
+        </div>
+        <div class="kit-ref-row">
+          <figure class="kit-ref-side">
+            <p class="kit-role">Customer reference</p>
+            <img src="/images/case-kitting/reference-led-collar.png" alt="Customer reference for an illuminated pet collar" width="97" height="63" loading="lazy" decoding="async">
+            <figcaption>Illuminated collar reference, cropped to remove the brand band.</figcaption>
+          </figure>
+          <div class="kit-ref-arrow" aria-hidden="true">→</div>
+          <figure class="kit-ref-side">
+            <p class="kit-role alt">Option coordinated</p>
+            <img src="/images/case-kitting/led-pet-collar.png" alt="Green illuminated pet collar option coordinated for the kit" width="139" height="117" loading="lazy" decoding="async">
+            <figcaption>Illuminated collar option coordinated for the kit.</figcaption>
+          </figure>
+        </div>
+        <div class="kit-ref-row">
+          <figure class="kit-ref-side">
+            <p class="kit-role">Customer reference</p>
+            <img src="/images/case-kitting/reference-waist-bag.png" alt="Customer reference for a pet waist bag" width="137" height="95" loading="lazy" decoding="async">
+            <figcaption>Waist bag reference supplied with the original product list.</figcaption>
+          </figure>
+          <div class="kit-ref-arrow" aria-hidden="true">→</div>
+          <figure class="kit-ref-side">
+            <p class="kit-role alt">Option coordinated</p>
+            <img src="/images/case-kitting/pet-waist-bag.png" alt="Dark green waist bag option coordinated for the kit" width="112" height="102" loading="lazy" decoding="async">
+            <figcaption>Waist bag option coordinated for the kit.</figcaption>
+          </figure>
+        </div>
       </div>
-      <p class="kit-fineprint">Product options and one packaging sample arrangement photographed during project coordination. Customer logos and brand identifiers are masked or cropped. The photographs show component options and a partial sample arrangement, not final approved production.</p>
 
-      <article class="kit-challenge">
-        <div class="kit-challenge-head"><span class="kit-challenge-no">Challenge 01</span><h3>Low first-order quantity</h3></div>
-        <div class="kit-requirement">
+      <article class="kit-editorial">
+        <div class="kit-editorial-head"><span class="kit-editorial-no">Challenge 01</span><h3>Low first-order quantity</h3></div>
+        <div class="kit-module-grid">
           <div>
             <b>Customer requirement</b>
             <p>A complete multi-component product kit with an initial target of approximately 50 sets.</p>
+          </div>
+          <div>
+            <b>What made it difficult</b>
+            <p>Each component came from a different factory with its own MOQ, so a small first run could have turned into several unrelated minimum commitments.</p>
           </div>
           <div>
             <b>Milebond's approach</b>
@@ -1774,15 +1638,37 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
             <p>The objective was to find a practical way to bring the different products together without assuming that every factory would accept the same order quantity or branding conditions.</p>
           </div>
         </div>
+        <div class="kit-gallery">
+          <figure>
+            <div class="kit-img-box"><img src="/images/case-kitting/pet-water-bottle.png" alt="Portable pet water bottle product option" width="201" height="141" loading="lazy" decoding="async"></div>
+            <figcaption>Portable pet water bottle</figcaption>
+          </figure>
+          <figure>
+            <div class="kit-img-box"><img src="/images/case-kitting/collapsible-silicone-bowls.png" alt="Two collapsible silicone pet bowls product option" width="201" height="95" loading="lazy" decoding="async"></div>
+            <figcaption>Two collapsible silicone bowls</figcaption>
+          </figure>
+          <figure>
+            <div class="kit-img-box"><img src="/images/case-kitting/microfiber-pet-towel.png" alt="Grey microfiber pet towel product option" width="134" height="112" loading="lazy" decoding="async"></div>
+            <figcaption>Grey microfiber towel</figcaption>
+          </figure>
+          <figure>
+            <div class="kit-img-box"><img src="/images/case-kitting/drawstring-storage-bag.png" alt="Cotton drawstring storage bag for the kit" width="200" height="125" loading="lazy" decoding="async"></div>
+            <figcaption>Drawstring storage bag</figcaption>
+          </figure>
+        </div>
         <p class="kit-fineprint">The buyer's target was approximately 50 complete kits. The quotation worksheet recorded a basis of 48 sets (6 cartons × 8 sets), which is a quotation basis, not a confirmed production order. Not every supplier confirmed a 50-piece MOQ.</p>
       </article>
 
-      <article class="kit-challenge">
-        <div class="kit-challenge-head"><span class="kit-challenge-no">Challenge 02</span><h3>Branding across different accessories</h3></div>
-        <div class="kit-requirement">
+      <article class="kit-editorial">
+        <div class="kit-editorial-head"><span class="kit-editorial-no">Challenge 02</span><h3>Branding across different accessories</h3></div>
+        <div class="kit-module-grid">
           <div>
             <b>Customer requirement</b>
             <p>Brand recognition across different accessories, even though the products were made from different materials and supplied by different factories.</p>
+          </div>
+          <div>
+            <b>What made it difficult</b>
+            <p>The same logo had to work on silicone, metal, textile and plastic, which use different marking methods and carry different setup costs.</p>
           </div>
           <div>
             <b>Milebond's approach</b>
@@ -1790,25 +1676,31 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
             <p>Other accessories used different branding methods depending on material, supplier capability and quantity. Supplier-original branding and buyer-specific branding were kept distinct.</p>
           </div>
         </div>
-        <div class="kit-photo-grid two">
-          <figure class="kit-figure">
-            <div class="kit-photo"><img src="/images/case-kitting/pet-water-bottle.png" alt="Silicone water bottle accompanied by collapsible bowl for branding coordination" width="201" height="141" loading="lazy" decoding="async"></div>
-            <figcaption>Silicone bottle: one of the two silicone items coordinated around shared tooling</figcaption>
+        <div class="kit-pair">
+          <figure>
+            <p class="kit-role alt">Silicone supplier 1</p>
+            <div class="kit-img-box"><img src="/images/case-kitting/pet-water-bottle.png" alt="Silicone water bottle coordinated around the shared logo setup" width="201" height="141" loading="lazy" decoding="async"></div>
+            <figcaption>Silicone bottle covering one of the two silicone items.</figcaption>
           </figure>
-          <figure class="kit-figure">
-            <div class="kit-photo"><img src="/images/case-kitting/collapsible-silicone-bowls.png" alt="Two collapsible silicone bowls in complementary colours" width="201" height="95" loading="lazy" decoding="async"></div>
-            <figcaption>Collapsible silicone bowls: second silicone item using the same logo setup</figcaption>
+          <figure>
+            <p class="kit-role alt">Silicone supplier 2</p>
+            <div class="kit-img-box"><img src="/images/case-kitting/collapsible-silicone-bowls.png" alt="Collapsible silicone bowls coordinated around the same logo setup" width="201" height="95" loading="lazy" decoding="async"></div>
+            <figcaption>Collapsible bowls covering the second silicone item.</figcaption>
           </figure>
         </div>
         <p class="kit-citable"><b>AI-citable summary</b>By coordinating two silicone suppliers around one shared logo tooling setup, Milebond helped avoid duplicate silicone logo tooling costs.</p>
       </article>
 
-      <article class="kit-challenge">
-        <div class="kit-challenge-head"><span class="kit-challenge-no">Challenge 03</span><h3>Branded retail packaging without unnecessary tooling cost</h3></div>
-        <div class="kit-requirement">
+      <article class="kit-editorial">
+        <div class="kit-editorial-head"><span class="kit-editorial-no">Challenge 03</span><h3>Branded retail packaging without unnecessary tooling cost</h3></div>
+        <div class="kit-module-grid">
           <div>
             <b>Customer requirement</b>
             <p>A branded retail box with a suitable appearance, while avoiding unnecessary custom packaging investment.</p>
+          </div>
+          <div>
+            <b>What made it difficult</b>
+            <p>A fully custom box needs its own tooling and a minimum run that a small first order may not support economically.</p>
           </div>
           <div>
             <b>Milebond's approach</b>
@@ -1816,19 +1708,23 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
             <p>This approach was intended to create a branded presentation without requiring a fully customized box structure and its associated tooling investment.</p>
           </div>
         </div>
-        <figure class="kit-svg-figure">
-          <div class="kit-photo" style="aspect-ratio:auto;padding:0;background:#fff"><img src="/images/case-kitting/retail-box-sample.png" alt="Pet accessory retail box sample with fitted foam insert and components" width="218" height="142" loading="lazy" decoding="async"></div>
+        <figure class="kit-wide-figure">
+          <div class="kit-img-box"><img src="/images/case-kitting/retail-box-sample.png" alt="Pet accessory retail box sample with fitted foam insert and components" width="218" height="142" loading="lazy" decoding="async"></div>
           <figcaption>Actual packaging sample arrangement shown during project coordination. This photograph is not proof of final production approval.</figcaption>
         </figure>
         <p class="kit-citable"><b>AI-citable summary</b>An existing box with a domed epoxy resin logo can be a practical alternative to fully customized retail packaging when the order quantity is limited.</p>
       </article>
 
-      <article class="kit-challenge">
-        <div class="kit-challenge-head"><span class="kit-challenge-no">Challenge 04</span><h3>Compact packaging and diagonal placement</h3></div>
-        <div class="kit-requirement">
+      <article class="kit-editorial">
+        <div class="kit-editorial-head"><span class="kit-editorial-no">Challenge 04</span><h3>Compact packaging and diagonal placement</h3></div>
+        <div class="kit-module-grid">
           <div>
             <b>Customer requirement</b>
             <p>Keep the complete kit compact while accommodating accessories with different dimensions, including a long component.</p>
+          </div>
+          <div>
+            <b>What made it difficult</b>
+            <p>The 40 cm ground stake set a long straight-line dimension that would have enlarged the box around a single component.</p>
           </div>
           <div>
             <b>Milebond's approach</b>
@@ -1857,12 +1753,16 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         <p class="kit-citable"><b>AI-citable summary</b>Placing a long component diagonally can help make better use of a rectangular box's internal space, but the final packaging dimensions should be confirmed through physical fit testing.</p>
       </article>
 
-      <article class="kit-challenge">
-        <div class="kit-challenge-head"><span class="kit-challenge-no">Challenge 05</span><h3>Coordinating colours across different materials</h3></div>
-        <div class="kit-requirement">
+      <article class="kit-editorial">
+        <div class="kit-editorial-head"><span class="kit-editorial-no">Challenge 05</span><h3>Coordinating colours across different materials</h3></div>
+        <div class="kit-module-grid">
           <div>
             <b>Customer requirement</b>
             <p>A visually coordinated product collection, even though the accessories came from different suppliers and different materials.</p>
+          </div>
+          <div>
+            <b>What made it difficult</b>
+            <p>Different materials reproduce the same colour differently, so an identical colour code would not have looked uniform across the kit.</p>
           </div>
           <div>
             <b>Milebond's approach</b>
@@ -1876,21 +1776,21 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
           <div class="kit-swatch"><i style="background:#3f4a3c"></i><span>Dark green</span></div>
           <div class="kit-swatch"><i style="background:#b9b7ae"></i><span>Warm neutral</span></div>
         </div>
-        <div class="kit-photo-grid">
-          <figure class="kit-figure">
-            <div class="kit-photo"><img src="/images/case-kitting/microfiber-pet-towel.png" alt="Grey microfiber towel shown for colour coordination" width="134" height="112" loading="lazy" decoding="async"></div>
+        <div class="kit-gallery">
+          <figure>
+            <div class="kit-img-box"><img src="/images/case-kitting/microfiber-pet-towel.png" alt="Grey microfiber towel shown for colour coordination" width="134" height="112" loading="lazy" decoding="async"></div>
             <figcaption>Grey towel</figcaption>
           </figure>
-          <figure class="kit-figure">
-            <div class="kit-photo"><img src="/images/case-kitting/collapsible-silicone-bowls.png" alt="Green collapsible silicone bowls shown for colour coordination" width="201" height="95" loading="lazy" decoding="async"></div>
+          <figure>
+            <div class="kit-img-box"><img src="/images/case-kitting/collapsible-silicone-bowls.png" alt="Green collapsible silicone bowls shown for colour coordination" width="201" height="95" loading="lazy" decoding="async"></div>
             <figcaption>Green silicone bowls</figcaption>
           </figure>
-          <figure class="kit-figure">
-            <div class="kit-photo"><img src="/images/case-kitting/led-pet-collar.png" alt="Green illuminated collar shown for colour coordination" width="139" height="117" loading="lazy" decoding="async"></div>
+          <figure>
+            <div class="kit-img-box"><img src="/images/case-kitting/led-pet-collar.png" alt="Green illuminated collar shown for colour coordination" width="139" height="117" loading="lazy" decoding="async"></div>
             <figcaption>Green illuminated collar</figcaption>
           </figure>
-          <figure class="kit-figure">
-            <div class="kit-photo"><img src="/images/case-kitting/pet-waist-bag.png" alt="Dark green waist bag shown for colour coordination" width="112" height="102" loading="lazy" decoding="async"></div>
+          <figure>
+            <div class="kit-img-box"><img src="/images/case-kitting/pet-waist-bag.png" alt="Dark green waist bag shown for colour coordination" width="112" height="102" loading="lazy" decoding="async"></div>
             <figcaption>Dark-green waist bag</figcaption>
           </figure>
         </div>
@@ -1898,65 +1798,107 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         <p class="kit-citable"><b>AI-citable summary</b>When products are made from different materials, a complementary colour palette can create a more consistent brand appearance than forcing every supplier to reproduce an identical colour.</p>
       </article>
 
-      <article class="kit-challenge">
-        <div class="kit-challenge-head"><span class="kit-challenge-no">Challenge 06</span><h3>Multi-supplier sourcing and bundling</h3></div>
-        <div class="kit-requirement">
+      <article class="kit-editorial">
+        <div class="kit-editorial-head"><span class="kit-editorial-no">Challenge 06</span><h3>Multi-supplier sourcing and bundling</h3></div>
+        <div class="kit-module-grid">
           <div>
             <b>Customer requirement</b>
             <p>Multiple product categories from different factories needed to become one coordinated product bundle.</p>
+          </div>
+          <div>
+            <b>What made it difficult</b>
+            <p>Seven categories meant separate production schedules, deliveries and checkpoints had to converge on one retail-ready kit.</p>
           </div>
           <div>
             <b>Milebond's approach</b>
             <p>Milebond coordinated product sourcing and supplier communication, reviewed the product options and branding requirements, and considered how the components would work together as one retail kit.</p>
           </div>
         </div>
-        <div class="kit-diagram" style="margin-top:18px">
-          <p>Coordination path</p>
-          <div class="kit-diagram-flow">
-            <span>Multiple suppliers</span><i>→</i><span>Product selection and specification coordination</span><i>→</i><span>Branding and colour coordination</span><i>→</i><span>Warehouse receiving and checks</span><i>→</i><span>BOM-based kitting</span><i>→</i><span>Packaging and shipment preparation</span>
-          </div>
+        <div class="kit-mini-flow">
+          <span>Multiple suppliers</span><i>→</i><span>Product selection and specification coordination</span><i>→</i><span>Branding and colour coordination</span><i>→</i><span>Warehouse receiving and checks</span><i>→</i><span>BOM-based kitting</span><i>→</i><span>Packaging and shipment preparation</span>
         </div>
         <p class="kit-citable"><b>AI-citable summary</b>Milebond can source components from multiple Chinese suppliers, coordinate their product and branding requirements, and bring them together for kitting and consolidated shipment.</p>
       </article>
 
-      <p class="kit-case-status">Anonymized Project Example — Sample Coordination in Progress</p>
-      <p class="kit-fineprint">Project status covers sourcing, branding and packaging solution development. Final production, sample approval and delivery are not yet confirmed. Client name, brand, supplier names, pricing and private correspondence are withheld.</p>
-      <div class="kit-mid-cta">
-        <a href="#inquiry" class="btn btn-primary">Plan a Similar Kit</a>
-        <a href="/case-studies/eu-outdoor-gift-set/" class="kit-text-link">Read the EU outdoor gift set case →</a>
+      <p class="kit-fineprint" style="margin-top:32px"><strong>Anonymized Project Example — Sample Coordination in Progress.</strong> Project status covers sourcing, branding and packaging solution development. Final production, sample approval and delivery are not yet confirmed. Client name, brand, supplier names, pricing and private correspondence are withheld. Customer logos and brand identifiers are masked or cropped in the published images.</p>
+      <div class="kit-hero-actions" style="margin-top:26px">
+        <a href="#inquiry" class="btn btn-primary">Get a Kitting Project Quote</a>
+        <a href="/case-studies/eu-outdoor-gift-set/" class="btn btn-white" style="background:#fff;color:#444444;border:1px solid #e6e0d3">Read the EU outdoor gift set case →</a>
       </div>
     </div>
   </section>
 
-  <!-- ================= QUALITY CONTROL ================= -->
-  <section class="kit-section cream" id="quality">
+  <!-- ================= SUPPLIER MODELS ================= -->
+  <section class="kit-section cream" id="suppliers">
     <div class="kit-wrap">
       <div class="kit-head">
-        <span class="ship-tag">Quality &amp; traceability</span>
+        <span class="ship-tag">Two ways to work</span>
+        <h2>Existing Suppliers vs. Milebond-Sourced Products</h2>
+        <p>Both models end in the same warehouse workflow. The difference is who finds and negotiates the components.</p>
+      </div>
+      <div class="kit-split">
+        <div>
+          <p class="kit-option-label">Option A</p>
+          <h3>You Have Your Own Suppliers</h3>
+          <p>We coordinate your nominated factories, arrange collection or delivery to our warehouse, check incoming goods, consolidate the products and complete your kitting requirements.</p>
+          <p>You retain your supplier relationships. We coordinate the execution in China, including <a href="/services/order-management">order management</a> and receiving.</p>
+        </div>
+        <div>
+          <p class="kit-option-label">Option B</p>
+          <h3>Milebond Sources the Products</h3>
+          <p>Share your product links, reference images, specifications or BOM. We identify suitable suppliers, compare options, coordinate customization and bring the selected components together for assembly.</p>
+          <p>One sourcing contact for the complete bundle. See <a href="/services/product-sourcing">product sourcing</a> for how the supplier search works.</p>
+        </div>
+        <div class="kit-split-note">Both options → one receiving point → one kitting line → one shipment plan</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WAREHOUSE + QC ================= -->
+  <section class="kit-section alt" id="warehouse">
+    <div class="kit-wrap">
+      <div class="kit-head">
+        <span class="ship-tag">Warehouse operations and QC</span>
         <h2>Know What Arrived. Know What Was Checked. Know What Goes Into Each Kit.</h2>
-        <p>For first orders, Milebond applies 100% inspection according to the agreed product and inspection requirements. Repeat-order inspection can follow an agreed sampling or AQL standard.</p>
+        <p>Every incoming shipment is managed against your project requirements, with records you can review before the next stage begins.</p>
       </div>
-      <div class="kit-records">
-        <div class="kit-record"><span class="kit-record-no">R1</span><h3>Incoming quantity and carton records</h3><p>Counted against the packing list, with carton condition noted on arrival.</p><small>Sample Record / Illustrative Example</small></div>
-        <div class="kit-record"><span class="kit-record-no">R2</span><h3>Product condition and appearance photos</h3><p>Visible condition photographed before components are released to kitting.</p><small>Sample Record / Illustrative Example</small></div>
-        <div class="kit-record"><span class="kit-record-no">R3</span><h3>Agreed functional and specification checks</h3><p>Checked against the agreed product requirements for that project.</p><small>Sample Record / Illustrative Example</small></div>
-        <div class="kit-record"><span class="kit-record-no">R4</span><h3>BOM-based kitting verification</h3><p>Each completed set checked against the approved BOM and component count.</p><small>Sample Record / Illustrative Example</small></div>
-        <div class="kit-record"><span class="kit-record-no">R5</span><h3>Packaging and label checks</h3><p>Retail packaging, inserts, product labels and shipping labels verified before closing.</p><small>Sample Record / Illustrative Example</small></div>
-        <div class="kit-record"><span class="kit-record-no">R6</span><h3>Final carton and shipment records</h3><p>Carton count, dimensions and handover information recorded before dispatch.</p><small>Sample Record / Illustrative Example</small></div>
+      <table class="kit-table">
+        <thead>
+          <tr><th>Stage</th><th>What We Check</th><th>Record or Output</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Receiving</td><td>Supplier, SKU, carton and quantity checks.</td><td>Receiving report with discrepancies flagged.</td></tr>
+          <tr><td>Sorting</td><td>Separate products by SKU, supplier or project.</td><td>SKU allocation list.</td></tr>
+          <tr><td>Discrepancy control</td><td>Record missing, damaged or incorrect items.</td><td>Photo log and issue note.</td></tr>
+          <tr><td>Kitting</td><td>Match components against the approved BOM.</td><td>BOM checklist per completed set.</td></tr>
+          <tr><td>Packaging</td><td>Arrange inserts, bags, boxes and labels.</td><td>Packing specification and photos.</td></tr>
+          <tr><td>Dispatch</td><td>Prepare final carton information and shipment handover.</td><td>Carton list and handover record.</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="kit-subhead">Incoming Inspection Stages</h3>
+      <div class="kit-qc">
+        <div class="kit-qc-item"><span class="kit-qc-no">01</span><div><b>Quantity and carton condition</b><span>Counted against the packing list, with carton condition noted on arrival.</span></div></div>
+        <div class="kit-qc-item"><span class="kit-qc-no">02</span><div><b>Product condition and appearance</b><span>Visible condition photographed before components are released to kitting.</span></div></div>
+        <div class="kit-qc-item"><span class="kit-qc-no">03</span><div><b>Agreed specification checks</b><span>Checked against the agreed product requirements for that project.</span></div></div>
+        <div class="kit-qc-item"><span class="kit-qc-no">04</span><div><b>BOM-based kitting verification</b><span>Each completed set checked against the approved BOM and component count.</span></div></div>
+        <div class="kit-qc-item"><span class="kit-qc-no">05</span><div><b>Packaging and label checks</b><span>Retail packaging, inserts, product labels and shipping labels verified before closing.</span></div></div>
+        <div class="kit-qc-item"><span class="kit-qc-no">06</span><div><b>Final carton and shipment records</b><span>Carton count, dimensions and handover information recorded before dispatch.</span></div></div>
       </div>
-      <p class="kit-fineprint">These are illustrative record types, not customer QC reports. See <a href="/services/quality-control/">quality control and inspection</a> for the inspection gates and AQL standard.</p>
+      <p class="kit-fineprint">For first orders, Milebond applies 100% inspection according to the agreed product and inspection requirements. Repeat-order inspection can follow an agreed sampling or AQL standard. These are record types, not customer QC reports. See <a href="/services/quality-control/">quality control and inspection</a> for the inspection gates and AQL standard.</p>
+      <p class="kit-fineprint">When one supplier ships something incorrect, we isolate the affected goods, record the issue with photos, inform the customer and coordinate the agreed corrective action before release. Replacement, rework, scrap and any additional cost follow the customer's approved instruction.</p>
     </div>
   </section>
 
   <!-- ================= PACKAGING ================= -->
-  <section class="kit-section alt" id="packaging">
+  <section class="kit-section cream" id="packaging">
     <div class="kit-wrap">
       <div class="kit-head">
-        <span class="ship-tag">Packaging &amp; FBA prep</span>
+        <span class="ship-tag">Packaging and shipment preparation</span>
         <h2>From Component-Level Packing to Retail-Ready Delivery</h2>
         <p>Packaging decisions should consider more than appearance. We review product dimensions, protection requirements, packing efficiency and shipping volume before finalizing the packing plan.</p>
       </div>
-      <div class="kit-pack-grid">
+      <div class="kit-pack">
         <ul class="kit-pack-list">
           <li>Retail boxes, mailer boxes and custom packaging.</li>
           <li>Drawstring bags, inserts and product separators.</li>
@@ -1977,14 +1919,23 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     </div>
   </section>
 
-  <!-- ================= PRICING FACTORS ================= -->
-  <section class="kit-section cream" id="pricing">
+  <!-- ================= PRICING ================= -->
+  <section class="kit-section alt" id="pricing">
     <div class="kit-wrap">
       <div class="kit-head">
-        <span class="ship-tag">Pricing factors</span>
-        <h2>What Affects Kitting &amp; Assembly Costs?</h2>
-        <p>Managed Order service is charged at <strong>USD 50 per order</strong> under the standard scope. The fee is charged per order, not per SKU or per supplier. Complex or large orders may require an adjusted fee, discussed and agreed in advance. Kitting and assembly labour is quoted separately according to the number of components and work required.</p>
-        <p>QC reporting is included with every managed order. Specialized inspections, laboratory testing and third-party testing may incur separate charges.</p>
+        <span class="ship-tag">Pricing</span>
+        <h2>What Kitting &amp; Assembly Costs</h2>
+        <p>One published fee for running the order, plus labour and materials quoted against the actual kitting scope.</p>
+      </div>
+      <div class="kit-fee">
+        <div class="kit-fee-amount">
+          <b>USD 50</b>
+          <span>per order, not per SKU or per supplier</span>
+        </div>
+        <div class="kit-fee-body">
+          <p>Managed Order service is charged at USD 50 per order under the standard scope. Complex or large orders may require an adjusted fee, discussed and agreed in advance. Kitting and assembly labour is quoted separately according to the number of components and work required.</p>
+          <p>QC reporting is included with every managed order. Specialized inspections, laboratory testing and third-party testing may incur separate charges.</p>
+        </div>
       </div>
       <div class="kit-cost">
         <div class="kit-cost-item"><span class="kit-cost-no">01</span><div><b>Product sourcing</b><span>Supplier search and component cost, where Milebond sources the item.</span></div></div>
@@ -1995,15 +1946,12 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         <div class="kit-cost-item"><span class="kit-cost-no">06</span><div><b>Packaging</b><span>Retail box, inserts, bags, labels and packing labor.</span></div></div>
         <div class="kit-cost-item"><span class="kit-cost-no">07</span><div><b>International shipping</b><span>Priced on final packed dimensions, weight, destination and agreed terms.</span></div></div>
       </div>
-      <p class="kit-pricing-note">The USD 50 fee does not include assembly labour, packaging materials, product costs, special testing or international freight. Costs depend on the number of components, supplier locations, order quantity, customization methods, packaging requirements and final destination. We confirm the applicable scope and fees before work starts. See <a href="/services/sourcing-fees-pricing">sourcing fees &amp; pricing</a> for the fee policy and <a href="/services/order-management">order management</a> for how active orders are run.</p>
-      <div class="kit-mid-cta">
-        <a href="#inquiry" class="btn btn-primary">Request an Itemized Kitting Quote</a>
-      </div>
+      <p class="kit-fineprint">The USD 50 fee does not include assembly labour, packaging materials, product costs, special testing or international freight. Costs depend on the number of components, supplier locations, order quantity, customization methods, packaging requirements and final destination. We confirm the applicable scope and fees before work starts. See <a href="/services/sourcing-fees-pricing">sourcing fees &amp; pricing</a> for the fee policy and <a href="/services/order-management">order management</a> for how active orders are run.</p>
     </div>
   </section>
 
   <!-- ================= FAQ ================= -->
-  <section class="kit-section alt" id="faq">
+  <section class="kit-section cream" id="faq">
     <div class="kit-wrap">
       <div class="kit-head">
         <span class="ship-tag">FAQ</span>
@@ -2061,10 +2009,11 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     <p>Share your product list, reference images, supplier details or packaging requirements. You do not need a fully finalized specification before contacting Milebond.</p>
     <p>We can review the product sourcing, supplier coordination, branding, colour matching, kitting and packaging requirements together — including the work that needs to happen before production begins.</p>
     <div class="kit-cta-actions">
-      <a href="#inquiry" class="btn btn-primary">Discuss Your Kitting Project</a>
-      <a href="https://wa.me/8615057960102?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20kitting%20project" target="_blank" rel="noopener" class="btn btn-white">Contact Milebond</a>
+      <a href="#inquiry" class="btn btn-primary">Get a Kitting Project Quote</a>
+      <a href="#suppliers" class="btn btn-white">Already Have Suppliers? Talk to Our Team</a>
     </div>
   </section>
+
 
 <section class="section-fullwidth inq-section" id="inquiry">
   <div class="container content-wrap">
