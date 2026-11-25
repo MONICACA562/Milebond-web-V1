@@ -1,4 +1,20 @@
+/* Internal paths that must never be served publicly.
+   .assetsignore is not applied by the current Cloudflare Pages Git deployment,
+   so these paths are blocked at the edge instead. */
+const INTERNAL_PREFIXES = ['/docs', '/scripts', '/blog-next'];
+
 export async function onRequest(context) {
+  const { pathname } = new URL(context.request.url);
+  if (INTERNAL_PREFIXES.some(prefix => pathname === prefix || pathname.startsWith(prefix + '/'))) {
+    return new Response('Not found', {
+      status: 404,
+      headers: {
+        'content-type': 'text/plain; charset=utf-8',
+        'x-robots-tag': 'noindex, nofollow'
+      }
+    });
+  }
+
   const response = await context.next();
   const contentType = response.headers.get('content-type') || '';
   if (!contentType.includes('text/html')) return response;
