@@ -79,10 +79,58 @@
         },
         {
           "@type": "Question",
-          "name": "What EU compliance documents do you support?",
+          "name": "What US and EU compliance documents do you support?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We support: GPSR (EU) 2023/988 general product-safety responsibility; Textile REACH (EC 1907/2006) restricted-substance compliance; EU 1007/2011 fibre-composition labelling; Temperature-rating care labelling. All test reports and declarations are provided on request for EU / UK retail and Amazon compliance."
+            "text": "We support GPSR (EU) 2023/988 product-safety coordination; REACH (EC) 1907/2006 restricted-substance assessment; EU 1007/2011 fibre-composition labelling; and thermal-performance documentation. Available documents and items requiring supplier confirmation are identified at quotation, and test reports are shared on request where held."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are sleeping bag compliance requirements different for online and offline sales?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Core product safety and applicable material requirements generally apply to both. Online sales may require additional product-page information and pre-purchase warnings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a textile label required for sleeping bags sold in the US?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Sleeping bags are covered by applicable FTC textile labeling rules, subject to the specific requirements and exceptions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does every sleeping bag sold in California need a Proposition 65 warning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It depends on applicable chemical exposure and warning requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does an adult sleeping bag need CE marking in the EU?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not automatically. Ordinary adult sleeping bags do not require CE marking solely because they are sold in the EU."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is EN ISO 23537-1 mandatory?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is a voluntary technical standard in general, but is recommended for substantiating thermal performance claims."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can B2B commercial documents replace textile labels in the EU?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In specified B2B supply-chain situations, Regulation (EU) No 1007/2011 permits accompanying commercial documents to replace or supplement labels. This should not be treated as a general exemption for consumer retail products."
           }
         },
         {
@@ -233,6 +281,42 @@
   .product-img .thumbs{display:grid;gap:6px;padding:8px;background:#fff;}
   .product-img .thumbs img{width:100%;height:70px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent;display:block;}
   .product-img .thumbs img.t.on{border-color:var(--orange);}
+  /* Compliance guide */
+  .cmp-block{margin-top:26px;}
+  .cmp-block h3{font-size:17px;color:var(--navy);margin:0 0 6px;}
+  .cmp-block h4{font-size:14px;color:var(--navy);margin:0 0 5px;}
+  .cmp-lead{font-size:13.5px;color:#444444;margin:0 0 4px;}
+  .cmp-legend{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 0;}
+  .cmp-tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.3px;text-transform:uppercase;padding:3px 8px;border-radius:20px;white-space:nowrap;line-height:1.5;}
+  .tag-mandatory{background:#e7f6ee;color:#0e7d5a;border:1px solid #b8e6d5;}
+  .tag-conditional{background:#fff4e0;color:#a55a00;border:1px solid #f3d39a;}
+  .tag-voluntary{background:#eef2fb;color:#2a4a7a;border:1px solid #c9d6ee;}
+  .cmp-note{font-size:12.5px;color:var(--gray);margin-top:10px;}
+  .cmp-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;margin-top:10px;}
+  table.cmp{width:100%;border-collapse:collapse;min-width:780px;table-layout:fixed;}
+  table.cmp th{background:var(--navy);color:#fff;font-size:12.5px;font-weight:700;text-align:left;padding:10px 12px;}
+  table.cmp th:nth-child(1){width:22%;}
+  table.cmp th:nth-child(2){width:16%;}
+  table.cmp th:nth-child(3){width:31%;}
+  table.cmp th:nth-child(4){width:31%;}
+  table.cmp td{padding:11px 12px;font-size:12.8px;line-height:1.6;color:#444444;vertical-align:top;border-top:1px solid var(--line);}
+  table.cmp tbody tr:nth-child(even) td{background:var(--bg);}
+  table.cmp td.cmp-req{font-weight:700;color:var(--navy);}
+  table.cmp .cmp-basis{display:block;font-weight:500;font-size:11.5px;color:var(--gray);margin-top:2px;}
+  table.cmp .cmp-tag{white-space:normal;text-align:center;}
+  .cmp-callout{background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:8px;padding:12px 16px;margin-top:12px;font-size:13px;color:#444444;}
+  .cmp-callout strong{color:var(--navy);}
+  .cmp-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px;}
+  @media (min-width:760px){.cmp-grid{grid-template-columns:repeat(3,1fr);}}
+  .cmp-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;}
+  .cmp-card.m{border-top:4px solid #0e7d5a;}
+  .cmp-card.c{border-top:4px solid var(--orange);}
+  .cmp-card.v{border-top:4px solid #2a4a7a;}
+  .cmp-card p{font-size:13px;color:#444444;}
+  .cmp-list{list-style:none;margin-top:10px;}
+  .cmp-list li{position:relative;padding-left:22px;font-size:13.2px;color:#444444;margin-bottom:7px;}
+  .cmp-list li::before{content:"";position:absolute;left:2px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--green);}
+  @media (min-width:760px){.cmp-grid.two{grid-template-columns:repeat(2,1fr);}}
 </style>
 <link rel="icon" type="image/png" href="/assets/milebond-favicon.png">
 <link rel="stylesheet" href="/assets/tailwind.css">
@@ -653,7 +737,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   <div class="title-row">
     <h1>Envelope Sleeping Bag (Cold Weather)</h1>
     <div class="sku-line">SKU: <b>MBD-0177</b> · Category: Sports & Outdoors / Camping Gear · Colour: <b>Green / Navy</b></div>
-    <div class="badges"><span class="badge-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0e7d5a" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Verified Supplier</span><span class="badge-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0e7d5a" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>QC Inspection</span><span class="badge-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0e7d5a" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>DDP Shipping</span><span class="badge-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0e7d5a" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>OEM / ODM</span><span class="badge-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0e7d5a" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>EU Compliance</span></div>
+    <div class="badges"><span class="badge-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0e7d5a" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Verified Supplier</span><span class="badge-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0e7d5a" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>QC Inspection</span><span class="badge-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0e7d5a" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>DDP Shipping</span><span class="badge-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0e7d5a" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>OEM / ODM</span><span class="badge-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0e7d5a" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>US &amp; EU Compliance</span></div>
   </div>
   <div class="product-main">
     <div class="product-img">
@@ -668,7 +752,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         <li>DDP door-to-door shipping · 20–35 days delivery</li>
         <li>QC report included with every managed order</li>
         <li>Trade assurance &amp; 3-stage QC (IQC / IPQC / OQC)</li>
-        <li>Compliance documents on request (see checklist)</li>
+        <li>Compliance documents on request (see compliance guide)</li>
         <li>Low-MOQ samples · OEM / ODM supported</li>
       </ul>
       <div class="qc-line">Cost band from selection analysis ($10.56–$19.44). Final DDP quote (duties, insurance, last-mile) within 24 h.</div>
@@ -708,7 +792,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   <section class="section-fullwidth" id="features">
     <h2 class="sec-title">Key Features</h2>
     <div class="feature-list">
-      <div class="feature"><div class="ft">For Amazon Sellers</div><p>Compliance documentation on file; the set / bundle commands a $90–$150 retail band and roughly 75% source-level margin.</p></div>
+      <div class="feature"><div class="ft">For Amazon Sellers</div><p>Compliance documentation available on request; the set / bundle commands a $90–$150 retail band and roughly 75% source-level margin.</p></div>
       <div class="feature"><div class="ft">For Brand Founders</div><p>Custom colours, configuration, logo print / embroidery and custom sleeve or gift-box packaging, with low sample MOQ.</p></div>
       <div class="feature"><div class="ft">For Offline Wholesalers</div><p>Factory-direct transparent tier pricing; DDP delivery to EU FBA warehouses; fast restock on repeat orders.</p></div>
       <div class="feature"><div class="ft">Blue-Ocean Edge</div><p>Beyond commodity pricing, the compliance-backed spec and OEM customisation turn a generic item into a repeatable branded listing.</p></div>
@@ -730,7 +814,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
           <tr><th>Retail Reference</th><td>$90–$150 (typical Amazon US/EU, indicative)</td></tr>
           <tr><th>Gross Margin</th><td>75% (source-level estimate)</td></tr>
           <tr><th>Origin</th><td>China (factory direct)</td></tr>
-          <tr><th>Certifications</th><td>GPSR (EU) 2023/988 general product-safety responsibility · Textile REACH (EC 1907/2006) restricted-substance compliance · EU 1007/2011 fibre-composition labelling (test reports on request)</td></tr>
+          <tr><th>Compliance Scope</th><td>EU GPSR (EU) 2023/988 · REACH restricted substances (Regulation (EC) No 1907/2006) · EU 1007/2011 fibre labelling · ISO 23537-1 thermal testing (voluntary) — documents and applicability confirmed per order</td></tr>
           <tr><th>Material</th><td>Polyester shell, hollow-fibre fill</td></tr><tr><th>HS Code</th><td>6306.40 &middot; EU 6306 40 00 &middot; US 6306.40 &middot; <a href="/tools/hs-code-duty/">duty &amp; anti-dumping &rarr;</a></td></tr>
           <tr><th>Sizes</th><td>15 × 9 × 4 in</td></tr>
           <tr><th>Care</th><td>Wipe clean; store dry away from direct sunlight</td></tr>
@@ -744,14 +828,157 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     </div>
   </section>
   <section class="section-fullwidth" id="compliance">
-    <h2 class="sec-title">EU Compliance Checklist</h2>
-    <p class="sec-sub">Compliance support for selling Envelope Sleeping Bag (Cold Weather) into the EU / UK market.</p>
-    <ul class="check-list">
-      <li>GPSR (EU) 2023/988 general product-safety responsibility</li>
-      <li>Textile REACH (EC 1907/2006) restricted-substance compliance</li>
-      <li>EU 1007/2011 fibre-composition labelling</li>
-      <li>Temperature-rating care labelling</li>
-    </ul>
+    <h2 class="sec-title">Sleeping Bag Compliance Requirements for US &amp; EU Markets</h2>
+    <p class="sec-sub">Compliance requirements for sleeping bags depend on the destination market, product construction, intended use and sales channel. Some requirements apply to both online and offline sales, while others specifically govern online product listings or conditional chemical warnings.</p>
+    <div class="cmp-legend">
+      <span class="cmp-tag tag-mandatory">Mandatory</span>
+      <span class="cmp-tag tag-conditional">Conditional</span>
+      <span class="cmp-tag tag-voluntary">Voluntary / Recommended</span>
+    </div>
+    <p class="cmp-note"><strong>Mandatory</strong> = required by applicable law. <strong>Conditional</strong> = mandatory when specified legal or market conditions apply. <strong>Voluntary / Recommended</strong> = not universally required by law but useful for product verification and buyer confidence.</p>
+
+    <div class="cmp-block">
+      <h3>1. United States — Online vs. Offline</h3>
+      <div class="cmp-table-wrap">
+        <table class="cmp">
+          <thead>
+            <tr><th>Requirement</th><th>Status</th><th>Offline / physical product</th><th>Online listing / advertisement</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="cmp-req">FTC Textile Fiber Labeling<span class="cmp-basis">16 CFR Part 303</span></td>
+              <td><span class="cmp-tag tag-mandatory">Mandatory</span></td>
+              <td>Covered sleeping bags require physical product labels containing the applicable fiber content, responsible business identification and country-of-origin information.</td>
+              <td>Online advertisements that make fiber claims must comply with applicable FTC advertising disclosure rules. Online catalogs must provide the applicable country-of-origin statement. An online listing does not replace the physical product label.</td>
+            </tr>
+            <tr>
+              <td class="cmp-req">Country of Origin<span class="cmp-basis">Imported products</span></td>
+              <td><span class="cmp-tag tag-mandatory">Mandatory</span></td>
+              <td>Apply the applicable country-of-origin marking required for imported products.</td>
+              <td>Include the applicable origin statement in the online catalog, and keep it consistent with the product label.</td>
+            </tr>
+            <tr>
+              <td class="cmp-req">California Proposition 65<span class="cmp-basis">Chemical exposure warnings</span></td>
+              <td><span class="cmp-tag tag-conditional">Conditional</span></td>
+              <td>Conditional, not universally mandatory for every sleeping bag. Assess chemical exposure and applicable warning thresholds; where a warning is required, use an applicable product warning method.</td>
+              <td>Where a warning is required, online purchases require an appropriate pre-purchase internet warning. Do not automatically add a warning to every product without assessment.</td>
+            </tr>
+            <tr>
+              <td class="cmp-req">Thermal Performance Testing<span class="cmp-basis">ISO 23537-1</span></td>
+              <td><span class="cmp-tag tag-voluntary">Voluntary</span></td>
+              <td>Voluntary as a general US legal requirement. Recommended when making specific temperature-performance claims; keep a supporting test report for the supplied construction.</td>
+              <td>Use test results to substantiate listing claims. Do not describe supplier temperature descriptions as independently certified ratings without a supporting report.</td>
+            </tr>
+            <tr>
+              <td class="cmp-req">Flammability<span class="cmp-basis">Product classification</span></td>
+              <td><span class="cmp-tag tag-conditional">Conditional</span></td>
+              <td>Assess applicable product classification and any relevant state-specific requirements before making a flammability statement.</td>
+              <td>Do not automatically claim that 16 CFR Part 1610 applies to every adult sleeping bag.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="cmp-callout"><strong>Listing does not replace labeling.</strong> An online catalog entry or advertisement supports the sale, but it does not replace the physical fiber label or country-of-origin marking on the product.</div>
+    </div>
+
+    <div class="cmp-block">
+      <h3>2. European Union — Online vs. Offline</h3>
+      <div class="cmp-table-wrap">
+        <table class="cmp">
+          <thead>
+            <tr><th>Requirement</th><th>Status</th><th>Offline / physical product</th><th>Online listing / offer</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="cmp-req">GPSR<span class="cmp-basis">Regulation (EU) 2023/988</span></td>
+              <td><span class="cmp-tag tag-mandatory">Mandatory</span></td>
+              <td>Product safety requirements apply to online and offline consumer sales. Prepare a product risk assessment and technical documentation as applicable, and provide applicable manufacturer and EU responsible person information.</td>
+              <td>Online product offers must visibly display the information required by GPSR Article 19, including manufacturer information, EU responsible person information where applicable, product identification and required warnings.</td>
+            </tr>
+            <tr>
+              <td class="cmp-req">EU Responsible Person<span class="cmp-basis">GPSR identification</span></td>
+              <td><span class="cmp-tag tag-conditional">Conditional</span></td>
+              <td>Where the manufacturer is outside the EU, ensure the required EU responsible person is established and identified in accordance with the applicable rules. Provide the required identification on the product, packaging, parcel or accompanying documentation as applicable.</td>
+              <td>Show the required EU responsible person contact details in the online offer.</td>
+            </tr>
+            <tr>
+              <td class="cmp-req">REACH<span class="cmp-basis">Regulation (EC) No 1907/2006</span></td>
+              <td><span class="cmp-tag tag-mandatory">Mandatory</span></td>
+              <td>Applicable chemical restrictions apply equally to online and offline products. Assess relevant fabrics, fillings, dyes, coatings, printing and components. Where the applicable SVHC threshold and conditions are met, explain the Article 33 communication obligation.</td>
+              <td>The same restriction and communication obligations apply to the product offered online. Do not describe a single generic REACH certificate as universally mandatory for every sleeping bag.</td>
+            </tr>
+            <tr>
+              <td class="cmp-req">EU Textile Regulation<span class="cmp-basis">Regulation (EU) No 1007/2011</span></td>
+              <td><span class="cmp-tag tag-mandatory">Mandatory</span></td>
+              <td>Fibre composition labeling is mandatory for covered textile products. Consumer-facing product labels must meet applicable durability, legibility and language requirements. In certain B2B supply-chain transactions, accompanying commercial documents may replace or supplement labels as permitted by the Regulation.</td>
+              <td>The consumer-facing offer must not be treated as an exemption from textile labeling. Do not confuse B2B document exceptions with consumer retail labeling requirements.</td>
+            </tr>
+            <tr>
+              <td class="cmp-req">EN ISO 23537-1:2022<span class="cmp-basis">Thermal performance</span></td>
+              <td><span class="cmp-tag tag-voluntary">Voluntary</span></td>
+              <td>A voluntary technical standard, not a universal CE certification requirement. Recommended when making specific thermal performance claims, and temperature-rating care labelling should match the claim. Verify that the tested product corresponds to the actual supplied construction.</td>
+              <td>Use a report for the matching construction to support temperature claims in the listing.</td>
+            </tr>
+            <tr>
+              <td class="cmp-req">CE Marking<span class="cmp-basis">Intended use assessment</span></td>
+              <td><span class="cmp-tag tag-conditional">Conditional</span></td>
+              <td>Ordinary adult sleeping bags do not automatically require CE marking simply because they are sold in the EU. Assess the product's intended use and any other applicable legislation before making a CE-related claim.</td>
+              <td>Do not add a CE claim or CE mark to an online listing without that assessment.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="cmp-callout"><strong>CE marking is not automatic.</strong> A CE mark is not a general sleeping-bag requirement; product classification and intended use determine whether any CE legislation applies.</div>
+    </div>
+
+    <div class="cmp-block">
+      <h3>3. Compliance Classification</h3>
+      <div class="cmp-grid">
+        <div class="cmp-card m"><h4>Mandatory</h4><p>Legal requirements that must be met for the relevant market and product.</p></div>
+        <div class="cmp-card c"><h4>Conditional</h4><p>Requirements triggered by destination, materials, chemical exposure, intended use, product classification or sales channel.</p></div>
+        <div class="cmp-card v"><h4>Voluntary / Recommended</h4><p>Additional tests and standards that are not universally required but can support product performance claims and commercial confidence.</p></div>
+      </div>
+    </div>
+
+    <div class="cmp-block">
+      <h3>4. Online vs. Offline: What Actually Changes?</h3>
+      <p class="cmp-lead">Product safety and applicable chemical restrictions generally apply regardless of whether a sleeping bag is sold online or offline. Online sales create additional product-listing and pre-purchase information obligations in certain markets. Offline sales require appropriate physical labels and consumer-facing information. B2B supply-chain documentation exceptions must not be confused with consumer retail exemptions.</p>
+    </div>
+
+    <div class="cmp-block">
+      <h3>5. Milebond's Compliance Coordination</h3>
+      <p class="cmp-lead">Milebond can help buyers:</p>
+      <ul class="cmp-list">
+        <li>Identify applicable requirements for their target markets and sales channels.</li>
+        <li>Request textile composition and supplier declarations.</li>
+        <li>Coordinate relevant chemical and thermal performance testing.</li>
+        <li>Review product labels, packaging and online product information.</li>
+        <li>Organize supporting documents for importer, retailer or marketplace review.</li>
+      </ul>
+      <div class="cmp-grid two" style="margin-top:16px;">
+        <div class="cmp-card m">
+          <h4>Available on request</h4>
+          <ul class="cmp-list">
+            <li>Current product specification and SKU details for MBD-0177.</li>
+            <li>Supplier material description for the polyester shell and hollow-fibre fill (declaration format requested per order).</li>
+            <li>QC inspection records for managed orders.</li>
+            <li>Product label, packaging and online listing copy for review.</li>
+          </ul>
+        </div>
+        <div class="cmp-card c">
+          <h4>Requires supplier confirmation</h4>
+          <ul class="cmp-list">
+            <li>Current fibre-content and care-label content for the exact colourway and construction.</li>
+            <li>REACH / SVHC declaration covering fabrics, fillings, dyes, coatings and printing.</li>
+            <li>EN ISO 23537-1:2022 thermal test report for the supplied construction.</li>
+            <li>Flammability classification and any applicable state-specific requirement.</li>
+            <li>California Proposition 65 assessment.</li>
+            <li>EU responsible person appointment and GPSR Article 19 listing data.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cmp-callout"><strong>Document status is confirmed at quotation.</strong> Specialized testing and additional compliance services are quoted separately. Milebond does not represent that every MBD-0177 option already holds every certificate or test report; available documents and items requiring supplier confirmation are identified for each order.</div>
+    </div>
   </section>
   <section class="section-fullwidth" id="quality">
     <h2 class="sec-title">Why Envelope Sleeping Bag (Cold Weather) Wins — and How We Source It</h2>
@@ -767,7 +994,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <div class="fix-card solution">
         <h4>Our Differentiation Edge</h4>
         <ul>
-          <li>Polyester shell, hollow-fibre fill, backed by the EU compliance checklist above and real in-factory QC evidence.</li>
+          <li>Polyester shell, hollow-fibre fill, backed by the compliance guide above and real in-factory QC evidence.</li>
           <li>Transparent tier pricing, 3-stage QC and DDP Europe delivery; OEM / ODM supported.</li>
         </ul>
       </div>
@@ -786,7 +1013,13 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     <h2 class="sec-title">Frequently Asked Questions</h2>
       <details open><summary>What is the minimum order quantity (MOQ)?</summary><p>MOQ is 5 pcs per SKU. Sample orders ship within 3–5 business days; custom packaging and tiered pricing are available.</p></details>
       <details><summary>What materials are used and is it safe?</summary><p>Made from Polyester shell, hollow-fibre fill. Materials are verified batch-by-batch on every order; QC checks incoming material, build and surface finish before shipment.</p></details>
-      <details><summary>What EU compliance documents do you support?</summary><p>We support: GPSR (EU) 2023/988 general product-safety responsibility; Textile REACH (EC 1907/2006) restricted-substance compliance; EU 1007/2011 fibre-composition labelling; Temperature-rating care labelling. All test reports and declarations are provided on request for EU / UK retail and Amazon compliance.</p></details>
+      <details><summary>What US and EU compliance documents do you support?</summary><p>We support GPSR (EU) 2023/988 product-safety coordination; REACH (EC) 1907/2006 restricted-substance assessment; EU 1007/2011 fibre-composition labelling; and thermal-performance documentation. Available documents and items requiring supplier confirmation are identified at quotation, and test reports are shared on request where held.</p></details>
+      <details><summary>Are sleeping bag compliance requirements different for online and offline sales?</summary><p>Core product safety and applicable material requirements generally apply to both. Online sales may require additional product-page information and pre-purchase warnings.</p></details>
+      <details><summary>Is a textile label required for sleeping bags sold in the US?</summary><p>Yes. Sleeping bags are covered by applicable FTC textile labeling rules, subject to the specific requirements and exceptions.</p></details>
+      <details><summary>Does every sleeping bag sold in California need a Proposition 65 warning?</summary><p>No. It depends on applicable chemical exposure and warning requirements.</p></details>
+      <details><summary>Does an adult sleeping bag need CE marking in the EU?</summary><p>Not automatically. Ordinary adult sleeping bags do not require CE marking solely because they are sold in the EU.</p></details>
+      <details><summary>Is EN ISO 23537-1 mandatory?</summary><p>It is a voluntary technical standard in general, but is recommended for substantiating thermal performance claims.</p></details>
+      <details><summary>Can B2B commercial documents replace textile labels in the EU?</summary><p>In specified B2B supply-chain situations, Regulation (EU) No 1007/2011 permits accompanying commercial documents to replace or supplement labels. This should not be treated as a general exemption for consumer retail products.</p></details>
       <details><summary>How should it be stored and maintained?</summary><p>Store in a cool, dry place away from direct sunlight. Keep it clean and dry between uses; follow the care notes on the hangtag / label. QC verifies this labelling on every batch.</p></details>
       <details><summary>Why is this product a good pick for camping and overlanding retailers?</summary><p>This SKU tracks verified demand for sleeping bag, camping sleeping bag and winter sleeping bag — see the Trend Signal section. It is a proven fit for camping and overlanding retailers buying patterns.</p></details>
       <details><summary>Can I customize colours, sizes, or logos?</summary><p>Yes. We support custom colours, set configuration, logo pad-printing / embroidery and low-MOQ custom sleeve, box or gift-packaging options (OEM / ODM).</p></details>
