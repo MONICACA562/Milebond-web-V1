@@ -1,0 +1,62 @@
+/* Milebond language switcher — opt-in header component.
+   Renders only locales that are actually published (status: live).
+   Load data/i18n-pages.json before this file. */
+
+.mb-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1;
+  color: #6b6b6b;
+}
+
+.mb-lang__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.mb-lang a,
+.mb-lang span.mb-lang__current {
+  padding: 4px 2px;
+  text-decoration: none;
+  color: #b03f00;
+  border-bottom: 1px solid transparent;
+}
+
+.mb-lang a:hover {
+  border-bottom-color: currentColor;
+}
+
+.mb-lang a:focus-visible {
+  outline: 3px solid #ff6000;
+  outline-offset: 2px;
+}
+
+.mb-lang span.mb-lang__current {
+  color: #3a3a3a;
+  font-weight: 600;
+}
+
+.mb-lang__sep {
+  color: #c9c2b4;
+}
+
+.mb-lang__hint {
+  font-size: 11px;
+  color: #6b6b6b;
+}
+
+@media (max-width: 767px) {
+  .mb-lang {
+    font-size: 12px;
+  }
+}

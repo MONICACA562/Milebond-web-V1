@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "document": "Milebond Master Facts",
+    "version": "2026-11-25",
+    "owner": "Business owner",
+    "usage": "Internal source of truth for every language version. Not deployed: docs/ is excluded by .assetsignore. English pages remain the public master; localised pages must not change scope, fees, MOQ, QC or liability wording.",
+    "rule": "If a fact is marked conflict or pending, do not publish a new value until the owner confirms it."
+  },
+  "company": {
+    "warehouse": {
+      "status": "confirmed",
+      "value": "1,000+ sqm",
+      "detail": "Warehouse in the Yiwu–Jinhua area used for receiving, inspection, kitting and consolidation."
+    },
+    "amazon_brands_served": {
+      "status": "conflict",
+      "values_in_use": [
+        { "value": "50+ Amazon brands", "where": "live English pages (14 occurrences)", "verified": false },
+        { "value": "40+ Amazon brands", "where": "approved multilingual brief", "verified": false }
+      ],
+      "rule": "Cumulative brands served, never described as active clients. Owner must confirm one number before any localised page states it."
+    },
+    "supply_chain_experience": {
+      "status": "confirmed",
+      "value": "10+ years",
+      "rule": "Team supply-chain experience, never described as the age of the company."
+    },
+    "amazon_us": {
+      "status": "confirmed",
+      "value": "Live Amazon US customers and deliveries",
+      "rule": "Describe as experience, not as a marketplace guarantee or ranking."
+    }
+  },
+  "pricing": {
+    "standard_service_fee": {
+      "status": "confirmed",
+      "amount": 50,
+      "currency": "USD",
+      "unit": "per order",
+      "billing_rules": [
+        "Charged per order, not per SKU",
+        "Not charged again per supplier",
+        "Large or complex orders may be adjusted after written agreement"
+      ],
+      "included": [
+        "QC report with every managed order"
+      ],
+      "excluded": [
+        "Kitting and assembly labour",
+        "Packaging materials",
+        "Product cost",
+        "Specialised, laboratory or third-party testing",
+        "International freight"
+      ],
+      "forbidden_claims": [
+        "3–8% of order value as the standard fee",
+        "Competitor fee ranges or auditor day rates",
+        "USD 50 covers every kitting, packaging, storage or freight cost"
+      ]
+    }
+  },
+  "moq": {
+    "status": "confirmed",
+    "rule": "MOQ depends on the product, stock, tooling and supplier.",
+    "stock_items": "Some stocked items can ship from 1 piece.",
+    "custom_items": "Logo, tooling and packaging MOQ depends on the production method.",
+    "forbidden_claims": [
+      "Every product supports 1-piece orders",
+      "A universal 100-piece or 200–300-piece MOQ",
+      "Custom runs start at 50 pieces as a site-wide rule"
+    ]
+  },
+  "qc": {
+    "status": "confirmed",
+    "first_order": "100% inspection according to the agreed product and inspection requirements.",
+    "repeat_order": "AQL 2.5 sampling where applicable and confirmed with the buyer.",
+    "boundaries": [
+      "QC report is not product certification.",
+      "Standard inspection is not laboratory testing.",
+      "Compliance depends on product category, destination market and sales channel.",
+      "Legal, marketplace, contractual and optional testing requirements must stay separate."
+    ]
+  },
+  "cases": [
+    {
+      "key": "case_pet_travel_kit",
+      "public_label": "Anonymized pet travel accessory kit",
+      "status": "sample coordination in progress",
+      "allowed_claims": [
+        "Multiple product categories from different suppliers",
+        "Colour coordination across different materials",
+        "Low-volume logo customisation",
+        "Two silicone suppliers coordinated around one shared logo tooling setup",
+        "Existing box plus domed epoxy resin logo explored as a branding alternative",
+        "Diagonal layout considered to use internal box space"
+      ],
+      "forbidden_claims": [
+        "Bulk production completed",
+        "Samples approved by the buyer",
+        "Delivered to the customer",
+        "Any cost, CBM or freight saving figure",
+        "Customer, brand or supplier names"
+      ]
+    },
+    {
+      "key": "case_existing_supplier_kits",
+      "public_label": "Buyer-managed suppliers with Milebond assembly",
+      "status": "project scope only",
+      "allowed_claims": [
+        "Buyer can keep existing suppliers and send components to the warehouse",
+        "Milebond can coordinate existing suppliers when authorised by the buyer",
+        "BOM and assembly steps can surface component-fit issues"
+      ],
+      "forbidden_claims": [
+        "Completed bulk production or delivery",
+        "Automatic transfer of supplier contracts or goods ownership"
+      ]
+    },
+    {
+      "key": "case_packaging_layout",
+      "public_label": "Packaging layout evaluation",
+      "status": "evaluation only",
+      "allowed_claims": [
+        "Packaging options compared by component shape and quantity",
+        "Physical fitting used to compare layouts",
+        "Box dimensions, packed volume and shipping impact assessed"
+      ],
+      "forbidden_claims": [
+        "Invented savings amounts, percentages or delivery results"
+      ]
+    }
+  ],
+  "known_conflicts": [
+    {
+      "id": "amazon_brands_count",
+      "description": "Live pages state 50+ Amazon brands; the approved brief states 40+.",
+      "pages": ["site-wide claims"],
+      "proposed_action": "Owner confirms one number, then update every language consistently.",
+      "status": "pending-owner"
+    },
+    {
+      "id": "llms_custom_50_pcs",
+      "description": "llms.txt states 'Custom runs start at 50 pcs', which conflicts with the MOQ rule.",
+      "pages": ["llms.txt"],
+      "proposed_action": "Rewrite as product-dependent custom MOQ; do not change without approval.",
+      "status": "pending-owner"
+    }
+  ]
+}

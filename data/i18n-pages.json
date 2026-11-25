@@ -1,0 +1,27 @@
+{
+  "version": "1",
+  "updated": "2026-11-25",
+  "defaultLocale": "en",
+  "rules": [
+    "Only locales with status 'live' may appear in hreflang, the language switcher or the sitemap.",
+    "A translation may only be marked 'live' after native review, fact check, canonical, hreflang, schema and link checks pass.",
+    "Draft pages live under a _draft directory and are excluded from the sitemap.",
+    "Every localised page uses a self-referencing canonical and links back to the English master."
+  ],
+  "locales": {
+    "en": { "label": "English", "htmlLang": "en", "home": "/", "status": "live" },
+    "de": { "label": "Deutsch", "htmlLang": "de", "home": "/de/", "status": "planned" },
+    "fr": { "label": "Français", "htmlLang": "fr", "home": "/fr/", "status": "planned" },
+    "es": { "label": "Español", "htmlLang": "es", "home": "/es/", "status": "planned" }
+  },
+  "pages": [
+    {
+      "id": "kitting-assembly",
+      "type": "service",
+      "translations": {
+        "en": { "path": "/services/kitting-assembly", "status": "live" },
+        "de": { "path": "/de/services/kitting-assembly", "status": "planned" }
+      }
+    }
+  ]
+}

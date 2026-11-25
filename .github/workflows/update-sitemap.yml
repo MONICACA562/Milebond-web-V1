@@ -23,7 +23,7 @@ jobs:
       - name: Generate sitemap.xml
         run: |
           cat > generate_sitemap.py << 'EOF'
-          import os, subprocess, datetime
+          import os, subprocess, datetime, json
 
           TODAY = datetime.date.today().isoformat()
 
@@ -50,9 +50,36 @@ jobs:
               '/services/amazon-fba-prep-labeling',
           }
 
+          # hreflang alternates for registered translations that are already live.
+          # Drafts and planned locales are ignored, so no alternate points at a
+          # page that does not exist yet.
+          alternates = {}
+          try:
+              with open('data/i18n-pages.json', encoding='utf-8') as fh:
+                  registry = json.load(fh)
+              live = {code for code, cfg in (registry.get('locales') or {}).items()
+                      if cfg.get('status') == 'live'}
+              default = registry.get('defaultLocale', 'en')
+              for page in registry.get('pages', []):
+                  translations = {code: cfg for code, cfg in (page.get('translations') or {}).items()
+                                  if code in live and cfg.get('status') == 'live'}
+                  if len(translations) < 2:
+                      continue
+                  default_path = (translations.get(default) or {}).get('path')
+                  for code, cfg in translations.items():
+                      loc_key = 'https://www.milebond.com' + cfg['path']
+                      links = []
+                      if default_path:
+                          links.append(('x-default', 'https://www.milebond.com' + default_path))
+                      links.extend((other, 'https://www.milebond.com' + other_cfg['path'])
+                                   for other, other_cfg in translations.items())
+                      alternates[loc_key] = links
+          except Exception as exc:
+              print('i18n alternates skipped:', exc)
+
           urls = []
           for root, dirs, files in os.walk('.'):
-              dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+              dirs[:] = [d for d in dirs if d not in SKIP_DIRS and d != 'draft' and not d.startswith('_draft')]
               for f in files:
                   if not f.endswith('.html'):
                       continue
@@ -74,11 +101,19 @@ jobs:
           urls = sorted(set(urls))
           with open('sitemap.xml', 'w') as out:
               out.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-              out.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+              ns = ' xmlns:xhtml="http://www.w3.org/1999/xhtml"' if alternates else ''
+              out.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"' + ns + '>\n')
               for loc, lastmod in urls:
                   # No changefreq: Google and Bing ignore it, and a uniform
                   # "weekly" on every URL is noise rather than a signal.
-                  out.write(f'  <url><loc>{loc}</loc><lastmod>{lastmod}</lastmod></url>\n')
+                  links = alternates.get(loc)
+                  if links:
+                      out.write(f'  <url><loc>{loc}</loc><lastmod>{lastmod}</lastmod>\n')
+                      for hreflang, href in links:
+                          out.write(f'    <xhtml:link rel="alternate" hreflang="{hreflang}" href="{href}"/>\n')
+                      out.write('  </url>\n')
+                  else:
+                      out.write(f'  <url><loc>{loc}</loc><lastmod>{lastmod}</lastmod></url>\n')
               out.write('</urlset>\n')
           print(f'Generated sitemap with {len(urls)} URLs')
           EOF
