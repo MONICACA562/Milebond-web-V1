@@ -14,12 +14,12 @@
     },
     "amazon_brands_served": {
       "status": "confirmed",
-      "value": "50+ Amazon brands",
-      "rule": "Cumulative brands served, never described as active clients. Owner confirmed 50+ on 2026-11-26; all public languages must use 50+."
+      "value": "40+ Amazon brands",
+      "rule": "Cumulative brands served, never described as active clients. Owner confirmed 40+ on 2026-11-26; all public languages must use 40+."
     },
     "supply_chain_experience": {
       "status": "confirmed",
-      "value": "11+ years",
+      "value": "10+ years",
       "rule": "Team supply-chain experience, never described as the age of the company."
     },
     "amazon_us": {

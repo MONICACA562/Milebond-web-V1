@@ -27,7 +27,7 @@
     "status": "approved"
   },
   "oem_policy": {
-    "scope": "Private label and OEM development from 50 pcs, including sampling, tooling coordination and production hand-off.",
+    "scope": "Private label and OEM development with MOQ confirmed per product, including sampling, tooling coordination and production hand-off.",
     "fee": "USD 50 per order",
     "separate": ["tooling", "molds", "certification", "freight"],
     "status": "approved"

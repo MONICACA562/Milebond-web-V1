@@ -90,7 +90,7 @@
           <div class="mbc-stats">
             <div class="mbc-stat"><div class="mbc-num">10+</div><div class="mbc-lbl">Years of Amazon selection</div></div>
             <div class="mbc-stat"><div class="mbc-num">Weekly</div><div class="mbc-lbl">New product pushes</div></div>
-            <div class="mbc-stat"><div class="mbc-num">50+</div><div class="mbc-lbl">Brands scaled</div></div>
+            <div class="mbc-stat"><div class="mbc-num">40+</div><div class="mbc-lbl">Brands scaled</div></div>
             <div class="mbc-stat"><div class="mbc-num">100%</div><div class="mbc-lbl">QC for your first order</div></div>
           </div>
         </div>

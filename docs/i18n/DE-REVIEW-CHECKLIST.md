@@ -24,7 +24,7 @@ Diese Aussagen dürfen inhaltlich nicht verändert werden. Formulierungen dürfe
 | Sonderprüfungen | Labor-/Drittprüfungen können separat berechnet werden | ☐ |
 | MOQ | produkt-, lager- und lieferantenabhängig; ca. 50 Sets nur als Beispiel | ☐ |
 | Lager | 1.000+ qm, Region Yiwu–Jinhua | ☐ |
-| Erfahrung | 50+ Amazon-Marken (kumuliert), 11+ Jahre Teamerfahrung | ☐ |
+| Erfahrung | 40+ Amazon-Marken (kumuliert), 10+ Jahre Teamerfahrung | ☐ |
 | Fallstudie | „Musterabstimmung in Arbeit“, keine Produktion, keine Lieferung, keine Einsparungen | ☐ |
 
 **Verboten:** „garantiert“, „zertifiziert“, „100 % konform“, „Kostenersparnis von X %“, „ab 50 Stück“ als allgemeine Regel, „3–8 %“, „100 USD Testbestellung“, Namen von Kunden, Marken oder Lieferanten.
