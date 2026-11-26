@@ -10,11 +10,19 @@
   ],
   "locales": {
     "en": { "label": "English", "htmlLang": "en", "home": "/", "status": "live" },
-    "de": { "label": "Deutsch", "htmlLang": "de", "home": "/de/", "status": "planned" },
+    "de": { "label": "Deutsch", "htmlLang": "de", "home": "/de/", "status": "draft" },
     "fr": { "label": "Français", "htmlLang": "fr", "home": "/fr/", "status": "planned" },
     "es": { "label": "Español", "htmlLang": "es", "home": "/es/", "status": "planned" }
   },
   "pages": [
+    {
+      "id": "home",
+      "type": "home",
+      "translations": {
+        "en": { "path": "/", "status": "live" },
+        "de": { "path": "/de/", "status": "draft" }
+      }
+    },
     {
       "id": "kitting-assembly",
       "type": "service",
