@@ -1632,8 +1632,8 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
           </div>
           <div class="lc-two">
             <div class="lc-field">
-              <label class="lc-label" for="lcAgent">Sourcing fee <span>(% of goods)</span></label>
-              <input class="lc-input" id="lcAgent" type="number" min="0" step="0.1" value="5" inputmode="decimal">
+              <label class="lc-label" for="lcAgent">Sourcing fee <span>(USD per order)</span></label>
+              <input class="lc-input" id="lcAgent" type="number" min="0" step="1" value="50" inputmode="decimal">
             </div>
             <div class="lc-field">
               <label class="lc-label" for="lcOther">Other costs <span>(USD, total)</span></label>
@@ -1758,7 +1758,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     <div class="container content-wrap" style="max-width:900px">
       <div class="section-header">
         <span class="ship-tag">Worked example</span>
-        <h2>Why the $4.20 unit becomes $8.10 landed</h2>
+        <h2>Why the $4.20 unit becomes $7.94 landed</h2>
       </div>
       <table class="lc-table">
         <thead><tr><th>Line</th><th>Calculation</th><th>Amount</th></tr></thead>
@@ -1768,10 +1768,10 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
           <tr><td>Insurance (0.5%)</td><td>$4,200 × 0.5%</td><td>$21.00</td></tr>
           <tr><td>Duty (5% of CIF)</td><td>($4,200 + $1,800 + $21) × 5%</td><td>$301.05</td></tr>
           <tr><td>Import VAT (20%)</td><td>($6,021 + $301.05) × 20%</td><td>$1,264.41</td></tr>
-          <tr><td>Sourcing fee (5%)</td><td>$4,200 × 5%</td><td>$210.00</td></tr>
+          <tr><td>Sourcing fee (USD 50/order)</td><td>—</td><td>$50.00</td></tr>
           <tr><td>Other</td><td>Testing, bank, last-mile</td><td>$300.00</td></tr>
-          <tr><td><strong>Total landed</strong></td><td>—</td><td><strong>$8,096.46</strong></td></tr>
-          <tr><td><strong>Per unit</strong></td><td>$8,096.46 ÷ 1,000</td><td><strong>$8.10</strong></td></tr>
+          <tr><td><strong>Total landed</strong></td><td>—</td><td><strong>$7,936.46</strong></td></tr>
+          <tr><td><strong>Per unit</strong></td><td>$7,936.46 ÷ 1,000</td><td><strong>$7.94</strong></td></tr>
         </tbody>
       </table>
       <p class="hub-note" style="margin-top:14px">VAT is recoverable for VAT-registered importers; duty is not. The calculator excludes recoverable VAT from the margin calculation and shows it separately.</p>
@@ -2513,7 +2513,7 @@ function submitInquiry(e){
     var duty = cif * (num('lcDuty') + num('lcExtra')) / 100;
     var vat = (cif + duty) * num('lcVat') / 100;
     if ($('lcDdp').checked) { duty = 0; vat = 0; }
-    var agent = goods * num('lcAgent') / 100;
+    var agent = num('lcAgent');
     var other = num('lcOther');
     var mpf = 0, hmf = 0;
     if ($('lcCountry').value === 'US') {
@@ -2670,7 +2670,7 @@ function submitInquiry(e){
   $('lcReset').addEventListener('click', function () {
     $('lcCountry').value = 'US'; el.lcVat.value = 0;
     ['lcFob','lcQty','lcFreight','lcInsurance','lcDuty','lcExtra','lcAgent','lcOther','lcReturns','lcTarget'].forEach(function (id) {
-      el[id].value = { lcFob: 4.20, lcQty: 1000, lcFreight: 1800, lcInsurance: 0.5, lcDuty: 5, lcExtra: 0, lcAgent: 5, lcOther: 300, lcReturns: 3, lcTarget: 20 }[id];
+      el[id].value = { lcFob: 4.20, lcQty: 1000, lcFreight: 1800, lcInsurance: 0.5, lcDuty: 5, lcExtra: 0, lcAgent: 50, lcOther: 300, lcReturns: 3, lcTarget: 20 }[id];
     });
     $('lcHs').value = ''; $('lcProduct').value = ''; $('lcHsResults').style.display = 'none';
     $('lcDdp').checked = false;
