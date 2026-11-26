@@ -1,7 +1,7 @@
 {
   "meta": {
     "document": "Milebond Master Facts",
-    "version": "2026-11-25",
+    "version": "2026-11-26",
     "owner": "Business owner",
     "usage": "Internal source of truth for every language version. Not deployed: docs/ is excluded by .assetsignore. English pages remain the public master; localised pages must not change scope, fees, MOQ, QC or liability wording.",
     "rule": "If a fact is marked conflict or pending, do not publish a new value until the owner confirms it."
@@ -14,12 +14,12 @@
     },
     "amazon_brands_served": {
       "status": "confirmed",
-      "value": "40+ Amazon brands",
-      "rule": "Cumulative brands served, never described as active clients. Owner confirmed 40+ on 2026-11-25; all public languages must use 40+."
+      "value": "50+ Amazon brands",
+      "rule": "Cumulative brands served, never described as active clients. Owner confirmed 50+ on 2026-11-26; all public languages must use 50+."
     },
     "supply_chain_experience": {
       "status": "confirmed",
-      "value": "10+ years",
+      "value": "11+ years",
       "rule": "Team supply-chain experience, never described as the age of the company."
     },
     "amazon_us": {
