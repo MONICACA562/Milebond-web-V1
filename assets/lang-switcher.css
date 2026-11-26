@@ -10,6 +10,30 @@
   font-size: 13px;
   line-height: 1;
   color: #6b6b6b;
+  white-space: nowrap;
+}
+
+.mb-lang-desktop { margin-right: 10px; }
+.mb-lang-mobile { padding: 10px 12px; }
+.mb-lang-mobile .mb-lang { font-size: 15px; gap: 8px; }
+.mb-lang-mobile .mb-lang a,
+.mb-lang-mobile .mb-lang span.mb-lang__current { padding: 6px 2px; }
+
+/* Shared header breakpoints.
+   The compiled Tailwind build only ships md: utilities, so the desktop nav is
+   moved to 1024px here and the 768–1023px band uses the mobile drawer. */
+@media (max-width: 1023px) {
+  .nav-desktop { display: none !important; }
+  .mb-lang-desktop { display: none !important; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav-mobile-toggle { display: inline-flex !important; }
+  .nav-drawer { display: block !important; }
+}
+@media (min-width: 1024px) {
+  .nav-mobile-toggle { display: none !important; }
+  .nav-drawer { display: none !important; }
+  .mb-lang-mobile { display: none !important; }
 }
 
 .mb-lang__label {

@@ -1227,6 +1227,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 .mb-fab-dot{position:absolute;top:-2px;right:-2px;width:14px;height:14px;border-radius:999px;background:#ffa55b;border:2px solid #fff}
 @media(max-width:768px){.mb-fab-mail{display:none}}
 </style>
+<link rel="stylesheet" href="/assets/lang-switcher.css">
 </head>
 <body>
 
@@ -1245,7 +1246,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     </a>
 
     <!-- desktop nav (md+) -->
-    <ul class="hidden md:flex items-center gap-0.5 xl:gap-2 text-[15px] xl:text-base font-semibold text-brandgray-600">
+    <ul class="nav-desktop hidden md:flex items-center gap-0.5 xl:gap-2 text-[15px] xl:text-base font-semibold text-brandgray-600">
 
       <!-- Services mega menu -->
       <li class="services-mega">
@@ -1357,6 +1358,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         </div>
       </li>
       <li><a href="/faq" class="px-2 py-2 xl:px-3 hover:text-amber transition-colors">FAQ</a></li>
+<li class="mb-lang-desktop" data-mb-lang-switcher data-label="Language" data-hint="This page is not available in German yet – the link opens the German home page."></li>
     </ul>
 
     <!-- desktop CTA -->
@@ -1369,7 +1371,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 
     <!-- mobile hamburger -->
     <button id="mobileToggle" type="button"
-            class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-navy hover:bg-brandgray-100"
+            class="nav-mobile-toggle md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-navy hover:bg-brandgray-100"
             aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
       <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -1377,7 +1379,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
   </nav>
 
   <!-- mobile drawer -->
-  <div id="mobileMenu" class="mobile-menu md:hidden border-t border-brandgray-100 bg-white">
+  <div id="mobileMenu" class="mobile-menu nav-drawer md:hidden border-t border-brandgray-100 bg-white">
     <ul class="px-5 py-4 flex flex-col gap-1 text-brandgray-700">
 
       <!-- Services accordion -->
@@ -1464,6 +1466,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
       <li><a href="/faq" class="block px-3 py-3 rounded-lg hover:bg-brandgray-50 font-semibold">FAQ</a></li>
 
       <li class="pt-3 mt-2 border-t border-brandgray-100">
+<div class="mb-lang-mobile" data-mb-lang-switcher data-label="Language" data-hint="This page is not available in German yet – the link opens the German home page."></div>
         <a href="/free-quote"
            class="nav-cta block w-full text-center px-5 py-3 rounded-full bg-amber text-white font-semibold open-quote-modal">
           Get a Quote
@@ -2386,4 +2389,5 @@ function submitInquiry(e){
 }
   </script>
 <script src="/assets/quote-form.js" defer></script>
+<script src="/assets/lang-switcher.js" defer></script>
 </body></html>

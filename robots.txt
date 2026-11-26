@@ -7,6 +7,7 @@ Allow: /
 Disallow: /preview/
 Disallow: /index-legacy
 Disallow: /thank-you
+Disallow: /de/thank-you
 
 # —— AI search & answer engines (explicitly allowed so they can cite us) ——
 User-agent: OAI-SearchBot

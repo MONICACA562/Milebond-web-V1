@@ -124,7 +124,7 @@ if (registry) {
                   `${sibCfg[sib].path} links back with hreflang ${locales[code].htmlLang}`);
               }
             });
-            const defaultCfg = sibCfg[registry.defaultLocale];
+            const defaultCfg = translations[registry.defaultLocale];
             if (defaultCfg) {
               ok(alts.some(a => a.hreflang === 'x-default' && a.href === ORIGIN + defaultCfg.path),
                 `${cfg.path} x-default points to the ${registry.defaultLocale} master`);

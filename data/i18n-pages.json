@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "defaultLocale": "en",
   "rules": [
     "Only locales with status 'live' may appear in hreflang, the language switcher or the sitemap.",
@@ -9,26 +9,58 @@
     "Every localised page uses a self-referencing canonical and links back to the English master."
   ],
   "locales": {
-    "en": { "label": "English", "htmlLang": "en", "home": "/", "status": "live" },
-    "de": { "label": "Deutsch", "htmlLang": "de", "home": "/de/", "status": "draft" },
-    "fr": { "label": "Français", "htmlLang": "fr", "home": "/fr/", "status": "planned" },
-    "es": { "label": "Español", "htmlLang": "es", "home": "/es/", "status": "planned" }
+    "en": {
+      "label": "English",
+      "htmlLang": "en",
+      "home": "/",
+      "status": "live"
+    },
+    "de": {
+      "label": "Deutsch",
+      "htmlLang": "de",
+      "home": "/de/",
+      "status": "live"
+    },
+    "fr": {
+      "label": "Français",
+      "htmlLang": "fr",
+      "home": "/fr/",
+      "status": "planned"
+    },
+    "es": {
+      "label": "Español",
+      "htmlLang": "es",
+      "home": "/es/",
+      "status": "planned"
+    }
   },
   "pages": [
     {
       "id": "home",
       "type": "home",
       "translations": {
-        "en": { "path": "/", "status": "live" },
-        "de": { "path": "/de/", "status": "draft" }
+        "en": {
+          "path": "/",
+          "status": "live"
+        },
+        "de": {
+          "path": "/de/",
+          "status": "live"
+        }
       }
     },
     {
       "id": "kitting-assembly",
       "type": "service",
       "translations": {
-        "en": { "path": "/services/kitting-assembly", "status": "live" },
-        "de": { "path": "/de/services/kitting-assembly", "status": "draft" }
+        "en": {
+          "path": "/services/kitting-assembly",
+          "status": "live"
+        },
+        "de": {
+          "path": "/de/services/kitting-assembly",
+          "status": "live"
+        }
       }
     }
   ]

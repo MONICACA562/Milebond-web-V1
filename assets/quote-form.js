@@ -100,6 +100,27 @@
     window.openQuoteModal(skuMatch ? skuMatch[1] : '', name);
   }, true);
 
+  /* Form messages follow the document language. English stays the default so
+     existing English pages behave exactly as before. */
+  var isGerman = /^de\b/i.test(document.documentElement.lang || '');
+  var T = isGerman ? {
+    email: 'Bitte geben Sie eine g\u00fcltige E-Mail-Adresse an, damit wir Ihnen das Angebot senden k\u00f6nnen.',
+    product: 'Bitte geben Sie an, was wir beschaffen sollen.',
+    consent: 'Bitte best\u00e4tigen Sie die Datenschutzbedingungen, bevor Sie senden.',
+    file: 'Die Datei ist gr\u00f6\u00dfer als 10 MB. Bitte senden Sie sie per E-Mail an info@milebond.com.',
+    bad: 'Mit dem Formular stimmt etwas nicht. Bitte pr\u00fcfen Sie Ihre E-Mail und versuchen Sie es erneut.',
+    net: 'Netzwerkfehler. Bitte versuchen Sie es erneut oder schreiben Sie an info@milebond.com.',
+    sending: 'Wird gesendet\u2026'
+  } : {
+    email: 'Please enter a valid email address so we can send your quote.',
+    product: 'Please tell us what you want to source.',
+    consent: 'Please accept the privacy terms before sending.',
+    file: 'That file is larger than 10 MB. Please email it to info@milebond.com instead.',
+    bad: 'Something looks off with the form. Please check your email and try again.',
+    net: 'Network error. Please try again or email info@milebond.com.',
+    sending: 'Sending\u2026'
+  };
+
   Array.prototype.forEach.call(forms, function (form) {
     var status = form.querySelector('.qf-status');
     var btn = form.querySelector('.qf-submit');
@@ -107,6 +128,7 @@
     var source = form.querySelector('input[name="source_page"]');
     var pageUrl = form.querySelector('input[name="page_url"]');
     var type = form.getAttribute('data-form-type') || 'quote';
+    var thankYou = form.getAttribute('data-thank-you') || '/thank-you';
     var sending = false;
 
     function setStatus(msg, isError) {
@@ -128,7 +150,7 @@
       file.addEventListener('change', function () {
         if (file.files && file.files.length && file.files[0].size > MAX_FILE) {
           file.value = '';
-          setStatus('That file is larger than 10 MB. Please email it to info@milebond.com instead.', true);
+          setStatus(T.file, true);
         } else {
           setStatus('', false);
         }
@@ -152,13 +174,13 @@
       }
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
         e.preventDefault();
-        return fail('Please enter a valid email address so we can send your quote.');
+        return fail(T.email);
       }
-      if (!product) { e.preventDefault(); return fail('Please tell us what you want to source.'); }
-      if (!data.get('consent')) { e.preventDefault(); return fail('Please accept the privacy terms before sending.'); }
+      if (!product) { e.preventDefault(); return fail(T.product); }
+      if (!data.get('consent')) { e.preventDefault(); return fail(T.consent); }
       if (file && file.files && file.files.length && file.files[0].size > MAX_FILE) {
         e.preventDefault();
-        return fail('That file is larger than 10 MB. Please email it to info@milebond.com instead.');
+        return fail(T.file);
       }
 
       if (pageUrl) pageUrl.value = window.location.href;
@@ -169,23 +191,23 @@
       if (btn) {
         btn.setAttribute('data-label', btn.textContent);
         btn.disabled = true;
-        btn.textContent = 'Sending…';
+        btn.textContent = T.sending;
       }
 
       if (typeof window.mbTrack === 'function') {
-        window.mbTrack('generate_lead', {
+        window.mbTrack('form_submit_start', {
           form_type: type,
-          product: product.slice(0, 80),
-          page_path: window.location.pathname
+          page_path: window.location.pathname,
+          language: isGerman ? 'de' : 'en'
         });
       }
 
-      send(form);
+      send(form, product);
     });
 
     /* Primary path: our own /api/inquiry endpoint (notification + auto-reply).
        Any failure falls back to the native FormSubmit POST so a lead is never lost. */
-    function send(form) {
+    function send(form, productText) {
       var skipApi = false;
       try { skipApi = sessionStorage.getItem('mbApiDown') === '1'; } catch (err) { /* noop */ }
       if (skipApi || !window.fetch) { fallback(form); return; }
@@ -203,13 +225,27 @@
         if (timer) clearTimeout(timer);
         return res.json().catch(function () { return {}; }).then(function (body) {
           if (res.ok && body && body.ok) {
-            window.location.href = '/thank-you';
+            if (typeof window.mbTrack === 'function') {
+              window.mbTrack('generate_lead', {
+                form_type: type,
+                product: productText.slice(0, 80),
+                page_path: window.location.pathname,
+                language: isGerman ? 'de' : 'en'
+              });
+              if (isGerman) {
+                window.mbTrack('german_form_submit_success', {
+                  form_type: type,
+                  page_path: window.location.pathname
+                });
+              }
+            }
+            window.location.href = thankYou;
             return;
           }
           if (res.status === 400) {
             sending = false;
             if (btn) { btn.disabled = false; btn.textContent = btn.getAttribute('data-label') || 'Send inquiry'; }
-            fail('Something looks off with the form. Please check your email and try again.');
+            fail(T.bad);
             return;
           }
           fallback(form);
