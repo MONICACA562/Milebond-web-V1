@@ -668,7 +668,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         "url": "https://www.milebond.com/about",
         "sameAs": ["https://www.linkedin.com/in/monica-zhu-milebond/"]
       },
-      "dateModified": "2026-11-26",
+      "dateModified": "2026-11-27",
       "inLanguage": "en"
     },
     {
@@ -712,7 +712,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
         },
         {
           "@type": "Question",
-          "name": "Can you handle bulk purchasing and repeat orders?",
+          "name": "Can Milebond handle bulk purchasing and repeat orders?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Yes. Milebond supports bulk orders, repeat purchases and replenishment planning, with supplier follow-up and shipment coordination."
@@ -1022,15 +1022,34 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 .m21 .wh-scope div{background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.5;color:var(--ink)}
 .m21 .wh-scope b{display:block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin-bottom:3px}
 .m21 .wh-note{margin-top:16px;font-size:12.5px;line-height:1.6;color:var(--ink-2)}
+/* Buyer-first principles */
+.m21 .buyer-intro{max-width:720px}
+.m21 .buyer-intro p{font-size:16px;line-height:1.7;color:var(--ink-2);margin-bottom:12px}
+.m21 .buyer-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.m21 .buyer-item{background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:26px}
+.m21 .buyer-num{display:block;font-family:Georgia,serif;font-size:12px;letter-spacing:2px;color:var(--accent);margin-bottom:10px}
+.m21 .buyer-item h3{font-size:17px;line-height:1.4;margin-bottom:8px}
+.m21 .buyer-item p{font-size:14.5px;line-height:1.65;color:var(--ink-2)}
+.m21 .buyer-statement{margin-top:28px;padding:20px 24px;background:var(--cream);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:6px;font-size:16px;line-height:1.6;font-weight:600;color:var(--ink)}
+/* Pricing transparency */
+.m21 .fee-breakdown{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.m21 .fee-col{background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:26px}
+.m21 .fee-col h3{font-size:18px;margin-bottom:14px}
+.m21 .fee-col ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.m21 .fee-col li{position:relative;padding-left:20px;font-size:14px;line-height:1.55;color:var(--ink-2)}
+.m21 .fee-col li::before{content:'·';position:absolute;left:0;color:var(--accent);font-weight:800}
+.m21 .fee-col p{font-size:14px;line-height:1.65;color:var(--ink-2);margin-top:12px}
+.m21 .fee-col .fee-note{font-size:14.5px;font-weight:700;color:var(--ink);margin-top:14px}
 @media(max-width:1000px){
   .m21 .badges{grid-template-columns:repeat(3,1fr)}
   .m21 .wh-panel{grid-template-columns:1fr}
   .m21 .needs-grid{grid-template-columns:1fr 1fr}
   .m21 .split-grid,.m21 .fee-panel{grid-template-columns:1fr}
   .m21 .steps-grid,.m21 .case-grid,.m21 .cap-grid{grid-template-columns:1fr 1fr}
+  .m21 .buyer-grid,.m21 .fee-breakdown{grid-template-columns:1fr}
 }
 @media(max-width:700px){
-  .m21 .needs-grid,.m21 .steps-grid,.m21 .case-grid,.m21 .cap-grid,.m21 .model-grid{grid-template-columns:1fr}
+  .m21 .needs-grid,.m21 .steps-grid,.m21 .case-grid,.m21 .cap-grid,.m21 .model-grid,.m21 .buyer-grid,.m21 .fee-breakdown{grid-template-columns:1fr}
   .m21 .cap-list{grid-template-columns:1fr}
   .m21 .fee-panel{padding:24px}
   .m21 .wh-panel{padding:22px}
@@ -1386,6 +1405,43 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     </div>
   </section>
 
+  <!-- WE PUT BUYERS FIRST -->
+  <section class="section-fullwidth band-card" id="buyer-first">
+    <div class="wrap content-wrap">
+      <div class="section-label">How we think</div>
+      <h2>We Put Buyers First</h2>
+      <p class="section-sub" style="margin-bottom:24px">Your interests come before our convenience.</p>
+      <div class="buyer-intro">
+        <p>Every sourcing decision should make sense for your business — not just make the order easier for us to process.</p>
+        <p>We don't believe in pushing unnecessary services, expensive customization, or supplier changes just to make a sale.</p>
+        <p>We take the time to understand your product, budget, sales channel and business goals before recommending the next step.</p>
+      </div>
+      <div class="buyer-grid">
+        <div class="buyer-item">
+          <span class="buyer-num">01</span>
+          <h3>We work with what you already have.</h3>
+          <p>Already have reliable suppliers in China? You don't need to replace them. We can coordinate your existing suppliers, receive goods at our warehouse, inspect, consolidate and prepare shipments.</p>
+        </div>
+        <div class="buyer-item">
+          <span class="buyer-num">02</span>
+          <h3>We look for practical ways to reduce costs.</h3>
+          <p>A custom logo doesn't always require expensive packaging molds. A better packaging structure may reduce shipping volume. We look at the whole order to identify practical savings without compromising essential requirements.</p>
+        </div>
+        <div class="buyer-item">
+          <span class="buyer-num">03</span>
+          <h3>We don't reject reasonable opportunities just because they're not standard.</h3>
+          <p>Smaller quantities, mixed materials and special branding requirements deserve a closer look. We explore workable alternatives before concluding that something isn't feasible.</p>
+        </div>
+        <div class="buyer-item">
+          <span class="buyer-num">04</span>
+          <h3>We consider your actual sales market.</h3>
+          <p>Product specifications, packaging, labeling and inspection requirements should reflect where and how you sell. We want to understand your sales channel before making recommendations.</p>
+        </div>
+      </div>
+      <p class="buyer-statement">We believe good sourcing is not about buying more services. It's about making better decisions.</p>
+    </div>
+  </section>
+
   <!-- PRODUCT SOURCING & BULK PROCUREMENT -->
   <section class="section-fullwidth" id="sourcing-procurement">
     <div class="wrap content-wrap">
@@ -1558,6 +1614,47 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
     </div>
   </section>
 
+  <!-- WHAT WE DON'T PRETEND -->
+  <section class="section-fullwidth band-dark" id="what-we-dont-pretend">
+    <div class="wrap content-wrap">
+      <div class="section-label">Honesty and boundaries</div>
+      <h2>What We Don't Pretend</h2>
+      <p class="section-sub">Honest answers. Clear expectations. No unrealistic promises.</p>
+      <div class="wont-grid">
+        <div class="wont-item">
+          <span class="wont-num">01</span>
+          <h3>We don't promise the lowest price on everything.</h3>
+          <p>We focus on finding suitable suppliers, evaluating quotations and helping buyers make informed purchasing decisions — not simply presenting the lowest initial price.</p>
+        </div>
+        <div class="wont-item">
+          <span class="wont-num">02</span>
+          <h3>We don't hide service fees or unapproved charges.</h3>
+          <p>Our standard Managed Order service fee is USD 50 per order. Additional services and applicable third-party expenses are identified separately before proceeding. No unapproved additional charges.</p>
+        </div>
+        <div class="wont-item">
+          <span class="wont-num">03</span>
+          <h3>We don't promise every product can be customized at any quantity.</h3>
+          <p>MOQ, production lead time and customization feasibility depend on product availability, factory requirements and materials. We explain the limitations and explore alternatives where possible.</p>
+        </div>
+        <div class="wont-item">
+          <span class="wont-num">04</span>
+          <h3>We don't confuse inspection with certification.</h3>
+          <p>Our QC team checks products against agreed specifications and applicable inspection requirements. Factory inspections and QC reports do not replace legally required testing, accredited certification or conformity assessments.</p>
+        </div>
+        <div class="wont-item">
+          <span class="wont-num">05</span>
+          <h3>We don't claim to replace your responsibility as an importer or brand owner.</h3>
+          <p>We help coordinate sourcing, quality checks, documentation and logistics. Regulatory obligations and final market compliance responsibilities must be clearly established according to the product, destination and applicable law.</p>
+        </div>
+        <div class="wont-item">
+          <span class="wont-num">06</span>
+          <h3>We don't force you to use our suppliers.</h3>
+          <p>You can work with your existing factories. We can also help identify and manage new suppliers when needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- MANAGED ORDER FEE -->
   <section class="section-fullwidth band-card" id="fees">
     <div class="wrap content-wrap">
@@ -1579,6 +1676,38 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
             <li>Additional services quoted separately</li>
           </ul>
           <a class="btn btn-primary" href="/services/sourcing-fees-pricing">See full pricing policy</a>
+        </div>
+      </div>
+
+      <div style="margin-top:48px;padding-top:40px;border-top:1px solid var(--line)">
+        <div class="section-label">Pricing transparency</div>
+        <h2>Know What You're Paying For</h2>
+        <p class="section-sub" style="margin-bottom:28px">We believe buyers should understand the cost structure behind every order. Our quotations distinguish between product purchasing costs, Milebond's service fees, additional services, and freight, duties and other third-party expenses.</p>
+        <div class="fee-breakdown">
+          <div class="fee-col">
+            <h3>What a quotation separates</h3>
+            <ul>
+              <li>Product purchasing costs.</li>
+              <li>Milebond's service fees.</li>
+              <li>Assembly, packaging and other additional services.</li>
+              <li>Freight, duties and applicable third-party expenses.</li>
+            </ul>
+            <p>When Milebond manages supplier sourcing, supplier quotation details and supporting price information can be shared subject to supplier confidentiality, project arrangements and applicable agreements.</p>
+            <p>When you already have your own suppliers, we can review supplier qualifications and assess quotation reasonableness as part of our preliminary sourcing support.</p>
+            <p class="fee-note">No undisclosed fees. No unapproved additional charges.</p>
+          </div>
+          <div class="fee-col">
+            <h3>Confirmed commercial policies</h3>
+            <ul>
+              <li>The standard Managed Order service fee is USD 50 per order.</li>
+              <li>The fee is charged per order, not separately for each SKU or supplier.</li>
+              <li>Complex or large orders may require an adjusted fee.</li>
+              <li>A QC report is included with every managed order.</li>
+              <li>Special testing is charged separately.</li>
+              <li>Other additional services are quoted separately where applicable.</li>
+            </ul>
+            <p class="fee-note">Fees and third-party costs are quoted in writing and approved before work starts.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1844,7 +1973,7 @@ nav,nav a,nav button,nav span,.mega-title,.mega-desc,.mobile-services,.mobile-se
 <div style="background:#fff3d6;border-top:1px solid #eadfcb;">
   <div class="max-w-7xl mx-auto px-5 lg:px-8 py-6 content-wrap" style="font-size:13px;line-height:1.6;color:#6b6b6b;">
     Page maintained by <a href="/about" style="color:#444444;font-weight:700;text-decoration:underline;">Monica Zhu</a>, founder of Milebond — sourcing in Yiwu since 2015.<br>
-    Last reviewed <time datetime="2026-11-26">26 November 2026</time>.
+    Last reviewed <time datetime="2026-11-27">27 November 2026</time>.
   </div>
 </div>
 
